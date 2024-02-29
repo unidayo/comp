@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/lib/ac-library/**",
+                "${default}"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++-12",
+            "cStandard": "c17",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-O2",
+                "-DLOCAL",
+                "-mtune=native",
+                "-march=native",
+                "-o a.out main.cpp"
+            ]
+        }
+    ],
+    "version": 4
+}
