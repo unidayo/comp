@@ -1,0 +1,9 @@
+-I/usr/lib/ac-library/
+-O2
+-std=c++23
+-Wall
+-Wextra
+-Wfloat-equal
+-mtune=native
+-march=native
+-DLOCAL

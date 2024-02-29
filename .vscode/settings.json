@@ -1,0 +1,52 @@
+{
+    "clangd.arguments": [
+        "--clang-tidy",
+        "--enable-config"
+    ],
+    "C_Cpp.default.includePath": [
+        "usr/lib/ac-library/**",
+        "\"${workspaceFolder}/**\""
+    ],
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "numeric": "cpp",
+        "tuple": "cpp",
+        "iostream": "cpp",
+        "initializer_list": "cpp",
+        "valarray": "cpp",
+        "charconv": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "cwchar": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "iterator": "cpp",
+        "functional": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "utility": "cpp",
+        "random": "cpp",
+        "concepts": "cpp",
+        "ranges": "cpp",
+        "cmath": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "clangd.checkUpdates": false,
+    "clangd.onConfigChanged": "restart"
+}
