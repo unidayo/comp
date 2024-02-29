@@ -1,6 +1,0 @@
-.cache/
-build
-cmake-build-debug
-CMakeFiles
-ac-library
-acc-config
