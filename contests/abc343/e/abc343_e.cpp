@@ -1,8 +1,6 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
 #include <bits/stdc++.h>
-
-#include <algorithm>
 #include <atcoder/all>
 
 // clang-format off

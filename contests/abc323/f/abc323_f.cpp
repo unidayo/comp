@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -93,6 +94,69 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 
 // clang-format on
 
+ll dist(ll xs, ll ys, ll xg, ll yg) { return abs(xs - xg) + abs(ys - yg); }
+
 int main() {
-    
+    ll xa, ya, xb, yb, xc, yc;
+    input(xa, ya, xb, yb, xc, yc);
+    auto dist2 = [&](ll xs, ll ys, ll xg, ll yg) {
+        if (xs == xg) {
+            if ((ys < yb && yb < yg) | (yg < yb && yb < ys)) {
+                return abs(yg - ys) + 2;
+            } else {
+                return abs(yg - ys);
+            }
+        }
+        if (ys == yg) {
+            if ((xs < xb && xb < xg) | (xg < xb && xb < xs)) {
+                return abs(xg - xs) + 2;
+            } else {
+                return abs(xg - xs);
+            }
+        }
+        return abs(xs - xg) + abs(ys - yg);
+    };
+
+    auto solve = [&]() {
+        ll ans = dist(xb, yb, xc, yc);
+        ll x1, y1, x2, y2;
+        if (xb < xc) {
+            x1 = xb - 1;
+            y1 = yb;
+        } else if (xb == xc) {
+            if (yb < yc) {
+                x2 = xb;
+                y2 = yb - 1;
+            } else {
+                x2 = xb;
+                y2 = yb + 1;
+            }
+            ans += dist2(xa, ya, x2, y2);
+            return ans;
+        } else {
+            x1 = xb + 1;
+            y1 = yb;
+        }
+
+        if (yb < yc) {
+            x2 = xb;
+            y2 = yb - 1;
+        } else if (yb == yc) {
+            if (xb < xc) {
+                x2 = xb - 1;
+                y2 = yb;
+            } else {
+                x2 = xb + 1;
+                y2 = yb;
+            }
+            ans += dist2(xa, ya, x2, y2);
+            return ans;
+        } else {
+            x2 = xb;
+            y2 = yb + 1;
+        }
+        ans += min(dist2(xa, ya, x1, y1) + 2, dist2(xa, ya, x2, y2) + 2);
+        return ans;
+    };
+    print(solve());
 }

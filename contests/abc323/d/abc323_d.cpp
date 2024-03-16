@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -94,5 +95,27 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 // clang-format on
 
 int main() {
-    
+    int N;
+    input(N);
+    priority_queue_min<ll> pq;
+    map<ll, ll> mp;
+    ll ans = 0;
+    rep(i, N) {
+        ll s, c;
+        input(s, c);
+        pq.emplace(s);
+        mp[s] = c;
+        ans += c;
+    }
+    while (!pq.empty()) {
+        auto s = pq.top();
+        pq.pop();
+        auto c = mp[s];
+        if (c >= 2 && !mp.contains(2 * s)) {
+            pq.push(2 * s);
+        }
+        mp[2 * s] += c / 2;
+        ans -= c / 2;
+    }
+    print(ans);
 }

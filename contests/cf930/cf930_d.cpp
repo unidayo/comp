@@ -86,6 +86,74 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 
 // clang-format on
 
+void solve() {
+    int N;
+    input(N);
+    string S;
+    input(S);
+    vector<ll> L, R;
+    rep(i, N) {
+        if (S[i] == '>') {
+            L.push_back(i + 1);
+        } else {
+            R.push_back(i + 1);
+        }
+    }
+    auto Lacc = accumulate_sum(L, 0LL);
+    auto Racc = accumulate_sum(R, 0LL);
+    vector<ll> ans;
+    ll sl = ssize(L);
+    ll sr = ssize(R);
+    ll l_rem = 0;
+    ll r_rem = ssize(R);
+    ll l_cur = 0;
+    ll r_cur = 0;
+    rep(i, N) {
+        if (S[i] == '<') {
+            r_cur++;
+            if (l_rem < r_rem) {
+                // left
+                ll cnt = l_rem;
+                ll ret = (i + 1);
+                ret += 2 * (Racc[r_cur + cnt] - Racc[r_cur]);
+                ret -= 2 * (Lacc[cnt]);
+                ans.push_back(ret);
+            } else {
+                // right
+                ll cnt = r_rem;
+                ll ret = N + 1 + i + 1;
+                ret += 2 * (Racc[sr] - Racc[sr - (cnt - 1)]);
+                ret -= 2 * (Lacc[l_cur] - Lacc[l_cur - cnt]);
+                ans.push_back(ret);
+            }
+            r_rem--;
+        } else {
+            l_cur++;
+            l_rem++;
+            if (l_rem <= r_rem) {
+                // left
+                ll cnt = l_rem;
+                ll ret = -(i + 1);
+                ret += 2 * (Racc[r_cur + cnt] - Racc[r_cur]);
+                ret -= 2 * (Lacc[cnt - 1]);
+                ans.push_back(ret);
+            } else {
+                // right
+                ll cnt = r_rem;
+                ll ret = N + 1 - (i + 1);
+                ret += 2 * (Racc[sr] - Racc[sr - cnt]);
+                ret -= 2 * (Lacc[l_cur-1] - Lacc[l_cur-1 - cnt]);
+                ans.push_back(ret);
+            }
+        }
+    }
+    vprint(ans);
+}
+
 int main() {
-    
+    int T;
+    input(T);
+    while (T--) {
+        solve();
+    }
 }

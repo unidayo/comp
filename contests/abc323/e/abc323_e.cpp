@@ -1,7 +1,10 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
+
+#include "atcoder/modint.hpp"
 
 // clang-format off
 namespace atcoder {};
@@ -93,6 +96,20 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 
 // clang-format on
 
+using mint = modint998244353;
+
 int main() {
-    
+    int N, X;
+    input(N, X);
+    vector<mint> dp(20005);
+    dp[0] = 1;
+    vector<int> T(N);
+    vinput(T);
+    auto inv = mint(N).inv();
+    rep(i, X) {
+        rep(j, N) { dp[i + T[j]] += dp[i] * inv; }
+    }
+    mint ans = 0;
+    rep(i, max(0, X - T[0] + 1), X + 1) { ans += dp[i] * inv; }
+    print(ans.val());
 }

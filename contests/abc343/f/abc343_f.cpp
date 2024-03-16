@@ -241,7 +241,7 @@ class Treap {
 };
 
 int main() {
-    const int Bsize = 5000;
+    const int Bsize = 5002;
     int N, Q;
     input(N, Q);
     vector<int> A(N);

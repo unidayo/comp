@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -93,6 +94,43 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 
 // clang-format on
 
+struct Edge {
+    int to;
+    ll b, c;
+};
+
 int main() {
-    
+    int N, M;
+    input(N, M);
+    vector<vector<Edge>> G(N);
+    int u, v;
+    ll b, c;
+    rep(i, M) {
+        input(u, v, b, c);
+        u--, v--;
+        G[u].emplace_back(v, b, c);
+    }
+
+    auto judge = [&](double ave){
+        vector<double> dp(N,-1e18);
+        dp[0] = 0;
+        rep(u,N){
+            for (auto [v,b,c]:G[u]){
+                chmax(dp[v],dp[u]+((double)b-ave*c));
+            }
+        }
+        return dp[N-1] >= 0;
+    };
+
+    double ok = 0, ng = 10005;
+    const double C = 1e-13;
+    rep (i,100){
+        double mid = (ok+ng)/2;
+        if(judge(mid)){
+            ok = mid;
+        } else {
+            ng = mid;
+        }
+    }
+    print(ok);
 }

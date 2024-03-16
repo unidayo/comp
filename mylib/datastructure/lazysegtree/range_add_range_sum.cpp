@@ -10,6 +10,7 @@ template <class T> auto range_add_range_sum(int n, auto id) {
     auto mapping = [](T f, S x) -> S { return S{x.value + x.size * f, x.size}; };
     auto composition = [](T f, T g) -> T { return f + g; };
     lazy_segtree<S, op, e, T, mapping, composition, id> seg(n);
+    return seg;
 }
 
 template <class T> auto range_add_range_sum(vector<T> &a, auto id) {
