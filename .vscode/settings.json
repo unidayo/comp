@@ -1,7 +1,8 @@
 {
     "clangd.arguments": [
         "--clang-tidy",
-        "--enable-config"
+        "--enable-config",
+        "--header-insertion=never"
     ],
     "C_Cpp.default.includePath": [
         "usr/lib/ac-library/**",

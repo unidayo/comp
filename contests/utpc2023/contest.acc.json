@@ -1,0 +1,196 @@
+{
+  "contest": {
+    "id": "utpc2023",
+    "title": "UTPC 2023",
+    "url": "https://atcoder.jp/contests/utpc2023"
+  },
+  "tasks": [
+    {
+      "id": "utpc2023_a",
+      "label": "A",
+      "title": "Again Make UTPC",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "utpc2023_a.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_b",
+      "label": "B",
+      "title": "Black or White 2",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "utpc2023_b.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_c",
+      "label": "C",
+      "title": "Contour Multiplication",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "utpc2023_c.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_d",
+      "label": "D",
+      "title": "DRD String",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "utpc2023_d.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_e",
+      "label": "E",
+      "title": "Equally Dividing",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "utpc2023_e.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_f",
+      "label": "F",
+      "title": "Flip or Not",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "utpc2023_f.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_g",
+      "label": "G",
+      "title": "Graph Weighting",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "utpc2023_g.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_h",
+      "label": "H",
+      "title": "Huge Segment Tree",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "utpc2023_h.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_i",
+      "label": "I",
+      "title": "I Love Marathon Contest",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_i",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "utpc2023_i.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_j",
+      "label": "J",
+      "title": "Japanese Gift Money",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_j",
+      "directory": {
+        "path": "j",
+        "testdir": "test",
+        "submit": "utpc2023_j.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_k",
+      "label": "K",
+      "title": "Kth Sum",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_k",
+      "directory": {
+        "path": "k",
+        "testdir": "test",
+        "submit": "utpc2023_k.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_l",
+      "label": "L",
+      "title": "Largest Triangle",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_l",
+      "directory": {
+        "path": "l",
+        "testdir": "test",
+        "submit": "utpc2023_l.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_m",
+      "label": "M",
+      "title": "Majority and Permutation",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "utpc2023_m.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_n",
+      "label": "N",
+      "title": "Number of Abbreviations",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "utpc2023_n.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_o",
+      "label": "O",
+      "title": "Optimal Train Operation",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "utpc2023_o.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_p",
+      "label": "P",
+      "title": "Priority Queue 3",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_p",
+      "directory": {
+        "path": "p",
+        "testdir": "test",
+        "submit": "utpc2023_p.cpp"
+      }
+    },
+    {
+      "id": "utpc2023_q",
+      "label": "Q",
+      "title": "Quotient Sum",
+      "url": "https://atcoder.jp/contests/utpc2023/tasks/utpc2023_q",
+      "directory": {
+        "path": "q",
+        "testdir": "test",
+        "submit": "utpc2023_q.cpp"
+      }
+    }
+  ]
+}

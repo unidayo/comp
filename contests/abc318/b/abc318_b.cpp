@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -94,5 +95,25 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 // clang-format on
 
 int main() {
-    
+    int N;
+    input(N);
+    auto S = vec2d(101, 101, 0);
+    int a, b, c, d;
+    rep(i, N) {
+        input(a, b, c, d);
+        for (int row = a; row < b; ++row) {
+            for (int col = c; col < d; ++col) {
+                S[row][col]++;
+            }
+        }
+    }
+    int ans = 0;
+    rep(i, 101) {
+        rep(j, 101) {
+            if (S[i][j] > 0) {
+                ans++;
+            }
+        }
+    }
+    print(ans);
 }

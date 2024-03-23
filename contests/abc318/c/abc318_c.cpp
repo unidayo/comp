@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -94,5 +95,19 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 // clang-format on
 
 int main() {
-    
+    ll N, D, P;
+    input(N, D, P);
+    vector<ll> F(N);
+    vinput(F);
+    ranges::sort(F);
+    auto Facc = accumulate_sum(F, 0LL);
+    ll ans = Facc.back();
+    ll pc = 0;
+    while (N > 0) {
+        N -= D;
+        pc += P;
+        N = max(N, 0LL);
+        chmin(ans, Facc[N] + pc);
+    }
+    print(ans);
 }

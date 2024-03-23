@@ -1,7 +1,8 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
-#include <atcoder/all>
 #include <bits/stdc++.h>
+
+#include <atcoder/all>
 
 // clang-format off
 namespace atcoder {};
@@ -94,5 +95,47 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 // clang-format on
 
 int main() {
-    
+    int N;
+    input(N);
+    vector<ll> X(N), L(N);
+    vinput(X);
+    vinput(L);
+    const ll LMAX = -2 * powll(10, 18);
+    const ll RMAX = 2 * powll(10,18);
+    auto solve = [&](int pos) {
+        ll lmax = pos, rmax = N - pos;
+        ll llim = (pos == 0 ? -2 * powll(10, 18) : X[pos - 1]);
+        ll rlim = (pos == N ? 2 * powll(10, 18) : X[pos]);
+        print(llim,rlim,pos);
+        auto dp = vec2d(pos + 1, N - pos + 1, pair<ll, ll>{LMAX, RMAX});
+        dp[0][0] = {llim, rlim};
+        rep(l, pos + 1) rep(r, N - pos + 1) {
+            ll cnt = l + r;
+            auto [pl, pr] = dp[l][r];
+            if (l + 1 <= lmax) {
+                ll lnext = X[pos - l - 1];
+                ll nl = lnext;
+                ll nr = lnext + L[cnt];
+                auto [l2,r2] = dp[l+1][r];
+                dp[l + 1][r] = {min(l2,max(pl, nl)), max(r2,min(pr, nr))};
+            }
+            if (r + 1 <= rmax) {
+                ll rnext = X[pos + r];
+                ll nl = rnext - L[cnt];
+                ll nr = rnext;
+                auto [l2,r2] = dp[l][r+1];
+
+                dp[l][r + 1] = {min(l2, max(pl, nl)), max(r2,min(pr, nr))};
+            }
+        }
+        return dp[lmax][rmax];
+    };
+
+    ll ans = 0;
+    rep(i, N + 1) {
+        auto pr = solve(i);
+        print(pr.first,pr.second);
+        ans += max(0LL, pr.second - pr.first+1);
+    }
+    print(ans);
 }
