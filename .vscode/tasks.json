@@ -15,7 +15,7 @@
 		{
 			"label": "new contest",
 			"type": "shell",
-			"command": "${workspaceFolder}/cmd/new_contest.bash ${input:cid}",
+			"command": "${workspaceFolder}/cmd/new_contest.sh ${input:cid}",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -59,7 +59,7 @@
 		{
 			"label": "submit",
 			"type": "shell",
-			"command": "cd ${fileDirname} && acc submit -s -- -w 1",
+			"command": "cd ${fileDirname} && acc submit -s -- -w 0",
 		},
 	],
 	"inputs": [

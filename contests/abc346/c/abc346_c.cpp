@@ -93,14 +93,22 @@ template <class T> void debvprint(T &v,int l,int r,string sep=" "){}
 
 // clang-format on
 
+template<class T>
+void remove_duplicates(vector<T> &v){
+    sort(v.begin(), v.end());
+    v.erase(unique(v.begin(), v.end()), v.end());
+}
+
 int main() {
+
+    
     ull N, K;
     input(N, K);
     vector<ull> A(N);
     vinput(A);
     ull ans = K * (K + 1) / 2;
-    set<ull> S(A.begin(),A.end());
-    for(auto v: S){
+    remove_duplicates(A);
+    for(auto v: A){
         if (v <= K){
             ans -= v;
         }

@@ -1,0 +1,10 @@
+{
+	"begin-end": {
+		"scope": "cpp, hpp",
+		"prefix": "bend",
+		"body": [
+			"begin($1), end($1)$0"
+		],
+		"description": "begin(v), end(v)"
+	}
+}
