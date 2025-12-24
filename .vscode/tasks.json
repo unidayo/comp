@@ -2,6 +2,16 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "cmake-configure-debug",
+			"type": "shell",
+			"command": "cmake -S . -B build-debug -G Ninja -DCMAKE_BUILD_TYPE=Debug",
+		},
+		{
+			"label": "cmake-configure-release",
+			"type": "shell",
+			"command": "cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=Release",
+		},
+		{
 			"label": "build",
 			"type": "shell",
 			"command": "cmake",
@@ -9,8 +19,25 @@
 				"--build",
 				"build/",
 				"--target",
-				"${fileBasenameNoExtension}"
-			]
+				"${fileBasenameNoExtension}",
+			],
+			"dependsOn": [
+				"cmake-configure-release"
+			],
+		},
+		{
+			"label": "build-debug-O0",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"build/",
+				"--target",
+				"${fileBasenameNoExtension}",
+			],
+			"dependsOn": [
+				"cmake-configure-debug"
+			],
 		},
 		{
 			"label": "new contest",
@@ -51,7 +78,7 @@
 		{
 			"label": "test sample",
 			"type": "shell",
-			"command": "cd ${fileDirname} && oj t -c ${workspaceFolder}/build/${fileBasenameNoExtension}",
+			"command": "cd ${fileDirname} && /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build/${fileBasenameNoExtension}",
 			"dependsOn": [
 				"build"
 			],

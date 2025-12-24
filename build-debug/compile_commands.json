@@ -1,0 +1,1892 @@
+[
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Winvalid-pch -x c++-header -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/pch.dir/cmake_pch.hxx.gch -c /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx.cxx",
+  "file": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx.cxx",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/pch.dir/pch.cpp.o -c /home/wsl2ubuntu/comp/pch.cpp",
+  "file": "/home/wsl2ubuntu/comp/pch.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/pch.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/b.dir/codes/b.cpp.o -c /home/wsl2ubuntu/comp/codes/b.cpp",
+  "file": "/home/wsl2ubuntu/comp/codes/b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/b.dir/codes/b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/c.dir/codes/c.cpp.o -c /home/wsl2ubuntu/comp/codes/c.cpp",
+  "file": "/home/wsl2ubuntu/comp/codes/c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/c.dir/codes/c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/a.dir/codes/cpp/a.cpp.o -c /home/wsl2ubuntu/comp/codes/cpp/a.cpp",
+  "file": "/home/wsl2ubuntu/comp/codes/cpp/a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/a.dir/codes/cpp/a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/debug_func.dir/codes/cpp/debug_func.cpp.o -c /home/wsl2ubuntu/comp/codes/cpp/debug_func.cpp",
+  "file": "/home/wsl2ubuntu/comp/codes/cpp/debug_func.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/debug_func.dir/codes/cpp/debug_func.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/d.dir/codes/d.cpp.o -c /home/wsl2ubuntu/comp/codes/d.cpp",
+  "file": "/home/wsl2ubuntu/comp/codes/d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/d.dir/codes/d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_a.dir/contests/abc355/a/abc355_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/a/abc355_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/a/abc355_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_a.dir/contests/abc355/a/abc355_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_b.dir/contests/abc355/b/abc355_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/b/abc355_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/b/abc355_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_b.dir/contests/abc355/b/abc355_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_c.dir/contests/abc355/c/abc355_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/c/abc355_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/c/abc355_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_c.dir/contests/abc355/c/abc355_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_d.dir/contests/abc355/d/abc355_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/d/abc355_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/d/abc355_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_d.dir/contests/abc355/d/abc355_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_e.dir/contests/abc355/e/abc355_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/e/abc355_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/e/abc355_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_e.dir/contests/abc355/e/abc355_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_f.dir/contests/abc355/f/abc355_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/f/abc355_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/f/abc355_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_f.dir/contests/abc355/f/abc355_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc355_g.dir/contests/abc355/g/abc355_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc355/g/abc355_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc355/g/abc355_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc355_g.dir/contests/abc355/g/abc355_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_a.dir/contests/abc356/a/abc356_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/a/abc356_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/a/abc356_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_a.dir/contests/abc356/a/abc356_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_b.dir/contests/abc356/b/abc356_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/b/abc356_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/b/abc356_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_b.dir/contests/abc356/b/abc356_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_c.dir/contests/abc356/c/abc356_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/c/abc356_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/c/abc356_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_c.dir/contests/abc356/c/abc356_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_d.dir/contests/abc356/d/abc356_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/d/abc356_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/d/abc356_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_d.dir/contests/abc356/d/abc356_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_e.dir/contests/abc356/e/abc356_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/e/abc356_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/e/abc356_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_e.dir/contests/abc356/e/abc356_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_f.dir/contests/abc356/f/abc356_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/f/abc356_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/f/abc356_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_f.dir/contests/abc356/f/abc356_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc356_g.dir/contests/abc356/g/abc356_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc356/g/abc356_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc356/g/abc356_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc356_g.dir/contests/abc356/g/abc356_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_a.dir/contests/abc357/a/abc357_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/a/abc357_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/a/abc357_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_a.dir/contests/abc357/a/abc357_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_b.dir/contests/abc357/b/abc357_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/b/abc357_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/b/abc357_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_b.dir/contests/abc357/b/abc357_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_c.dir/contests/abc357/c/abc357_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/c/abc357_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/c/abc357_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_c.dir/contests/abc357/c/abc357_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_d.dir/contests/abc357/d/abc357_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/d/abc357_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/d/abc357_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_d.dir/contests/abc357/d/abc357_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_e.dir/contests/abc357/e/abc357_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/e/abc357_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/e/abc357_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_e.dir/contests/abc357/e/abc357_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_f.dir/contests/abc357/f/abc357_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/f/abc357_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/f/abc357_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_f.dir/contests/abc357/f/abc357_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc357_g.dir/contests/abc357/g/abc357_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc357/g/abc357_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc357/g/abc357_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc357_g.dir/contests/abc357/g/abc357_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_a.dir/contests/abc358/a/abc358_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/a/abc358_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/a/abc358_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_a.dir/contests/abc358/a/abc358_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_b.dir/contests/abc358/b/abc358_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/b/abc358_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/b/abc358_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_b.dir/contests/abc358/b/abc358_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_c.dir/contests/abc358/c/abc358_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/c/abc358_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/c/abc358_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_c.dir/contests/abc358/c/abc358_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_d.dir/contests/abc358/d/abc358_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/d/abc358_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/d/abc358_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_d.dir/contests/abc358/d/abc358_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_e.dir/contests/abc358/e/abc358_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/e/abc358_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/e/abc358_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_e.dir/contests/abc358/e/abc358_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_f.dir/contests/abc358/f/abc358_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/f/abc358_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/f/abc358_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_f.dir/contests/abc358/f/abc358_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc358_g.dir/contests/abc358/g/abc358_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc358/g/abc358_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc358/g/abc358_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc358_g.dir/contests/abc358/g/abc358_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_a.dir/contests/abc359/a/abc359_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/a/abc359_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/a/abc359_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_a.dir/contests/abc359/a/abc359_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_b.dir/contests/abc359/b/abc359_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/b/abc359_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/b/abc359_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_b.dir/contests/abc359/b/abc359_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_c.dir/contests/abc359/c/abc359_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/c/abc359_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/c/abc359_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_c.dir/contests/abc359/c/abc359_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_d.dir/contests/abc359/d/abc359_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/d/abc359_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/d/abc359_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_d.dir/contests/abc359/d/abc359_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_e.dir/contests/abc359/e/abc359_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/e/abc359_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/e/abc359_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_e.dir/contests/abc359/e/abc359_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_f.dir/contests/abc359/f/abc359_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/f/abc359_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/f/abc359_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_f.dir/contests/abc359/f/abc359_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc359_g.dir/contests/abc359/g/abc359_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc359/g/abc359_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc359/g/abc359_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc359_g.dir/contests/abc359/g/abc359_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_a.dir/contests/abc360/a/abc360_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/a/abc360_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/a/abc360_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_a.dir/contests/abc360/a/abc360_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_b.dir/contests/abc360/b/abc360_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/b/abc360_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/b/abc360_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_b.dir/contests/abc360/b/abc360_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_c.dir/contests/abc360/c/abc360_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/c/abc360_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/c/abc360_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_c.dir/contests/abc360/c/abc360_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_d.dir/contests/abc360/d/abc360_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/d/abc360_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/d/abc360_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_d.dir/contests/abc360/d/abc360_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_e.dir/contests/abc360/e/abc360_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/e/abc360_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/e/abc360_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_e.dir/contests/abc360/e/abc360_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_f.dir/contests/abc360/f/abc360_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/f/abc360_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/f/abc360_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_f.dir/contests/abc360/f/abc360_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc360_g.dir/contests/abc360/g/abc360_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc360/g/abc360_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc360/g/abc360_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc360_g.dir/contests/abc360/g/abc360_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_a.dir/contests/abc361/a/abc361_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/a/abc361_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/a/abc361_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_a.dir/contests/abc361/a/abc361_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_b.dir/contests/abc361/b/abc361_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/b/abc361_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/b/abc361_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_b.dir/contests/abc361/b/abc361_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_c.dir/contests/abc361/c/abc361_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/c/abc361_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/c/abc361_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_c.dir/contests/abc361/c/abc361_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_d.dir/contests/abc361/d/abc361_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/d/abc361_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/d/abc361_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_d.dir/contests/abc361/d/abc361_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_e.dir/contests/abc361/e/abc361_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/e/abc361_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/e/abc361_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_e.dir/contests/abc361/e/abc361_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_f.dir/contests/abc361/f/abc361_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/f/abc361_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/f/abc361_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_f.dir/contests/abc361/f/abc361_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc361_g.dir/contests/abc361/g/abc361_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc361/g/abc361_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc361/g/abc361_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc361_g.dir/contests/abc361/g/abc361_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_a.dir/contests/abc362/a/abc362_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/a/abc362_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/a/abc362_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_a.dir/contests/abc362/a/abc362_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_b.dir/contests/abc362/b/abc362_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/b/abc362_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/b/abc362_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_b.dir/contests/abc362/b/abc362_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_c.dir/contests/abc362/c/abc362_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/c/abc362_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/c/abc362_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_c.dir/contests/abc362/c/abc362_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_d.dir/contests/abc362/d/abc362_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/d/abc362_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/d/abc362_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_d.dir/contests/abc362/d/abc362_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_e.dir/contests/abc362/e/abc362_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/e/abc362_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/e/abc362_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_e.dir/contests/abc362/e/abc362_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_f.dir/contests/abc362/f/abc362_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/f/abc362_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/f/abc362_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_f.dir/contests/abc362/f/abc362_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc362_g.dir/contests/abc362/g/abc362_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc362/g/abc362_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc362/g/abc362_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc362_g.dir/contests/abc362/g/abc362_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_a.dir/contests/abc363/a/abc363_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/a/abc363_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/a/abc363_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_a.dir/contests/abc363/a/abc363_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_b.dir/contests/abc363/b/abc363_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/b/abc363_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/b/abc363_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_b.dir/contests/abc363/b/abc363_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_c.dir/contests/abc363/c/abc363_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/c/abc363_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/c/abc363_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_c.dir/contests/abc363/c/abc363_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_d.dir/contests/abc363/d/abc363_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/d/abc363_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/d/abc363_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_d.dir/contests/abc363/d/abc363_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_e.dir/contests/abc363/e/abc363_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/e/abc363_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/e/abc363_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_e.dir/contests/abc363/e/abc363_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_f.dir/contests/abc363/f/abc363_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/f/abc363_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/f/abc363_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_f.dir/contests/abc363/f/abc363_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc363_g.dir/contests/abc363/g/abc363_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc363/g/abc363_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc363/g/abc363_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc363_g.dir/contests/abc363/g/abc363_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_a.dir/contests/abc364/a/abc364_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/a/abc364_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/a/abc364_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_a.dir/contests/abc364/a/abc364_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_b.dir/contests/abc364/b/abc364_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/b/abc364_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/b/abc364_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_b.dir/contests/abc364/b/abc364_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_c.dir/contests/abc364/c/abc364_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/c/abc364_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/c/abc364_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_c.dir/contests/abc364/c/abc364_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_d.dir/contests/abc364/d/abc364_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/d/abc364_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/d/abc364_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_d.dir/contests/abc364/d/abc364_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_e.dir/contests/abc364/e/abc364_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/e/abc364_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/e/abc364_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_e.dir/contests/abc364/e/abc364_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_f.dir/contests/abc364/f/abc364_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/f/abc364_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/f/abc364_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_f.dir/contests/abc364/f/abc364_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc364_g.dir/contests/abc364/g/abc364_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc364/g/abc364_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc364/g/abc364_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc364_g.dir/contests/abc364/g/abc364_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_a.dir/contests/abc365/a/abc365_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/a/abc365_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/a/abc365_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_a.dir/contests/abc365/a/abc365_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_b.dir/contests/abc365/b/abc365_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/b/abc365_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/b/abc365_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_b.dir/contests/abc365/b/abc365_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_c.dir/contests/abc365/c/abc365_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/c/abc365_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/c/abc365_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_c.dir/contests/abc365/c/abc365_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_d.dir/contests/abc365/d/abc365_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/d/abc365_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/d/abc365_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_d.dir/contests/abc365/d/abc365_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_e.dir/contests/abc365/e/abc365_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/e/abc365_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/e/abc365_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_e.dir/contests/abc365/e/abc365_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_f.dir/contests/abc365/f/abc365_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/f/abc365_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/f/abc365_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_f.dir/contests/abc365/f/abc365_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc365_g.dir/contests/abc365/g/abc365_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc365/g/abc365_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc365/g/abc365_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc365_g.dir/contests/abc365/g/abc365_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_a.dir/contests/abc366/a/abc366_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/a/abc366_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/a/abc366_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_a.dir/contests/abc366/a/abc366_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_b.dir/contests/abc366/b/abc366_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/b/abc366_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/b/abc366_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_b.dir/contests/abc366/b/abc366_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_c.dir/contests/abc366/c/abc366_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/c/abc366_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/c/abc366_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_c.dir/contests/abc366/c/abc366_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_d.dir/contests/abc366/d/abc366_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/d/abc366_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/d/abc366_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_d.dir/contests/abc366/d/abc366_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_e.dir/contests/abc366/e/abc366_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/e/abc366_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/e/abc366_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_e.dir/contests/abc366/e/abc366_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_f.dir/contests/abc366/f/abc366_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/f/abc366_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/f/abc366_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_f.dir/contests/abc366/f/abc366_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc366_g.dir/contests/abc366/g/abc366_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc366/g/abc366_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc366/g/abc366_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc366_g.dir/contests/abc366/g/abc366_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_a.dir/contests/abc367/a/abc367_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/a/abc367_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/a/abc367_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_a.dir/contests/abc367/a/abc367_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_b.dir/contests/abc367/b/abc367_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/b/abc367_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/b/abc367_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_b.dir/contests/abc367/b/abc367_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_c.dir/contests/abc367/c/abc367_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/c/abc367_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/c/abc367_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_c.dir/contests/abc367/c/abc367_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_d.dir/contests/abc367/d/abc367_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/d/abc367_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/d/abc367_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_d.dir/contests/abc367/d/abc367_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_e.dir/contests/abc367/e/abc367_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/e/abc367_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/e/abc367_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_e.dir/contests/abc367/e/abc367_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_f.dir/contests/abc367/f/abc367_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/f/abc367_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/f/abc367_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_f.dir/contests/abc367/f/abc367_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc367_g.dir/contests/abc367/g/abc367_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc367/g/abc367_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc367/g/abc367_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc367_g.dir/contests/abc367/g/abc367_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_a.dir/contests/abc368/a/abc368_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/a/abc368_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/a/abc368_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_a.dir/contests/abc368/a/abc368_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_b.dir/contests/abc368/b/abc368_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/b/abc368_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/b/abc368_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_b.dir/contests/abc368/b/abc368_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_c.dir/contests/abc368/c/abc368_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/c/abc368_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/c/abc368_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_c.dir/contests/abc368/c/abc368_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_d.dir/contests/abc368/d/abc368_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/d/abc368_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/d/abc368_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_d.dir/contests/abc368/d/abc368_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_e.dir/contests/abc368/e/abc368_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/e/abc368_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/e/abc368_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_e.dir/contests/abc368/e/abc368_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_f.dir/contests/abc368/f/abc368_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/f/abc368_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/f/abc368_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_f.dir/contests/abc368/f/abc368_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc368_g.dir/contests/abc368/g/abc368_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc368/g/abc368_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc368/g/abc368_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc368_g.dir/contests/abc368/g/abc368_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_a.dir/contests/abc369/a/abc369_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/a/abc369_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/a/abc369_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_a.dir/contests/abc369/a/abc369_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_b.dir/contests/abc369/b/abc369_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/b/abc369_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/b/abc369_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_b.dir/contests/abc369/b/abc369_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_c.dir/contests/abc369/c/abc369_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/c/abc369_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/c/abc369_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_c.dir/contests/abc369/c/abc369_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_d.dir/contests/abc369/d/abc369_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/d/abc369_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/d/abc369_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_d.dir/contests/abc369/d/abc369_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_e.dir/contests/abc369/e/abc369_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/e/abc369_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/e/abc369_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_e.dir/contests/abc369/e/abc369_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_f.dir/contests/abc369/f/abc369_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/f/abc369_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/f/abc369_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_f.dir/contests/abc369/f/abc369_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc369_g.dir/contests/abc369/g/abc369_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc369/g/abc369_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc369/g/abc369_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc369_g.dir/contests/abc369/g/abc369_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_a.dir/contests/abc370/a/abc370_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/a/abc370_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/a/abc370_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_a.dir/contests/abc370/a/abc370_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_b.dir/contests/abc370/b/abc370_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/b/abc370_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/b/abc370_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_b.dir/contests/abc370/b/abc370_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_c.dir/contests/abc370/c/abc370_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/c/abc370_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/c/abc370_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_c.dir/contests/abc370/c/abc370_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_d.dir/contests/abc370/d/abc370_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/d/abc370_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/d/abc370_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_d.dir/contests/abc370/d/abc370_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_e.dir/contests/abc370/e/abc370_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/e/abc370_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/e/abc370_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_e.dir/contests/abc370/e/abc370_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_f.dir/contests/abc370/f/abc370_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/f/abc370_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/f/abc370_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_f.dir/contests/abc370/f/abc370_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc370_g.dir/contests/abc370/g/abc370_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc370/g/abc370_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc370/g/abc370_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc370_g.dir/contests/abc370/g/abc370_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_a.dir/contests/abc371/a/abc371_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/a/abc371_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/a/abc371_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_a.dir/contests/abc371/a/abc371_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_b.dir/contests/abc371/b/abc371_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/b/abc371_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/b/abc371_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_b.dir/contests/abc371/b/abc371_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_c.dir/contests/abc371/c/abc371_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/c/abc371_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/c/abc371_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_c.dir/contests/abc371/c/abc371_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_d.dir/contests/abc371/d/abc371_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/d/abc371_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/d/abc371_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_d.dir/contests/abc371/d/abc371_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_e.dir/contests/abc371/e/abc371_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/e/abc371_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/e/abc371_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_e.dir/contests/abc371/e/abc371_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_f.dir/contests/abc371/f/abc371_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/f/abc371_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/f/abc371_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_f.dir/contests/abc371/f/abc371_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc371_g.dir/contests/abc371/g/abc371_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc371/g/abc371_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc371/g/abc371_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc371_g.dir/contests/abc371/g/abc371_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_a.dir/contests/abc372/a/abc372_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/a/abc372_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/a/abc372_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_a.dir/contests/abc372/a/abc372_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_b.dir/contests/abc372/b/abc372_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/b/abc372_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/b/abc372_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_b.dir/contests/abc372/b/abc372_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_c.dir/contests/abc372/c/abc372_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/c/abc372_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/c/abc372_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_c.dir/contests/abc372/c/abc372_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_d.dir/contests/abc372/d/abc372_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/d/abc372_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/d/abc372_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_d.dir/contests/abc372/d/abc372_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_e.dir/contests/abc372/e/abc372_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/e/abc372_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/e/abc372_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_e.dir/contests/abc372/e/abc372_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_f.dir/contests/abc372/f/abc372_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/f/abc372_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/f/abc372_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_f.dir/contests/abc372/f/abc372_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc372_g.dir/contests/abc372/g/abc372_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc372/g/abc372_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc372/g/abc372_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc372_g.dir/contests/abc372/g/abc372_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_a.dir/contests/abc373/a/abc373_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/a/abc373_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/a/abc373_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_a.dir/contests/abc373/a/abc373_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_b.dir/contests/abc373/b/abc373_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/b/abc373_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/b/abc373_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_b.dir/contests/abc373/b/abc373_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_c.dir/contests/abc373/c/abc373_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/c/abc373_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/c/abc373_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_c.dir/contests/abc373/c/abc373_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_d.dir/contests/abc373/d/abc373_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/d/abc373_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/d/abc373_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_d.dir/contests/abc373/d/abc373_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_e.dir/contests/abc373/e/abc373_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/e/abc373_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/e/abc373_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_e.dir/contests/abc373/e/abc373_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_f.dir/contests/abc373/f/abc373_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/f/abc373_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/f/abc373_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_f.dir/contests/abc373/f/abc373_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc373_g.dir/contests/abc373/g/abc373_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc373/g/abc373_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc373/g/abc373_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc373_g.dir/contests/abc373/g/abc373_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_a.dir/contests/abc374/a/abc374_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/a/abc374_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/a/abc374_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_a.dir/contests/abc374/a/abc374_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_b.dir/contests/abc374/b/abc374_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/b/abc374_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/b/abc374_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_b.dir/contests/abc374/b/abc374_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_c.dir/contests/abc374/c/abc374_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/c/abc374_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/c/abc374_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_c.dir/contests/abc374/c/abc374_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_d.dir/contests/abc374/d/abc374_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/d/abc374_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/d/abc374_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_d.dir/contests/abc374/d/abc374_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_e.dir/contests/abc374/e/abc374_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/e/abc374_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/e/abc374_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_e.dir/contests/abc374/e/abc374_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_f.dir/contests/abc374/f/abc374_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/f/abc374_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/f/abc374_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_f.dir/contests/abc374/f/abc374_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc374_g.dir/contests/abc374/g/abc374_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc374/g/abc374_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc374/g/abc374_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc374_g.dir/contests/abc374/g/abc374_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_a.dir/contests/abc375/a/abc375_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/a/abc375_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/a/abc375_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_a.dir/contests/abc375/a/abc375_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_b.dir/contests/abc375/b/abc375_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/b/abc375_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/b/abc375_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_b.dir/contests/abc375/b/abc375_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_c.dir/contests/abc375/c/abc375_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/c/abc375_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/c/abc375_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_c.dir/contests/abc375/c/abc375_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_d.dir/contests/abc375/d/abc375_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/d/abc375_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/d/abc375_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_d.dir/contests/abc375/d/abc375_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_e.dir/contests/abc375/e/abc375_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/e/abc375_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/e/abc375_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_e.dir/contests/abc375/e/abc375_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_f.dir/contests/abc375/f/abc375_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/f/abc375_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/f/abc375_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_f.dir/contests/abc375/f/abc375_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc375_g.dir/contests/abc375/g/abc375_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc375/g/abc375_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc375/g/abc375_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc375_g.dir/contests/abc375/g/abc375_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_a.dir/contests/abc376/a/abc376_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/a/abc376_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/a/abc376_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_a.dir/contests/abc376/a/abc376_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_b.dir/contests/abc376/b/abc376_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/b/abc376_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/b/abc376_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_b.dir/contests/abc376/b/abc376_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_c.dir/contests/abc376/c/abc376_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/c/abc376_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/c/abc376_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_c.dir/contests/abc376/c/abc376_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_d.dir/contests/abc376/d/abc376_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/d/abc376_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/d/abc376_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_d.dir/contests/abc376/d/abc376_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_e.dir/contests/abc376/e/abc376_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/e/abc376_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/e/abc376_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_e.dir/contests/abc376/e/abc376_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_f.dir/contests/abc376/f/abc376_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/f/abc376_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/f/abc376_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_f.dir/contests/abc376/f/abc376_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc376_g.dir/contests/abc376/g/abc376_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc376/g/abc376_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc376/g/abc376_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc376_g.dir/contests/abc376/g/abc376_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_a.dir/contests/abc377/a/abc377_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/a/abc377_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/a/abc377_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_a.dir/contests/abc377/a/abc377_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_b.dir/contests/abc377/b/abc377_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/b/abc377_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/b/abc377_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_b.dir/contests/abc377/b/abc377_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_c.dir/contests/abc377/c/abc377_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/c/abc377_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/c/abc377_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_c.dir/contests/abc377/c/abc377_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_d.dir/contests/abc377/d/abc377_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/d/abc377_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/d/abc377_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_d.dir/contests/abc377/d/abc377_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_e.dir/contests/abc377/e/abc377_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/e/abc377_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/e/abc377_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_e.dir/contests/abc377/e/abc377_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_f.dir/contests/abc377/f/abc377_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/f/abc377_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/f/abc377_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_f.dir/contests/abc377/f/abc377_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc377_g.dir/contests/abc377/g/abc377_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc377/g/abc377_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc377/g/abc377_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc377_g.dir/contests/abc377/g/abc377_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_a.dir/contests/abc378/a/abc378_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/a/abc378_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/a/abc378_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_a.dir/contests/abc378/a/abc378_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_b.dir/contests/abc378/b/abc378_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/b/abc378_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/b/abc378_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_b.dir/contests/abc378/b/abc378_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_c.dir/contests/abc378/c/abc378_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/c/abc378_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/c/abc378_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_c.dir/contests/abc378/c/abc378_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_d.dir/contests/abc378/d/abc378_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/d/abc378_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/d/abc378_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_d.dir/contests/abc378/d/abc378_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_e.dir/contests/abc378/e/abc378_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/e/abc378_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/e/abc378_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_e.dir/contests/abc378/e/abc378_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_f.dir/contests/abc378/f/abc378_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/f/abc378_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/f/abc378_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_f.dir/contests/abc378/f/abc378_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc378_g.dir/contests/abc378/g/abc378_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc378/g/abc378_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc378/g/abc378_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc378_g.dir/contests/abc378/g/abc378_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_a.dir/contests/abc379/a/abc379_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/a/abc379_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/a/abc379_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_a.dir/contests/abc379/a/abc379_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_b.dir/contests/abc379/b/abc379_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/b/abc379_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/b/abc379_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_b.dir/contests/abc379/b/abc379_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_c.dir/contests/abc379/c/abc379_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/c/abc379_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/c/abc379_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_c.dir/contests/abc379/c/abc379_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_d.dir/contests/abc379/d/abc379_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/d/abc379_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/d/abc379_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_d.dir/contests/abc379/d/abc379_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_e.dir/contests/abc379/e/abc379_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/e/abc379_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/e/abc379_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_e.dir/contests/abc379/e/abc379_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_f.dir/contests/abc379/f/abc379_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/f/abc379_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/f/abc379_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_f.dir/contests/abc379/f/abc379_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc379_g.dir/contests/abc379/g/abc379_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc379/g/abc379_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc379/g/abc379_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc379_g.dir/contests/abc379/g/abc379_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_a.dir/contests/abc380/a/abc380_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/a/abc380_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/a/abc380_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_a.dir/contests/abc380/a/abc380_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_b.dir/contests/abc380/b/abc380_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/b/abc380_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/b/abc380_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_b.dir/contests/abc380/b/abc380_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_c.dir/contests/abc380/c/abc380_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/c/abc380_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/c/abc380_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_c.dir/contests/abc380/c/abc380_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_d.dir/contests/abc380/d/abc380_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/d/abc380_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/d/abc380_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_d.dir/contests/abc380/d/abc380_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_e.dir/contests/abc380/e/abc380_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/e/abc380_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/e/abc380_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_e.dir/contests/abc380/e/abc380_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_f.dir/contests/abc380/f/abc380_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/f/abc380_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/f/abc380_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_f.dir/contests/abc380/f/abc380_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc380_g.dir/contests/abc380/g/abc380_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc380/g/abc380_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc380/g/abc380_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc380_g.dir/contests/abc380/g/abc380_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_a.dir/contests/abc381/a/abc381_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/a/abc381_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/a/abc381_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_a.dir/contests/abc381/a/abc381_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_b.dir/contests/abc381/b/abc381_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/b/abc381_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/b/abc381_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_b.dir/contests/abc381/b/abc381_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_c.dir/contests/abc381/c/abc381_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/c/abc381_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/c/abc381_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_c.dir/contests/abc381/c/abc381_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_d.dir/contests/abc381/d/abc381_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/d/abc381_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/d/abc381_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_d.dir/contests/abc381/d/abc381_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_e.dir/contests/abc381/e/abc381_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/e/abc381_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/e/abc381_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_e.dir/contests/abc381/e/abc381_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_f.dir/contests/abc381/f/abc381_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/f/abc381_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/f/abc381_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_f.dir/contests/abc381/f/abc381_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc381_g.dir/contests/abc381/g/abc381_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc381/g/abc381_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc381/g/abc381_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc381_g.dir/contests/abc381/g/abc381_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_a.dir/contests/abc382/a/abc382_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/a/abc382_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/a/abc382_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_a.dir/contests/abc382/a/abc382_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_b.dir/contests/abc382/b/abc382_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/b/abc382_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/b/abc382_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_b.dir/contests/abc382/b/abc382_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_c.dir/contests/abc382/c/abc382_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/c/abc382_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/c/abc382_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_c.dir/contests/abc382/c/abc382_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_d.dir/contests/abc382/d/abc382_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/d/abc382_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/d/abc382_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_d.dir/contests/abc382/d/abc382_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_e.dir/contests/abc382/e/abc382_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/e/abc382_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/e/abc382_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_e.dir/contests/abc382/e/abc382_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_f.dir/contests/abc382/f/abc382_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/f/abc382_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/f/abc382_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_f.dir/contests/abc382/f/abc382_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc382_g.dir/contests/abc382/g/abc382_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc382/g/abc382_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc382/g/abc382_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc382_g.dir/contests/abc382/g/abc382_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_a.dir/contests/abc383/a/abc383_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/a/abc383_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/a/abc383_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_a.dir/contests/abc383/a/abc383_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_b.dir/contests/abc383/b/abc383_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/b/abc383_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/b/abc383_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_b.dir/contests/abc383/b/abc383_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_c.dir/contests/abc383/c/abc383_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/c/abc383_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/c/abc383_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_c.dir/contests/abc383/c/abc383_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_d.dir/contests/abc383/d/abc383_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/d/abc383_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/d/abc383_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_d.dir/contests/abc383/d/abc383_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_e.dir/contests/abc383/e/abc383_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/e/abc383_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/e/abc383_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_e.dir/contests/abc383/e/abc383_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_f.dir/contests/abc383/f/abc383_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/f/abc383_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/f/abc383_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_f.dir/contests/abc383/f/abc383_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc383_g.dir/contests/abc383/g/abc383_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc383/g/abc383_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc383/g/abc383_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc383_g.dir/contests/abc383/g/abc383_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_a.dir/contests/abc384/a/abc384_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/a/abc384_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/a/abc384_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_a.dir/contests/abc384/a/abc384_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_b.dir/contests/abc384/b/abc384_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/b/abc384_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/b/abc384_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_b.dir/contests/abc384/b/abc384_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_c.dir/contests/abc384/c/abc384_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/c/abc384_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/c/abc384_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_c.dir/contests/abc384/c/abc384_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_d.dir/contests/abc384/d/abc384_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/d/abc384_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/d/abc384_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_d.dir/contests/abc384/d/abc384_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_e.dir/contests/abc384/e/abc384_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/e/abc384_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/e/abc384_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_e.dir/contests/abc384/e/abc384_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_f.dir/contests/abc384/f/abc384_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/f/abc384_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/f/abc384_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_f.dir/contests/abc384/f/abc384_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc384_g.dir/contests/abc384/g/abc384_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc384/g/abc384_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc384/g/abc384_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc384_g.dir/contests/abc384/g/abc384_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_a.dir/contests/abc385/a/abc385_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/a/abc385_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/a/abc385_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_a.dir/contests/abc385/a/abc385_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_b.dir/contests/abc385/b/abc385_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/b/abc385_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/b/abc385_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_b.dir/contests/abc385/b/abc385_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_c.dir/contests/abc385/c/abc385_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/c/abc385_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/c/abc385_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_c.dir/contests/abc385/c/abc385_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_d.dir/contests/abc385/d/abc385_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/d/abc385_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/d/abc385_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_d.dir/contests/abc385/d/abc385_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_e.dir/contests/abc385/e/abc385_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/e/abc385_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/e/abc385_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_e.dir/contests/abc385/e/abc385_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_f.dir/contests/abc385/f/abc385_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/f/abc385_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/f/abc385_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_f.dir/contests/abc385/f/abc385_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc385_g.dir/contests/abc385/g/abc385_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc385/g/abc385_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc385/g/abc385_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc385_g.dir/contests/abc385/g/abc385_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_a.dir/contests/abc386/a/abc386_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/a/abc386_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/a/abc386_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_a.dir/contests/abc386/a/abc386_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_b.dir/contests/abc386/b/abc386_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/b/abc386_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/b/abc386_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_b.dir/contests/abc386/b/abc386_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_c.dir/contests/abc386/c/abc386_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/c/abc386_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/c/abc386_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_c.dir/contests/abc386/c/abc386_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_d.dir/contests/abc386/d/abc386_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/d/abc386_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/d/abc386_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_d.dir/contests/abc386/d/abc386_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_e.dir/contests/abc386/e/abc386_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/e/abc386_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/e/abc386_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_e.dir/contests/abc386/e/abc386_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_f.dir/contests/abc386/f/abc386_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/f/abc386_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/f/abc386_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_f.dir/contests/abc386/f/abc386_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc386_g.dir/contests/abc386/g/abc386_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc386/g/abc386_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc386/g/abc386_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc386_g.dir/contests/abc386/g/abc386_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_a.dir/contests/abc387/a/abc387_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/a/abc387_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/a/abc387_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_a.dir/contests/abc387/a/abc387_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_b.dir/contests/abc387/b/abc387_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/b/abc387_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/b/abc387_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_b.dir/contests/abc387/b/abc387_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_c.dir/contests/abc387/c/abc387_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/c/abc387_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/c/abc387_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_c.dir/contests/abc387/c/abc387_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_d.dir/contests/abc387/d/abc387_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/d/abc387_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/d/abc387_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_d.dir/contests/abc387/d/abc387_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_e.dir/contests/abc387/e/abc387_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/e/abc387_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/e/abc387_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_e.dir/contests/abc387/e/abc387_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_f.dir/contests/abc387/f/abc387_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/f/abc387_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/f/abc387_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_f.dir/contests/abc387/f/abc387_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc387_g.dir/contests/abc387/g/abc387_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc387/g/abc387_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc387/g/abc387_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc387_g.dir/contests/abc387/g/abc387_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_a.dir/contests/abc388/a/abc388_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/a/abc388_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/a/abc388_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_a.dir/contests/abc388/a/abc388_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_b.dir/contests/abc388/b/abc388_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/b/abc388_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/b/abc388_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_b.dir/contests/abc388/b/abc388_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_c.dir/contests/abc388/c/abc388_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/c/abc388_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/c/abc388_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_c.dir/contests/abc388/c/abc388_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_d.dir/contests/abc388/d/abc388_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/d/abc388_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/d/abc388_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_d.dir/contests/abc388/d/abc388_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_e.dir/contests/abc388/e/abc388_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/e/abc388_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/e/abc388_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_e.dir/contests/abc388/e/abc388_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_f.dir/contests/abc388/f/abc388_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/f/abc388_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/f/abc388_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_f.dir/contests/abc388/f/abc388_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc388_g.dir/contests/abc388/g/abc388_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc388/g/abc388_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc388/g/abc388_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc388_g.dir/contests/abc388/g/abc388_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_a.dir/contests/abc389/a/abc389_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/a/abc389_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/a/abc389_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_a.dir/contests/abc389/a/abc389_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_b.dir/contests/abc389/b/abc389_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/b/abc389_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/b/abc389_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_b.dir/contests/abc389/b/abc389_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_c.dir/contests/abc389/c/abc389_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/c/abc389_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/c/abc389_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_c.dir/contests/abc389/c/abc389_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_d.dir/contests/abc389/d/abc389_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/d/abc389_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/d/abc389_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_d.dir/contests/abc389/d/abc389_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_e.dir/contests/abc389/e/abc389_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/e/abc389_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/e/abc389_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_e.dir/contests/abc389/e/abc389_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_f.dir/contests/abc389/f/abc389_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/f/abc389_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/f/abc389_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_f.dir/contests/abc389/f/abc389_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc389_g.dir/contests/abc389/g/abc389_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc389/g/abc389_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc389/g/abc389_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc389_g.dir/contests/abc389/g/abc389_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_a.dir/contests/abc390/a/abc390_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/a/abc390_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/a/abc390_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_a.dir/contests/abc390/a/abc390_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_b.dir/contests/abc390/b/abc390_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/b/abc390_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/b/abc390_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_b.dir/contests/abc390/b/abc390_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_c.dir/contests/abc390/c/abc390_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/c/abc390_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/c/abc390_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_c.dir/contests/abc390/c/abc390_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_d.dir/contests/abc390/d/abc390_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/d/abc390_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/d/abc390_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_d.dir/contests/abc390/d/abc390_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_e.dir/contests/abc390/e/abc390_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/e/abc390_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/e/abc390_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_e.dir/contests/abc390/e/abc390_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_f.dir/contests/abc390/f/abc390_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/f/abc390_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/f/abc390_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_f.dir/contests/abc390/f/abc390_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc390_g.dir/contests/abc390/g/abc390_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc390/g/abc390_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc390/g/abc390_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc390_g.dir/contests/abc390/g/abc390_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_a.dir/contests/abc391/a/abc391_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/a/abc391_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/a/abc391_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_a.dir/contests/abc391/a/abc391_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_b.dir/contests/abc391/b/abc391_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/b/abc391_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/b/abc391_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_b.dir/contests/abc391/b/abc391_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_c.dir/contests/abc391/c/abc391_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/c/abc391_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/c/abc391_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_c.dir/contests/abc391/c/abc391_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_d.dir/contests/abc391/d/abc391_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/d/abc391_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/d/abc391_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_d.dir/contests/abc391/d/abc391_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_e.dir/contests/abc391/e/abc391_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/e/abc391_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/e/abc391_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_e.dir/contests/abc391/e/abc391_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_f.dir/contests/abc391/f/abc391_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/f/abc391_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/f/abc391_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_f.dir/contests/abc391/f/abc391_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc391_g.dir/contests/abc391/g/abc391_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc391/g/abc391_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc391/g/abc391_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc391_g.dir/contests/abc391/g/abc391_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_a.dir/contests/abc392/a/abc392_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/a/abc392_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/a/abc392_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_a.dir/contests/abc392/a/abc392_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_b.dir/contests/abc392/b/abc392_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/b/abc392_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/b/abc392_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_b.dir/contests/abc392/b/abc392_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_c.dir/contests/abc392/c/abc392_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/c/abc392_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/c/abc392_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_c.dir/contests/abc392/c/abc392_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_d.dir/contests/abc392/d/abc392_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/d/abc392_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/d/abc392_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_d.dir/contests/abc392/d/abc392_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_e.dir/contests/abc392/e/abc392_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/e/abc392_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/e/abc392_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_e.dir/contests/abc392/e/abc392_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_f.dir/contests/abc392/f/abc392_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/f/abc392_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/f/abc392_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_f.dir/contests/abc392/f/abc392_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc392_g.dir/contests/abc392/g/abc392_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc392/g/abc392_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc392/g/abc392_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc392_g.dir/contests/abc392/g/abc392_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_a.dir/contests/abc393/a/abc393_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/a/abc393_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/a/abc393_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_a.dir/contests/abc393/a/abc393_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_b.dir/contests/abc393/b/abc393_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/b/abc393_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/b/abc393_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_b.dir/contests/abc393/b/abc393_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_c.dir/contests/abc393/c/abc393_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/c/abc393_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/c/abc393_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_c.dir/contests/abc393/c/abc393_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_d.dir/contests/abc393/d/abc393_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/d/abc393_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/d/abc393_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_d.dir/contests/abc393/d/abc393_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_e.dir/contests/abc393/e/abc393_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/e/abc393_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/e/abc393_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_e.dir/contests/abc393/e/abc393_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_f.dir/contests/abc393/f/abc393_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/f/abc393_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/f/abc393_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_f.dir/contests/abc393/f/abc393_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc393_g.dir/contests/abc393/g/abc393_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc393/g/abc393_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc393/g/abc393_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc393_g.dir/contests/abc393/g/abc393_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_a.dir/contests/abc394/a/abc394_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/a/abc394_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/a/abc394_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_a.dir/contests/abc394/a/abc394_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_b.dir/contests/abc394/b/abc394_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/b/abc394_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/b/abc394_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_b.dir/contests/abc394/b/abc394_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_c.dir/contests/abc394/c/abc394_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/c/abc394_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/c/abc394_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_c.dir/contests/abc394/c/abc394_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_d.dir/contests/abc394/d/abc394_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/d/abc394_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/d/abc394_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_d.dir/contests/abc394/d/abc394_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_e.dir/contests/abc394/e/abc394_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/e/abc394_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/e/abc394_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_e.dir/contests/abc394/e/abc394_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_f.dir/contests/abc394/f/abc394_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/f/abc394_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/f/abc394_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_f.dir/contests/abc394/f/abc394_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc394_g.dir/contests/abc394/g/abc394_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc394/g/abc394_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc394/g/abc394_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc394_g.dir/contests/abc394/g/abc394_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_a.dir/contests/abc425/a/abc425_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/a/abc425_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/a/abc425_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_a.dir/contests/abc425/a/abc425_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_b.dir/contests/abc425/b/abc425_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/b/abc425_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/b/abc425_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_b.dir/contests/abc425/b/abc425_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_c.dir/contests/abc425/c/abc425_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/c/abc425_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/c/abc425_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_c.dir/contests/abc425/c/abc425_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_d.dir/contests/abc425/d/abc425_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/d/abc425_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/d/abc425_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_d.dir/contests/abc425/d/abc425_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_e.dir/contests/abc425/e/abc425_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/e/abc425_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/e/abc425_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_e.dir/contests/abc425/e/abc425_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_f.dir/contests/abc425/f/abc425_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/f/abc425_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/f/abc425_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_f.dir/contests/abc425/f/abc425_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc425_g.dir/contests/abc425/g/abc425_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc425/g/abc425_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc425/g/abc425_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc425_g.dir/contests/abc425/g/abc425_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_a.dir/contests/abc435/a/abc435_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/a/abc435_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/a/abc435_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_a.dir/contests/abc435/a/abc435_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_b.dir/contests/abc435/b/abc435_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/b/abc435_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/b/abc435_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_b.dir/contests/abc435/b/abc435_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_c.dir/contests/abc435/c/abc435_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/c/abc435_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/c/abc435_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_c.dir/contests/abc435/c/abc435_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_d.dir/contests/abc435/d/abc435_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/d/abc435_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/d/abc435_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_d.dir/contests/abc435/d/abc435_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_e.dir/contests/abc435/e/abc435_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/e/abc435_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/e/abc435_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_e.dir/contests/abc435/e/abc435_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_f.dir/contests/abc435/f/abc435_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/f/abc435_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/f/abc435_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_f.dir/contests/abc435/f/abc435_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc435_g.dir/contests/abc435/g/abc435_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc435/g/abc435_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc435/g/abc435_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc435_g.dir/contests/abc435/g/abc435_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_a.dir/contests/abc436/a/abc436_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/a/abc436_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/a/abc436_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_a.dir/contests/abc436/a/abc436_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_b.dir/contests/abc436/b/abc436_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/b/abc436_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/b/abc436_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_b.dir/contests/abc436/b/abc436_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_c.dir/contests/abc436/c/abc436_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/c/abc436_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/c/abc436_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_c.dir/contests/abc436/c/abc436_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_d.dir/contests/abc436/d/abc436_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/d/abc436_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/d/abc436_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_d.dir/contests/abc436/d/abc436_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_e.dir/contests/abc436/e/abc436_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/e/abc436_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/e/abc436_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_e.dir/contests/abc436/e/abc436_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_f.dir/contests/abc436/f/abc436_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/f/abc436_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/f/abc436_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_f.dir/contests/abc436/f/abc436_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc436_g.dir/contests/abc436/g/abc436_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc436/g/abc436_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc436/g/abc436_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc436_g.dir/contests/abc436/g/abc436_g.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_a.dir/contests/abc437/a/abc437_a.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/a/abc437_a.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/a/abc437_a.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_a.dir/contests/abc437/a/abc437_a.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_b.dir/contests/abc437/b/abc437_b.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/b/abc437_b.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/b/abc437_b.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_b.dir/contests/abc437/b/abc437_b.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_c.dir/contests/abc437/c/abc437_c.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/c/abc437_c.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/c/abc437_c.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_c.dir/contests/abc437/c/abc437_c.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_d.dir/contests/abc437/d/abc437_d.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/d/abc437_d.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/d/abc437_d.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_d.dir/contests/abc437/d/abc437_d.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_e.dir/contests/abc437/e/abc437_e.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/e/abc437_e.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/e/abc437_e.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_e.dir/contests/abc437/e/abc437_e.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_f.dir/contests/abc437/f/abc437_f.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/f/abc437_f.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/f/abc437_f.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_f.dir/contests/abc437/f/abc437_f.cpp.o"
+},
+{
+  "directory": "/home/wsl2ubuntu/comp/build-debug",
+  "command": "/opt/gcc-15.2/bin/g++ -DATCODER -DLOCAL -I/usr/lib/ac-library -O0 -g -std=gnu++23 -O2 -march=native -mtune=native -Wall -Wextra -Wfloat-equal -Winvalid-pch -include /home/wsl2ubuntu/comp/build-debug/CMakeFiles/pch.dir/cmake_pch.hxx -o CMakeFiles/abc437_g.dir/contests/abc437/g/abc437_g.cpp.o -c /home/wsl2ubuntu/comp/contests/abc437/g/abc437_g.cpp",
+  "file": "/home/wsl2ubuntu/comp/contests/abc437/g/abc437_g.cpp",
+  "output": "/home/wsl2ubuntu/comp/build-debug/CMakeFiles/abc437_g.dir/contests/abc437/g/abc437_g.cpp.o"
+}
+]

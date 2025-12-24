@@ -1,9 +1,15 @@
 {
     "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=build",
         "--clang-tidy",
         "--enable-config",
         "--header-insertion=never"
     ],
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.path": "/usr/bin/clangd-18",
+    "C_Cpp.default.cppStandard": "c++23",
+    "editor.formatOnPaste": true,
     "C_Cpp.default.includePath": [
         "usr/lib/ac-library/**",
         "\"${workspaceFolder}/**\""
@@ -49,5 +55,11 @@
     },
     "C_Cpp.errorSquiggles": "disabled",
     "clangd.checkUpdates": false,
-    "clangd.onConfigChanged": "restart"
+    "clangd.onConfigChanged": "restart",
+    "cmake.copyCompileCommands": "",
+    "cmake.generator": "Ninja",
+    "cmake.configureArgs": [],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }

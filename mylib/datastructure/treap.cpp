@@ -7,17 +7,16 @@ class Treap {
         Node *l, *r;
         uint priority;
         int cnt;
-        Node(T key, uint priority)
-            : key(key), l(nullptr), r(nullptr), priority(priority), cnt(1){};
+        Node(T key, uint priority) : key(key), l(nullptr), r(nullptr), priority(priority), cnt(1){};
     } *root = nullptr;
     using Tree = Node *;
 
-    static int count(const Tree t) { return !t ? 0 : t->cnt; }
-    static Tree update(Tree t) {
+    int count(const Tree t) { return !t ? 0 : t->cnt; }
+    Tree update(Tree t) {
         t->cnt = count(t->l) + count(t->r) + 1;
         return t;
     }
-    static bool find(const Tree &t, T key) {
+    bool find(const Tree &t, T key) {
         if (!t) {
             return false;
         } else if (t->key == key) {
@@ -27,7 +26,7 @@ class Treap {
         }
     }
 
-    static Tree merge(Tree l, Tree r) {
+    Tree merge(Tree l, Tree r) {
         if (!l || !r) {
             return l ? l : r;
         }
@@ -39,7 +38,7 @@ class Treap {
             return update(r);
         }
     }
-    static pair<Tree, Tree> split(Tree &t, int k) {
+    pair<Tree, Tree> split(Tree &t, int k) {
         if (!t) {
             return {nullptr, nullptr};
         }
@@ -55,7 +54,7 @@ class Treap {
         return {nullptr, nullptr};
     }
 
-    static Tree insert(Tree &t, Tree item) {
+    Tree insert(Tree &t, Tree item) {
         if (!t) {
             t = item;
             return t;
@@ -65,7 +64,7 @@ class Treap {
         }
     }
 
-    static ll lower_bound(Tree &t, T key) {
+    ll lower_bound(Tree &t, T key) {
         if (!t) return 0;
         if (key <= t->key) {
             return lower_bound(t->l, key);
@@ -74,7 +73,7 @@ class Treap {
         }
     }
 
-    static ll upper_bound(Tree &t, T key) {
+    ll upper_bound(Tree &t, T key) {
         if (!t) return 0;
         if (key < t->key) {
             return upper_bound(t->l, key);
@@ -83,10 +82,29 @@ class Treap {
         }
     }
 
-    static T min(const Tree &t) { return t->l ? min(t->l) : t->key; }
-    static T max(const Tree &t) { return t->r ? max(t->r) : t->key; }
+    optional<T> prev(Tree &t, T x) {
+        if (!t) return nullopt;
+        if (t->key < x) {
+            auto res = prev(t->r, x);
+            return res ? res : t->key;
+        } else {
+            return prev(t->l, x);
+        }
+    }
+    optional<T> next(Tree &t, T x) {
+        if (!t) return nullopt;
+        if (t->key > x) {
+            auto res = next(t->l, x);
+            return res ? res: t->key;
+        } else {
+            return next(t->r, x);
+        }
+    }
 
-    static T kth(Tree &t, int k) {
+    T min(const Tree &t) { return t->l ? min(t->l) : t->key; }
+    T max(const Tree &t) { return t->r ? max(t->r) : t->key; }
+
+    T kth(Tree &t, int k) {
         if (count(t->l) > k) {
             return kth(t->l, k);
         } else if (count(t->l) == k) {
@@ -105,11 +123,11 @@ class Treap {
     bool find(T key) { return find(root, key); }
     T min() { return min(root); }
     T max() { return max(root); }
+    T prev(T key) { return prev(root, key).value(); }
+    T next(T key) { return next(root, key).value(); }
     ll lower_bound(T key) { return lower_bound(root, key); }
     ll upper_bound(T key) { return upper_bound(root, key); }
-    pair<int, int> equal_range(T key) {
-        return {lower_bound(key), upper_bound(key)};
-    }
+    pair<int, int> equal_range(T key) { return {lower_bound(key), upper_bound(key)}; }
     pair<Tree, Tree> split(T key) { return split(root, lower_bound(key)); }
     bool erase(T key) {
         int li = lower_bound(key);

@@ -6,4 +6,6 @@
 -Wfloat-equal
 -mtune=native
 -march=native
+-fsanitize=undefined,address
 -DLOCAL
+-DATCODER

@@ -1,13 +1,11 @@
-
-auto bellman_ford(const Graph &G, int start, bool detect_negative_cycle = false) {
+auto bellman_ford(const vector<vector<pair<int, ll>>> &G, int start, bool detect_negative_cycle = false) {
     int N = ssize(G);
     vector<ll> dist(N, INF64);
+    dist[start] = 0;
     vector<int> pred(N, -1);
-    for (int i : ranges::iota_view(0, N - 1)) {
-        for (int u : ranges::iota_view(0, N)) {
-            if (dist[u] == INF64) {
-                continue;
-            }
+    for (int i = 0; i < N - 1; ++i) {
+        for (int u = 0; u < N; ++u) {
+            if (dist[u] == INF64) continue;
             for (auto [v, d] : G[u]) {
                 if (chmin(dist[v], dist[u] + d)) {
                     pred[v] = u;
@@ -17,14 +15,12 @@ auto bellman_ford(const Graph &G, int start, bool detect_negative_cycle = false)
     }
 
     if (detect_negative_cycle) {
-        for (int i : ranges::iota_view(0, N)) {
-            for (int u : ranges::iota_view(0, N)) {
-                if (dist[u] == INF64) {
-                    continue;
-                }
+        for (int i = 0; i < N; ++i) {
+            for (int u = 0; u < N; ++u) {
+                if (dist[u] == INF64) continue;
                 for (auto [v, d] : G[u]) {
                     if (dist[u] + d < dist[v]) {
-                        dist[v] = -INF64; // 頂点vは負閉路に属する
+                        dist[v] = -INF64;  // 頂点vは負閉路に属する
                         pred[v] = u;
                     }
                 }

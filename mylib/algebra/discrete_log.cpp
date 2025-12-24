@@ -14,19 +14,22 @@ ll isqrt(ll n) {
 }
 
 ll discrete_log(ll a, ll b, const ll mod) {
+    // Solves the discrete logarithm problem: find x such that a^x ≡ b (mod mod).
+    // Returns x if a solution exists, otherwise returns -1.
     ll n = isqrt(mod) + 1;
     unordered_map<ll, ll> baby_step;
     ll e = 1;
-    for (ll i : views::iota(1, n + 1)) {
+    if ((e % mod) == b) return 0;
+    for (ll i = 1; i < n + 1; ++i) {
         e = e * a % mod;
         if (e == b) return i;
         baby_step[b * e % mod] = i;
     }
     ll y = e;
-    for (ll i : views::iota(2, n + 2)) {
+    for (ll i = 2; i < n + 2; ++i) {
         e = e * y % mod;
         if (baby_step.contains(e)) {
-            if (pow_mod(a, i * n - baby_step[e], mod) == b) {
+            if (pow_mod32(a, i * n - baby_step[e], mod) == b) {
                 return n * i - baby_step[e];
             } else {
                 return -1;

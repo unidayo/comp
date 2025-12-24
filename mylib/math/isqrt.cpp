@@ -1,8 +1,8 @@
 ll isqrt(ll n) {
     if (n == 0) return 0;
-    ll c = 64 - clz(n);
+    ll c = 64 - countl_zero((ull)n);
     c = (c - 1) >> 1;
-    ll c2 = 64 - clz(c);
+    ll c2 = 64 - countl_zero((ull)c);
     ll a = 1;
     ll d = 0;
     for (ll s = c2 - 1; s >= 0; --s) {

@@ -1,24 +1,25 @@
 // #pragma GCC target("avx2")
 // #pragma GCC optimize("O3")
 
+// clang-format off
 #include <bits/stdc++.h>
 
-#include <atcoder/all>
-
-namespace atcoder {};
-namespace cp_internal {
-char char_buff[64];
-};
+#ifdef ATCODER
+    #include <atcoder/all>
+    using namespace atcoder;
+#endif
+namespace cp_internal {char char_buff[64];};
 
 /* namespace */
 using namespace std;
-using namespace atcoder;
 
 /* type */
 using ll = long long;
 using ull = unsigned long long;
 using vll = __int128_t;
 using vull = __uint128_t;
+template <typename T> concept RAR = ranges::random_access_range<T>;
+template <ranges::range Range> using rvt = ranges::range_value_t<Range>;
 
 /* ios*/
 struct fast_ios {
@@ -29,6 +30,7 @@ struct fast_ios {
     }
 } fast_ios;
 
+#ifdef ATCODER
 template <int m>
 istream &operator>>(istream &is, static_modint<m> &x) {
     ll val;
@@ -42,6 +44,7 @@ ostream &operator<<(ostream &os, const static_modint<m> &x) {
     os << x.val();
     return os;
 }
+#endif
 
 template <class T1, class T2>
 istream &operator>>(istream &is, pair<T1, T2> &pr) {
@@ -53,6 +56,41 @@ template <class T1, class T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &pr) {
     os << pr.first << ' ' << pr.second;
     return os;
+}
+
+template <class T>
+istream &operator>>(istream &is, vector<T> &v){
+    for (auto &val:v) is >> val;
+    return is;
+}
+
+template <class... T>
+void input(T &...a) {
+    (cin >> ... >> a);
+}
+
+template <class T, class... Ts>
+void print(const T &a, const Ts &...b) {
+    ((cout << a), ..., (cout << ' ' << b));
+    cout << '\n';
+}
+template <class T>
+void print(const vector<T> &v, string sep = " ") {
+    if (!v.empty()) {
+        auto p = prev(end(v));
+        for_each(begin(v), p, [&sep](T x) { cout << x << sep; });
+        cout << *p;
+    }
+    cout << '\n';
+}
+template <class T>
+void print(const vector<T> &v, int l, int r, string sep = " ") {
+    if (l < r) {
+        auto p = begin(v) + min((int)ssize(v) - 1, r - 1);
+        for_each(v.begin() + l, p, [&sep](auto x) { cout << x << sep; });
+        cout << *p;
+    }
+    cout << '\n';
 }
 
 /* math*/
@@ -90,18 +128,29 @@ T smod(T x, T m) {
     return x % m;
 }
 
-/* functions */
-template <ranges::forward_range Range, class T>
-ll lower_count(const Range &r, T x) {
-    return ranges::distance(begin(r), ranges::lower_bound(r, x));
+ll nearest_px_plus_q_le(ll m, ll p, ll q) {
+    // pで割ってqで余る、m以下で最大の整数xを求める
+    return m - smod(m - q, p);
 }
-template <ranges::forward_range Range, class T>
-ll upper_count(const Range &r, T x) {
-    return ranges::distance(begin(r), ranges::upper_bound(r, x));
+
+ll nearest_px_plus_q_ge(ll m, ll p, ll q) {
+    // pで割ってqで余る、m以上で最小の整数xを求める
+    return m + (p - smod(m - q, p)) % p;
+}
+
+/* algorithms */
+template <RAR Range>
+ll lower_count(const Range &r, const rvt<Range> &x) {
+    return ranges::distance(ranges::begin(r), ranges::lower_bound(r, x));
+}
+
+template <RAR Range>
+ll upper_count(const Range &r, const rvt<Range> &x) {
+    return ranges::distance(ranges::begin(r), ranges::upper_bound(r, x));
 }
 
 template <class T>
-bool chmin(T &a, T b) {
+bool chmin(T &a, const T &b) {
     if (a > b) {
         a = b;
         return true;
@@ -109,54 +158,56 @@ bool chmin(T &a, T b) {
     return false;
 }
 template <class T>
-bool chmax(T &a, T b) {
+bool chmax(T &a, const T &b) {
     if (a < b) {
         a = b;
         return true;
     }
     return false;
 }
-template <ranges::range Range, class T>
-map<T, ll> compression(Range r) {
+
+template <RAR Range>
+map<rvt<Range>, ll> compression(Range r) {
     ranges::sort(r);
     auto res = ranges::unique(r);
-    r.erase(begin(r), end(r));
-    map<T, ll> ret;
+    r.erase(ranges::begin(res), ranges::end(res));
+    map<rvt<Range>, ll> ret;
     for (ll i = 0; auto v : r) {
         ret[v] = i;
         ++i;
     }
     return ret;
 }
-template <ranges::range Range, class T>
-vector<T> accumulate_sum(const Range &r) {
-    vector<T> res(ssize(r));
-    partial_sum(begin(r), end(r), begin(res));
+
+template <ranges::range Range>
+vector<rvt<Range>> accumulate_sum(const Range &r) {
+    vector<rvt<Range>> res(ssize(r));
+    partial_sum(ranges::begin(r), ranges::end(r), ranges::begin(res));
     return res;
 }
 
-template <ranges::range Range, class T>
-vector<T> accumulate_sum(const Range &r, T init) {
-    vector<T> res(ssize(r) + 1);
+template <ranges::range Range>
+vector<rvt<Range>> accumulate_sum(const Range &r, const rvt<Range> &init) {
+    vector<rvt<Range>> res(ssize(r) + 1);
     res[0] = init;
-    inclusive_scan(begin(r), end(r), begin(res) + 1, plus<>(), init);
+    inclusive_scan(ranges::begin(r), ranges::end(r), ranges::begin(res) + 1, plus<>(), init);
     return res;
 }
 
-template <ranges::range Range, class T>
-vector<vector<T>> lpartition(const Range &r, int w) {
+template <ranges::range Range>
+vector<vector<rvt<Range>>> lpartition(const Range &r, int w) {
     int n = ssize(r);
     int h = (n + w - 1) / w;
-    vector<vector<T>> ret(h, vector<T>(w, T()));
-    for (int i = 0; i < n; i += w) {
+    vector<vector<rvt<Range>>> ret(h, vector<rvt<Range>>(w));
+    for (int i = 0; i < n; ++i) {
         ret[i / w][i % w] = r[i];
     }
     return ret;
 }
 
-template <ranges::random_access_range Range>
+template <RAR Range>
 auto runlength(const Range &R) {
-    vector<pair<ranges::range_value_t<Range>, ll>> ret;
+    vector<pair<rvt<Range>, ll>> ret;
     for (ll l = 0; l < ssize(R);) {
         ll r = l + 1;
         for (; r < ssize(R) && R[l] == R[r]; ++r) {
@@ -167,10 +218,30 @@ auto runlength(const Range &R) {
     return ret;
 }
 
+template <RAR Range>
+void remove_duplicates(Range &v) {
+    ranges::sort(v);
+    auto res = ranges::unique(v);
+    v.erase(ranges::begin(res), ranges::end(res));
+}
+
+template <ranges::range Range>
+auto sum_of(Range R) {
+    return reduce(ranges::begin(R), ranges::end(R));
+}
+template <ranges::range Range, class T>
+T sum_of(Range R) {
+    return reduce(ranges::begin(R), ranges::end(R), T());
+}
+
 template <class T>
-void remove_duplicates(vector<T> &v) {
-    sort(v.begin(), v.end());
-    v.erase(unique(v.begin(), v.end()), v.end());
+vector<T> gen_sequence(T init, int n, auto op) {
+    vector<T> res(n + 1);
+    res[0] = init;
+    for (int i = 0; i < n; ++i) {
+        res[i + 1] = op(res[i]);
+    }
+    return res;
 }
 
 /* data_structure */
@@ -178,6 +249,7 @@ template <class T>
 using priority_queue_min = priority_queue<T, vector<T>, greater<T>>;
 template <class T>
 using priority_queue_max = priority_queue<T, vector<T>>;
+
 template <class T>
 auto vec2d(size_t n1, size_t n2, T init = T()) {
     return vector(n1, vector(n2, init));
@@ -220,46 +292,14 @@ void zfill(string &s, size_t width) { s = string(width > s.size() ? width - s.si
 /* grid */
 bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <= col && col < w; }
 
-/* io */
-template <class... T>
-void input(T &...a) {
-    (cin >> ... >> a);
-}
-template <class T>
-void input(vector<T> &v) {
-    ranges::for_each(v, [](T &x) { cin >> x; });
-}
-
-template <class T, class... Ts>
-void print(const T &a, const Ts &...b) {
-    ((cout << a), ..., (cout << ' ' << b));
-    cout << '\n';
-}
-template <class T>
-void print(const vector<T> &v, string sep = " ") {
-    if (!v.empty()) {
-        auto p = prev(end(v));
-        for_each(begin(v), p, [&sep](T x) { cout << x << sep; });
-        cout << *p;
-    }
-    cout << '\n';
-}
-template <class T>
-void print(const vector<T> &v, int l, int r, string sep = " ") {
-    if (l < r) {
-        auto p = begin(v) + min((int)ssize(v) - 1, r - 1);
-        for_each(v.begin() + l, p, [&sep](auto x) { cout << x << sep; });
-        cout << *p;
-    }
-    cout << '\n';
-}
-
 /* util */
 #define OL_REP(_1, _2, _3, _4, name, ...) name
 #define REP2(i, n) for (ll i = 0; i < ll(n); ++(i))
 #define REP3(i, a, b) for (ll i = ll(a); i < ll(b); ++(i))
 #define REP4(i, a, b, c) for (ll i = ll(a); i < ll(b); i += c)
 #define rep(...) OL_REP(__VA_ARGS__, REP4, REP3, REP2)(__VA_ARGS__)
+#define BIOP(func_name) [](auto x, auto y) { return (func_name)(x, y); };
+#define CONSTF(x) [] { return (x); };
 
 /* constants */
 //[[maybe_unused]] constexpr ll MOD = 1e9 + 7;
@@ -268,27 +308,36 @@ void print(const vector<T> &v, int l, int r, string sep = " ") {
 [[maybe_unused]] constexpr ll INF64 = (1LL << 62) - 1;
 [[maybe_unused]] const double PI = numbers::pi;
 
-template <ranges::range Range>
-auto sum_of(Range R) {
-    return reduce(begin(R), end(R));
-}
-template <ranges::range Range, class T>
-T sum_of(Range R) {
-    return reduce(begin(R), end(R), T());
-}
-
-template <class T>
-vector<T> gen_sequence(T init, int n, auto op) {
-    vector<T> res(n + 1);
-    res[0] = init;
-    for (int i = 0; i < n; ++i) {
-        res[i + 1] = op(res[i]);
-    }
-    return res;
-}
+// clang-format on
 
 int main() {
-    int P, Q, R;
-    input(P, Q, R);
-    print(P + Q + R - max({P, Q, R}));
+    string S;
+    input(S);
+    int N = ssize(S);
+    vector<string> ans;
+    int cmin = INF32;
+
+    ranges::sort(S);
+    do {
+        int cnt = 0;
+        rep(i, 2, N + 1, 2) {
+            rep(j, N - i + 1) {
+                string Ssub = S.substr(j, i);
+                string first = Ssub.substr(0, i / 2);
+                string second = Ssub.substr(i / 2, i / 2);
+                ranges::reverse(second);
+                if (first == second) {
+                    cnt++;
+                }
+            }
+        }
+        if (cnt < cmin) {
+            ans = {S};
+            cmin = cnt;
+        } else if (cnt == cmin){
+            ans.emplace_back(S);
+        }
+    } while (ranges::next_permutation(S).found);
+    print(cmin);
+    print(ans);
 }

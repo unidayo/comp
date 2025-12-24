@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc066",
+    "title": "AtCoder Grand Contest 066",
+    "url": "https://atcoder.jp/contests/agc066"
+  },
+  "tasks": [
+    {
+      "id": "agc066_a",
+      "label": "A",
+      "title": "Adjacent Difference",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "agc066_a.cpp"
+      }
+    },
+    {
+      "id": "agc066_b",
+      "label": "B",
+      "title": "Decreasing Digit Sums",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "agc066_b.cpp"
+      }
+    },
+    {
+      "id": "agc066_c",
+      "label": "C",
+      "title": "Delete AAB or BAA",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "agc066_c.cpp"
+      }
+    },
+    {
+      "id": "agc066_d",
+      "label": "D",
+      "title": "A Independent Set",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "agc066_d.cpp"
+      }
+    },
+    {
+      "id": "agc066_e",
+      "label": "E",
+      "title": "Sliding Puzzle On Tree",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "agc066_e.cpp"
+      }
+    },
+    {
+      "id": "agc066_f",
+      "label": "F",
+      "title": "Beautiful String",
+      "url": "https://atcoder.jp/contests/agc066/tasks/agc066_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "agc066_f.cpp"
+      }
+    }
+  ]
+}

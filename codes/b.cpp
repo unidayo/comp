@@ -3,22 +3,27 @@
 
 // clang-format off
 #include <bits/stdc++.h>
-#include <atcoder/all>
 
-namespace atcoder {};
+#ifdef ATCODER
+#include <atcoder/all>
+using namespace atcoder;
+#endif
 namespace cp_internal {
 char char_buff[64];
 };
 
 /* namespace */
 using namespace std;
-using namespace atcoder;
 
 /* type */
 using ll = long long;
 using ull = unsigned long long;
 using vll = __int128_t;
-using vull = __uint128_t;
+using uvll = __uint128_t;
+template <typename T>
+concept RAR = ranges::random_access_range<T>;
+template <ranges::range Range>
+using rvt = ranges::range_value_t<Range>;
 
 /* ios*/
 struct fast_ios {
@@ -29,6 +34,8 @@ struct fast_ios {
     }
 } fast_ios;
 
+#ifdef ATCODER
+// modint出力
 template <int m>
 istream &operator>>(istream &is, static_modint<m> &x) {
     ll val;
@@ -36,54 +43,145 @@ istream &operator>>(istream &is, static_modint<m> &x) {
     x = val;
     return is;
 }
-
+// modint入力
 template <int m>
 ostream &operator<<(ostream &os, const static_modint<m> &x) {
     os << x.val();
     return os;
 }
-
+#endif
+// pair出力
+template <class T1, class T2>
+ostream &operator<<(ostream &os, const pair<T1, T2> &pr) {
+    os << pr.first << ' ' << pr.second;
+    return os;
+}
+// pair入力
 template <class T1, class T2>
 istream &operator>>(istream &is, pair<T1, T2> &pr) {
     is >> pr.first >> pr.second;
     return is;
 }
 
-template <class T1, class T2>
-ostream &operator<<(ostream &os, const pair<T1, T2> &pr) {
-    os << pr.first << ' ' << pr.second;
+// tuple出力
+template <class Tuple, size_t... I>
+void print_tuple_impl(ostream &os, const Tuple &t, index_sequence<I...>) {
+    ((os << (I == 0 ? "" : " ") << get<I>(t)), ...);
+}
+template <class... Ts>
+ostream &operator<<(ostream &os, const tuple<Ts...> &t) {
+    print_tuple_impl(os, t, index_sequence_for<Ts...>{});
     return os;
+}
+// tuple入力
+template <class Tuple, size_t... I>
+void read_tuple_impl(istream &is, Tuple &t, index_sequence<I...>) {
+    ((is >> get<I>(t)), ...);
+}
+template <class... Ts>
+istream &operator>>(istream &is, tuple<Ts...> &t) {
+    read_tuple_impl(is, t, index_sequence_for<Ts...>{});
+    return is;
+}
+// 128bit整数型出力
+template <typename T>
+typename enable_if<is_same<T, __int128>::value || is_same<T, __uint128_t>::value, ostream &>::type operator<<(ostream &os, T x) {
+    if (x == 0) return os << '0';
+    string s;
+    if constexpr (is_signed<T>::value) {  // 符号付き
+        bool neg = x < 0;
+        if (neg) x = -x;
+        while (x > 0) {
+            s += '0' + x % 10;
+            x /= 10;
+        }
+        if (neg) s += '-';
+    } else {  // 符号なし
+        while (x > 0) {
+            s += '0' + x % 10;
+            x /= 10;
+        }
+    }
+    ranges::reverse(s);
+    os << s;
+    return os;
+}
+// 128bit整数型入力
+template <typename T>
+typename enable_if<is_same<T, __int128>::value || is_same<T, __uint128_t>::value, istream &>::type operator>>(istream &is, T &x) {
+    string s;
+    is >> s;
+    x = 0;
+    size_t i = 0;
+    if constexpr (is_signed<T>::value) {
+        bool neg = false;
+        if (s[0] == '-') {
+            neg = true;
+            i = 1;
+        }
+        for (; i < s.size(); i++) x = x * 10 + (s[i] - '0');
+        if (neg) x = -x;
+    } else {
+        for (; i < s.size(); i++) x = x * 10 + (s[i] - '0');
+    }
+    return is;
+}
+// コンテナ入力
+template <class T, template <class...> class Container>
+istream &operator>>(istream &is, Container<T> &v)
+    requires requires(Container<T> c) {
+        c.begin();
+        c.end();
+        c.push_back(T{});
+    } && (!is_same_v<Container<T>, string>)
+{
+    for (auto &x : v) is >> x;
+    return is;
+}
+// コンテナ出力
+template <class T>
+concept Iterable = requires(T a) {
+    begin(a);
+    end(a);
+} && !is_same_v<T, string>;
+template <Iterable T>
+void print(const T &v) {
+    bool first = true;
+    for (auto const &x : v) {
+        if (!first) cout << " ";
+        first = false;
+        cout << x;
+    }
+    cout << '\n';
 }
 
 template <class... T>
 void input(T &...a) {
     (cin >> ... >> a);
 }
-template <class T>
-void input(vector<T> &v) {
-    ranges::for_each(v, [](T &x) { cin >> x; });
-}
-
 template <class T, class... Ts>
 void print(const T &a, const Ts &...b) {
     ((cout << a), ..., (cout << ' ' << b));
     cout << '\n';
 }
 template <class T>
-void print(const vector<T> &v, string sep = " ") {
-    if (!v.empty()) {
-        auto p = prev(end(v));
-        for_each(begin(v), p, [&sep](T x) { cout << x << sep; });
-        cout << *p;
+concept RandomAccessContainer = requires(T a) {
+    typename T::value_type;
+    { a.begin() } -> random_access_iterator;
+    { a.end() } -> random_access_iterator;
+};
+template <RandomAccessContainer C>
+void print_range(const C &v, int l, int r, string sep = " ") {
+    int n = v.size();
+    l = max(0, l);
+    r = min(n, r);
+    if (l >= r) {
+        cout << '\n';
+        return;
     }
-    cout << '\n';
-}
-template <class T>
-void print(const vector<T> &v, int l, int r, string sep = " ") {
-    if (l < r) {
-        auto p = begin(v) + min((int)ssize(v) - 1, r - 1);
-        for_each(v.begin() + l, p, [&sep](auto x) { cout << x << sep; });
-        cout << *p;
+    cout << v[l];
+    for (int i = l + 1; i < r; i++) {
+        cout << sep << v[i];
     }
     cout << '\n';
 }
@@ -98,17 +196,6 @@ ll powll(ll x, ll n) {
     }
     return ret;
 }
-ll pow_mod64(vll x, vll n, ll m) {
-    if (m == 1) return 0;
-    vll ret = 1;
-    x %= m;
-    while (n) {
-        if (n & 1) ret = x * ret % m;
-        x = x * x % m;
-        n >>= 1;
-    }
-    return ret;
-}
 template <class T>
 T divceil(T x, T y) {
     return signbit(x) ^ signbit(y) ? x / y : (x + y - 1) / y;
@@ -117,74 +204,99 @@ template <class T>
 T divfloor(T x, T y) {
     return signbit(x) ^ signbit(y) ? -divceil(abs(x), abs(y)) : x / y;
 }
-template <class T>
-T smod(T x, T m) {
+template <class T1, class T2>
+T1 smod(T1 x, T2 m) {
     if (x < 0) return (x % m + m) % m;
     return x % m;
 }
+ll pow_mod32(ll x, ll n, int m) {
+    if (m == 1) return 0;
+    ll ret = 1;
+    smod(x, m);
+    while (n) {
+        if (n & 1) ret = smod(x * ret, m);
+        x = smod(x * x, m);
+        n >>= 1;
+    }
+    return ret;
+}
+ll pow_mod64(vll x, vll n, ll m) {
+    if (m == 1) return 0;
+    vll ret = 1;
+    smod(x, m);
+    while (n) {
+        if (n & 1) ret = smod(x * ret, m);
+        x = smod(x * x, m);
+        n >>= 1;
+    }
+    return ret;
+}
+ll nearest_px_plus_q_le(ll m, ll p, ll q) {
+    // Find the largest integer x not exceeding m such that x ≡ q (mod p)
+    return m - smod(m - q, p);
+}
+ll nearest_px_plus_q_ge(ll m, ll p, ll q) {
+    // Find the smallest integer x not less than m such that x ≡ q (mod p)
+    return m + (p - smod(m - q, p)) % p;
+}
 
 /* algorithms */
-template <typename T>
-concept RAR = ranges::random_access_range<T>;
-
-template <ranges::range Range>
-using rvt = ranges::range_value_t<Range>;
-
 template <RAR Range>
 ll lower_count(const Range &r, const rvt<Range> &x) {
-    return ranges::distance(BEGIN(r), ranges::lower_bound(r, x));
+    return ranges::distance(ranges::begin(r), ranges::lower_bound(r, x));
 }
-
 template <RAR Range>
 ll upper_count(const Range &r, const rvt<Range> &x) {
-    return ranges::distance(BEGIN(r), ranges::upper_bound(r, x));
+    return ranges::distance(ranges::begin(r), ranges::upper_bound(r, x));
 }
-
-template <class T>
-bool chmin(T &a, const T &b) {
+template <class A, class B>
+    requires requires(A &a, const B &b) {
+        { a > b } -> std::convertible_to<bool>;
+        { a = b };
+    }
+bool chmin(A &a, const B &b) {
     if (a > b) {
         a = b;
         return true;
     }
     return false;
 }
-template <class T>
-bool chmax(T &a, const T &b) {
+template <class A, class B>
+    requires requires(A &a, const B &b) {
+        { a < b } -> std::convertible_to<bool>;
+        { a = b };
+    }
+bool chmax(A &a, const B &b) {
     if (a < b) {
         a = b;
         return true;
     }
     return false;
 }
-
 template <RAR Range>
 map<rvt<Range>, ll> compression(Range r) {
     ranges::sort(r);
     auto res = ranges::unique(r);
-    r.erase(BEGIN(res), END(res));
+    r.erase(ranges::begin(res), ranges::end(res));
     map<rvt<Range>, ll> ret;
     for (ll i = 0; auto v : r) {
-        ret[v] = i;
-        ++i;
+        ret[v] = i++;
     }
     return ret;
 }
-
 template <ranges::range Range>
 vector<rvt<Range>> accumulate_sum(const Range &r) {
     vector<rvt<Range>> res(ssize(r));
-    partial_sum(BEGIN(r), END(r), BEGIN(res));
+    partial_sum(ranges::begin(r), ranges::end(r), ranges::begin(res));
     return res;
 }
-
 template <ranges::range Range>
 vector<rvt<Range>> accumulate_sum(const Range &r, const rvt<Range> &init) {
     vector<rvt<Range>> res(ssize(r) + 1);
     res[0] = init;
-    inclusive_scan(BEGIN(r), END(r), BEGIN(res) + 1, plus<>(), init);
+    inclusive_scan(ranges::begin(r), ranges::end(r), ranges::begin(res) + 1, plus<>(), init);
     return res;
 }
-
 template <ranges::range Range>
 vector<vector<rvt<Range>>> lpartition(const Range &r, int w) {
     int n = ssize(r);
@@ -196,6 +308,16 @@ vector<vector<rvt<Range>>> lpartition(const Range &r, int w) {
     return ret;
 }
 
+/**
+ * @brief Run-Length Encoding（RLE）を行う関数
+ * @tparam Range  ランダムアクセス可能な Range（vector, string, array など）
+ * @param R       入力 Range
+ * @return vector<pair<rvt<Range>, long long>>
+ *         (値, 連続出現回数) を格納したベクタを返す。
+ * @details
+ * 隣接する同値要素をまとめて (値, 個数) の形で列挙する。
+ * 例: [a, a, b, b, b, c] → {(a,2), (b,3), (c,1)}
+ */
 template <RAR Range>
 auto runlength(const Range &R) {
     vector<pair<rvt<Range>, ll>> ret;
@@ -208,31 +330,19 @@ auto runlength(const Range &R) {
     }
     return ret;
 }
-
 template <RAR Range>
 void remove_duplicates(Range &v) {
     ranges::sort(v);
     auto res = ranges::unique(v);
-    v.erase(BEGIN(res), END(res));
+    v.erase(ranges::begin(res), ranges::end(res));
 }
-
 template <ranges::range Range>
 auto sum_of(Range R) {
-    return reduce(BEGIN(R), END(R));
+    return reduce(ranges::begin(R), ranges::end(R));
 }
 template <ranges::range Range, class T>
 T sum_of(Range R) {
-    return reduce(BEGIN(R), END(R), T());
-}
-
-template <class T>
-vector<T> gen_sequence(T init, int n, auto op) {
-    vector<T> res(n + 1);
-    res[0] = init;
-    for (int i = 0; i < n; ++i) {
-        res[i + 1] = op(res[i]);
-    }
-    return res;
+    return reduce(ranges::begin(R), ranges::end(R), T());
 }
 
 /* data_structure */
@@ -240,30 +350,13 @@ template <class T>
 using priority_queue_min = priority_queue<T, vector<T>, greater<T>>;
 template <class T>
 using priority_queue_max = priority_queue<T, vector<T>>;
-
 template <class T>
-auto vec2d(size_t n1, size_t n2, T init = T()) {
-    return vector(n1, vector(n2, init));
+auto make_vec(size_t n, const T &val) {
+    return vector<T>(n, val);
 }
-template <class T>
-auto vec3d(size_t n1, size_t n2, size_t n3, T init = T()) {
-    return vector(n1, vector(n2, vector(n3, init)));
-}
-template <class T>
-auto vec4d(size_t n1, size_t n2, size_t n3, size_t n4, T init = T()) {
-    return vector(n1, vector(n2, vector(n3, vector(n4, init))));
-}
-template <class T>
-auto evec2d(size_t n1) {
-    return vector(n1, vector<T>());
-}
-template <class T>
-auto evec3d(size_t n1, size_t n2) {
-    return vector(n1, vector(n2, vector<T>()));
-}
-template <class T>
-auto evec4d(size_t n1, size_t n2, size_t n3) {
-    return vector(n1, vector(n2, vector(n3, vector<T>())));
+template <class T, class... Args>
+auto make_vec(size_t n, Args... args) {
+    return vector<decltype(make_vec<T>(args...))>(n, make_vec<T>(args...));
 }
 
 /* string */
@@ -272,16 +365,59 @@ string dec_to_base(ull x, int base) {
     auto [ptr, ec] = to_chars(b, end(cp_internal::char_buff), x, base);
     return string(b, ptr);
 }
-ull base_to_dec(const string &x, int base) {
-    auto xc = x.c_str();
-    ull val = 0;
-    from_chars(xc, xc + x.size(), val, base);
-    return val;
-}
+ull base_to_dec(const string &x, int base) { return stoull(x, 0, base); }
 void zfill(string &s, size_t width) { s = string(width > s.size() ? width - s.size() : 0, '0') + s; }
 
 /* grid */
 bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <= col && col < w; }
+
+/* random*/
+struct Xorshift128 {
+    uint x = 123456789;
+    uint y = 362436069;
+    uint z = 521288629;
+    uint w;
+    Xorshift128() {
+        random_device rd;
+        w = rd();
+        if (w == 0) w = 88675123;
+    }
+    uint operator()() {
+        uint t = x ^ (x << 11);
+        x = y;
+        y = z;
+        z = w;
+        return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
+    }
+    ull rand64() {
+        ull high = ull((*this)()) << 32;
+        ull low = ull((*this)());
+        return high | low;
+    }
+    // 完全一様な [l, r] 整数乱数
+    uint rand_range(uint l, uint r) {
+        uint range = r - l + 1;
+        // 2^32 を超えない最大の「range の倍数」
+        uint limit = ~uint(0) - (~uint(0) % range);
+        while (true) {
+            uint x = (*this)();
+            if (x <= limit) {
+                return l + (x % range);
+            }
+        }
+    }
+    // 完全一様な [l, r] の 64bit 整数
+    ull rand_range64(ull l, ull r) {
+        ull range = r - l + 1;
+        ull limit = ~ull(0) - (~ull(0) % range);
+        while (true) {
+            ull x = rand64();
+            if (x <= limit) {
+                return l + (x % range);
+            }
+        }
+    };
+};
 
 /* util */
 #define OL_REP(_1, _2, _3, _4, name, ...) name
@@ -289,8 +425,10 @@ bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <=
 #define REP3(i, a, b) for (ll i = ll(a); i < ll(b); ++(i))
 #define REP4(i, a, b, c) for (ll i = ll(a); i < ll(b); i += c)
 #define rep(...) OL_REP(__VA_ARGS__, REP4, REP3, REP2)(__VA_ARGS__)
-#define BIOP(func_name) [](auto x, auto y) { return (func_name)(x, y); };
-#define CONSTF(x) [] { return (x); };
+#define RREP2(i, n) for (ll i = ll(n); i >= 0; --i)
+#define RREP3(i, a, b) for (ll i = ll(a); i > ll(b); --(i))
+#define RREP4(i, a, b, c) for (ll i = ll(a); i > ll(b); i -= c)
+#define rrep(...) OL_REP(__VA_ARGS__, RREP4, RREP3, RREP2)(__VA_ARGS__)
 
 /* constants */
 //[[maybe_unused]] constexpr ll MOD = 1e9 + 7;
@@ -300,8 +438,128 @@ bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <=
 [[maybe_unused]] const double PI = numbers::pi;
 
 // clang-format on
+/* Pollard's Rho法による素因数分解 O(n^1/4)*/
+class PollardsRho {
+   public:
+    static vector<ull> factorization(ull n) {
+        vector<ull> factors;
+        if (n <= 1) return factors;
+
+        while (n % 2 == 0) {
+            factors.push_back(2);
+            n >>= 1;
+        }
+
+        ull i = 3;
+        while (i * i <= n && i < 1000) {
+            while (n % i == 0) {
+                factors.push_back(i);
+                n /= i;
+            }
+            i += 2;
+        }
+        while (n > 1) {
+            if (miller_rabin(n)) {
+                factors.push_back(n);
+                n = 1;
+            } else {
+                ull g = pollards_rho(n);
+                while (n % g == 0) {
+                    factors.push_back(g);
+                    n /= g;
+                }
+            }
+        }
+
+        if (n > 1) factors.push_back(n);
+        ranges::sort(factors);
+        return factors;
+    }
+
+   private:
+    static bool miller_rabin(ull n) {
+        if (n <= 1) return false;
+        if (n == 2) return true;
+        if (n % 2 == 0) return false;
+
+        vector<ull> A = {2ULL, 325ULL, 9375ULL, 28178ULL, 450775ULL, 9780504ULL, 1795265022ULL};
+
+        ull d = n - 1;
+        int s = 0;
+        while (d % 2 == 0) {
+            s++;
+            d >>= 1;
+        }
+
+        for (ull a : A) {
+            a %= n;
+            if (a == 0) continue;
+            ull x = pow_mod64(a, d, n);
+            if (x == 1) continue;
+            for (int i = 1; x != n - 1; ++i) {
+                if (i >= s) return false;
+                x = (uvll)x * x % n;
+            }
+        }
+        return true;
+    }
+
+    static ull mod_mul(ull a, ull b, ull mod) { return (uvll)a * b % mod; }
+
+    inline static ull f(ull x, ull c, ull mod) { return (mod_mul(x, x, mod) + c) % mod; }
+
+    static ull pollards_rho(ull n) {
+        static mt19937_64 rng(random_device{}());
+        if (n % 2 == 0) return 2;
+        ull m = sqrt(sqrt(sqrt(n)));
+
+        while (true) {
+            ull c = uniform_int_distribution<ull>(1, n - 2)(rng);
+            ull y = 2, r = 1, q = 1, g = 1, x, ys;
+
+            while (g == 1) {
+                x = y;
+                for (ull i = 0; i < r; i++) y = f(y, c, n);
+
+                ull k = 0;
+                while (k < r && g == 1) {
+                    ys = y;
+                    ull lim = min(m, r - k);
+                    for (ull i = 0; i < lim; i++) {
+                        y = f(y, c, n);
+                        q = mod_mul(q, (x > y ? x - y : y - x), n);
+                    }
+                    g = gcd(q, n);
+                    k += m;
+                }
+                r <<= 1;
+            }
+
+            if (g == n) {
+                g = 1;
+                while (g == 1) {
+                    ys = f(ys, c, n);
+                    g = gcd((x > ys ? x - ys : ys - x), n);
+                }
+            }
+
+            if (g != n) {
+                if (miller_rabin(g)) return g;
+                if (miller_rabin(n / g)) return n / g;
+                return pollards_rho(g);
+            }
+        }
+    }
+};
 
 int main() {
-    auto V = vec2d(1,3,0);
-    print(V[0]);
+    int Q;
+    input(Q);
+    rep(i, Q) {
+        ll a;
+        input(a);
+        auto res = PollardsRho::factorization(a);
+        cout << ssize(res) << ' ';
+        print(res);
+    }
 }

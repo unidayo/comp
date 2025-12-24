@@ -1,20 +1,48 @@
-import math
+import random
+from collections import Counter
 
-def f(x):
-    return P/pow(2,x/1.5) + x
+N = 10 ** 4
+S = 1000
 
+A = [125,60,-5]
+B = [-180,-195,-210,-225,-240,-255]
+C = [20,5,-5,-18]
+D = [1400,1600,1800,2000,3000,4500]
+E = [2800,3200,3600,4000,6000,9000]
+P = [0.2533,0.2925,0.2656,0.1886]
 
-def solve():
-    l = 0
-    r = 100
-    while abs(r-l) >= 10**-10:
-        l2 = l/3 * 2 + r/3
-        r2 = l/3 +r/3*2
-        if(f(l2) < f(r2)):
-            r = r2
+def sim():
+    rem = S
+    curdan = 4
+    curpt = 3000
+    while rem>0:
+        J = random.choices((0,1,2,3),weights=P)[0]
+        if J != 3:
+            curpt += A[J]
         else:
-            l = l2
-    return f(l)
+            curpt += B[curdan]
+        curpt += C[J]
+        if curpt >= E[curdan]:
+            curdan+=1
+            if curdan ==6:
+                break
+            curpt = D[curdan]
+        elif curpt < 0:
+            curdan-=1
+            if curdan == -1:
+                break
+            curpt = D[curdan]
+        rem -= 1
+    return curdan
 
-P = float(input())
-print(solve())
+tbl = {-1:"雀傑3",0:"雀豪1",1:"雀豪2",2:"雀豪3",3:"雀聖1",4:"雀聖2",5:"雀聖3",6:"魂天1"}
+
+def main():
+    cnt = Counter()
+    for _ in range(N):
+        res = sim()
+        cnt[res]+=1
+    for i in range(-1,7):
+        print(f"{tbl[i]}: {cnt[i]}")
+
+main()
