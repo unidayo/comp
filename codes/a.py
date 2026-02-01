@@ -1,48 +1,48 @@
-import random
-from collections import Counter
+def solve(S):
+    n = len(S)
+    # 各括弧のペアを見つける
+    stack = []
+    pair = {}
+    for i, c in enumerate(S):
+        if c == '(':
+            stack.append(i)
+        elif c == ')':
+            j = stack.pop()
+            pair[j] = i
+            pair[i] = j
+    
+    result = []
+    
+    def process(l, r, depth):
+        # S[l:r+1] を処理（括弧を含まない範囲、または括弧で囲まれた範囲）
+        i = l
+        segments = []
+        while i <= r:
+            if S[i] == '(':
+                j = pair[i]
+                segments.append(('bracket', i, j, depth + 1))
+                i = j + 1
+            elif S[i] == ')':
+                i += 1
+            else:
+                segments.append(('char', S[i], depth))
+                i += 1
+        
+        if depth % 2 == 1:
+            segments = segments[::-1]
+        
+        for seg in segments:
+            if seg[0] == 'char':
+                c = seg[1]
+                if depth % 2 == 1:
+                    c = c.swapcase()
+                result.append(c)
+            else:
+                _, li, ri, d = seg
+                process(li + 1, ri - 1, d)
+    
+    process(0, n - 1, 0)
+    return ''.join(result)
 
-N = 10 ** 4
-S = 1000
-
-A = [125,60,-5]
-B = [-180,-195,-210,-225,-240,-255]
-C = [20,5,-5,-18]
-D = [1400,1600,1800,2000,3000,4500]
-E = [2800,3200,3600,4000,6000,9000]
-P = [0.2533,0.2925,0.2656,0.1886]
-
-def sim():
-    rem = S
-    curdan = 4
-    curpt = 3000
-    while rem>0:
-        J = random.choices((0,1,2,3),weights=P)[0]
-        if J != 3:
-            curpt += A[J]
-        else:
-            curpt += B[curdan]
-        curpt += C[J]
-        if curpt >= E[curdan]:
-            curdan+=1
-            if curdan ==6:
-                break
-            curpt = D[curdan]
-        elif curpt < 0:
-            curdan-=1
-            if curdan == -1:
-                break
-            curpt = D[curdan]
-        rem -= 1
-    return curdan
-
-tbl = {-1:"雀傑3",0:"雀豪1",1:"雀豪2",2:"雀豪3",3:"雀聖1",4:"雀聖2",5:"雀聖3",6:"魂天1"}
-
-def main():
-    cnt = Counter()
-    for _ in range(N):
-        res = sim()
-        cnt[res]+=1
-    for i in range(-1,7):
-        print(f"{tbl[i]}: {cnt[i]}")
-
-main()
+S = input()
+print(solve(S))

@@ -17,7 +17,7 @@
 			"command": "cmake",
 			"args": [
 				"--build",
-				"build/",
+				"build-release/",
 				"--target",
 				"${fileBasenameNoExtension}",
 			],
@@ -31,7 +31,7 @@
 			"command": "cmake",
 			"args": [
 				"--build",
-				"build/",
+				"build-debug/",
 				"--target",
 				"${fileBasenameNoExtension}",
 			],
@@ -42,7 +42,11 @@
 		{
 			"label": "new contest",
 			"type": "shell",
-			"command": "${workspaceFolder}/cmd/new_contest.sh ${input:cid}",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/new_contest.sh",
+				"${input:contest}"
+			],
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -50,9 +54,19 @@
 			},
 		},
 		{
+			"label": "new problem",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"/home/wsl2ubuntu/comp/scripts/new_problem.sh",
+				"${input:contest}",
+			],
+			"problemMatcher": []
+		},
+		{
 			"label": "execute",
 			"type": "shell",
-			"command": "build/${fileBasenameNoExtension}",
+			"command": "build-release/${fileBasenameNoExtension}",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -65,7 +79,7 @@
 		{
 			"label": "execute with input.txt",
 			"type": "shell",
-			"command": "build/${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
+			"command": "build-release/${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -78,7 +92,7 @@
 		{
 			"label": "test sample",
 			"type": "shell",
-			"command": "cd ${fileDirname} && /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build/${fileBasenameNoExtension}",
+			"command": "cd ${fileDirname} && /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build-release/${fileBasenameNoExtension}",
 			"dependsOn": [
 				"build"
 			],
@@ -91,9 +105,14 @@
 	],
 	"inputs": [
 		{
-			"id": "cid",
-			"description": "ダウンロードするコンテスト名を入力してください",
-			"type": "promptString"
+			"id": "contest",
+			"type": "promptString",
+			"description": "contest id (e.g. abc347)"
 		},
+		{
+			"id": "task",
+			"type": "promptString",
+			"description": "task id (e.g. a)"
+		}
 	]
 }

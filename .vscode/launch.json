@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
 
-            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build-debug/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
 

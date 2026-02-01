@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "arc212",
+    "title": "AtCoder Regular Contest 212 (Div. 2)",
+    "url": "https://atcoder.jp/contests/arc212"
+  },
+  "tasks": [
+    {
+      "id": "arc212_a",
+      "label": "A",
+      "title": "Four TSP",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "arc212_a.cpp"
+      }
+    },
+    {
+      "id": "arc212_b",
+      "label": "B",
+      "title": "Stones on Grid",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "arc212_b.cpp"
+      }
+    },
+    {
+      "id": "arc212_c",
+      "label": "C",
+      "title": "ABS Ball",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc212_c.cpp"
+      }
+    },
+    {
+      "id": "arc212_d",
+      "label": "D",
+      "title": "Two Rooms",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "arc212_d.cpp"
+      }
+    },
+    {
+      "id": "arc212_e",
+      "label": "E",
+      "title": "Drop Min",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "arc212_e.cpp"
+      }
+    },
+    {
+      "id": "arc212_f",
+      "label": "F",
+      "title": "Add Integer",
+      "url": "https://atcoder.jp/contests/arc212/tasks/arc212_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "arc212_f.cpp"
+      }
+    }
+  ]
+}
