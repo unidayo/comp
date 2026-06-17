@@ -1,0 +1,273 @@
+{
+  "contest": {
+    "id": "fps-24",
+    "title": "FPS 24: 24 Problems on Formal Power Series",
+    "url": "https://atcoder.jp/contests/fps-24"
+  },
+  "tasks": [
+    {
+      "id": "fps_24_a",
+      "label": "A",
+      "title": "Snack",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "fps_24_a.cpp"
+      }
+    },
+    {
+      "id": "fps_24_b",
+      "label": "B",
+      "title": "Tuple of Integers",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "fps_24_b.cpp"
+      }
+    },
+    {
+      "id": "fps_24_c",
+      "label": "C",
+      "title": "Sequence",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "fps_24_c.cpp"
+      }
+    },
+    {
+      "id": "fps_24_d",
+      "label": "D",
+      "title": "Sequence 2",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "fps_24_d.cpp"
+      }
+    },
+    {
+      "id": "fps_24_e",
+      "label": "E",
+      "title": "Sequence 3",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "fps_24_e.cpp"
+      }
+    },
+    {
+      "id": "fps_24_f",
+      "label": "F",
+      "title": "Colored Paper",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "fps_24_f.cpp"
+      }
+    },
+    {
+      "id": "fps_24_g",
+      "label": "G",
+      "title": "Coin",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "fps_24_g.cpp"
+      }
+    },
+    {
+      "id": "fps_24_h",
+      "label": "H",
+      "title": "Jump",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "fps_24_h.cpp"
+      }
+    },
+    {
+      "id": "fps_24_i",
+      "label": "I",
+      "title": "Score",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_i",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "fps_24_i.cpp"
+      }
+    },
+    {
+      "id": "fps_24_j",
+      "label": "J",
+      "title": "Sugoroku",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_j",
+      "directory": {
+        "path": "j",
+        "testdir": "test",
+        "submit": "fps_24_j.cpp"
+      }
+    },
+    {
+      "id": "fps_24_k",
+      "label": "K",
+      "title": "Permutation",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_k",
+      "directory": {
+        "path": "k",
+        "testdir": "test",
+        "submit": "fps_24_k.cpp"
+      }
+    },
+    {
+      "id": "fps_24_l",
+      "label": "L",
+      "title": "Permutation 2",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_l",
+      "directory": {
+        "path": "l",
+        "testdir": "test",
+        "submit": "fps_24_l.cpp"
+      }
+    },
+    {
+      "id": "fps_24_m",
+      "label": "M",
+      "title": "Connected Graph",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "fps_24_m.cpp"
+      }
+    },
+    {
+      "id": "fps_24_n",
+      "label": "N",
+      "title": "Coin 2",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "fps_24_n.cpp"
+      }
+    },
+    {
+      "id": "fps_24_o",
+      "label": "O",
+      "title": "Rooted Tree",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "fps_24_o.cpp"
+      }
+    },
+    {
+      "id": "fps_24_p",
+      "label": "P",
+      "title": "Ball",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_p",
+      "directory": {
+        "path": "p",
+        "testdir": "test",
+        "submit": "fps_24_p.cpp"
+      }
+    },
+    {
+      "id": "fps_24_q",
+      "label": "Q",
+      "title": "Dice",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_q",
+      "directory": {
+        "path": "q",
+        "testdir": "test",
+        "submit": "fps_24_q.cpp"
+      }
+    },
+    {
+      "id": "fps_24_r",
+      "label": "R",
+      "title": "Random Walk",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_r",
+      "directory": {
+        "path": "r",
+        "testdir": "test",
+        "submit": "fps_24_r.cpp"
+      }
+    },
+    {
+      "id": "fps_24_s",
+      "label": "S",
+      "title": "Game",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_s",
+      "directory": {
+        "path": "s",
+        "testdir": "test",
+        "submit": "fps_24_s.cpp"
+      }
+    },
+    {
+      "id": "fps_24_t",
+      "label": "T",
+      "title": "Colorful",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_t",
+      "directory": {
+        "path": "t",
+        "testdir": "test",
+        "submit": "fps_24_t.cpp"
+      }
+    },
+    {
+      "id": "fps_24_u",
+      "label": "U",
+      "title": "Recorder",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_u",
+      "directory": {
+        "path": "u",
+        "testdir": "test",
+        "submit": "fps_24_u.cpp"
+      }
+    },
+    {
+      "id": "fps_24_v",
+      "label": "V",
+      "title": "12 Directions",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_v",
+      "directory": {
+        "path": "v",
+        "testdir": "test",
+        "submit": "fps_24_v.cpp"
+      }
+    },
+    {
+      "id": "fps_24_w",
+      "label": "W",
+      "title": "Cycle",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_w",
+      "directory": {
+        "path": "w",
+        "testdir": "test",
+        "submit": "fps_24_w.cpp"
+      }
+    },
+    {
+      "id": "fps_24_x",
+      "label": "X",
+      "title": "Functional Square Root",
+      "url": "https://atcoder.jp/contests/fps-24/tasks/fps_24_x",
+      "directory": {
+        "path": "x",
+        "testdir": "test",
+        "submit": "fps_24_x.cpp"
+      }
+    }
+  ]
+}

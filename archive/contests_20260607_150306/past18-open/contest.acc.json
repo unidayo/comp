@@ -1,0 +1,114 @@
+{
+  "contest": {
+    "id": "past18-open",
+    "title": "第18回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past18-open"
+  },
+  "tasks": [
+    {
+      "id": "past18_a",
+      "label": "A",
+      "title": "bulky garbage",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_a"
+    },
+    {
+      "id": "past18_b",
+      "label": "B",
+      "title": "Rating",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_b"
+    },
+    {
+      "id": "past18_c",
+      "label": "C",
+      "title": "Traffic light",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_c"
+    },
+    {
+      "id": "past18_d",
+      "label": "D",
+      "title": "Melee",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_d"
+    },
+    {
+      "id": "past18_e",
+      "label": "E",
+      "title": "Intersection",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_e"
+    },
+    {
+      "id": "past18_f",
+      "label": "F",
+      "title": "Simple Interpreter",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_f"
+    },
+    {
+      "id": "past18_g",
+      "label": "G",
+      "title": "Exactly Two Adjacent Swaps",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_g"
+    },
+    {
+      "id": "past18_h",
+      "label": "H",
+      "title": "Find C!",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_h"
+    },
+    {
+      "id": "past18_i",
+      "label": "I",
+      "title": "CR LF",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_i"
+    },
+    {
+      "id": "past18_j",
+      "label": "J",
+      "title": "Flip Game",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_j"
+    },
+    {
+      "id": "past18_k",
+      "label": "K",
+      "title": "Ord 2 Counting",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_k"
+    },
+    {
+      "id": "past18_l",
+      "label": "L",
+      "title": "Rewriting",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_l"
+    },
+    {
+      "id": "past18_m",
+      "label": "M",
+      "title": "Grouping",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "past18_m.cpp"
+      }
+    },
+    {
+      "id": "past18_n",
+      "label": "N",
+      "title": "Planar Footrace",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past18_n.cpp"
+      }
+    },
+    {
+      "id": "past18_o",
+      "label": "O",
+      "title": "Movement of Ants",
+      "url": "https://atcoder.jp/contests/past18-open/tasks/past18_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past18_o.cpp"
+      }
+    }
+  ]
+}

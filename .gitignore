@@ -1,4 +1,5 @@
 .cache/
+.venv-pypy/
 build
 cmake-build-debug
 CMakeFiles

@@ -1,0 +1,114 @@
+{
+  "contest": {
+    "id": "past19-open",
+    "title": "第19回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past19-open"
+  },
+  "tasks": [
+    {
+      "id": "past19_a",
+      "label": "A",
+      "title": "Hourly",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_a"
+    },
+    {
+      "id": "past19_b",
+      "label": "B",
+      "title": "Income and Expenses",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_b"
+    },
+    {
+      "id": "past19_c",
+      "label": "C",
+      "title": "Goodish or Not",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_c"
+    },
+    {
+      "id": "past19_d",
+      "label": "D",
+      "title": "Contest",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_d"
+    },
+    {
+      "id": "past19_e",
+      "label": "E",
+      "title": "Remove Comments",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_e"
+    },
+    {
+      "id": "past19_f",
+      "label": "F",
+      "title": "Domino Effect",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_f"
+    },
+    {
+      "id": "past19_g",
+      "label": "G",
+      "title": "Associativity",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_g"
+    },
+    {
+      "id": "past19_h",
+      "label": "H",
+      "title": "Addition and Multiplication",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_h"
+    },
+    {
+      "id": "past19_i",
+      "label": "I",
+      "title": "Submerge",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_i"
+    },
+    {
+      "id": "past19_j",
+      "label": "J",
+      "title": "Balanced Team Division",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_j"
+    },
+    {
+      "id": "past19_k",
+      "label": "K",
+      "title": "Not Adjacent",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_k"
+    },
+    {
+      "id": "past19_l",
+      "label": "L",
+      "title": "Longest ZigZag",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_l"
+    },
+    {
+      "id": "past19_m",
+      "label": "M",
+      "title": "Game on DAG",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "past19_m.cpp"
+      }
+    },
+    {
+      "id": "past19_n",
+      "label": "N",
+      "title": "Finite Power Series",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past19_n.cpp"
+      }
+    },
+    {
+      "id": "past19_o",
+      "label": "O",
+      "title": "15 puzzle",
+      "url": "https://atcoder.jp/contests/past19-open/tasks/past19_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past19_o.cpp"
+      }
+    }
+  ]
+}

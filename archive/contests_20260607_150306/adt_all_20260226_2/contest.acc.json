@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260226_2",
+    "title": "AtCoder Daily Training ALL 2026/02/26 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260226_2"
+  },
+  "tasks": [
+    {
+      "id": "abc398_a",
+      "label": "A",
+      "title": "Doors in the Center",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc398_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc398_a.cpp"
+      }
+    },
+    {
+      "id": "abc409_a",
+      "label": "B",
+      "title": "Conflict",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc409_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc409_a.cpp"
+      }
+    },
+    {
+      "id": "abc265_b",
+      "label": "C",
+      "title": "Explore",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc265_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc265_b.cpp"
+      }
+    },
+    {
+      "id": "abc380_b",
+      "label": "D",
+      "title": "Hurdle Parsing",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc380_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc380_b.cpp"
+      }
+    },
+    {
+      "id": "abc249_c",
+      "label": "E",
+      "title": "Just K",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc249_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc249_c.cpp"
+      }
+    },
+    {
+      "id": "abc431_c",
+      "label": "F",
+      "title": "Robot Factory",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc431_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc431_c.cpp"
+      }
+    },
+    {
+      "id": "abc362_d",
+      "label": "G",
+      "title": "Shortest Path 3",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc362_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc362_d.cpp"
+      }
+    },
+    {
+      "id": "abc410_e",
+      "label": "H",
+      "title": "Battles in a Row",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc410_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc410_e.cpp"
+      }
+    },
+    {
+      "id": "abc229_f",
+      "label": "I",
+      "title": "Make Bipartite",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_2/tasks/abc229_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc229_f.cpp"
+      }
+    }
+  ]
+}

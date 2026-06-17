@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "arc221",
+    "title": "AtCoder Regular Contest++ 221",
+    "url": "https://atcoder.jp/contests/arc221"
+  },
+  "tasks": [
+    {
+      "id": "arc221_a",
+      "label": "A",
+      "title": "Two Arithmetic Progressions",
+      "url": "https://atcoder.jp/contests/arc221/tasks/arc221_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "arc221_a.cpp"
+      }
+    },
+    {
+      "id": "arc221_b",
+      "label": "B",
+      "title": "Two-Powered Sum",
+      "url": "https://atcoder.jp/contests/arc221/tasks/arc221_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "arc221_b.cpp"
+      }
+    },
+    {
+      "id": "arc221_c",
+      "label": "C",
+      "title": "Two Deques Sorting",
+      "url": "https://atcoder.jp/contests/arc221/tasks/arc221_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc221_c.cpp"
+      }
+    },
+    {
+      "id": "arc221_d",
+      "label": "D",
+      "title": "Two Balanced Subtrees",
+      "url": "https://atcoder.jp/contests/arc221/tasks/arc221_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "arc221_d.cpp"
+      }
+    },
+    {
+      "id": "arc221_e",
+      "label": "E",
+      "title": "Two Increasing Sequences",
+      "url": "https://atcoder.jp/contests/arc221/tasks/arc221_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "arc221_e.cpp"
+      }
+    }
+  ]
+}

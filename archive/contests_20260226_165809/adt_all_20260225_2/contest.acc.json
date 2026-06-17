@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260225_2",
+    "title": "AtCoder Daily Training ALL 2026/02/25 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260225_2"
+  },
+  "tasks": [
+    {
+      "id": "abc312_a",
+      "label": "A",
+      "title": "Chord",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc312_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc312_a.cpp"
+      }
+    },
+    {
+      "id": "abc318_a",
+      "label": "B",
+      "title": "Full Moon",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc318_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc318_a.cpp"
+      }
+    },
+    {
+      "id": "abc279_b",
+      "label": "C",
+      "title": "LOOKUP",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc279_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc279_b.cpp"
+      }
+    },
+    {
+      "id": "abc359_b",
+      "label": "D",
+      "title": "Couples",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc359_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc359_b.cpp"
+      }
+    },
+    {
+      "id": "abc387_c",
+      "label": "E",
+      "title": "Snake Numbers",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc387_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc387_c.cpp"
+      }
+    },
+    {
+      "id": "abc354_c",
+      "label": "F",
+      "title": "AtCoder Magics",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc354_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc354_c.cpp"
+      }
+    },
+    {
+      "id": "abc239_d",
+      "label": "G",
+      "title": "Prime Sum Game",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc239_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc239_d.cpp"
+      }
+    },
+    {
+      "id": "abc217_e",
+      "label": "H",
+      "title": "Sorting Queries",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc217_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc217_e.cpp"
+      }
+    },
+    {
+      "id": "abc390_f",
+      "label": "I",
+      "title": "Double Sum 3",
+      "url": "https://atcoder.jp/contests/adt_all_20260225_2/tasks/abc390_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc390_f.cpp"
+      }
+    }
+  ]
+}

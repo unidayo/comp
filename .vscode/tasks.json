@@ -14,30 +14,24 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "cmake",
-			"args": [
-				"--build",
-				"build-release/",
-				"--target",
-				"${fileBasenameNoExtension}",
-			],
-			"dependsOn": [
-				"cmake-configure-release"
-			],
+			"command": "cmake --build build-release/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
 		},
 		{
 			"label": "build-debug-O0",
 			"type": "shell",
-			"command": "cmake",
-			"args": [
-				"--build",
-				"build-debug/",
-				"--target",
-				"${fileBasenameNoExtension}",
-			],
-			"dependsOn": [
-				"cmake-configure-debug"
-			],
+			"command": "cmake --build build-debug/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j && ln -sf $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} build-debug/${fileBasenameNoExtension}",
+			"presentation": {
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			},
+			"problemMatcher": []
 		},
 		{
 			"label": "new contest",
@@ -54,6 +48,37 @@
 			},
 		},
 		{
+			"label": "new cf contest",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/new_cf_contest.sh",
+				"${input:cf_contest_id}",
+				"${input:cf_num_problems}"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+		},
+		{
+			"label": "new cf problem",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/new_cf_problem.sh",
+				"${input:cf_contest_id}",
+				"${input:cf_problem_label}"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
 			"label": "new problem",
 			"type": "shell",
 			"command": "bash",
@@ -61,12 +86,95 @@
 				"/home/wsl2ubuntu/comp/scripts/new_problem.sh",
 				"${input:contest}",
 			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "new standalone problem",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/new_standalone_problem.sh"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "new standalone Python problem",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/new_standalone_python_problem.sh"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "archive contests",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"${workspaceFolder}/scripts/archive_contests.sh"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "execute Python",
+			"type": "shell",
+			"command": "${workspaceFolder}/.venv-pypy/bin/python",
+			"args": [
+				"${file}"
+			],
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "execute Python with input.txt",
+			"type": "shell",
+			"command": "\"${workspaceFolder}/.venv-pypy/bin/python\" \"${file}\" < \"${workspaceFolder}/input.txt\"",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "test Python sample",
+			"type": "shell",
+			"command": "cd \"${fileDirname}\" && \"${workspaceFolder}/.venv/bin/oj\" t -c '\"${workspaceFolder}/.venv-pypy/bin/python\" \"${file}\"'",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
 			"problemMatcher": []
 		},
 		{
 			"label": "execute",
 			"type": "shell",
-			"command": "build-release/${fileBasenameNoExtension}",
+			"command": "ASAN_OPTIONS=detect_leaks=0 build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -79,7 +187,7 @@
 		{
 			"label": "execute with input.txt",
 			"type": "shell",
-			"command": "build-release/${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
+			"command": "ASAN_OPTIONS=detect_leaks=0 build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -92,7 +200,7 @@
 		{
 			"label": "test sample",
 			"type": "shell",
-			"command": "cd ${fileDirname} && /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build-release/${fileBasenameNoExtension}",
+			"command": "cd ${fileDirname} && ASAN_OPTIONS=detect_leaks=0 /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
 			"dependsOn": [
 				"build"
 			],
@@ -101,6 +209,16 @@
 			"label": "submit",
 			"type": "shell",
 			"command": "cd ${fileDirname} && acc submit -s -- -w 0",
+		},
+		{
+			"label": "expand for codeforces",
+			"type": "shell",
+			"command": "python3 /usr/lib/ac-library/expander.py --lib /usr/lib/ac-library ${file} && sed -i '/#include <ankerl\\/unordered_dense.h>/d' ${fileDirname}/combined.cpp && sed -i '1s/^/#define ATCODER\\n/' ${fileDirname}/combined.cpp && echo 'Generated: ${fileDirname}/combined.cpp'",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
 		},
 	],
 	"inputs": [
@@ -113,6 +231,21 @@
 			"id": "task",
 			"type": "promptString",
 			"description": "task id (e.g. a)"
-		}
+		},
+		{
+			"id": "cf_contest_id",
+			"type": "promptString",
+			"description": "Codeforces contest ID (e.g. 2080)"
+		},
+		{
+			"id": "cf_num_problems",
+			"type": "promptString",
+			"description": "number of problems (e.g. 6)"
+		},
+		{
+			"id": "cf_problem_label",
+			"type": "promptString",
+			"description": "problem label (e.g. c)"
+		},
 	]
 }

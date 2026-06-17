@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0081",
+    "title": "AtCoder Weekday Contest 0081 Beta",
+    "url": "https://atcoder.jp/contests/awc0081"
+  },
+  "tasks": [
+    {
+      "id": "awc0081_a",
+      "label": "A",
+      "title": "Order Confirmation",
+      "url": "https://atcoder.jp/contests/awc0081/tasks/awc0081_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0081_a.cpp"
+      }
+    },
+    {
+      "id": "awc0081_b",
+      "label": "B",
+      "title": "Monster Slaying",
+      "url": "https://atcoder.jp/contests/awc0081/tasks/awc0081_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0081_b.cpp"
+      }
+    },
+    {
+      "id": "awc0081_c",
+      "label": "C",
+      "title": "Spread of Rumors",
+      "url": "https://atcoder.jp/contests/awc0081/tasks/awc0081_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0081_c.cpp"
+      }
+    },
+    {
+      "id": "awc0081_d",
+      "label": "D",
+      "title": "Organizing the Bookshelf",
+      "url": "https://atcoder.jp/contests/awc0081/tasks/awc0081_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0081_d.cpp"
+      }
+    },
+    {
+      "id": "awc0081_e",
+      "label": "E",
+      "title": "Balanced Groups in Tournament Partition",
+      "url": "https://atcoder.jp/contests/awc0081/tasks/awc0081_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0081_e.cpp"
+      }
+    }
+  ]
+}

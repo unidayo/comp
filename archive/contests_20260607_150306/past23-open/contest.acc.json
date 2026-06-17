@@ -1,0 +1,114 @@
+{
+  "contest": {
+    "id": "past23-open",
+    "title": "第23回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past23-open"
+  },
+  "tasks": [
+    {
+      "id": "past23_a",
+      "label": "A",
+      "title": "Thoughtful Shopping",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_a"
+    },
+    {
+      "id": "past23_b",
+      "label": "B",
+      "title": "Before After",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_b"
+    },
+    {
+      "id": "past23_c",
+      "label": "C",
+      "title": "Postponement of meetings",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_c"
+    },
+    {
+      "id": "past23_d",
+      "label": "D",
+      "title": "Character Adjacent",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_d"
+    },
+    {
+      "id": "past23_e",
+      "label": "E",
+      "title": "Sort Fractions",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_e"
+    },
+    {
+      "id": "past23_f",
+      "label": "F",
+      "title": "Love Triangle",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_f"
+    },
+    {
+      "id": "past23_g",
+      "label": "G",
+      "title": "Long Sum",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_g"
+    },
+    {
+      "id": "past23_h",
+      "label": "H",
+      "title": "Sandwich triplet",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_h"
+    },
+    {
+      "id": "past23_i",
+      "label": "I",
+      "title": "Num of Unique Characters",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_i"
+    },
+    {
+      "id": "past23_j",
+      "label": "J",
+      "title": "Office",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_j"
+    },
+    {
+      "id": "past23_k",
+      "label": "K",
+      "title": "Most Frequent Character Query",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_k"
+    },
+    {
+      "id": "past23_l",
+      "label": "L",
+      "title": "Sushi-Go-Round",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_l"
+    },
+    {
+      "id": "past23_m",
+      "label": "M",
+      "title": "Boost Takahashi",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "past23_m.cpp"
+      }
+    },
+    {
+      "id": "past23_n",
+      "label": "N",
+      "title": "Sorting Substrings",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past23_n.cpp"
+      }
+    },
+    {
+      "id": "past23_o",
+      "label": "O",
+      "title": "Grid Maximize",
+      "url": "https://atcoder.jp/contests/past23-open/tasks/past23_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past23_o.cpp"
+      }
+    }
+  ]
+}

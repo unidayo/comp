@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0077",
+    "title": "AtCoder Weekday Contest 0077 Beta",
+    "url": "https://atcoder.jp/contests/awc0077"
+  },
+  "tasks": [
+    {
+      "id": "awc0077_a",
+      "label": "A",
+      "title": "Used Car Selection",
+      "url": "https://atcoder.jp/contests/awc0077/tasks/awc0077_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0077_a.cpp"
+      }
+    },
+    {
+      "id": "awc0077_b",
+      "label": "B",
+      "title": "Assortment of Sweets",
+      "url": "https://atcoder.jp/contests/awc0077/tasks/awc0077_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0077_b.cpp"
+      }
+    },
+    {
+      "id": "awc0077_c",
+      "label": "C",
+      "title": "Minimum Number of Items to Buy",
+      "url": "https://atcoder.jp/contests/awc0077/tasks/awc0077_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0077_c.cpp"
+      }
+    },
+    {
+      "id": "awc0077_d",
+      "label": "D",
+      "title": "Fluffy Cloud Hopping",
+      "url": "https://atcoder.jp/contests/awc0077/tasks/awc0077_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0077_d.cpp"
+      }
+    },
+    {
+      "id": "awc0077_e",
+      "label": "E",
+      "title": "Gift Distribution",
+      "url": "https://atcoder.jp/contests/awc0077/tasks/awc0077_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0077_e.cpp"
+      }
+    }
+  ]
+}

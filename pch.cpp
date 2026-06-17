@@ -1,6 +1,1 @@
-#include <atcoder/all>
-#include <bits/stdc++.h>
-
-int main(){
-    return 0;
-}
+// Dummy source for precompiled header

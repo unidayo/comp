@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc213",
+    "title": "AtCoder Regular Contest 213 (Div. 1)",
+    "url": "https://atcoder.jp/contests/arc213"
+  },
+  "tasks": [
+    {
+      "id": "arc213_a",
+      "label": "A",
+      "title": "Swapping Game",
+      "url": "https://atcoder.jp/contests/arc213/tasks/arc213_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "arc213_a.cpp"
+      }
+    },
+    {
+      "id": "arc213_b",
+      "label": "B",
+      "title": "Hamming Distance is not 1",
+      "url": "https://atcoder.jp/contests/arc213/tasks/arc213_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "arc213_b.cpp"
+      }
+    },
+    {
+      "id": "arc213_c",
+      "label": "C",
+      "title": "Double X",
+      "url": "https://atcoder.jp/contests/arc213/tasks/arc213_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc213_c.cpp"
+      }
+    },
+    {
+      "id": "arc213_d",
+      "label": "D",
+      "title": "Minimize Inversion",
+      "url": "https://atcoder.jp/contests/arc213/tasks/arc213_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "arc213_d.cpp"
+      }
+    }
+  ]
+}

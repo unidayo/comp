@@ -1,0 +1,1 @@
+seed=87 elapsed=1.37 T=2865 score=6125321 input=in/seed87.txt output=out/seed87.txt

@@ -1,10 +1,13 @@
 {
-	"begin-end": {
-		"scope": "cpp, hpp",
-		"prefix": "bend",
+	"multitestcase": {
+		"prefix": "multitestcase",
 		"body": [
-			"begin($1), end($1)$0"
+			"int T;",
+			"input(T);",
+			"while (T--) {",
+			"    solve();",
+			"}",
 		],
-		"description": "begin(v), end(v)"
-	}
+		"description": ""
+	},
 }

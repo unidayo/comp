@@ -1,18 +1,27 @@
 {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv-pypy/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/.venv-pypy/lib/pypy3.11/site-packages"
+    ],
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
     "clangd.arguments": [
         "--background-index",
-        "--compile-commands-dir=build",
+        "--compile-commands-dir=${workspaceFolder}/build-release",
         "--clang-tidy",
         "--enable-config",
         "--header-insertion=never"
     ],
     "C_Cpp.intelliSenseEngine": "disabled",
-    "clangd.path": "/usr/bin/clangd-18",
+    "clangd.path": "/usr/bin/clangd-20",
     "C_Cpp.default.cppStandard": "c++23",
     "editor.formatOnPaste": true,
     "C_Cpp.default.includePath": [
-        "usr/lib/ac-library/**",
-        "\"${workspaceFolder}/**\""
+        "/usr/lib/ac-library/**",
+        "${workspaceFolder}/**"
     ],
     "cmake.configureOnOpen": false,
     "files.associations": {
@@ -61,5 +70,5 @@
     "cmake.configureArgs": [],
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    },
+    }
 }

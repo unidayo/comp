@@ -8,7 +8,7 @@ struct Matrix {
 
     Matrix(std::initializer_list<std::initializer_list<T>> init) {
         h = init.size();
-        w = init.begin()->size();
+        w = (h == 0 ? 0 : (int)init.begin()->size());
         a.reserve(h);
         for (auto& row : init) {
             assert((int)row.size() == w);
@@ -59,6 +59,14 @@ struct Matrix {
         return res;
     }
 
+    std::vector<T> operator*(const std::vector<T>& v) const {
+        assert(w == (int)v.size());
+        std::vector<T> res(h, T());
+        for (int i = 0; i < h; i++)
+            for (int j = 0; j < w; j++) res[i] += a[i][j] * v[j];
+        return res;
+    }
+
     Matrix& operator+=(const Matrix& other) {
         assert(h == other.h && w == other.w);
         for (int i = 0; i < h; i++)
@@ -74,7 +82,7 @@ struct Matrix {
     }
 
     Matrix& operator*=(const Matrix& other) {
-        assert(h == w && other.h == other.w && w == other.h);
+        assert(w == other.h);
         *this = (*this) * other;
         return *this;
     }
@@ -137,7 +145,7 @@ struct Matrix {
 
     /* ===== 累乗 ===== */
 
-    Matrix pow(ll e) const {
+    Matrix pow(long long e) const {
         assert(h == w);
         Matrix res = identity(h);
         Matrix base = *this;
@@ -202,4 +210,13 @@ std::ostream& operator<<(std::ostream& os, const Matrix<T>& m) {
         for (int j = 0; j < m.w; j++) os << m[i][j] << (j + 1 == m.w ? '\n' : ' ');
     }
     return os;
+}
+
+template <class T>
+std::vector<T> operator*(const std::vector<T>& v, const Matrix<T>& m) {
+    assert((int)v.size() == m.h);
+    std::vector<T> res(m.w, T());
+    for (int i = 0; i < m.h; i++)
+        for (int j = 0; j < m.w; j++) res[j] += v[i] * m[i][j];
+    return res;
 }

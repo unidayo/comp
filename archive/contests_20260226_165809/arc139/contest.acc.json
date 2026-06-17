@@ -1,0 +1,50 @@
+{
+  "contest": {
+    "id": "arc139",
+    "title": "AtCoder Regular Contest 139",
+    "url": "https://atcoder.jp/contests/arc139"
+  },
+  "tasks": [
+    {
+      "id": "arc139_a",
+      "label": "A",
+      "title": "Trailing Zeros",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_a"
+    },
+    {
+      "id": "arc139_b",
+      "label": "B",
+      "title": "Make N",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "arc139_b.cpp"
+      }
+    },
+    {
+      "id": "arc139_c",
+      "label": "C",
+      "title": "One Three Nine",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_c"
+    },
+    {
+      "id": "arc139_d",
+      "label": "D",
+      "title": "Priority Queue 2",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_d"
+    },
+    {
+      "id": "arc139_e",
+      "label": "E",
+      "title": "Wazir",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_e"
+    },
+    {
+      "id": "arc139_f",
+      "label": "F",
+      "title": "Many Xor Optimization Problems",
+      "url": "https://atcoder.jp/contests/arc139/tasks/arc139_f"
+    }
+  ]
+}

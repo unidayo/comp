@@ -15,7 +15,7 @@ cd "$CONTESTS_DIR" || exit 1
 acc new "$CONTEST_ID" -c none
 cd "$CONTEST_ID"
 
-acc add -c inquire
+acc add -c inquire < /dev/tty
 
 TASK_ID=$(ls -d */ | sed 's|/||' | tail -n 1)
 cd "$TASK_ID" || exit 1

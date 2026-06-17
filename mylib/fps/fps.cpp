@@ -6,7 +6,7 @@ using mint = modint998244353;
 struct FPS : vector<mint> {
     using vector<mint>::vector;
 
-    FPS(const vector<mint>& v) : vector<mint>(v) {}
+    FPS(const vector<mint> &v) : vector<mint>(v) {}
 
     // サイズを n に縮小/拡張
     void shrink() {
@@ -20,7 +20,7 @@ struct FPS : vector<mint> {
     }
 
     // 加算
-    FPS operator+(const FPS& r) const {
+    FPS operator+(const FPS &r) const {
         FPS res = *this;
         if (res.size() < r.size()) res.resize(r.size());
         for (int i = 0; i < (int)r.size(); i++) res[i] += r[i];
@@ -28,7 +28,7 @@ struct FPS : vector<mint> {
     }
 
     // 減算
-    FPS operator-(const FPS& r) const {
+    FPS operator-(const FPS &r) const {
         FPS res = *this;
         if (res.size() < r.size()) res.resize(r.size());
         for (int i = 0; i < (int)r.size(); i++) res[i] -= r[i];
@@ -36,7 +36,7 @@ struct FPS : vector<mint> {
     }
 
     // 乗算 (ACL convolution)
-    FPS operator*(const FPS& r) const {
+    FPS operator*(const FPS &r) const {
         if (empty() || r.empty()) return FPS();
         auto res = convolution(*this, r);
         return FPS(res);
@@ -44,16 +44,60 @@ struct FPS : vector<mint> {
 
     FPS operator*(mint c) const {
         FPS res = *this;
-        for (auto& x : res) x *= c;
+        for (auto &x : res) x *= c;
         return res;
     }
 
-    FPS& operator+=(const FPS& r) { return *this = *this + r; }
-    FPS& operator-=(const FPS& r) { return *this = *this - r; }
-    FPS& operator*=(const FPS& r) { return *this = *this * r; }
-    FPS& operator*=(mint c) {
-        for (auto& x : *this) x *= c;
+    FPS &operator+=(const FPS &r) { return *this = *this + r; }
+    FPS &operator-=(const FPS &r) { return *this = *this - r; }
+    FPS &operator*=(const FPS &r) { return *this = *this * r; }
+    FPS &operator*=(mint c) {
+        for (auto &x : *this) x *= c;
         return *this;
+    }
+
+    // 疎な多項式との乗算 O(n * |G|)
+    // G は {(次数, 係数)} のリスト（次数昇順）
+    FPS sparse_mul(const vector<pair<int, mint>> &g) const {
+        int n = size();
+        FPS res(n);
+        for (int i = 0; i < n; i++) {
+            for (auto &[d, c] : g) {
+                if (i + d >= n) break;
+                res[i + d] += (*this)[i] * c;
+            }
+        }
+        return res;
+    }
+
+    // 疎な多項式での除算 O(n * |G|)
+    // F(x) / G(x) mod x^n を計算
+    // G は {(次数, 係数)} のリスト（次数昇順）, g[0] != 0 が必要
+    // Q[i] = (F[i] - Σ_{(d,c)∈G, d≥1} c·Q[i-d]) / g0
+    FPS sparse_div(const vector<pair<int, mint>> &g, int n = -1) const {
+        assert(!g.empty() && g[0].first == 0 && g[0].second != mint(0));
+        if (n < 0) n = size();
+        mint inv0 = g[0].second.inv();
+        FPS res(n);
+        for (int i = 0; i < n; i++) {
+            mint s = (i < (int)size()) ? (*this)[i] : mint(0);
+            for (auto &[d, c] : g) {
+                if (d == 0) continue;
+                if (d > i) break;
+                s -= c * res[i - d];
+            }
+            res[i] = s * inv0;
+        }
+        return res;
+    }
+
+    // FPS から疎表現 {(次数, 係数)} を生成するヘルパー
+    static vector<pair<int, mint>> to_sparse(const FPS &f) {
+        vector<pair<int, mint>> res;
+        for (int i = 0; i < (int)f.size(); i++) {
+            if (f[i] != mint(0)) res.emplace_back(i, f[i]);
+        }
+        return res;
     }
 
     // 微分
@@ -88,7 +132,7 @@ struct FPS : vector<mint> {
             g.resize(2 * k);
             FPS fg = f * g;
             fg.resize(2 * k);
-            for (auto& x : fg) x = -x;
+            for (auto &x : fg) x = -x;
             fg[0] += mint(2);
             res = (g * fg).pre(2 * k);
         }
@@ -167,11 +211,11 @@ struct FPS : vector<mint> {
         // m が大きいので m mod (MOD-1) ではなく、log の係数に m をかける
         FPS log_h = h.log(new_n);
         mint m_mod = mint(m);
-        for (auto& x : log_h) x *= m_mod;
+        for (auto &x : log_h) x *= m_mod;
         FPS h_m = log_h.exp(new_n);
 
         // g(x)^m = a0^m * h(x)^m
-        for (auto& x : h_m) x *= a0_m;
+        for (auto &x : h_m) x *= a0_m;
 
         // f(x)^m = x^{km} * g(x)^m
         FPS res(n);

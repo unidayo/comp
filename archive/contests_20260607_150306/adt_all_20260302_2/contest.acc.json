@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260302_2",
+    "title": "AtCoder Daily Training ALL 2026/03/02 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260302_2"
+  },
+  "tasks": [
+    {
+      "id": "abc302_a",
+      "label": "A",
+      "title": "Attack",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc302_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc302_a.cpp"
+      }
+    },
+    {
+      "id": "abc401_a",
+      "label": "B",
+      "title": "Status Code",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc401_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc401_a.cpp"
+      }
+    },
+    {
+      "id": "abc413_b",
+      "label": "C",
+      "title": "cat 2",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc413_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc413_b.cpp"
+      }
+    },
+    {
+      "id": "abc310_b",
+      "label": "D",
+      "title": "Strictly Superior",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc310_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc310_b.cpp"
+      }
+    },
+    {
+      "id": "abc271_c",
+      "label": "E",
+      "title": "Manga",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc271_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc271_c.cpp"
+      }
+    },
+    {
+      "id": "abc277_c",
+      "label": "F",
+      "title": "Ladder Takahashi",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc277_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc277_c.cpp"
+      }
+    },
+    {
+      "id": "abc391_d",
+      "label": "G",
+      "title": "Gravity",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc391_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc391_d.cpp"
+      }
+    },
+    {
+      "id": "abc370_e",
+      "label": "H",
+      "title": "Avoid K Partition",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc370_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc370_e.cpp"
+      }
+    },
+    {
+      "id": "abc338_f",
+      "label": "I",
+      "title": "Negative Traveling Salesman",
+      "url": "https://atcoder.jp/contests/adt_all_20260302_2/tasks/abc338_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc338_f.cpp"
+      }
+    }
+  ]
+}

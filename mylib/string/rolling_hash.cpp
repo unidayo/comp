@@ -6,6 +6,7 @@ struct RollingHash {
     vector<vll> hash;
     string S;
     int N;
+    // 文字列 s のローリングハッシュを構築する
     RollingHash(string s) {
         if (base == 0) {
             set_base();
@@ -21,6 +22,7 @@ struct RollingHash {
         }
     }
 
+    // 文字列 t のハッシュ値を返す（RollingHash オブジェクトなしで使える）
     static vll get_hash(string t) {
         vll ret = 0;
         int n = ssize(t);
@@ -35,6 +37,7 @@ struct RollingHash {
     // 引数 : a, b, b の長さ
     static vll unite(vll a, vll b, ll bsize) { return (a * basepow[bsize] + b) % M; }
 
+    // 文字列の長さを返す
     int size() const { return N; }
 
     // S[l, r)のハッシュを返す
@@ -52,7 +55,7 @@ struct RollingHash {
         return -1;
     }
 
-    // S[i, N]で最初に長さlenの文字列ハッシュhが出現する位置を返す
+    // S[l, N)で最初に長さlenの文字列ハッシュhが出現する位置を返す
     int find(vll h, int len, int l = 0) {
         for (int i = l; i < N - len + 1; ++i) {
             if (get(i, i + len) == h) {
@@ -75,7 +78,7 @@ struct RollingHash {
         return ret;
     }
 
-    // S[i, N]で長さlenの文字列ハッシュhが出現する位置をすべて返す
+    // S[l, N)で長さlenの文字列ハッシュhが出現する位置をすべて返す
     vector<int> find_all(vll h, int len, int l = 0) {
         vector<int> ret;
         for (int i = l; i < N - len + 1; ++i) {
@@ -86,8 +89,10 @@ struct RollingHash {
         return ret;
     }
 
+    // a[al..] と b[bl..] の最長共通接頭辞（LCP）の長さを返す
+    // 二分探索 + ローリングハッシュで O(log N)
     static int lcp(const RollingHash &a, const RollingHash &b, int al, int bl) {
-        int ok = 0, ng = min(a.size() - al, b.size() - bl);
+        int ok = 0, ng = min(a.size() - al, b.size() - bl) + 1;
         while (abs(ng - ok) > 1) {
             int mid = (ok + ng) / 2;
             (a.get(al, mid + al) == b.get(bl, mid + bl) ? ok : ng) = mid;
@@ -95,8 +100,8 @@ struct RollingHash {
         return ok;
     }
 
-    // aとbを文字列として比較する
-    // a < b なら -1, a == b なら 0, a > b なら1を返す
+    // a[al, ar) と b[bl, br) を辞書順比較する（ar/br 省略時は文字列末尾まで）
+    // a < b なら -1, a == b なら 0, a > b なら 1 を返す
     static int strcmp(const RollingHash &a, const RollingHash &b, int al, int bl, int ar = -1, int br = -1) {
         if (ar == -1) ar = a.size();
         if (br == -1) br = b.size();
@@ -111,6 +116,7 @@ struct RollingHash {
     }
 
    private:
+    // ランダムなハッシュの基数を設定する（初回構築時に一度だけ呼ばれる）
     void set_base() {
         std::random_device seed_gen;
         std::uint32_t seed = seed_gen();
@@ -119,6 +125,7 @@ struct RollingHash {
         base = dist(engine);
     }
 
+    // basepow / basepowinv を現在の N に合わせて拡張する
     void extend_pow() {
         int preN = ssize(basepow);
         basepow.resize(2 * N + 1);

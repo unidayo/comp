@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0089",
+    "title": "AtCoder Weekday Contest 0089 Beta",
+    "url": "https://atcoder.jp/contests/awc0089"
+  },
+  "tasks": [
+    {
+      "id": "awc0089_a",
+      "label": "A",
+      "title": "Correcting the Household Account Book",
+      "url": "https://atcoder.jp/contests/awc0089/tasks/awc0089_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0089_a.cpp"
+      }
+    },
+    {
+      "id": "awc0089_b",
+      "label": "B",
+      "title": "Connecting Pipes",
+      "url": "https://atcoder.jp/contests/awc0089/tasks/awc0089_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0089_b.cpp"
+      }
+    },
+    {
+      "id": "awc0089_c",
+      "label": "C",
+      "title": "A Walk to Cherry Blossom Viewing",
+      "url": "https://atcoder.jp/contests/awc0089/tasks/awc0089_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0089_c.cpp"
+      }
+    },
+    {
+      "id": "awc0089_d",
+      "label": "D",
+      "title": "Cheapest Route",
+      "url": "https://atcoder.jp/contests/awc0089/tasks/awc0089_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0089_d.cpp"
+      }
+    },
+    {
+      "id": "awc0089_e",
+      "label": "E",
+      "title": "Painting the Fence",
+      "url": "https://atcoder.jp/contests/awc0089/tasks/awc0089_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0089_e.cpp"
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260218_2",
+    "title": "AtCoder Daily Training ALL 2026/02/18 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260218_2"
+  },
+  "tasks": [
+    {
+      "id": "abc264_a",
+      "label": "A",
+      "title": "\"atcoder\".substr()",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc264_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc264_a.cpp"
+      }
+    },
+    {
+      "id": "abc413_a",
+      "label": "B",
+      "title": "Content Too Large",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc413_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc413_a.cpp"
+      }
+    },
+    {
+      "id": "abc336_b",
+      "label": "C",
+      "title": "CTZ",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc336_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc336_b.cpp"
+      }
+    },
+    {
+      "id": "abc286_b",
+      "label": "D",
+      "title": "Cat",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc286_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc286_b.cpp"
+      }
+    },
+    {
+      "id": "abc363_c",
+      "label": "E",
+      "title": "Avoid K Palindrome 2",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc363_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc363_c.cpp"
+      }
+    },
+    {
+      "id": "abc415_c",
+      "label": "F",
+      "title": "Mixture",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc415_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc415_c.cpp"
+      }
+    },
+    {
+      "id": "abc396_d",
+      "label": "G",
+      "title": "Minimum XOR Path",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc396_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc396_d.cpp"
+      }
+    },
+    {
+      "id": "abc229_e",
+      "label": "H",
+      "title": "Graph Destruction",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc229_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc229_e.cpp"
+      }
+    },
+    {
+      "id": "abc266_f",
+      "label": "I",
+      "title": "Well-defined Path Queries on a Namori",
+      "url": "https://atcoder.jp/contests/adt_all_20260218_2/tasks/abc266_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc266_f.cpp"
+      }
+    }
+  ]
+}

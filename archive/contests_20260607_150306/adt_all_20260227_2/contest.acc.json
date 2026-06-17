@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260227_2",
+    "title": "AtCoder Daily Training ALL 2026/02/27 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260227_2"
+  },
+  "tasks": [
+    {
+      "id": "abc323_a",
+      "label": "A",
+      "title": "Weak Beats",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc323_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc323_a.cpp"
+      }
+    },
+    {
+      "id": "abc238_a",
+      "label": "B",
+      "title": "Exponential or Quadratic",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc238_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc238_a.cpp"
+      }
+    },
+    {
+      "id": "abc232_b",
+      "label": "C",
+      "title": "Caesar Cipher",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc232_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc232_b.cpp"
+      }
+    },
+    {
+      "id": "abc441_b",
+      "label": "D",
+      "title": "Two Languages",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc441_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc441_b.cpp"
+      }
+    },
+    {
+      "id": "abc342_c",
+      "label": "E",
+      "title": "Many Replacement",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc342_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc342_c.cpp"
+      }
+    },
+    {
+      "id": "abc295_c",
+      "label": "F",
+      "title": "Socks",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc295_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc295_c.cpp"
+      }
+    },
+    {
+      "id": "abc409_d",
+      "label": "G",
+      "title": "String Rotation",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc409_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc409_d.cpp"
+      }
+    },
+    {
+      "id": "abc336_e",
+      "label": "H",
+      "title": "Digit Sum Divisible",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc336_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc336_e.cpp"
+      }
+    },
+    {
+      "id": "abc324_f",
+      "label": "I",
+      "title": "Beautiful Path",
+      "url": "https://atcoder.jp/contests/adt_all_20260227_2/tasks/abc324_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc324_f.cpp"
+      }
+    }
+  ]
+}

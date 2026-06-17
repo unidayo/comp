@@ -1,0 +1,38 @@
+{
+  "contest": {
+    "id": "arc045",
+    "title": "AtCoder Regular Contest 045",
+    "url": "https://atcoder.jp/contests/arc045"
+  },
+  "tasks": [
+    {
+      "id": "arc045_a",
+      "label": "A",
+      "title": "スペース高橋君",
+      "url": "https://atcoder.jp/contests/arc045/tasks/arc045_a"
+    },
+    {
+      "id": "arc045_b",
+      "label": "B",
+      "title": "ドキドキデート大作戦高橋君",
+      "url": "https://atcoder.jp/contests/arc045/tasks/arc045_b"
+    },
+    {
+      "id": "arc045_c",
+      "label": "C",
+      "title": "エックスオア多橋君",
+      "url": "https://atcoder.jp/contests/arc045/tasks/arc045_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc045_c.cpp"
+      }
+    },
+    {
+      "id": "arc045_d",
+      "label": "D",
+      "title": "みんな仲良し高橋君",
+      "url": "https://atcoder.jp/contests/arc045/tasks/arc045_d"
+    }
+  ]
+}

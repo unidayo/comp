@@ -4,20 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "/usr/lib/ac-library/**",
-                "${default}"
+                "${workspaceFolder}/**"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/g++-12",
+            "defines": ["LOCAL", "ATCODER"],
+            "compilerPath": "/opt/gcc-15.2/bin/g++",
             "cStandard": "c17",
             "cppStandard": "c++23",
             "intelliSenseMode": "linux-gcc-x64",
-            "compilerArgs": [
-                "-O2",
-                "-DLOCAL",
-                "-mtune=native",
-                "-march=native",
-                "-o a.out main.cpp"
-            ]
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

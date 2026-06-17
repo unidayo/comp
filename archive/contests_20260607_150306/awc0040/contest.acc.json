@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0040",
+    "title": "AtCoder Weekday Contest 0040 Beta",
+    "url": "https://atcoder.jp/contests/awc0040"
+  },
+  "tasks": [
+    {
+      "id": "awc0040_a",
+      "label": "A",
+      "title": "Flea Market Sales Management",
+      "url": "https://atcoder.jp/contests/awc0040/tasks/awc0040_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0040_a.cpp"
+      }
+    },
+    {
+      "id": "awc0040_b",
+      "label": "B",
+      "title": "Distribution of Sweets",
+      "url": "https://atcoder.jp/contests/awc0040/tasks/awc0040_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0040_b.cpp"
+      }
+    },
+    {
+      "id": "awc0040_c",
+      "label": "C",
+      "title": "Apple Harvest",
+      "url": "https://atcoder.jp/contests/awc0040/tasks/awc0040_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0040_c.cpp"
+      }
+    },
+    {
+      "id": "awc0040_d",
+      "label": "D",
+      "title": "Crossing the Desert",
+      "url": "https://atcoder.jp/contests/awc0040/tasks/awc0040_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0040_d.cpp"
+      }
+    },
+    {
+      "id": "awc0040_e",
+      "label": "E",
+      "title": "Internal Ranking",
+      "url": "https://atcoder.jp/contests/awc0040/tasks/awc0040_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0040_e.cpp"
+      }
+    }
+  ]
+}

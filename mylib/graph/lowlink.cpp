@@ -1,51 +1,68 @@
-class LowLink {
-  private:
-    vector<int> seen, ord, low;
-    const Graph &G;
-    int dfs(int u, int p, int &k);
+// LowLink: 関節点・橋を求める
+// - add_edge(u, v) で無向辺を追加（辺番号 = 追加順）
+// - build() で構築
+// - articulations: 関節点リスト（昇順）
+// - bridges: 橋リスト。Bridge{u, v, id} で両端点と辺番号を保持
+// 多重辺対応（辺IDで親管理）、非連結グラフ対応
+struct LowLink {
+    struct Bridge {
+        int u, v, id;  // 橋の両端点（u < v）と辺番号
+    };
 
-  public:
+    int n;
     vector<int> articulations;
-    vector<pair<int, int>> bridges;
-    void build();
-    LowLink(const Graph &G);
-};
+    vector<Bridge> bridges;
 
-LowLink::LowLink(const Graph &g) : G(g) {
-    seen.assign(ssize(g), 0);
-    ord.assign(ssize(g), 0);
-    low.assign(ssize(g), 0);
-}
+    LowLink(int n) : n(n), G(n), ord(n, -1), low(n) {}
 
-int LowLink::dfs(int u, int p, int &k) {
-    seen[u] = true;
-    ord[u] = k++;
-    low[u] = ord[u];
-    int cnt = 0;
-    for (auto &e : G[u]) {
-        if (!seen[e.to]) {
-            cnt++;
-            k = dfs(e.to, u, k);
-            low[u] = min(low[u], low[e.to]);
-            if (ord[u] <= low[e.to]) {
-                articulations.push_back(u);
+    void add_edge(int u, int v) {
+        int id = (int)edges.size();
+        edges.push_back({u, v});
+        G[u].emplace_back(v, id);
+        G[v].emplace_back(u, id);
+    }
+
+    void build() {
+        vector<bool> is_art(n, false);
+        int timer = 0;
+        for (int i = 0; i < n; i++) {
+            if (ord[i] == -1) dfs(i, -1, timer, is_art);
+        }
+        for (int i = 0; i < n; i++) {
+            if (is_art[i]) articulations.push_back(i);
+        }
+    }
+
+   private:
+    vector<pair<int, int>> edges;
+    vector<vector<pair<int, int>>> G;  // {to, edge_id}
+    vector<int> ord, low;
+
+    void dfs(int u, int p_eid, int &timer, vector<bool> &is_art) {
+        ord[u] = low[u] = timer++;
+        int children = 0;
+        bool art = false;
+        for (auto [v, eid] : G[u]) {
+            if (eid == p_eid) continue;
+            if (ord[v] != -1) {
+                // 後退辺
+                low[u] = min(low[u], ord[v]);
+            } else {
+                // 木辺
+                children++;
+                dfs(v, eid, timer, is_art);
+                low[u] = min(low[u], low[v]);
+                if (p_eid == -1) {
+                    if (children >= 2) art = true;
+                } else {
+                    if (ord[u] <= low[v]) art = true;
+                }
+                if (ord[u] < low[v]) {
+                    int a = min(u, v), b = max(u, v);
+                    bridges.push_back({a, b, eid});
+                }
             }
-            if (ord[u] < low[e.to])
-                bridges.emplace_back(minmax(u, e.to));
-        } else if (e.to != p) {
-            low[u] = min(low[u], ord[e.to]);
         }
+        if (art) is_art[u] = true;
     }
-    if (p == -1 && cnt >= 2)
-        articulations.push_back(u);
-    return k;
-}
-
-void LowLink::build() {
-    int k = 0;
-    for (int u : views::iota(0, ssize(G))) {
-        if (!seen[u]) {
-            k = dfs(u, -1, k);
-        }
-    }
-}
+};

@@ -14,42 +14,48 @@ struct lazy_segtree_sparse {
         Node(ll len_, const S &v = e()) : val(v), lazy(id()), has_lazy(false), len(len_) {}
     };
 
-    int n;
+    ll n;
     Node *root;
+    function<S(ll)> range_e;  // range_e(len) = 長さlenの区間の初期値
 
-    lazy_segtree_sparse(int _n) : n(_n), root(nullptr) {}
-    lazy_segtree_sparse(const vector<S> &v) : n((int)v.size()), root(nullptr) {
-        for (int i = 0; i < n; i++) {
-            if (!(v[i] == e())) {
-                set(i, v[i]);
-            }
+    // デフォルト: 全要素 e()
+    lazy_segtree_sparse(ll _n) : n(_n), root(nullptr), range_e([](ll) { return e(); }) {}
+    // 小さいN用: vectorから初期化
+    lazy_segtree_sparse(const vector<S> &v) : n((ll)v.size()), root(nullptr), range_e([](ll) { return e(); }) {
+        for (ll i = 0; i < n; i++) {
+            if (!(v[i] == e())) set(i, v[i]);
         }
     }
+    // 大きいN用: 全要素を同じ初期値で埋める
+    // range_e_fn(len) は長さlenの区間の初期値を返す関数
+    // 例: 全要素をvで初期化し op が加算なら range_e_fn = [v](ll len){ return v * len; }
+    lazy_segtree_sparse(ll _n, function<S(ll)> range_e_fn)
+        : n(_n), range_e(range_e_fn), root(new Node(n, range_e_fn(n))) {}
 
     ~lazy_segtree_sparse() { destroy(root); }
 
-    void set(int idx, S x) {
+    void set(ll idx, S x) {
         check_idx(idx);
         set_rec(root, 0, n, idx, x);
     }
-    S get(int idx) {
+    S get(ll idx) {
         check_idx(idx);
         return get_rec(root, 0, n, idx);
     }
-    void apply(int l, int r, F f) {
+    void apply(ll l, ll r, F f) {
         check_range(l, r);
         apply_rec(root, 0, n, l, r, f);
     }
-    S prod(int l, int r) {
+    S prod(ll l, ll r) {
         check_range(l, r);
         return prod_rec(root, 0, n, l, r);
     }
 
    private:
-    void check_idx(int i) {
+    void check_idx(ll i) {
         if (i < 0 || i >= n) throw;
     }
-    void check_range(int l, int r) {
+    void check_range(ll l, ll r) {
         if (l < 0 || r > n || l > r) throw;
     }
 
@@ -58,11 +64,6 @@ struct lazy_segtree_sparse {
         destroy(p->l);
         destroy(p->r);
         delete p;
-    }
-
-    inline Node *ensure_node(Node *&node, int len) {
-        if (!node) node = new Node(len);
-        return node;
     }
 
     void apply_node(Node *p, F f) {
@@ -77,10 +78,10 @@ struct lazy_segtree_sparse {
 
     void push(Node *p) {
         if (!p || !p->has_lazy) return;
-        int L = p->len / 2;
-        int R = p->len - L;
-        if (!p->l) p->l = new Node(L);
-        if (!p->r) p->r = new Node(R);
+        ll L = p->len / 2;
+        ll R = p->len - L;
+        if (!p->l) p->l = new Node(L, range_e(L));
+        if (!p->r) p->r = new Node(R, range_e(R));
         apply_node(p->l, p->lazy);
         apply_node(p->r, p->lazy);
         p->lazy = id();
@@ -88,24 +89,25 @@ struct lazy_segtree_sparse {
     }
 
     void pull(Node *p) {
-        S lv = p->l ? p->l->val : e();
-        S rv = p->r ? p->r->val : e();
+        ll L = p->len / 2;
+        S lv = p->l ? p->l->val : range_e(L);
+        S rv = p->r ? p->r->val : range_e(p->len - L);
         p->val = op(lv, rv);
     }
 
-    S get_rec(Node *p, int nl, int nr, int idx) {
-        if (!p) return e();
+    S get_rec(Node *p, ll nl, ll nr, ll idx) {
+        if (!p) return range_e(1);
         if (nr - nl == 1) return p->val;
         push(p);
-        int mid = (nl + nr) >> 1;
+        ll mid = (nl + nr) >> 1;
         if (idx < mid)
             return get_rec(p->l, nl, mid, idx);
         else
             return get_rec(p->r, mid, nr, idx);
     }
 
-    void set_rec(Node *&p, int nl, int nr, int idx, S x) {
-        if (!p) p = new Node(nr - nl);
+    void set_rec(Node *&p, ll nl, ll nr, ll idx, S x) {
+        if (!p) p = new Node(nr - nl, range_e(nr - nl));
         if (nr - nl == 1) {
             p->val = x;
             p->lazy = id();
@@ -113,7 +115,7 @@ struct lazy_segtree_sparse {
             return;
         }
         push(p);
-        int mid = (nl + nr) >> 1;
+        ll mid = (nl + nr) >> 1;
         if (idx < mid)
             set_rec(p->l, nl, mid, idx, x);
         else
@@ -121,26 +123,26 @@ struct lazy_segtree_sparse {
         pull(p);
     }
 
-    void apply_rec(Node *&p, int nl, int nr, int l, int r, F f) {
+    void apply_rec(Node *&p, ll nl, ll nr, ll l, ll r, F f) {
         if (r <= nl || nr <= l) return;
-        if (!p) p = new Node(nr - nl);
+        if (!p) p = new Node(nr - nl, range_e(nr - nl));
         if (l <= nl && nr <= r) {
             apply_node(p, f);
             return;
         }
         push(p);
-        int mid = (nl + nr) >> 1;
+        ll mid = (nl + nr) >> 1;
         apply_rec(p->l, nl, mid, l, r, f);
         apply_rec(p->r, mid, nr, l, r, f);
         pull(p);
     }
 
-    S prod_rec(Node *p, int nl, int nr, int l, int r) {
+    S prod_rec(Node *p, ll nl, ll nr, ll l, ll r) {
         if (r <= nl || nr <= l) return e();
-        if (!p) return e();
+        if (!p) return range_e(min(r, nr) - max(l, nl));
         if (l <= nl && nr <= r) return p->val;
         push(p);
-        int mid = (nl + nr) >> 1;
+        ll mid = (nl + nr) >> 1;
         return op(prod_rec(p->l, nl, mid, l, r), prod_rec(p->r, mid, nr, l, r));
     }
 };

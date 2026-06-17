@@ -1,0 +1,59 @@
+{
+  "contest": {
+    "id": "arc211",
+    "title": "AtCoder Regular Contest 211 (Div. 2)",
+    "url": "https://atcoder.jp/contests/arc211"
+  },
+  "tasks": [
+    {
+      "id": "arc211_a",
+      "label": "A",
+      "title": "Banned X 2",
+      "url": "https://atcoder.jp/contests/arc211/tasks/arc211_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "arc211_a.cpp"
+      }
+    },
+    {
+      "id": "arc211_b",
+      "label": "B",
+      "title": "Three Sequences",
+      "url": "https://atcoder.jp/contests/arc211/tasks/arc211_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "arc211_b.cpp"
+      }
+    },
+    {
+      "id": "arc211_c",
+      "label": "C",
+      "title": "Forest",
+      "url": "https://atcoder.jp/contests/arc211/tasks/arc211_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc211_c.cpp"
+      }
+    },
+    {
+      "id": "arc211_d",
+      "label": "D",
+      "title": "Michishirube",
+      "url": "https://atcoder.jp/contests/arc211/tasks/arc211_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "arc211_d.cpp"
+      }
+    },
+    {
+      "id": "arc211_e",
+      "label": "E",
+      "title": "Greedy Takahashi 2",
+      "url": "https://atcoder.jp/contests/arc211/tasks/arc211_e"
+    }
+  ]
+}

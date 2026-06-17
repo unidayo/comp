@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0088",
+    "title": "AtCoder Weekday Contest 0088 Beta",
+    "url": "https://atcoder.jp/contests/awc0088"
+  },
+  "tasks": [
+    {
+      "id": "awc0088_a",
+      "label": "A",
+      "title": "Bus Departure Time",
+      "url": "https://atcoder.jp/contests/awc0088/tasks/awc0088_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0088_a.cpp"
+      }
+    },
+    {
+      "id": "awc0088_b",
+      "label": "B",
+      "title": "Bus Tour Group Division",
+      "url": "https://atcoder.jp/contests/awc0088/tasks/awc0088_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0088_b.cpp"
+      }
+    },
+    {
+      "id": "awc0088_c",
+      "label": "C",
+      "title": "Farm Harvest Festival",
+      "url": "https://atcoder.jp/contests/awc0088/tasks/awc0088_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0088_c.cpp"
+      }
+    },
+    {
+      "id": "awc0088_d",
+      "label": "D",
+      "title": "Control Panel Operation Sequence",
+      "url": "https://atcoder.jp/contests/awc0088/tasks/awc0088_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0088_d.cpp"
+      }
+    },
+    {
+      "id": "awc0088_e",
+      "label": "E",
+      "title": "Intervals That Can Be Arranged Alternately",
+      "url": "https://atcoder.jp/contests/awc0088/tasks/awc0088_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0088_e.cpp"
+      }
+    }
+  ]
+}

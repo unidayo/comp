@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0075",
+    "title": "AtCoder Weekday Contest 0075 Beta",
+    "url": "https://atcoder.jp/contests/awc0075"
+  },
+  "tasks": [
+    {
+      "id": "awc0075_a",
+      "label": "A",
+      "title": "Zigzag of Mountain Range",
+      "url": "https://atcoder.jp/contests/awc0075/tasks/awc0075_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0075_a.cpp"
+      }
+    },
+    {
+      "id": "awc0075_b",
+      "label": "B",
+      "title": "Fruit Harvest",
+      "url": "https://atcoder.jp/contests/awc0075/tasks/awc0075_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0075_b.cpp"
+      }
+    },
+    {
+      "id": "awc0075_c",
+      "label": "C",
+      "title": "Shopping Within Budget",
+      "url": "https://atcoder.jp/contests/awc0075/tasks/awc0075_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0075_c.cpp"
+      }
+    },
+    {
+      "id": "awc0075_d",
+      "label": "D",
+      "title": "Sorting Bouquets",
+      "url": "https://atcoder.jp/contests/awc0075/tasks/awc0075_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0075_d.cpp"
+      }
+    },
+    {
+      "id": "awc0075_e",
+      "label": "E",
+      "title": "Lost Kittens",
+      "url": "https://atcoder.jp/contests/awc0075/tasks/awc0075_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0075_e.cpp"
+      }
+    }
+  ]
+}

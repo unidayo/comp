@@ -7,5 +7,6 @@
 -mtune=native
 -march=native
 -fsanitize=undefined,address
+-fno-sanitize=leak
 -DLOCAL
 -DATCODER

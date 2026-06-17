@@ -1,0 +1,109 @@
+{
+  "contest": {
+    "id": "past20-open",
+    "title": "第20回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past20-open"
+  },
+  "tasks": [
+    {
+      "id": "past20_a",
+      "label": "A",
+      "title": "Compare dollar and yen",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_a"
+    },
+    {
+      "id": "past20_b",
+      "label": "B",
+      "title": "Changing Trains",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_b"
+    },
+    {
+      "id": "past20_c",
+      "label": "C",
+      "title": "XX reverse",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_c"
+    },
+    {
+      "id": "past20_d",
+      "label": "D",
+      "title": "Rotating v",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_d"
+    },
+    {
+      "id": "past20_e",
+      "label": "E",
+      "title": "Collecting Apples",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_e"
+    },
+    {
+      "id": "past20_f",
+      "label": "F",
+      "title": "Test Result",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_f"
+    },
+    {
+      "id": "past20_g",
+      "label": "G",
+      "title": "Rice or Bread",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_g"
+    },
+    {
+      "id": "past20_h",
+      "label": "H",
+      "title": "Temperature of Bath",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_h"
+    },
+    {
+      "id": "past20_i",
+      "label": "I",
+      "title": "Swap Puzzle",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_i"
+    },
+    {
+      "id": "past20_j",
+      "label": "J",
+      "title": "Prohibited Pattern on Grid",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_j"
+    },
+    {
+      "id": "past20_k",
+      "label": "K",
+      "title": "Lucky Grid",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_k"
+    },
+    {
+      "id": "past20_l",
+      "label": "L",
+      "title": "Diameter Pairs",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_l"
+    },
+    {
+      "id": "past20_m",
+      "label": "M",
+      "title": "Median Concatenation",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_m"
+    },
+    {
+      "id": "past20_n",
+      "label": "N",
+      "title": "Power Up",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past20_n.cpp"
+      }
+    },
+    {
+      "id": "past20_o",
+      "label": "O",
+      "title": "Exceed Query",
+      "url": "https://atcoder.jp/contests/past20-open/tasks/past20_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past20_o.cpp"
+      }
+    }
+  ]
+}

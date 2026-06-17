@@ -1,0 +1,114 @@
+{
+  "contest": {
+    "id": "past21-open",
+    "title": "第21回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past21-open"
+  },
+  "tasks": [
+    {
+      "id": "past21_a",
+      "label": "A",
+      "title": "Clock",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_a"
+    },
+    {
+      "id": "past21_b",
+      "label": "B",
+      "title": "Separation",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_b"
+    },
+    {
+      "id": "past21_c",
+      "label": "C",
+      "title": "Spring Thief",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_c"
+    },
+    {
+      "id": "past21_d",
+      "label": "D",
+      "title": "Remove Duplicated",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_d"
+    },
+    {
+      "id": "past21_e",
+      "label": "E",
+      "title": "Broken Computer",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_e"
+    },
+    {
+      "id": "past21_f",
+      "label": "F",
+      "title": "Maximum Concatenation",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_f"
+    },
+    {
+      "id": "past21_g",
+      "label": "G",
+      "title": "Car Safety",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_g"
+    },
+    {
+      "id": "past21_h",
+      "label": "H",
+      "title": "Cleaning Service",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_h"
+    },
+    {
+      "id": "past21_i",
+      "label": "I",
+      "title": "Find Permutations",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_i"
+    },
+    {
+      "id": "past21_j",
+      "label": "J",
+      "title": "Turn Right",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_j"
+    },
+    {
+      "id": "past21_k",
+      "label": "K",
+      "title": "Strange Equation",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_k"
+    },
+    {
+      "id": "past21_l",
+      "label": "L",
+      "title": "Power Station",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_l"
+    },
+    {
+      "id": "past21_m",
+      "label": "M",
+      "title": "Difference Restricted Sequence",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "past21_m.cpp"
+      }
+    },
+    {
+      "id": "past21_n",
+      "label": "N",
+      "title": "Maximum Subarray Sum",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past21_n.cpp"
+      }
+    },
+    {
+      "id": "past21_o",
+      "label": "O",
+      "title": "Manhattan Rope",
+      "url": "https://atcoder.jp/contests/past21-open/tasks/past21_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past21_o.cpp"
+      }
+    }
+  ]
+}

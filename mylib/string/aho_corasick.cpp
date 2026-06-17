@@ -2,7 +2,7 @@ struct AhoCorasick {
     vector<map<char, int>> next;
     vector<int> cnt, fail;
 
-    AhoCorasick() : cnt(1), next(1) {}
+    AhoCorasick() : next(1), cnt(1) {}
 
     int add(string s) {
         int cur = 0;

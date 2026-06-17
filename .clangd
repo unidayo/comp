@@ -1,4 +1,5 @@
 CompileFlags:
   Remove:
     - "-fmodules-ts"
-    - "-fmodule-mapper"
+    - "-fmodule-mapper=*"
+    - "-fdeps-format=*"

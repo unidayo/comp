@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0087",
+    "title": "AtCoder Weekday Contest 0087 Beta",
+    "url": "https://atcoder.jp/contests/awc0087"
+  },
+  "tasks": [
+    {
+      "id": "awc0087_a",
+      "label": "A",
+      "title": "Meeting on a Number Line",
+      "url": "https://atcoder.jp/contests/awc0087/tasks/awc0087_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0087_a.cpp"
+      }
+    },
+    {
+      "id": "awc0087_b",
+      "label": "B",
+      "title": "Factory Machine Maintenance",
+      "url": "https://atcoder.jp/contests/awc0087/tasks/awc0087_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0087_b.cpp"
+      }
+    },
+    {
+      "id": "awc0087_c",
+      "label": "C",
+      "title": "Shortest Mountain Climbing Route",
+      "url": "https://atcoder.jp/contests/awc0087/tasks/awc0087_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0087_c.cpp"
+      }
+    },
+    {
+      "id": "awc0087_d",
+      "label": "D",
+      "title": "Returning Library Books",
+      "url": "https://atcoder.jp/contests/awc0087/tasks/awc0087_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0087_d.cpp"
+      }
+    },
+    {
+      "id": "awc0087_e",
+      "label": "E",
+      "title": "Change of Assigned Interval",
+      "url": "https://atcoder.jp/contests/awc0087/tasks/awc0087_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0087_e.cpp"
+      }
+    }
+  ]
+}

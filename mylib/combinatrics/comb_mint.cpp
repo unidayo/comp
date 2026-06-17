@@ -1,4 +1,4 @@
-using mint = modint998244353;  // 必要に応じて変更
+using mint = modint998244353;
 
 class Combination {
    private:

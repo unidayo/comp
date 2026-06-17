@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260226_1",
+    "title": "AtCoder Daily Training ALL 2026/02/26 16:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260226_1"
+  },
+  "tasks": [
+    {
+      "id": "abc405_a",
+      "label": "A",
+      "title": "Is it rated?",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc405_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc405_a.cpp"
+      }
+    },
+    {
+      "id": "abc271_a",
+      "label": "B",
+      "title": "484558",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc271_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc271_a.cpp"
+      }
+    },
+    {
+      "id": "abc248_b",
+      "label": "C",
+      "title": "Slimes",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc248_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc248_b.cpp"
+      }
+    },
+    {
+      "id": "abc362_b",
+      "label": "D",
+      "title": "Right Triangle",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc362_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc362_b.cpp"
+      }
+    },
+    {
+      "id": "abc315_c",
+      "label": "E",
+      "title": "Flavors",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc315_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc315_c.cpp"
+      }
+    },
+    {
+      "id": "abc305_c",
+      "label": "F",
+      "title": "Snuke the Cookie Picker",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc305_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc305_c.cpp"
+      }
+    },
+    {
+      "id": "abc442_d",
+      "label": "G",
+      "title": "Swap and Range Sum",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc442_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc442_d.cpp"
+      }
+    },
+    {
+      "id": "abc385_e",
+      "label": "H",
+      "title": "Snowflake Tree",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc385_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc385_e.cpp"
+      }
+    },
+    {
+      "id": "abc239_f",
+      "label": "I",
+      "title": "Construct Highway",
+      "url": "https://atcoder.jp/contests/adt_all_20260226_1/tasks/abc239_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc239_f.cpp"
+      }
+    }
+  ]
+}

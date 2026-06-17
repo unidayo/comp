@@ -1,0 +1,174 @@
+{
+  "contest": {
+    "id": "past22-open",
+    "title": "第22回 アルゴリズム実技検定(過去問)",
+    "url": "https://atcoder.jp/contests/past22-open"
+  },
+  "tasks": [
+    {
+      "id": "past22_a",
+      "label": "A",
+      "title": "Orange",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "past22_a.cpp"
+      }
+    },
+    {
+      "id": "past22_b",
+      "label": "B",
+      "title": "Southern Island",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "past22_b.cpp"
+      }
+    },
+    {
+      "id": "past22_c",
+      "label": "C",
+      "title": "AEIOU",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "past22_c.cpp"
+      }
+    },
+    {
+      "id": "past22_d",
+      "label": "D",
+      "title": "S+ring Cards",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "past22_d.cpp"
+      }
+    },
+    {
+      "id": "past22_e",
+      "label": "E",
+      "title": "Piano",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "past22_e.cpp"
+      }
+    },
+    {
+      "id": "past22_f",
+      "label": "F",
+      "title": "Subsequence",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "past22_f.cpp"
+      }
+    },
+    {
+      "id": "past22_g",
+      "label": "G",
+      "title": "Level Up",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "past22_g.cpp"
+      }
+    },
+    {
+      "id": "past22_h",
+      "label": "H",
+      "title": "Bus Line",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "past22_h.cpp"
+      }
+    },
+    {
+      "id": "past22_i",
+      "label": "I",
+      "title": "Big X",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_i",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "past22_i.cpp"
+      }
+    },
+    {
+      "id": "past22_j",
+      "label": "J",
+      "title": "XOR of XOR",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_j",
+      "directory": {
+        "path": "j",
+        "testdir": "test",
+        "submit": "past22_j.cpp"
+      }
+    },
+    {
+      "id": "past22_k",
+      "label": "K",
+      "title": "Otemae",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_k",
+      "directory": {
+        "path": "k",
+        "testdir": "test",
+        "submit": "past22_k.cpp"
+      }
+    },
+    {
+      "id": "past22_l",
+      "label": "L",
+      "title": "Deterministic League",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_l",
+      "directory": {
+        "path": "l",
+        "testdir": "test",
+        "submit": "past22_l.cpp"
+      }
+    },
+    {
+      "id": "past22_m",
+      "label": "M",
+      "title": "Inversion Number of Large Sequence",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "past22_m.cpp"
+      }
+    },
+    {
+      "id": "past22_n",
+      "label": "N",
+      "title": "Shortest Container",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "past22_n.cpp"
+      }
+    },
+    {
+      "id": "past22_o",
+      "label": "O",
+      "title": "Maximum Range Sum",
+      "url": "https://atcoder.jp/contests/past22-open/tasks/past22_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "past22_o.cpp"
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "contest": {
+    "id": "arc189",
+    "title": "AtCoder Regular Contest 189 (Div. 2)",
+    "url": "https://atcoder.jp/contests/arc189"
+  },
+  "tasks": [
+    {
+      "id": "arc189_a",
+      "label": "A",
+      "title": "Reversi 2",
+      "url": "https://atcoder.jp/contests/arc189/tasks/arc189_a"
+    },
+    {
+      "id": "arc189_b",
+      "label": "B",
+      "title": "Minimize Sum",
+      "url": "https://atcoder.jp/contests/arc189/tasks/arc189_b"
+    },
+    {
+      "id": "arc189_c",
+      "label": "C",
+      "title": "Balls and Boxes",
+      "url": "https://atcoder.jp/contests/arc189/tasks/arc189_c"
+    },
+    {
+      "id": "arc189_d",
+      "label": "D",
+      "title": "Takahashi is Slime",
+      "url": "https://atcoder.jp/contests/arc189/tasks/arc189_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "arc189_d.cpp"
+      }
+    },
+    {
+      "id": "arc189_e",
+      "label": "E",
+      "title": "Straight Path",
+      "url": "https://atcoder.jp/contests/arc189/tasks/arc189_e"
+    }
+  ]
+}

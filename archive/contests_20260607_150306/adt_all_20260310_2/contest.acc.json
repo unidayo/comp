@@ -1,0 +1,108 @@
+{
+  "contest": {
+    "id": "adt_all_20260310_2",
+    "title": "AtCoder Daily Training ALL 2026/03/10 18:00start",
+    "url": "https://atcoder.jp/contests/adt_all_20260310_2"
+  },
+  "tasks": [
+    {
+      "id": "abc420_a",
+      "label": "A",
+      "title": "What month is it?",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc420_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "abc420_a.cpp"
+      }
+    },
+    {
+      "id": "abc426_a",
+      "label": "B",
+      "title": "OS Versions",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc426_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "abc426_a.cpp"
+      }
+    },
+    {
+      "id": "abc438_b",
+      "label": "C",
+      "title": "Substring 2",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc438_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "abc438_b.cpp"
+      }
+    },
+    {
+      "id": "abc274_b",
+      "label": "D",
+      "title": "Line Sensor",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc274_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "abc274_b.cpp"
+      }
+    },
+    {
+      "id": "abc279_c",
+      "label": "E",
+      "title": "RANDOM",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc279_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc279_c.cpp"
+      }
+    },
+    {
+      "id": "abc303_c",
+      "label": "F",
+      "title": "Dash",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc303_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc303_c.cpp"
+      }
+    },
+    {
+      "id": "abc339_d",
+      "label": "G",
+      "title": "Synchronized Players ",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc339_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "abc339_d.cpp"
+      }
+    },
+    {
+      "id": "abc221_e",
+      "label": "H",
+      "title": "LEQ",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc221_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "abc221_e.cpp"
+      }
+    },
+    {
+      "id": "abc434_f",
+      "label": "I",
+      "title": "Concat (2nd)",
+      "url": "https://atcoder.jp/contests/adt_all_20260310_2/tasks/abc434_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "abc434_f.cpp"
+      }
+    }
+  ]
+}

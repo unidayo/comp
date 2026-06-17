@@ -1,0 +1,1 @@
+seed=64 elapsed=1.31 T=2865 score=6125321 input=in/seed64.txt output=out/seed64.txt

@@ -1,0 +1,1 @@
+seed=32 elapsed=1.43 T=2929 score=6093448 input=in/seed32.txt output=out/seed32.txt

@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0092",
+    "title": "AtCoder Weekday Contest 0092 Beta",
+    "url": "https://atcoder.jp/contests/awc0092"
+  },
+  "tasks": [
+    {
+      "id": "awc0092_a",
+      "label": "A",
+      "title": "Water Management and Harvest Value Aggregation",
+      "url": "https://atcoder.jp/contests/awc0092/tasks/awc0092_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0092_a.cpp"
+      }
+    },
+    {
+      "id": "awc0092_b",
+      "label": "B",
+      "title": "Robot Going Back and Forth in a Hallway",
+      "url": "https://atcoder.jp/contests/awc0092/tasks/awc0092_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0092_b.cpp"
+      }
+    },
+    {
+      "id": "awc0092_c",
+      "label": "C",
+      "title": "Spread of Rumors",
+      "url": "https://atcoder.jp/contests/awc0092/tasks/awc0092_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0092_c.cpp"
+      }
+    },
+    {
+      "id": "awc0092_d",
+      "label": "D",
+      "title": "Presentation Order",
+      "url": "https://atcoder.jp/contests/awc0092/tasks/awc0092_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0092_d.cpp"
+      }
+    },
+    {
+      "id": "awc0092_e",
+      "label": "E",
+      "title": "Adventurer and a Row of Monsters",
+      "url": "https://atcoder.jp/contests/awc0092/tasks/awc0092_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0092_e.cpp"
+      }
+    }
+  ]
+}
