@@ -1,8 +1,37 @@
+# Local caches and virtual environments
 .cache/
+.venv/
 .venv-pypy/
+
+# CMake/build outputs
 build
+build-*/
+build-debug/
+build-release/
+cmake-build-*/
 cmake-build-debug
-CMakeFiles
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+.ninja_*
+build.ninja
+*.ninja
+pch.dir/
+
+# Rust/local-tool build outputs
+target/
+
+# Local external/generated trees
 ac-library
 acc-config
-input.txt
+/unordered_dense/
+
+# Root-level scratch files and profiler/runtime outputs
+/input.txt
+/a.out
+/gmon.out
+/libpch.a
+/combined.cpp
+/compile_flags.txt

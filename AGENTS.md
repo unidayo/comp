@@ -15,7 +15,6 @@ comp/
 ├── gpu_experiments/       # CUDA/GPU 実験コード
 ├── archive/               # 過去の contests 退避先
 ├── typings/               # Python/PyPy 用の型定義
-├── unordered_dense/       # 外部ライブラリのソースツリー
 ├── CMakeLists.txt         # CMake 設定
 └── AGENTS.md              # このファイル
 ```
@@ -207,6 +206,8 @@ mylib/misc/            # その他
 
 本物の ACL は `/usr/lib/ac-library/` にあり、CMake で include path に追加されています。ローカルでは `ATCODER` が定義されるため `#include <atcoder/all>` が通ります。Codeforces などで ACL 展開が必要な場合は `mylib/acl/*.cpp` から必要分を貼る運用です。
 
+`ankerl::unordered_dense` はワークスペース外の `~/.local/include/ankerl/` にヘッダを置き、`#include <ankerl/unordered_dense.h>` で使います。`comp/` 直下に `unordered_dense/` のソースツリーを置かない運用です。
+
 ## scripts/
 
 作業補助スクリプトです。
@@ -298,10 +299,7 @@ pch.dir/
 .cache/
 .venv/
 .venv-pypy/
-unordered_dense/
 ```
-
-`unordered_dense/` は外部ライブラリのソースツリーです。競プロ解答の作業とは別扱いにします。
 
 ## 作業時の注意
 
@@ -312,4 +310,5 @@ unordered_dense/
 - `gpu_experiments/` は CMake 管理外なので、各ディレクトリのスクリプトに従う。
 - 既存のビルド成果物やキャッシュは不要に触らない。
 - `mylib/acl/` は Codeforces など提出用の補助として使う。ローカルでは `/usr/lib/ac-library/` と `ATCODER` 定義がある。
+- `ankerl::unordered_dense` は `~/.local/include/ankerl/` の共通ヘッダを使う。`comp/` 配下に外部ソースツリーを増やさない。
 - 日本語やスペースを含むディレクトリ名があるため、シェルではパスを必ずクォートする。
