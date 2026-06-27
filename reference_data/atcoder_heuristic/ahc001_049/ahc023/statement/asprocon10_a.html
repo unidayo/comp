@@ -1,0 +1,1183 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Crops on Grid</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Crops on Grid" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc023/tasks/asprocon10_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Crops on Grid" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc023";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2023-09-03T10:00:00+09:00");
+			var endTime = moment("2023-09-10T20:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>第10回 Asprova プログラミングコンテスト（AtCoder Heuristic Contest 023）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>第10回 Asprova プログラミングコンテスト（AtCoder Heuristic Contest 023）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc023">第10回 Asprova プログラミングコンテスト（AtCoder Heuristic Contest 023）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc023/tasks/asprocon10_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc023/tasks/asprocon10_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc023%2Ftasks%2Fasprocon10_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230903T1000&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-09-03 10:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230910T2000&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-09-10 20:00:00+0900</time></a> 
+				
+			
+		</small>
+		
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc023"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc023/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc023/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc023/submit?taskScreenName=asprocon10_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc023/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc023/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc023/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc023/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc023/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc023/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc023/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Crops on Grid
+			<a class="btn btn-default btn-sm" href="/contests/ahc023/tasks/asprocon10_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>問題文</h3><p>サイズが <var>H \times W</var> の長方形の土地があります。この土地はサイズ <var>1 \times 1</var> の正方形の<strong>区画</strong>に分割されており、区画と区画の境界は一部が<strong>水路</strong>となっています。また、土地の外周は柵で囲まれており、外周に一箇所だけ設置されている<strong>出入口</strong>からのみ出入りできます。出入口はいずれか一つの区画の一辺に含まれており、複数の区画にまたがることはありません。</p>
+<p><img src="data:image/png;base64,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" class="img-responsive center-block"></p>
+<p>あなたはこの土地を使って<strong>作物</strong>を育てたいと考えました。ある区画で作物を植えたり収穫したりするときは農機を使うので、出入口からその区画まで農機を移動させる必要があります。ただし、農機が通るための通路は設置されていません。</p>
+<p>これから通路を整備するのは大変なため、あなたは作物を栽培中ではない区画だけを通って農機を移動させることにしました。すなわち、ある区画に作物を植えるときやある区画から作物を収穫するときは、出入口から目的の区画まで以下の条件のもとで到達できなければなりません。</p>
+<ul>
+<li>各区画からは隣接する4区画にのみ移動できる（斜めには移動できない）</li>
+<li>ただし、境界が水路であるような二つの区画の間は直接移動できない</li>
+<li>栽培中の区画を通ってはならない</li>
+</ul>
+<p>これから <var>T</var> ヶ月の間に栽培する作物の候補が <var>K</var> 種類あり、<var>1, 2, \dots, K</var> と番号が付けられています。作物 <var>k</var> を栽培するには、<var>S_k</var> ヶ月目までに植える必要があります。また、作物 <var>k</var> は <var>D_k</var> ヶ月目に収穫する必要があります。作物 <var>k</var> を <var>S_k</var> ヶ月目より早く植えることは可能ですが、その場合でも <var>D_k</var> ヶ月目より早く収穫することはできません。</p>
+<p>どの作物をどの区画で栽培してもかまいませんが、一つの作物を複数の区画で栽培したり、複数の作物を一つの区画で同時に栽培したりすることはできません。</p>
+<p>なるべく多くの区画を有効に利用できるような計画を立ててください。</p>
+<h4>土地情報の詳細</h4>
+<p>土地は北西の角の座標が <var>(0, 0)</var>、南西の角の座標が <var>(H, 0)</var>、北東の角の座標が <var>(0, W)</var>、南東の角の座標が <var>(H, W)</var> です。北から <var>i+1</var> 番目、西から <var>j+1</var> 番目の区画は点 <var>(i, j)</var> と点 <var>(i + 1, j + 1)</var> を対角線とする正方形であり、これを区画 <var>(i, j)</var> と呼ぶことにします(<var>0 \le i \le H - 1</var>, <var>0 \le j \le W - 1</var>)。</p>
+<p>出入口は区画 <var>(i_0, 0)</var> の西側の境界部分（言い換えると、点 <var>(i_0, 0)</var> と点 <var>(i_0 + 1, 0)</var> を結ぶ線分上）にあります。</p>
+<p>辺を共有する2区画の境界のそれぞれについて、その部分に水路があるかどうかが指定されます。水路の情報のフォーマットは「入力」のセクションを参照してください。</p>
+<h4>計画の詳細</h4>
+<p>計画は、どの作物をどの区画で作り、何ヶ月目に植えるかの情報からなり、列 <var>(k_1, i_1, j_1, s_1), \dots, (k_M, i_M, j_M, s_M)</var> で表されます。この列の <var>m</var> 番目の要素は、作物 <var>k_m</var> を区画 <var>(i_m, j_m)</var> で <var>s_m</var> ヶ月目に植えることを意味します。</p>
+<p>計画が与えられたとき、<var>t</var> ヶ月目 (<var>t = 1, 2, \dots, T</var>) には以下のことを行います。</p>
+<ol>
+<li><var>t</var> ヶ月目の始めに、<var>s_m = t</var> を満たすすべての <var>m</var> について、<var>k_m</var> を <var>(i_m, j_m)</var> に植える。このとき、各 <var>m</var> について出入口から <var>(i_m, j_m)</var> まで水路や栽培中の区画を通ることなく移動できなければならない。</li>
+<li><var>t</var> ヶ月目の終わりに、<var>D_{k_m} = t</var> を満たすすべての <var>m</var> について、<var>k_m</var> を <var>(i_m, j_m)</var> から収穫する。このとき、各 <var>m</var> について出入口から <var>(i_m, j_m)</var> まで水路や栽培中の区画を通ることなく移動できなければならない。</li>
+</ol>
+<p>なお、同じ月に複数の作物を植えるとき、植える順番によって上の条件が満たされるかどうかが変わることがあります。例えば、作物 <var>k_1</var> と <var>k_2</var> を同じ月に植えたく、かつ <var>(i_1, j_1)</var> を通らないと <var>(i_2, j_2)</var> に移動できない場合、先に <var>k_1</var> を植えると <var>k_2</var> が植えられなくなります。</p>
+<p>このような場合は、各月ごとの植える順番を適切に決めることですべての作物を植えられるなら、実行可能な計画と判定されます。そのような順番が存在するかどうかはジャッジにより判定されるため、計画中で植える順番を指定する必要はありません。同じ月に複数の作物を収穫する場合も同様に、収穫する適切な順番が存在するかどうかはジャッジにより判定されるため、計画中で収穫の順番を指定する必要はありません。</p>
+<p>計画は以下の条件を満たす必要があります。</p>
+<ul>
+<li>同じ作物は一つの区画でしか作ることができない</li>
+<li>一つの区画では同時に一つの作物しか作ることができない</li>
+<li>作物 <var>k</var> を植える場合は <var>S_k</var> ヶ月目までに植えなければならない</li>
+<li>作物を植えたり収穫したりする際、出入口と目的の区画の間を移動できなければならない</li>
+</ul>
+<p>なお、すべての作物を植える必要はありません。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>作物 <var>k</var> のスコア <var>X_k</var> を以下のように定めます。</p>
+<ol>
+<li>作物 <var>k</var> が計画に含まれていなければ <var>X_k = 0</var> とする</li>
+<li>作物 <var>k</var> が計画に含まれているとき <var>X_k = D_k - S_k + 1</var> とする</li>
+</ol>
+<p><span class='label label-success' data-toggle='tooltip' data-placement='top' title="正解">AC</span> の判定がされたテストケースの得点は <var>10^6 \times {\sum_{k = 1}^K X_k \over HWT}</var> となります（この値は暫定テストとシステムテストで使用されるすべてのテストケースに対して整数になります）。<span class='label label-success' data-toggle='tooltip' data-placement='top' title="正解">AC</span> 以外の判定がされたテストケースの得点は <var>0</var> となります。</p>
+<p>暫定テストでは、すべてのテストケースで <span class='label label-success' data-toggle='tooltip' data-placement='top' title="正解">AC</span> の判定がされた場合は各テストケースの得点の合計が提出の得点となり、そうでない場合は提出の得点は <var>0</var> となります。</p>
+<p>システムテストでは、各テストケースの得点の合計が提出の得点となります。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定されます。システムテストは <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="コンパイルエラー">CE</span>  以外の結果を得た一番最後の提出に対してのみ行われるため、最終的に提出する解答を間違えないよう注意してください。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 50個</li>
+<li>システムテスト: 2000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc023/seeds.txt">seeds.txt</a> (sha256=0c2ffe8037c0c232ed9775b89a892fc1f68709a1582c83fd6bb609244cefcf32) を公開</li>
+</ul>
+<p>システムテストのテストケースには水路の生成に使用するパラメータ <var>d</var> が <var>1, 2, 3, 4</var> のものがそれぞれ同数ずつ含まれます（詳細は入力生成方法を参照してください）。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。 そのため、実行時間制限ギリギリの提出がシステムテストで <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span> となる可能性があります。プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下のフォーマットで標準入力から与えられます。</p>
+<pre><var>T</var> <var>H</var> <var>W</var> <var>i_0</var>
+<var>h_{0, 0}h_{0, 1}\cdots h_{0, W-1}</var>
+<var>\vdots</var>
+<var>h_{H-2, 0}h_{H-2, 1}\cdots h_{H-2, W-1}</var>
+<var>v_{0, 0}v_{0, 1}\cdots v_{0, W-2}</var>
+<var>\vdots</var>
+<var>v_{H-1, 0}v_{H-1, 1}\cdots v_{H-1, W-2}</var>
+<var>K</var>
+<var>S_1</var> <var>D_1</var>
+<var>\vdots</var>
+<var>S_K</var> <var>D_K</var>
+</pre>
+<p><var>h_{i, 0} \cdots h_{i, W-1}</var> は <var>0</var> または <var>1</var> のみからなる <var>W</var> 文字の文字列であり、区画 <var>(i, j)</var> の南側（座標 <var>(i+1, j)</var> と <var>(i+1, j+1)</var> の間を結ぶ線分上）に水路があるときに <var>h_{i,j} = 1</var>、そうでないときに <var>h_{i,j} = 0</var> です。</p>
+<p><var>v_{i, 0} \cdots v_{i, W-2}</var> は <var>0</var> または <var>1</var> のみからなる <var>W-1</var> 文字の文字列であり、区画 <var>(i, j)</var> の東側（座標 <var>(i, j+1)</var> と <var>(i+1, j+1)</var> の間を結ぶ線分上）に水路があるときに <var>v_{i,j} = 1</var>、そうでないときに <var>v_{i,j} = 0</var> です。</p>
+<p>暫定テストおよびシステムテストに用いられる入力は「入力生成方法」のセクションに述べられている方法で生成され、以下の条件を満たします。</p>
+<ul>
+<li><var>T = 100</var></li>
+<li><var>H = W = 20</var></li>
+<li><var>0 \le i_0 \le H - 1</var></li>
+<li><var>0 &lt; K \le HWT</var></li>
+<li><var>1 \le S_k &lt; D_k \le T \quad (1 \le k \le K)</var></li>
+<li>出入口からどの区画へも、隣接する区画への移動を繰り返すことで水路を通ることなく到達可能である</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>作る作物の数を <var>M</var>、作る作物を任意の順番で並べたものを <var>k_1, \dots, k_M</var> とし、<var>k_m</var> を区画 <var>(i_m, j_m)</var> で <var>s_m</var> ヶ月目に植えるとします。</p>
+<p>このとき、以下の形式で標準出力に出力してください。</p>
+<pre><var>M</var>
+<var>k_1</var> <var>i_1</var> <var>j_1</var> <var>s_1</var>
+<var>\vdots</var>
+<var>k_M</var> <var>i_M</var> <var>j_M</var> <var>s_M</var>
+</pre>
+<p>出力は問題文中に記述されている計画の要件を満たす必要があります。満たさない場合は <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span> と判定されます。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><details>
+<summary>詳細</summary>
+<div>
+<p><var>\mathrm{rand}(L, U)</var> で <var>L</var> 以上 <var>U</var> 未満の実数を一様ランダムに生成する関数を表す。また平均 <var>\mu</var>、分散 <var>\sigma^2</var> の<a href="https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83">正規分布</a>から実数値をランダムに生成する関数を <var>\mathrm{normal}(\mu, \sigma^2)</var> で表す。</p>
+<ul>
+<li><var>T = 100</var></li>
+<li><var>H = W = 20</var></li>
+<li><var>0 \le i_0 \le H - 1</var> となるように <var>i_0</var> を一様ランダムに選ぶ</li>
+<li>土地（外周も含む）に含まれる格子点を頂点とし、距離 <var>1</var> の頂点間すべてに辺を張ってできる無向グラフを <var>G = (V, E)</var> とする。つまり <var>V, E</var> は以下のように定義される。<ul>
+<li><var>V = \lbrace(i, j) \mid 0 \le i \le H, 0 \le j \le W\rbrace</var> </li>
+<li><var>E = \lbrace((i_1, j_1), (i_2, j_2)) \in V \times V \mid |i_1 - i_2| + |j_1 - j_2| = 1\rbrace</var></li>
+</ul>
+</li>
+<li><var>G</var> を使って以下のように水路を生成する。<ul>
+<li><var>d = 1 + (\mathit{seed} \bmod 4)</var></li>
+<li>外周に含まれる点（すなわち、<var>i = 0, i = H, j = 0, j = W</var> のいずれかを満たす <var>(i, j) \in V</var>）すべてにマークを付ける</li>
+<li>以下の処理を繰り返す<ul>
+<li><var>V'</var> をこの時点でマークの付いている点全体の集合、<var>V'' = \lbrace (i', j') \in V \mid \forall (i, j) \in V', |i - i'| + |j - j'| &gt; d \rbrace</var> とする</li>
+<li><var>V''</var> が空なら水路の生成を終了する。空でないなら <var>V''</var> の要素を一様ランダムに一つ選んで <var>(i, j)</var> とする。</li>
+<li><var>V'</var> の点のうち、<var>G</var> において <var>(i, j)</var> から最も近い点を <var>(i', j')</var> とする。最も近い点が複数ある場合は、その中から一様ランダムに選ぶ。</li>
+<li><var>(i, j)</var> と <var>(i', j')</var> の間の <var>G</var> における最短路を <var>P</var> とする。最短路が複数ある場合は、向きを変える回数が最も少ないもの（最大2通りある）の中から一様ランダムに選ぶ。</li>
+<li><var>P</var> に含まれるすべての辺を水路にする</li>
+<li><var>P</var> に含まれるすべての頂点にマークを付ける</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><var>L = \mathrm{round}(HWT \times \mathrm{rand(1.0, 2.0)})</var> とする。<var>k = 1, 2, \dots</var> に対して以下を繰り返すことで <var>D_k, S_k</var> を生成する。<ul>
+<li><var>L_k = \mathrm{round}(10^{\mathrm{normal}(1, 0.25^2)})</var> とする。ただし <var>2 \le L_k \le T</var> を満たさなかったら <var>L_k</var> の生成をやり直す。</li>
+<li><var>D_k</var> を <var>L_k \le D_k \le T</var> の範囲で一様ランダムに生成する</li>
+<li><var>S_k = D_k - L_k + 1</var> とする</li>
+<li><var>\sum_{i = 1}^k L_i \ge L</var> なら生成を終了する</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc023/5XtyY7PgVPtBANvV.html">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc023/asprocon10_5XtyY7PgVPtBANvV.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc023/asprocon10_5XtyY7PgVPtBANvV_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+<li><a href="https://img.atcoder.jp/ahc023/5XtyY7PgVPtBANvV_sample.zip">サンプルコード(C++)</a>: 最初の <var>\min(K, 10)</var> 個の作物について、植えられる区画を探して最初に見つかった区画に植える処理を実装しています。</li>
+</ul>
+<p><font color="red"><strong>コンテスト終了までビジュアライズ結果の共有は禁止されています。ご注意下さい。</strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre>10 6 6 3
+011010
+000001
+011000
+000110
+011000
+00000
+10001
+10010
+00110
+10101
+10000
+20
+2 10
+1 10
+4 10
+1 10
+2 9
+4 5
+2 8
+4 10
+4 9
+1 9
+1 3
+1 6
+1 7
+3 6
+8 10
+1 7
+3 8
+2 8
+1 10
+2 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre>12
+1 0 0 2
+2 0 1 1
+3 1 0 4
+4 0 2 1
+5 3 1 2
+6 2 0 4
+7 4 0 2
+10 3 2 1
+15 2 0 8
+18 5 0 2
+19 0 3 1
+20 4 1 2
+</pre>
+<p>このサンプルは入出力の例を示すための、採点に使われる入力データよりも小さいものです。</p></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a rectangular piece of land with size <var>H \times W</var>.
+This land is divided into square <strong>blocks</strong> of size <var>1 \times 1</var>, and some of the boundaries between the blocks are separated by <strong>waterways</strong>.
+The border of the land is surrounded by fences except for a single <strong>entrance</strong>, which is the only way to enter or exit the land.
+The entrance is set on one side of a single block.</p>
+<p><img src="data:image/png;base64,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" class="img-responsive center-block"></p>
+<p>You plan to grow <strong>crops</strong> on this land.
+When planting or harvesting crops, you will need to move agricultural machinery from the entrance to the block you plan to work on.
+However, there are no fixed pathways set as the passage for the machinery.</p>
+<p>As it would be a challenging task to establish the pathways now, you have decided to move the machinery through the blocks which are not currently being used for growing crops.
+In other words, when planting or harvesting crops in a particular block, it must be possible to reach to the block from the entrance while satisfying the following conditions:</p>
+<ul>
+<li>You can only move to the four adjacent blocks from each block (moving diagonally is not allowed).</li>
+<li>Yon cannot move from one block to another if they are separated by a waterway.</li>
+<li>You may not pass through blocks which are currently being used for growing crops.</li>
+</ul>
+<p>There are <var>K</var> kinds of crops available for planting, numbered <var>1, 2, \dots, K</var>.
+You are to choose some of them to be planted and harvested in the following <var>T</var> months.
+To plant crop <var>k</var>, you will need to plant it <strong>no later than</strong> the <var>S_k</var>-th month, and harvest it <strong>at</strong> the <var>D_k</var>-th month.
+You can plant crop <var>k</var> before the <var>S_k</var>-th month, but even if you plant it earlier than required, you cannot harvest it before <var>D_k</var>-th month.</p>
+<p>It is allowed to plant any kind of crop in any block, but one kind of crop cannot be planted in multiple blocks, and multiple kinds of crops cannot be planted in a single block.</p>
+<p>Please make a planting plan which maximizes the utility of the land.</p>
+<h4>Details of the land</h4>
+<p>The land has coordinates with the northwest corner at <var>(0, 0)</var>, the southwest corner at <var>(H, 0)</var>, the northeast corner at <var>(0, W)</var>, and the southeast corner at <var>(H, W)</var>.
+The block at the <var>i+1</var>-th row from the north and the <var>j+1</var>-th column from the west is a square with diagonal points <var>(i, j)</var> and <var>(i + 1, j + 1)</var>.
+This square is referred to as block <var>(i, j)</var> (<var>0 \le i \le H - 1</var>, <var>0 \le j \le W - 1</var>).</p>
+<p>The entrance is set at the west side of block <var>(i_0, 0)</var> (that is, on the segment between coordinates <var>(i_0, 0)</var> and <var>(i_0 + 1, 0)</var>).</p>
+<p>For the blocks which shares sides, whether there is a waterway between them is determined by the given input.
+Please refer to the "Input" section for the details of the input format for the waterway.</p>
+<h4>Details of the planting plan</h4>
+<p>A planting plan describes which crop are grown on which blocks, and when they are planted.
+It is represented by a sequence <var>(k_1, i_1, j_1, s_1), \dots, (k_M, i_M, j_M, s_M)</var>.
+The <var>m</var>-th element of this sequence signifies that crop <var>k_m</var> is planted in block <var>(i_m, j_m)</var> on the <var>s_m</var>-th month.</p>
+<p>Based on a given planting plan, the following actions are taken on the <var>t</var>-th month (<var>t = 1, 2, \dots, T</var>).</p>
+<ol>
+<li>At the beginning of the <var>t</var>-th month, for all <var>m</var> where <var>s_m = t</var>, crop <var>k_m</var> is planted in block <var>(i_m, j_m)</var>. During this process, <var>(i_m, j_m)</var> must be reachable from the entrance without  crossing waterways or passing through blocks where crops are currently growing in.</li>
+<li>At the end of the <var>t</var>-th month, for all <var>m</var> where <var>D_{k_m} = t</var>, crop <var>k_m</var> is harvested from block <var>(i_m, j_m)</var>. During this process, <var>(i_m, j_m)</var> must be reachable from the entrance without  crossing waterways or passing through blocks where crops are currently growing in.</li>
+</ol>
+<p>When planting multiple crops in a same month, the reachability condition above may depend on the order in which crops are planted.
+For example, if crops <var>k_1</var> and <var>k_2</var> are to be planted in a same month, and <var>(i_2, j_2)</var> cannot be reached without passing through <var>(i_1, j_1)</var>, then planting crop <var>k_1</var> before <var>k_2</var> blocks the way for planting <var>k_2</var>.</p>
+<p>In this case, a planting plan is considered valid if there exists an order such that planting them by the order does not lead to the situation above.
+Such an order will be calculated by the judging program, so it does not have to be determined in the output.
+Similarly, when harvesting multiple crops in a same month, the order of the crops will be calculated by the judging program and does not have to be determined in the output.</p>
+<p>The planting plan must satisfy the following conditions.</p>
+<ul>
+<li>The same crop can only be planted in the same block.</li>
+<li>A block can only contains at most one kind of crop at the same time.</li>
+<li>When planting crop <var>k</var>, it must be planted before <var>S_k</var>-th month.</li>
+<li>When planting or harvesting crop, the target crop must be reachable from the entrance.</li>
+</ul>
+<p>Note that, it is not required to plant all the <var>K</var> crops.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>The score of crop <var>k</var>, <var>X_k</var>, is determined as the following rules.</p>
+<ol>
+<li>If crop <var>k</var> is not planted, then <var>X_k = 0</var>.</li>
+<li>If crop <var>k</var> is planted, then <var>X_k = D_k - S_k + 1</var>.</li>
+</ol>
+<p>For each test case that received an <span class="label label-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Accepted">AC</span> verdict, the score of the test case will be <var>10^6 \times {\sum_{k = 1}^K X_k \over HWT}</var> (this number will be an integer in all test cases used in provisional test and system test).
+For each test case that received a not <span class="label label-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Accepted">AC</span> verdict, the score of the test case will be <var>0</var>.</p>
+<p>In provisional test, if a submission receives <span class="label label-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Accepted">AC</span> in all test cases, the score of the submission will be the sum of the score of all test cases. Otherwise, the score of the submission will be <var>0</var>.</p>
+<p>In system test, the score of the submission will be the sum of the score of all test cases.</p>
+<p>The final standings will be determined by the system test which is conducted after the contest.
+The system test will be performed only for the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 50</li>
+<li>System test: 2000; We will publish <a href="https://img.atcoder.jp/ahc023/seeds.txt">seeds.txt</a> (sha256=0c2ffe8037c0c232ed9775b89a892fc1f68709a1582c83fd6bb609244cefcf32) after the contest is over.</li>
+</ul>
+<p>The test cases in the system test contains the same amount of test cases with <var>d = 1, 2, 3, 4</var>, where <var>d</var> is a parameter used in generating the waterways (for details, please refer to the input generation).</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run. In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests. For these reasons, submissions that are very close to the time limit may result in <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span> in the system test. Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>T</var> <var>H</var> <var>W</var> <var>i_0</var>
+<var>h_{0, 0}h_{0, 1}\cdots h_{0, W-1}</var>
+<var>\vdots</var>
+<var>h_{H-2, 0}h_{H-2, 1}\cdots h_{H-2, W-1}</var>
+<var>v_{0, 0}v_{0, 1}\cdots v_{0, W-2}</var>
+<var>\vdots</var>
+<var>v_{H-1, 0}v_{H-1, 1}\cdots v_{H-1, W-2}</var>
+<var>K</var>
+<var>S_1</var> <var>D_1</var>
+<var>\vdots</var>
+<var>S_K</var> <var>D_K</var>
+</pre>
+<p><var>h_{i, 0} \cdots h_{i, W-1}</var> is a string of length <var>W</var> consisting of only <var>0</var> and <var>1</var>.
+For block <var>(i, j)</var>, if there is a waterway on the south side (along the segment between coordinates <var>(i + 1, j)</var> and <var>(i + 1, j + 1)</var>), then <var>h_{i, j} = 1</var>.
+Otherwise, if there is no waterway, <var>h_{i, j} = 0</var>.</p>
+<p><var>v_{i, 0} \cdots v_{i, W-2}</var> is a string of length <var>W - 1</var> consisting of only <var>0</var> and <var>1</var>.
+For block <var>(i, j)</var>, if there is a waterway on the east side (along the segment between coordinates <var>(i, j + 1)</var> and <var>(i + 1, j + 1)</var>), then <var>v_{i, j} = 1</var>.
+Otherwise, if there is no waterway, <var>v_{i, j} = 0</var>.</p>
+<p>The inputs of provisional test and system test are generated by the method described below in "Input Generation".
+The inputs satisfy the following regulations.</p>
+<ul>
+<li><var>T = 100</var></li>
+<li><var>H = W = 20</var></li>
+<li><var>0 \le i_0 \le H - 1</var></li>
+<li><var>0 &lt; K \le HWT</var></li>
+<li><var>1 \le S_k &lt; D_k \le T \quad (1 \le k \le K)</var></li>
+<li>For any particular block, it is possible to reach it from the entrance by moving between adjacent blocks without crossing the waterway.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let the number of crops to plant be <var>M</var>, <var>k_1, \dots, k_M</var> be an arbitrary order of the crops to be planted, and crop <var>k_m</var> is planned to be planted in block <var>(i_m, j_m)</var> in the <var>s_m</var>-th month.</p>
+<p>In this case, output to standard output (stdout) in the following format.</p>
+<pre><var>M</var>
+<var>k_1</var> <var>i_1</var> <var>j_1</var> <var>s_1</var>
+<var>\vdots</var>
+<var>k_M</var> <var>i_M</var> <var>j_M</var> <var>s_M</var>
+</pre>
+<p>The output must meet the requirements described in the problem statement.
+Otherwise, the test case will be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><details>
+<summary>Details</summary>
+<div>
+<p>Let <var>\mathrm{rand}(L, U)</var> be a function that generates a uniform random floating-point number at least L and less than U.
+Let <var>\mathrm{normal}(\mu, \sigma^2)</var> be a function that generates a random value from <a href="https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution">the standard normal distribution</a> with <var>\mu</var> as its mean and <var>\sigma^2</var> as its variance.</p>
+<ul>
+<li><var>T = 100</var></li>
+<li><var>H = W = 20</var></li>
+<li>Generate <var>i_0</var> randomly from <var>{0, 1, \dots, H - 1}</var>.</li>
+<li>Let <var>G = (V, E)</var> be the undirected graph with the lattice points on the land (including border) as its vertices, and segments of length <var>1</var> connecting two lattice points as its edges. Formally, <var>V</var> and <var>E</var> are defined as the following:<ul>
+<li><var>V = \lbrace(i, j) \mid 0 \le i \le H, 0 \le j \le W\rbrace</var></li>
+<li><var>E = \lbrace((i_1, j_1), (i_2, j_2)) \in V \times V \mid |i_1 - i_2| + |j_1 - j_2| = 1\rbrace</var></li>
+</ul>
+</li>
+<li>Generate the waterways in the following way.<ul>
+<li><var>d = 1 + (\mathit{seed} \bmod 4)</var></li>
+<li>Mark all vertices which locates on the border (that is, all <var>(i, j) \in V</var> where <var>i = 0, i = H, j = 0</var>, or <var>j = W</var> is satisfied).</li>
+<li>Repeat the following processes.<ul>
+<li>Let <var>V'</var> be the set of vertices that is marked, and <var>V'' = \lbrace (i', j') \in V \mid \forall (i, j) \in V', |i - i'| + |j - j'| &gt; d \rbrace</var>.</li>
+<li>If <var>V''</var> is empty, the process of generating waterways is ended. Otherwise, let <var>(i, j)</var> be a element selected randomly from <var>V''</var>.</li>
+<li>Let <var>(i', j')</var> be the vertex in <var>V'</var> which is nearest to <var>(i, j)</var>. If there are multiple candidates of <var>(i', j')</var>, let <var>(i', j')</var> be one of them randomly.</li>
+<li>Let <var>P</var> be the shortest path in <var>G</var> connecting <var>(i, j)</var> and <var>(i', j')</var>. If there are multiple candidates of <var>P</var>, let <var>P</var> be one of the paths having the least turning points. If there are still multiple (at most <var>2</var>) candidates of <var>P</var>, let <var>P</var> be one of them randomly.</li>
+<li>Set all edges in <var>P</var> to waterways.</li>
+<li>Mark all vertices in <var>P</var>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Let <var>L = \mathrm{round}(HWT \times \mathrm{rand(1.0, 2.0)})</var>. For <var>k = 1, 2, \dots</var>, repeat the following processes to generate <var>D_k</var> and <var>S_k</var>.<ul>
+<li>Let <var>L_k = \mathrm{round}(10^{\mathrm{normal}(1, 0.25^2)})</var>. If <var>2 \le L_k \le T</var> isn't satisfied, regenerate <var>L_k</var>.</li>
+<li>Generate <var>D_k</var> randomly from <var>{L_k, L_k + 1, \dots, T}</var>.</li>
+<li>Let <var>S_k = D_k - L_k + 1</var>.</li>
+<li>If <var>\sum_{i = 1}^k L_i \ge L</var>, then the processes are ended.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc023/5XtyY7PgVPtBANvV.html?lang=en">Web version</a>: This is more powerful than the local version when displaying animations.</li>
+<li><a href="https://img.atcoder.jp/ahc023/asprocon10_5XtyY7PgVPtBANvV.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc023/asprocon10_5XtyY7PgVPtBANvV_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+<li><a href="https://img.atcoder.jp/ahc023/5XtyY7PgVPtBANvV_sample.zip">Sample code (C++)</a>: This sample code searches for a block to plant each crop, and choose the first one found.  Only the first <var>\min(K, 10)</var> crops are considered.</li>
+</ul>
+<p><font color="red"><strong>Sharing visualization results is not allowed until the end of the contest.</strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>10 6 6 3
+011010
+000001
+011000
+000110
+011000
+00000
+10001
+10010
+00110
+10101
+10000
+20
+2 10
+1 10
+4 10
+1 10
+2 9
+4 5
+2 8
+4 10
+4 9
+1 9
+1 3
+1 6
+1 7
+3 6
+8 10
+1 7
+3 8
+2 8
+1 10
+2 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>12
+1 0 0 2
+2 0 1 1
+3 1 0 4
+4 0 2 1
+5 3 1 2
+6 2 0 4
+7 4 0 2
+10 3 2 1
+15 2 0 8
+18 5 0 2
+19 0 3 1
+20 4 1 2
+</pre>
+<p>This sample is only to show a concrete example of input/output, and is smaller than the actual test cases used for scoring.</p></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc023/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="asprocon10_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc023/tasks/asprocon10_a?lang=ja" data-a2a-title="A - Crops on Grid">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc023/rules">ルール</a></li>
+					<li><a href="/contests/ahc023/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

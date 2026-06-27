@@ -1,0 +1,1087 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Robust Memory of Commuting Routes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Robust Memory of Commuting Routes" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc009/tasks/ahc009_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Robust Memory of Commuting Routes" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc009";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2022-03-26T15:00:00+09:00");
+			var endTime = moment("2022-03-26T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>モノグサ プログラミングコンテスト2022（AtCoder Heuristic Contest 009）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<a class="btn btn-primary" href='/contests/ahc009/tasks'>問題一覧ページへ移動</a>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>モノグサ プログラミングコンテスト2022（AtCoder Heuristic Contest 009）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc009">モノグサ プログラミングコンテスト2022（AtCoder Heuristic Contest 009）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc009/tasks/ahc009_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc009/tasks/ahc009_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Contestant) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc009%2Ftasks%2Fahc009_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20220326T1500&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-03-26 15:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20220326T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-03-26 19:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc009"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc009/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc009/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc009/submit?taskScreenName=ahc009_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc009/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc009/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc009/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc009/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc009/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc009/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc009/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Robust Memory of Commuting Routes
+			<a class="btn btn-default btn-sm" href="/contests/ahc009/tasks/ahc009_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>下図のような地図が与えられる。
+赤い丸印に高橋くんの自宅があり、青い丸印にAtCoder社のオフィスがある。
+高橋くんはオフィスへの行き方を、下右下右のような文字列で覚えている。
+高橋くんは忘れっぽいため、覚えている文字列の一部を忘れてしまうことがある。
+たとえば、3文字目を忘れて下右右と移動した場合、オフィスにたどり着くことが出来ずに迷子になってしまう。
+そこで、一部を忘れても高確率でオフィスまでたどり着けるような、頑強な文字列を記憶することにした。
+例えば、下右下右下右という文字列を覚えておけば、どの1文字を忘れたとしても無事オフィスにたどり着くことが出来る。
+オフィスへ到達出来る確率が高く、かつ出来るだけ早くオフィスに到達出来るような文字列を求めてほしい。</p>
+<table>
+<tr>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_1.svg">
+<figcaption>下右下右</figcaption>
+</figure>
+</td>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_2.svg">
+<figcaption>下右<del>下</del>右</figcaption>
+</figure>
+</td>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_3.svg">
+<figcaption>下右<del>下</del>右下右</figcaption>
+</figure>
+</td>
+</tr>
+</table>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>20\times 20</var> マスの地図が与えられる。
+外周は壁に囲まれており、隣接するマスとマスの間にも壁がある場合がある。
+一番左上のマスの座標を <var>(0, 0)</var> とし、そこから下方向に <var>i</var> マス、右方向に <var>j</var> マス進んだ先のマスの座標を <var>(i,j)</var> とする。
+マス <var>(s_i, s_j)</var> に高橋くんの自宅があり、マス <var>(t_i, t_j)</var> に AtCoder社のオフィスがある。
+自宅からオフィスへの通勤経路を、上下左右の移動をそれぞれ <code>U</code>, <code>D</code>, <code>L</code>, <code>R</code> で表した長さ <var>200</var> 以下の文字列として出力せよ。</p>
+<p>出力された文字列の長さを <var>L</var> とする。
+高橋くんは自宅から出発し、<var>t=1,\cdots,L</var> ターン目には以下のように行動する。</p>
+<ul>
+<li>一定の確率 <var>p</var> で、<var>t</var> 文字目を思い出すことが出来ずにその場にとどまる。</li>
+<li>残りの確率 <var>1-p</var> で、<var>t</var> 文字目の示す方向へ1マス移動する。その方向が壁の場合はその場にとどまる。</li>
+</ul>
+<p>途中でオフィスに到着した場合はその時点で移動を終了する。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>確率変数 <var>S</var> を、<var>t</var> ターン目の行動後にオフィスに到着した場合は <var>S=401-t</var>、最後までオフィスに到着出来なかった場合は <var>S=0</var> として定義し、期待値 <var>E[S]</var> を計算する。
+このとき、<var>\mathrm{round}(250000\times E[S])</var> の得点が得られる。
+不正な出力(長さが200を超えるか、<code>U</code>, <code>D</code>, <code>L</code>, <code>R</code> 以外の文字を含む)がされた場合は <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span> と判定される。</p>
+<p>テストケースは全部で 100 個あり、各テストケースの得点の合計が提出の得点となる。
+1つ以上のテストケースで <span class='label label-success' data-toggle='tooltip' data-placement='top' title="正解">AC</span> 以外の判定がされた場合、提出の得点は0点となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。
+同じ得点を複数の参加者が得た場合、その得点を獲得した提出の早い方が上位となる。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>s_i</var> <var>s_j</var> <var>t_i</var> <var>t_j</var> <var>p</var>
+<var>h_{0,0}</var> <var>\cdots</var> <var>h_{0,18}</var>
+<var>\vdots</var>
+<var>h_{19,0}</var> <var>\cdots</var> <var>h_{19,18}</var>
+<var>v_{0,0}</var> <var>\cdots</var> <var>v_{0,19}</var>
+<var>\vdots</var>
+<var>v_{18,0}</var> <var>\cdots</var> <var>v_{18,19}</var>
+</pre>
+
+<p>自宅とオフィスの座標は <var>0\leq s_i\leq 4</var>, <var>0\leq s_j\leq 4</var>, <var>15\leq t_i\leq 19</var>, <var>15\leq t_j\leq 19</var> を満たす。
+<var>p</var> は各文字を忘れてしまう確率で <var>0.1</var> 以上 <var>0.5</var> 以下の実数である。
+<var>h_{i,0}</var> <var>\cdots</var> <var>h_{i,18}</var> は <var>0</var> もしくは <var>1</var> のみからなる <var>19</var> 文字の文字列であり、<var>(i,j)</var> と <var>(i,j+1)</var> のマスの間に壁がある場合は <var>h_{i,j}=1</var>、無い場合は <var>h_{i,j}=0</var> である。
+<var>v_{i,0}</var> <var>\cdots</var> <var>v_{i,19}</var> は <var>0</var> もしくは <var>1</var> のみからなる <var>20</var> 文字の文字列であり、<var>(i,j)</var> と <var>(i+1,j)</var> のマスの間に壁がある場合は <var>v_{i,j}=1</var>、無い場合は <var>v_{i,j}=0</var> である。
+全てのマスは自宅から到達可能であることが保証されている。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>高橋くんが記憶する文字列を1行に出力せよ。</p>
+<p><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.html?lang=ja&show=example">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><details>
+<var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で表す。</p>
+<h4><var>(s_i, s_j)</var>, <var>(t_i, t_j)</var>, <var>p</var> の生成</h4>
+<p><var>s_i=\mathrm{rand}(0, 4)</var>, <var>s_j=\mathrm{rand}(0, 4)</var>, <var>t_i=\mathrm{rand}(15, 19)</var>, <var>t_j=\mathrm{rand}(15, 19)</var>, <var>p=\mathrm{rand}(10, 50) / 100</var> により生成される。</p>
+<h4><var>h_{i,j}</var>, <var>v_{i,j}</var> の生成</h4>
+<p><var>[k]=\{0,1,\cdots,k-1\}</var> と定義する。
+頂点集合 <var>V=[20]\times[20]</var>、辺集合 <var>E=\{\{(i,j),(i,j+1)\}\mid i\in[20],j\in[19]\}\cup\{\{(i,j),(i+1,j)\}\mid i\in[19],j\in[20]\}</var> のグリッドグラフ上の2つの全域木 <var>G_r=(V,E_r)</var> <var>(r=1,2)</var> を以下の処理を独立に二回行うことで生成する。</p>
+<ol>
+<li>まず、辺集合<var>E</var>をランダムな順番にシャッフルして <var>e_0,\cdots,e_{759}</var> とする。</li>
+<li><var>E_r=\emptyset</var> から開始し、<var>k=0</var> から <var>k=759</var> まで順番に、各 <var>e_k=\{(i,j),(i',j')\}</var> に対して、<var>(i,j)</var> と <var>(i',j')</var> が <var>G_r</var> 上で連結でないならば <var>e_k</var> を <var>E_r</var> に加える。</li>
+</ol>
+<p>得られた2つの全域木を用いて、<var>h</var> と <var>v</var> を以下のように設定する。</p>
+<ul>
+<li><var>h_{i,j}=0 \iff \{(i,j),(i,j+1)\}\in E_1\cup E_2</var></li>
+<li><var>v_{i,j}=0 \iff \{(i,j),(i+1,j)\}\in E_1\cup E_2</var></li>
+</ul>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.html">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><strong>コンテスト終了までビジュアライズ結果の共有は禁止されています。ご注意下さい。</strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">1 2 19 16 0.10
+0010000100110011100
+1000001000001000001
+0000000000000000010
+0100000000000110100
+0000000000000000100
+1000101100000101010
+0010001011000110000
+0000001001000000000
+0000000100010001001
+0010010000100000001
+0001000010000100000
+0011010000000001000
+0000000101010100000
+0000001000000100010
+0110100010000000000
+0010011101000101000
+0000100110010000000
+0010000101101000010
+1001000000000000000
+1000110000000000000
+00000001000000000100
+00001000010001000000
+00010001010000010000
+01110010101000010100
+00000000000001100000
+00001000010000000100
+00101000000010110011
+01010100000000000000
+00001101010010010010
+10000000000000010100
+01011010000001100100
+00000000000000010011
+00001100111000110100
+00000010000000000000
+00010000100111000000
+11010000001001010100
+01100010011001011001
+00000101000010101010
+00100000000000000001
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">RDLRLRRDUUDRLURDRRDDLRLRUURUUUUDRDRUUDLRUDLLDDDDURLRUDDLDRDLRLLLLUDRUDRRULRULRDLRLDLLUUULDLUURRLRDRRRRDULDRLRRRRDDDDDRULDDURDDDRDLRRLDLDLDLRLLLUDDRDDDUURUDDLLLUULLLLDLUDRLLDLLULRLDLDDRLDRDLURURULRDDDR
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>A map like in the figure below is given.
+Takahashi's home is located in the square with the red circle, and AtCoder's office is located in the square with the blue circle.
+He memorizes his commuting route to the office as a string of characters such as DRDR, which means Down, Right, Down, and Right.
+Because he is quite forgetful, he sometimes forgets some parts of the string he has memorized.
+For example, if he forgets the third character, he will move down, right, and right, and will be lost without reaching the office.
+Therefore, he decided to memorize a robust string that would allow him to reach the office with a high probability even if he forgets some parts of the string.
+For example, if he memorizes a string DRDRDR, he can reach the office even if he forgets any one of the characters.
+Your task is to find a string that will allow Takahashi to reach the office quickly and with a high probability.</p>
+<table>
+<tr>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_1.svg">
+<figcaption>DRDR</figcaption>
+</figure>
+</td>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_2.svg">
+<figcaption>DR<del>D</del>R</figcaption>
+</figure>
+</td>
+<td>
+<figure style="text-align:center">
+<img src="https://img.atcoder.jp/ahc009/f29506fb2_3.svg">
+<figcaption>DR<del>D</del>RDR</figcaption>
+</figure>
+</td>
+</tr>
+</table>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given a map consisting of <var>20\times 20</var> squares.
+The outside of the map is surrounded by walls.
+There may also be walls between adjacent squares.
+Let <var>(0,0)</var> denote the top-left square, and <var>(i,j)</var> denote the square at the <var>i</var>-th row from the top and <var>j</var>-th column from the left.
+Takahashi's home is located at <var>(s_i, s_j)</var> and AtCoder's office is located at <var>(t_i, t_j)</var>.
+By representing up, down, left, and right movements as <code>U</code>, <code>D</code>, <code>L</code>, and <code>R</code>, respectively, output a commuting route from the home to the office as a string of length less than or equal to <var>200</var>.</p>
+<p>Let <var>L</var> be the length of the output string.
+Starting from the home, Takahashi will do the following action in each <var>t=1,\cdots,L</var> turn.</p>
+<ul>
+<li>With constant probability <var>p</var>, he cannot recall the <var>t</var>-th character and stays in the current square.</li>
+<li>With the remaining probability <var>1-p</var>, he moves one square in the direction represented by the <var>t</var>-th character. If there is a wall in that direction, he stays in the current square.</li>
+</ul>
+<p>When he gets to the office, he immediately terminate the move.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>S</var> be a random variable defined as <var>S=401-t</var> if he gets to the office after <var>t</var> turns of actions and <var>S=0</var> if he fails to get to the office, and compute its expected value, <var>E[S]</var>.
+Then, you will get a score of <var>\mathrm{round}(250000\times E[S])</var>.
+If your output is invalid (the length exceeds 200 or contains characters other than <code>U</code>, <code>D</code>, <code>L</code>, and <code>R</code>), it will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span>.</p>
+<p>There are 100 test cases, and the score of a submission is the total score for each test case. If you get a result other than <span class='label label-success' data-toggle='tooltip' data-placement='top' title="Accepted">AC</span> for one or more test cases, the score of the submission will be zero. The highest score obtained during the contest time will determine the final ranking, and there will be no system test after the contest. If more than one participant gets the same score, the ranking will be determined by the submission time of the submission that received that score.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>s_i</var> <var>s_j</var> <var>t_i</var> <var>t_j</var> <var>p</var>
+<var>h_{0,0}</var> <var>\cdots</var> <var>h_{0,18}</var>
+<var>\vdots</var>
+<var>h_{19,0}</var> <var>\cdots</var> <var>h_{19,18}</var>
+<var>v_{0,0}</var> <var>\cdots</var> <var>v_{0,19}</var>
+<var>\vdots</var>
+<var>v_{18,0}</var> <var>\cdots</var> <var>v_{18,19}</var>
+</pre>
+
+<p>The coordinates of the home and the office satisfy <var>0\leq s_i\leq 4</var>, <var>0\leq s_j\leq 4</var>, <var>15\leq t_i\leq 19</var>, and <var>15\leq t_j\leq 19</var>.
+<var>p</var> is a real number representing the probability of forgetting each character and satisfies <var>0.1\leq p\leq 0.5</var>.
+<var>h_{i,0}</var> <var>\cdots</var> <var>h_{i,18}</var> is a string of <var>19</var> characters consisting of only <var>0</var> or <var>1</var>.
+If there is a wall between the squares <var>(i,j)</var> and <var>(i,j+1)</var>, then <var>h_{i,j}=1</var>, otherwise <var>h_{i,j}=0</var>.
+<var>v_{i,0}</var> <var>\cdots</var> <var>v_{i,19}</var> is a string of <var>20</var> characters consisting of only <var>0</var> or <var>1</var>.
+If there is a wall between the squares <var>(i,j)</var> and <var>(i+1,j)</var>, then <var>v_{i,j}=1</var>, otherwise <var>v_{i,j}=0</var>.
+It is guaranteed that all squares are reachable from the home.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Output a string that Takahashi memorizes in one line to Standard Output.</p>
+<p><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.html?lang=en&show=example">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p><details>
+Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<h4>Generation of <var>(s_i, s_j)</var>, <var>(t_i, t_j)</var>, and <var>p</var></h4>
+<p>We generate <var>s_i=\mathrm{rand}(0, 4)</var>, <var>s_j=\mathrm{rand}(0, 4)</var>, <var>t_i=\mathrm{rand}(15, 19)</var>, <var>t_j=\mathrm{rand}(15, 19)</var>, and <var>p=\mathrm{rand}(10, 50) / 100</var>.</p>
+<h4>Generation of <var>h_{i,j}</var> and <var>v_{i,j}</var></h4>
+<p>Let <var>[k]=\{0,1,\cdots,k-1\}</var>.
+Let <var>G=(V,E)</var> be a grid graph such that <var>V=[20]\times[20]</var> and <var>E=\{\{(i,j),(i,j+1)\}\mid i\in[20],j\in[19]\}\cup\{\{(i,j),(i+1,j)\}\mid i\in[19],j\in[20]\}</var>.
+We generate two spanning trees <var>G_r=(V,E_r)</var> <var>(r=1,2)</var> of <var>G</var> by performing the following process twice independently.</p>
+<ol>
+<li>First, we randomly shuffle the edges <var>E</var> and obtain an ordered edge list <var>e_0,\cdots,e_{759}</var>.</li>
+<li>Starting from <var>E_r=\emptyset</var>, for each <var>e_k=\{(i,j),(i',j')\}</var> in order from <var>k=0</var> to <var>k=759</var>, we insert <var>e_k</var> into <var>E_r</var> if <var>(i,j)</var> and <var>(i',j')</var> are not connected in <var>G_r</var>.</li>
+</ol>
+<p>Using the obtained two spanning trees, we generate <var>h</var> and <var>v</var> as follows.</p>
+<ul>
+<li><var>h_{i,j}=0 \iff \{(i,j),(i,j+1)\}\in E_1\cup E_2</var></li>
+<li><var>v_{i,j}=0 \iff \{(i,j),(i+1,j)\}\in E_1\cup E_2</var></li>
+</ul>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.html?lang=en">Web version</a>: This is more powerful than the local version and can display animations.</li>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc009/cf3f791aac0f80374c60_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><strong>Sharing visualization results is not allowed until the end of the contest. </strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">1 2 19 16 0.10
+0010000100110011100
+1000001000001000001
+0000000000000000010
+0100000000000110100
+0000000000000000100
+1000101100000101010
+0010001011000110000
+0000001001000000000
+0000000100010001001
+0010010000100000001
+0001000010000100000
+0011010000000001000
+0000000101010100000
+0000001000000100010
+0110100010000000000
+0010011101000101000
+0000100110010000000
+0010000101101000010
+1001000000000000000
+1000110000000000000
+00000001000000000100
+00001000010001000000
+00010001010000010000
+01110010101000010100
+00000000000001100000
+00001000010000000100
+00101000000010110011
+01010100000000000000
+00001101010010010010
+10000000000000010100
+01011010000001100100
+00000000000000010011
+00001100111000110100
+00000010000000000000
+00010000100111000000
+11010000001001010100
+01100010011001011001
+00000101000010101010
+00100000000000000001
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">RDLRLRRDUUDRLURDRRDDLRLRUURUUUUDRDRUUDLRUDLLDDDDURLRUDDLDRDLRLLLLUDRUDRRULRULRDLRLDLLUUULDLUURRLRDRRRRDULDRLRRRRDDDDDRULDDURDDDRDLRRLDLDLDLRLLLUDDRDDDUURUDDLLLUULLLLDLUDRLLDLLULRLDLDDRLDRDLURURULRDDDR
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc009/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc009_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc009/tasks/ahc009_a?lang=ja" data-a2a-title="A - Robust Memory of Commuting Routes">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc009/rules">ルール</a></li>
+					<li><a href="/contests/ahc009/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

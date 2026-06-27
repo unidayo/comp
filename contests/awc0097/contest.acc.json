@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0097",
+    "title": "AtCoder Weekday Contest 0097 Beta",
+    "url": "https://atcoder.jp/contests/awc0097"
+  },
+  "tasks": [
+    {
+      "id": "awc0097_a",
+      "label": "A",
+      "title": "Organizing the Bookshelf",
+      "url": "https://atcoder.jp/contests/awc0097/tasks/awc0097_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0097_a.cpp"
+      }
+    },
+    {
+      "id": "awc0097_b",
+      "label": "B",
+      "title": "Sales Analysis",
+      "url": "https://atcoder.jp/contests/awc0097/tasks/awc0097_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0097_b.cpp"
+      }
+    },
+    {
+      "id": "awc0097_c",
+      "label": "C",
+      "title": "Dominoes",
+      "url": "https://atcoder.jp/contests/awc0097/tasks/awc0097_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0097_c.cpp"
+      }
+    },
+    {
+      "id": "awc0097_d",
+      "label": "D",
+      "title": "Maximum Rectangular Subarray Sum",
+      "url": "https://atcoder.jp/contests/awc0097/tasks/awc0097_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0097_d.cpp"
+      }
+    },
+    {
+      "id": "awc0097_e",
+      "label": "E",
+      "title": "Mountain Hiking",
+      "url": "https://atcoder.jp/contests/awc0097/tasks/awc0097_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0097_e.cpp"
+      }
+    }
+  ]
+}

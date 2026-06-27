@@ -1,0 +1,968 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Pyramid Sorting</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Pyramid Sorting" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc021/tasks/ahc021_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Pyramid Sorting" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc021";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2023-06-25T15:00:00+09:00");
+			var endTime = moment("2023-06-25T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>TOYOTA Programming Contest 2023 Summer（AtCoder Heuristic Contest 021）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>TOYOTA Programming Contest 2023 Summer（AtCoder Heuristic Contest 021）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc021">TOYOTA Programming Contest 2023 Summer（AtCoder Heuristic Contest 021）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc021/tasks/ahc021_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc021/tasks/ahc021_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc021%2Ftasks%2Fahc021_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230625T1500&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-06-25 15:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230625T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-06-25 19:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc021"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc021/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc021/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc021/submit?taskScreenName=ahc021_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc021/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc021/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc021/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc021/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc021/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc021/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc021/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Pyramid Sorting
+			<a class="btn btn-default btn-sm" href="/contests/ahc021/tasks/ahc021_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N(N+1)/2</var> 個のボールが下図のように <var>N</var> 段のピラミッド型に並んでいる。
+ピラミッドの頂上のボールの座標を <var>(0, 0)</var> とし、<var>x (0\leq x\leq N-1)</var> 段目の左から <var>y (0\leq y\leq x)</var> 個目のボールの座標を <var>(x,y)</var> とする。</p>
+<figure>
+    <img src="https://img.atcoder.jp/ahc021/d17182d7.png">
+</figure>
+
+<p>各ボールには <var>0</var> 〜 <var>N(N+1)/2-1</var> の数字が書かれており、各ボールの数字は全て異なる。
+一回の操作で6方向に隣接する2つのボールを入れ替えることが出来る。
+ここで、座標 <var>(x_1,y_1)</var> と <var>(x_2,y_2)</var> にあるボールは以下のいずれかの条件を満たす場合に6方向に隣接している。</p>
+<ul>
+<li><var>x_1=x_2-1</var> かつ <var>y_1=y_2-1</var></li>
+<li><var>x_1=x_2-1</var> かつ <var>y_1=y_2</var></li>
+<li><var>x_1=x_2</var> かつ <var>y_1=y_2-1</var></li>
+<li><var>x_1=x_2</var> かつ <var>y_1=y_2+1</var></li>
+<li><var>x_1=x_2+1</var> かつ <var>y_1=y_2</var></li>
+<li><var>x_1=x_2+1</var> かつ <var>y_1=y_2+1</var></li>
+</ul>
+<p>この操作を最大 <var>10000</var> 回繰り返すことで、最下層を除くどのボール <var>(x,y) (0\leq x\leq N-2, 0\leq y\leq x)</var> も自身の直下にある2つのボール <var>(x+1,y), (x+1,y+1)</var> よりも小さい数字となるようにしたい。
+出来るだけ操作回数が少なくなるような操作列を求めて欲しい。</p>
+<figure>
+    <img src="https://img.atcoder.jp/ahc021/d17182d7.gif">
+</figure>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>操作回数を <var>K</var>、操作終了後に条件に違反しているボールのペアの数を <var>E</var> とする。
+<var>E</var> は <var>(x,y)</var> と <var>(x+1,y') (y'\in\{y,y+1\})</var> の組であって、<var>(x,y)</var> のボールの数字の方が <var>(x+1,y')</var> のボールの数字より大きいようなものの総数である。</p>
+<p>このとき、以下のスコアが得られる。</p>
+<ul>
+<li><var>E=0</var> の場合、<var>100000-5K</var></li>
+<li><var>E&gt;0</var> の場合、<var>50000-50E</var></li>
+</ul>
+<p>テストケースは全部で 150 個あり、各テストケースの得点の合計が提出の得点となる。
+一つ以上のテストケースで不正な出力や制限時間超過をした場合、提出全体の判定が<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span>や<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。 同じ得点を複数の参加者が得た場合、提出時刻に関わらず同じ順位となる。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>全ての入力でピラミッドの段数は <var>N=30</var> で固定であり、ボールの総数は <var>N(N+1)/2=465</var> となる。
+入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>b_{0,0}</var>
+<var>b_{1,0}</var> <var>b_{1,1}</var>
+<var>b_{2,0}</var> <var>b_{2,1}</var> <var>b_{2,2}</var>
+<var>\vdots</var>
+<var>b_{29,0}</var> <var>\cdots</var> <var>b_{29,29}</var>
+</pre>
+
+<p><var>b_{x,y}</var> は初期状態で座標 <var>(x,y)</var> にあるボールに書かれた数字を表す整数であり、<var>0\leq b_{x,y}\leq 464</var> を満たす。
+同じ数字のボールは複数存在しない。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>操作回数を <var>K</var>、<var>i</var> 回目の操作で入れ替える2つのボールの座標を <var>(x_i,y_i), (x'_i,y'_i)</var> としたとき、以下の形式で標準出力に出力せよ。</p>
+<pre><var>K</var>
+<var>x_0</var> <var>y_0</var> <var>x'_0</var> <var>y'_0</var>
+<var>\vdots</var>
+<var>x_{K-1}</var> <var>y_{K-1}</var> <var>x'_{K-1}</var> <var>y'_{K-1}</var>
+</pre>
+
+<p>操作回数 <var>K</var> は <var>10000</var> を超えてはならず、入れ替える2つのボールは6方向に隣接していなければならない。
+これらの条件を満たさない場合、<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span> と判定される。</p>
+<p><a href="https://img.atcoder.jp/ahc021/d17182d7.html?lang=ja&seed=0&output=15%0D%0A2+0+3+1%0D%0A8+5+9+5%0D%0A24+5+25+6%0D%0A9+5+10+6%0D%0A10+10+11+10%0D%0A1+0+2+1%0D%0A28+9+29+10%0D%0A0+0+1+0%0D%0A18+7+19+8%0D%0A18+18+19+19%0D%0A20+5+21+5%0D%0A11+0+12+1%0D%0A27+12+28+12%0D%0A19+1+20+2%0D%0A7+3+8+3%0D%0A">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>0</var> 〜 <var>464</var> の数字の書かれた <var>465</var> 個のボールをランダムな順番に並び替えることで入力は生成される。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">236
+11 200
+453 2 378
+85 410 239 54
+50 240 113 25 294
+303 231 146 65 155 252
+368 327 321 251 451 182 142
+101 17 43 403 217 161 347 398
+350 287 363 48 80 447 385 233 197
+438 424 439 121 357 380 51 245 57 304
+141 91 100 344 194 250 432 322 58 281 219
+412 266 26 318 269 111 59 450 99 301 36 320
+218 135 278 225 227 268 313 162 420 214 42 166 55
+181 191 75 335 332 372 144 342 29 94 427 62 334 409
+377 213 369 117 307 428 280 152 242 88 460 175 351 340 230
+209 139 288 132 47 456 167 205 455 38 27 326 306 134 108 34
+389 441 393 361 120 296 331 316 458 183 170 40 397 274 402 103 408
+136 463 82 0 364 150 462 157 67 92 419 371 156 228 1 138 53 349
+174 129 71 169 199 367 87 443 359 172 298 22 244 415 401 373 417 160 305
+254 158 84 9 435 130 118 430 203 345 185 388 379 207 220 238 196 208 289 153
+425 356 109 237 116 212 358 396 270 179 262 76 370 444 308 229 105 148 365 429 248
+386 93 376 86 442 184 273 243 81 69 189 204 355 106 154 257 464 107 70 215 77 241
+127 404 180 123 362 124 234 300 173 222 72 329 140 147 232 3 187 114 381 133 44 387 60
+145 4 210 49 382 433 457 343 315 354 149 255 299 12 28 421 394 211 102 297 360 8 314 328
+46 256 416 336 423 295 90 112 168 309 64 96 260 437 440 366 323 35 383 346 79 293 61 312 202
+18 23 20 221 31 452 178 461 6 21 201 143 324 277 341 283 291 5 41 66 411 317 258 406 19 188
+164 261 16 137 426 264 98 78 45 310 246 176 319 95 384 68 392 37 265 190 249 73 198 15 32 330 311
+131 282 434 271 400 445 104 56 119 263 374 337 216 177 449 353 24 192 390 39 33 223 407 348 195 279 290 110
+267 89 375 284 13 63 391 422 272 259 30 97 125 459 413 333 52 448 399 122 83 126 275 302 115 14 338 446 339
+171 206 74 163 292 454 405 247 395 285 193 325 418 352 286 186 128 7 159 431 226 165 224 436 10 276 414 151 235 253
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">15
+2 0 3 1
+8 5 9 5
+24 5 25 6
+9 5 10 6
+10 10 11 10
+1 0 2 1
+28 9 29 10
+0 0 1 0
+18 7 19 8
+18 18 19 19
+20 5 21 5
+11 0 12 1
+27 12 28 12
+19 1 20 2
+7 3 8 3
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N(N+1)/2</var> balls arranged in an <var>N</var>-tiered pyramid as shown in the figure below.
+Let <var>(0, 0)</var> be the coordinates of the ball at the top of the pyramid, and let <var>(x,y)</var> be the coordinates of the <var>y (0\leq y\leq x)</var>-th ball from the left in the <var>x (0\leq x-1)</var>-th tier from the top.</p>
+<figure>
+    <img src="https://img.atcoder.jp/ahc021/d17182d7.png">
+</figure>
+
+<p>Each ball is labeled with a number from <var>0</var> to <var>N(N+1)/2-1</var>, and the numbers on each ball are all different.
+You can swap two adjacent balls in six directions in a single operation.
+Here, the balls at coordinates <var>(x_1,y_1)</var> and <var>(x_2,y_2)</var> are adjacent in six directions if one of the following conditions is satisfied.</p>
+<ul>
+<li><var>x_1=x_2-1</var> and <var>y_1=y_2-1</var></li>
+<li><var>x_1=x_2-1</var> and <var>y_1=y_2</var></li>
+<li><var>x_1=x_2</var> and <var>y_1=y_2-1</var></li>
+<li><var>x_1=x_2</var> and <var>y_1=y_2+1</var></li>
+<li><var>x_1=x_2+1</var> and <var>y_1=y_2</var></li>
+<li><var>x_1=x_2+1</var> and <var>y_1=y_2+1</var></li>
+</ul>
+<p>By performing this operation at most <var>10000</var> times, please arrange the balls so that every ball <var>(x,y) (0\leq x\leq N-2, 0\leq y\leq x)</var> except those in the lowest tier has a smaller number than the two balls <var>(x+1,y), (x+1,y+1)</var> directly below it.
+Please achieve this with as few operations as possible.</p>
+<figure>
+    <img src="https://img.atcoder.jp/ahc021/d17182d7.gif">
+</figure>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>K</var> be the number of operations and <var>E</var> be the number of pairs of balls violating the condition after finishing the operations.
+Here <var>E</var> is the total number of pairs of <var>(x,y)</var> and <var>(x+1,y') (y'\in\{y,y+1\})</var> such that the ball <var>(x,y)</var> has a larger number than the ball <var>(x+1,y')</var>.
+Then you will obtain the following score.</p>
+<ul>
+<li>If <var>E=0</var>, <var>100000-5K</var>.</li>
+<li>If <var>E&gt;0</var>, <var>50000-50E</var>.</li>
+</ul>
+<p>There are 150 test cases, and the score of a submission is the total score for each test case.
+If your submission produces an illegal output or exceeds the time limit for some test cases, the submission itself will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span> or <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> , and the score of the submission will be zero.
+The highest score obtained during the contest will determine the final ranking, and there will be no system test after the contest.
+If more than one participant gets the same score, they will be ranked in the same place regardless of the submission time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The number of pyramid tiers is fixed to <var>N=30</var> for all inputs, and the total number of balls is <var>N(N+1)/2=465</var>.
+Input is given from Standard Input in the following format:</p>
+<pre><var>b_{0,0}</var>
+<var>b_{1,0}</var> <var>b_{1,1}</var>
+<var>b_{2,0}</var> <var>b_{2,1}</var> <var>b_{2,2}</var>
+<var>\vdots</var>
+<var>b_{29,0}</var> <var>\cdots</var> <var>b_{29,29}</var>
+</pre>
+
+<p><var>b_{x,y}</var> is an integer satisfying <var>0\leq b_{x,y}\leq 464</var> and represents the number written on the ball initially at the coordinates <var>(x,y)</var>.
+All the numbers are distinct.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let <var>K</var> be the number of operations and <var>(x_i,y_i), (x'_i,y'_i)</var> be the coordinates of the two balls to be swapped in the <var>i</var>-th operation.
+Then, output to Standard Output in the following format.</p>
+<pre><var>K</var>
+<var>x_0</var> <var>y_0</var> <var>x'_0</var> <var>y'_0</var>
+<var>\vdots</var>
+<var>x_{K-1}</var> <var>y_{K-1}</var> <var>x'_{K-1}</var> <var>y'_{K-1}</var>
+</pre>
+
+<p>The number of operations <var>K</var> must not exceed <var>10000</var> and any two balls to be swapped must be adjacent in 6 directions.
+If not satisfied, the submission will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span> .</p>
+<p><a href="https://img.atcoder.jp/ahc021/d17182d7.html?lang=ja&seed=0&output=15%0D%0A2+0+3+1%0D%0A8+5+9+5%0D%0A24+5+25+6%0D%0A9+5+10+6%0D%0A10+10+11+10%0D%0A1+0+2+1%0D%0A28+9+29+10%0D%0A0+0+1+0%0D%0A18+7+19+8%0D%0A18+18+19+19%0D%0A20+5+21+5%0D%0A11+0+12+1%0D%0A27+12+28+12%0D%0A19+1+20+2%0D%0A7+3+8+3%0D%0A">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>The input is generated by randomly shuffling <var>465</var> balls with numbers <var>0</var> to <var>464</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7.html?lang=en">Web version</a>: This is more powerful than the local version providing animations.</li>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc021/d17182d7_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p></section>
+</div>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc021/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc021_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc021/tasks/ahc021_a?lang=ja" data-a2a-title="A - Pyramid Sorting">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc021/rules">ルール</a></li>
+					<li><a href="/contests/ahc021/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

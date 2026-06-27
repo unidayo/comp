@@ -1,0 +1,1101 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Colorful Ouroboros</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Colorful Ouroboros" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc063/tasks/ahc063_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Colorful Ouroboros" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc063";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2026-04-03T19:00:00+09:00");
+			var endTime = moment("2026-04-13T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 063が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<a class="btn btn-primary" href='/contests/ahc063/tasks'>問題一覧ページへ移動</a>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 063は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc063">AtCoder Heuristic Contest 063</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc063/tasks/ahc063_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc063/tasks/ahc063_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Contestant) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc063%2Ftasks%2Fahc063_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260403T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-04-03 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260413T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-04-13 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc063"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc063/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc063/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc063/submit?taskScreenName=ahc063_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc063/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc063/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc063/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc063/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc063/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc063/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc063/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Colorful Ouroboros
+			<a class="btn btn-default btn-sm" href="/contests/ahc063/tasks/ahc063_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>高橋くんは「ウロボロス」と名付けた蛇をペットとして飼っている。
+この蛇に餌を与えると、しっぽが 1 m 伸び、伸びた部分が餌の色に染まる。
+また、自身の胴体を噛みちぎることができ、千切れたしっぽ側は餌となる。</p>
+<p>高橋くんはウロボロスに餌を順に与え、体色の並びを自分の好みに変えようと考えた。
+ところが手が滑り、餌が部屋中に散乱してしまった。
+ウロボロスに指示を出して餌をすべて食べさせ、最終的な体色の並びをできるだけ自分の好みに近づけてほしい。
+指示を出す回数は少なければ少ないほど良い。</p>
+<p><img src="https://img.atcoder.jp/ahc063/EbfTtMTp.gif" alt="example" width="300"></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N \times N</var> マスの盤面がある。
+左上のマスの座標を <var>(0,0)</var> とし、そこから下方向に <var>i</var> マス、右方向に <var>j</var> マス進んだ先のマスの座標を <var>(i,j)</var> とする。</p>
+<p>盤面上には <var>M-5</var> 個の餌が置かれており、各餌には整数 <var>1,\cdots,C</var> で表される色が付いている。</p>
+<p>この盤面上を蛇が移動する。
+長さ <var>k</var> の蛇は、頭からしっぽに向かって、<var>k</var> 個の座標 <var>(i_0,j_0),\cdots,(i_{k-1},j_{k-1})</var> と色 <var>c_0,\cdots,c_{k-1}</var> の列で表される。
+<var>(i_0,j_0)</var> を<strong>頭</strong>、<var>(i_1,j_1),\cdots,(i_{k-2},j_{k-2})</var> を<strong>胴体</strong>、<var>(i_{k-1},j_{k-1})</var> を<strong>しっぽ</strong>と呼ぶ。
+しっぽは他と同じ座標であってもよく、それ以外の座標はすべて互いに異なる。</p>
+<p>初期状態では、長さ <var>5</var> で、色がすべて <var>1</var> の蛇が <var>(4,0),(3,0),(2,0),(1,0),(0,0)</var> の位置にいる。
+初期状態で蛇が占めるマスには餌は存在しない。</p>
+<p>以下の操作を最大で <var>100000</var> ターン繰り返す。</p>
+<p>各ターンでは、あなたは上下左右の方向 <var>d</var> を指示し、以下の順に蛇が行動する。</p>
+<ol>
+<li><strong>移動:</strong>
+   まず、蛇がその方向に 1 マス移動する。
+   頭の位置から <var>d</var> 方向に 1 マス進んだ先の座標を <var>(i_0',j_0')</var> とすると、移動後の蛇の座標は <var>(i_0',j_0'),(i_0,j_0),\cdots,(i_{k-2},j_{k-2})</var> となる。
+   ただし、Uターンとなる方向、すなわち <var>(i_0',j_0')=(i_1,j_1)</var> となる方向、および <var>N \times N</var> マスの外に出る方向は指定できない。</li>
+<li><strong>食事:</strong>
+   移動先に色 <var>c'</var> の餌がある場合、蛇の長さは 1 伸び、座標は <var>(i_0',j_0'),(i_0,j_0),\cdots,(i_{k-2},j_{k-2}),(i_{k-1},j_{k-1})</var> となり、色は <var>c_0,\cdots,c_{k-1},c'</var> となる。</li>
+<li><strong>噛みちぎり:</strong>
+   移動後の頭の位置に、移動後の胴体がある場合を考える。
+   そのインデックスを <var>h</var> とする。すなわち、<var>1\leq h\leq k-2</var> であって、移動後の座標列 <var>(i_0',j_0'),\cdots,(i_{k-1}',j_{k-1}')</var> に対して <var>(i_0',j_0')=(i_h',j_h')</var> が成り立つとする。
+   このとき、蛇は自らの胴体を噛みちぎって長さが <var>h+1</var> になり、残りのしっぽ側は対応する色の餌に変わる。
+   すなわち、蛇の座標は <var>(i_0',j_0'),\cdots,(i_h',j_h')</var> となり、各 <var>p=h+1,\cdots,k-1</var> について、<var>(i_p',j_p')</var> に色 <var>c_p</var> の餌が置かれる。
+   噛みちぎり後はしっぽと頭が同じ座標を共有した状態となる。
+   なお、食事と噛みちぎりが同一ターンに同時に発生することはない。</li>
+</ol>
+<p>好みの色列 <var>d_0,\cdots,d_{M-1}</var> が与えられる。
+できるだけ短い操作列によって、最終的な蛇の色列を好みの色列に近づけてほしい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>出力した操作列の長さを <var>T</var>、操作完了時点における蛇の長さを <var>k</var>、蛇の色列を <var>c_0,\cdots,c_{k-1}</var> とする。
+ここで、<var>k</var> は <var>M</var> 未満であってもよい。
+また、誤差 <var>E</var> を、<var>c_p\neq d_p</var> であるような <var>p=0,\cdots,k-1</var> の個数と定義する。</p>
+<p>このとき、以下の絶対スコアが得られる。</p>
+<p>\[
+T + 10000 \times (E + 2(M-k))
+\]</p>
+<p>絶対スコアは小さいほど良い。</p>
+<p>各テストケース毎に、絶対スコアの小さい順での順位に応じた<font color="red"><strong>順位スコア</strong></font>が得られ、その和が提出の得点となる。
+順位スコアは以下のように計算され、高ければ高いほど良い。</p>
+<p>コンテストの提出者数を <var>n_{submit}</var>、自身より小さい絶対スコアを獲得した参加者の人数を <var>n_{lose}</var>、自身と等しい絶対スコアを獲得した他の参加者の人数を <var>n_{tie}</var> とする。この時、このテストケースにおける順位は <var>r=n_{lose}+0.5 n_{tie}</var> と定まり、順位スコアは <var>\mathrm{round}(10^9\times (1-\frac{r}{n_{submit}}))</var> となる。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、不正な出力や制限時間超過をした場合、そのテストケースの順位スコアのみ0点となる。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 50個</li>
+<li>システムテスト: 2000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc063/seeds.txt">seeds.txt</a> (sha256=daf8cb67f5deb3bcb35e3d34b97a3b7b7a3ee8da1fe1cbe24f39389ad64a6c85) を公開</li>
+</ul>
+<h4>相対評価システムについて</h4>
+<p>暫定テスト、システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出のみが順位表に反映される。</p>
+<p>順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する順位スコアの和が表示されている。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var> <var>C</var>
+<var>d_0</var> <var>\cdots</var> <var>d_{M-1}</var>
+<var>f_{0,0}</var> <var>\cdots</var> <var>f_{0,N-1}</var>
+<var>\vdots</var>
+<var>f_{N-1,0}</var> <var>\cdots</var> <var>f_{N-1,N-1}</var>
+</pre>
+<ul>
+<li>盤面サイズ <var>N</var> は <var>8</var> 以上 <var>16</var> 以下の整数である。</li>
+<li><var>M</var> は好みの色列の長さを表し、<var>N^2/4</var> 以上 <var>3N^2/4</var> 以下の整数である。</li>
+<li>色数 <var>C</var> は <var>3</var> 以上 <var>7</var> 以下の整数である。</li>
+<li><var>d_0,\cdots,d_{M-1}</var> は好みの色列を表し、各 <var>d_p</var> は <var>1</var> 以上 <var>C</var> 以下の整数である。また、<var>d_0=\cdots=d_4=1</var> を満たす。</li>
+<li><var>f_{i,j}</var> は初期状態においてマス <var>(i,j)</var> に置かれている餌の色を表す <var>0</var> 以上 <var>C</var> 以下の整数である。<ul>
+<li><var>f_{i,j}=0</var> の場合、そのマスには餌は置かれていない。</li>
+<li><var>1 \leq f_{i,j} \leq C</var> の場合、そのマスには色 <var>f_{i,j}</var> の餌が置かれている。</li>
+<li><var>f_{0,0}=\cdots=f_{4,0}=0</var> が成り立つ。</li>
+<li>餌が置かれているマスの数はちょうど <var>M-5</var> である。</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>操作回数を <var>T</var> とする。
+<var>t</var> ターン目の移動方向を、上下左右に対応する 1 文字 <code>U</code>、<code>D</code>、<code>L</code>、<code>R</code> で表し、これを <var>a_t</var> とする。</p>
+<p>このとき、以下の形式で標準出力に出力せよ。</p>
+<pre><var>a_0</var>
+<var>\vdots</var>
+<var>a_{T-1}</var>
+</pre>
+<p><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム(Python)</h3><details>
+Python での解答例を示す。
+このプログラムでは、上下に蛇行しながらすべての餌を順に食べている。
+
+<pre class="prettyprint linenums">
+import sys
+input = sys.stdin.readline
+
+N, M, C = map(int, input().split())
+d = list(map(int, input().split()))
+f = [list(map(int, input().split())) for _ in range(N)]
+
+ans = []
+
+for _ in range(4, N - 1):
+    ans.append('D')
+
+for col in range(1, N):
+    ans.append('R')
+    if col % 2 == 1:
+        for _ in range(N - 1):
+            ans.append('U')
+    else:
+        for _ in range(N - 1):
+            ans.append('D')
+
+print('\n'.join(ans))
+</pre>
+
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>\mathrm{rand}(L, U)</var> を、<var>L</var> 以上 <var>U</var> 以下の整数を一様ランダムに生成する関数とする。</p>
+<h4><var>N</var>, <var>M</var>, <var>C</var> の生成</h4>
+<ul>
+<li><var>N=\mathrm{rand}(8,16)</var></li>
+<li><var>M=\mathrm{rand}(\lceil\frac{N^2}{4}\rceil,\lfloor\frac{3N^2}{4}\rfloor)</var></li>
+<li><var>C=\mathrm{rand}(3,7)</var></li>
+</ul>
+<h4><var>d</var> の生成</h4>
+<p><var>d_0=\cdots=d_4=1</var> とし、残りの <var>M-5</var> 個を以下のように生成する。</p>
+<p><var>n_0=0</var>, <var>n_C=M-5-C</var> とし、<var>C-1</var> 個の乱数 <var>n_1,\cdots,n_{C-1}</var> を <var>\mathrm{rand}(0,M-5-C)</var> により生成し、昇順に並べる。
+これを用いて、各色の個数 <var>m_c</var> を <var>m_c=n_c-n_{c-1}+1</var> により定める。
+ただし、<var>m_c&gt;(M-5)/2</var> となる <var>c</var> が存在する場合は、<var>n</var> の生成からやり直す。</p>
+<p>各色 <var>c</var> を <var>m_c</var> 個ずつ用意し、ランダムな順に並び替えることにより、<var>d_5,\cdots,d_{M-1}</var> とする。</p>
+<h4><var>f</var> の生成</h4>
+<p>初期状態で蛇が占める 5 マス <var>(4,0),(3,0),(2,0),(1,0),(0,0)</var> 以外の <var>N^2-5</var> マスからランダムに <var>M-5</var> マスを選び、<var>(i_5,j_5),\cdots,(i_{M-1},j_{M-1})</var> とする。
+色 <var>d_5,\cdots,d_{M-1}</var> をランダムに並び替えた列を <var>d_5',\cdots,d_{M-1}'</var> とする。
+これらを用いて、各 <var>p=5,\cdots,M-1</var> について、<var>f_{i_p,j_p}=d_p'</var> とする。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示と手動プレイが可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p></section>
+</div>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>Takahashi has a pet snake named "Ouroboros".
+When fed, this snake grows its tail by 1 meter, and the newly grown part takes on the color of the food.
+It can also bite off its own body, and the tail part that was bitten off becomes food.</p>
+<p>Takahashi planned to feed Ouroboros in sequence so that the order of its body colors would match his preference.
+However, he accidentally dropped the food, scattering it all over the room.
+Your task is to give instructions to Ouroboros so that it eats all the food and make the final order of body colors as close as possible to Takahashi's preference.
+Fewer instructions are better.</p>
+<p><img src="https://img.atcoder.jp/ahc063/EbfTtMTp.gif" alt="example" width="300"></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is an <var>N \times N</var> grid.
+The coordinate of the top-left cell is <var>(0,0)</var>, and the coordinate of the cell obtained by moving <var>i</var> cells downward and <var>j</var> cells to the right from there is <var>(i,j)</var>.</p>
+<p>There are <var>M-5</var> pieces of food placed on the grid, and each piece has a color represented by an integer from <var>1</var> to <var>C</var>.</p>
+<p>A snake moves on this grid.
+A snake of length <var>k</var> is represented by a sequence of <var>k</var> coordinates <var>(i_0,j_0),\cdots,(i_{k-1},j_{k-1})</var> and colors <var>c_0,\cdots,c_{k-1}</var>, from head to tail.
+<var>(i_0,j_0)</var> is called the <strong>head</strong>, <var>(i_1,j_1),\cdots,(i_{k-2},j_{k-2})</var> the <strong>body</strong>, and <var>(i_{k-1},j_{k-1})</var> the <strong>tail</strong>.
+The tail may share the same coordinate with another part, but all other coordinates must be distinct.</p>
+<p>Initially, the snake has length <var>5</var>, all colors are <var>1</var>, and it occupies <var>(4,0),(3,0),(2,0),(1,0),(0,0)</var>.
+No food is placed on the cells occupied by the snake in the initial state.</p>
+<p>The following operation is repeated for at most <var>100000</var> turns.</p>
+<p>In each turn, you specify one of the four directions, up, down, left, or right, and then the snake acts in the following order.</p>
+<ol>
+<li><strong>Move:</strong>
+   First, the snake moves one cell in that direction.
+   Let <var>(i_0',j_0')</var> be the coordinate reached by moving one cell from the head in direction <var>d</var>. Then, after the move, the coordinates of the snake become <var>(i_0',j_0'),(i_0,j_0),\cdots,(i_{k-2},j_{k-2})</var>.
+   A direction that results in a U-turn, that is, a direction such that <var>(i_0',j_0')=(i_1,j_1)</var>, or a direction that goes outside the <var>N \times N</var> grid, cannot be specified.</li>
+<li><strong>Eating:</strong>
+   If there is a piece of food of color <var>c'</var> at the destination cell, the length of the snake increases by <var>1</var>, its coordinates become <var>(i_0',j_0'),(i_0,j_0),\cdots,(i_{k-2},j_{k-2}),(i_{k-1},j_{k-1})</var>, and its colors become <var>c_0,\cdots,c_{k-1},c'</var>.</li>
+<li><strong>Biting off:</strong>
+   Consider the case where, after moving, the head is on a cell occupied by the body.
+   Let its index be <var>h</var>. That is, suppose <var>1\leq h\leq k-2</var> and <var>(i_0',j_0')=(i_h',j_h')</var> holds for the coordinate sequence after the move, <var>(i_0',j_0'),\cdots,(i_{k-1}',j_{k-1}')</var>.
+   In this case, the snake bites off its own body, its length becomes <var>h+1</var>, and the remaining tail side turns into food with the corresponding colors.
+   More precisely, the coordinates of the snake become <var>(i_0',j_0'),\cdots,(i_h',j_h')</var>, and for each <var>p=h+1,\cdots,k-1</var>, a piece of food of color <var>c_p</var> is placed at <var>(i_p',j_p')</var>.
+   After biting off, the tail and the head share the same coordinate.
+   Note that eating and biting off never occur in the same turn.</li>
+</ol>
+<p>A preferred color sequence <var>d_0,\cdots,d_{M-1}</var> is given.
+Your task is to make the final color sequence of the snake as close as possible to the preferred color sequence, using as short a sequence of operations as possible.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>T</var> be the length of the output operation sequence, <var>k</var> be the length of the snake at the end of the operations, and <var>c_0,\cdots,c_{k-1}</var> be the color sequence of the snake.
+Here, <var>k</var> may be less than <var>M</var>.
+Also, let the error <var>E</var> be the number of indices <var>p=0,\cdots,k-1</var> such that <var>c_p\neq d_p</var>.</p>
+<p>Then, the following absolute score is obtained.</p>
+<p>\[
+T + 10000 \times (E + 2(M-k))
+\]</p>
+<p>A smaller absolute score is better.</p>
+<p>For each test case, you will obtain a <font color="red"><strong>rank score</strong></font> according to your rank determined by lower absolute score. The score of the submission is the total rank score for each test case. The rank score is calculated as follows, and the higher the rank score, the better.</p>
+<p>Let <var>n_{submit}</var> be the number of contestants with submissions, <var>n_{lose}</var> be the number of contestants who received an absolute score lower than yours, and <var>n_{tie}</var> be the number of other contestants who received an absolute score equal to yours. Then your rank in this test case is determined as <var>r=n_{lose}+0.5 n_{tie}</var>, and your rank score is <var>\mathrm{round}(10^9\times (1-\frac{r}{n_{submit}}))</var>.</p>
+<p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the rank score for those test cases will be zero.
+The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 50</li>
+<li>System test: 2000. We will publish <a href="https://img.atcoder.jp/ahc063/seeds.txt">seeds.txt</a> (sha256=daf8cb67f5deb3bcb35e3d34b97a3b7b7a3ee8da1fe1cbe24f39389ad64a6c85) after the contest is over.</li>
+</ul>
+<h4>About relative evaluation system</h4>
+<p>In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.</p>
+<p>The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format.</p>
+<pre><var>N</var> <var>M</var> <var>C</var>
+<var>d_0</var> <var>\cdots</var> <var>d_{M-1}</var>
+<var>f_{0,0}</var> <var>\cdots</var> <var>f_{0,N-1}</var>
+<var>\vdots</var>
+<var>f_{N-1,0}</var> <var>\cdots</var> <var>f_{N-1,N-1}</var>
+</pre>
+<ul>
+<li><var>N</var>, the size of the grid, is an integer between <var>8</var> and <var>16</var>, inclusive.</li>
+<li><var>M</var> represents the length of the preferred color sequence, and is an integer between <var>N^2/4</var> and <var>3N^2/4</var>, inclusive.</li>
+<li><var>C</var>, the number of colors, is an integer between <var>3</var> and <var>7</var>, inclusive.</li>
+<li><var>d_0,\cdots,d_{M-1}</var> represents the preferred color sequence, and each <var>d_p</var> is an integer between <var>1</var> and <var>C</var>, inclusive. It is guaranteed that <var>d_0=\cdots=d_4=1</var>.</li>
+<li><var>f_{i,j}</var> is an integer between <var>0</var> and <var>C</var> representing the color of the food placed at cell <var>(i,j)</var> in the initial state.<ul>
+<li>If <var>f_{i,j}=0</var>, no food is placed on that cell.</li>
+<li>If <var>1 \leq f_{i,j} \leq C</var>, a piece of food of color <var>f_{i,j}</var> is placed on that cell.</li>
+<li>It is guaranteed that <var>f_{0,0}=\cdots=f_{4,0}=0</var>.</li>
+<li>The number of cells with food is exactly <var>M-5</var>.</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let <var>T</var> be the number of operations.
+Let <var>a_t</var> denote the direction of movement on turn <var>t</var>, represented by one of the characters <code>U</code>, <code>D</code>, <code>L</code>, and <code>R</code>, corresponding to up, down, left, and right.</p>
+<p>Then, output to Standard Output in the following format.</p>
+<pre><var>a_0</var>
+<var>\vdots</var>
+<var>a_{T-1}</var>
+</pre>
+<p><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution (Python)</h3><details>
+A sample solution in Python is shown below.
+This program eats all the food in order while moving in a vertical zigzag pattern.
+
+<pre class="prettyprint linenums">
+import sys
+input = sys.stdin.readline
+
+N, M, C = map(int, input().split())
+d = list(map(int, input().split()))
+f = [list(map(int, input().split())) for _ in range(N)]
+
+ans = []
+
+for _ in range(4, N - 1):
+    ans.append('D')
+
+for col in range(1, N):
+    ans.append('R')
+    if col % 2 == 1:
+        for _ in range(N - 1):
+            ans.append('U')
+    else:
+        for _ in range(N - 1):
+            ans.append('D')
+
+print('\n'.join(ans))
+</pre>
+
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand}(L, U)</var> be a function that generates an integer uniformly at random between <var>L</var> and <var>U</var>, inclusive.</p>
+<h4>Generation of <var>N</var>, <var>M</var>, and <var>C</var></h4>
+<ul>
+<li><var>N=\mathrm{rand}(8,16)</var></li>
+<li><var>M=\mathrm{rand}(\lceil\frac{N^2}{4}\rceil,\lfloor\frac{3N^2}{4}\rfloor)</var></li>
+<li><var>C=\mathrm{rand}(3,7)</var></li>
+</ul>
+<h4>Generation of <var>d</var></h4>
+<p>Set <var>d_0=\cdots=d_4=1</var>, and generate the remaining <var>M-5</var> values as follows.</p>
+<p>Let <var>n_0=0</var> and <var>n_C=M-5-C</var>.
+Generate <var>C-1</var> random numbers <var>n_1,\cdots,n_{C-1}</var> by <var>\mathrm{rand}(0,M-5-C)</var>, and sort them in ascending order.
+Using these, define the number of occurrences of each color <var>m_c</var> by <var>m_c=n_c-n_{c-1}+1</var>.
+If there exists a <var>c</var> such that <var>m_c&gt;(M-5)/2</var>, generate <var>n</var> again from scratch.</p>
+<p>Prepare <var>m_c</var> copies of each color <var>c</var>, and shuffle them in random order to obtain <var>d_5,\cdots,d_{M-1}</var>.</p>
+<h4>Generation of <var>f</var></h4>
+<p>Choose <var>M-5</var> cells uniformly at random from the <var>N^2-5</var> cells other than the five cells occupied by the snake in the initial state, <var>(4,0),(3,0),(2,0),(1,0),(0,0)</var>, and denote them by <var>(i_5,j_5),\cdots,(i_{M-1},j_{M-1})</var>.
+Let <var>d_5',\cdots,d_{M-1}'</var> be a random permutation of <var>d_5,\cdots,d_{M-1}</var>.
+Using these, set <var>f_{i_p,j_p}=d_p'</var> for each <var>p=5,\cdots,M-1</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.html?lang=en">Web version</a>: This is more powerful than the local version providing animations and manual play.</li>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc063/EbfTtMTp_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p></section>
+</div>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc063/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc063_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc063/tasks/ahc063_a?lang=ja" data-a2a-title="A - Colorful Ouroboros">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc063/rules">ルール</a></li>
+					<li><a href="/contests/ahc063/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

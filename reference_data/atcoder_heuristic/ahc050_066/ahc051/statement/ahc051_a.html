@@ -1,0 +1,2086 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Probabilistic Waste Sorting</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Probabilistic Waste Sorting" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc051/tasks/ahc051_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Probabilistic Waste Sorting" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc051";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2025-08-01T19:00:00+09:00");
+			var endTime = moment("2025-08-11T19:00:00+09:00");
+		</script>
+		<style>#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: right bottom;
+background-clip: border-box;
+}
+@media (min-width: 768px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 680px auto;
+}
+}
+@media (min-width: 992px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 890px auto;
+}
+}
+@media (min-width: 1200px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 1090px auto;
+}
+}
+
+.optional_color { animation: opt_color_anime 2s linear infinite; }
+.k1 { animation: f1 2s linear infinite; }
+.k2 { animation: f2 2s linear infinite; }
+.k3 { animation: f3 2s linear infinite; }
+.k4 { animation: f4 2s linear infinite; }
+.k5 { animation: f5 2s linear infinite; }
+.k6 { animation: f6 2s linear infinite; }
+.k7 { animation: f7 2s linear infinite; }
+.k8 { animation: f8 2s linear infinite; }
+.k9 { animation: f9 2s linear infinite; }
+.k10 { animation: f10 2s linear infinite; }
+.k11 { animation: f11 2s linear infinite; }
+.k12 { animation: f12 2s linear infinite; }
+.k13 { animation: f13 2s linear infinite; }
+.k14 { animation: f14 2s linear infinite; }
+.k15 { animation: f15 2s linear infinite; }
+.k16 { animation: f16 2s linear infinite; }
+.k17 { animation: f17 2s linear infinite; }
+@keyframes opt_color_anime { 0%, 30%, 100% { color: red; } 10% { color: green; } 20% { color: blue; } }
+@keyframes f1 { 0%, 4% { opacity: 1; } 2% { opacity: 0; } }
+@keyframes f2 { 2%, 6% { opacity: 1; } 4% { opacity: 0; } }
+@keyframes f3 { 4%, 8% { opacity: 1; } 6% { opacity: 0; } }
+@keyframes f4 { 6%, 10% { opacity: 1; } 8% { opacity: 0; } }
+@keyframes f5 { 8%, 12% { opacity: 1; } 10% { opacity: 0; } }
+@keyframes f6 { 10%, 14% { opacity: 1; } 12% { opacity: 0; } }
+@keyframes f7 { 12%, 16% { opacity: 1; } 14% { opacity: 0; } }
+@keyframes f8 { 14%, 18% { opacity: 1; } 16% { opacity: 0; } }
+@keyframes f9 { 16%, 20% { opacity: 1; } 18% { opacity: 0; } }
+@keyframes f10 { 18%, 22% { opacity: 1; } 20% { opacity: 0; } }
+@keyframes f11 { 20%, 24% { opacity: 1; } 22% { opacity: 0; } }
+@keyframes f12 { 22%, 26% { opacity: 1; } 24% { opacity: 0; } }
+@keyframes f13 { 24%, 28% { opacity: 1; } 26% { opacity: 0; } }
+@keyframes f14 { 26%, 30% { opacity: 1; } 28% { opacity: 0; } }
+@keyframes f15 { 28%, 32% { opacity: 1; } 30% { opacity: 0; } }
+@keyframes f16 { 30%, 34% { opacity: 1; } 32% { opacity: 0; } }
+@keyframes f17 { 32%, 36% { opacity: 1; } 34% { opacity: 0; } }
+
+:root {
+  --user-red: #FF0000;
+  --user-orange: #FF8000;
+  --user-yellow: #C0C000;
+  --user-blue: #0000FF;
+  --user-cyan: #00C0C0;
+  --user-green: #008000;
+  --user-brown: #804000;
+  --user-gray: #808080;
+  --user-unrated: #000000;
+  --user-admin: #C000C0;
+}
+.charts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-container {
+  width: 50%;
+  border: 2px solid black;
+  padding: 0px;
+  margin: 0 auto;
+}
+.chart-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.bar-label {
+  width: 100px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.bar {
+  display: inline-block;
+  height: 20px;
+  font-size: 16px;
+  text-align: left;
+  padding-right: 5px;
+  color: black;
+  font-weight: bold;
+}
+.bar-a0 {
+  width: 7%;
+  background: linear-gradient(to right, var(--user-red), var(--user-orange), var(--user-yellow), var(--user-blue), var(--user-cyan), var(--user-green));
+}
+.bar-a1 {
+  width: 7%;
+  background-color: var(--user-red);
+}
+.bar-a2 {
+  width: 21%;
+  background-color: var(--user-orange);
+}
+.bar-a3 {
+  width: 77%;
+  background-color: var(--user-yellow);
+}
+.bar-a4 {
+  width: 35%;
+  background-color: var(--user-blue);
+}
+.bar-a5 {
+  width: 14%;
+  background-color: var(--user-cyan);
+}
+.bar-a6 {
+  width: 7%;
+  background-color: var(--user-green);
+}
+.bar-h1 {
+  width: 28%;
+  background-color: var(--user-red);
+}
+.bar-h2 {
+  width: 14%;
+  background-color: var(--user-orange);
+}
+.bar-h3 {
+  width: 70%;
+  background-color: var(--user-yellow);
+}
+.bar-h4 {
+  width: 35%;
+  background-color: var(--user-blue);
+}
+.bar-h6 {
+  width: 14%;
+  background-color: var(--user-green);
+}
+.bar-h8 {
+  width: 7%;
+  background-color: var(--user-gray);
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  background-color: #ffffff
+}
+.table-striped>tbody>th {
+  background-color: #ffffff
+}
+.table-jobs {
+  width: 80%;
+  border: 2px solid black;
+  table-layout: fixed
+}
+.table-jobs tr:first-child th,
+.table-jobs tr:first-child td {
+  border-bottom: 1px solid black;
+}
+.table-jobs th:first-child,
+.table-jobs td:first-child {
+  border-right: 1px solid black;
+}</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>THIRD プログラミングコンテスト 2025 夏（AtCoder Heuristic Contest 051）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>THIRD プログラミングコンテスト 2025 夏（AtCoder Heuristic Contest 051）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc051">THIRD プログラミングコンテスト 2025 夏（AtCoder Heuristic Contest 051）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc051/tasks/ahc051_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc051/tasks/ahc051_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc051%2Ftasks%2Fahc051_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250801T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-08-01 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250811T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-08-11 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc051"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc051/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc051/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc051/submit?taskScreenName=ahc051_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc051/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc051/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc051/standings/exhibition"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表(エキシビジョン)</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc051/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc051/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc051/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc051/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc051/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Probabilistic Waste Sorting
+			<a class="btn btn-default btn-sm" href="/contests/ahc051/tasks/ahc051_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>高橋市では現在、新たなごみ処理場を建設中である。
+この処理場にはさまざまな種類のごみが運び込まれるため、処理を行う前に分別する必要がある。
+分別は、例えば磁石によって鉄を含むものとそれ以外を分けるなど、いくつかの機器を使って行うことができる。
+ただし、分別器は確率的にごみを二つの経路に振り分ける仕組みであり、ごみの種類を正確に識別することはできない。
+そのため、例えば形状によって缶とそれ以外を分けた後に、磁石によってアルミ缶とスチール缶を分けるなど、複数の分別器を適切に組み合わせることが必要である。
+複数の分別器をうまく組み合わせることにより、できるだけ正確にごみの分別を行ってほしい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N</var> 種類のごみを分別して処理するためのごみ処理場を建設中である。
+ごみ処理場は2次元平面上の <var>0\leq x\leq 10^4</var>、<var>0\leq y\leq 10^4</var> からなる正方形領域として表現される。
+この処理場にはさまざまな種類のごみが<strong>ごみ搬入口</strong>から運び込まれる予定であり、<strong>処理装置</strong>と<strong>分別器</strong>を設置し、それらを<strong>ベルトコンベア</strong>で結ぶことにより、できるだけ正確に分別を行った上で処理を行うことができるようにしたい。</p>
+<h4>ごみ搬入口</h4>
+<p>処理場内に一つだけ存在し、座標は <var>(0,5000)</var> である。
+搬入口からは一本のベルトコンベアを伸ばし、処理装置または分別器へとごみを運ぶ。</p>
+<h4>処理装置</h4>
+<p>処理場内に各ごみの種類ごとに処理装置を <var>1</var> 台ずつ設置する。
+各ごみを正しい処理装置に運び込むことが目的である。</p>
+<p>ごみ処理場内には処理装置を設置できるスペースがちょうど <var>N</var> 箇所存在し、<var>i</var> 番目の設置場所の座標は <var>(x^d_i,y^d_i)</var> である。
+どの設置場所にどの種類のごみの処理装置を設置するかは自由に選ぶことができる。</p>
+<h4>分別器</h4>
+<p><var>K</var> 種類のごみ自動分別器がある。
+<strong>同じ分別器を複数設置しても構わない。</strong></p>
+<p>各分別器は運び込まれたごみを確率的に2つの経路のいずれかへと振り分け、出口1または出口2から運び出す。
+このとき、どの経路に進むかはごみの種類ごとに定まった確率に従う。
+<var>i</var> 番目の自動分別器が種類 <var>j</var> のごみを出口1から運び出す確率は <var>p_{i,j}</var> であり、出口2から運び出す確率は <var>1-p_{i,j}</var> である。</p>
+<p>ごみ処理場内には分別器を設置するためのスペースが <var>M</var> 箇所存在し、<var>i</var> 番目の設置場所の座標は <var>(x^s_i,y^s_i)</var> である。
+各スペースには高々 <var>1</var> 台の分別器を設置することができる。</p>
+<h4>ベルトコンベア</h4>
+<p>ごみ搬入口ならびに各分別器の二つの出口からはベルトコンベアを伸ばし、処理装置もしくは他の分別器へとごみを運ぶ必要がある。
+ベルトコンベアは始点と終点を結ぶ線分として敷設され、端点をひとつも共有しない二つのベルトコンベアは共有点を持ってはならない。
+この条件では、分別器の二つの出口の行き先が同じであることも許容されている。</p>
+<p>ごみ搬入口・処理装置・分別器を頂点、ベルトコンベアを辺とした有向グラフを考えたとき、有向グラフに閉路（自己閉路を含む）が存在してはならない。</p>
+<h4>ヒント: 線分の交差判定について</h4>
+<p>線分 <var>p_1p_2</var> と <var>q_1q_2</var> が、共有点を持つかどうかは、以下の疑似コードにより判定できる。
+なお、計算される値はすべて整数値のため、誤差は発生しない。</p>
+<pre class="prettyprint linenums">
+def sign(x):
+    return 1 if x > 0 else -1 if x < 0 else 0
+
+def orientation(a, b, c):
+    cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
+    return sign(cross)
+
+def segments_intersect(p1, p2, q1, q2):
+    if (max(p1.x, p2.x) < min(q1.x, q2.x) or
+        max(q1.x, q2.x) < min(p1.x, p2.x) or
+        max(p1.y, p2.y) < min(q1.y, q2.y) or
+        max(q1.y, q2.y) < min(p1.y, p2.y)):
+        return False
+    o1 = orientation(p1, p2, q1)
+    o2 = orientation(p1, p2, q2)
+    o3 = orientation(q1, q2, p1)
+    o4 = orientation(q1, q2, p2)
+    return (o1 * o2 <= 0) and (o3 * o4 <= 0)
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p><var>i</var> 種類目のごみが、それに対応する処理装置に最終的に運び込まれる確率を <var>q_i</var> と定義する。
+このとき、以下の絶対スコアが得られる：</p>
+<p>\[
+    \mathrm{round}\left(10^9\times \frac{1}{N}\sum_{i=0}^{N-1}(1-q_i)\right)
+\]</p>
+<p><font color="red"><strong>絶対スコアは小さければ小さいほど良い。</strong></font></p>
+<p>各テストケース毎に、<var>\mathrm{round}(10^9\times \frac{全参加者中の最小絶対スコア}{自身の絶対スコア})</var> の<font color="red"><strong>相対評価スコア</strong></font>が得られ、その和が提出の得点となる。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースの相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最小絶対スコア」の計算から除外される。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結
+果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 50個</li>
+<li>システムテスト: 2000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc051/seeds.txt">seeds.txt</a> (sha256=b61fb5678d480a79e25a50141403e14e8e245d5699e90aa53d4fad893e10dee8) を公開</li>
+</ul>
+<h4>相対評価システムについて</h4>
+<p>暫定テスト、システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出のみが順位表に反映される。
+相対評価スコアの計算に用いられる各テストケース毎の全参加者中の最小絶対スコアの算出においても、順位表に反映されている最終提出のみが用いられる。</p>
+<p>順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する相対スコアの和が表示されている。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var> <var>K</var>
+<var>x^d_0</var> <var>y^d_0</var>
+<var>\vdots</var>
+<var>x^d_{N-1}</var> <var>y^d_{N-1}</var>
+<var>x^s_0</var> <var>y^s_0</var>
+<var>\vdots</var>
+<var>x^s_{M-1}</var> <var>y^s_{M-1}</var>
+<var>p_{0,0}</var> <var>\cdots</var> <var>p_{0,N-1}</var>
+<var>\vdots</var>
+<var>p_{K-1,0}</var> <var>\cdots</var> <var>p_{K-1,N-1}</var>
+</pre>
+<p><b><font color="red">制約を修正しました(8/1 19:30)</font></b></p>
+<ul>
+<li>ごみの種類数 <var>N</var> は <var>5\leq N\leq 20</var> を満たす。</li>
+<li>分別器設置場所の個数 <var>M</var> は <var>10N\leq M\leq 50N</var> を満たす。</li>
+<li>分別器の種類数 <var>K</var> は <var>N\leq K\leq 4N</var> を満たす。</li>
+<li><var>i</var> 番目の処理装置設置場所の座標 <var>(x^d_i,y^d_i)</var> は、<var>0\leq x^d_i,y^d_i\leq 10^4</var> を満たす整数である。</li>
+<li><var>i</var> 番目の分別器設置場所の座標 <var>(x^s_i,y^s_i)</var> は、<var>0\leq x^s_i,y^s_i\leq 10^4</var> を満たす整数である。</li>
+<li>搬入口およびすべての設置場所の座標は互いに異なる。</li>
+<li><var>i</var> 番目の分別器が種類 <var>j</var> のごみを出口1から運び出す確率 <var>p_{i,j}</var> は実数であり、<var>0\leq p_{i,j}\leq 1</var> を満たす。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>ベルトコンベアの行き先を、以下のように番号で表現する。</p>
+<ul>
+<li>行き先が <var>i</var> 番目の処理装置設置場所である場合は <var>i</var></li>
+<li>行き先が <var>i</var> 番目の分別器設置場所である場合は <var>N+i</var></li>
+</ul>
+<p><var>i</var> 番目の処理装置設置場所に設置する処理装置の番号を <var>d_i</var> (<var>0\leq d_i\leq N-1</var>) とする。
+ごみ搬入口から出るベルトコンベアの行き先を表す番号を <var>s</var> (<var>0\leq s\leq N+M-1</var>) とする。
+このとき、以下の形式で標準出力に出力せよ。</p>
+<pre><var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+<var>s</var>
+</pre>
+<p>続けて、<var>M</var> 行を標準出力に出力せよ。<br />
+<var>i</var> 行目は、<var>i</var> 番目の分別器設置場所の状態に応じて以下のように出力する。</p>
+<ul>
+<li>分別器を設置しない場合：</li>
+</ul>
+<pre><var>-1</var>
+</pre>
+<ul>
+<li><var>k</var> 番目 (<var>0\leq k\leq K-1</var>) の分別器を設置し、出口1から出るベルトコンベアの行き先を表す番号が <var>v_1</var>、出口2から出るベルトコンベアの行き先を表す番号が <var>v_2</var> である場合（<var>0\leq v_1,v_2\leq N+M-1</var>）：</li>
+</ul>
+<pre><var>k</var> <var>v_1</var> <var>v_2</var>
+</pre>
+<p>ベルトコンベアの行き先が分別器設置場所である場合、そこには分別器が設置されていなければならない。</p>
+<p><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><ul>
+<li><var>\mathrm{rand}(L,U)</var>：<var>L</var> 以上 <var>U</var> 以下の整数を一様ランダムに生成する。</li>
+</ul>
+<p><var>N</var>、<var>M</var>、<var>K</var> は、それぞれの範囲内から一様ランダムに生成される。</p>
+<p><var>N</var> 個の処理装置設置場所と <var>M</var> 個の分別器設置場所の座標は、以下の手順で <var>N+M</var> 個の座標を順に生成し、前半の <var>N</var> 個を処理装置設置場所、後半の <var>M</var> 個を分別器設置場所とする。</p>
+<p>使用済み座標集合 <var>S</var> を <var>S=\{(0,5000)\}</var> により初期化する。<br />
+<var>x=\mathrm{rand}(0,10^4), y=\mathrm{rand}(0,10^4)</var> により座標 <var>(x,y)</var> を生成する。<br />
+生成した点とのユークリッド距離が <var>100</var> 以下の点が <var>S</var> に含まれない場合、この点を採用し、<var>S</var> に加える。<br />
+この操作を <var>N+M</var> 個の点が生成されるまで繰り返す。</p>
+<p>分類確率 <var>p_{i,j}</var> はそれぞれ独立に、<var>\mathrm{rand}(1000,9000)\times 10^{-4}</var> により生成される。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム(Python)</h3><details>
+Python による解答例を示す。
+このプログラムでは、以下の処理を行っている。<br>
+
+1. <var>i</var> 番の位置に <var>i</var> 番の処理装置を設置する<br>
+2. 搬入口と最も近い分別器設置場所を結ぶ<br>
+3. 0 番の分別器を設置し、出口1を最も確率が高いごみ種の処理装置に、出口2を最も確率が低いごみ種の処理装置に接続する<br>
+
+<pre class="prettyprint linenums">
+import sys
+import math
+
+input = sys.stdin.readline
+
+# 入力読み込み
+N, M, K = map(int, input().split())
+processor_positions = []
+for _ in range(N):
+    x, y = map(int, input().split())
+    processor_positions.append((x, y))
+sorter_positions = []
+for _ in range(M):
+    x, y = map(int, input().split())
+    sorter_positions.append((x, y))
+prob = []
+for _ in range(K):
+    row = list(map(float, input().split()))
+    prob.append(row)
+
+# i番の位置にi番の処理装置を設置
+proc_assign = ' '.join(str(i) for i in range(N))
+# 搬入口 (0,5000) と最も近い設置場所を結ぶ
+inlet = (0, 5000)
+dist_sq = [((x - inlet[0])**2 + (y - inlet[1])**2, i) for i, (x, y) in enumerate(sorter_positions)]
+_, nearest_i = min(dist_sq)
+inlet_conn = N + nearest_i
+
+# 0番の分別器を設置し、出口1を一番確率の高いごみ種の処理装置と、出口2を一番確率の低いごみ種の処理装置と結ぶ
+first_row = prob[0]
+imax = first_row.index(max(first_row))
+imin = first_row.index(min(first_row))
+sorter_assigns = []
+for i in range(M):
+    if i == nearest_i:
+        sorter_assigns.append(f"0 {imax} {imin}")
+    else:
+        sorter_assigns.append("-1")
+
+print(proc_assign)
+print(inlet_conn)
+print("\n".join(sorter_assigns))
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">13 133 47
+1858 8963
+2368 1117
+2507 4965
+7710 890
+1468 578
+3244 9299
+5025 8511
+9642 4334
+599 4476
+1388 2454
+4779 5389
+8676 3397
+6156 8034
+4102 6415
+8251 3509
+9320 4268
+1193 1486
+4847 2021
+4440 9046
+8991 8142
+6633 5942
+3778 8637
+6876 74
+6067 1863
+8407 3044
+1604 822
+9775 4772
+9083 1045
+9803 847
+7455 5575
+3183 1259
+8407 2922
+371 3058
+4890 3331
+4014 5211
+2054 4998
+4121 2752
+6559 6840
+5346 2079
+5773 6895
+335 4826
+2920 8652
+7735 1367
+6162 8431
+9157 7821
+4653 704
+6642 7613
+8857 6949
+3623 8476
+7022 6237
+4959 8592
+2981 3756
+2329 7006
+2328 3175
+249 3861
+3051 8548
+2673 996
+714 7101
+9170 2616
+70 490
+9474 7442
+3173 4483
+6962 8988
+129 8154
+1965 3249
+9297 1953
+6438 9318
+5926 6158
+1136 6845
+2191 7256
+475 5531
+3383 5500
+4499 7348
+1062 6942
+3835 7850
+6357 1687
+7532 3576
+8723 8738
+760 2627
+8460 5002
+4686 7214
+9095 2003
+5976 7913
+3428 9235
+266 2484
+527 8521
+6142 4813
+588 1327
+1267 4124
+5523 7202
+6286 4698
+2459 6133
+3068 689
+5979 5443
+3284 133
+4996 3507
+7965 9183
+5634 316
+4940 7810
+1672 8535
+6853 4148
+9340 5193
+8069 632
+1836 7667
+2546 2085
+4054 4133
+3953 2870
+842 1426
+3115 3095
+3310 6422
+2990 4161
+9395 8903
+5047 8714
+5566 3742
+6731 7534
+6722 749
+4764 7151
+1713 7025
+4254 6934
+6297 8912
+4215 462
+3514 8224
+398 9070
+6611 8531
+9596 5432
+1411 5057
+7552 8981
+6596 3135
+6479 5998
+7299 423
+2041 3637
+710 6793
+2958 189
+1252 5867
+3588 6591
+1057 5697
+8112 9569
+6711 6792
+6763 6384
+616 7507
+5311 7674
+9751 5960
+5991 4435
+3668 4186
+7865 9219
+1535 4695
+0.7947 0.5717 0.1458 0.7273 0.1395 0.5274 0.7105 0.6630 0.5254 0.1861 0.8898 0.4124 0.8373
+0.8285 0.6842 0.7812 0.7602 0.8161 0.6065 0.2316 0.3189 0.1706 0.1754 0.5127 0.1849 0.1398
+0.5147 0.6140 0.5256 0.7881 0.4148 0.3610 0.7228 0.5083 0.7442 0.6778 0.7014 0.1979 0.7725
+0.3479 0.5942 0.2791 0.6912 0.5923 0.7850 0.8101 0.4307 0.1955 0.8941 0.5841 0.7685 0.3365
+0.4116 0.3389 0.7719 0.8792 0.5796 0.5751 0.1132 0.2053 0.5233 0.8496 0.5604 0.7999 0.8949
+0.6201 0.3431 0.3317 0.8918 0.7173 0.8363 0.8314 0.7755 0.2087 0.1003 0.3819 0.8538 0.1853
+0.5341 0.2075 0.3356 0.1762 0.2904 0.8025 0.5798 0.8951 0.5324 0.6448 0.3785 0.5311 0.8397
+0.7767 0.4043 0.7621 0.4336 0.7617 0.3717 0.5117 0.8811 0.3867 0.5574 0.2229 0.4948 0.2109
+0.2918 0.1748 0.6747 0.8715 0.2433 0.5604 0.8109 0.6585 0.4850 0.4937 0.7828 0.5056 0.4923
+0.2074 0.5636 0.2931 0.7722 0.4598 0.3112 0.2513 0.1173 0.8946 0.2885 0.3746 0.4158 0.1289
+0.6646 0.8395 0.1890 0.5334 0.1160 0.7439 0.5963 0.1967 0.3549 0.2631 0.4714 0.3812 0.1210
+0.5868 0.4050 0.2678 0.2920 0.6503 0.3704 0.4336 0.5353 0.6986 0.1129 0.2086 0.1183 0.2040
+0.4108 0.1430 0.2123 0.4538 0.6206 0.2628 0.1833 0.6750 0.7179 0.4557 0.5837 0.3481 0.8241
+0.7121 0.6299 0.6964 0.6125 0.7442 0.4419 0.2720 0.1329 0.2044 0.6554 0.2180 0.7193 0.7337
+0.7011 0.1872 0.6595 0.1431 0.4645 0.5205 0.7408 0.1855 0.8220 0.7275 0.2853 0.3204 0.4627
+0.5218 0.6348 0.3389 0.8584 0.2942 0.2740 0.4592 0.2506 0.8733 0.8386 0.6548 0.2667 0.8584
+0.8958 0.7544 0.4056 0.1245 0.6517 0.8921 0.7763 0.3818 0.7530 0.3751 0.6342 0.7434 0.4215
+0.2749 0.3961 0.4172 0.1673 0.4351 0.3963 0.5220 0.2972 0.3792 0.5992 0.7891 0.5944 0.4958
+0.5049 0.1172 0.6678 0.4131 0.2468 0.7376 0.6962 0.5892 0.3075 0.4466 0.6821 0.3681 0.3261
+0.2087 0.1496 0.2146 0.6869 0.4596 0.7237 0.2283 0.2242 0.7294 0.1675 0.8079 0.6417 0.7165
+0.4842 0.3767 0.7664 0.7524 0.5782 0.1098 0.3663 0.5658 0.3647 0.1522 0.6769 0.7871 0.5725
+0.4457 0.2750 0.3091 0.7717 0.6955 0.1686 0.5195 0.5703 0.7169 0.4944 0.5972 0.2510 0.3722
+0.6483 0.3851 0.3562 0.8226 0.4714 0.5673 0.2170 0.8736 0.8041 0.4816 0.6178 0.1427 0.1894
+0.1430 0.2933 0.3126 0.8151 0.7037 0.5676 0.2704 0.3305 0.6220 0.1465 0.2080 0.5824 0.1398
+0.2149 0.2998 0.1146 0.8847 0.8714 0.1295 0.8328 0.4172 0.1081 0.3282 0.3044 0.7896 0.5094
+0.5783 0.8544 0.7956 0.2967 0.7709 0.1041 0.1021 0.6928 0.5704 0.2814 0.5847 0.5448 0.6967
+0.3834 0.5092 0.8551 0.7886 0.1314 0.3960 0.6900 0.4573 0.5070 0.6776 0.6555 0.5269 0.3392
+0.1611 0.5018 0.1274 0.1432 0.3938 0.4762 0.5130 0.8322 0.8457 0.8087 0.1703 0.1075 0.1604
+0.1997 0.7419 0.1717 0.4030 0.4894 0.3377 0.3162 0.6859 0.1615 0.8698 0.5788 0.8138 0.5818
+0.4859 0.3316 0.8085 0.4157 0.8243 0.4599 0.5926 0.5802 0.6918 0.1755 0.3048 0.5425 0.3713
+0.5403 0.1570 0.4645 0.7979 0.2681 0.8216 0.2177 0.5360 0.6601 0.7411 0.4305 0.8996 0.8515
+0.3653 0.8646 0.2023 0.2481 0.5197 0.8658 0.8288 0.2090 0.3178 0.3384 0.6897 0.4686 0.1087
+0.2876 0.4619 0.5801 0.5664 0.6368 0.6487 0.8110 0.6732 0.1831 0.4944 0.6158 0.5406 0.5401
+0.4234 0.3891 0.2370 0.7762 0.8843 0.8458 0.6728 0.3381 0.4985 0.2366 0.8303 0.1040 0.5701
+0.1297 0.3075 0.6430 0.4957 0.7719 0.6939 0.7531 0.5474 0.5737 0.7540 0.4508 0.1765 0.7806
+0.5881 0.7300 0.7944 0.7544 0.1365 0.1780 0.5800 0.5754 0.3439 0.8311 0.4328 0.7358 0.3163
+0.2535 0.5585 0.6483 0.1642 0.1291 0.8911 0.7827 0.8863 0.7378 0.4760 0.3481 0.8681 0.7335
+0.4697 0.1786 0.3000 0.4476 0.3325 0.7877 0.5377 0.6881 0.5053 0.8013 0.5359 0.6286 0.3323
+0.8809 0.5817 0.2729 0.3885 0.2775 0.4435 0.8356 0.2798 0.5751 0.6667 0.4997 0.7838 0.6363
+0.6267 0.7182 0.6751 0.7085 0.4753 0.7842 0.8322 0.4385 0.7766 0.1075 0.1791 0.8696 0.1037
+0.4336 0.8460 0.5259 0.5350 0.7094 0.1762 0.4207 0.7375 0.4378 0.2340 0.5642 0.7896 0.3129
+0.1505 0.5580 0.3774 0.7196 0.7524 0.8902 0.4146 0.1722 0.7837 0.3907 0.2465 0.3367 0.6686
+0.7948 0.1337 0.8616 0.4249 0.3155 0.2698 0.1273 0.4942 0.7133 0.2159 0.7039 0.7372 0.4182
+0.5986 0.3626 0.1562 0.1946 0.5486 0.1648 0.2525 0.7382 0.8283 0.3628 0.4541 0.2651 0.8978
+0.1668 0.4790 0.3921 0.7325 0.3574 0.4265 0.8023 0.8647 0.8215 0.4398 0.2749 0.2215 0.8907
+0.4803 0.6133 0.1684 0.1372 0.6250 0.3488 0.5522 0.1836 0.2820 0.2808 0.1747 0.1864 0.7046
+0.4214 0.6384 0.4454 0.7190 0.2064 0.4953 0.3946 0.7983 0.7207 0.3334 0.5841 0.6460 0.2462
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">0 1 2 3 4 5 6 7 8 9 10 11 12
+40
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+0 10 4
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>The city of Takahashi is currently constructing a new waste processing facility.
+Various types of waste will be brought into this facility, so it must be sorted before processing.
+Sorting can be performed using several types of equipment, such as using magnets to separate items containing iron from others.
+However, the sorters probabilistically distribute waste into two paths and cannot accurately identify the type of waste.
+Therefore, it is necessary to appropriately combine multiple sorters, such as first separating cans from other items by shape, and then separating aluminum cans from steel cans using magnets.
+By effectively combining multiple sorters, please perform waste sorting as accurately as possible.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>A waste processing facility is under construction to process and sort <var>N</var> types of waste.
+The facility is represented as a square region on a 2D plane with <var>0\leq x\leq 10^4</var> and <var>0\leq y\leq 10^4</var>.
+Various types of waste will be brought into the facility through the <strong>waste inlet</strong>, and by installing <strong>processors</strong> and <strong>sorters</strong> connected by <strong>conveyor belts</strong>, the aim is to sort the waste as accurately as possible before processing.</p>
+<h4>Waste Inlet</h4>
+<p>There is exactly one waste inlet in the facility, located at coordinates <var>(0,5000)</var>.
+A single conveyor belt extends from the inlet to transport waste to a processor or a sorter.</p>
+<h4>Processors</h4>
+<p>Exactly one processor is installed for each type of waste.
+The goal is to deliver each type of waste to its correct processor.</p>
+<p>There are exactly <var>N</var> locations within the facility where processors can be installed, and the coordinates of the <var>i</var>-th location are <var>(x^d_i,y^d_i)</var>.
+You are free to assign which type of waste processor to install at each location.</p>
+<h4>Sorters</h4>
+<p>There are <var>K</var> types of automatic waste sorters.
+<strong>The same sorter may be installed in multiple locations.</strong></p>
+<p>Each sorter probabilistically routes incoming waste into one of two paths, discharging it through either Exit 1 or Exit 2.
+The probability that the <var>i</var>-th sorter routes waste of type <var>j</var> to Exit 1 is <var>p_{i,j}</var>, and the probability it goes to Exit 2 is <var>1-p_{i,j}</var>.</p>
+<p>There are <var>M</var> available locations within the facility for installing sorters, and the coordinates of the <var>i</var>-th location are <var>(x^s_i,y^s_i)</var>.
+At most one sorter can be installed at each location.</p>
+<h4>Conveyor Belts</h4>
+<p>From the waste inlet and from each of the two exits of a sorter, conveyor belts must extend to deliver waste to either a processor or another sorter.
+Each conveyor belt is laid as a line segment connecting a start and end point, and two belts that do not share any endpoints must not intersect.
+Under this condition, it is allowed for the two exits of a sorter to be directed to the same destination.</p>
+<p>Considering a directed graph where the waste inlet, processors, and sorters are vertices, and conveyor belts are edges, the graph must not contain any cycles (including self-loops).</p>
+<h4>Hint: Segment Intersection Detection</h4>
+<p>To determine whether two line segments <var>p_1p_2</var> and <var>q_1q_2</var> share any point, use the following pseudocode.
+Since all computed values are integers, no rounding errors will occur.</p>
+<pre class="prettyprint linenums">
+def sign(x):
+    return 1 if x > 0 else -1 if x < 0 else 0
+
+def orientation(a, b, c):
+    cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
+    return sign(cross)
+
+def segments_intersect(p1, p2, q1, q2):
+    if (max(p1.x, p2.x) < min(q1.x, q2.x) or
+        max(q1.x, q2.x) < min(p1.x, p2.x) or
+        max(p1.y, p2.y) < min(q1.y, q2.y) or
+        max(q1.y, q2.y) < min(p1.y, p2.y)):
+        return False
+    o1 = orientation(p1, p2, q1)
+    o2 = orientation(p1, p2, q2)
+    o3 = orientation(q1, q2, p1)
+    o4 = orientation(q1, q2, p2)
+    return (o1 * o2 <= 0) and (o3 * o4 <= 0)
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Score</h3><p>Let <var>q_i</var> be the probability that waste of type <var>i</var> is ultimately delivered to its corresponding processor.
+Then, the following absolute score is awarded:</p>
+<p>\[
+    \mathrm{round}\left(10^9\times \frac{1}{N}\sum_{i=0}^{N-1}(1-q_i)\right)
+\]</p>
+<p><font color="red"><strong>The lower the absolute score, the better.</strong></font></p>
+<p>For each test case, we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{MIN}}{\mathrm{YOUR}})</var>, where YOUR is your absolute score and MIN is the lowest absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.</p>
+<p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MIN calculation for those test cases.</p>
+<p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 50</li>
+<li>System test: 2000. We will publish <a href="https://img.atcoder.jp/ahc051/seeds.txt">seeds.txt</a> (sha256=b61fb5678d480a79e25a50141403e14e8e245d5699e90aa53d4fad893e10dee8) after the contest is over.</li>
+</ul>
+<h4>About relative evaluation system</h4>
+<p>In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+Only the last submissions are used to calculate the MIN for each test case when calculating the relative scores.</p>
+<p>The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format.</p>
+<pre><var>N</var> <var>M</var> <var>K</var>
+<var>x^d_0</var> <var>y^d_0</var>
+<var>\vdots</var>
+<var>x^d_{N-1}</var> <var>y^d_{N-1}</var>
+<var>x^s_0</var> <var>y^s_0</var>
+<var>\vdots</var>
+<var>x^s_{M-1}</var> <var>y^s_{M-1}</var>
+<var>p_{0,0}</var> <var>\cdots</var> <var>p_{0,N-1}</var>
+<var>\vdots</var>
+<var>p_{K-1,0}</var> <var>\cdots</var> <var>p_{K-1,N-1}</var>
+</pre>
+<p><b><font color="red">Constraints have been revised (August 1, 19:30, JST)</font></b></p>
+<ul>
+<li>The number of waste types <var>N</var> satisfies <var>5\leq N\leq 20</var>.</li>
+<li>The number of sorter installation locations <var>M</var> satisfies <var>10N\leq M\leq 50N</var>.</li>
+<li>The number of sorter types <var>K</var> satisfies <var>N\leq K\leq 4N</var>.</li>
+<li>The coordinates <var>(x^d_i,y^d_i)</var> of the <var>i</var>-th processor installation location are integers satisfying <var>0\leq x^d_i,y^d_i\leq 10^4</var>.</li>
+<li>The coordinates <var>(x^s_i,y^s_i)</var> of the <var>i</var>-th sorter installation location are integers satisfying <var>0\leq x^s_i,y^s_i\leq 10^4</var>.</li>
+<li>The coordinates of the inlet and all installation locations are mutually distinct.</li>
+<li>The probability <var>p_{i,j}</var> that sorter <var>i</var> routes waste of type <var>j</var> to Exit 1 is a real number satisfying <var>0\leq p_{i,j}\leq 1</var>.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>The destinations of conveyor belts are represented by the following numbers:</p>
+<ul>
+<li>If the destination is the <var>i</var>-th processor installation location: <var>i</var></li>
+<li>If the destination is the <var>i</var>-th sorter installation location: <var>N+i</var></li>
+</ul>
+<p>Let <var>d_i</var> (<var>0\leq d_i\leq N-1</var>) be the waste type of the processor installed at the <var>i</var>-th processor installation location.
+Let <var>s</var> (<var>0\leq s\leq N+M-1</var>) be the number representing the destination of the conveyor belt from the waste inlet.
+Output the following to Standard Output in the specified format:</p>
+<pre><var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+<var>s</var>
+</pre>
+<p>Then output <var>M</var> additional lines.<br />
+The <var>i</var>-th line should be output according to the state of the <var>i</var>-th sorter installation location:</p>
+<ul>
+<li>If no sorter is installed:</li>
+</ul>
+<pre>-1
+</pre>
+<ul>
+<li>If the <var>k</var>-th (<var>0\leq k\leq K-1</var>) sorter is installed, and the destination of the conveyor belt from Exit 1 is <var>v_1</var>, and from Exit 2 is <var>v_2</var> (<var>0\leq v_1,v_2\leq N+M-1</var>):</li>
+</ul>
+<pre><var>k</var> <var>v_1</var> <var>v_2</var>
+</pre>
+<p>If the destination of a conveyor belt is a sorter installation location, a sorter must be installed there.</p>
+<p><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution (Python)</h3><details>
+An example solution written in Python is shown below.
+This program performs the following steps:<br>
+
+1. Installs processor of type <var>i</var> at the <var>i</var>-th processor installation location<br>
+2. Connects the waste inlet to the nearest sorter installation location<br>
+3. Installs sorter type 0 at that location, connecting Exit 1 to the processor of the waste type with the highest probability, and Exit 2 to the processor of the type with the lowest probability<br>
+
+<pre class="prettyprint linenums">
+import sys
+import math
+
+input = sys.stdin.readline
+
+# Read input
+N, M, K = map(int, input().split())
+processor_positions = []
+for _ in range(N):
+    x, y = map(int, input().split())
+    processor_positions.append((x, y))
+sorter_positions = []
+for _ in range(M):
+    x, y = map(int, input().split())
+    sorter_positions.append((x, y))
+prob = []
+for _ in range(K):
+    row = list(map(float, input().split()))
+    prob.append(row)
+
+# Install processor of type i at position i
+proc_assign = ' '.join(str(i) for i in range(N))
+# Connect inlet (0,5000) to the nearest sorter installation location
+inlet = (0, 5000)
+dist_sq = [((x - inlet[0])**2 + (y - inlet[1])**2, i) for i, (x, y) in enumerate(sorter_positions)]
+_, nearest_i = min(dist_sq)
+inlet_conn = N + nearest_i
+
+# Install sorter type 0, connect Exit 1 to processor with highest prob, Exit 2 to lowest
+first_row = prob[0]
+imax = first_row.index(max(first_row))
+imin = first_row.index(min(first_row))
+sorter_assigns = []
+for i in range(M):
+    if i == nearest_i:
+        sorter_assigns.append(f"0 {imax} {imin}")
+    else:
+        sorter_assigns.append("-1")
+
+print(proc_assign)
+print(inlet_conn)
+print("\n".join(sorter_assigns))
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><ul>
+<li><var>\mathrm{rand}(L,U)</var>: Uniformly generates an integer between <var>L</var> and <var>U</var>, inclusive.</li>
+</ul>
+<p><var>N</var>, <var>M</var>, and <var>K</var> are each generated uniformly at random within their respective ranges.</p>
+<p>The coordinates for the <var>N</var> processor installation locations and <var>M</var> sorter installation locations are generated using the following procedure to create a total of <var>N+M</var> coordinates, where the first <var>N</var> are used for processor locations and the remaining <var>M</var> for sorter locations.</p>
+<p>Initialize the set of used coordinates as <var>S=\{(0,5000)\}</var>.<br />
+Generate a coordinate <var>(x,y)</var> with <var>x=\mathrm{rand}(0,10^4), y=\mathrm{rand}(0,10^4)</var>.<br />
+If no point within a Euclidean distance of <var>100</var> from the generated point is in <var>S</var>, accept the point and add it to <var>S</var>.<br />
+Repeat this until <var>N+M</var> points have been generated.</p>
+<p>Each classification probability <var>p_{i,j}</var> is generated independently as <var>\mathrm{rand}(1000,9000)\times 10^{-4}</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.html?lang=en">Web version</a>: This is more powerful than the local version providing animations.</li>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc051/jdd9gfQC_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">13 133 47
+1858 8963
+2368 1117
+2507 4965
+7710 890
+1468 578
+3244 9299
+5025 8511
+9642 4334
+599 4476
+1388 2454
+4779 5389
+8676 3397
+6156 8034
+4102 6415
+8251 3509
+9320 4268
+1193 1486
+4847 2021
+4440 9046
+8991 8142
+6633 5942
+3778 8637
+6876 74
+6067 1863
+8407 3044
+1604 822
+9775 4772
+9083 1045
+9803 847
+7455 5575
+3183 1259
+8407 2922
+371 3058
+4890 3331
+4014 5211
+2054 4998
+4121 2752
+6559 6840
+5346 2079
+5773 6895
+335 4826
+2920 8652
+7735 1367
+6162 8431
+9157 7821
+4653 704
+6642 7613
+8857 6949
+3623 8476
+7022 6237
+4959 8592
+2981 3756
+2329 7006
+2328 3175
+249 3861
+3051 8548
+2673 996
+714 7101
+9170 2616
+70 490
+9474 7442
+3173 4483
+6962 8988
+129 8154
+1965 3249
+9297 1953
+6438 9318
+5926 6158
+1136 6845
+2191 7256
+475 5531
+3383 5500
+4499 7348
+1062 6942
+3835 7850
+6357 1687
+7532 3576
+8723 8738
+760 2627
+8460 5002
+4686 7214
+9095 2003
+5976 7913
+3428 9235
+266 2484
+527 8521
+6142 4813
+588 1327
+1267 4124
+5523 7202
+6286 4698
+2459 6133
+3068 689
+5979 5443
+3284 133
+4996 3507
+7965 9183
+5634 316
+4940 7810
+1672 8535
+6853 4148
+9340 5193
+8069 632
+1836 7667
+2546 2085
+4054 4133
+3953 2870
+842 1426
+3115 3095
+3310 6422
+2990 4161
+9395 8903
+5047 8714
+5566 3742
+6731 7534
+6722 749
+4764 7151
+1713 7025
+4254 6934
+6297 8912
+4215 462
+3514 8224
+398 9070
+6611 8531
+9596 5432
+1411 5057
+7552 8981
+6596 3135
+6479 5998
+7299 423
+2041 3637
+710 6793
+2958 189
+1252 5867
+3588 6591
+1057 5697
+8112 9569
+6711 6792
+6763 6384
+616 7507
+5311 7674
+9751 5960
+5991 4435
+3668 4186
+7865 9219
+1535 4695
+0.7947 0.5717 0.1458 0.7273 0.1395 0.5274 0.7105 0.6630 0.5254 0.1861 0.8898 0.4124 0.8373
+0.8285 0.6842 0.7812 0.7602 0.8161 0.6065 0.2316 0.3189 0.1706 0.1754 0.5127 0.1849 0.1398
+0.5147 0.6140 0.5256 0.7881 0.4148 0.3610 0.7228 0.5083 0.7442 0.6778 0.7014 0.1979 0.7725
+0.3479 0.5942 0.2791 0.6912 0.5923 0.7850 0.8101 0.4307 0.1955 0.8941 0.5841 0.7685 0.3365
+0.4116 0.3389 0.7719 0.8792 0.5796 0.5751 0.1132 0.2053 0.5233 0.8496 0.5604 0.7999 0.8949
+0.6201 0.3431 0.3317 0.8918 0.7173 0.8363 0.8314 0.7755 0.2087 0.1003 0.3819 0.8538 0.1853
+0.5341 0.2075 0.3356 0.1762 0.2904 0.8025 0.5798 0.8951 0.5324 0.6448 0.3785 0.5311 0.8397
+0.7767 0.4043 0.7621 0.4336 0.7617 0.3717 0.5117 0.8811 0.3867 0.5574 0.2229 0.4948 0.2109
+0.2918 0.1748 0.6747 0.8715 0.2433 0.5604 0.8109 0.6585 0.4850 0.4937 0.7828 0.5056 0.4923
+0.2074 0.5636 0.2931 0.7722 0.4598 0.3112 0.2513 0.1173 0.8946 0.2885 0.3746 0.4158 0.1289
+0.6646 0.8395 0.1890 0.5334 0.1160 0.7439 0.5963 0.1967 0.3549 0.2631 0.4714 0.3812 0.1210
+0.5868 0.4050 0.2678 0.2920 0.6503 0.3704 0.4336 0.5353 0.6986 0.1129 0.2086 0.1183 0.2040
+0.4108 0.1430 0.2123 0.4538 0.6206 0.2628 0.1833 0.6750 0.7179 0.4557 0.5837 0.3481 0.8241
+0.7121 0.6299 0.6964 0.6125 0.7442 0.4419 0.2720 0.1329 0.2044 0.6554 0.2180 0.7193 0.7337
+0.7011 0.1872 0.6595 0.1431 0.4645 0.5205 0.7408 0.1855 0.8220 0.7275 0.2853 0.3204 0.4627
+0.5218 0.6348 0.3389 0.8584 0.2942 0.2740 0.4592 0.2506 0.8733 0.8386 0.6548 0.2667 0.8584
+0.8958 0.7544 0.4056 0.1245 0.6517 0.8921 0.7763 0.3818 0.7530 0.3751 0.6342 0.7434 0.4215
+0.2749 0.3961 0.4172 0.1673 0.4351 0.3963 0.5220 0.2972 0.3792 0.5992 0.7891 0.5944 0.4958
+0.5049 0.1172 0.6678 0.4131 0.2468 0.7376 0.6962 0.5892 0.3075 0.4466 0.6821 0.3681 0.3261
+0.2087 0.1496 0.2146 0.6869 0.4596 0.7237 0.2283 0.2242 0.7294 0.1675 0.8079 0.6417 0.7165
+0.4842 0.3767 0.7664 0.7524 0.5782 0.1098 0.3663 0.5658 0.3647 0.1522 0.6769 0.7871 0.5725
+0.4457 0.2750 0.3091 0.7717 0.6955 0.1686 0.5195 0.5703 0.7169 0.4944 0.5972 0.2510 0.3722
+0.6483 0.3851 0.3562 0.8226 0.4714 0.5673 0.2170 0.8736 0.8041 0.4816 0.6178 0.1427 0.1894
+0.1430 0.2933 0.3126 0.8151 0.7037 0.5676 0.2704 0.3305 0.6220 0.1465 0.2080 0.5824 0.1398
+0.2149 0.2998 0.1146 0.8847 0.8714 0.1295 0.8328 0.4172 0.1081 0.3282 0.3044 0.7896 0.5094
+0.5783 0.8544 0.7956 0.2967 0.7709 0.1041 0.1021 0.6928 0.5704 0.2814 0.5847 0.5448 0.6967
+0.3834 0.5092 0.8551 0.7886 0.1314 0.3960 0.6900 0.4573 0.5070 0.6776 0.6555 0.5269 0.3392
+0.1611 0.5018 0.1274 0.1432 0.3938 0.4762 0.5130 0.8322 0.8457 0.8087 0.1703 0.1075 0.1604
+0.1997 0.7419 0.1717 0.4030 0.4894 0.3377 0.3162 0.6859 0.1615 0.8698 0.5788 0.8138 0.5818
+0.4859 0.3316 0.8085 0.4157 0.8243 0.4599 0.5926 0.5802 0.6918 0.1755 0.3048 0.5425 0.3713
+0.5403 0.1570 0.4645 0.7979 0.2681 0.8216 0.2177 0.5360 0.6601 0.7411 0.4305 0.8996 0.8515
+0.3653 0.8646 0.2023 0.2481 0.5197 0.8658 0.8288 0.2090 0.3178 0.3384 0.6897 0.4686 0.1087
+0.2876 0.4619 0.5801 0.5664 0.6368 0.6487 0.8110 0.6732 0.1831 0.4944 0.6158 0.5406 0.5401
+0.4234 0.3891 0.2370 0.7762 0.8843 0.8458 0.6728 0.3381 0.4985 0.2366 0.8303 0.1040 0.5701
+0.1297 0.3075 0.6430 0.4957 0.7719 0.6939 0.7531 0.5474 0.5737 0.7540 0.4508 0.1765 0.7806
+0.5881 0.7300 0.7944 0.7544 0.1365 0.1780 0.5800 0.5754 0.3439 0.8311 0.4328 0.7358 0.3163
+0.2535 0.5585 0.6483 0.1642 0.1291 0.8911 0.7827 0.8863 0.7378 0.4760 0.3481 0.8681 0.7335
+0.4697 0.1786 0.3000 0.4476 0.3325 0.7877 0.5377 0.6881 0.5053 0.8013 0.5359 0.6286 0.3323
+0.8809 0.5817 0.2729 0.3885 0.2775 0.4435 0.8356 0.2798 0.5751 0.6667 0.4997 0.7838 0.6363
+0.6267 0.7182 0.6751 0.7085 0.4753 0.7842 0.8322 0.4385 0.7766 0.1075 0.1791 0.8696 0.1037
+0.4336 0.8460 0.5259 0.5350 0.7094 0.1762 0.4207 0.7375 0.4378 0.2340 0.5642 0.7896 0.3129
+0.1505 0.5580 0.3774 0.7196 0.7524 0.8902 0.4146 0.1722 0.7837 0.3907 0.2465 0.3367 0.6686
+0.7948 0.1337 0.8616 0.4249 0.3155 0.2698 0.1273 0.4942 0.7133 0.2159 0.7039 0.7372 0.4182
+0.5986 0.3626 0.1562 0.1946 0.5486 0.1648 0.2525 0.7382 0.8283 0.3628 0.4541 0.2651 0.8978
+0.1668 0.4790 0.3921 0.7325 0.3574 0.4265 0.8023 0.8647 0.8215 0.4398 0.2749 0.2215 0.8907
+0.4803 0.6133 0.1684 0.1372 0.6250 0.3488 0.5522 0.1836 0.2820 0.2808 0.1747 0.1864 0.7046
+0.4214 0.6384 0.4454 0.7190 0.2064 0.4953 0.3946 0.7983 0.7207 0.3334 0.5841 0.6460 0.2462
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">0 1 2 3 4 5 6 7 8 9 10 11 12
+40
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+0 10 4
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc051/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc051_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc051/tasks/ahc051_a?lang=ja" data-a2a-title="A - Probabilistic Waste Sorting">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc051/rules">ルール</a></li>
+					<li><a href="/contests/ahc051/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

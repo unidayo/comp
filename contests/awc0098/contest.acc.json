@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0098",
+    "title": "AtCoder Weekday Contest 0098 Beta",
+    "url": "https://atcoder.jp/contests/awc0098"
+  },
+  "tasks": [
+    {
+      "id": "awc0098_a",
+      "label": "A",
+      "title": "Error Analysis of Temperature Forecasts",
+      "url": "https://atcoder.jp/contests/awc0098/tasks/awc0098_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0098_a.cpp"
+      }
+    },
+    {
+      "id": "awc0098_b",
+      "label": "B",
+      "title": "Library Book Lending",
+      "url": "https://atcoder.jp/contests/awc0098/tasks/awc0098_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0098_b.cpp"
+      }
+    },
+    {
+      "id": "awc0098_c",
+      "label": "C",
+      "title": "Highway Discount Pass",
+      "url": "https://atcoder.jp/contests/awc0098/tasks/awc0098_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0098_c.cpp"
+      }
+    },
+    {
+      "id": "awc0098_d",
+      "label": "D",
+      "title": "City Tour Rally",
+      "url": "https://atcoder.jp/contests/awc0098/tasks/awc0098_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0098_d.cpp"
+      }
+    },
+    {
+      "id": "awc0098_e",
+      "label": "E",
+      "title": "Maintenance of Waterways",
+      "url": "https://atcoder.jp/contests/awc0098/tasks/awc0098_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0098_e.cpp"
+      }
+    }
+  ]
+}

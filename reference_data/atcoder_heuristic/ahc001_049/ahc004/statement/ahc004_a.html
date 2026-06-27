@@ -1,0 +1,2444 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Alien&#39;s Genome Assembly</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Alien&#39;s Genome Assembly" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc004/tasks/ahc004_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Alien&#39;s Genome Assembly" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc004";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2021-06-26T13:00:00+09:00");
+			var endTime = moment("2021-06-26T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 004が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 004は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc004">AtCoder Heuristic Contest 004</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc004/tasks/ahc004_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc004/tasks/ahc004_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc004%2Ftasks%2Fahc004_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20210626T1300&p1=248' target='blank'><time class='fixtime fixtime-full'>2021-06-26 13:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20210626T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2021-06-26 19:00:00+0900</time></a> 
+				(360分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc004"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc004/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc004/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc004/submit?taskScreenName=ahc004_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc004/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc004/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc004/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc004/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc004/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc004/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc004/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Alien&#39;s Genome Assembly
+			<a class="btn btn-default btn-sm" href="/contests/ahc004/tasks/ahc004_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 3 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>人間の遺伝情報は二重らせん構造のDNAに記録されており、<code>A</code>, <code>G</code>, <code>C</code>, <code>T</code> の4種類の文字からなる非常に長い文字列で表現される。
+最近、隕石の中から宇宙人の細胞が見つかった。
+調査の結果、この宇宙人の遺伝情報は<a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%BC%E3%83%A9%E3%82%B9">トーラス</a>状の物質に記録されており、<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code>, <code>H</code> の8種類の文字からなる<var>N\times N</var>の行列として表現されることが分かった。
+既存の装置では、この行列を直接読み取ることは出来なかったが、縦方向、もしくは横方向に連続する一次元の部分列を沢山読み取ることに成功した。
+この部分列の情報を元に行列を推定してほしい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p>一次元の列 <var>b=(b_0, \ldots, b_{k-1})</var> が行列 <var>a=(a_{i,j})_{0\leq i,j\leq N-1}</var> の<strong>部分列</strong>であるとは、ある <var>(i,j)</var>が存在し、以下のどちらか一つ以上を満たすことと定義する。</p>
+<ul>
+<li>全ての <var>p=0,\ldots,k-1</var> で <var>b_p=a_{i,(j+p)\bmod N}</var> (横方向に一致)</li>
+<li>全ての <var>p=0,\ldots,k-1</var> で <var>b_p=a_{(i+p)\bmod N,j}</var> (縦方向に一致)</li>
+</ul>
+<p>インデックスが <var>N</var> 以上となった場合に<var>N</var>で割った余りを取っていることに注意(つまり、<var>a</var> は左端と右端、上端と下端がつながっている)。</p>
+<p><code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code> からなる <var>M</var> 個の文字列 <var>s_1, \ldots, s_M</var> が与えられるので、これらのうち出来るだけ多くを部分列として含むような
+<code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code> もしくは <code>.</code> からなる <var>N\times N</var> の行列を求めよ。
+<code>.</code> は空白を意味する。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p><var>s_i</var> が出力の部分列であるような <var>i</var> の個数を <var>c</var> (<var>\leq M</var>)、出力に含まれる <code>.</code> の個数を <var>d</var> (<var>\leq N^2</var>) としたとき、以下の得点が得られる。</p>
+<ul>
+<li><var>c&lt;M</var> の場合、<var>\mathrm{round}(10^8\times \frac{c}{M})</var></li>
+<li><var>c=M</var> の場合、<var>\mathrm{round}(10^8\times \frac{2 N^2}{2 N^2-d})</var></li>
+</ul>
+<p>不正な出力(<var>N\times N</var> 行列でない、<code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, <code>.</code> 以外の文字を含む)がされた場合、<code>WA</code>と判定される。
+テストケースは全部で100個あり、各テストケースの得点の合計が提出の得点となる。
+1つ以上のテストケースで<code>AC</code>以外の判定がされた場合、提出の得点は0点となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。 
+同じ得点を複数の参加者が得た場合、その得点を獲得した提出の早い方が上位となる。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var>
+<var>s_1</var>
+<var>\vdots</var>
+<var>s_M</var>
+</pre>
+
+<ul>
+<li><var>N</var> は全テストケースを通して20で固定</li>
+<li><var>M</var> は400以上800以下の整数値</li>
+<li>各 <var>s_i</var> は <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code> の8種類の文字からなる長さ2以上12以下の文字列</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p><code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, <code>.</code> からなる長さ <var>N</var> の文字列を <var>N</var> 行出力せよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で表す。</p>
+<p>まずはじめに、<var>N\times N</var>の行列 <var>a=(a_{i,j})_{0\leq i,j\leq N-1}</var> を、各要素毎に独立に一様ランダムに <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code> から選択することで生成する。
+次に、平均長を決めるパラメータ <var>L=\mathrm{rand}(4, 10)</var> と文字列の個数 <var>M=\mathrm{rand}(400, 800)</var> を生成し、以下の処理を独立に <var>M</var> 回繰り返すことで <var>M</var> 個の文字列 <var>s_1,\ldots,s_M</var> を生成する。</p>
+<p>文字列の始点を表す2つの整数 <var>i=\mathrm{rand}(0, N-1)</var> と <var>j=\mathrm{rand}(0, N-1)</var>、向きを表す整数 <var>d=\mathrm{rand}(0,1)</var>、長さを表す整数 <var>k=\mathrm{rand}(L-2, L+2)</var> を生成する。</p>
+<ul>
+<li><var>d=0</var> の場合、横方向の部分列 <var>(a_{i,j},a_{i,(j+1)\bmod N},\ldots,a_{i,(j+k-1)\bmod N})</var> を採用する。</li>
+<li><var>d=1</var> の場合、縦方向の部分列 <var>(a_{i,j},a_{(i+1)\bmod N,j},\ldots,a_{(i+k-1)\bmod N,j})</var> を採用する。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc004/a45fa3f18ab177158bf5961b12872f93.zip">入力データ</a>: サンプル入力(seed 0)を含む、ローカルテスト用の100個の入力データ(seed 0-99)です。これらの入力は実際のテストケースとは異なります。</li>
+<li><a href="https://img.atcoder.jp/ahc004/a42b6f0655821d8b384b31377108e5512.html">Web版ビジュアライザ</a></li>
+<li><a href="https://img.atcoder.jp/ahc004/222362f13a30b1342bf79d0041bd4d39.zip">入力ジェネレータ・ビジュアライザ</a>: より多くの入力を生成するための入力ジェネレータとローカル実行用のビジュアライザです。使用するには、<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。</li>
+</ul>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre>20 742
+AFHCGEH
+HDBCHG
+EAHC
+ABHDG
+DGAHHG
+GAHHGB
+DHBBEB
+GEAD
+GCEBD
+GHGFGA
+BHC
+BAGCCB
+CAF
+HBGGC
+AHEBA
+FBGEB
+GHGFGA
+CFA
+FEHB
+GDCEFBE
+BACEGGG
+CBA
+GEHDC
+CFACHAF
+ACGBA
+CEE
+AADDCCH
+GGDHHHC
+EDAEE
+ECA
+EBEED
+BGCAH
+AEAH
+GFCGEH
+CGAGHE
+HAGEA
+FEA
+CEDHAG
+EEH
+AGHECFC
+EFGDDA
+DCCHGD
+ADDHB
+FCGF
+BAGE
+CFA
+HBCE
+CGFG
+CEFECCB
+BADEBDD
+AGACG
+DCAGGCE
+HEHHDB
+DDHDB
+HCFFAB
+HEBDADD
+DGFCGFG
+AFFFBCG
+FCEAC
+EGGG
+DADDC
+EDH
+BHCAACH
+GCE
+HAHGB
+BFFDAHE
+CFAEAHC
+ACCHE
+BFH
+CHDC
+CFHDCB
+DED
+GACG
+HECFCFE
+FEAFEH
+CADFGE
+GCHD
+BEEHEG
+GDH
+FBEHHB
+FHAG
+BGCAHDC
+DCCCE
+GDH
+CCBA
+GEH
+EDEHH
+HHDBCH
+HGB
+EHD
+CFFABFC
+DGG
+DBHEC
+GEAGCFE
+CCGAGHE
+DHAGAC
+CCCGHH
+CBBFFDA
+EFA
+DFGD
+HDCAADD
+HDCFC
+GHECFCF
+CCDDE
+AFC
+CCE
+DAHD
+FAGFCB
+FEC
+DHAGG
+EGEFAG
+CGDD
+AACCHE
+FFC
+HED
+FBCFFHD
+BAGE
+HEBD
+GBBE
+DHBCEFG
+CAAAEAA
+DBFG
+GHCC
+DEGGE
+BCGCHD
+EEA
+BEE
+ECG
+DHHHCCA
+CHD
+GCDECG
+FFCCFAE
+HGH
+EGFB
+CFFEGE
+GEADHAG
+GBGDCHD
+EFGC
+BEHHB
+DBECC
+DCFF
+CFE
+DCADDHG
+ADHAGGB
+ABD
+DAEEGF
+DEG
+CHFFHGH
+CGAGH
+FCCB
+FHGHD
+EBGCAHD
+CFHDC
+FEHB
+FHC
+CHGDHBB
+EDBECCD
+DCF
+GBADEB
+AAHF
+CEFECC
+DCGA
+HAFHFE
+HDCAAD
+GDH
+CEF
+DCBDFDE
+GDHHHCC
+FCCC
+GAGHE
+CHFEE
+GDD
+HEDEHHD
+BDD
+HCAHC
+EEH
+GBG
+HEDEG
+GAFAHB
+BBFHB
+DGF
+BCHGFCC
+GCCFACH
+FAGAE
+DBFGDC
+GHDD
+GGE
+FFFBCG
+EGGGE
+CCCEE
+GABCHED
+EDHA
+EFAGA
+FHDCAD
+GGGD
+DHBGGCC
+DHAGACG
+GECCH
+FABFCD
+GCC
+CCE
+EADHAG
+EEHEG
+FDAD
+DFH
+AFC
+DCCCE
+CGE
+EBDCCC
+GBDGEAB
+CAHCBH
+CGCHD
+FGAEDDB
+FAGAFAH
+HEEFBDC
+HAGGBAH
+DCCEFEC
+ADH
+CHEDE
+DAFHCG
+BCFA
+GDCBDF
+HDC
+FFGEH
+EAEFHC
+DDCHCA
+GHGD
+HGGGD
+EGFCF
+CADF
+GGCCGA
+CGDDAA
+DDAACC
+DDHDGG
+GDHEDA
+HEBDAD
+DCGHG
+EFHG
+BHDGAA
+ADDCCHG
+FBGEBG
+GFEGHE
+CFAA
+CFDE
+FCBBG
+BDCC
+GBBEAFD
+GDFCA
+GHEDG
+BDGEABH
+ADCFGAE
+HHGBCF
+AAHAFHF
+EDA
+CHGDH
+DDDFHEH
+HDCA
+CDCF
+FCFH
+CDGAH
+CHEDEHH
+CCBHEBD
+FBC
+HHDBC
+CEE
+FGCFA
+CEBDCCC
+BEAFDEF
+HHDB
+AEGECE
+HHCCA
+HDDHBCE
+GEH
+HBADFFB
+BECC
+GCAHDCA
+DBAEEHD
+DGAACA
+EEH
+EAFEHDC
+FFHGHDD
+BFEHB
+AHDCAA
+BADFF
+CHCEDH
+CGHAHG
+CCCGHH
+AEEGFED
+DFGDDEF
+GDDAAC
+GEC
+CDAC
+GBDGEAB
+HGCBFEH
+CFA
+CEBE
+BHDGA
+FHEHHD
+BFHB
+AGCDE
+AFCDEDD
+GGAA
+FACAA
+EDA
+CCG
+EHFBCF
+HGBBEA
+AGFCB
+EAADBA
+CFAEAH
+AAHFCEA
+EEG
+DGBGD
+GDHHH
+HHCCAC
+EAGDDHD
+ECCHFE
+GDBC
+DCC
+EFHDFEA
+BBFF
+FGBGF
+HDBBEFD
+FCC
+EBGBG
+ADDH
+EBDCCCE
+EGG
+EDH
+DEFHGB
+DHCDE
+DCH
+HGBGE
+BAAHFC
+DGGAAF
+DGFC
+AEFHCCF
+EAFDE
+HFBCF
+DEEBEAD
+FDE
+CCD
+FCGFGB
+EGGE
+EDE
+GCDECGD
+EBF
+EGGGEB
+HEDAE
+CEBE
+GDHBB
+DABDEA
+HGCBFE
+HDCADD
+DEGFBAG
+DFBEEH
+GBDGEA
+GCEGGGE
+ADHAGG
+GDDADA
+FGBG
+HBCE
+AGFCEEA
+DCF
+BEHHBG
+DFGEA
+DCHDABD
+ADCFG
+BEHHB
+DHBGGC
+ADFGEAD
+DDH
+BEBGC
+BFEH
+GHH
+FFBCG
+BDDB
+HDCADD
+AHF
+GGD
+FFDAHE
+EGBEEHE
+BBGDEE
+EFCF
+CGFGB
+GCFE
+CEEF
+HFBG
+CCGA
+FFDAHEE
+GBGE
+GBGDCHD
+FGDC
+GCEBDC
+FGBGFCE
+EFBDCG
+AACC
+CBHCAAC
+GDDAD
+AAHA
+GAFF
+CBAAHFC
+GAF
+GAFAHBE
+CCGAG
+DHA
+CEA
+BCEFGCF
+CEDCAGG
+HFB
+AGHGCB
+AADD
+BCGC
+EDCA
+GCF
+BEADECD
+AHDBEA
+FBCG
+GHCCE
+EBDC
+DCAD
+AGCD
+FHFEDB
+FCE
+FEAADDH
+BGC
+GGEBD
+EABGF
+AGE
+CGDBC
+FEAFEHD
+CGH
+DABDEA
+CAHCB
+EDFGDDE
+DAA
+EAGAFF
+DAH
+AFAHBE
+DCBA
+DCB
+BGC
+FFHDC
+FAGFCB
+ECFCF
+CFAAFFF
+HGHDDCH
+BGCB
+AHDB
+BACE
+FCCD
+ACEDDHD
+CEF
+BFEH
+EGBFEA
+GEHFBC
+GBDGA
+HGCEG
+DBCFHA
+ADE
+CGHG
+GDHHHCC
+GFG
+DHEDAE
+ECEEA
+BHCHCE
+HAF
+FCEE
+CCBAG
+CEGGGE
+DDCHCAH
+EFHC
+AED
+FGBGFCE
+HEG
+AEE
+BGEBGBG
+ADDHBG
+GFGABC
+GDEC
+BGEBGB
+EAEF
+BBG
+GBGDH
+FCGEH
+BEEHEG
+EACBCEG
+GEAB
+GBFE
+HDAB
+EEDAF
+ACBCEG
+FEGHEDG
+HCAAC
+HFBGEBG
+HGCBF
+GEBGBG
+BAAHA
+EBEED
+CCEFAGA
+BAD
+FHBGDEG
+AACAAA
+EGF
+AEF
+ECEG
+AGGCEBD
+CEBDCCC
+DCCEF
+FGAB
+HGDFCAA
+AACGBD
+AAGFC
+AHC
+FEBCC
+EDE
+BBGDEED
+AACC
+CAAC
+EGDCE
+DCFFGEH
+BCEG
+CEDHAG
+GHE
+AFCD
+BGCBBFH
+DHBCEF
+BGBGD
+DECGDDA
+HDBAGEC
+HGCBFEH
+HHDBCHG
+AGDDHD
+EECGHA
+DDF
+DHB
+EEB
+HEBDA
+DEDDH
+EEFFAG
+HCHCED
+DDAAC
+EEHAGEA
+EFA
+HCC
+CCFDEE
+FCFHDC
+GHED
+DFBE
+EADHAGG
+GGEB
+AGHGC
+HBBEBG
+AHDCAA
+CCGAG
+HGBGEE
+FEEF
+EECGHA
+CCHED
+ECGHAHG
+EEDAFH
+FBAGCDE
+HAGACG
+FAGA
+DBH
+HEBDA
+HHCCACE
+BEBGCAH
+HDDH
+FFECHD
+HDAB
+DACAF
+AEEHAGE
+GFCG
+HDDDF
+HHDBA
+HGFGA
+HDF
+CCHGD
+AGGBA
+DBAGE
+GGAAFF
+GDBC
+CHDABD
+FFB
+DHBB
+BDAH
+DDH
+HDF
+GAED
+EADECDC
+DDBA
+AAGFCEE
+EGFBAGC
+DDCCEF
+GFC
+CGF
+HDFE
+BDCCCE
+HGD
+EEFB
+CCACED
+EAFDEF
+HDCFCE
+BBEF
+FAG
+HBEGBE
+EDAEE
+FHE
+CGH
+FGDEC
+AEA
+CAAD
+DCF
+DDBH
+GBGDCH
+AAGFC
+DCB
+DEBAA
+BEFDADC
+ECEBE
+GHGD
+EDEGFBA
+DBCFH
+AFA
+FGC
+DABD
+DDCC
+AAHAFH
+FCFEA
+DBHCH
+BBEB
+AGDD
+CCGA
+DGACG
+EBCCED
+FEGHE
+DBA
+GFCEEAG
+FFHDCA
+HDCG
+FBCGC
+FFGEHDC
+CFEA
+FDEBA
+EADCBA
+CCBAGC
+FHCGEH
+ADEBFCB
+DCFFGEH
+CEDD
+HECFC
+GGCEBD
+GGG
+EBGCA
+FGEHD
+DDCH
+EGECEDC
+CHD
+FACH
+EGEFA
+GFEDHFB
+FFEG
+ECCB
+DBAGEC
+EEFG
+AGE
+CHCAH
+AHEB
+GBD
+AHE
+GAGHEC
+CEACBCE
+DBCFHAG
+FCEA
+DAH
+CACED
+CCHFEE
+ACEDD
+CBFEHBA
+CBC
+BFCDG
+EGHCCE
+DDFBE
+EAGCF
+FFE
+AFFECHD
+AHH
+HAF
+HHB
+HFBGEBG
+CDDEG
+CCCEEA
+CCFFE
+ABFCDGA
+CGCHDD
+EEAADBA
+ACEDDHD
+BACEG
+FEB
+FECHDC
+FCEEF
+FHG
+AEFH
+HFEDB
+AFFE
+GFG
+EGFBA
+BEEHEG
+AACCH
+AEDDB
+EAFD
+DBAC
+GBGDHED
+FHB
+BHDG
+HDCG
+EDGB
+EDDHDBA
+FCB
+CFHAGH
+GFED
+FCCDBF
+ABG
+CHFEE
+DBBEFD
+FAEEHAG
+EBFC
+FGDECE
+CDGAH
+DAC
+GEHDC
+BEFDADC
+GBGF
+EECG
+CEEAAD
+EHHBGC
+GAEDFCC
+HAFH
+EAAGF
+CAFC
+EHH
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre>FFGAEEABCE.CBAEBH.C.
+EHBFHCGHFGA.G.AE.AAC
+.GBAED.ACHBDG.GDGG.C
+DDFADEGGBDEFFACBB.FA
+.EFBFGEEDGHBCGCEDEEB
+HAAHBDAGBCCE.CCADAFH
+GAFFE.G.CBEG.F.DDCEE
+ACE.F.GDAAGH.DHECDBA
+DAFB.HHFBABHEBBBD.CE
+EGFFHDGEHFBAB.DECADA
+DEAHCFGG..CG.BGDBBEC
+.CBAGCAFCDEBGACEHF.D
+GG.CGFA.GHGHG.GG.EHH
+CECG.G.DGBCCAACFCDH.
+FB.DH.F.CEHEH.CGGHFB
+ADHCH.HCCBFGBADFBACE
+CE.EHC.AAGADC.FAAEFB
+ED.F..HGEACAHACFGAGG
+AADAABC.CA.GF.CADCAF
+CFAHEFGCA.CFGFGECBCH
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>Human genetic information is recorded in DNA with a double helix structure and is represented by a very long string consisting of four characters, <code>A</code>, <code>G</code>, <code>C</code>, and <code>T</code>.
+Recently, alien cells were found in a meteorite.
+As a result of research, it was found that the genetic information of this alien is recorded in a <a href="https://en.wikipedia.org/wiki/Torus">torus</a>-shaped material and is represented as an <var>N\times N</var> matrix consisting of eight characters, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code>, and <code>H</code>.
+Existing devices have failed to read this matrix directly, but they have succeeded in reading many one-dimensional subsequences that are contiguous vertically or horizontally.
+Please estimate the matrix based on this information.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We define that a one-dimensional sequence <var>b=(b_0, \ldots, b_{k-1})</var> is a <strong>subsequence</strong> of a matrix <var>a=(a_{i,j})_{0\leq i,j\leq N-1}</var> if and only if there exists <var>(i, j)</var> satisfying at least one of the following two conditions:</p>
+<ul>
+<li>For all <var>p=0,\ldots,k-1</var>, <var>b_p=a_{i,(j+p)\bmod N}</var> holds. (horizontal match)</li>
+<li>For all <var>p=0,\ldots,k-1</var>, <var>b_p=a_{(i+p)\bmod N,j}</var> holds. (vertical match)</li>
+</ul>
+<p>Note that if the index is greater than or equal to <var>N</var>, we take the remainder divided by <var>N</var> (in other words, <var>a</var> is connected at the left and right ends, and the top and bottom ends).</p>
+<p>Given <var>M</var> strings <var>s_1, \ldots, s_M</var> consisting of eight characters, <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, your goal is to find an <var>N\times N</var> matrix consisting of characters <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, or <code>.</code> which contains as many of the given strings as possible as subsequences.
+Here, <code>.</code> indicates an empty.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>c</var> (<var>\leq M</var>) be the number of <var>i</var>'s such that <var>s_i</var> is a subsequence of the output matrix, and let <var>d</var> (<var>\leq N^2</var>) be the number of <code>.</code> contained in the output.
+Then, you will obtain the following score.</p>
+<ul>
+<li>If <var>c&lt;M</var>, <var>\mathrm{round}(10^8\times \frac{c}{M})</var>.</li>
+<li>If <var>c=M</var>, <var>\mathrm{round}(10^8\times \frac{2 N^2}{2 N^2-d})</var>.</li>
+</ul>
+<p>If the output is illegal (not an <var>N\times N</var> matrix, or containing a character other than <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, <code>.</code>), it is judged as <code>WA</code>.
+There are 100 test cases, and the score of a submission is the total score for each test case.
+If you get a result other than <code>AC</code> for one or more test cases, the score of the submission will be zero. The highest score obtained during the contest time will determine the final ranking, and there will be no system test after the contest.
+If more than one participant gets the same score, the ranking will be determined by the submission time of the submission that received that score.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>s_1</var>
+<var>\vdots</var>
+<var>s_M</var>
+</pre>
+
+<ul>
+<li><var>N</var> is fixed to 20 throughout all the test cases.</li>
+<li><var>M</var> is an integer satisfying <var>400\leq M\leq 800</var>.</li>
+<li>Each <var>s_i</var> is a string consisting of characters <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, and its length is at least 2 and at most 12.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Output <var>N</var> lines, each containing a string of length exactly <var>N</var> consisting of characters <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>, or <code>.</code>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniformly random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<p>We first generate an <var>N\times N</var> matrix <var>a=(a_{i,j})_{0\leq i,j\leq N-1}</var> by generating each element uniformly randomly from <code>A</code>, <code>B</code>, <var>\ldots</var>, <code>H</code>.
+We then generate a parameter <var>L=\mathrm{rand}(4, 10)</var>, which decides the average length of the strings, and the number of strings <var>M=\mathrm{rand}(400, 800)</var>.
+We generate <var>M</var> strings <var>s_1,\ldots,s_M</var> by repeating the following process <var>M</var> times.</p>
+<p>We generate two integers <var>i=\mathrm{rand}(0, N-1)</var> and <var>j=\mathrm{rand}(0, N-1)</var> representing a starting point, an integer <var>d=\mathrm{rand}(0,1)</var> representing a direction, and an integer <var>k=\mathrm{rand}(L-2, L+2)</var> representing the length of the string.</p>
+<ul>
+<li>If <var>d=0</var>, we choose a horizontal subsequence <var>(a_{i,j},a_{i,(j+1)\bmod N},\ldots,a_{i,(j+k-1)\bmod N})</var>.</li>
+<li>If <var>d=1</var>, we choose a vertical subsequence <var>(a_{i,j},a_{(i+1)\bmod N,j},\ldots,a_{(i+k-1)\bmod N,j})</var>.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc004/a45fa3f18ab177158bf5961b12872f93.zip">Inputs</a>: A set of 100 inputs (seed 0-99) for local testing, including the sample input (seed 0). These inputs are different from the actual test cases.</li>
+<li><a href="https://img.atcoder.jp/ahc004/a42b6f0655821d8b384b31377108e5512.html">Visualizer on the web</a></li>
+<li><a href="https://img.atcoder.jp/ahc004/222362f13a30b1342bf79d0041bd4d39.zip">Input generator and visualizer</a>: If you want to use more inputs, or if you want to visualize your output locally, you can use this program. You need a compilation environment of <a href="https://www.rust-lang.org/ja">Rust language</a>.</li>
+</ul>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>20 742
+AFHCGEH
+HDBCHG
+EAHC
+ABHDG
+DGAHHG
+GAHHGB
+DHBBEB
+GEAD
+GCEBD
+GHGFGA
+BHC
+BAGCCB
+CAF
+HBGGC
+AHEBA
+FBGEB
+GHGFGA
+CFA
+FEHB
+GDCEFBE
+BACEGGG
+CBA
+GEHDC
+CFACHAF
+ACGBA
+CEE
+AADDCCH
+GGDHHHC
+EDAEE
+ECA
+EBEED
+BGCAH
+AEAH
+GFCGEH
+CGAGHE
+HAGEA
+FEA
+CEDHAG
+EEH
+AGHECFC
+EFGDDA
+DCCHGD
+ADDHB
+FCGF
+BAGE
+CFA
+HBCE
+CGFG
+CEFECCB
+BADEBDD
+AGACG
+DCAGGCE
+HEHHDB
+DDHDB
+HCFFAB
+HEBDADD
+DGFCGFG
+AFFFBCG
+FCEAC
+EGGG
+DADDC
+EDH
+BHCAACH
+GCE
+HAHGB
+BFFDAHE
+CFAEAHC
+ACCHE
+BFH
+CHDC
+CFHDCB
+DED
+GACG
+HECFCFE
+FEAFEH
+CADFGE
+GCHD
+BEEHEG
+GDH
+FBEHHB
+FHAG
+BGCAHDC
+DCCCE
+GDH
+CCBA
+GEH
+EDEHH
+HHDBCH
+HGB
+EHD
+CFFABFC
+DGG
+DBHEC
+GEAGCFE
+CCGAGHE
+DHAGAC
+CCCGHH
+CBBFFDA
+EFA
+DFGD
+HDCAADD
+HDCFC
+GHECFCF
+CCDDE
+AFC
+CCE
+DAHD
+FAGFCB
+FEC
+DHAGG
+EGEFAG
+CGDD
+AACCHE
+FFC
+HED
+FBCFFHD
+BAGE
+HEBD
+GBBE
+DHBCEFG
+CAAAEAA
+DBFG
+GHCC
+DEGGE
+BCGCHD
+EEA
+BEE
+ECG
+DHHHCCA
+CHD
+GCDECG
+FFCCFAE
+HGH
+EGFB
+CFFEGE
+GEADHAG
+GBGDCHD
+EFGC
+BEHHB
+DBECC
+DCFF
+CFE
+DCADDHG
+ADHAGGB
+ABD
+DAEEGF
+DEG
+CHFFHGH
+CGAGH
+FCCB
+FHGHD
+EBGCAHD
+CFHDC
+FEHB
+FHC
+CHGDHBB
+EDBECCD
+DCF
+GBADEB
+AAHF
+CEFECC
+DCGA
+HAFHFE
+HDCAAD
+GDH
+CEF
+DCBDFDE
+GDHHHCC
+FCCC
+GAGHE
+CHFEE
+GDD
+HEDEHHD
+BDD
+HCAHC
+EEH
+GBG
+HEDEG
+GAFAHB
+BBFHB
+DGF
+BCHGFCC
+GCCFACH
+FAGAE
+DBFGDC
+GHDD
+GGE
+FFFBCG
+EGGGE
+CCCEE
+GABCHED
+EDHA
+EFAGA
+FHDCAD
+GGGD
+DHBGGCC
+DHAGACG
+GECCH
+FABFCD
+GCC
+CCE
+EADHAG
+EEHEG
+FDAD
+DFH
+AFC
+DCCCE
+CGE
+EBDCCC
+GBDGEAB
+CAHCBH
+CGCHD
+FGAEDDB
+FAGAFAH
+HEEFBDC
+HAGGBAH
+DCCEFEC
+ADH
+CHEDE
+DAFHCG
+BCFA
+GDCBDF
+HDC
+FFGEH
+EAEFHC
+DDCHCA
+GHGD
+HGGGD
+EGFCF
+CADF
+GGCCGA
+CGDDAA
+DDAACC
+DDHDGG
+GDHEDA
+HEBDAD
+DCGHG
+EFHG
+BHDGAA
+ADDCCHG
+FBGEBG
+GFEGHE
+CFAA
+CFDE
+FCBBG
+BDCC
+GBBEAFD
+GDFCA
+GHEDG
+BDGEABH
+ADCFGAE
+HHGBCF
+AAHAFHF
+EDA
+CHGDH
+DDDFHEH
+HDCA
+CDCF
+FCFH
+CDGAH
+CHEDEHH
+CCBHEBD
+FBC
+HHDBC
+CEE
+FGCFA
+CEBDCCC
+BEAFDEF
+HHDB
+AEGECE
+HHCCA
+HDDHBCE
+GEH
+HBADFFB
+BECC
+GCAHDCA
+DBAEEHD
+DGAACA
+EEH
+EAFEHDC
+FFHGHDD
+BFEHB
+AHDCAA
+BADFF
+CHCEDH
+CGHAHG
+CCCGHH
+AEEGFED
+DFGDDEF
+GDDAAC
+GEC
+CDAC
+GBDGEAB
+HGCBFEH
+CFA
+CEBE
+BHDGA
+FHEHHD
+BFHB
+AGCDE
+AFCDEDD
+GGAA
+FACAA
+EDA
+CCG
+EHFBCF
+HGBBEA
+AGFCB
+EAADBA
+CFAEAH
+AAHFCEA
+EEG
+DGBGD
+GDHHH
+HHCCAC
+EAGDDHD
+ECCHFE
+GDBC
+DCC
+EFHDFEA
+BBFF
+FGBGF
+HDBBEFD
+FCC
+EBGBG
+ADDH
+EBDCCCE
+EGG
+EDH
+DEFHGB
+DHCDE
+DCH
+HGBGE
+BAAHFC
+DGGAAF
+DGFC
+AEFHCCF
+EAFDE
+HFBCF
+DEEBEAD
+FDE
+CCD
+FCGFGB
+EGGE
+EDE
+GCDECGD
+EBF
+EGGGEB
+HEDAE
+CEBE
+GDHBB
+DABDEA
+HGCBFE
+HDCADD
+DEGFBAG
+DFBEEH
+GBDGEA
+GCEGGGE
+ADHAGG
+GDDADA
+FGBG
+HBCE
+AGFCEEA
+DCF
+BEHHBG
+DFGEA
+DCHDABD
+ADCFG
+BEHHB
+DHBGGC
+ADFGEAD
+DDH
+BEBGC
+BFEH
+GHH
+FFBCG
+BDDB
+HDCADD
+AHF
+GGD
+FFDAHE
+EGBEEHE
+BBGDEE
+EFCF
+CGFGB
+GCFE
+CEEF
+HFBG
+CCGA
+FFDAHEE
+GBGE
+GBGDCHD
+FGDC
+GCEBDC
+FGBGFCE
+EFBDCG
+AACC
+CBHCAAC
+GDDAD
+AAHA
+GAFF
+CBAAHFC
+GAF
+GAFAHBE
+CCGAG
+DHA
+CEA
+BCEFGCF
+CEDCAGG
+HFB
+AGHGCB
+AADD
+BCGC
+EDCA
+GCF
+BEADECD
+AHDBEA
+FBCG
+GHCCE
+EBDC
+DCAD
+AGCD
+FHFEDB
+FCE
+FEAADDH
+BGC
+GGEBD
+EABGF
+AGE
+CGDBC
+FEAFEHD
+CGH
+DABDEA
+CAHCB
+EDFGDDE
+DAA
+EAGAFF
+DAH
+AFAHBE
+DCBA
+DCB
+BGC
+FFHDC
+FAGFCB
+ECFCF
+CFAAFFF
+HGHDDCH
+BGCB
+AHDB
+BACE
+FCCD
+ACEDDHD
+CEF
+BFEH
+EGBFEA
+GEHFBC
+GBDGA
+HGCEG
+DBCFHA
+ADE
+CGHG
+GDHHHCC
+GFG
+DHEDAE
+ECEEA
+BHCHCE
+HAF
+FCEE
+CCBAG
+CEGGGE
+DDCHCAH
+EFHC
+AED
+FGBGFCE
+HEG
+AEE
+BGEBGBG
+ADDHBG
+GFGABC
+GDEC
+BGEBGB
+EAEF
+BBG
+GBGDH
+FCGEH
+BEEHEG
+EACBCEG
+GEAB
+GBFE
+HDAB
+EEDAF
+ACBCEG
+FEGHEDG
+HCAAC
+HFBGEBG
+HGCBF
+GEBGBG
+BAAHA
+EBEED
+CCEFAGA
+BAD
+FHBGDEG
+AACAAA
+EGF
+AEF
+ECEG
+AGGCEBD
+CEBDCCC
+DCCEF
+FGAB
+HGDFCAA
+AACGBD
+AAGFC
+AHC
+FEBCC
+EDE
+BBGDEED
+AACC
+CAAC
+EGDCE
+DCFFGEH
+BCEG
+CEDHAG
+GHE
+AFCD
+BGCBBFH
+DHBCEF
+BGBGD
+DECGDDA
+HDBAGEC
+HGCBFEH
+HHDBCHG
+AGDDHD
+EECGHA
+DDF
+DHB
+EEB
+HEBDA
+DEDDH
+EEFFAG
+HCHCED
+DDAAC
+EEHAGEA
+EFA
+HCC
+CCFDEE
+FCFHDC
+GHED
+DFBE
+EADHAGG
+GGEB
+AGHGC
+HBBEBG
+AHDCAA
+CCGAG
+HGBGEE
+FEEF
+EECGHA
+CCHED
+ECGHAHG
+EEDAFH
+FBAGCDE
+HAGACG
+FAGA
+DBH
+HEBDA
+HHCCACE
+BEBGCAH
+HDDH
+FFECHD
+HDAB
+DACAF
+AEEHAGE
+GFCG
+HDDDF
+HHDBA
+HGFGA
+HDF
+CCHGD
+AGGBA
+DBAGE
+GGAAFF
+GDBC
+CHDABD
+FFB
+DHBB
+BDAH
+DDH
+HDF
+GAED
+EADECDC
+DDBA
+AAGFCEE
+EGFBAGC
+DDCCEF
+GFC
+CGF
+HDFE
+BDCCCE
+HGD
+EEFB
+CCACED
+EAFDEF
+HDCFCE
+BBEF
+FAG
+HBEGBE
+EDAEE
+FHE
+CGH
+FGDEC
+AEA
+CAAD
+DCF
+DDBH
+GBGDCH
+AAGFC
+DCB
+DEBAA
+BEFDADC
+ECEBE
+GHGD
+EDEGFBA
+DBCFH
+AFA
+FGC
+DABD
+DDCC
+AAHAFH
+FCFEA
+DBHCH
+BBEB
+AGDD
+CCGA
+DGACG
+EBCCED
+FEGHE
+DBA
+GFCEEAG
+FFHDCA
+HDCG
+FBCGC
+FFGEHDC
+CFEA
+FDEBA
+EADCBA
+CCBAGC
+FHCGEH
+ADEBFCB
+DCFFGEH
+CEDD
+HECFC
+GGCEBD
+GGG
+EBGCA
+FGEHD
+DDCH
+EGECEDC
+CHD
+FACH
+EGEFA
+GFEDHFB
+FFEG
+ECCB
+DBAGEC
+EEFG
+AGE
+CHCAH
+AHEB
+GBD
+AHE
+GAGHEC
+CEACBCE
+DBCFHAG
+FCEA
+DAH
+CACED
+CCHFEE
+ACEDD
+CBFEHBA
+CBC
+BFCDG
+EGHCCE
+DDFBE
+EAGCF
+FFE
+AFFECHD
+AHH
+HAF
+HHB
+HFBGEBG
+CDDEG
+CCCEEA
+CCFFE
+ABFCDGA
+CGCHDD
+EEAADBA
+ACEDDHD
+BACEG
+FEB
+FECHDC
+FCEEF
+FHG
+AEFH
+HFEDB
+AFFE
+GFG
+EGFBA
+BEEHEG
+AACCH
+AEDDB
+EAFD
+DBAC
+GBGDHED
+FHB
+BHDG
+HDCG
+EDGB
+EDDHDBA
+FCB
+CFHAGH
+GFED
+FCCDBF
+ABG
+CHFEE
+DBBEFD
+FAEEHAG
+EBFC
+FGDECE
+CDGAH
+DAC
+GEHDC
+BEFDADC
+GBGF
+EECG
+CEEAAD
+EHHBGC
+GAEDFCC
+HAFH
+EAAGF
+CAFC
+EHH
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>FFGAEEABCE.CBAEBH.C.
+EHBFHCGHFGA.G.AE.AAC
+.GBAED.ACHBDG.GDGG.C
+DDFADEGGBDEFFACBB.FA
+.EFBFGEEDGHBCGCEDEEB
+HAAHBDAGBCCE.CCADAFH
+GAFFE.G.CBEG.F.DDCEE
+ACE.F.GDAAGH.DHECDBA
+DAFB.HHFBABHEBBBD.CE
+EGFFHDGEHFBAB.DECADA
+DEAHCFGG..CG.BGDBBEC
+.CBAGCAFCDEBGACEHF.D
+GG.CGFA.GHGHG.GG.EHH
+CECG.G.DGBCCAACFCDH.
+FB.DH.F.CEHEH.CGGHFB
+ADHCH.HCCBFGBADFBACE
+CE.EHC.AAGADC.FAAEFB
+ED.F..HGEACAHACFGAGG
+AADAABC.CA.GF.CADCAF
+CFAHEFGCA.CFGFGECBCH
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc004/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc004_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc004/tasks/ahc004_a?lang=ja" data-a2a-title="A - Alien&#39;s Genome Assembly">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc004/rules">ルール</a></li>
+					<li><a href="/contests/ahc004/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

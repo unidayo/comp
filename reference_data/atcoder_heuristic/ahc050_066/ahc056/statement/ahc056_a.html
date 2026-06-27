@@ -1,0 +1,1315 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Grid Turing Robot</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Grid Turing Robot" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc056/tasks/ahc056_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Grid Turing Robot" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc056";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2025-11-07T19:00:00+09:00");
+			var endTime = moment("2025-11-17T19:00:00+09:00");
+		</script>
+		<style>#contest-statement section ul li {
+    margin-top: -1ex;
+    margin-bottom: 1.5ex;
+}
+
+#contest-statement section li > ul {
+    margin-top: 1.5ex;
+}
+
+#contest-statement p {
+    font-size: medium;
+}
+
+.navbar-inner {
+    background-color: #000099 !important;
+    background-image: none !important;
+}
+.navbar .divider-vertical {
+    background-color: #fff !important;
+}
+html body {
+    background-color: #fff!important;
+    background-image: none !important;
+}
+
+.navbar .nav > li > a {
+    color: #fff
+}
+
+.insert-participant-box {
+    background-color: #fff !important;
+    text-align: -webkit-center !important;
+}
+
+.navbar .divider-vertical {
+    border-right: 1px solid #fff;
+}
+
+/* フューチャーテーマカラーの設定 */
+.navbar-inner {
+    background-color: #0a1561 !important;
+    background-image: none !important;
+}
+
+.navbar {
+    background-color: #0a1561 !important;
+    background-image: none !important;
+    border-bottom: solid 4px #d6004b !important;
+}
+
+/* メニュー部のリンク色 */
+.nav-tabs a {
+    color: #d6004b !important;
+}</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>HACK TO THE FUTURE 2026 （AtCoder Heuristic Contest 056）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>HACK TO THE FUTURE 2026 （AtCoder Heuristic Contest 056）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc056">HACK TO THE FUTURE 2026 （AtCoder Heuristic Contest 056）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc056/tasks/ahc056_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc056/tasks/ahc056_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc056%2Ftasks%2Fahc056_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20251107T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-11-07 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20251117T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-11-17 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc056"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc056/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc056/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc056/submit?taskScreenName=ahc056_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc056/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc056/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc056/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc056/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc056/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc056/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc056/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Grid Turing Robot
+			<a class="btn btn-default btn-sm" href="/contests/ahc056/tasks/ahc056_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>「<a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%9E%E3%82%B7%E3%83%B3">チューリングマシン</a>」は計算理論で用いられる仮想的な計算機であり、
+一次元のテープ上で、<strong>遷移規則</strong>にしたがって<strong>内部状態</strong>（マシンに搭載されたメモリの値）と<strong>ヘッド位置の文字</strong>を書き換えながらヘッドを左右に動かして計算を行うものである。</p>
+<p>F社は、その仕組みを模したロボットを開発している。
+このロボットは、二次元のグリッド状の盤面上で、<strong>遷移規則</strong>にしたがって<strong>内部状態</strong>と<strong>現在位置の色</strong>を書き換えながら、上下左右に移動することができる。
+目的地を指定された順に訪問するよう、このロボットの<strong>遷移規則</strong>を設計してほしい。
+開発コストは使用する色数と状態数の和に比例するため、できるだけ小さい和で実現することが望ましい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N\times N</var> マスの盤面がある。
+左上のマスの座標を <var>(0, 0)</var> とし、下方向に <var>i</var>、右方向に <var>j</var> 進んだ位置の座標を <var>(i, j)</var> とする。
+<var>N\times N</var> マスの外周は壁で囲まれており、また、隣接するマスの間にも壁が存在する場合がある。</p>
+<p>各マスには色を塗ることができる。
+使用する色の総数を <var>C</var> とし、各色は整数 <var>0,1,\ldots,C-1</var> で表す。
+初期状態の盤面の色は自由に設定してよい。</p>
+<p>ロボットは、<strong>内部状態</strong> を表す変数を1つ持つ。
+この内部状態は整数 <var>0,1,\ldots,Q-1</var> のいずれかの値をとる。
+取りうる状態の総数 <var>Q</var> は自由に設定してよい。
+内部状態の初期値は <var>0</var> である。</p>
+<p>ロボットは現在位置の色 <var>c</var> と内部状態 <var>q</var> に基づいて、次の行動を決定し、以下の3つの操作を同時に行う。</p>
+<ul>
+<li>現在位置の色を <var>A(c, q)</var> に塗り替える（現在と同じ色に塗り替えてもよい）。</li>
+<li>内部状態を <var>S(c, q)</var> に更新する（現在と同じ内部状態に更新してもよい）。</li>
+<li><var>D(c, q)</var> の方向に移動する（上・下・左・右・移動しない）。移動先との間に壁がある場合、ロボットは移動できずその場に留まる。</li>
+</ul>
+<p>ここで、<var>A, S, D</var> はそれぞれ <strong>遷移規則</strong> を表す関数である。
+遷移規則は動作開始前に設計し、動作中に変更することはできない。
+また、ロボットの行動は現在位置そのものには依存せず、現在位置の色と内部状態のみによって決定される。</p>
+<h4>ロボットの動作例</h4>
+<blockquote>
+<p><img alt="example" src="https://img.atcoder.jp/ahc056/zUbWUSnS.gif" /></p>
+<p>上図の例ではまず、<var>3\times 3</var> の盤面が青色に塗られた状態で位置 <var>(0, 0)</var> から動作を開始し、以下の3つの遷移規則に従って動作する。</p>
+<ol>
+<li><var>A(青,0)=緑</var>, <var>S(青,0)=0</var>, <var>D(青,0)=右</var></li>
+<li><var>A(緑,0)=青</var>, <var>S(緑,0)=1</var>, <var>D(緑,0)=左</var></li>
+<li><var>A(緑,1)=緑</var>, <var>S(緑,1)=1</var>, <var>D(緑,1)=下</var></li>
+</ol>
+<p>最初の3ステップでは遷移規則 1 が繰り返し適用され、緑色に塗り替えつつ右へ進む。3ステップ目では壁にぶつかるため、移動できずその場にとどまる。
+4ステップ目は現在位置が緑色のため、遷移規則 2 が適用され、青色に塗り替えながら左に移動し、内部状態が <var>1</var> へと切り替わる。
+最後に5ステップ目では、現在位置が緑色かつ内部状態が <var>1</var> のため、遷移規則 3 が適用され、下に移動する。</p>
+</blockquote>
+<p><var>K</var> 箇所の目的地の列 <var>(x_0,y_0),(x_1,y_1),\ldots,(x_{K-1},y_{K-1})</var> と、ステップ数の上限 <var>T</var> が与えられる。
+ロボットは <var>(x_0,y_0)</var> のマスからスタートし、<var>T</var> ステップ以内に、指定された順にすべての目的地を訪れることを目指す。</p>
+<p>ここで、目的地が <var>(x_i,y_i)</var> のとき、まだ順番が来ていない <var>(x_j,y_j)</var>（<var>j&gt;i</var>）のマスを先に訪れても、訪問したことにはならない。
+実際に <var>(x_j,y_j)</var> が次の目的地になった時点で、その目的地に改めて到達しなければならない。</p>
+<p>すべての目的地を順に訪問できるように、盤面の初期色の配置とロボットの遷移規則を設計せよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>使用する色数を <var>C</var>、状態数を <var>Q</var>、ステップ数の上限 <var>T</var> 以内に訪問できた目的地の数を <var>V</var> とする。
+このとき、以下の絶対スコアが得られる。</p>
+<ul>
+<li><var>V=K</var> の場合、<var>C+Q</var></li>
+<li><var>V&lt;K</var> の場合、<var>2N^4 + (K-V)\times N^2</var></li>
+</ul>
+<p><font color="red"><strong>絶対スコアは小さければ小さいほど良い。</strong></font></p>
+<p>各テストケース毎に、<var>\mathrm{round}(10^9\times \frac{全参加者中の最小絶対スコア}{自身の絶対スコア})</var> の<font color="red"><strong>相対評価スコア</strong></font>が得られ、その和が提出の得点となる。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースの相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最小絶対スコア」の計算から除外される。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 50個</li>
+<li>システムテスト: 2000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc056/seeds.txt">seeds.txt</a> (sha256=c7a6f9526da67d83d1f8fed006e1b8f5edc8e4134444cf954e400a4dcd8bd130) を公開</li>
+</ul>
+<h4>相対評価システムについて</h4>
+<p>暫定テスト、システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出のみが順位表に反映される。
+相対評価スコアの計算に用いられる各テストケース毎の全参加者中の最小絶対スコアの算出においても、順位表に反映されている最終提出のみが用いられる。</p>
+<p>順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する相対スコアの和が表示されている。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性がありま
+す。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>K</var> <var>T</var>
+<var>v_{0,0}</var> <var>\cdots</var> <var>v_{0,N-2}</var>
+<var>\vdots</var>
+<var>v_{N-1,0}</var> <var>\cdots</var> <var>v_{N-1,N-2}</var>
+<var>h_{0,0}</var> <var>\cdots</var> <var>h_{0,N-1}</var>
+<var>\vdots</var>
+<var>h_{N-2,0}</var> <var>\cdots</var> <var>h_{N-2,N-1}</var>
+<var>x_0</var> <var>y_0</var>
+<var>\vdots</var>
+<var>x_{K-1}</var> <var>y_{K-1}</var>
+</pre>
+<ul>
+<li>盤面の大きさ <var>N</var> は <var>10\leq N\leq 20</var> を満たす。</li>
+<li>目的地の個数 <var>K</var> は <var>N\leq K\leq N^2</var> を満たす。</li>
+<li>すべての目的地を順に訪れる最小移動回数を <var>X</var> とすると、ステップ数の上限 <var>T</var> は <var>X\leq T\leq 2X</var> を満たす。</li>
+<li><var>v_{i,0} \cdots v_{i,N-2}</var> は長さ <var>N-1</var> の <code>01</code> からなる文字列であり、<var>j</var> 文字目 <var>v_{i,j}</var> はマス <var>(i, j)</var> とマス <var>(i, j+1)</var> の間に壁がある（<code>1</code>）かない（<code>0</code>）かを表す。</li>
+<li><var>h_{i,0} \cdots h_{i,N-1}</var> は長さ <var>N</var> の <code>01</code> からなる文字列であり、<var>j</var> 文字目 <var>h_{i,j}</var> はマス <var>(i, j)</var> とマス <var>(i+1, j)</var> の間に壁がある（<code>1</code>）かない（<code>0</code>）かを表す。</li>
+<li>全てのマスは互いに到達可能であることが保証されている。</li>
+<li><var>(x_k, y_k)</var> は <var>k</var> 番目の目的地の座標を表し、<var>0\leq x_k,y_k\leq N-1</var> を満たす。すべての目的地は相異なる。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>以下の形式で標準出力に出力せよ。</p>
+<pre><var>C</var> <var>Q</var> <var>M</var>
+<var>s_{0,0}</var> <var>\cdots</var> <var>s_{0,N-1}</var>
+<var>\vdots</var>
+<var>s_{N-1,0}</var> <var>\cdots</var> <var>s_{N-1,N-1}</var>
+<var>c_0</var> <var>q_0</var> <var>A(c_0,q_0)</var> <var>S(c_0,q_0)</var> <var>D(c_0,q_0)</var>
+<var>\vdots</var>
+<var>c_{M-1}</var> <var>q_{M-1}</var> <var>A(c_{M-1},q_{M-1})</var> <var>S(c_{M-1},q_{M-1})</var> <var>D(c_{M-1},q_{M-1})</var>
+</pre>
+<ul>
+<li><var>C</var> は使用する色数であり、<var>1 \le C \le N^4</var> を満たす必要がある。</li>
+<li><var>Q</var> は使用する内部状態数であり、<var>1 \le Q \le N^4</var> を満たす必要がある。</li>
+<li><var>M</var> は出力する遷移規則の行数であり、<var>0 \le M \le T</var> を満たす必要がある。</li>
+<li><var>s_{i,j}</var> は初期状態におけるマス <var>(i,j)</var> の色であり、<var>0 \le s_{i,j} \le C-1</var> を満たす必要がある。</li>
+<li>各行 <var>c_i</var> <var>q_i</var> <var>A(c_i,q_i)</var> <var>S(c_i,q_i)</var> <var>D(c_i,q_i)</var> は、現在位置の色が <var>c_i</var>、内部状態が <var>q_i</var> のときに適用する遷移規則を表す。<ul>
+<li><var>0\leq c_i\leq C-1</var>、<var>0\leq q_i\leq Q-1</var> を満たす必要があり、同じ <var>(c_i,q_i)</var> の組は高々一度しか出現してはならない。</li>
+<li>塗り替える色 <var>A(c_i,q_i)</var> は <var>0 \le A(c_i,q_i) \le C-1</var> を満たす必要がある。</li>
+<li>新しい内部状態 <var>S(c_i,q_i)</var> は <var>0 \le S(c_i,q_i) \le Q-1</var> を満たす必要がある。</li>
+<li>移動方向 <var>D(c_i,q_i)</var> は以下の5文字のいずれかで表す。<ul>
+<li>上：<code>U</code></li>
+<li>下：<code>D</code></li>
+<li>左：<code>L</code></li>
+<li>右：<code>R</code></li>
+<li>移動しない：<code>S</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><var>C\times Q</var> は非常に大きくなり得るため、すべての組 <var>(c,q)</var> に対する遷移規則を出力する必要はない。
+シミュレーション中に実際に遭遇する可能性のある組に対する遷移規則のみを出力すればよい。
+最大で <var>T</var> ステップであるため、高々 <var>T</var> 行の遷移規則を出力すれば十分である。
+ただし、実行中に遭遇した <var>(c,q)</var> に対する遷移規則が出力中に存在しない場合、その時点でロボットの行動は打ち切られる。</p>
+<p><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.html?lang=ja&seed=-1&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L, U)</var> とする。</p>
+<h4>盤面の生成</h4>
+<p>マスの角にあたる点を「頂点」と呼ぶことにする。</p>
+<p><var>N=\mathrm{rand}(10,20)</var> により盤面サイズを決定する。壁の面数を <var>W=\mathrm{rand}(0,N-1)</var> により決定し、マス間に壁がない状態から開始して、以下を <var>W</var> 回繰り返す。</p>
+<p>頂点のうち、既存の壁に接していないものから一様ランダムに1つを選び、その頂点から上下左右のいずれかの方向を選んで、他の壁に接するまで壁を伸ばす。</p>
+<h4>目的地の生成</h4>
+<p><var>K=\mathrm{rand}(N,N^2)</var> により目的地の個数を決定する。
+<var>N^2</var> 個のマスを一様ランダムな順に並び替え、その最初の <var>K</var> 個を目的地の列として選択する。</p>
+<h4><var>T</var> の生成</h4>
+<p>すべての目的地を順に訪れる最小移動回数 <var>X</var> を計算し、<var>T=\mathrm{rand}(X,2X)</var> によりステップ数の上限 <var>T</var> を決定する。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム(Python)</h3><details>
+<pre class="prettyprint linenums">
+# 入力
+N, K, T = map(int, input().split())
+v = [input().strip() for _ in range(N)]
+h = [input().strip() for _ in range(N - 1)]
+targets = [tuple(map(int, input().split())) for _ in range(K)]
+
+# 移動可能か判定する関数
+DIJ = {'U': (-1, 0), 'D': (1, 0), 'L': (0, -1), 'R': (0, 1)}
+def can_move(i, j, d):
+    if d == 'U':
+        if i == 0: return False
+        return h[i - 1][j] == '0'
+    elif d == 'D':
+        if i == N - 1: return False
+        return h[i][j] == '0'
+    elif d == 'L':
+        if j == 0: return False
+        return v[i][j - 1] == '0'
+    elif d == 'R':
+        if j == N - 1: return False
+        return v[i][j] == '0'
+    return False
+
+# --- 戦略 ---
+# 内部状態は常に0とする。
+# 各マスに異なる初期色を塗り、色の塗り替えは行わず、色で現在位置を表現する。
+# 目的地1までのマンハッタン距離が短くなる方向に動し、そのような方向が無いなら停止。
+C = N * N
+Q = 1
+s = [[0] * N for _ in range(N)]
+for i in range(N):
+     for j in range(N):
+          s[i][j] = i * N + j
+rules = []
+i, j = targets[0] # 現在位置
+gi, gj = targets[1] # 最初の目的地
+for t in range(T):
+    d = 'S'
+    if i > gi and can_move(i, j, 'U'):
+        d = 'U'
+    elif i < gi and can_move(i, j, 'D'):
+        d = 'D'
+    elif j > gj and can_move(i, j, 'L'):
+        d = 'L'
+    elif j < gj and can_move(i, j, 'R'):
+        d = 'R'
+    if d == 'S':
+        break
+    rules.append((s[i][j], 0, s[i][j], 0, d))
+    di, dj = DIJ[d]
+    i, j = i + di, j + dj
+
+# 出力
+print(C, Q, len(rules))
+for r in range(N):
+    print(' '.join(map(str, s[r])))
+for c, q, A, S, D in rules:
+    print(c, q, A, S, D)
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">3 3 6
+00
+00
+00
+000
+000
+0 0
+0 2
+1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">2 2 3
+0 0 0
+0 0 0
+0 0 0
+0 0 1 0 R
+1 0 0 1 L
+1 1 1 1 D
+</pre>
+<p>これは、問題文中のロボットの動作例に対応する入出力である。説明用のものであり、入力の制約は満たしていない。</p></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>A <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing machine</a> is a theoretical computing machine used in computational theory. It performs computations by following <strong>transition rules</strong>, changing its <strong>internal state</strong> (the value stored in the machine's memory) and the <strong>symbol at the head position</strong> on a one-dimensional tape, while moving the head left or right.</p>
+<p>F Corporation is developing a robot modeled after this mechanism. This robot operates on a two-dimensional grid board and can move up, down, left, or right while following <strong>transition rules</strong> to update its <strong>internal state</strong> and the <strong>color at its current position</strong>.</p>
+<p>Your task is to design the robot’s <strong>transition rules</strong> so that it visits a given sequence of destinations in order. Since the development cost is proportional to the sum of the number of colors and states used, it is desirable to minimize this sum as much as possible.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a board consisting of <var>N \times N</var> cells. The top-left cell has coordinates <var>(0, 0)</var>, and a cell <var>i</var> rows down and <var>j</var> columns to the right has coordinates <var>(i, j)</var>. The outer edge of the <var>N \times N</var> grid is surrounded by walls, and there may also be walls between adjacent cells.</p>
+<p>Each cell can be painted with a color. Let <var>C</var> be the total number of colors used, where each color is represented by an integer <var>0, 1, \ldots, C-1</var>. You may freely set the initial colors of the board.</p>
+<p>The robot has one variable representing its <strong>internal state</strong>. This internal state can take any value from <var>0</var> to <var>Q-1</var>, where <var>Q</var> is the total number of possible states, which you may choose freely. The initial internal state is <var>0</var>.</p>
+<p>Based on the current color <var>c</var> of the cell and the internal state <var>q</var>, the robot determines its next action and simultaneously performs the following three operations:</p>
+<ul>
+<li>Repaints the current cell with color <var>A(c, q)</var> (it may repaint with the same color).</li>
+<li>Updates its internal state to <var>S(c, q)</var> (it may update to the same state).</li>
+<li>Moves in the direction <var>D(c, q)</var> (up, down, left, right, or stays in place). If there is a wall between the current cell and the destination, the robot cannot move and stays in place.</li>
+</ul>
+<p>Here, <var>A</var>, <var>S</var>, and <var>D</var> are functions that define the <strong>transition rules</strong>. These transition rules must be designed before the robot starts operating and cannot be changed during operation. Also, the robot's actions do not depend on its current position, only on the current cell's color and the internal state.</p>
+<h4>Example of Robot Operation</h4>
+<blockquote>
+<p><img alt="example" src="https://img.atcoder.jp/ahc056/zUbWUSnS.gif" /></p>
+<p>In the example above, the robot starts on a <var>3 \times 3</var> board initially painted blue, at position <var>(0, 0)</var>, and operates according to the following three transition rules:</p>
+<ol>
+<li><var>A(\text{blue}, 0) = \text{green}</var>, <var>S(\text{blue}, 0) = 0</var>, <var>D(\text{blue}, 0) = \text{right}</var></li>
+<li><var>A(\text{green}, 0) = \text{blue}</var>, <var>S(\text{green}, 0) = 1</var>, <var>D(\text{green}, 0) = \text{left}</var></li>
+<li><var>A(\text{green}, 1) = \text{green}</var>, <var>S(\text{green}, 1) = 1</var>, <var>D(\text{green}, 1) = \text{down}</var></li>
+</ol>
+<p>In the first three steps, transition rule 1 is repeatedly applied, repainting the cell green and moving right. At the third step, the robot hits a wall and cannot move, so it stays in place.
+In the fourth step, since the current cell is green, transition rule 2 is applied, repainting it blue, moving left, and changing the internal state to 1.
+Finally, in the fifth step, since the current cell is green and the internal state is 1, transition rule 3 is applied, and the robot moves down.</p>
+</blockquote>
+<p>A sequence of <var>K</var> destination cells <var>(x_0, y_0), (x_1, y_1), \ldots, (x_{K-1}, y_{K-1})</var> and an upper limit <var>T</var> on the number of steps are given. The robot starts from the cell <var>(x_0, y_0)</var> and aims to visit all destinations in the specified order within <var>T</var> steps.</p>
+<p>If the robot visits a destination <var>(x_j, y_j)</var> before it is its turn (i.e., before reaching all prior destinations <var>(x_i, y_i)</var> for <var>i &lt; j</var>), that visit does not count. The robot must reach <var>(x_j, y_j)</var> again once it becomes the current destination.</p>
+<p>Design the initial color configuration of the board and the robot’s transition rules so that all destinations are visited in order.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>C</var> be the number of colors used, <var>Q</var> be the number of states used, and <var>V</var> be the number of destinations successfully visited in order within the step limit <var>T</var>. Then, the absolute score is calculated as follows:</p>
+<ul>
+<li>If <var>V = K</var>: <var>C + Q</var></li>
+<li>If <var>V &lt; K</var>: <var>2N^4 + (K - V) \times N^2</var></li>
+</ul>
+<p><font color="red"><strong>The lower the absolute score, the better.</strong></font></p>
+<p>For each test case, we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{MIN}}{\mathrm{YOUR}})</var>, where YOUR is your absolute score and MIN is the lowest absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.</p>
+<p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MIN calculation for those test cases.</p>
+<p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 50</li>
+<li>System test: 2000. We will publish <a href="https://img.atcoder.jp/ahc056/seeds.txt">seeds.txt</a> (sha256=c7a6f9526da67d83d1f8fed006e1b8f5edc8e4134444cf954e400a4dcd8bd130) after the contest is over.</li>
+</ul>
+<h4>About relative evaluation system</h4>
+<p>In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+Only the last submissions are used to calculate the MIN for each test case when calculating the relative scores.</p>
+<p>The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format.</p>
+<pre><var>N</var> <var>K</var> <var>T</var>
+<var>v_{0,0}</var> <var>\cdots</var> <var>v_{0,N-2}</var>
+<var>\vdots</var>
+<var>v_{N-1,0}</var> <var>\cdots</var> <var>v_{N-1,N-2}</var>
+<var>h_{0,0}</var> <var>\cdots</var> <var>h_{0,N-1}</var>
+<var>\vdots</var>
+<var>h_{N-2,0}</var> <var>\cdots</var> <var>h_{N-2,N-1}</var>
+<var>x_0</var> <var>y_0</var>
+<var>\vdots</var>
+<var>x_{K-1}</var> <var>y_{K-1}</var>
+</pre>
+<ul>
+<li><var>N</var> is the size of the board and satisfies <var>10 \leq N \leq 20</var>.</li>
+<li><var>K</var> is the number of destinations and satisfies <var>N \leq K \leq N^2</var>.</li>
+<li>Let <var>X</var> be the minimum number of moves needed to visit all destinations in order. The step limit <var>T</var> satisfies <var>X \leq T \leq 2X</var>.</li>
+<li>Each <var>v_{i,0} \cdots v_{i,N-2}</var> is a binary string of length <var>N-1</var>. The <var>j</var>-th character <var>v_{i,j}</var> indicates whether there is a wall (<code>1</code>) or not (<code>0</code>) between cell <var>(i, j)</var> and cell <var>(i, j+1)</var>.</li>
+<li>Each <var>h_{i,0} \cdots h_{i,N-1}</var> is a binary string of length <var>N</var>. The <var>j</var>-th character <var>h_{i,j}</var> indicates whether there is a wall (<code>1</code>) or not (<code>0</code>) between cell <var>(i, j)</var> and cell <var>(i+1, j)</var>.</li>
+<li>It is guaranteed that all cells are mutually reachable.</li>
+<li><var>(x_k, y_k)</var> represents the coordinates of the <var>k</var>-th destination and satisfies <var>0 \leq x_k, y_k \leq N-1</var>. All destinations are distinct.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Output to Standard Output in the following format.</p>
+<pre><var>C</var> <var>Q</var> <var>M</var>
+<var>s_{0,0}</var> <var>\cdots</var> <var>s_{0,N-1}</var>
+<var>\vdots</var>
+<var>s_{N-1,0}</var> <var>\cdots</var> <var>s_{N-1,N-1}</var>
+<var>c_0</var> <var>q_0</var> <var>A(c_0,q_0)</var> <var>S(c_0,q_0)</var> <var>D(c_0,q_0)</var>
+<var>\vdots</var>
+<var>c_{M-1}</var> <var>q_{M-1}</var> <var>A(c_{M-1},q_{M-1})</var> <var>S(c_{M-1},q_{M-1})</var> <var>D(c_{M-1},q_{M-1})</var>
+</pre>
+<ul>
+<li><var>C</var> is the number of colors used, and must satisfy <var>1 \le C \le N^4</var>.</li>
+<li><var>Q</var> is the number of internal states used, and must satisfy <var>1 \le Q \le N^4</var>.</li>
+<li><var>M</var> is the number of transition rules output, and must satisfy <var>0 \le M \le T</var>.</li>
+<li><var>s_{i,j}</var> is the initial color of cell <var>(i, j)</var>, and must satisfy <var>0 \le s_{i,j} \le C - 1</var>.</li>
+<li>Each line <var>c_i</var> <var>q_i</var> <var>A(c_i,q_i)</var> <var>S(c_i,q_i)</var> <var>D(c_i,q_i)</var> represents a transition rule applied when the current color is <var>c_i</var> and internal state is <var>q_i</var>:<ul>
+<li><var>0 \le c_i \le C - 1</var>, <var>0 \le q_i \le Q - 1</var></li>
+<li>The same pair <var>(c_i, q_i)</var> must not appear more than once.</li>
+<li>Repaint color <var>A(c_i,q_i)</var> must satisfy <var>0 \le A(c_i,q_i) \le C - 1</var></li>
+<li>New internal state <var>S(c_i,q_i)</var> must satisfy <var>0 \le S(c_i,q_i) \le Q - 1</var></li>
+<li>Movement direction <var>D(c_i,q_i)</var> must be one of the following five characters:<ul>
+<li>Up: <code>U</code></li>
+<li>Down: <code>D</code></li>
+<li>Left: <code>L</code></li>
+<li>Right: <code>R</code></li>
+<li>Stay in place: <code>S</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Since <var>C \times Q</var> can be very large, it is not necessary to output transition rules for all <var>(c, q)</var> pairs. It is sufficient to output rules only for pairs that may actually occur during the simulation. As there are at most <var>T</var> steps, at most <var>T</var> transition rules are sufficient.</p>
+<p>However, if the robot encounters a <var>(c, q)</var> pair during execution for which no transition rule has been output, its operation is terminated at that point.</p>
+<p><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.html?lang=en&seed=-1&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand}(L, U)</var> be a function that generates a uniformly random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<h4>Board Generation</h4>
+<p>We refer to the corner points of the cells as "vertices."</p>
+<p>First, determine the board size with <var>N = \mathrm{rand}(10, 20)</var>. Then determine the number of wall segments <var>W = \mathrm{rand}(0, N - 1)</var>. Start with a board where no internal walls exist between adjacent cells, and repeat the following process <var>W</var> times:</p>
+<p>Randomly choose one vertex that is not adjacent to any existing wall. Then choose one of the four directions (up, down, left, right) and extend a wall from that vertex in the chosen direction until it touches another wall.</p>
+<h4>Destination Generation</h4>
+<p>Determine the number of destinations with <var>K = \mathrm{rand}(N, N^2)</var>. Shuffle the <var>N^2</var> cells uniformly at random, and select the first <var>K</var> cells from this shuffled list as the destination sequence.</p>
+<h4>Generating <var>T</var></h4>
+<p>Calculate the minimum number of moves <var>X</var> required to visit all destinations in order. Then determine the step limit with <var>T = \mathrm{rand}(X, 2X)</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution (Python)</h3><details>
+<pre class="prettyprint linenums">
+# Input
+N, K, T = map(int, input().split())
+v = [input().strip() for _ in range(N)]
+h = [input().strip() for _ in range(N - 1)]
+targets = [tuple(map(int, input().split())) for _ in range(K)]
+
+# Function to check if movement is possible
+DIJ = {'U': (-1, 0), 'D': (1, 0), 'L': (0, -1), 'R': (0, 1)}
+def can_move(i, j, d):
+    if d == 'U':
+        if i == 0: return False
+        return h[i - 1][j] == '0'
+    elif d == 'D':
+        if i == N - 1: return False
+        return h[i][j] == '0'
+    elif d == 'L':
+        if j == 0: return False
+        return v[i][j - 1] == '0'
+    elif d == 'R':
+        if j == N - 1: return False
+        return v[i][j] == '0'
+    return False
+
+# --- Strategy ---
+# The internal state is always fixed to 0.
+# Each cell is assigned a unique initial color; the color is never changed.
+# The color thus represents the robot’s current position.
+# The robot moves in a direction that decreases the Manhattan distance to target[1].
+# If no such direction exists, it stops.
+C = N * N
+Q = 1
+s = [[0] * N for _ in range(N)]
+for i in range(N):
+     for j in range(N):
+          s[i][j] = i * N + j
+rules = []
+i, j = targets[0] # current position
+gi, gj = targets[1] # first destination
+for t in range(T):
+    d = 'S'
+    if i > gi and can_move(i, j, 'U'):
+        d = 'U'
+    elif i < gi and can_move(i, j, 'D'):
+        d = 'D'
+    elif j > gj and can_move(i, j, 'L'):
+        d = 'L'
+    elif j < gj and can_move(i, j, 'R'):
+        d = 'R'
+    if d == 'S':
+        break
+    rules.append((s[i][j], 0, s[i][j], 0, d))
+    di, dj = DIJ[d]
+    i, j = i + di, j + dj
+
+# Output
+print(C, Q, len(rules))
+for r in range(N):
+    print(' '.join(map(str, s[r])))
+for c, q, A, S, D in rules:
+    print(c, q, A, S, D)
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.html?lang=en">Web version</a>: This is more powerful than the local version providing animations.</li>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc056/zUbWUSnS_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">3 3 6
+00
+00
+00
+000
+000
+0 0
+0 2
+1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">2 2 3
+0 0 0
+0 0 0
+0 0 0
+0 0 1 0 R
+1 0 0 1 L
+1 1 1 1 D
+</pre>
+<p>This input and output correspond to the example of robot operation given in the problem statement.<br />
+They are for illustrative purposes and do not satisfy the input constraints.</p></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc056/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc056_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc056/tasks/ahc056_a?lang=ja" data-a2a-title="A - Grid Turing Robot">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc056/rules">ルール</a></li>
+					<li><a href="/contests/ahc056/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

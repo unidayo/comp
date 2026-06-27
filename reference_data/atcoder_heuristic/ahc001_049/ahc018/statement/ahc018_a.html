@@ -1,0 +1,1511 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Excavation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Excavation" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc018/tasks/ahc018_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Excavation" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc018";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2023-02-18T12:00:00+09:00");
+			var endTime = moment("2023-02-26T19:00:00+09:00");
+		</script>
+		<style>#contest-statement section ul li {
+    margin-top: -1ex;
+    margin-bottom: 1.5ex;
+}
+
+#contest-statement section li > ul {
+    margin-top: 1.5ex;
+}
+
+table.centering {
+    table-layout: fixed;
+}
+
+table.centering th, table.centering td {
+    text-align: center;
+}</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2023冬（AtCoder Heuristic Contest 018）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2023冬（AtCoder Heuristic Contest 018）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc018">RECRUIT 日本橋ハーフマラソン 2023冬（AtCoder Heuristic Contest 018）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc018/tasks/ahc018_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc018/tasks/ahc018_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc018%2Ftasks%2Fahc018_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230218T1200&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-02-18 12:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20230226T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-02-26 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc018"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc018/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc018/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc018/submit?taskScreenName=ahc018_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc018/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc018/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc018/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc018/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc018/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc018/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc018/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Excavation
+			<a class="btn btn-default btn-sm" href="/contests/ahc018/tasks/ahc018_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 5 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<div id="task-statement">
+    <span class="lang">
+        <span class="lang-ja">
+            <div class="part">
+                <section>
+                    <p><img src="https://img.atcoder.jp/ahc018/a8a5bc5edd5e6d6301e8f4bd11f3c531.gif" width=400></p>
+                    <h3>問題文</h3>
+                    <p>
+                        <var>N</var> 行 <var>N</var> 列のグリッドで表される土地があります。<br/>
+                        グリッドのうち <var>W</var> 箇所に<b>水源</b>があり、 <var>K</var> 箇所に<b>家</b>があります。<br/>
+                        土地の上から <var>i</var> 行目（ <var> 0 \leq i \lt N </var> ）、左から <var>j</var> 列目（ <var> 0 \leq j \lt N </var> ）のセルを <var>(i, j)</var> と表すことにします。<br/>
+                        各セル <var>(i, j)</var> の<b>岩盤</b>には、<var>10</var> 以上 <var>5000</var> 以下の整数で表される <b>頑丈さ</b> <var>S_{i,j}</var> が予め設定されていますが、これらの値は入力では与えられません。<br/>
+                    </p>
+
+                    <p>
+                        <b>水源</b>が存在するセルの<b>岩盤</b>を破壊すると、そのセルに水が流れます。<br/>
+                        また、水が流れているセルの上下左右に隣接する<b>岩盤</b>が破壊されたセルにも水が流れます。<br/>
+                        土地の管理者であるXさんは、いくつかの<b>岩盤</b>を破壊して、<b>家</b>が存在する全てのセルに水が流れるようにしたいです。<br/>
+                        <b>家</b>が存在するセルに水を流すには、そのセルの<b>岩盤</b>も破壊する必要がある点に注意してください。<br/>
+                    </p>
+
+                    <p>
+                        <b>岩盤</b>を破壊するためには、Xさんは以下の<b>掘削</b>を繰り返し行います。<br/>
+                        <ul>
+                            <li>
+                                まだ<b>岩盤</b>が破壊されていないセル <var>(i, j)</var> を一つと、<b>パワー</b>を表す <var>5000</var> 以下の正の整数 <var>P</var> を一つ選びます。
+                            </li>
+                            <li>
+                                Xさんの<b>体力</b>を <var>C+P</var> （<var>C</var> は入力で与えられる正の整数）消費して、セルの<b>岩盤</b>の<b>頑丈さ</b> <var>S_{i,j}</var> を <var>P</var> 減らします。
+                            </li>
+                            <li>
+                                この操作で <var>S_{i,j} \leq 0</var> となった場合、セル <var>(i, j)</var> の<b>岩盤</b>が破壊されます。
+                            </li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        なるべくXさんの<b>体力</b>を消費しないように工夫しながら、<b>家</b>が存在する全てのセルに水が流れるようにしてください。
+                    </p>
+                </section>
+            </div>
+            <hr/>
+            <div class="part">
+                <section>
+                    <h3>得点・順位付け</h3>
+                    <p>
+                        相対評価システムを採用します。<br/>
+                        各テストケース毎に、<var>\mathrm{round} \lparen 10^9 \times \frac{全参加者中の最小消費体力}{自身の消費体力} \rparen </var>の相対評価スコアが得られ、その和が提出の得点となります。
+                    </p>
+                    <p>
+                        最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定されます。暫定テスト・システムテストのどちらにおいても、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースに関する相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最小消費体力」の計算対象から除外されます。<br/>
+                    </p>
+                    <p>
+                       また、システムテストは <font color="red"><strong><span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意してください。
+                    </p>
+                    <h4>テストケース数</h4>
+                    <ul>
+                        <li>
+                            暫定テスト: 50個
+                        </li>
+                        <li>
+                            システムテスト: 3000個
+                            <ul>
+                                <li>システムテストでは、<var>C</var> は <var>\{ 1,2,4,8,16,32,64,128 \}</var> のそれぞれの値について、375個ずつのテストケースが存在します。</li>
+                                <li>コンテスト終了後に <a href="https://img.atcoder.jp/ahc018/seeds.txt">seeds.txt</a> (sha256=<code>3bbc58026730d18fcb0e03ead929ab2afb6f9f0c5eb7f0c10ac44df4e6b84a3f</code>) を公開します。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>相対評価システムについて</h4>
+                    <p>
+                        暫定テスト・システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span>以外の結果を得た一番最後の提出のみが順位表に反映されます。<br/>
+                        相対評価スコアの計算に用いられる各テストケース毎の「全参加者中の最小消費体力」の算出には、各参加者の順位表に反映されている提出のみが用いられます。<br/>
+                        順位表に表示されるスコアは相対評価スコアであり、新規提出があるたびに相対評価スコアが再計算されます。 一方、提出一覧から確認できる各提出のスコアは、各テストケース毎の消費体力をそのまま足し合わせたものであり、相対評価スコアは表示されません。 最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要となります。<br/>
+                        不正な出力や制限時間超過をした場合、提出一覧から確認できるスコアは0となりますが、順位表には正解したテストケースに対する相対評価スコアの和が表示されます。<br/>
+                    </p>
+                    <h4>実行時間について</h4>
+                    <p>
+                        実行時間には多少のブレが生じます。
+                        また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+                        そのため、実行時間制限ギリギリの提出がシステムテストで<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span>となる可能性があります。
+                        プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。
+                    </p>
+                </section>
+            </div>
+            <hr>
+
+            <div class="io-style">
+                <div class="part">
+                    <section>
+                        <h3>入出力</h3>
+
+                        <p>
+                            <b>※この問題はインタラクティブ形式です。以下の内容を読み、ジャッジプログラムとのやり取りを行ってください。</b>
+                        </p>
+
+                        <p>
+                            最初に、入力が以下の形式で標準入力から与えられます。
+                        </p>
+
+<pre>\(
+N ~ W ~ K ~ C \\
+a_0 ~ b_0 \\
+\vdots \\
+a_{W-1} ~ b_{W-1} \\
+c_0 ~ d_0 \\
+\vdots \\
+c_{K-1} ~ d_{K-1}\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    1行目には4つの整数 <var>N,W,K,C</var> がスペース区切りで与えられます。
+                                    <ul>
+                                        <li><var>N</var> は土地のサイズを表し、 <var>N = 200</var> です。</li>
+                                        <li><var>W</var> は<b>水源</b>の数を表し、 <var>1 \leq W \leq 4</var> を満たします。</li>
+                                        <li><var>K</var> は<b>家</b>の数を表し、 <var>1 \leq K \leq 10</var> を満たします。</li>
+                                        <li><var>C</var> は<b>体力</b>の消費に関係するパラメータで、 <var>C \in \{ 1,2,4,8,16,32,64,128 \}</var> を満たします。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    続く <var>W+K</var> 行には、<b>水源</b>と<b>家</b>が存在するセルの位置を表す2つの整数がスペース区切りで与えられます。
+                                    <ul>
+                                        <li>最初に、 <var>W</var> 行で与えられる2整数 <var>a_i, b_i</var> は、 セル <var>(a_i, b_i)</var> に<b>水源</b>が存在することを表します。<var>0 \leq a_i \lt N, 0 \leq b_i \lt N</var> を満たします。
+                                        <li>続いて、 <var>K</var> 行で与えられる2整数 <var>c_i, d_i</var> は、 セル <var>(c_i, d_i)</var> に<b>家</b>が存在することを表します。<var>0 \leq c_i \lt N, 0 \leq d_i \lt N</var> を満たします。
+                                        <li>全ての<b>水源</b>同士のペア・全ての<b>家</b>同士のペア・全ての<b>水源</b>と<b>家</b>のペアは、<a href="https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%B3%E3%83%8F%E3%83%83%E3%82%BF%E3%83%B3%E8%B7%9D%E9%9B%A2" target="_blank" rel="noopener noreferrer">マンハッタン距離</a>で <var> \mathrm{round}(400/(W+K))</var> 以上離れていることが保証されます。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <p>
+                            ここまでの入力を受け取った後は、<b>掘削</b>をどのように実行するかを以下の形式で標準出力へ出力してください。<br/>
+                        </p>
+
+<pre>
+\(y ~ x ~ P\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    1行目に3つの整数 <var>y,x,P</var> をスペース区切りで出力します。
+                                    <ul>
+                                        <li>セル <var>(y,x)</var> に対して、<b>パワー</b> <var>P</var> で<b>掘削</b>を行います。</li>
+                                        <li>セル <var>(y,x)</var> の<b>岩盤</b>はまだ破壊されていない必要があり、かつ、<var>1 \leq P \leq 5000</var> を満たす必要があります。そうしなかった場合、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="不正解">WA</span> となります。</li>
+                                        <li>出力の後には<font color="red"><strong>改行をし、標準出力をflushする必要があります</strong></font>。そうしなかった場合、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性があります。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <p>
+                            出力後、<b>掘削</b>を実行した結果が入力として以下の形式で標準入力から与えられます。
+                        </p>
+
+<pre>
+\(r\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    1行に1つの整数 <var>r</var> が与えられます。
+                                    <ul>
+                                        <li>指定したセルの<b>岩盤</b>が破壊できなかった場合は <code>0</code> となります。</li>
+                                        <li>指定したセルの<b>岩盤</b>が破壊できた場合、<b>家</b>が存在するセルでまだ水が流れていないものがあるならば <code>1</code> 、<b>家</b>が存在する全てのセルに水が流れているならば <code>2</code> となります。</li>
+                                        <li>不正な出力だった場合は <code>-1</code> となります。</li>
+                                    </ul>
+                                </li>
+                                <li><var>r \in \{-1, 2\}</var> の場合は、直ちにプログラムを終了してください。そうしなければ、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性があります。</li>
+                                <li><var>r \in \{0, 1\}</var> の場合は、<b>家</b>が存在するセルでまだ水が流れていないものがあるため、引き続き<b>掘削</b>を行う必要があります。<var>r \in \{-1, 2\}</var> となるまで、<b>掘削</b>をどのように実行するかを繰り返し出力し、繰り返し入力を受け取ってください。</li>
+                            </ul>
+                        </p>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>入力生成方法</h3>
+                        <details>
+                            <p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で、<var>L</var> 以上 <var>U</var> 以下の実数値を一様ランダムに生成する関数を <var>\mathrm{randf}(L,U)</var> で、<var>b</var> の <var>p</var> 乗を返す関数を <var>\mathrm{pow}(b,p)</var> で表す。</p>
+                            <h4><var>S_{i,j}</var> の生成</h4>
+                            <ol>
+                                <li>
+                                    乱数シード <var>seed</var> を元に、 -1.0以上1.0以下の範囲にスケーリングされた二次元の <a href="https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%AA%E3%83%B3%E3%83%8E%E3%82%A4%E3%82%BA" target="_blank" rel="noopener noreferrer">Perlin noise</a> を生成する関数を <var>\mathrm{noise}(y,x,seed)</var> で表す。<br>
+                                    以下のようにパラメタを選ぶ。
+                                    <ul>
+                                        <li><var>f0 = \mathrm{randf}(2.0,8.0)</var></li>
+                                        <li><var>f1 = \mathrm{randf}(10.0,20.0)</var></li>
+                                        <li><var>dy0 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dy1 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dx0 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dx1 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>seed0 = \mathrm{rand}(0,2^{32} - 1)</var></li>
+                                        <li><var>seed1 = \mathrm{rand}(0,2^{32} - 1)</var></li>
+                                    </ul>
+                                    各 <var>i, j</var>（ <var> 0 \leq i, j \lt N </var> ）に対して、 <var>S_{i,j} = \mathrm{noise}(f0 \times i / N + dy0, f0 \times j / N + dx0, seed0) + 0.2 \times \mathrm{noise}(f1 \times i / N + dy1, f1 \times j / N + dx1, seed1)</var> とする。
+                                </li>
+                                <li>
+                                    <var>S_{i,j} = 1.0 / (1.0 + \mathrm{exp}(-3.0 \times (S_{i,j} - 0.25)))</var> と更新する。（ロジスティック関数で変換をしている）
+                                </li>
+                                <li>
+                                    <var>p = \mathrm{randf}(2.0,4.0)</var> を選ぶ。 <var>S_{i,j} = \mathrm{pow}(S_{i,j},p)</var> と更新する。
+                                </li>
+                                <li>
+                                    <var>S_{i,j}</var> を、 <var>10</var> 以上 <var>5000</var> 以下の範囲に線形スケーリングする。<br>
+                                    すなわち、 <var>S_{i,j}</var>（ <var> 0 \leq i, j \lt N </var> ）の中で最小の値を <var>l</var>, 最大の値を <var>u</var> としたとき、 <var>S_{i,j} = \mathrm{round}((S_{i,j} - l) \times (5000 - 10) / (u - l) + 10)</var> と更新する。
+                                </li>
+                            </ol>
+                            <h4>水源と家の位置の生成</h4>
+                            <ol>
+                                <li><var>W = \mathrm{rand}(1,4)</var>, <var>K = \mathrm{rand}(1,10)</var> とする。</li>
+                                <li><var>W</var> 箇所の<b>水源</b>の位置<var>(a_i, b_i)</var>, <var>K</var> 箇所の<b>家</b>の位置<var>(c_i, d_i)</var> を、それぞれ独立に、<var>N ^ 2</var> 個のセルの中から <var>S_{i,j}</var>に反比例する確率で選ぶ。</li>
+                                <li><var>W+K</var> 箇所の位置の中にマンハッタン距離が <var>\mathrm{round}(400/(W+K))</var> 未満の組がある場合、2. からやり直す。</li>
+                            </ol>
+                            <h4><var>C</var> の生成</h4>
+                            <p><var>C = \mathrm{pow}(2,\mathrm{rand}(0,7))</var> と生成する。</p>
+                        </details>
+                        <p>必ずしも理解する必要はありません。</p>
+                        <p>厳密な実装は入力ジェネレータのソースコードをご覧ください。</p>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>ツール（入力ジェネレータ・ビジュアライザ・ローカルテスタ・サンプルコード）</h3>
+                        <ul>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282.html?lang=ja">Web版</a>: アニメーション表示が可能です。</li>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。
+                                <ul><li><a href="https://img.atcoder.jp/ahc018/6bada50282_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li></ul>
+                            </li>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282_sample.zip">サンプルコード（C++, Python）</a>: サンプルの解答です。次の処理を実装しています。
+                                <ul>
+                                    <li>それぞれの<b>家</b>について、一つ目の<b>水源</b>まで最短距離でまっすぐに<b>掘削</b>を行う</li>
+                                    <li><b>パワー</b>は常に <code>100</code> に設定する</li>
+                                    <li>ジャッジプログラムから <code>2</code> が返されたら、消費体力を標準エラー出力に出力して終了する</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            <font color="red"><strong>コンテスト終了までビジュアライズ結果の共有は禁止されています。ご注意下さい。</strong></font>
+                        </p>
+                        <h4>ツールで用いられる入出力ファイルの仕様</h4>
+                        <p>ローカルテスタに与える入力ファイルは以下の形式を用いています。</p>
+<pre>\(
+N ~ W ~ K ~ C \\
+S_{0,0} ~ \cdots ~ S_{0,N-1} \\
+\vdots \\
+S_{N-1,0} ~ \cdots ~ S_{N-1 ,N-1} \\
+a_0 ~ b_0 \\
+\vdots \\
+a_{W-1} ~ b_{W-1} \\
+c_0 ~ d_0 \\
+\vdots \\
+c_{K-1} ~ d_{K-1} \)
+</pre>
+                        <p><var>S_{i,j}</var> はセル <var>(i, j)</var> にある<b>岩盤</b>の<b>頑丈さ</b>の初期値です。</p>
+                        <p>ローカルテスタは解答プログラムの出力をそのまま出力ファイルに書き出します。
+                        解答プログラムは、<code>#</code> から始まるコメント行を出力に含めてもかまいません。
+                        Web版ビジュアライザを使用すると、コメント行を対応する<b>掘削</b>と合わせて表示できるため、デバッグや考察等に役立てることができます。
+                        ジャッジプログラムはコメント行を全て無視するため、コメント行を出力するプログラムをそのまま提出可能です。
+                    </section>
+                </div>
+            </div>
+
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>入出力例</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                                <th>説明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+<pre>
+3 1 1 128
+0 0
+1 1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    入力の制約を満たさない、説明用の入力である点に注意してください。<br/>
+                                    <var>3 \times 3</var> のグリッドで表される土地の <var>(0,0)</var> に<b>水源</b>が存在し、 <var>(1,1)</var> に<b>家</b>が存在します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 0 872
+</pre>
+                                </td>
+                                <td>
+                                    セル <var>(0,0)</var> に対して、<b>パワー</b> <var>872</var> で<b>掘削</b>をします。この際、<b>体力</b>を<var>128+872 = 1000</var> 消費します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    この<b>掘削</b>では、セル <var>(0,0)</var> の<b>岩盤</b>は壊れませんでした。<br/>
+                                    ですが、セル <var>(0,0)</var> の<b>岩盤</b>の<b>頑丈さ</b>は <var>872</var> 減りました。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 0 2
+</pre>
+                                </td>
+                                <td>
+                                    セル <var>(0,0)</var> に対して、<b>パワー</b> <var>2</var> で<b>掘削</b>をします。この際、<b>体力</b>を<var>128+2 = 130</var> 消費します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    この<b>掘削</b>で、セル <var>(0,0)</var> の<b>岩盤</b>が壊れました。<br/>
+                                    セル <var>(0,0)</var> に水が流れるようになります。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 1 872
+</pre>
+                                </td>
+                                <td>
+                                    セル <var>(1,1)</var> に対して、<b>パワー</b> <var>872</var> で<b>掘削</b>をします。この際、<b>体力</b>を<var>128+872 = 1000</var> 消費します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    セル <var>(1,1)</var> の<b>岩盤</b>が壊れました。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 0 872
+</pre>
+                                </td>
+                                <td>
+                                    セル <var>(1,0)</var> に対して、<b>パワー</b> <var>872</var> で<b>掘削</b>をします。この際、<b>体力</b>を<var>128+872 = 1000</var> 消費します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+2
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    セル <var>(1,0)</var> の<b>岩盤</b>が壊れました。<br/>
+                                    セル <var>(0,0)</var>, <var>(1,0)</var>, <var>(1,1)</var> に水が流れるようになり、<b>家</b>が存在する全てのセルに水が流れるようになりました。<br/>
+                                    ジャッジプログラムから<code>2</code> が返されたら、直ちにプログラムを終了してください。<br/>
+                                    消費した<b>体力</b>の合計である <var>1000+130+1000+1000 = 3130</var> が相対評価スコアの計算に用いられます。<br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </span>
+
+
+
+        <span class="lang-en">
+            <div class="part">
+                <section>
+                    <p><img src="https://img.atcoder.jp/ahc018/a8a5bc5edd5e6d6301e8f4bd11f3c531.gif" width=400></p>
+                    <h3>Problem Statement</h3>
+                    <p>
+                        There is plot of land, represented by a grid of <var>N</var> rows and <var>N</var> columns.<br/>
+                        On the grid, there are <b>water sources</b> in <var>W</var> spots, and <b>houses</b> in <var>K</var> spots.<br/>
+                        Let us call the cell on <var>i</var>th (<var> 0 \leq i \lt N </var>) row from top and <var>j</var>th column (<var> 0 \leq j \lt N </var>) from left, <var>(i, j)</var>.<br/>
+                        Each cell <var>(i, j)</var> has an associated integer <var>S_{i,j}</var> between <var>10</var> and <var>5000</var> (inclusive), representing the <b>sturdiness</b> of the <b>bedrock</b> of the cell. The <b>sturdiness</b> is pre-determined, but it's not given as a part of the input.<br/>
+                    </p>
+
+                    <p>
+                        When the <b>bedrock</b> of a cell containing a <b>water source</b> is crushed, water flows into the cell.<br/>
+                        Furthermore, with cells with flowing water as starting points, water will flow horizontally and vertically into neighboring cells with crushed <b>bedrock</b> and span every cell it can reach this way.<br/>
+                        X-san, who is in charge of the land, wants to crush <b>bedrock</b> to build watercourses to make the water flow into every cell with <b>houses</b>.<br/>
+                        Please note that for water to flow into a cell with a <b>house</b>, the <b>bedrock</b> of that cell must be crushed too.<br/>
+                    </p>
+
+                    <p>
+                        To crush <b>bedrock</b>, X-san repeatedly performs <b>excavations</b> as explained below.<br/>
+                        <ul>
+                            <li>
+                                Choose a cell <var>(i, j)</var> whose <b>bedrock</b> isn't crushed yet, and a positive integer <var>P</var> less or equal than <var>5000</var>, representing <b>power</b>.
+                            </li>
+                            <li>
+                                As <var>C+P</var> (<var>C</var> is a positive integer received as an input) of X-san's <b>stamina</b> gets consumed, the <b>sturdiness</b> <var>S_{i,j}</var> of the <b>bedrock</b> in the cell diminishes by <var>P</var>.
+                            </li>
+                            <li>
+                                If <b>sturdiness</b> then reaches zero <var>S_{i,j} \leq 0</var>, the <b>bedrock</b> of the cell <var>(i, j)</var> gets crushed.
+                            </li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        Make the water flow into every cell with a <b>house</b>, while trying to conserve X-san's <b>stamina</b> as much as possible.
+                    </p>
+                </section>
+            </div>
+            <hr/>
+            <div class="part">
+                <section>
+                    <h3>Scoring</h3>
+                    <p>For each test case, we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{MIN}}{\mathrm{YOUR}})</var>, where YOUR is your stamina consumption and MIN is the lowest stamina consumption among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.</p>
+                    <p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+                    In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MIN calculation for those test cases.</p>
+                    <p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+                    Be careful not to make a mistake in the final submission.</p>
+                    <h4>Number of test cases</h4>
+                    <ul>
+                        <li>
+                            Provisional test: 50
+                        </li>
+                        <li>
+                            System test: 3000
+                            <ul>
+                                <li>For the system test, there will be 375 data inputs for each <var>C</var> (<var>C \in \{ 1,2,4,8,16,32,64,128 \}</var>)</li>
+                                <li>We will publish <a href="https://img.atcoder.jp/ahc018/seeds.txt">seeds.txt</a> (sha256=<code>3bbc58026730d18fcb0e03ead929ab2afb6f9f0c5eb7f0c10ac44df4e6b84a3f</code>) after the contest is over.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>About Relative Evaluation System</h4>
+                    <p>
+                        In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+                        Only the last submissions are used to calculate the MIN for each test case when calculating the relative scores.
+                    </p>
+                    <p>
+                        The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+                        On the other hand, the score for each submission shown on the submissions page is the sum of the stamina consumption for each test case, and the relative scores are not shown.
+                        In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+                        If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.
+                    </p>
+                    <h4>About execution time</h4>
+                    <p>
+                        Execution time may vary slightly from run to run.
+                        In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percents compared to provisional tests.
+                        For these reasons, submissions that are very close to the time limit may result in <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span> in the system test.
+                        Please measure the execution time in your program to terminate the process, or make sure to have enough time margin for the execution.
+                    </p>
+                </section>
+            </div>
+            <hr>
+
+            <div class="io-style">
+                <div class="part">
+                    <section>
+                        <h3>Input and Output</h3>
+
+                        <p>
+                            <b>Note: This problem is interactive. Read the following explanation, and communicate with the judge program accordingly.</b>
+                        </p>
+
+                        <p>
+                            At first, input will be provided via stdin in the following format.
+                        </p>
+
+<pre style="font-family: Menlo,Monaco,Consolas,'Courier New',monospace; font-size: 13px;">\(
+N ~ W ~ K ~ C \\
+a_0 ~ b_0 \\
+\vdots \\
+a_{W-1} ~ b_{W-1} \\
+c_0 ~ d_0 \\
+\vdots \\
+c_{K-1} ~ d_{K-1}\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    On the 1st row, there are four integers <var>N,W,K,C</var> separated by spaces.
+                                    <ul>
+                                        <li><var>N</var> represents the size of the plot and is <var>N = 200</var>.</li>
+                                        <li><var>W</var> represents the number of the <b>water sources</b> and satisfies <var>1 \leq W \leq 4</var>.</li>
+                                        <li><var>K</var> represents the number of the <b>houses</b> and satisfies <var>1 \leq K \leq 10</var>.</li>
+                                        <li><var>C</var> is a parameter related to <b>stamina</b> consumption and satisfies <var>C \in \{ 1,2,4,8,16,32,64,128 \}</var>.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    The following <var>W+K</var> rows contain the coordinates of the cells containing <b>water sources</b> and <b>houses</b>, each expressed as a pair of space-separated integers.
+                                    <ul>
+                                        <li>First <var>W</var> rows contain pairs of integers <var>a_i, b_i</var>, representing cells <var>(a_i, b_i)</var> that contain <b>water sources</b>. The integers satisfy <var>0 \leq a_i, b_i \lt N</var>.
+                                        <li>Following <var>K</var> rows contain pairs of integers <var>c_i, d_i</var>, representing cells <var>(c_i, d_i)</var> that contain <b>houses</b>. The integers satisfy <var>0 \leq c_i, d_i \lt N</var>.
+                                        <li>Each pair of <b>water sources</b>, each pair of <b>houses</b> and each pair of <b>water sources</b> and <b>houses</b> are guaranteed to be separated by at least <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank" rel="noopener noreferrer">Manhattan distance</a> of <var> \mathrm{round}(400/(W+K))</var>.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <p>
+                            After receiving the input this far, please output how to perform <b>excavations</b> to stdout in the following format.<br/>
+                        </p>
+
+<pre>
+\(y ~ x ~ P\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    On a single row, output three integers <var>y,x,P</var> separated by spaces.
+                                    <ul>
+                                        <li>An <b>excavation</b> will be performed at cell <var>(y,x)</var> with <b>power</b> <var>P</var>.</li>
+                                        <li>The <b>bedrock</b> on cell <var>(y,x)</var> must not be crushed yet, and <b>power</b> must satisfy <var>1 \leq P \leq 5000</var>. If these conditions are not met, the result will be <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>.</li>
+                                        <li>You must <font color="red"><strong>output a newline after the integers, and flush stdout</strong></font>. If you don't, the result might turn out to be <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span>.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <p>
+                            After the output, the result of the performed <b>excavation</b> will be provided as an input in the following format.
+                        </p>
+
+<pre>
+\(r\)
+</pre>
+
+                        <p>
+                            <ul class="simple">
+                                <li>
+                                    On a single row, there is a single integer <var>r</var>.
+                                    <ul>
+                                        <li>If the <b>bedrock</b> of the designated cell doesn't get crushed, <var>r</var> will be <code>0</code>.</li>
+                                        <li>If the <b>bedrock</b> of the designated cell gets crushed; in case there are still cells with <b>houses</b> without flowing water, <var>r</var> will be <code>1</code>, and in the case every cell with a <b>house</b> has flowing water, <var>r</var> will be <code>2</code>.</li>
+                                        <li>In case of invalid output, <var>r</var> will be <code>-1</code>.</li>
+                                    </ul>
+                                </li>
+                                <li>In case of <var>r \in \{-1, 2\}</var>, please exit the program immediately. If you fail to do so, the result might turn out to be <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span>.</li>
+                                <li>In case of <var>r \in \{0, 1\}</var>, there still exists cells with <b>houses</b> without flowing water; in that case, you need to continue performing <b>excavations</b>. Please continue receiving input and providing output how to perform <b>excavations</b> until <var>r \in \{-1, 2\}</var>.</li>
+                            </ul>
+                        </p>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>Input Generation</h3>
+                        <details>
+                            <p>Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive, and <var>\mathrm{randf}(L,U)</var> be a function that generates a uniform random real number between <var>L</var> and <var>U</var>, inclusive, and <var>\mathrm{pow}(b,p)</var> be a function that returns <var>b</var> to the power of <var>p</var>.</p>
+                            <h4>Generating <var>S_{i,j}</var></h4>
+                            <ol>
+                                <li>
+                                    Let <var>\mathrm{noise}(y,x,seed)</var> be a function that generates two-dimensional <a href="https://en.wikipedia.org/wiki/Perlin_noise" target="_blank" rel="noopener noreferrer">Perlin noise</a> scaled to range <var>-1.0</var> - <var>1.0</var>, inclusive, according to a random seed <var>seed</var>.<br>
+                                    Select parameters as the following.<br>
+                                    <ul>
+                                        <li><var>f0 = \mathrm{randf}(2.0,8.0)</var></li>
+                                        <li><var>f1 = \mathrm{randf}(10.0,20.0)</var></li>
+                                        <li><var>dy0 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dy1 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dx0 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>dx1 = \mathrm{randf}(0.0,1.0)</var></li>
+                                        <li><var>seed0 = \mathrm{rand}(0,2^{32} - 1)</var></li>
+                                        <li><var>seed1 = \mathrm{rand}(0,2^{32} - 1)</var></li>
+                                    </ul>
+                                    For each <var>i, j</var> (<var> 0 \leq i, j \lt N </var>), let <var>S_{i,j} = \mathrm{noise}(f0 \times i / N + dy0, f0 \times j / N + dx0, seed0) + 0.2 \times \mathrm{noise}(f1 \times i / N + dy1, f1 \times j / N + dx1, seed1)</var>.
+                                </li>
+                                <li>
+                                    Update <var>S_{i,j} = 1.0 / (1.0 + \mathrm{exp}(-3.0 \times (S_{i,j} - 0.25)))</var>. (Transformation by logistic function.)
+                                </li>
+                                <li>
+                                    Select <var>p = \mathrm{randf}(2.0,4.0)</var>. Update <var>S_{i,j} = \mathrm{pow}(S_{i,j},p)</var>.
+                                </li>
+                                <li>
+                                    Scale <var>S_{i,j}</var> linearly to range <var>10</var> - <var>5000</var>, inclusive.<br>
+                                    I.e. let <var>l</var> be minimum and <var>u</var> be maximum of <var>S_{i,j}</var> (<var> 0 \leq i, j \lt N </var>), and update <var>S_{i,j} = \mathrm{round}((S_{i,j} - l) \times (5000 - 10) / (u - l) + 10)</var>.
+                                </li>
+                            </ol>
+                            <p> </p>
+                            <h4>Generating the locations of water sources and houses</h4>
+                            <ol>
+                                <li>Let <var>W = \mathrm{rand}(1,4)</var>, <var>K = \mathrm{rand}(1,10)</var>.</li>
+                                <li>Choose the coordinates <var>(a_i, b_i)</var> of the <var>W</var> water sources and the coordinates <var>(c_i, d_i)</var> of the <var>K</var> houses independently from the <var>N ^ 2</var> cells with a probability inversely proportional to <var>S_{i,j}</var>.</li>
+                                <li>In case the Manhattan distance between any pairs of the <var>W+K</var> coordinates is under <var>\mathrm{round}(400/(W+K))</var>, go back to step 2 and regenerate.</li>
+                            </ol>
+                            <h4>Generating <var>C</var></h4>
+                            <p>Given by <var>C = \mathrm{pow}(2,\mathrm{rand}(0,7))</var>.</p>
+                        </details>
+                        <p>You are not required to understand this.</p>
+                        <p>Please refer to the source code of the input generator for implementation details.</p>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>Tools (Input generator, visualizer, local tester, and sample code)</h3>
+                        <ul>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282.html?lang=en">Web Version</a>: For displaying animated visualizations.</li>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282.zip">Local Version</a>: Please set up a <a href="https://www.rust-lang.org">Rust language</a> build environment to use this.
+                                <ul><li><a href="https://img.atcoder.jp/ahc018/6bada50282_windows.zip">Pre-compiled binary for Windows</a>: If you have troubles setting up Rust environment, use this.</li></ul>
+                            </li>
+                            <li><a href="https://img.atcoder.jp/ahc018/6bada50282_sample.zip">Sample code (C++, Python)</a>: Sample answers. Implemented as follows:
+                                <ul>
+                                    <li>Performs <b>excavations</b> to build watercourses from the first <b>water source</b> to each <b>house</b> by the shortest, direct route.</li>
+                                    <li>Uses constantly <code>100</code> as the <b>power</b> setting.</li>
+                                    <li>Once the judge program returns <code>2</code>, prints the consumed <b>stamina</b> to stderr and exits.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            <font color="red"><strong>Note that sharing visualization results is forbidden until the contest ends.</strong></font>
+                        </p>
+                        <h4>Input format used in the tools</h4>
+                        <p>The input file for the local tester uses the following format.</p>
+<pre>\(
+N ~ W ~ K ~ C \\
+S_{0,0} ~ \cdots ~ S_{0,N-1} \\
+\vdots \\
+S_{N-1,0} ~ \cdots ~ S_{N-1 ,N-1} \\
+a_0 ~ b_0 \\
+\vdots \\
+a_{W-1} ~ b_{W-1} \\
+c_0 ~ d_0 \\
+\vdots \\
+c_{K-1} ~ d_{K-1} \)
+</pre>
+                        <p><var>S_{i,j}</var> is the <b>sturdiness</b> value of the <b>bedrock</b> on cell <var>(i, j)</var>.</p>
+                        <p>
+                            The local tester writes outputs from your program directly to the output file.
+                            Your program may output comment lines starting with <code>#</code>. The web version of the visualizer displays the comment lines with the corresponding <b>excavations</b>, which may be useful for debugging and analysis.
+                            Since the judge program ignores all comment lines, you can submit a program that outputs comment lines as is.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>I/O Examples</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                                <th>Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+<pre>
+3 1 1 128
+0 0
+1 1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    Please note that this input is for explanation purposes, and thus doesn't meet all of the guarantees for input.<br/>
+                                    On a <var>3 \times 3</var> grid, there exists a <b>water source</b> on cell <var>(0,0)</var>, and a <b>house</b> on cell <var>(1,1)</var>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 0 872
+</pre>
+                                </td>
+                                <td>
+                                    An <b>excavation</b> is performed at cell <var>(0,0)</var> with <b>power</b> <var>872</var>. Accordingly, <b>stamina</b> is consumed by <var>128+872 = 1000</var>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    This <b>excavation</b> doesn't manage to crush the <b>bedrock</b> on cell <var>(0,0)</var>.<br/>
+                                    However, the <b>sturdiness</b> of the <b>bedrock</b> on cell <var>(0,0)</var> diminishes by <var>872</var>.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 0 2
+</pre>
+                                </td>
+                                <td>
+                                    An <b>excavation</b> with <b>power</b> <var>2</var> is performed at cell <var>(0,0)</var>. Accordingly, <b>stamina</b> is consumed by <var>128+2 = 130</var>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    This <b>excavation</b> manages to crush the <b>bedrock</b> at cell <var>(0,0)</var>.<br/>
+                                    Water flows into cell <var>(0,0)</var>.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 1 872
+</pre>
+                                </td>
+                                <td>
+                                    An <b>excavation</b> with <b>power</b> <var>872</var> is performed at cell <var>(1,1)</var>. Accordingly, <b>stamina</b> is consumed by <var>128+872 = 1000</var>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    The <b>bedrock</b> on cell <var>(1,1)</var> gets crushed.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 0 872
+</pre>
+                                </td>
+                                <td>
+                                    An <b>excavation</b> with <b>power</b> <var>872</var> is performed at cell <var>(1,0)</var>. Accordingly, <b>stamina</b> is consumed by <var>128+872 = 1000</var>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+2
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    The <b>bedrock</b> on cell <var>(1,0)</var> gets crushed.<br/>
+                                    Water is now flowing into cells <var>(0,0)</var>, <var>(1,0)</var> and <var>(1,1)</var>, and every cell with a <b>house</b> now has flowing water.<br/>
+                                    As the judge program now returns <code>2</code>, please exit the program immediately.<br/>
+                                    The sum of the consumed <b>stamina</b>, which turns out to be <var>1000+130+1000+1000 = 3130</var>, is used to calculate the relative score.<br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </span>
+    </span>
+</div>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc018/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc018_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc018/tasks/ahc018_a?lang=ja" data-a2a-title="A - Excavation">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc018/rules">ルール</a></li>
+					<li><a href="/contests/ahc018/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

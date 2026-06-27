@@ -1,0 +1,1802 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Railway Company</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Railway Company" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc043/tasks/ahc043_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Railway Company" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc043";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2025-02-14T19:00:00+09:00");
+			var endTime = moment("2025-02-24T19:00:00+09:00");
+		</script>
+		<style>#contest-statement section ul li {
+    margin-top: -1ex;
+    margin-bottom: 1.5ex;
+}
+
+#contest-statement section li > ul {
+    margin-top: 1.5ex;
+}
+
+#contest-statement table td {
+    vertical-align: middle;
+}
+
+table.centering {
+    table-layout: fixed;
+}
+
+table.centering th, table.centering td {
+    text-align: center;
+}
+
+span.lang h4 {
+    margin-top: 2ex;
+}
+
+p.img {
+    text-align: center;
+}
+</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2025冬（AtCoder Heuristic Contest 043）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2025冬（AtCoder Heuristic Contest 043）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc043">RECRUIT 日本橋ハーフマラソン 2025冬（AtCoder Heuristic Contest 043）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc043/tasks/ahc043_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc043/tasks/ahc043_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc043%2Ftasks%2Fahc043_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250214T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-02-14 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250224T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-02-24 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc043"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc043/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc043/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc043/submit?taskScreenName=ahc043_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc043/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc043/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc043/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc043/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc043/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc043/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc043/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Railway Company
+			<a class="btn btn-default btn-sm" href="/contests/ahc043/tasks/ahc043_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 3 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<div id="task-statement">
+    <span class="lang">
+        <span class="lang-ja">
+            <div class="part">
+                <section>
+                <h3> ストーリー </h3>
+                <p>Nihonbashi Simulator は架空の国Rの鉄道会社Xを経営するターン制のシミュレーションゲームである。あなたはこのゲームの大ファンであり、高い収益を上げる会社にすることを目標としている。線路と駅を適切に建設することで、R国に住む人の通勤を手助けしつつ、Xを最高の鉄道会社に育て上げよう!</p>
+                <h3>問題文</h3>
+                <p>
+                    R国は <var>N</var> 行 <var>N</var> 列のグリッド状に分けられた区画からなる。上から <var>i</var> 行目 <var>(0 \le i < N)</var>、左から <var>j</var> 列目 <var>(0 \le j < N)</var> の区画を <var>(i,j)</var> とする。各区画は更地、線路、駅のいずれかである:
+                    <ul>
+                        <li>更地
+                            <ul>
+                                <li>他の区画と接続しない。</li>
+                                <li>コストを払うことで、駅または線路を建設することができる。</li>
+                            </ul>
+                        </li>
+                        <li>線路
+                            <ul>
+                                <li>上下左右の更地でない区画のうち、最大2つの区画と接続する。線路は接続先に応じて6種類あり、以下の図のように番号付けられる。</li>
+                                <li>コストを払うことで、駅に置き換えることができる。</li>
+                            </ul>
+                        </li>
+                        <li>駅
+                        <ul>
+                            <li>上下左右の最大4つの更地でない区画と接続する。</li>
+                        </ul>
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <figure style="text-align: center; margin: 2em auto;">
+                        <svg height="150" id="vis" viewBox="-12 -12 429 159" width="500" style="display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="white" height="159" width="429" x="-12" y="-12"></rect>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="0" y2="0"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="0" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="67.5" y2="67.5"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="67.5" x2="67.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="135" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="135" x2="135" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="202.5" x2="202.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="270" x2="270" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="337.5" x2="337.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="405" x2="405" y1="0" y2="135"></line>
+                            <text font-size="50" text-anchor="middle" x="33.75" y="124">
+                            1
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="101.25" y="124">
+                            2
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="168.75" y="124">
+                            3
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="236.25" y="124">
+                            4
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="303.75" y="124">
+                            5
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="371.25" y="124">
+                            6
+                            </text>
+                            <defs>
+                            <g id="rail1" stroke-width="4.5">
+                                <line x1="27" x2="27" y1="0" y2="67.5"></line>
+                                <line x1="40.5" x2="40.5" y1="0" y2="67.5"></line>
+                                <line x1="27" x2="40.5" y1="6.75" y2="6.75"></line>
+                                <line x1="27" x2="40.5" y1="20.25" y2="20.25"></line>
+                                <line x1="27" x2="40.5" y1="33.75" y2="33.75"></line>
+                                <line x1="27" x2="40.5" y1="47.25" y2="47.25"></line>
+                                <line x1="27" x2="40.5" y1="60.75" y2="60.75"></line>
+                            </g>
+                            <g fill="none" id="rail2" stroke-width="4.5">
+                                <path d="M27,0 A27,27 0 0,1 0,27"></path>
+                                <path d="M40.5,0 A40.5,40.5 0 0,1 0,40.5"></path>
+                                <line x1="27" x2="40.5" y1="4.5" y2="6.75"></line>
+                                <line x1="24.75" x2="36" y1="11.25" y2="18"></line>
+                                <line x1="18" x2="29.25" y1="18" y2="29.25"></line>
+                                <line x1="11.25" x2="18" y1="24.75" y2="36"></line>
+                                <line x1="4.5" x2="6.75" y1="27" y2="40.5"></line>
+                            </g>
+                            </defs>
+                            <use href="#rail1" stroke="silver" transform="rotate(90,33.75,33.75)" x="0" y="0"></use>
+                            <use href="#rail1" stroke="silver" transform="rotate(0,0,0)" x="67.5" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(270,168.75,33.75)" x="135" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(0,236.25,33.75)" x="202.5" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(90,303.75,33.75)" x="270" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(180,371.25,33.75)" x="337.5" y="0"></use>
+                        </svg>
+                        <figurecaption>線路の種類</figurecaption>
+                    </figure>
+                </p>
+
+                <p>
+                    R国には <var>M</var> 人の人が住んでいる。人 <var>c</var> の家は区画 <var>(i_{c,s}, j_{c,s})</var>、職場は区画 <var>(i_{c,t},  j_{c,t})</var> にあり、この間を通勤している。
+                    </p>
+                    <p>ゲーム開始時、鉄道会社Xは <var>K</var> の資金を持っており、全ての区画は更地である。ここから <var>T</var> ターンの間ゲームを行う。
+                </p>
+
+                <h3>ゲームのすすめ方</h3>
+                    <p>各ターンでは、建設フェーズと集金フェーズがこの順で実行される。</p>
+                <h4>建設フェーズ</h4>
+                    <p>建設フェーズでは、線路の配置・駅の配置・待機のうち1つの行動を行う。ただし、資金が0未満になるような行動はできない。資金が0未満かどうかの判定は集金フェーズの前に行われる。</p>
+                    <ul>
+                        <li>線路の配置: 更地の区画を1つ選び、その区画を6種類の線路のいずれか1つに変更する。資金が100減る。</li>
+                        <li>駅の配置: 更地または線路の区画を1つ選び、その区画を駅に変更する。資金が5000減る。</li>
+                        <li>待機: 区画の状態と資金は変化しない。</li>
+                    </ul>
+                <h4>集金フェーズ</h4>
+                <p>R国に住む人が一斉に通勤を行う。人 <var>c</var> は、以下の条件を満たす区画 <var>(i_p, j_p)</var>, <var>(i_q, j_q)</var> が存在するときのみ、鉄道会社Xの鉄道を利用して料金を払う。
+人 <var>c</var> が鉄道を利用したとき、鉄道会社Xの資金が <var>|i_{c,s} - i_{c,t}| + |j_{c, s} - j _{c, t} |</var> 増える。</p>
+                    <p>
+                        <ul>
+                            <li>区画 <var>(i_p, j_p), (i_q, j_q)</var> は駅である。</li>
+                            <li>区画 <var>(i_p, j_p)</var> から、<var>0</var> 個以上の互いに接続された駅の区画または線路の区画を経由して、 <var>(i_q, j_q)</var> に到達できる。</li>
+                            <li> <var>| i_{c,s} - i_p| + | j_{c,s} - j_p| \leq 2</var> </li>
+                            <li> <var>| i_{c,t} - i_q| + | j_{c,t} - j_q| \leq 2</var> </li>
+                        </ul>
+                    </p>
+                <br>
+                <p><var>T</var> ターン終了時点での資金ができるだけ大きくなるように行動を決めよ。</p>
+            </section>
+        </div>
+        <hr>
+        <div class="part">
+            <section>
+                <h3>得点</h3>
+                <p>
+                    各テストケース毎に、 <var>T</var> ターン終了時点での資金の値を絶対スコアとして
+                    <span id="math">\( \text{round}(10^9 \times \left(\frac{自身の絶対スコア}{全参加者中の最大絶対スコア}\right)) \)</span>の<font color="red"><strong>相対評価スコア</strong></font>が得られ、その和が提出の得点となる。
+                    ただし、 <var>全参加者中の最大絶対スコア</var> が <var>0</var> のテストケースにおいては、 <span class="label label-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Accepted">AC</span> した全参加者の相対評価スコアが <var>10^9</var> となる。
+                </p>
+                <p>
+                    以下に挙げる不正な出力をした場合、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>と判定される。
+                    <ul>
+                        <li>駅または線路の区画への線路の配置</li>
+                        <li>駅の区画への駅の配置</li>
+                        <li>資金が 0 未満になるような配置</li>
+                        <li>線路の種類や区画の指定が不正な配置</li>
+                        <li>出力した行動の数が <var>T</var> 個でない</li>
+                    </ul>
+                </p>
+                <p>
+                    最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。暫定テスト、システムテストともに、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースの相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最大絶対スコア」の計算から除外される。システムテストは <font color="red"><strong><span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。
+                </p>
+                <h4>テストケース数</h4>
+                <ul>
+                    <li>
+                        暫定テスト: 50個
+                    </li>
+                    <li>
+                        システムテスト: 2000個
+                        <ul>
+                            <li>コンテスト終了後に <a href="https://img.atcoder.jp/ahc043/seeds.txt">seeds.txt</a> (sha256=<code>ed5b3f922dc3633bade3f70cc6f1dd1bb3087dba36ce26ce9d4888ce2ec7a247</code>) を公開します。</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>相対評価システムについて</h4>
+                <p>
+                    暫定テスト・システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span>以外の結果を得た一番最後の提出のみが順位表に反映される。<br/>
+                    相対評価スコアの計算に用いられる各テストケース毎の全参加者中の最大絶対スコアの算出についても、順位表に反映されている最終提出のみが用いられる。<br/>
+                </p>
+                <p>
+                    順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する相対評価スコアの和が表示されている。
+                </p>
+                <h4>実行時間について</h3>
+                <p>
+                    実行時間には多少のブレが生じます。
+                    また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+                    そのため、実行時間制限ギリギリの提出がシステムテストで <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性があります。
+                    プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。
+                </p>
+            </section>
+        </div>
+    <hr>
+
+    <div class="io-style">
+        <div class="part">
+            <section>
+                <h3>入力</h3>
+                <p>入力は以下の形式で標準入力から与えられる。</p>
+<pre>\(
+N ~ M ~ K ~ T\\
+i_{0, s} ~ j_{0, s} ~ i_{0, t} ~ j_{0, t} \\
+i_{1, s} ~ j_{1, s} ~ i_{1, t} ~ j_{1, t} \\
+\vdots \\
+i_{M-1, s} ~ j_{M-1, s} ~ i_{M-1, t} ~ j_{M-1, t}
+\)
+</pre>
+        <ul>
+            <li>1行目には4つの整数 <var>N,M,K,T</var> がスペース区切りで与えられる。
+                <ul>
+                    <li> <var>N</var> は区画の縦・横の数で、 <var>N = 50</var> を満たす。</li>
+                    <li> <var>M</var> はR国の人の数で、 <var>50 \le M \le 1600</var> を満たす。</li>
+                    <li> <var>K</var> は鉄道会社Xの初期資金であり、 <var>11000 \leq K \leq 20000 </var> を満たす。</li>
+                    <li> <var>T</var> はゲームのターン数であり、 <var>T = 800</var> を満たす。</li>
+                </ul>
+            </li>
+            <li>続く <var>M</var> 行にR国に住む人の通勤に関する情報が与えられる。各行はスペース区切りの4つの整数であり、人 <var>c</var> の家の位置は区画 <var>(i_{c,s}, j_{c,s})</var>、職場の位置は区画 <var>(i_{c, t}, j_{c,t} )</var> である。<var>0 \leq i_{c, s}, i_{c, t} \lt  N, 0  \leq j_{c, s}, j_{c, t} \lt N, | i_{c,s} - i_{c,t} | + | j_{c,s} - j_{c,t} | \gt 4 (0 \leq c \lt M)</var> を満たす。
+
+            </li>
+        </ul>
+        <h3>出力</h3>
+        <p> <var>T</var> 行出力せよ。<var>t</var> 行目には、<var>t</var> 回目の建設フェーズでの行動を以下のフォーマットで出力せよ。</p>
+            <ul>
+                <li>
+                    線路の配置を行う場合
+                    <br>
+                    区画 <var>(i, j)</var> に種類 <var>p</var> の線路を建設するとき、<var>p, i, j</var> をスペース区切りで出力せよ。
+                    <br>
+                    線路の種類は、問題文中の番号付けに従う。
+                </li>
+                <li>
+                    駅の配置を行う場合
+                    <br>
+                    区画 <var>(i, j)</var> に駅を建設するとき、<var>0, i, j</var> をスペース区切りで出力せよ。
+                    <br>
+                </li>
+                <li>
+                    待機を行う場合
+                    <br>
+                    <code>-1</code> を出力せよ。
+                </li>
+            </ul>
+        <p>
+        <a href="https://img.atcoder.jp/ahc043/de43f43a9c.html?lang=ja&amp;output=sample">例を見る</a>
+        </p>
+            </section>
+        </div>
+    </div>
+    
+    <div class="part">
+        <section>
+            <h3>入力生成方法</h3>
+            <details>
+                <summary>入力生成方法の詳細</summary>
+                    <p>
+                        <var>L</var> 以上 <var>U</var> 以下の整数を一様ランダムに生成する関数を <var>\mathrm{rand}(L, U)</var> とし、<var>L</var> 以上 <var>U</var> 未満の実数を一様ランダムに生成する関数を <var>\mathrm{rand\_double}(L, U)</var> とする。
+                        平均 <var>\mu</var> 、標準偏差 <var>\sigma</var> の正規分布からランダムに実数値を生成する関数を <var>\mathrm{normal}(\mu,\sigma)</var> とする。
+                    </p>
+                    <h4><var>M</var> の生成</h4>
+                    <p><var>M = \mathrm{round}(50 \times 2 ^{\mathrm{rand\_double}(0,5)})</var> で生成する。</p>
+                    <h4>家と職場の座標の生成</h4>
+                    <p>
+                        次のようにして家の座標を生成するための混合ガウス分布を作成する：<br>
+                        クラスタ数 <var>(\text{num\_cluster})</var> を <var>\mathrm{rand}(5,15)</var> で生成する。
+                        各クラスタ <var>i</var> に対して、重み <var>w_i = \mathrm{rand\_double}(0, 1)</var> 、 中心座標 <var> (r_i, c_i) =  (\mathrm{rand\_double}(0, N-1), \mathrm{rand\_double}(0, N-1))</var> 、 標準偏差 <var>\sigma_i  = \mathrm{rand\_double}(2, 15)</var> を生成する。
+                        <br>
+                        職場の座標を生成するための混合ガウス分布も同様にして作成する。
+                    </p>
+                    <p>
+                        以下の処理を <var>M</var> 回繰り返し、<var>M</var> 人の家と職場の座標を生成する。
+                    </p>
+                    <p>
+                        <ol>
+                            <li>家の座標を生成するための混合ガウス分布から、重み <var>w_i</var> に比例する確率で、クラスタ <var>i</var> をランダムに選択する。</li>
+                            <li>選択された <var>i</var> に対し、家の座標 <var>r_0 = \text{round}(\text{normal}(r_i, \sigma_i)), c_0 =  \text{round}(\text{normal}(c_i, \sigma_i))</var> を生成する。</li>
+                            <li>生成された座標 <var>(r_0, c_0)</var> が <var>0 \leq r_0 \lt N </var> または <var>0 \leq c_0 \lt N </var> を満たさない場合は、ステップ1からやり直す。</li>
+                            <li>職場の座標 <var>(r_1, c_1) </var> についても同様に生成する。</li>
+                            <li>家の座標 <var> (r_0, c_0)</var> と職場の座標 <var>(r_1, c_1)</var> のマンハッタン距離が <var>4</var>  以下である場合は、ステップ1からやり直す。</li>
+                        </ol>
+                    </p>
+                    <h4><var>K</var> の生成</h4>
+                    <p>
+                        <var>M</var> 人について、家と職場の座標のマンハッタン距離の最小値を <var>d</var> とする。<var>K = \mathrm{rand}(\mathrm{max}(10, d) \times 100, 2 \times N \times 100) + 10000</var> で生成する。
+                    </p>
+            </details>
+        </section>
+    </div>
+    <div class="part">
+        <section>
+            <h3>ツール(入力ジェネレータ・ビジュアライザ)</h3>
+            <ul>
+                <li><a href="https://img.atcoder.jp/ahc043/de43f43a9c.html">Web版</a>: ローカル版より高機能でアニメーション表示が可能です。</li>
+                <li><a href="https://img.atcoder.jp/ahc043/de43f43a9c.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。
+                    <ul><li><a href="https://img.atcoder.jp/ahc043/de43f43a9c_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li></ul>
+                </li>
+            </ul>
+            <p>
+                <font color="red"><strong>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</strong></font>
+            </p>
+            <p>
+                解答プログラムは、<code>#</code> から始まるコメント行を出力に含めてもかまいません。
+                Web版ビジュアライザを使用すると、コメント行を対応するタイミングで表示できるため、デバッグや考察等に役立てることができます。
+                ジャッジプログラムはコメント行を全て無視するため、コメント行を出力するプログラムをそのまま提出可能です。
+            </p>
+        </section>
+    </div>
+    <div class="part">
+        <section>
+            <h3>サンプルプログラム</h3>
+            <details>
+                <summary>Pythonによるサンプル実装</summary>
+<pre class="prettyprint linenums">
+import sys
+
+Pos = tuple[int, int]
+EMPTY = -1
+DO_NOTHING = -1
+STATION = 0
+RAIL_HORIZONTAL = 1
+RAIL_VERTICAL = 2
+RAIL_LEFT_DOWN = 3
+RAIL_LEFT_UP = 4
+RAIL_RIGHT_UP = 5
+RAIL_RIGHT_DOWN = 6
+COST_STATION = 5000
+COST_RAIL = 100
+
+
+class UnionFind:
+    def __init__(self, n: int):
+        self.n = n
+        self.parents = [-1 for _ in range(n * n)]
+
+    def _find_root(self, idx: int) -> int:
+        if self.parents[idx] < 0:
+            return idx
+        self.parents[idx] = self._find_root(self.parents[idx])
+        return self.parents[idx]
+
+    def is_same(self, p: Pos, q: Pos) -> bool:
+        p_idx = p[0] * self.n + p[1]
+        q_idx = q[0] * self.n + q[1]
+        return self._find_root(p_idx) == self._find_root(q_idx)
+
+    def unite(self, p: Pos, q: Pos) -> None:
+        p_idx = p[0] * self.n + p[1]
+        q_idx = q[0] * self.n + q[1]
+        p_root = self._find_root(p_idx)
+        q_root = self._find_root(q_idx)
+        if p_root != q_root:
+            p_size = -self.parents[p_root]
+            q_size = -self.parents[q_root]
+            if p_size > q_size:
+                p_root, q_root = q_root, p_root
+            self.parents[q_root] += self.parents[p_root]
+            self.parents[p_root] = q_root
+
+
+def distance(a: Pos, b: Pos) -> int:
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+
+class Action:
+    def __init__(self, type: int, pos: Pos):
+        self.type = type
+        self.pos = pos
+
+    def __str__(self):
+        if self.type == DO_NOTHING:
+            return "-1"
+        else:
+            return f"{self.type} {self.pos[0]} {self.pos[1]}"
+
+
+class Result:
+    def __init__(self, actions: list[Action], score: int):
+        self.actions = actions
+        self.score = score
+
+    def __str__(self):
+        return "\n".join(map(str, self.actions))
+
+
+class Field:
+    def __init__(self, N: int):
+        self.N = N
+        self.rail = [[EMPTY] * N for _ in range(N)]
+        self.uf = UnionFind(N)
+
+    def build(self, type: int, r: int, c: int) -> None:
+        assert self.rail[r][c] != STATION
+        if 1 <= type <= 6:
+            assert self.rail[r][c] == EMPTY
+        self.rail[r][c] = type
+
+        # 隣接する区画と接続
+        # 上
+        if type in (STATION, RAIL_VERTICAL, RAIL_LEFT_UP, RAIL_RIGHT_UP):
+            if r > 0 and self.rail[r - 1][c] in (STATION, RAIL_VERTICAL, RAIL_LEFT_DOWN, RAIL_RIGHT_DOWN):
+                self.uf.unite((r, c), (r - 1, c))
+        # 下
+        if type in (STATION, RAIL_VERTICAL, RAIL_LEFT_DOWN, RAIL_RIGHT_DOWN):
+            if r < self.N - 1 and self.rail[r + 1][c] in (STATION, RAIL_VERTICAL, RAIL_LEFT_UP, RAIL_RIGHT_UP):
+                self.uf.unite((r, c), (r + 1, c))
+        # 左
+        if type in (STATION, RAIL_HORIZONTAL, RAIL_LEFT_DOWN, RAIL_LEFT_UP):
+            if c > 0 and self.rail[r][c - 1] in (STATION, RAIL_HORIZONTAL, RAIL_RIGHT_DOWN, RAIL_RIGHT_UP):
+                self.uf.unite((r, c), (r, c - 1))
+        # 右
+        if type in (STATION, RAIL_HORIZONTAL, RAIL_RIGHT_DOWN, RAIL_RIGHT_UP):
+            if c < self.N - 1 and self.rail[r][c + 1] in (STATION, RAIL_HORIZONTAL, RAIL_LEFT_DOWN, RAIL_LEFT_UP):
+                self.uf.unite((r, c), (r, c + 1))
+
+    def is_connected(self, s: Pos, t: Pos) -> bool:
+        assert distance(s, t) > 4  # 前提条件
+        stations0 = self.collect_stations(s)
+        stations1 = self.collect_stations(t)
+        for station0 in stations0:
+            for station1 in stations1:
+                if self.uf.is_same(station0, station1):
+                    return True
+        return False
+
+    def collect_stations(self, pos: Pos) -> list[Pos]:
+        stations = []
+        for dr in range(-2, 3):
+            for dc in range(-2, 3):
+                if abs(dr) + abs(dc) > 2:
+                    continue
+                r = pos[0] + dr
+                c = pos[1] + dc
+                if 0 <= r < self.N and 0 <= c < self.N and self.rail[r][c] == STATION:
+                    stations.append((r, c))
+        return stations
+
+
+class Solver:
+    def __init__(self, N: int, M: int, K: int, T: int, home: list[Pos], workplace: list[Pos]):
+        self.N = N
+        self.M = M
+        self.K = K
+        self.T = T
+        self.home = home
+        self.workplace = workplace
+        self.field = Field(N)
+        self.money = K
+        self.actions = []
+
+    def calc_income(self) -> int:
+        income = 0
+        for i in range(self.M):
+            if self.field.is_connected(self.home[i], self.workplace[i]):
+                income += distance(self.home[i], self.workplace[i])
+        return income
+
+    def build_rail(self, type: int, r: int, c: int) -> None:
+        self.field.build(type, r, c)
+        self.money -= COST_RAIL
+        self.actions.append(Action(type, (r, c)))
+
+    def build_station(self, r: int, c: int) -> None:
+        self.field.build(STATION, r, c)
+        self.money -= COST_STATION
+        self.actions.append(Action(STATION, (r, c)))
+
+    def build_nothing(self) -> None:
+        self.actions.append(Action(DO_NOTHING, (0, 0)))
+
+    def solve(self) -> Result:
+        # 接続する人を見つける
+        rail_count = (self.K - COST_STATION * 2) // COST_RAIL
+        person_idx = 0
+        while person_idx < self.M:
+            if distance(self.home[person_idx], self.workplace[person_idx]) - 1 <= rail_count:
+                break
+            person_idx += 1
+        assert person_idx != self.M
+
+        # 駅の配置
+        self.build_station(*self.home[person_idx])
+        self.build_station(*self.workplace[person_idx])
+
+        # 線路を配置して駅を接続する
+        r0, c0 = self.home[person_idx]
+        r1, c1 = self.workplace[person_idx]
+        # r0 -> r1
+        if r0 < r1:
+            for r in range(r0 + 1, r1):
+                self.build_rail(RAIL_VERTICAL, r, c0)
+            if c0 < c1:
+                self.build_rail(RAIL_RIGHT_UP, r1, c0)
+            elif c0 > c1:
+                self.build_rail(RAIL_LEFT_UP, r1, c0)
+        elif r0 > r1:
+            for r in range(r0 - 1, r1, -1):
+                self.build_rail(RAIL_VERTICAL, r, c0)
+            if c0 < c1:
+                self.build_rail(RAIL_RIGHT_DOWN, r1, c0)
+            elif c0 > c1:
+                self.build_rail(RAIL_LEFT_DOWN, r1, c0)
+        # c0 -> c1
+        if c0 < c1:
+            for c in range(c0 + 1, c1):
+                self.build_rail(RAIL_HORIZONTAL, r1, c)
+        elif c0 > c1:
+            for c in range(c0 - 1, c1, -1):
+                self.build_rail(RAIL_HORIZONTAL, r1, c)
+
+        income = self.calc_income()
+        self.money += income
+
+        # あとは待機
+        while len(self.actions) < self.T:
+            self.build_nothing()
+            self.money += income
+
+        return Result(self.actions, self.money)
+
+
+def main():
+    N, M, K, T = map(int, input().split())
+    home = []
+    workplace = []
+    for _ in range(M):
+        r0, c0, r1, c1 = map(int, input().split())
+        home.append((r0, c0))
+        workplace.append((r1, c1))
+
+    solver = Solver(N, M, K, T, home, workplace)
+    result = solver.solve()
+    print(result)
+    print(f"score={result.score}", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()
+</pre>
+            </details>
+            <p>以下の処理を実装しています。</p>
+            <ol>
+                <li>人 <var>0</var>, 人 <var>1</var>, <var>\ldots</var> と順に見て、家と職場の位置に駅を配置して駅の間を最短距離で線路で接続することが初期資金で可能であるような最初の人を見つける</li>
+                <li>見つけた人の家と職場の位置に駅を配置し、家から職場までを接続する線路を配置する</li>
+                <li>その後は <var>T</var> ターン目まで待機を行う</li>
+            </ol>
+            <p>資金のシミュレーションを行うコードを含んでいます。参考にしてください。</p>
+        </section>
+    </div>
+    </span>
+
+
+        <span class="lang-en">
+            <div class="part">
+                <section>
+                <h3>Story</h3>
+                <p>Nihonbashi Simulator is a turn-based simulation game where you manage railway company X in the fictional country R. As a big fan of this game, your goal is to make the company highly profitable. By appropriately constructing rails and stations, you will assist the people living in country R in their commuting while developing X into the best railway company!</p>
+                <h3>Problem Statement</h3>
+                <p>
+                    Country R is composed of sections arranged in an <var>N \times N</var> grid. The section in the <var>i</var>-th row from the top <var>(0 \le i < N)</var>, and the <var>j</var>-th column from the left <var>(0 \le j < N)</var> is denoted as <var>(i,j)</var>.
+                    Each section can be either empty, rail, or station:
+                    <ul>
+                        <li>Empty
+                            <ul>
+                                <li>Does not connect to other sections.</li>
+                                <li>Can be changed to a station or rail by paying a cost.</li>
+                            </ul>
+                        </li>
+                        <li>Rail
+                            <ul>
+                                <li>Connects to a maximum of two adjacent non-empty sections on the up, down, left, and right. Rails are of six types, numbered as shown in the diagram below, depending on their connections.</li>
+                                <li>Can be changed to a station by paying a cost.</li>
+                            </ul>
+                        </li>
+                        <li>Station
+                        <ul>
+                            <li>Connects to a maximum of four adjacent non-empty sections on the up, down, left, and right.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <figure style="text-align: center; margin: 2em auto;">
+                        <svg height="150" id="vis" viewBox="-12 -12 429 159" width="500" style="display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="white" height="159" width="429" x="-12" y="-12"></rect>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="0" y2="0"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="0" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="67.5" y2="67.5"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="67.5" x2="67.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="0" x2="405" y1="135" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="135" x2="135" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="202.5" x2="202.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="270" x2="270" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="337.5" x2="337.5" y1="0" y2="135"></line>
+                            <line stroke="lightgray" stroke-width="2" x1="405" x2="405" y1="0" y2="135"></line>
+                            <text font-size="50" text-anchor="middle" x="33.75" y="124">
+                            1
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="101.25" y="124">
+                            2
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="168.75" y="124">
+                            3
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="236.25" y="124">
+                            4
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="303.75" y="124">
+                            5
+                            </text>
+                            <text font-size="50" text-anchor="middle" x="371.25" y="124">
+                            6
+                            </text>
+                            <defs>
+                            <g id="rail1" stroke-width="4.5">
+                                <line x1="27" x2="27" y1="0" y2="67.5"></line>
+                                <line x1="40.5" x2="40.5" y1="0" y2="67.5"></line>
+                                <line x1="27" x2="40.5" y1="6.75" y2="6.75"></line>
+                                <line x1="27" x2="40.5" y1="20.25" y2="20.25"></line>
+                                <line x1="27" x2="40.5" y1="33.75" y2="33.75"></line>
+                                <line x1="27" x2="40.5" y1="47.25" y2="47.25"></line>
+                                <line x1="27" x2="40.5" y1="60.75" y2="60.75"></line>
+                            </g>
+                            <g fill="none" id="rail2" stroke-width="4.5">
+                                <path d="M27,0 A27,27 0 0,1 0,27"></path>
+                                <path d="M40.5,0 A40.5,40.5 0 0,1 0,40.5"></path>
+                                <line x1="27" x2="40.5" y1="4.5" y2="6.75"></line>
+                                <line x1="24.75" x2="36" y1="11.25" y2="18"></line>
+                                <line x1="18" x2="29.25" y1="18" y2="29.25"></line>
+                                <line x1="11.25" x2="18" y1="24.75" y2="36"></line>
+                                <line x1="4.5" x2="6.75" y1="27" y2="40.5"></line>
+                            </g>
+                            </defs>
+                            <use href="#rail1" stroke="silver" transform="rotate(90,33.75,33.75)" x="0" y="0"></use>
+                            <use href="#rail1" stroke="silver" transform="rotate(0,0,0)" x="67.5" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(270,168.75,33.75)" x="135" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(0,236.25,33.75)" x="202.5" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(90,303.75,33.75)" x="270" y="0"></use>
+                            <use href="#rail2" stroke="silver" transform="rotate(180,371.25,33.75)" x="337.5" y="0"></use>
+                        </svg>
+                        <figurecaption>Types of rails</figurecaption>
+                    </figure>
+                </p>
+
+                <p>There are <var>M</var> people living in country R. The home of person <var>c</var> is located at section <var>(i_{c,s}, j_{c,s})</var>, and workplace is at section <var>(i_{c,t}, j_{c,t})</var>, between which he/she commutes.
+                <p>At the start of the game, railway company X has money of <var>K</var>, and all sections are empty. The game will proceed for <var>T</var> turns.</p>
+
+                <h3>How the game progresses</h3>
+                <p>Each turn consists of a construction phase followed by a collection phase.</p>
+                <h4>Construction phase</h4>
+                <p>During the construction phase, one of the following actions is performed: placing a rail, placing a station, or waiting. Actions that would result in money going below zero are not allowed.
+                The check for whether money is below zero is performed before the collection phase.</p>
+                <ul>
+                    <li>Placing a rail: Select one empty section and change it to one of the six types of rails. Money decreases by 100.</li>
+                    <li>Placing a station: Select one empty or rail section and change it to a station. Money decreases by 5000.</li>
+                    <li>Waiting: The state of the sections and the money do not change.</li>
+                </ul>
+                <h4>Collection phase</h4>
+                <p>The people living in country R commute simultaneously. Person <var>c</var> will use train and pay a fare to railway company X only if there exist sections <var>(i_p, j_p)</var> and <var>(i_q, j_q)</var> that satisfy the following conditions:
+                <p>
+                    <ul>
+                        <li>Sections <var>(i_p, j_p), (i_q, j_q)</var> are stations.</li>
+                        <li>It is possible to reach section <var>(i_q, j_q)</var> from section <var>(i_p, j_p)</var> via zero or more connected station or rail sections.</li>
+                        <li> <var>| i_{c,s} - i_p| + | j_{c,s} - j_p| \leq 2</var> </li>
+                        <li> <var>| i_{c,t} - i_q| + | j_{c,t} - j_q| \leq 2</var> </li>
+                    </ul>
+                </p>
+                <p>When person <var>c</var> uses the train, railway company X's money increases by <var>|i_{c,s} - i_{c,t}| + |j_{c,s} - j_{c,t}|</var>.</p>
+                <br>
+                <p>Please determine the actions to maximize the money at the end of turn <var>T</var>.</p>
+                </section>
+            </div>
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>Scoring</h3>
+                    <p>For each test case, the absolute score is obtained as the value of the money at the end of <var>T</var> turns, and we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{YOUR}}{\mathrm{MAX}})</var>, where YOUR is your absolute score and MAX is the maximum absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.
+                       In test cases where MAX is <var>0</var>, the relative score for all participants who received <span class="label label-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Accepted">AC</span> will be <var>10^9</var>.
+                    </p>
+                    <p>
+                        If the following invalid outputs are produced, it will be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>。
+                        <ul>
+                            <li>Placing a rail into a station or rail section</li>
+                            <li>Placing a station into a station section</li>
+                            <li>An action that results in money being less than 0</li>
+                            <li>Invalid action with incorrect rail types or section position</li>
+                            <li>The number of actions output is not <var>T</var></li>
+                        </ul>
+                    </p>
+                    <p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+                    In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MAX calculation for those test cases.</p>
+                    <p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+                    Be careful not to make a mistake in the final submission.</p>
+                    <h4>Number of test cases</h4>
+                    <ul>
+                        <li>
+                            Provisional test: 50
+                        </li>
+                        <li>
+                            System test: 2000
+                            <ul>
+                                <li>We will publish <a href="https://img.atcoder.jp/ahc043/seeds.txt">seeds.txt</a> (sha256=<code>ed5b3f922dc3633bade3f70cc6f1dd1bb3087dba36ce26ce9d4888ce2ec7a247</code>) after the contest is over.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>About Relative Evaluation System</h4>
+                    <p>
+                        In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+                        Only the last submissions are used to calculate the MAX for each test case when calculating the relative scores.
+                    </p>
+                    <p>
+                        The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+                        On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+                        In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+                        If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.
+                    </p>
+                    <h4>About execution time</h4>
+                    <p>
+                        Execution time may vary slightly from run to run.
+                        In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+                        For these reasons, submissions that are very close to the time limit may result in <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span> in the system test.
+                        Please measure the execution time in your program to terminate the process, or make sure to have enough time margin for the execution.
+                    </p>
+                </section>
+            </div>
+            <hr>
+
+            <div class="io-style">
+                <div class="part">
+                    <section>
+                        <h3>Input</h3>
+                        <p>Input will be provided from Standard Input in the following format.</p>
+<pre>\(
+N ~ M ~ K ~ T\\
+i_{0, s} ~ j_{0, s} ~ i_{0, t} ~ j_{0, t} \\
+i_{1, s} ~ j_{1, s} ~ i_{1, t} ~ j_{1, t} \\
+\vdots \\
+i_{M-1, s} ~ j_{M-1, s} ~ i_{M-1, t} ~ j_{M-1, t}
+\)
+</pre>
+                        <ul>
+                            <li>On the first line, there are four integers <var>N,M,K,T</var> separated by spaces.
+                                <ul>
+                                    <li> <var>N</var> represents the number of rows and columns in country R and satisfies <var>N = 50</var>.</li>
+                                    <li> <var>M</var> represents the number of people in country R and satisfies <var>50 \le M \le 1600</var>.</li>
+                                    <li> <var>K</var> represents the initial money of railway company X and satisfies <var>11000 \leq K \leq 20000</var>.</li>
+                                    <li> <var>T</var> represents the number of turns in the game and satisfies <var>T = 800</var>.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                The following <var>M</var> lines provide information about the commuting of people living in country R.
+                                Each line contains four space-separated integers, where the home of person <var>c</var> is at section <var>(i_{c,s}, j_{c,s})</var> and the workplace is at section <var>(i_{c, t}, j_{c,t} )</var>.
+                                The following conditions are satisfied: <var>0 \leq i_{c, s}, i_{c, t} \lt N, 0 \leq j_{c, s}, j_{c, t} \lt N, | i_{c,s} - i_{c,t} | + | j_{c,s} - j_{c,t} | \gt 4 (0 \leq c \lt M)</var>.
+                            </li>
+                        </ul>
+                        <h3>Output</h3>
+                        <p>Output <var>T</var> lines. For the <var>t</var>-th row, output the action taken during the <var>t</var>-th construction phase in the following format:</p>
+                        <ul>
+                            <li>
+                                When placing a rail
+                                <br>
+                                If you are constructing a rail of type <var>p</var> at section <var>(i, j)</var>, output <var>p, i, j</var> separated by spaces.
+                                <br>
+                                The types of rails are numbered according to the diagram provided in the problem statement.
+                            </li>
+                            <li>
+                                When placing a station
+                                <br>
+                                If you are constructing a station at section <var>(i, j)</var>, output <var>0, i, j</var> separated by spaces.
+                            </li>
+                            <li>
+                                When waiting
+                                <br>
+                                Output <code>-1</code>.
+                            </li>
+                        </ul>
+                        <p><a href="https://img.atcoder.jp/ahc043/de43f43a9c.html?lang=en&amp;output=sample">show example</a></p>
+                    </section>
+                </div>
+            </div>
+    
+            <div class="part">
+                <section>
+                    <h3>Input Generation</h3>
+                    <details>
+                        <summary>Details</summary>
+                            <p>
+                                Let <var>\mathrm{rand}(L, U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive,
+                                and <var>\mathrm{rand\_double}(L, U)</var> be a function that generates a uniform random real number greater than or equal to <var>L</var> and less than <var>U</var>, 
+                                and <var>\mathrm{normal}(\mu,\sigma)</var> be a function that generates a random real number from a normal distribution with mean <var>\mu</var> and standard deviation <var>\sigma</var>.
+                            </p>
+                            <h4>Generation of <var>M</var></h4>
+                            <p><var>M = \mathrm{round}(50 \times 2 ^{\mathrm{rand\_double}(0,5)})</var></p>
+                            <h4>Generation of the locations of homes and workplaces</h4>
+                            <p>
+                                Create a Gaussian mixture model to generate home locations as follows:<br>
+                                Generate the number of clusters with <var>\mathrm{rand}(5,15)</var>.
+                                For each cluster <var>i</var>, generate the weight <var>w_i = \mathrm{rand\_double}(0, 1)</var>, the center coordinates <var> (r_i, c_i) =  (\mathrm{rand\_double}(0, N-1), \mathrm{rand\_double}(0, N-1))</var>, and the standard deviation <var>\sigma_i  = \mathrm{rand\_double}(2, 15)</var>.
+                                <br>
+                                Similarly, create a Gaussian mixture model to generate workplace locations.
+                            </p>
+                            <p>
+                                Repeat the following process <var>M</var> times to generate the locations for people's homes and workplaces:
+                            </p>
+                            <p>
+                                <ol>
+                                    <li>Randomly select a cluster <var>i</var> from the Gaussian mixture model for generating home locations with a probability proportional to the weight <var>w_i</var>.</li>
+                                    <li>For the selected <var>i</var>, generate the home location as <var>r_0 = \text{round}(\text{normal}(r_i, \sigma_i)), c_0 =  \text{round}(\text{normal}(c_i, \sigma_i))</var>.</li>
+                                    <li>If the generated location <var>(r_0, c_0)</var> do not satisfy <var>0 \leq r_0 \lt N </var> or <var>0 \leq c_0 \lt N </var>, start over from step 1.</li>
+                                    <li>Similarly, generate the workplace location <var>(r_1, c_1) </var>.</li>
+                                    <li>If the Manhattan distance between the home location <var> (r_0, c_0)</var> and the workplace location <var>(r_1, c_1)</var> is less than or equal to <var>4</var>, start over from step 1.</li>
+                                </ol>
+                            </p>
+                            <h4>Generation of <var>K</var></h4>
+                            <p>
+                                For <var>M</var> people, let the minimum Manhattan distance between their home and workplace locations be <var>d</var>.
+                                <var>K</var> is generated as <var>\mathrm{rand}(\mathrm{max}(10, d) \times 100, 2 \times N \times 100) + 10000</var>.
+                            </p>
+                    </details>
+                </section>
+            </div>
+            <div class="part">
+                <section>
+                    <h3>Tools (Input generator and visualizer)</h3>
+                    <ul>
+                        <li><a href="https://img.atcoder.jp/ahc043/de43f43a9c.html?lang=en">Web version</a>: This is more powerful than the local version providing animations.</li>
+                        <li><a href="https://img.atcoder.jp/ahc043/de43f43a9c.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.
+                            <ul><li><a href="https://img.atcoder.jp/ahc043/de43f43a9c_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li></ul>
+                        </li>
+                    </ul>
+                    <p>
+                        <font color="red"><strong>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</strong></font>
+                    </p>
+                    <p>
+                        Your program may output comment lines starting with <code>#</code>.
+                        The web version of the visualizer displays the comment lines with the corresponding output, which may be useful for debugging and analysis.
+                        Since the judge program ignores all comment lines, you can submit a program that outputs comment lines as is.
+                    </p>
+                </section>
+            </div>
+            <div class="part">
+                <section>
+                    <h3>Sample Solution</h3>
+                    <details>
+                        <summary>Sample implementation in Python</summary>
+<pre class="prettyprint linenums">
+import sys
+
+Pos = tuple[int, int]
+EMPTY = -1
+DO_NOTHING = -1
+STATION = 0
+RAIL_HORIZONTAL = 1
+RAIL_VERTICAL = 2
+RAIL_LEFT_DOWN = 3
+RAIL_LEFT_UP = 4
+RAIL_RIGHT_UP = 5
+RAIL_RIGHT_DOWN = 6
+COST_STATION = 5000
+COST_RAIL = 100
+
+
+class UnionFind:
+    def __init__(self, n: int):
+        self.n = n
+        self.parents = [-1 for _ in range(n * n)]
+
+    def _find_root(self, idx: int) -> int:
+        if self.parents[idx] < 0:
+            return idx
+        self.parents[idx] = self._find_root(self.parents[idx])
+        return self.parents[idx]
+
+    def is_same(self, p: Pos, q: Pos) -> bool:
+        p_idx = p[0] * self.n + p[1]
+        q_idx = q[0] * self.n + q[1]
+        return self._find_root(p_idx) == self._find_root(q_idx)
+
+    def unite(self, p: Pos, q: Pos) -> None:
+        p_idx = p[0] * self.n + p[1]
+        q_idx = q[0] * self.n + q[1]
+        p_root = self._find_root(p_idx)
+        q_root = self._find_root(q_idx)
+        if p_root != q_root:
+            p_size = -self.parents[p_root]
+            q_size = -self.parents[q_root]
+            if p_size > q_size:
+                p_root, q_root = q_root, p_root
+            self.parents[q_root] += self.parents[p_root]
+            self.parents[p_root] = q_root
+
+
+def distance(a: Pos, b: Pos) -> int:
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+
+class Action:
+    def __init__(self, type: int, pos: Pos):
+        self.type = type
+        self.pos = pos
+
+    def __str__(self):
+        if self.type == DO_NOTHING:
+            return "-1"
+        else:
+            return f"{self.type} {self.pos[0]} {self.pos[1]}"
+
+
+class Result:
+    def __init__(self, actions: list[Action], score: int):
+        self.actions = actions
+        self.score = score
+
+    def __str__(self):
+        return "\n".join(map(str, self.actions))
+
+
+class Field:
+    def __init__(self, N: int):
+        self.N = N
+        self.rail = [[EMPTY] * N for _ in range(N)]
+        self.uf = UnionFind(N)
+
+    def build(self, type: int, r: int, c: int) -> None:
+        assert self.rail[r][c] != STATION
+        if 1 <= type <= 6:
+            assert self.rail[r][c] == EMPTY
+        self.rail[r][c] = type
+
+        # connect adjacent cells
+        # top
+        if type in (STATION, RAIL_VERTICAL, RAIL_LEFT_UP, RAIL_RIGHT_UP):
+            if r > 0 and self.rail[r - 1][c] in (STATION, RAIL_VERTICAL, RAIL_LEFT_DOWN, RAIL_RIGHT_DOWN):
+                self.uf.unite((r, c), (r - 1, c))
+        # bottom
+        if type in (STATION, RAIL_VERTICAL, RAIL_LEFT_DOWN, RAIL_RIGHT_DOWN):
+            if r < self.N - 1 and self.rail[r + 1][c] in (STATION, RAIL_VERTICAL, RAIL_LEFT_UP, RAIL_RIGHT_UP):
+                self.uf.unite((r, c), (r + 1, c))
+        # left
+        if type in (STATION, RAIL_HORIZONTAL, RAIL_LEFT_DOWN, RAIL_LEFT_UP):
+            if c > 0 and self.rail[r][c - 1] in (STATION, RAIL_HORIZONTAL, RAIL_RIGHT_DOWN, RAIL_RIGHT_UP):
+                self.uf.unite((r, c), (r, c - 1))
+        # right
+        if type in (STATION, RAIL_HORIZONTAL, RAIL_RIGHT_DOWN, RAIL_RIGHT_UP):
+            if c < self.N - 1 and self.rail[r][c + 1] in (STATION, RAIL_HORIZONTAL, RAIL_LEFT_DOWN, RAIL_LEFT_UP):
+                self.uf.unite((r, c), (r, c + 1))
+
+    def is_connected(self, s: Pos, t: Pos) -> bool:
+        assert distance(s, t) > 4  # precondition
+        stations0 = self.collect_stations(s)
+        stations1 = self.collect_stations(t)
+        for station0 in stations0:
+            for station1 in stations1:
+                if self.uf.is_same(station0, station1):
+                    return True
+        return False
+
+    def collect_stations(self, pos: Pos) -> list[Pos]:
+        stations = []
+        for dr in range(-2, 3):
+            for dc in range(-2, 3):
+                if abs(dr) + abs(dc) > 2:
+                    continue
+                r = pos[0] + dr
+                c = pos[1] + dc
+                if 0 <= r < self.N and 0 <= c < self.N and self.rail[r][c] == STATION:
+                    stations.append((r, c))
+        return stations
+
+
+class Solver:
+    def __init__(self, N: int, M: int, K: int, T: int, home: list[Pos], workplace: list[Pos]):
+        self.N = N
+        self.M = M
+        self.K = K
+        self.T = T
+        self.home = home
+        self.workplace = workplace
+        self.field = Field(N)
+        self.money = K
+        self.actions = []
+
+    def calc_income(self) -> int:
+        income = 0
+        for i in range(self.M):
+            if self.field.is_connected(self.home[i], self.workplace[i]):
+                income += distance(self.home[i], self.workplace[i])
+        return income
+
+    def build_rail(self, type: int, r: int, c: int) -> None:
+        self.field.build(type, r, c)
+        self.money -= COST_RAIL
+        self.actions.append(Action(type, (r, c)))
+
+    def build_station(self, r: int, c: int) -> None:
+        self.field.build(STATION, r, c)
+        self.money -= COST_STATION
+        self.actions.append(Action(STATION, (r, c)))
+
+    def build_nothing(self) -> None:
+        self.actions.append(Action(DO_NOTHING, (0, 0)))
+
+    def solve(self) -> Result:
+        # find a person to connect
+        rail_count = (self.K - COST_STATION * 2) // COST_RAIL
+        person_idx = 0
+        while person_idx < self.M:
+            if distance(self.home[person_idx], self.workplace[person_idx]) - 1 <= rail_count:
+                break
+            person_idx += 1
+        assert person_idx != self.M
+
+        # build stations
+        self.build_station(*self.home[person_idx])
+        self.build_station(*self.workplace[person_idx])
+
+        # connect stations with rails
+        r0, c0 = self.home[person_idx]
+        r1, c1 = self.workplace[person_idx]
+        # r0 -> r1
+        if r0 < r1:
+            for r in range(r0 + 1, r1):
+                self.build_rail(RAIL_VERTICAL, r, c0)
+            if c0 < c1:
+                self.build_rail(RAIL_RIGHT_UP, r1, c0)
+            elif c0 > c1:
+                self.build_rail(RAIL_LEFT_UP, r1, c0)
+        elif r0 > r1:
+            for r in range(r0 - 1, r1, -1):
+                self.build_rail(RAIL_VERTICAL, r, c0)
+            if c0 < c1:
+                self.build_rail(RAIL_RIGHT_DOWN, r1, c0)
+            elif c0 > c1:
+                self.build_rail(RAIL_LEFT_DOWN, r1, c0)
+        # c0 -> c1
+        if c0 < c1:
+            for c in range(c0 + 1, c1):
+                self.build_rail(RAIL_HORIZONTAL, r1, c)
+        elif c0 > c1:
+            for c in range(c0 - 1, c1, -1):
+                self.build_rail(RAIL_HORIZONTAL, r1, c)
+
+        income = self.calc_income()
+        self.money += income
+
+        # do nothing for the rest of the time
+        while len(self.actions) < self.T:
+            self.build_nothing()
+            self.money += income
+
+        return Result(self.actions, self.money)
+
+
+def main():
+    N, M, K, T = map(int, input().split())
+    home = []
+    workplace = []
+    for _ in range(M):
+        r0, c0, r1, c1 = map(int, input().split())
+        home.append((r0, c0))
+        workplace.append((r1, c1))
+
+    solver = Solver(N, M, K, T, home, workplace)
+    result = solver.solve()
+    print(result)
+    print(f"score={result.score}", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()
+</pre>
+                    </details>
+                    <p>The following processes are implemented:</p>
+                    <ol>
+                        <li>Examine person <var>0</var>, <var>1</var>, <var>\ldots</var> in order to find the first person for whom it is possible to place stations at their home and workplace locations and connect them with rails at the initial money.</li>
+                        <li>Place stations at the identified person's home and workplace locations, and place rails to connect from home to workplace.</li>
+                        <li>After that, wait until turn <var>T</var>.</li>
+                    </ol>
+                    <p>The code includes a simulation of the changes in money. You may use it as a reference when creating your solution.</p>
+                </section>
+            </div>
+        </span>
+    </span>
+</div>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc043/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc043_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc043/tasks/ahc043_a?lang=ja" data-a2a-title="A - Railway Company">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc043/rules">ルール</a></li>
+					<li><a href="/contests/ahc043/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

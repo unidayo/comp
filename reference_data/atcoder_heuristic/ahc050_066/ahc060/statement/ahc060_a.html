@@ -1,0 +1,983 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Ice Cream Collection</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Ice Cream Collection" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc060/tasks/ahc060_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Ice Cream Collection" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc060";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2026-02-01T19:00:00+09:00");
+			var endTime = moment("2026-02-01T23:00:00+09:00");
+		</script>
+		<style>#contest-statement section ul li {
+    margin-top: -1ex;
+    margin-bottom: 1.5ex;
+}
+
+#contest-statement section li > ul {
+    margin-top: 1.5ex;
+}
+
+#contest-statement table td {
+    vertical-align: middle;
+}
+
+table.centering {
+    table-layout: fixed;
+}
+
+table.centering th, table.centering td {
+    text-align: center;
+}
+
+span.lang h4 {
+    margin-top: 2ex;
+}
+
+p.img {
+    text-align: center;
+}
+</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2026冬（AtCoder Heuristic Contest 060）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2026冬（AtCoder Heuristic Contest 060）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc060">RECRUIT 日本橋ハーフマラソン 2026冬（AtCoder Heuristic Contest 060）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc060/tasks/ahc060_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc060/tasks/ahc060_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc060%2Ftasks%2Fahc060_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260201T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-02-01 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260201T2300&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-02-01 23:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc060"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc060/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc060/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc060/submit?taskScreenName=ahc060_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc060/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc060/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc060/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc060/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc060/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc060/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc060/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Ice Cream Collection
+			<a class="btn btn-default btn-sm" href="/contests/ahc060/tasks/ahc060_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>国中にアイスクリームの木が生えている Nihonbashi 国では、伝統のバニラと情熱のストロベリーの 2 つの味が至高とされる。
+この国ではアイスの量よりも味の組み合わせの多様性が重視されており、いかにアイスを積み重ねるかが日々探求されている。</p>
+<p>Nihonbashi 国にはアイスクリームの木とアイスクリームショップがそれぞれ複数存在し、道でつながったグラフ構造を構成している。
+あなたはアイスクリーム職人として、このグラフ上を移動しながら、アイスクリームの木でアイスを収穫してコーンの上に積み上げていき、作成したアイスをアイスクリームショップに納品している。</p>
+<p>各アイスクリームショップの満足度は、その店に並ぶ在庫の多様性、すなわち何種類の異なる組み合わせのアイスが提供されているかによって決まる。
+現在、すべてのアイスクリームショップの在庫は空である。
+あなたの使命は、Nihonbashi 国全体のアイスクリームショップの満足度の総和を最大化し、Nihonbashi 国に活気を取り戻すことである。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N</var> 頂点 <var>M</var> 辺の連結な無向グラフがあり、頂点は <var>0, 1, \ldots, N-1</var> と番号づけられている。 <var>i</var> 本目の辺は頂点 <var>A_i</var> と頂点 <var>B_i</var> を結ぶ。</p>
+<p>各頂点は以下の2種類のいずれかである。</p>
+<ul>
+<li>アイスクリームショップ：頂点 <var>0, 1, \ldots, K-1</var> の計 <var>K</var> 個。</li>
+<li>アイスクリームの木：頂点 <var>K, K+1, \ldots, N-1</var> の計 <var>N-K</var> 個。</li>
+</ul>
+<p>アイスクリームの木には、収穫できるアイスの種類が設定されており、バニラ味のアイス（ White の <code>W</code> で表す）または、ストロベリー味のアイス（ Red の <code>R</code> で表す）を収穫できる。初期状態では、すべてのアイスクリームの木から、バニラ味のアイス（ <code>W</code> ）を収穫できる。</p>
+<p>現在あなたは頂点 <var>0</var>（アイスクリームショップ）におり、手元には空のコーンを表す空文字列を持っている。あなたは以下のいずれかの行動を行うことを1ステップとし、最大で <var>T</var> ステップ繰り返す。</p>
+<ul>
+<li>行動1: 現在位置の頂点から直接辺で繋がっている頂点の一つに移動し、移動先の頂点に応じてアイスの収穫または納品のどちらか1つを行う。移動先の頂点を <var>v</var> とする。<ul>
+<li>頂点 <var>v</var> がアイスクリームの木である場合：その木で現在収穫できるアイス（ <code>W</code> または <code>R</code> ）を収穫し、手元のコーンの末尾に追加する。</li>
+<li>頂点 <var>v</var> がアイスクリームショップである場合：現在コーンに積み上げられているアイスの味の並びを表す文字列を、そのショップ <var>v</var> の在庫集合 <var>S_v</var> に追加する。その後、手元のコーンは空にする。コーンが空の状態で納品してもよい。その場合、空文字列が在庫集合に追加される。</li>
+<li><strong>制限事項：2回目以降の行動1では、行動1を前回行った時に移動元だった頂点には戻れない</strong>。 具体的には、行動1で頂点 <var>a</var> から頂点 <var>b</var> へ移動したとして、（その間に行動2を行っていたとしても）次の行動1で頂点 <var>a</var> を移動先として指定することはできない。</li>
+</ul>
+</li>
+<li>行動2: この行動は、現在位置がバニラ味（ <code>W</code> ）のアイスクリームの木である場合にのみ行える。現在位置のアイスクリームの木にストロベリーの果汁を混ぜ込むことで、以降その木から収穫できるアイスの味をストロベリー味（ <code>R</code> ）に変更する。一度ストロベリー味になった木を、元のバニラ味に戻すことはできない。</li>
+</ul>
+<p>入力生成方法に記載があるようにグラフは2-辺連結であるため、行動1は常に可能である。</p>
+<p>各アイスクリームショップ <var>v</var> について、アイスクリームの在庫集合 <var>S_v</var> のサイズをできるだけ大きくせよ。<br />
+なお、すでにそのアイスクリームショップに納品された文字列と同じものを納品しても、集合のサイズは変化しないことに注意せよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>各アイスクリームショップ <var>i</var> <var>(0 \le i \lt K)</var> における在庫集合 <var>S_i</var> のサイズの合計 <var>\sum_{i=0}^{K-1} |S_i|</var> が得点として得られる。</p>
+<p>以下に挙げる不正な出力をした場合、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="不正解">WA</span>と判定される。</p>
+<ul>
+<li>現在位置の頂点がバニラ味のアイスクリームの木でない場合に、行動2を行う。</li>
+<li>行動1で指定した頂点が現在位置の頂点から直接辺で繋がっていない。</li>
+<li>2回目以降の行動1で、行動1を前回行った時の移動元だった頂点に移動する。</li>
+<li>行動回数が <var>T</var> 回を超える。</li>
+</ul>
+<p>合計で 150 個のテストケースがあり、各テストケースの得点の合計が提出の得点となる。
+一つ以上のテストケースで不正な出力や制限時間超過をした場合、提出全体の判定が <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="不正解">WA</span> や <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。同じ得点を複数の参加者が得た場合、提出時刻に関わらず同じ順位となる。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var> <var>K</var> <var>T</var>
+<var>A_{0}</var> <var>B_{0}</var>
+<var>\vdots</var>
+<var>A_{M-1}</var> <var>B_{M-1}</var>
+<var>X_{0}</var> <var>Y_{0}</var>
+<var>\vdots</var>
+<var>X_{N-1}</var> <var>Y_{N-1}</var>
+</pre>
+<ul>
+<li>1行目には、4つの整数 <var>N</var>, <var>M</var>, <var>K</var>, <var>T</var> が与えられる。<var>N</var>, <var>M</var>, <var>K</var>, <var>T</var> はそれぞれ、グラフの頂点数、辺数、アイスクリームショップの数、行動の最大回数を表し、 <var>N = 100</var>, <var>K = 10</var>, <var>T = 10000</var> を満たす。<var>M</var> のとる値については、入力生成方法を参照せよ。</li>
+<li>続く <var>M</var> 行には、辺の情報が与えられる。辺 <var>i</var> は頂点 <var>A_i</var> と頂点 <var>B_i</var> を双方向に結ぶ。</li>
+<li>続く <var>N</var> 行は、入力生成時に使用された頂点 <var>i</var> の座標が <var>(X_i, Y_i)</var> として与えられる。座標の値は整数であり、<var>0 \leq X_i, Y_i \leq 300, (X_i, Y_i) \neq (X_j, Y_j)\ (i \neq j)</var> を満たす。不要であれば読み込まなくても構わない。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>以下のフォーマットで <var>T</var> 行以下出力せよ。</p>
+<ul>
+<li>行動1を行う場合<br />
+移動先の頂点番号 <var>v</var> を出力せよ。</li>
+</ul>
+<pre><var>v</var>
+</pre>
+<ul>
+<li>行動2を行う場合<br />
+<code>-1</code> を出力せよ。</li>
+</ul>
+<pre>-1
+</pre>
+<p><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で表す。</p>
+<ol>
+<li>各頂点 <var>i</var> の座標 <var>(X_i, Y_i)</var> を、 <var>X_i = \mathrm{rand}(0, 300)</var>, <var>Y_i = \mathrm{rand}(0, 300)</var> で選ぶ。ただし、既に生成された他の頂点とのユークリッド距離が <var>20</var> 以下となる場合は選び直す。これを <var>N</var> 個繰り返し、頂点集合 <var>V</var> を得る。</li>
+<li>得られた頂点集合 <var>V</var> に対して、<a href="https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%AD%E3%83%8D%E3%83%BC%E5%9B%B3">ドロネー三角形分割</a>を計算し、その三角形分割の辺を <var>E</var> とする。</li>
+<li><var>E</var> の各辺をランダムに並べ替え、順に次の操作を行う：<ul>
+<li>「その辺を取り除いてもグラフ <var>(V, E)</var> が <var>2</var>-辺連結かつ関節点が存在しない」場合、確率 <var>0.7</var> でその辺を <var>E</var> から取り除く。</li>
+</ul>
+</li>
+<li>全ての辺について処理を終えた後の <var>E</var> をグラフの辺集合とする。</li>
+</ol>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p></section>
+</div>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>In the Kingdom of Nihonbashi, there are many "ice cream trees." Two flavors are famous here: Traditional Vanilla and Passionate Strawberry.
+People in this country value the variety of flavor combinations more than the total amount of ice cream.</p>
+<p>The kingdom is a graph with vertices and edges. These vertices represent either ice cream trees or ice cream shops.
+As an ice cream maker, you move around this graph, harvest flavors from trees to stack them on your cone, and deliver the completed ice cream to the shops.</p>
+<p>A shop's satisfaction is determined by the diversity of its inventory — how many different flavor combinations it has.
+Right now, all shops are empty. Your mission is to maximize the total satisfaction of all ice cream shops to make the kingdom lively again.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a connected undirected graph with <var>N</var> vertices and <var>M</var> edges. The vertices are numbered <var>0, 1, \ldots, N-1</var>. The <var>i</var>-th edge connects vertex <var>A_i</var> and vertex <var>B_i</var>.</p>
+<p>Each vertex is one of the following two types:</p>
+<ul>
+<li>Ice Cream Shops: Vertices <var>0, 1, \ldots, K-1</var> (<var>K</var> vertices in total).</li>
+<li>Ice Cream Trees: Vertices <var>K, K+1, \ldots, N-1</var> (<var>N-K</var> vertices in total).</li>
+</ul>
+<p>Each ice cream tree provides a specific flavor: Vanilla (<code>W</code> = White) or Strawberry (<code>R</code> = Red). Initially, all ice cream trees provide Vanilla (<code>W</code>).</p>
+<p>You start at vertex <var>0</var> (an ice cream shop) with an empty cone (represented by an empty string). You can perform up to <var>T</var> steps. In each step, choose one of the following two actions:</p>
+<ul>
+<li>Action 1: Move from your current vertex to an adjacent vertex <var>v</var>. Then, depending on the type of <var>v</var>, either harvest ice cream or make a delivery.<ul>
+<li>If <var>v</var> is an ice cream tree: Harvest the current flavor (<code>W</code> or <code>R</code>) from that tree and add it to the end of your cone's string.</li>
+<li>If <var>v</var> is an ice cream shop: Add the current flavor string on your cone to the shop's inventory set <var>S_v</var>. Then, your cone becomes empty. You may deliver an empty string; in this case, the empty string is added to the inventory set <var>S_v</var>.</li>
+<li><strong>Restriction: You cannot move back to the vertex you just came from in your previous Action 1</strong>. Specifically, if your last Action 1 was moving from vertex <var>a</var> to vertex <var>b</var>, your next Action 1 cannot be moving from <var>b</var> back to <var>a</var> (even if you performed Action 2 in between).</li>
+</ul>
+</li>
+<li>Action 2: This action can only be performed if your current position is a Vanilla (<code>W</code>) ice cream tree. By adding strawberry juice, the flavor harvested from this tree changes to Strawberry (<code>R</code>) for all future harvests. You cannot change a Strawberry tree back to Vanilla.</li>
+</ul>
+<p>As described in the Input Generation, the graph is 2-edge-connected, so Action 1 is always possible.</p>
+<p>Maximize the size of the inventory set <var>S_v</var> for each ice cream shop <var>v</var>.
+Note that delivering a string that is already in <var>S_v</var> does not increase the size of the set.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Your score is the sum of the sizes of the inventory sets <var>S_i</var> across all ice cream shops <var>i</var> (<var>0 \le i \lt K</var>): <var>\sum_{i=0}^{K-1} |S_i|</var> </p>
+<p>If the following invalid outputs are produced, it will be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>.</p>
+<ul>
+<li>You perform Action 2 when your current vertex is not a Vanilla (<code>W</code>) ice cream tree.</li>
+<li>In Action 1, you specify a vertex that is not directly connected to your current vertex by an edge.</li>
+<li>In Action 1 (from the second time onwards), you move to the vertex from which you departed in the previous Action 1.</li>
+<li>The total number of actions exceeds <var>T</var>.</li>
+</ul>
+<p>There are 150 test cases, and the score of a submission is the total score for each test case.
+If your submission produces an illegal output or exceeds the time limit for some test cases, the submission itself will be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span> or <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span>, and the score of the submission will be zero.
+The highest score obtained during the contest will determine the final ranking, and there will be no system test after the contest. If more than one participant gets the same score, they will be ranked in the same place regardless of the submission time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var> <var>K</var> <var>T</var>
+<var>A_{0}</var> <var>B_{0}</var>
+<var>\vdots</var>
+<var>A_{M-1}</var> <var>B_{M-1}</var>
+<var>X_{0}</var> <var>Y_{0}</var>
+<var>\vdots</var>
+<var>X_{N-1}</var> <var>Y_{N-1}</var>
+</pre>
+<ul>
+<li>The first line contains four integers <var>N</var>, <var>M</var>, <var>K</var>, <var>T</var>. These represent the number of vertices, the number of edges, the number of ice cream shops, and the maximum number of actions, respectively. These values satisfy <var>N = 100</var>, <var>K = 10</var>, and <var>T = 10000</var>. For the value of <var>M</var>, please refer to the "Input Generation" section.</li>
+<li>The following <var>M</var> lines provide information about the edges. Edge <var>i</var> bi-directionally connects vertex <var>A_i</var> and vertex <var>B_i</var>.</li>
+<li>The following <var>N</var> lines provide the coordinates <var>(X_i,Y_i)</var> of each vertex <var>i</var> used during input generation. These coordinates are integers satisfying <var>0 \leq X_i, Y_i \leq 300</var> and <var>(X_i, Y_i) \neq (X_j, Y_j)</var> for any <var>i \neq j</var>.  You may skip reading them if you don't need them.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Output <var>T</var> or fewer lines in the following format:</p>
+<ul>
+<li>To perform Action 1: Output the vertex index <var>v</var> of the destination.</li>
+</ul>
+<pre><var>v</var>
+</pre>
+<ul>
+<li>To perform Action 2: Output <code>-1</code>.</li>
+</ul>
+<pre>-1
+</pre>
+<p><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<ol>
+<li>For each vertex <var>i</var>, the coordinates <var>(X_i,Y_i)</var> are chosen as <var>X_i = \mathrm{rand}(0, 300)</var>, <var>Y_i = \mathrm{rand}(0, 300)</var>. If the Euclidean distance to any already generated vertex is <var>20</var> or less, the coordinates are re-selected. This process is repeated <var>N</var> times to obtain the vertex set <var>V</var>.</li>
+<li>Compute the <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">Delaunay Triangulation</a> for the vertex set <var>V</var>, and let the resulting set of edges be <var>E</var>.</li>
+<li>Randomly shuffle the edges of <var>E</var>, and perform the following operation on each edge in order:<ul>
+<li>If removing the edge keeps the graph <var>(V,E)</var> 2-edge-connected and free of articulation points, the edge is removed from <var>E</var> with a probability of <var>0.7</var>.</li>
+</ul>
+</li>
+<li>The set <var>E</var> after processing all edges becomes the edge set of the graph.</li>
+</ol>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.html?lang=en">Web version</a>: This is more powerful than the local version, providing animations.</li>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc060/wX0NuJxV_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p></section>
+</div>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc060/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc060_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc060/tasks/ahc060_a?lang=ja" data-a2a-title="A - Ice Cream Collection">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc060/rules">ルール</a></li>
+					<li><a href="/contests/ahc060/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

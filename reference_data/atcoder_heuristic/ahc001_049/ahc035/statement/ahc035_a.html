@@ -1,0 +1,1398 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Breed Improvement</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Breed Improvement" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc035/tasks/ahc035_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Breed Improvement" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc035";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2024-07-21T15:00:00+09:00");
+			var endTime = moment("2024-07-21T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>ALGO ARTIS プログラミングコンテスト2024 夏（AtCoder Heuristic Contest 035）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>ALGO ARTIS プログラミングコンテスト2024 夏（AtCoder Heuristic Contest 035）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc035">ALGO ARTIS プログラミングコンテスト2024 夏（AtCoder Heuristic Contest 035）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc035/tasks/ahc035_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc035/tasks/ahc035_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc035%2Ftasks%2Fahc035_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20240721T1500&p1=248' target='blank'><time class='fixtime fixtime-full'>2024-07-21 15:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20240721T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2024-07-21 19:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc035"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc035/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc035/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc035/submit?taskScreenName=ahc035_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc035/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc035/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc035/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc035/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc035/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc035/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc035/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Breed Improvement
+			<a class="btn btn-default btn-sm" href="/contests/ahc035/tasks/ahc035_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>AtCoder社は、穀物の品種改良に取り組んでいる。穀物は美味しさ、収穫量、病気への耐性など複数の評価項目を持っており、高橋社長は全ての評価項目に優れた穀物を作り上げたいと考えている。</p>
+<p>グリッド状の畑に穀物の種を植えると、隣り合ったマスに植えられた2つの種同士の各評価項目の値をランダムに受け継いだ新しい種が1年後に収穫できる。種植えと収穫を何度か繰り返して、できるだけ優れた穀物の種を作り上げて欲しい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N\times N</var> マスのグリッドで表される畑がある。畑の一番左上のマスの座標を <var>(0,0)</var> とし、そこから下方向に <var>i</var> マス、右方向に <var>j</var> マス移動した先のマスの座標を <var>(i,j)</var> とする。</p>
+<p>穀物の種が <var>2N(N-1)</var> 個与えられる。評価項目が <var>M</var> 個存在し、種 <var>k</var> には各評価項目の良さを表す非負整数ベクトル <var>\boldsymbol{x_k}=(x_{k,0}, x_{k, 1}, \cdots, x_{k,M-1})</var> （以下、評価項目ベクトルと呼ぶ）が定められており、種 <var>k</var> の価値 <var>V_k</var> は <var>V_k=\sum_{l=0}^{M-1}x_{k,l}</var> で表される。</p>
+<p>以下の操作を <var>T</var> 回繰り返すことで、手持ちの種の価値の最大値 <var>\max (V_0, V_1, \cdots, V_{2N(N-1)-1})</var> をできるだけ大きくせよ。</p>
+<ul>
+<li>畑の <var>N^2</var> 個のマスに1つずつ種を植える。同じ種を複数のマスに植えることはできず、植えなかった <var>2N(N-1)-N^2</var> 個の種は全て破棄される。その後、上下左右に隣接するマスに植えられた種のペア <var>(k, k')</var> について、新たな評価項目ベクトルを持った新しい種が生成される。この評価項目ベクトルの <var>l</var> 番目の要素の値は、もとの種の <var>x_{k,l}</var> および <var>x_{k',l}</var> から等確率でランダムに選ばれる。これによって生成された <var>2N(N-1)</var> 個の種が新たな手持ちの種となる。</li>
+</ul>
+<details>
+<summary>新しい種の生成の例</summary>
+例として、 <var>M=3</var> のときに種 <var>0</var> をマス <var>(0, 0)</var> に、種 <var>1</var> をマス <var>(0, 1)</var> に植えることを考える。種 <var>0</var> の評価項目ベクトルが <var>\boldsymbol{x_0}=(1, 2, 3)</var> 、種 <var>1</var> の評価項目ベクトルが <var>\boldsymbol{x_1}=(4, 5, 6)</var> であったとすると、新しい種の評価項目ベクトルとしてありうるものは以下の <var>8</var> 個である。
+
+<ul>
+<li><var>(1, 2, 3)</var></li>
+<li><var>(1, 2, 6)</var></li>
+<li><var>(1, 5, 3)</var></li>
+<li><var>(1, 5, 6)</var></li>
+<li><var>(4, 2, 3)</var></li>
+<li><var>(4, 2, 6)</var></li>
+<li><var>(4, 5, 3)</var></li>
+<li><var>(4, 5, 6)</var></li>
+</ul>
+
+これら <var>8</var> 個の評価項目ベクトルから等確率でランダムに <var>1</var> 個が選ばれ、新しい種の評価項目ベクトルとなる。
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>最初に与えられる <var>2N(N-1)</var> 個の種に対して、評価項目ベクトルの <var>l</var> 番目の要素の最大値を <var>X_l=\max(x_{0,l}, x_{1, l}, \cdots, x_{2N(N-1)-1, l})</var> とする。 <var>T</var> 回の操作終了後の手持ちの種の価値 <var>V_i</var> の最大値を <var>W=\max(V_0, V_1, \cdots, V_{2N(N-1)-1})</var> としたとき、 <var>\mathrm{round}(10^6\times W/\sum_{l=0}^{M-1}{X_l})</var> 点が得られる。</p>
+<p>テストケースは全部で 300 個あり、各テストケースの得点の合計が提出の得点となる。
+一つ以上のテストケースで不正な出力や制限時間超過をした場合、提出全体の判定が<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span>や<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。 同じ得点を複数の参加者が得た場合、提出時刻に関わらず同じ順位となる。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入出力</h3><p><strong>※この問題はインタラクティブ形式である。以下の内容を読み、ジャッジプログラムとのやり取りを行うこと。</strong></p>
+<p>まずはじめに、標準入力からグリッドの大きさ <var>N</var>、評価項目の数 <var>M</var>、操作回数 <var>T</var>、評価項目ベクトル <var>\boldsymbol{x_k}=(x_{k,0}, x_{k,1}, \cdots, x_{k,M-1})</var> が以下の形式で与えられる。</p>
+<pre><var>N</var> <var>M</var> <var>T</var>
+<var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+</pre>
+<p>ここで、入力は以下の制約を満たす。</p>
+<ul>
+<li><var>N=6</var></li>
+<li><var>M=15</var></li>
+<li><var>T=10</var></li>
+<li><var>0\le x_{k,l}\le 100</var></li>
+<li>入力は全て整数</li>
+</ul>
+<p>上記の情報を読み込んだら、以下の処理を <var>T</var> ターン繰り返す。</p>
+<p>各ターンでは、まず各マスにどの種を植えるかについて以下の形式で標準出力へ出力せよ。</p>
+<pre><var>A_{0,0}</var> <var>\cdots</var> <var>A_{0,N-1}</var>
+<var>\vdots</var>
+<var>A_{N-1,0}</var> <var>\cdots</var> <var>A_{N-1,N-1}</var>
+</pre>
+<p>ここで、 <var>A_{i,j}</var> はマス <var>(i,j)</var> に植える種の番号を表し、 <var>0\le A_{i,j} \lt 2N(N-1)</var> を満たす整数である必要がある。同一ターン内で同じ <var>A_{i,j}</var> を複数回出力してはならない。</p>
+<p>出力後、新たに生成された <var>2N(N-1)</var> 個の種の評価項目ベクトルが以下の形式で標準入力から与えられる。</p>
+<pre><var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+</pre>
+<p>ここで、評価項目ベクトルの各要素は <var>0\le x_{k,l}\le 100</var> を満たす整数である。</p>
+<p><strong>出力の後には改行をし、更に標準出力を flush しなければならない。</strong> そうしない場合、<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性がある。</p>
+<p>解答プログラムは、<code>#</code> から始まるコメント行を出力に含めても良い。 Web版ビジュアライザを使用すると、コメント行を対応するタイミングで表示出来るため、デバッグや考察等に役立てることが出来る。 ジャッジプログラムはコメント行を全て無視するため、コメント行を出力するプログラムをそのまま提出可能である。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入出力例</h3><p>以下は入力の制約を満たさない説明用の入力である点に注意せよ。</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>ターン</th><th>Output</th><th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>事前情報</td>
+<td></td>
+<td><pre>
+3 5 10
+42 45 29 50 53
+19 35 91 0 11
+35 83 30 9 31
+28 18 20 28 88
+0 52 21 66 51
+24 9 35 10 89
+57 27 13 73 24
+22 2 5 78 59
+66 67 27 18 12
+81 38 24 21 32
+89 21 32 16 19
+6 27 9 67 68
+</pre></td>
+</tr>
+<tr>
+<td>0</td>
+<td><pre>
+5 4 7
+8 9 0
+11 2 6
+</pre></td>
+<td><pre>
+0 52 21 10 89
+0 52 21 78 59
+66 67 24 18 32
+81 38 24 50 32
+6 27 30 67 31
+57 27 13 73 24
+24 9 27 10 12
+81 52 24 21 51
+42 45 5 50 53
+66 27 27 67 68
+35 83 30 9 31
+42 27 13 73 53
+</pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>
+6 8 11
+3 9 1
+7 2 5
+</pre></td>
+<td><pre>
+42 45 5 10 12
+42 45 13 73 53
+66 38 24 50 32
+66 52 27 67 68
+81 52 24 18 32
+66 67 13 18 32
+81 38 27 10 12
+42 27 5 50 68
+0 52 13 78 53
+81 52 24 50 32
+66 67 27 67 32
+0 52 13 78 59
+</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td><pre>
+2 6 10
+8 1 9
+11 4 3
+</pre></td>
+<td><pre>
+42 27 5 50 68
+42 27 5 50 32
+0 67 27 50 68
+42 27 5 50 68
+42 27 24 50 32
+42 67 5 50 68
+42 67 24 50 68
+42 27 27 50 68
+0 27 5 50 32
+0 67 24 50 68
+42 67 5 50 68
+42 27 5 50 32
+</pre></td>
+</tr>
+</tbody>
+</table>
+
+<p>この例では、 <var>W=V_6=42+67+24+50+68=251</var> 、 <var>\sum_{l=0}^{M-1}{X_l}=89+83+91+78+89=430</var> であるため、 <var>583721</var> 点が得られる。</p>
+<p><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム(Python)</h3><details>
+Pythonでの解答例を示す。このプログラムでは、毎回0番目から35番目までの種を左上から右下に順番に並べて出力している。
+
+<pre class="prettyprint linenums">
+N, M, T = map(int, input().split())
+SEED_COUNT = 2 * N * (N - 1)
+X = []
+
+for i in range(SEED_COUNT):
+    X.append(list(map(int, input().split())))
+
+for t in range(T):
+    A = [[0] * N for i in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            A[i][j] = i * N + j
+
+    for i in range(N):
+        print(' '.join(map(str, A[i])), flush=True)
+
+    X = []
+
+    for i in range(SEED_COUNT):
+        X.append(list(map(int, input().split())))
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム(C++)</h3><details>
+C++での解答例を示す。このプログラムでは、毎回0番目から35番目までの種を左上から右下に順番に並べて出力している。
+<pre class="prettyprint linenums">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+int main() {
+    int N, M, T;
+    cin &gt;&gt; N &gt;&gt; M &gt;&gt; T;
+
+    int seed_count = 2 * N * (N - 1);
+    vector&lt;vector&lt;int&gt;&gt; X(seed_count, vector&lt;int&gt;(M, 0));
+
+    for (int i = 0; i &lt; seed_count; i++) {
+        for (int j = 0; j &lt; M; j++) {
+            cin &gt;&gt; X[i][j];
+        }
+    }
+
+    for (int t = 0; t &lt; T; t++) {
+        vector&lt;vector&lt;int&gt;&gt; A(N, vector&lt;int&gt;(N, 0));
+
+        for (int i = 0; i &lt; N; i++) {
+            for (int j = 0; j &lt; N; j++) {
+                A[i][j] = i * N + j;
+            }
+        }
+
+        for (int i = 0; i &lt; N; i++) {
+            for (int j = 0; j &lt; N; j++) {
+                cout &lt;&lt; A[i][j];
+
+                if (j &lt; N - 1) {
+                    cout &lt;&lt; " ";
+                } else {
+                    cout &lt;&lt; endl;
+                }
+            }
+        }
+
+        cout.flush();
+
+        for (int i = 0; i &lt; seed_count; i++) {
+            for (int j = 0; j &lt; M; j++) {
+                cin &gt;&gt; X[i][j];
+            }
+        }
+    }
+
+    return 0;
+}
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><a href="https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83#%E6%A8%99%E6%BA%96%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83">標準正規分布</a>から値を生成する関数を <var>\mathrm{randnormal}()</var> と定義する。</p>
+<p>各 <var>k=0, 1, \cdots, 2N(N-1)</var> に対して、以下のようにして <var>\boldsymbol{x_k}=(x_{k,0}, x_{k,1}, \cdots, x_{k,M-1})</var> を生成する。</p>
+<p><var>M</var> 次元のベクトル <var>(x_{k,0}',\cdots,x_{k,M-1}')</var> を <var>x_{k,l}'=|\mathrm{randnormal}()|</var> により生成する。 <var>p_k=\frac{100}{\sqrt{\sum_{l=0}^{M-1}x_{k,l}'^2}}</var> として、 <var>x_{k,l}=\mathrm{round}(p_kx_{k,l}')</var> とする。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ローカルテスタ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中における、ビジュアライズ結果の共有や解法・考察に関する言及は禁止されています。ご注意下さい。</p>
+<h4>ツールで用いられる入力ファイルの仕様</h4>
+<details>
+
+ローカルテスタに与える入力ファイルは以下の形式を用いている。
+
+
+
+<pre><var>N</var> <var>M</var> <var>T</var>
+<var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+<var>u_{0,0,0}</var> <var>\cdots</var> <var>u_{0,0,N-2}</var>
+<var>\vdots</var>
+<var>u_{0,N-1,0}</var> <var>\cdots</var> <var>u_{0,N-1,N-2}</var>
+<var>v_{0,0,0}</var> <var>\cdots</var> <var>v_{0,0,N-1}</var>
+<var>\vdots</var>
+<var>v_{0,N-2,0}</var> <var>\cdots</var> <var>v_{0,N-2,N-1}</var>
+<var>\vdots</var>
+<var>u_{T-1,0,0}</var> <var>\cdots</var> <var>u_{T-1,0,N-2}</var>
+<var>\vdots</var>
+<var>u_{T-1,N-1,0}</var> <var>\cdots</var> <var>u_{T-1,N-1,N-2}</var>
+<var>v_{T-1,0,0}</var> <var>\cdots</var> <var>v_{T-1,0,N-1}</var>
+<var>\vdots</var>
+<var>v_{T-1,N-2,0}</var> <var>\cdots</var> <var>v_{T-1,N-2,N-1}</var>
+</pre>
+
+
+ここで、 <var>u_{t,i,j}</var> および <var>v_{t,i,j}</var> は <code>0</code>, <code>1</code> からなる <var>M</var> 文字の文字列であり、それぞれ以下を意味する。
+
+<ul>
+<li><var>u_{t,i,j}</var> の <var>l</var> 文字目が <code>0</code> である場合、 <var>t</var> 回目の操作で <var>(i,j)</var> と <var>(i, j+1)</var> に植えられた種 <var>A_{i,j}</var> および <var>A_{i,j+1}</var> から生成される新しい種の評価項目ベクトルの <var>l</var> 番目の要素は <var>x_{A_{i,j},l}</var> となり、<code>1</code> である場合は <var>x_{A_{i,j+1},l}</var> となる。</li>
+<li><var>v_{t,i,j}</var> の <var>l</var> 文字目が <code>0</code> である場合、 <var>t</var> 回目の操作で <var>(i,j)</var> と <var>(i+1, j)</var> に植えられた種  <var>A_{i,j}</var> および <var>A_{i+1,j}</var> から生成される新しい種の評価項目ベクトルの <var>l</var> 番目の要素は <var>x_{A_{i,j},l}</var> となり、<code>1</code> である場合は <var>x_{A_{i+1,j},l}</var> となる。</li>
+</ul>
+
+</details></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>AtCoder is working on improving the breeds of grain. The grain has multiple evaluation criteria such as taste, yield, and disease resistance. CEO Takahashi aims to create grain that excels in all evaluation criteria.</p>
+<p>By planting grain seeds in a grid-like field, new seeds can be harvested one year later that randomly inherit the value of each evaluation criterion from two adjacent seeds. By repeating the planting and harvesting process several times, please create the best possible grain seeds.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a field represented by an <var>N \times N</var> grid.
+Let <var>(0, 0)</var> be the coordinates of the top-left square, and <var>(i, j)</var> be the coordinates of the square located <var>i</var> squares down and <var>j</var> squares to the right from there.</p>
+<p>You are given <var>2N(N-1)</var> grain seeds. 
+There are <var>M</var> evaluation criteria, and each seed <var>k</var> has a non-negative integer vector, called the evaluation vector, <var>\boldsymbol{x_k}=(x_{k,0}, x_{k,1}, \cdots, x_{k,M-1})</var>, representing the goodness for each criterion. 
+The value <var>V_k</var> of seed <var>k</var> is defined as <var>V_k=\sum_{l=0}^{M-1}x_{k,l}</var>.</p>
+<p>Repeat the following operation <var>T</var> times to maximize the maximum value <var>\max (V_0, V_1, \cdots, V_{2N(N-1)-1})</var> of the seeds you have.</p>
+<ul>
+<li>Plant one seed in each of the <var>N^2</var> squares of the field. The same seed cannot be planted in multiple squares, and the remaining <var>2N(N-1)-N^2</var> seeds that are not planted will be discarded. Then, for each pair of seeds <var>(k, k')</var> planted in adjacent squares (up, down, left, or right), a new seed with a new evaluation vector will be generated. The value of the <var>l</var>-th element of this new evaluation vector is chosen uniformly at random from the original values <var>x_{k,l}</var> and <var>x_{k',l}</var>. The <var>2N(N-1)</var> seeds generated in this way will become the new set of seeds you have.</li>
+</ul>
+<details>
+<summary>Example of generating new seeds</summary>
+For example, when <var>M=3</var>, consider planting seed <var>0</var> in square <var>(0, 0)</var> and seed <var>1</var> in square <var>(0, 1)</var>. 
+If the evaluation vector of seed <var>0</var> is <var>\boldsymbol{x_0}=(1, 2, 3)</var> and the evaluation vector of seed <var>1</var> is <var>\boldsymbol{x_1}=(4, 5, 6)</var>, the possible evaluation vectors for the new seed are the following <var>8</var> possibilities:
+
+<ul>
+<li><var>(1, 2, 3)</var></li>
+<li><var>(1, 2, 6)</var></li>
+<li><var>(1, 5, 3)</var></li>
+<li><var>(1, 5, 6)</var></li>
+<li><var>(4, 2, 3)</var></li>
+<li><var>(4, 2, 6)</var></li>
+<li><var>(4, 5, 3)</var></li>
+<li><var>(4, 5, 6)</var></li>
+</ul>
+
+One of these <var>8</var> evaluation vectors is chosen uniformly at random and becomes the evaluation vector for the new seed.
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>For the initially given <var>2N(N-1)</var> seeds, let the maximum value of the <var>l</var>-th element of the evaluation vectors be <var>X_l=\max(x_{0,l}, x_{1,l}, \cdots, x_{2N(N-1)-1,l})</var>. 
+After <var>T</var> operations, let the maximum value of the values of the seeds you have be <var>W=\max(V_0, V_1, \cdots, V_{2N(N-1)-1})</var>. 
+Then you will obtain a score of <var>\mathrm{round}(10^6 \times W / \sum_{l=0}^{M-1}{X_l})</var>.</p>
+<p>There are 300 test cases, and the score of a submission is the total score for each test case.
+If your submission produces an illegal output or exceeds the time limit for some test cases, the submission itself will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span> or <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> , and the score of the submission will be zero.
+The highest score obtained during the contest will determine the final ranking, and there will be no system test after the contest.
+If more than one participant gets the same score, they will be ranked in the same place regardless of the submission time.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input and Output</h3><p><strong>Note: This problem is interactive. Read the following explanation, and communicate with the judge program accordingly.</strong></p>
+<p>First, you will be given the grid size <var>N</var>, the number of evaluation criteria <var>M</var>, the number of operations <var>T</var>, and the evaluation vectors <var>\boldsymbol{x_k}=(x_{k,0}, x_{k,1}, \cdots, x_{k,M-1})</var> in the following format from Standard Input.</p>
+<pre><var>N</var> <var>M</var> <var>T</var>
+<var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+</pre>
+<p>The input satisfies the following constraints:</p>
+<ul>
+<li><var>N=6</var></li>
+<li><var>M=15</var></li>
+<li><var>T=10</var></li>
+<li><var>0 \le x_{k,l} \le 100</var></li>
+<li>All inputs are integers</li>
+</ul>
+<p>After reading the above information, repeat the following process for <var>T</var> turns.</p>
+<p>In each turn, first output to Standard Output which seed to plant in each square in the following format.</p>
+<pre><var>A_{0,0}</var> <var>\cdots</var> <var>A_{0,N-1}</var>
+<var>\vdots</var>
+<var>A_{N-1,0}</var> <var>\cdots</var> <var>A_{N-1,N-1}</var>
+</pre>
+<p>Here, <var>A_{i,j}</var> represents the number of the seed to be planted in square <var>(i,j)</var> and must be an integer satisfying <var>0 \le A_{i,j} &lt; 2N(N-1)</var>. The same <var>A_{i,j}</var> must not be output more than once in the same turn.</p>
+<p>After the output, the evaluation vectors of the newly generated <var>2N(N-1)</var> seeds will be given from Standard Input in the following format.</p>
+<pre><var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+</pre>
+<p>Here, each element of the evaluation vectors is an integer satisfying <var>0 \le x_{k,l} \le 100</var>.</p>
+<p><strong>Each line of the output should end with a new line, and you have to flush Standard Output.</strong>
+Otherwise, the submission might be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span>.</p>
+<p>Your program may output comment lines starting with <code>#</code>. The web version of the visualizer displays the comment lines with the corresponding timings, which may be useful for debugging and analysis. Since the judge program ignores all comment lines, you can submit a program that outputs comment lines as is.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Example</h3><p>Note that the following is an example input for explanatory purposes and does not meet the input constraints.</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Turn</th><th>Output</th><th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prior information</td>
+<td></td>
+<td><pre>
+3 5 10
+42 45 29 50 53
+19 35 91 0 11
+35 83 30 9 31
+28 18 20 28 88
+0 52 21 66 51
+24 9 35 10 89
+57 27 13 73 24
+22 2 5 78 59
+66 67 27 18 12
+81 38 24 21 32
+89 21 32 16 19
+6 27 9 67 68
+</pre></td>
+</tr>
+<tr>
+<td>0</td>
+<td><pre>
+5 4 7
+8 9 0
+11 2 6
+</pre></td>
+<td><pre>
+0 52 21 10 89
+0 52 21 78 59
+66 67 24 18 32
+81 38 24 50 32
+6 27 30 67 31
+57 27 13 73 24
+24 9 27 10 12
+81 52 24 21 51
+42 45 5 50 53
+66 27 27 67 68
+35 83 30 9 31
+42 27 13 73 53
+</pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>
+6 8 11
+3 9 1
+7 2 5
+</pre></td>
+<td><pre>
+42 45 5 10 12
+42 45 13 73 53
+66 38 24 50 32
+66 52 27 67 68
+81 52 24 18 32
+66 67 13 18 32
+81 38 27 10 12
+42 27 5 50 68
+0 52 13 78 53
+81 52 24 50 32
+66 67 27 67 32
+0 52 13 78 59
+</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td><pre>
+2 6 10
+8 1 9
+11 4 3
+</pre></td>
+<td><pre>
+42 27 5 50 68
+42 27 5 50 32
+0 67 27 50 68
+42 27 5 50 68
+42 27 24 50 32
+42 67 5 50 68
+42 67 24 50 68
+42 27 27 50 68
+0 27 5 50 32
+0 67 24 50 68
+42 67 5 50 68
+42 27 5 50 32
+</pre></td>
+</tr>
+</tbody>
+</table>
+
+<p>In this example, since <var>W=V_6=42+67+24+50+68=251</var> and <var>\sum_{l=0}^{M-1}{X_l}=89+83+91+78+89=430</var>, you will obtain a score of <var>583721</var>.</p>
+<p><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution (Python)</h3><details>
+Here is a sample solution in Python. The program outputs the 0th through 35th seeds in order from the top left to the bottom right.
+
+<pre class="prettyprint linenums">
+N, M, T = map(int, input().split())
+SEED_COUNT = 2 * N * (N - 1)
+X = []
+
+for i in range(SEED_COUNT):
+    X.append(list(map(int, input().split())))
+
+for t in range(T):
+    A = [[0] * N for i in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            A[i][j] = i * N + j
+
+    for i in range(N):
+        print(' '.join(map(str, A[i])), flush=True)
+
+    X = []
+
+    for i in range(SEED_COUNT):
+        X.append(list(map(int, input().split())))
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution (C++)</h3><details>
+Here is a sample solution in C++. The program outputs the 0th through 35th seeds in order from the top left to the bottom right.
+<pre class="prettyprint linenums">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+int main() {
+    int N, M, T;
+    cin &gt;&gt; N &gt;&gt; M &gt;&gt; T;
+
+    int seed_count = 2 * N * (N - 1);
+    vector&lt;vector&lt;int&gt;&gt; X(seed_count, vector&lt;int&gt;(M, 0));
+
+    for (int i = 0; i &lt; seed_count; i++) {
+        for (int j = 0; j &lt; M; j++) {
+            cin &gt;&gt; X[i][j];
+        }
+    }
+
+    for (int t = 0; t &lt; T; t++) {
+        vector&lt;vector&lt;int&gt;&gt; A(N, vector&lt;int&gt;(N, 0));
+
+        for (int i = 0; i &lt; N; i++) {
+            for (int j = 0; j &lt; N; j++) {
+                A[i][j] = i * N + j;
+            }
+        }
+
+        for (int i = 0; i &lt; N; i++) {
+            for (int j = 0; j &lt; N; j++) {
+                cout &lt;&lt; A[i][j];
+
+                if (j &lt; N - 1) {
+                    cout &lt;&lt; " ";
+                } else {
+                    cout &lt;&lt; endl;
+                }
+            }
+        }
+
+        cout.flush();
+
+        for (int i = 0; i &lt; seed_count; i++) {
+            for (int j = 0; j &lt; M; j++) {
+                cin &gt;&gt; X[i][j];
+            }
+        }
+    }
+
+    return 0;
+}
+</pre>
+</details>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Define a function <var>\mathrm{randnormal}()</var> to generate values from the <a href="https://en.wikipedia.org/wiki/Normal_distribution#Standard_normal_distribution">standard normal distribution</a>.</p>
+<p>For each <var>k=0, 1, \cdots, 2N(N-1)</var>, generate <var>\boldsymbol{x_k}=(x_{k,0}, x_{k,1}, \cdots, x_{k,M-1})</var> as follows.</p>
+<p>Generate an <var>M</var>-dimensional vector <var>(x_{k,0}',\cdots,x_{k,M-1}')</var> by <var>x_{k,l}'=|\mathrm{randnormal}()|</var>. Let <var>p_k=\frac{100}{\sqrt{\sum_{l=0}^{M-1}x_{k,l}'^2}}</var> and define <var>x_{k,l}=\mathrm{round}(p_k x_{k,l}')</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator, local tester and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.html?lang=en">Web version</a>: This is more powerful than the local version and can display animations.</li>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc035/F5dI2O6U_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p>
+<h4>Specification of input files used by the tools</h4>
+<details>
+
+Input files given to the local tester have the following format.
+
+
+<pre><var>N</var> <var>M</var> <var>T</var>
+<var>x_{0,0}</var> <var>\cdots</var> <var>x_{0,M-1}</var>
+<var>\vdots</var>
+<var>x_{2N(N-1)-1,0}</var> <var>\cdots</var> <var>x_{2N(N-1)-1,M-1}</var>
+<var>u_{0,0,0}</var> <var>\cdots</var> <var>u_{0,0,N-2}</var>
+<var>\vdots</var>
+<var>u_{0,N-1,0}</var> <var>\cdots</var> <var>u_{0,N-1,N-2}</var>
+<var>v_{0,0,0}</var> <var>\cdots</var> <var>v_{0,0,N-1}</var>
+<var>\vdots</var>
+<var>v_{0,N-2,0}</var> <var>\cdots</var> <var>v_{0,N-2,N-1}</var>
+<var>\vdots</var>
+<var>u_{T-1,0,0}</var> <var>\cdots</var> <var>u_{T-1,0,N-2}</var>
+<var>\vdots</var>
+<var>u_{T-1,N-1,0}</var> <var>\cdots</var> <var>u_{T-1,N-1,N-2}</var>
+<var>v_{T-1,0,0}</var> <var>\cdots</var> <var>v_{T-1,0,N-1}</var>
+<var>\vdots</var>
+<var>v_{T-1,N-2,0}</var> <var>\cdots</var> <var>v_{T-1,N-2,N-1}</var>
+</pre>
+
+
+
+Here, <var>u_{t,i,j}</var> and <var>v_{t,i,j}</var> are <var>M</var>-character strings consisting of <code>0</code> and <code>1</code>, and they mean the following:
+
+<ul>
+<li>If the <var>l</var>-th character of <var>u_{t,i,j}</var> is <code>0</code>, the <var>l</var>-th element of the evaluation vector of the new seed generated from the seeds <var>A_{i,j}</var> and <var>A_{i,j+1}</var> planted in <var>(i,j)</var> and <var>(i, j+1)</var> for the <var>t</var>-th operation will be <var>x_{A_{i,j},l}</var>; if it is <code>1</code>, it will be <var>x_{A_{i,j+1},l}</var>.</li>
+<li>If the <var>l</var>-th character of <var>v_{t,i,j}</var> is <code>0</code>, the <var>l</var>-th element of the evaluation vector of the new seed generated from the seeds <var>A_{i,j}</var> and <var>A_{i+1,j}</var> planted in <var>(i,j)</var> and <var>(i+1, j)</var> for the <var>t</var>-th operation will be <var>x_{A_{i,j},l}</var>; if it is <code>1</code>, it will be <var>x_{A_{i+1,j},l}</var>.</li>
+</ul>
+
+</details></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc035/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc035_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc035/tasks/ahc035_a?lang=ja" data-a2a-title="A - Breed Improvement">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc035/rules">ルール</a></li>
+					<li><a href="/contests/ahc035/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

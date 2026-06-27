@@ -1,0 +1,3645 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Gamble on Ice</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Gamble on Ice" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc050/tasks/ahc050_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Gamble on Ice" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc050";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2025-07-06T19:00:00+09:00");
+			var endTime = moment("2025-07-06T23:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 050が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 050は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc050">AtCoder Heuristic Contest 050</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc050/tasks/ahc050_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc050/tasks/ahc050_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc050%2Ftasks%2Fahc050_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250706T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-07-06 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250706T2300&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-07-06 23:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc050"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc050/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc050/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc050/submit?taskScreenName=ahc050_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc050/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc050/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc050/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc050/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc050/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc050/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc050/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Gamble on Ice
+			<a class="btn btn-default btn-sm" href="/contests/ahc050/tasks/ahc050_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N \times N</var> のマス目からなるスケートリンクがある。左上のマスの座標を <var>(0,0)</var> とし、下方向に <var>i</var> マス、右方向に <var>j</var> マス進んだ位置のマスの座標を <var>(i,j)</var> とする。 <var>N \times N</var> マスの外部はすべて岩で覆われており、侵入できない。初期状態では、 <var>M</var> 個のマスに岩が置かれている。</p>
+<p>このスケートリンクと 1 体のロボットを使って次のゲームを行う。</p>
+<ul>
+<li>ゲーム開始時、あなたの獲得賞金は <var>0</var> 円である。</li>
+<li>はじめに、あなたは岩の置かれていない <var>N^2 - M</var> マスを任意の順番で並べた列 <var>P = ( P_0,P_1,\dots,P_{N^2 - M - 1} )</var> を宣言する。</li>
+<li>次に、岩の置かれていないマスの中から一様ランダムに <var>1</var> つが選択され、そこにロボットが配置される。</li>
+<li>その後、 <var>i = 0,1,\dots,N^2 - M - 1</var> の順に以下を繰り返す。<ul>
+<li>まず、ロボットが上下左右の <var>4</var> 方向のうち <var>1</var> つを一様ランダムに選択する。</li>
+<li>次に、ロボットがその方向に岩にぶつかるまで直線的に進行する。<ul>
+<li>ロボットが <var>1</var> マスも動かない場合もあることに注意せよ。</li>
+</ul>
+</li>
+<li>その後、マス <var>P_i</var> に岩を置く。<ul>
+<li>そのマスにロボットがあった場合、ロボットが潰されてゲームが終了する。</li>
+<li>そのマスにロボットがなかった場合、あなたは <var>1</var> 円を獲得する。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>最終的に獲得できる賞金の期待値ができるだけ大きくなるような列 <var>P</var> を求めよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>最終的に獲得できる賞金の期待値を <var>E</var> とする。このとき、 <var>\displaystyle {\rm round} \left ( \frac{10^6 \times E}{N^2 - M - 1} \right )</var> の得点が得られる。</p>
+<p>合計で 150 個のテストケースがあり、各テストケースの得点の合計が提出の得点となる。
+一つ以上のテストケースで不正な出力や制限時間超過をした場合、提出全体の判定が<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span>や<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。 同じ得点を複数の参加者が得た場合、提出時刻に関わらず同じ順位となる。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var>
+<var>S_{0,0} \dots S_{0,N-1}</var>
+<var>\vdots</var>
+<var>S_{N-1,0} \dots S_{N-1,N-1}</var>
+</pre>
+<ul>
+<li>全てのテストケースにおいて、 <var>N=40</var> に固定されている。</li>
+<li><var>M</var> は <var>N^2/10</var> 以上 <var>N^2/4</var> 以下の整数である。</li>
+<li><var>S_{i,0} \dots S_{i,N-1}</var> は <code>#.</code> からなる <var>N</var> 文字の文字列であり、 <var>S_{i,j}</var> が <code>#</code> なら初期状態でマス <var>(i,j)</var> に岩が置かれていることを、 <code>.</code> なら初期状態でマス <var>(i,j)</var> には岩が置かれていないことを表す。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>求めた列 <var>P</var> のうち <var>P_i=(x_i,y_i)</var> としたとき、以下の形式で標準出力に出力せよ。</p>
+<pre><var>x_0</var> <var>y_0</var>
+<var>\vdots</var>
+<var>x_{N^2 - M - 1}</var> <var>y_{N^2 - M - 1}</var>
+</pre>
+<p>このとき、列 <var>P</var> は以下の制約を満たす必要がある。</p>
+<ul>
+<li>全ての <var>P_i</var> は相異なる。</li>
+<li>全ての <var>P_i</var> について、初期状態においてマス <var>P_i</var> に岩が置かれていない。</li>
+</ul>
+<p><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><ul>
+<li>まず、 <var>N=40</var> とする。</li>
+<li>次に、 <var>M</var> を <var>N^2/10</var> 以上 <var>N^2/4</var> 以下の整数から一様ランダムに選出する。</li>
+<li>最後に、 <var>N^2</var> 個のマスから相異なる <var>M</var> 個を一様ランダムに選び、選ばれたマスに岩を置くことでマス目の初期状態を定める。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示と手動プレイが可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">40 282
+.#......#..#.#..........................
+............#..............#..##...#..#.
+......#........##..#...##......#.#......
+.##..#...#......#.#.#....#....##.#....#.
+............#..............#.......#.#..
+..#.....#.....#...##......#............#
+......#.....#......#.#.....##..#.##..#..
+#.#.#.....#.#.#....#.#..........#.......
+#...##.......#...#...#.......#....#.....
+#..#...#...#....#...#........#...#.#....
+....#..........#.......#..#.............
+...##.......#.#..........#.#..........#.
+..#.......#.....#.#..#.........#..##....
+..##..##....#.............#.........#...
+............................#...........
+...#...#....#..####.#...........#.......
+.##..........#.#.#..................#...
+#...#.##............#......##..#........
+............#.#...#...#.#..#..#....#....
+......#.#........................#.###.#
+....##......#..............#.#..........
+#....#...#......#.#....#....#.......##..
+..#......#......#.#............##..#....
+....#.............#..#.#............#..#
+.....#......#..##.....#....###.....#.#..
+#...#...#.#.....#.....................#.
+#........#.......#..........#.....###...
+....#..#........#.......#...#.##.##..#..
+#..........##.#.#.#....#......#.#..##...
+.....##.....#....#..#.................#.
+...#...#...#......##.....#..........#..#
+.....#..#.................##............
+..#.............##...#.......##.........
+...#.#.........#.......................#
+..#...#..#...................#...#......
+.........#.....................#..#.....
+#...##..#...............#.#....##.#.##..
+#..#.........#...............##...#....#
+#................#.......#.......#..#.#.
+...#...#....#........#.........###....##
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">17 17
+7 15
+21 20
+18 1
+19 13
+5 13
+2 21
+4 31
+31 31
+17 21
+31 13
+24 36
+9 28
+6 14
+14 13
+12 20
+18 28
+11 20
+12 3
+11 16
+18 4
+31 25
+29 29
+19 38
+12 9
+33 21
+36 1
+20 34
+33 36
+39 6
+36 14
+32 34
+32 8
+31 12
+25 17
+38 5
+36 23
+22 39
+24 25
+34 28
+31 34
+35 19
+1 15
+18 2
+21 39
+32 10
+4 7
+20 9
+34 16
+27 18
+11 0
+32 4
+27 0
+21 17
+30 6
+0 27
+18 6
+1 13
+23 13
+18 33
+29 16
+7 35
+24 24
+3 13
+11 37
+10 35
+20 19
+11 5
+35 5
+38 4
+2 38
+31 2
+0 37
+29 32
+38 24
+9 39
+32 24
+5 12
+38 20
+7 30
+34 39
+13 13
+0 15
+34 10
+17 18
+13 14
+12 33
+35 12
+10 9
+21 29
+14 9
+29 2
+14 2
+22 15
+18 26
+38 6
+27 36
+13 35
+3 15
+37 32
+5 5
+36 25
+20 8
+33 10
+26 22
+2 10
+26 3
+39 8
+15 24
+21 15
+37 14
+11 26
+17 14
+33 1
+39 2
+35 27
+22 14
+2 30
+8 38
+19 20
+31 10
+31 4
+39 29
+12 24
+2 0
+2 17
+28 21
+0 4
+19 10
+17 10
+2 32
+18 16
+34 30
+22 11
+10 28
+17 24
+9 12
+37 8
+33 35
+14 6
+35 10
+35 29
+10 31
+26 7
+10 17
+33 28
+20 20
+4 14
+22 21
+27 12
+13 18
+37 1
+5 25
+7 22
+34 13
+13 4
+37 18
+33 2
+18 8
+4 13
+30 1
+33 16
+0 22
+33 0
+22 3
+35 11
+17 26
+12 17
+22 25
+17 12
+34 0
+29 0
+21 34
+39 34
+8 6
+24 23
+7 28
+35 3
+31 21
+11 11
+22 4
+5 10
+29 13
+1 4
+22 12
+31 39
+26 33
+8 23
+25 5
+33 7
+7 16
+22 36
+11 22
+37 20
+9 34
+4 34
+20 35
+5 11
+10 6
+0 24
+21 2
+3 27
+12 38
+17 8
+32 5
+28 2
+39 16
+14 26
+1 6
+29 37
+8 14
+5 35
+24 4
+18 25
+3 39
+33 18
+39 1
+35 30
+14 24
+15 10
+30 21
+33 25
+33 14
+17 3
+30 22
+26 12
+16 12
+1 11
+34 5
+37 24
+3 14
+16 5
+20 32
+0 39
+27 20
+17 11
+32 25
+22 34
+8 39
+30 38
+34 17
+20 10
+38 22
+36 12
+39 5
+4 33
+15 30
+6 7
+31 36
+12 1
+15 4
+36 30
+23 35
+3 10
+12 26
+1 29
+35 20
+5 9
+16 32
+4 32
+10 21
+29 24
+28 6
+38 32
+29 8
+15 21
+14 25
+13 38
+35 7
+9 2
+20 15
+32 31
+11 30
+6 11
+25 3
+20 13
+10 10
+7 11
+23 32
+35 0
+27 22
+12 6
+20 38
+3 3
+34 19
+8 31
+19 24
+9 6
+5 16
+9 1
+4 11
+6 1
+21 32
+39 19
+29 19
+23 9
+25 25
+24 18
+31 11
+38 23
+10 2
+39 0
+16 37
+5 33
+4 15
+16 27
+20 26
+5 20
+37 25
+4 38
+10 33
+4 22
+15 29
+34 37
+9 23
+30 8
+26 15
+39 14
+25 20
+16 14
+9 27
+28 24
+14 8
+8 20
+14 31
+34 34
+13 19
+27 6
+36 2
+29 4
+35 33
+19 30
+28 20
+22 10
+2 12
+26 5
+38 35
+11 28
+2 34
+8 37
+21 7
+18 23
+1 25
+25 33
+9 13
+10 29
+0 9
+10 39
+36 39
+22 26
+13 8
+23 19
+27 35
+24 34
+33 17
+24 2
+10 18
+21 8
+31 9
+27 2
+29 11
+0 29
+8 36
+4 39
+30 31
+15 38
+9 9
+3 23
+17 1
+11 24
+13 9
+11 7
+25 31
+23 12
+6 25
+21 35
+13 39
+33 33
+34 7
+10 22
+0 6
+22 6
+26 13
+37 5
+13 15
+22 8
+4 1
+1 14
+11 17
+12 37
+16 25
+32 14
+12 19
+16 8
+6 18
+22 28
+28 37
+11 34
+8 26
+19 31
+37 26
+8 12
+3 4
+29 23
+17 34
+14 38
+14 29
+21 19
+20 25
+1 23
+13 27
+11 19
+17 22
+7 9
+1 33
+38 34
+1 20
+27 9
+38 8
+14 35
+28 39
+22 7
+30 32
+15 8
+18 34
+6 20
+6 8
+35 26
+2 14
+16 34
+35 18
+1 24
+35 4
+12 0
+27 19
+39 28
+2 18
+1 17
+22 24
+17 36
+10 13
+20 36
+10 20
+4 16
+35 25
+32 33
+18 11
+26 23
+3 22
+14 23
+2 36
+8 8
+34 15
+11 23
+38 10
+38 29
+4 2
+38 30
+39 4
+0 10
+36 17
+8 35
+37 7
+5 34
+20 7
+14 32
+8 3
+29 9
+28 19
+27 26
+29 10
+7 33
+12 25
+8 16
+18 36
+38 2
+7 31
+36 7
+32 20
+15 6
+0 32
+20 37
+14 12
+5 3
+3 32
+38 14
+37 21
+31 16
+6 38
+7 37
+24 31
+17 15
+32 19
+16 26
+34 1
+34 3
+10 12
+35 21
+11 10
+25 22
+26 18
+19 17
+14 7
+18 31
+39 25
+30 29
+31 33
+10 19
+4 25
+32 39
+38 1
+29 35
+34 24
+5 27
+24 10
+27 8
+35 32
+39 17
+12 28
+35 2
+30 24
+22 38
+19 22
+26 11
+13 25
+38 12
+22 30
+30 27
+17 2
+32 35
+0 17
+16 33
+30 23
+32 0
+14 1
+4 17
+19 15
+2 7
+19 29
+38 3
+26 2
+6 10
+25 14
+31 19
+2 22
+12 23
+31 7
+23 8
+14 10
+7 24
+13 22
+33 34
+33 27
+21 4
+36 27
+37 22
+19 32
+34 31
+16 38
+28 29
+21 10
+38 21
+3 12
+28 25
+27 15
+34 18
+24 21
+39 20
+37 2
+25 39
+39 35
+31 35
+39 37
+33 29
+37 35
+36 9
+22 37
+4 19
+14 14
+20 17
+8 2
+10 32
+29 7
+29 18
+30 33
+32 6
+21 22
+39 10
+32 3
+10 14
+7 7
+10 8
+34 25
+37 15
+0 16
+36 19
+36 33
+12 15
+36 15
+12 32
+5 30
+1 5
+4 36
+25 28
+37 28
+5 36
+27 23
+38 39
+1 7
+20 24
+19 4
+8 15
+9 25
+0 34
+36 21
+6 30
+36 3
+35 24
+26 10
+5 29
+36 16
+35 1
+4 18
+30 20
+37 38
+14 19
+15 0
+1 28
+12 39
+13 31
+1 39
+38 18
+8 24
+29 3
+4 30
+31 38
+8 11
+0 28
+1 32
+3 21
+2 35
+28 5
+9 24
+0 3
+31 23
+17 38
+12 4
+1 2
+4 6
+7 13
+26 14
+10 25
+2 13
+21 11
+39 23
+34 21
+33 19
+1 22
+12 27
+21 38
+11 2
+29 14
+19 19
+6 32
+28 13
+18 15
+22 17
+18 3
+17 39
+2 8
+25 36
+29 22
+9 5
+31 14
+29 30
+1 21
+0 18
+36 38
+16 7
+31 37
+23 0
+38 9
+11 18
+35 6
+14 15
+14 33
+27 11
+12 11
+23 1
+13 24
+1 18
+4 9
+36 11
+7 25
+11 33
+35 28
+26 16
+37 31
+29 39
+13 1
+30 10
+15 2
+21 12
+34 38
+36 20
+3 17
+6 17
+13 17
+33 4
+23 28
+14 37
+31 24
+12 5
+30 5
+9 22
+4 29
+9 17
+1 1
+16 10
+25 35
+18 17
+35 13
+19 26
+5 21
+12 7
+17 25
+37 12
+6 16
+0 0
+31 28
+5 32
+4 21
+8 1
+25 11
+16 29
+0 21
+27 32
+9 30
+3 36
+23 3
+15 25
+38 13
+5 7
+32 27
+15 34
+2 39
+17 30
+32 28
+19 2
+16 18
+34 12
+0 23
+1 16
+31 17
+19 7
+20 33
+31 29
+28 7
+24 11
+38 28
+16 3
+0 5
+25 32
+37 23
+37 11
+24 32
+32 7
+2 25
+25 26
+19 1
+3 8
+26 19
+25 29
+11 6
+5 31
+24 0
+6 4
+21 33
+26 1
+31 6
+32 15
+29 27
+18 10
+13 23
+11 8
+32 12
+15 9
+18 39
+15 35
+10 30
+0 7
+7 5
+39 9
+28 27
+25 6
+5 0
+30 16
+19 14
+14 0
+34 8
+24 14
+34 32
+30 26
+25 23
+13 30
+17 35
+19 11
+10 11
+28 34
+29 31
+31 1
+3 11
+39 15
+19 5
+25 19
+29 21
+15 37
+15 26
+39 24
+36 10
+31 22
+14 5
+24 33
+30 0
+16 24
+20 14
+30 30
+33 24
+31 15
+2 37
+23 31
+38 15
+28 15
+25 1
+22 29
+23 14
+24 9
+5 6
+14 22
+13 37
+34 22
+3 28
+9 10
+33 11
+16 30
+24 6
+35 8
+19 21
+6 39
+33 6
+11 29
+3 24
+10 7
+27 17
+39 11
+8 18
+11 13
+5 22
+18 19
+12 22
+14 16
+38 27
+3 7
+14 17
+25 7
+33 23
+10 34
+26 25
+21 30
+20 11
+23 33
+29 15
+19 9
+21 26
+33 13
+3 26
+23 25
+23 34
+26 24
+36 6
+8 22
+39 36
+37 16
+28 8
+32 9
+30 28
+25 37
+21 25
+0 30
+3 37
+23 30
+25 9
+27 38
+21 1
+27 1
+24 1
+38 31
+6 5
+4 3
+33 31
+32 22
+5 15
+29 34
+33 30
+22 0
+25 2
+26 30
+37 37
+23 10
+3 35
+33 22
+14 34
+32 26
+17 19
+38 19
+6 36
+33 26
+33 9
+36 29
+36 22
+0 14
+7 20
+12 8
+24 8
+38 7
+20 0
+26 38
+25 21
+6 3
+0 2
+2 1
+32 13
+12 13
+30 15
+17 29
+24 39
+25 24
+18 21
+13 29
+26 21
+18 7
+13 34
+11 9
+6 9
+2 20
+30 13
+13 20
+0 38
+8 33
+18 32
+10 3
+22 5
+24 38
+31 30
+17 9
+18 38
+6 15
+38 26
+17 5
+15 28
+26 20
+37 6
+4 4
+20 3
+14 27
+31 20
+7 38
+27 13
+21 3
+7 17
+0 20
+23 37
+23 17
+30 12
+5 37
+6 22
+33 20
+3 6
+0 35
+23 7
+13 10
+29 36
+4 26
+20 21
+20 23
+39 18
+7 8
+11 32
+11 36
+15 1
+3 34
+13 16
+32 36
+25 15
+11 31
+7 29
+9 37
+32 11
+23 38
+19 25
+26 31
+10 38
+23 2
+15 27
+19 12
+4 23
+0 33
+1 19
+32 1
+16 22
+5 17
+21 31
+9 18
+35 35
+36 28
+4 24
+6 29
+27 29
+37 33
+21 24
+18 5
+30 2
+16 0
+24 26
+33 12
+16 4
+2 2
+30 34
+13 32
+5 23
+22 1
+28 33
+26 26
+28 9
+30 35
+10 37
+2 11
+26 37
+34 26
+6 13
+7 36
+12 14
+26 32
+12 30
+27 3
+0 12
+23 27
+39 22
+4 8
+21 21
+23 24
+15 14
+20 1
+39 26
+9 38
+18 29
+23 5
+8 19
+9 31
+0 25
+21 13
+1 8
+17 13
+16 9
+21 14
+35 14
+6 23
+31 0
+9 14
+16 28
+37 4
+1 37
+37 9
+11 21
+28 10
+9 19
+21 27
+26 29
+35 16
+24 30
+29 1
+7 18
+22 13
+27 27
+13 5
+15 31
+34 23
+28 31
+15 11
+28 26
+1 10
+6 26
+17 23
+14 18
+32 32
+7 27
+36 13
+14 4
+28 22
+18 37
+6 0
+8 30
+15 5
+33 37
+31 3
+13 0
+0 26
+37 17
+32 18
+38 37
+11 15
+19 23
+4 5
+33 38
+37 19
+34 36
+22 22
+39 27
+26 4
+34 35
+9 36
+10 24
+7 23
+30 17
+23 26
+16 23
+28 17
+27 14
+0 31
+31 18
+3 0
+23 15
+8 27
+10 16
+7 6
+35 37
+1 0
+7 39
+14 20
+8 10
+37 27
+9 21
+34 11
+30 37
+15 22
+14 11
+39 30
+9 26
+2 26
+18 13
+29 33
+24 19
+25 34
+19 3
+20 6
+36 18
+15 36
+10 36
+2 9
+13 21
+13 28
+12 12
+23 16
+33 32
+28 28
+16 35
+29 28
+25 27
+4 28
+38 11
+7 34
+27 25
+7 1
+18 9
+35 39
+29 25
+5 38
+8 28
+17 33
+24 20
+22 20
+15 33
+8 25
+14 3
+15 13
+12 36
+31 32
+20 30
+10 1
+22 33
+11 35
+18 0
+28 38
+17 16
+35 38
+27 5
+27 21
+19 28
+22 19
+16 19
+25 12
+4 20
+15 19
+30 4
+34 4
+7 3
+5 1
+24 7
+23 11
+26 8
+2 4
+16 11
+0 36
+2 29
+34 27
+32 38
+24 17
+39 13
+20 2
+22 23
+6 2
+25 18
+19 16
+0 19
+13 11
+14 30
+32 23
+18 20
+35 23
+30 9
+34 20
+6 35
+10 0
+20 22
+6 24
+20 39
+28 3
+28 1
+19 18
+10 5
+26 6
+4 10
+33 8
+7 26
+35 15
+19 34
+23 6
+9 15
+8 32
+16 39
+5 4
+16 6
+32 37
+35 17
+27 10
+1 26
+8 7
+15 39
+16 21
+36 35
+19 27
+16 16
+14 36
+2 3
+5 24
+14 21
+17 32
+35 36
+3 29
+38 16
+28 4
+26 39
+4 0
+19 0
+9 8
+23 22
+26 27
+13 33
+11 1
+25 30
+15 23
+9 4
+1 9
+1 36
+2 5
+34 14
+37 36
+24 13
+1 3
+23 29
+29 26
+30 14
+16 20
+17 37
+21 6
+24 3
+20 28
+35 22
+27 39
+20 16
+10 27
+5 28
+12 29
+20 18
+23 20
+14 39
+37 10
+8 9
+16 31
+1 34
+22 27
+11 39
+2 27
+9 32
+3 19
+25 13
+2 28
+20 31
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a skating rink consisting of an <var>N \times N</var> grid. The top-left cell has coordinates <var>(0,0)</var>, and a cell located <var>i</var> cells downward and <var>j</var> cells to the right has coordinates <var>(i,j)</var>. The area outside the <var>N \times N</var> grid is entirely covered by rocks and cannot be entered. Initially, <var>M</var> cells contain rocks.</p>
+<p>Using this skating rink and a single robot, you play the following game:</p>
+<ul>
+<li>At the beginning of the game, your prize money is 0 yen.</li>
+<li>First, you declare a sequence <var>P = ( P_0,P_1,\dots,P_{N^2 - M - 1} )</var>, which is an arbitrary ordering of the <var>N^2 - M</var> rock-free cells.</li>
+<li>Then, one of the rock-free cells is uniformly randomly selected, and the robot is placed there.</li>
+<li>Afterwards, for <var>i = 0,1,\dots,N^2 - M - 1</var>, the following is repeated:<ul>
+<li>First, the robot uniformly randomly selects one of the four directions: up, down, left, or right.</li>
+<li>Then, the robot moves in that direction in a straight line until it hits a rock.<ul>
+<li>Note that the robot may not move at all.</li>
+</ul>
+</li>
+<li>After that, a rock is placed on cell <var>P_i</var>.<ul>
+<li>If the robot is on that cell, it is crushed and the game ends.</li>
+<li>If the robot is not on that cell, you earn 1 yen.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Find a sequence <var>P</var> that maximizes the expected value of the total prize money you can earn.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>E</var> be the expected value of the total prize money you can earn. Then, your score is <var>\displaystyle {\rm round} \left ( \frac{10^6 \times E}{N^2 - M - 1} \right )</var>.</p>
+<p>There are <var>150</var> test cases, and the score of a submission is the total score for each test case.
+If your submission produces an illegal output or exceeds the time limit for some test cases, the submission itself will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span> or <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> , and the score of the submission will be zero.
+The highest score obtained during the contest will determine the final ranking, and there will be no system test after the contest.
+If more than one participant gets the same score, they will be ranked in the same place regardless of the submission time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>S_{0,0} \dots S_{0,N-1}</var>
+<var>\vdots</var>
+<var>S_{N-1,0} \dots S_{N-1,N-1}</var>
+</pre>
+<ul>
+<li>In all test cases, <var>N</var> is fixed to <var>40</var>.</li>
+<li><var>M</var> is an integer between <var>N^2/10</var> and <var>N^2/4</var>, inclusive.</li>
+<li>Each <var>S_{i,0} \dots S_{i,N-1}</var> is a string of <var>N</var> characters consisting of <code>#</code> and <code>.</code>, where <code>#</code> indicates that cell <var>(i,j)</var> initially contains a rock, and <code>.</code> indicates that cell <var>(i,j)</var> is initially rock-free.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let the computed sequence <var>P</var> be represented as <var>P_i=(x_i,y_i)</var>. Output it to Standard Output in the following format:</p>
+<pre><var>x_0</var> <var>y_0</var>
+<var>\vdots</var>
+<var>x_{N^2 - M - 1}</var> <var>y_{N^2 - M - 1}</var>
+</pre>
+<p>The sequence <var>P</var> must satisfy the following constraints:</p>
+<ul>
+<li>All <var>P_i</var> must be distinct.</li>
+<li>For every <var>P_i</var>, the corresponding cell must be rock-free in the initial state.</li>
+</ul>
+<p><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><ul>
+<li>First, set <var>N=40</var>.</li>
+<li>Next, choose an integer <var>M</var> uniformly at random from the range <var>N^2/10</var> to <var>N^2/4</var>, inclusive.</li>
+<li>Finally, select <var>M</var> distinct cells uniformly at random from the <var>N^2</var> cells, and place rocks on those cells to determine the initial state of the grid.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.html?lang=en">Web version</a>: This is more powerful than the local version providing animations and manual play.</li>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc050/k1BmZE1o_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">40 282
+.#......#..#.#..........................
+............#..............#..##...#..#.
+......#........##..#...##......#.#......
+.##..#...#......#.#.#....#....##.#....#.
+............#..............#.......#.#..
+..#.....#.....#...##......#............#
+......#.....#......#.#.....##..#.##..#..
+#.#.#.....#.#.#....#.#..........#.......
+#...##.......#...#...#.......#....#.....
+#..#...#...#....#...#........#...#.#....
+....#..........#.......#..#.............
+...##.......#.#..........#.#..........#.
+..#.......#.....#.#..#.........#..##....
+..##..##....#.............#.........#...
+............................#...........
+...#...#....#..####.#...........#.......
+.##..........#.#.#..................#...
+#...#.##............#......##..#........
+............#.#...#...#.#..#..#....#....
+......#.#........................#.###.#
+....##......#..............#.#..........
+#....#...#......#.#....#....#.......##..
+..#......#......#.#............##..#....
+....#.............#..#.#............#..#
+.....#......#..##.....#....###.....#.#..
+#...#...#.#.....#.....................#.
+#........#.......#..........#.....###...
+....#..#........#.......#...#.##.##..#..
+#..........##.#.#.#....#......#.#..##...
+.....##.....#....#..#.................#.
+...#...#...#......##.....#..........#..#
+.....#..#.................##............
+..#.............##...#.......##.........
+...#.#.........#.......................#
+..#...#..#...................#...#......
+.........#.....................#..#.....
+#...##..#...............#.#....##.#.##..
+#..#.........#...............##...#....#
+#................#.......#.......#..#.#.
+...#...#....#........#.........###....##
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">17 17
+7 15
+21 20
+18 1
+19 13
+5 13
+2 21
+4 31
+31 31
+17 21
+31 13
+24 36
+9 28
+6 14
+14 13
+12 20
+18 28
+11 20
+12 3
+11 16
+18 4
+31 25
+29 29
+19 38
+12 9
+33 21
+36 1
+20 34
+33 36
+39 6
+36 14
+32 34
+32 8
+31 12
+25 17
+38 5
+36 23
+22 39
+24 25
+34 28
+31 34
+35 19
+1 15
+18 2
+21 39
+32 10
+4 7
+20 9
+34 16
+27 18
+11 0
+32 4
+27 0
+21 17
+30 6
+0 27
+18 6
+1 13
+23 13
+18 33
+29 16
+7 35
+24 24
+3 13
+11 37
+10 35
+20 19
+11 5
+35 5
+38 4
+2 38
+31 2
+0 37
+29 32
+38 24
+9 39
+32 24
+5 12
+38 20
+7 30
+34 39
+13 13
+0 15
+34 10
+17 18
+13 14
+12 33
+35 12
+10 9
+21 29
+14 9
+29 2
+14 2
+22 15
+18 26
+38 6
+27 36
+13 35
+3 15
+37 32
+5 5
+36 25
+20 8
+33 10
+26 22
+2 10
+26 3
+39 8
+15 24
+21 15
+37 14
+11 26
+17 14
+33 1
+39 2
+35 27
+22 14
+2 30
+8 38
+19 20
+31 10
+31 4
+39 29
+12 24
+2 0
+2 17
+28 21
+0 4
+19 10
+17 10
+2 32
+18 16
+34 30
+22 11
+10 28
+17 24
+9 12
+37 8
+33 35
+14 6
+35 10
+35 29
+10 31
+26 7
+10 17
+33 28
+20 20
+4 14
+22 21
+27 12
+13 18
+37 1
+5 25
+7 22
+34 13
+13 4
+37 18
+33 2
+18 8
+4 13
+30 1
+33 16
+0 22
+33 0
+22 3
+35 11
+17 26
+12 17
+22 25
+17 12
+34 0
+29 0
+21 34
+39 34
+8 6
+24 23
+7 28
+35 3
+31 21
+11 11
+22 4
+5 10
+29 13
+1 4
+22 12
+31 39
+26 33
+8 23
+25 5
+33 7
+7 16
+22 36
+11 22
+37 20
+9 34
+4 34
+20 35
+5 11
+10 6
+0 24
+21 2
+3 27
+12 38
+17 8
+32 5
+28 2
+39 16
+14 26
+1 6
+29 37
+8 14
+5 35
+24 4
+18 25
+3 39
+33 18
+39 1
+35 30
+14 24
+15 10
+30 21
+33 25
+33 14
+17 3
+30 22
+26 12
+16 12
+1 11
+34 5
+37 24
+3 14
+16 5
+20 32
+0 39
+27 20
+17 11
+32 25
+22 34
+8 39
+30 38
+34 17
+20 10
+38 22
+36 12
+39 5
+4 33
+15 30
+6 7
+31 36
+12 1
+15 4
+36 30
+23 35
+3 10
+12 26
+1 29
+35 20
+5 9
+16 32
+4 32
+10 21
+29 24
+28 6
+38 32
+29 8
+15 21
+14 25
+13 38
+35 7
+9 2
+20 15
+32 31
+11 30
+6 11
+25 3
+20 13
+10 10
+7 11
+23 32
+35 0
+27 22
+12 6
+20 38
+3 3
+34 19
+8 31
+19 24
+9 6
+5 16
+9 1
+4 11
+6 1
+21 32
+39 19
+29 19
+23 9
+25 25
+24 18
+31 11
+38 23
+10 2
+39 0
+16 37
+5 33
+4 15
+16 27
+20 26
+5 20
+37 25
+4 38
+10 33
+4 22
+15 29
+34 37
+9 23
+30 8
+26 15
+39 14
+25 20
+16 14
+9 27
+28 24
+14 8
+8 20
+14 31
+34 34
+13 19
+27 6
+36 2
+29 4
+35 33
+19 30
+28 20
+22 10
+2 12
+26 5
+38 35
+11 28
+2 34
+8 37
+21 7
+18 23
+1 25
+25 33
+9 13
+10 29
+0 9
+10 39
+36 39
+22 26
+13 8
+23 19
+27 35
+24 34
+33 17
+24 2
+10 18
+21 8
+31 9
+27 2
+29 11
+0 29
+8 36
+4 39
+30 31
+15 38
+9 9
+3 23
+17 1
+11 24
+13 9
+11 7
+25 31
+23 12
+6 25
+21 35
+13 39
+33 33
+34 7
+10 22
+0 6
+22 6
+26 13
+37 5
+13 15
+22 8
+4 1
+1 14
+11 17
+12 37
+16 25
+32 14
+12 19
+16 8
+6 18
+22 28
+28 37
+11 34
+8 26
+19 31
+37 26
+8 12
+3 4
+29 23
+17 34
+14 38
+14 29
+21 19
+20 25
+1 23
+13 27
+11 19
+17 22
+7 9
+1 33
+38 34
+1 20
+27 9
+38 8
+14 35
+28 39
+22 7
+30 32
+15 8
+18 34
+6 20
+6 8
+35 26
+2 14
+16 34
+35 18
+1 24
+35 4
+12 0
+27 19
+39 28
+2 18
+1 17
+22 24
+17 36
+10 13
+20 36
+10 20
+4 16
+35 25
+32 33
+18 11
+26 23
+3 22
+14 23
+2 36
+8 8
+34 15
+11 23
+38 10
+38 29
+4 2
+38 30
+39 4
+0 10
+36 17
+8 35
+37 7
+5 34
+20 7
+14 32
+8 3
+29 9
+28 19
+27 26
+29 10
+7 33
+12 25
+8 16
+18 36
+38 2
+7 31
+36 7
+32 20
+15 6
+0 32
+20 37
+14 12
+5 3
+3 32
+38 14
+37 21
+31 16
+6 38
+7 37
+24 31
+17 15
+32 19
+16 26
+34 1
+34 3
+10 12
+35 21
+11 10
+25 22
+26 18
+19 17
+14 7
+18 31
+39 25
+30 29
+31 33
+10 19
+4 25
+32 39
+38 1
+29 35
+34 24
+5 27
+24 10
+27 8
+35 32
+39 17
+12 28
+35 2
+30 24
+22 38
+19 22
+26 11
+13 25
+38 12
+22 30
+30 27
+17 2
+32 35
+0 17
+16 33
+30 23
+32 0
+14 1
+4 17
+19 15
+2 7
+19 29
+38 3
+26 2
+6 10
+25 14
+31 19
+2 22
+12 23
+31 7
+23 8
+14 10
+7 24
+13 22
+33 34
+33 27
+21 4
+36 27
+37 22
+19 32
+34 31
+16 38
+28 29
+21 10
+38 21
+3 12
+28 25
+27 15
+34 18
+24 21
+39 20
+37 2
+25 39
+39 35
+31 35
+39 37
+33 29
+37 35
+36 9
+22 37
+4 19
+14 14
+20 17
+8 2
+10 32
+29 7
+29 18
+30 33
+32 6
+21 22
+39 10
+32 3
+10 14
+7 7
+10 8
+34 25
+37 15
+0 16
+36 19
+36 33
+12 15
+36 15
+12 32
+5 30
+1 5
+4 36
+25 28
+37 28
+5 36
+27 23
+38 39
+1 7
+20 24
+19 4
+8 15
+9 25
+0 34
+36 21
+6 30
+36 3
+35 24
+26 10
+5 29
+36 16
+35 1
+4 18
+30 20
+37 38
+14 19
+15 0
+1 28
+12 39
+13 31
+1 39
+38 18
+8 24
+29 3
+4 30
+31 38
+8 11
+0 28
+1 32
+3 21
+2 35
+28 5
+9 24
+0 3
+31 23
+17 38
+12 4
+1 2
+4 6
+7 13
+26 14
+10 25
+2 13
+21 11
+39 23
+34 21
+33 19
+1 22
+12 27
+21 38
+11 2
+29 14
+19 19
+6 32
+28 13
+18 15
+22 17
+18 3
+17 39
+2 8
+25 36
+29 22
+9 5
+31 14
+29 30
+1 21
+0 18
+36 38
+16 7
+31 37
+23 0
+38 9
+11 18
+35 6
+14 15
+14 33
+27 11
+12 11
+23 1
+13 24
+1 18
+4 9
+36 11
+7 25
+11 33
+35 28
+26 16
+37 31
+29 39
+13 1
+30 10
+15 2
+21 12
+34 38
+36 20
+3 17
+6 17
+13 17
+33 4
+23 28
+14 37
+31 24
+12 5
+30 5
+9 22
+4 29
+9 17
+1 1
+16 10
+25 35
+18 17
+35 13
+19 26
+5 21
+12 7
+17 25
+37 12
+6 16
+0 0
+31 28
+5 32
+4 21
+8 1
+25 11
+16 29
+0 21
+27 32
+9 30
+3 36
+23 3
+15 25
+38 13
+5 7
+32 27
+15 34
+2 39
+17 30
+32 28
+19 2
+16 18
+34 12
+0 23
+1 16
+31 17
+19 7
+20 33
+31 29
+28 7
+24 11
+38 28
+16 3
+0 5
+25 32
+37 23
+37 11
+24 32
+32 7
+2 25
+25 26
+19 1
+3 8
+26 19
+25 29
+11 6
+5 31
+24 0
+6 4
+21 33
+26 1
+31 6
+32 15
+29 27
+18 10
+13 23
+11 8
+32 12
+15 9
+18 39
+15 35
+10 30
+0 7
+7 5
+39 9
+28 27
+25 6
+5 0
+30 16
+19 14
+14 0
+34 8
+24 14
+34 32
+30 26
+25 23
+13 30
+17 35
+19 11
+10 11
+28 34
+29 31
+31 1
+3 11
+39 15
+19 5
+25 19
+29 21
+15 37
+15 26
+39 24
+36 10
+31 22
+14 5
+24 33
+30 0
+16 24
+20 14
+30 30
+33 24
+31 15
+2 37
+23 31
+38 15
+28 15
+25 1
+22 29
+23 14
+24 9
+5 6
+14 22
+13 37
+34 22
+3 28
+9 10
+33 11
+16 30
+24 6
+35 8
+19 21
+6 39
+33 6
+11 29
+3 24
+10 7
+27 17
+39 11
+8 18
+11 13
+5 22
+18 19
+12 22
+14 16
+38 27
+3 7
+14 17
+25 7
+33 23
+10 34
+26 25
+21 30
+20 11
+23 33
+29 15
+19 9
+21 26
+33 13
+3 26
+23 25
+23 34
+26 24
+36 6
+8 22
+39 36
+37 16
+28 8
+32 9
+30 28
+25 37
+21 25
+0 30
+3 37
+23 30
+25 9
+27 38
+21 1
+27 1
+24 1
+38 31
+6 5
+4 3
+33 31
+32 22
+5 15
+29 34
+33 30
+22 0
+25 2
+26 30
+37 37
+23 10
+3 35
+33 22
+14 34
+32 26
+17 19
+38 19
+6 36
+33 26
+33 9
+36 29
+36 22
+0 14
+7 20
+12 8
+24 8
+38 7
+20 0
+26 38
+25 21
+6 3
+0 2
+2 1
+32 13
+12 13
+30 15
+17 29
+24 39
+25 24
+18 21
+13 29
+26 21
+18 7
+13 34
+11 9
+6 9
+2 20
+30 13
+13 20
+0 38
+8 33
+18 32
+10 3
+22 5
+24 38
+31 30
+17 9
+18 38
+6 15
+38 26
+17 5
+15 28
+26 20
+37 6
+4 4
+20 3
+14 27
+31 20
+7 38
+27 13
+21 3
+7 17
+0 20
+23 37
+23 17
+30 12
+5 37
+6 22
+33 20
+3 6
+0 35
+23 7
+13 10
+29 36
+4 26
+20 21
+20 23
+39 18
+7 8
+11 32
+11 36
+15 1
+3 34
+13 16
+32 36
+25 15
+11 31
+7 29
+9 37
+32 11
+23 38
+19 25
+26 31
+10 38
+23 2
+15 27
+19 12
+4 23
+0 33
+1 19
+32 1
+16 22
+5 17
+21 31
+9 18
+35 35
+36 28
+4 24
+6 29
+27 29
+37 33
+21 24
+18 5
+30 2
+16 0
+24 26
+33 12
+16 4
+2 2
+30 34
+13 32
+5 23
+22 1
+28 33
+26 26
+28 9
+30 35
+10 37
+2 11
+26 37
+34 26
+6 13
+7 36
+12 14
+26 32
+12 30
+27 3
+0 12
+23 27
+39 22
+4 8
+21 21
+23 24
+15 14
+20 1
+39 26
+9 38
+18 29
+23 5
+8 19
+9 31
+0 25
+21 13
+1 8
+17 13
+16 9
+21 14
+35 14
+6 23
+31 0
+9 14
+16 28
+37 4
+1 37
+37 9
+11 21
+28 10
+9 19
+21 27
+26 29
+35 16
+24 30
+29 1
+7 18
+22 13
+27 27
+13 5
+15 31
+34 23
+28 31
+15 11
+28 26
+1 10
+6 26
+17 23
+14 18
+32 32
+7 27
+36 13
+14 4
+28 22
+18 37
+6 0
+8 30
+15 5
+33 37
+31 3
+13 0
+0 26
+37 17
+32 18
+38 37
+11 15
+19 23
+4 5
+33 38
+37 19
+34 36
+22 22
+39 27
+26 4
+34 35
+9 36
+10 24
+7 23
+30 17
+23 26
+16 23
+28 17
+27 14
+0 31
+31 18
+3 0
+23 15
+8 27
+10 16
+7 6
+35 37
+1 0
+7 39
+14 20
+8 10
+37 27
+9 21
+34 11
+30 37
+15 22
+14 11
+39 30
+9 26
+2 26
+18 13
+29 33
+24 19
+25 34
+19 3
+20 6
+36 18
+15 36
+10 36
+2 9
+13 21
+13 28
+12 12
+23 16
+33 32
+28 28
+16 35
+29 28
+25 27
+4 28
+38 11
+7 34
+27 25
+7 1
+18 9
+35 39
+29 25
+5 38
+8 28
+17 33
+24 20
+22 20
+15 33
+8 25
+14 3
+15 13
+12 36
+31 32
+20 30
+10 1
+22 33
+11 35
+18 0
+28 38
+17 16
+35 38
+27 5
+27 21
+19 28
+22 19
+16 19
+25 12
+4 20
+15 19
+30 4
+34 4
+7 3
+5 1
+24 7
+23 11
+26 8
+2 4
+16 11
+0 36
+2 29
+34 27
+32 38
+24 17
+39 13
+20 2
+22 23
+6 2
+25 18
+19 16
+0 19
+13 11
+14 30
+32 23
+18 20
+35 23
+30 9
+34 20
+6 35
+10 0
+20 22
+6 24
+20 39
+28 3
+28 1
+19 18
+10 5
+26 6
+4 10
+33 8
+7 26
+35 15
+19 34
+23 6
+9 15
+8 32
+16 39
+5 4
+16 6
+32 37
+35 17
+27 10
+1 26
+8 7
+15 39
+16 21
+36 35
+19 27
+16 16
+14 36
+2 3
+5 24
+14 21
+17 32
+35 36
+3 29
+38 16
+28 4
+26 39
+4 0
+19 0
+9 8
+23 22
+26 27
+13 33
+11 1
+25 30
+15 23
+9 4
+1 9
+1 36
+2 5
+34 14
+37 36
+24 13
+1 3
+23 29
+29 26
+30 14
+16 20
+17 37
+21 6
+24 3
+20 28
+35 22
+27 39
+20 16
+10 27
+5 28
+12 29
+20 18
+23 20
+14 39
+37 10
+8 9
+16 31
+1 34
+22 27
+11 39
+2 27
+9 32
+3 19
+25 13
+2 28
+20 31
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc050/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc050_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc050/tasks/ahc050_a?lang=ja" data-a2a-title="A - Gamble on Ice">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc050/rules">ルール</a></li>
+					<li><a href="/contests/ahc050/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

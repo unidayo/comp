@@ -1,0 +1,195 @@
+{
+  "contest_id": "ahc009",
+  "contest_url": "https://atcoder.jp/contests/ahc009",
+  "standings_url": "https://atcoder.jp/contests/ahc009/standings",
+  "selection": "First 10 rows of official standings; SubmissionID recorded in each task result",
+  "tasks": [
+    {
+      "task_id": "ahc009_a",
+      "title": "A",
+      "url": "https://atcoder.jp/contests/ahc009/tasks/ahc009_a"
+    }
+  ],
+  "top10": [
+    {
+      "position": 1,
+      "rank": 1,
+      "user": "terry_u16",
+      "total_score": 754783418100,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30423648,
+          "score": 754783418100,
+          "available": true,
+          "language": "Rust (1.42.0)",
+          "file": "submissions/01_terry_u16_30423648.rs",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30423648",
+          "sha256": "f0b3deee8df7f5c549be9d072432cc61488f96b82b6d2d6837419f959518b9f6"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "rank": 2,
+      "user": "square1001",
+      "total_score": 751328338900,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30422910,
+          "score": 751328338900,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/02_square1001_30422910.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30422910",
+          "sha256": "a2176abb7b7a8e2c1bde723e85473a5400b7e78f4ce4d4d592b30e418ddd5aad"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "rank": 3,
+      "user": "hitonanode",
+      "total_score": 751238489700,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30422806,
+          "score": 751238489700,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/03_hitonanode_30422806.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30422806",
+          "sha256": "d0400c8c27351022c9a9fd1318739e03d969cc374b50d652b3743b9a68b58457"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "rank": 4,
+      "user": "nikaj",
+      "total_score": 748532315200,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30420346,
+          "score": 748532315200,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/04_nikaj_30420346.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30420346",
+          "sha256": "73ae775a446297078fbee7b422efb3471603b9031207fc51cb3d2a33d0df2971"
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "rank": 5,
+      "user": "Nyaan",
+      "total_score": 746983799600,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30423150,
+          "score": 746983799600,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/05_Nyaan_30423150.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30423150",
+          "sha256": "8d42ef2bc86d486a1b11a00abed9a8ebb9a716af35482d49941001279e0f3329"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "rank": 6,
+      "user": "Psyho",
+      "total_score": 745825414100,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30423757,
+          "score": 745825414100,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/06_Psyho_30423757.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30423757",
+          "sha256": "c9b5919874c9c3baf07fe7266a3dcea4f2b67c250ab8e76ca285b1ac4358caee"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "rank": 7,
+      "user": "ValGrowth",
+      "total_score": 743995591300,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30422952,
+          "score": 743995591300,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/07_ValGrowth_30422952.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30422952",
+          "sha256": "debb92a0a75507f835df9f4c637e453381c0e0752b77f7dac9998dc123b7ffe6"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "rank": 8,
+      "user": "Aquarius",
+      "total_score": 743017996400,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30416509,
+          "score": 743017996400,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/08_Aquarius_30416509.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30416509",
+          "sha256": "4e4e6e4a0bbcc386d3991a47e01c070eac9411acdcfefd6feb22601dfa4e4a41"
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "rank": 9,
+      "user": "kawatea",
+      "total_score": 739630929300,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30421743,
+          "score": 739630929300,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/09_kawatea_30421743.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30421743",
+          "sha256": "14ea431e8de381acf4361deba0308d1564c4c030a7f4a6cb0c0ae1faf4df8a10"
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "rank": 10,
+      "user": "takumi152",
+      "total_score": 736758105100,
+      "submissions": [
+        {
+          "task_id": "ahc009_a",
+          "submission_id": 30423476,
+          "score": 736758105100,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/10_takumi152_30423476.cpp",
+          "url": "https://atcoder.jp/contests/ahc009/submissions/30423476",
+          "sha256": "a8251b243a66fec73d7c8f50da7de9238316392ac3918a93274cbf1b6338880a"
+        }
+      ]
+    }
+  ]
+}

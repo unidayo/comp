@@ -17,6 +17,7 @@ if(NOT ENABLE_LEAK_SANITIZER)
 endif()
 
 set(ACL_PATH "/usr/lib/ac-library/")
+include_directories(${CMAKE_SOURCE_DIR})
 include_directories(SYSTEM ${ACL_PATH})
 
 find_program(CCACHE_PROGRAM ccache)

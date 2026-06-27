@@ -13,11 +13,14 @@
         "--compile-commands-dir=${workspaceFolder}/build-release",
         "--clang-tidy",
         "--enable-config",
-        "--header-insertion=never"
+        "--header-insertion=never",
+        "--function-arg-placeholders=false"
     ],
     "C_Cpp.intelliSenseEngine": "disabled",
     "clangd.path": "/usr/bin/clangd-20",
     "C_Cpp.default.cppStandard": "c++23",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
     "editor.formatOnPaste": true,
     "C_Cpp.default.includePath": [
         "/usr/lib/ac-library/**",

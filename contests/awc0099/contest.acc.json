@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0099",
+    "title": "AtCoder Weekday Contest 0099 Beta",
+    "url": "https://atcoder.jp/contests/awc0099"
+  },
+  "tasks": [
+    {
+      "id": "awc0099_a",
+      "label": "A",
+      "title": "Chaining Buckets",
+      "url": "https://atcoder.jp/contests/awc0099/tasks/awc0099_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0099_a.cpp"
+      }
+    },
+    {
+      "id": "awc0099_b",
+      "label": "B",
+      "title": "Book Lending",
+      "url": "https://atcoder.jp/contests/awc0099/tasks/awc0099_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0099_b.cpp"
+      }
+    },
+    {
+      "id": "awc0099_c",
+      "label": "C",
+      "title": "Watering",
+      "url": "https://atcoder.jp/contests/awc0099/tasks/awc0099_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0099_c.cpp"
+      }
+    },
+    {
+      "id": "awc0099_d",
+      "label": "D",
+      "title": "Advertisement Placement in the Exhibition Hall",
+      "url": "https://atcoder.jp/contests/awc0099/tasks/awc0099_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0099_d.cpp"
+      }
+    },
+    {
+      "id": "awc0099_e",
+      "label": "E",
+      "title": "Group Division and Virus Infection",
+      "url": "https://atcoder.jp/contests/awc0099/tasks/awc0099_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0099_e.cpp"
+      }
+    }
+  ]
+}

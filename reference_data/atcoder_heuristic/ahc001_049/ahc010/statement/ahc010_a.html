@@ -1,0 +1,1712 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Loop Lines</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Loop Lines" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc010/tasks/ahc010_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Loop Lines" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc010";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2022-04-24T15:00:00+09:00");
+			var endTime = moment("2022-04-24T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>ALGO ARTIS プログラミングコンテスト2022（AtCoder Heuristic Contest 010）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>ALGO ARTIS プログラミングコンテスト2022（AtCoder Heuristic Contest 010）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc010">ALGO ARTIS プログラミングコンテスト2022（AtCoder Heuristic Contest 010）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc010/tasks/ahc010_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc010/tasks/ahc010_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc010%2Ftasks%2Fahc010_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20220424T1500&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-04-24 15:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20220424T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-04-24 19:00:00+0900</time></a> 
+				(240分)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc010"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc010/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc010/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc010/submit?taskScreenName=ahc010_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc010/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc010/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc010/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc010/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc010/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc010/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc010/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Loop Lines
+			<a class="btn btn-default btn-sm" href="/contests/ahc010/tasks/ahc010_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>環状線が大好きな高橋くんは鉄道玩具で遊んでいる。
+この玩具は、下図のように並べられた正方形の線路タイルを回転させることで線路を繋ぎ、その上を電車の模型を走らせるというものである。
+高橋くんは電車の模型を2台持っているので、出来るだけ大きな環状線を2つ作ってほしい。</p>
+<table>
+<tr align="center">
+<td>
+<svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" x="60" y="0"/>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,15,45)" x="0" y="30"/>
+<use href="#rail2" stroke="silver" x="30" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,45)" x="30" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,75,45)" x="60" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,15,75)" x="0" y="60"/>
+<use href="#rail2" stroke="silver" x="30" y="60"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg>
+</td>
+<td>
+<svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,15)" x="30" y="0"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(270,75,15)" x="60" y="0"/>
+</g>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,15,45)" x="0" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,45)" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="60" y="30"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(90,15,75)" x="0" y="60"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="60"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg>
+</td>
+</tr>
+<tr align="center">
+<td>
+初期状態
+</td>
+<td>
+右上と右中央を回転
+</td>
+</tr>
+</table>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>30\times 30</var> マスに並んだ線路タイルが与えられる。
+タイルは回転したものを区別すると8種類あり、以下のように番号付ける。</p>
+<p><svg height="70" id="vis" viewBox="-5 -5 250 70" width="250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="70" width="250" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="120" x2="120" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="150" x2="150" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="180" x2="180" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="210" x2="210" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="240" x2="240" y1="0" y2="60"/>
+<text font-size="22" text-anchor="middle" x="15" y="55">
+0
+</text>
+<text font-size="22" text-anchor="middle" x="45" y="55">
+1
+</text>
+<text font-size="22" text-anchor="middle" x="75" y="55">
+2
+</text>
+<text font-size="22" text-anchor="middle" x="105" y="55">
+3
+</text>
+<text font-size="22" text-anchor="middle" x="135" y="55">
+4
+</text>
+<text font-size="22" text-anchor="middle" x="165" y="55">
+5
+</text>
+<text font-size="22" text-anchor="middle" x="195" y="55">
+6
+</text>
+<text font-size="22" text-anchor="middle" x="225" y="55">
+7
+</text>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail2" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,75,15)" x="60" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,105,15)" x="90" y="0"/>
+<use href="#rail2" stroke="silver" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,165,15)" x="150" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,165,15)" x="150" y="0"/>
+<use href="#rail1" stroke="silver" transform="rotate(90,195,15)" x="180" y="0"/>
+<use href="#rail1" stroke="silver" x="210" y="0"/>
+</svg></p>
+<p>0から3番のタイルにはカーブした1本の線路、4番と5番のタイルにはカーブした2本の線路、6番と7番のタイルには直線の1本の線路が乗っている。
+各タイルは90度ずつ回転させることが出来、反時計回りに90度回転させると次のようになる。</p>
+<p><svg height="70" id="vis" viewBox="-5 -5 250 70" width="250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="70" width="250" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="120" x2="120" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="150" x2="150" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="180" x2="180" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="210" x2="210" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="240" x2="240" y1="0" y2="60"/>
+<text font-size="22" text-anchor="middle" x="15" y="55">
+1
+</text>
+<text font-size="22" text-anchor="middle" x="45" y="55">
+2
+</text>
+<text font-size="22" text-anchor="middle" x="75" y="55">
+3
+</text>
+<text font-size="22" text-anchor="middle" x="105" y="55">
+0
+</text>
+<text font-size="22" text-anchor="middle" x="135" y="55">
+5
+</text>
+<text font-size="22" text-anchor="middle" x="165" y="55">
+4
+</text>
+<text font-size="22" text-anchor="middle" x="195" y="55">
+7
+</text>
+<text font-size="22" text-anchor="middle" x="225" y="55">
+6
+</text>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,15)" x="0" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,75,15)" x="60" y="0"/>
+<use href="#rail2" stroke="silver" x="90" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" x="150" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,165,15)" x="150" y="0"/>
+<use href="#rail1" stroke="silver" x="180" y="0"/>
+<use href="#rail1" stroke="silver" transform="rotate(90,225,15)" x="210" y="0"/>
+</svg></p>
+<p>線路に枝分かれはないため、各線路はパスもしくは閉路をなす。
+閉路をなす線路の集合を「環状線」と呼び、その長さを、線路に沿って一周する際にタイルから隣接タイルへ移動する回数と定義する。
+例えば、以下の環状線は7タイルからなるが、真ん中のタイルを二回通るため、長さは8である。</p>
+<p><svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,15)" x="30" y="0"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(270,75,15)" x="60" y="0"/>
+</g>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,15,45)" x="0" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,45)" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="60" y="30"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(90,15,75)" x="0" y="60"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="60"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg></p>
+<p>各タイルを回転させる回数を決定せよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>出力に従ってタイルを回転させることで得られた環状線のうち、一番長いものの長さを<var>L_1</var>、二番目に長いものの長さを<var>L_2</var>とする(最長のものが複数ある場合は<var>L_1=L_2</var>)。
+このとき、<var>L_1\times L_2</var> の得点が得られる。
+環状線の個数が <var>1</var> 以下の場合、そのテストケースの得点は <var>0</var> 点となる。</p>
+<p>テストケースは全部で 100 個あり、各テストケースの得点の合計が提出の得点となる。
+1つ以上のテストケースで <span class='label label-success' data-toggle='tooltip' data-placement='top' title="正解">AC</span> 以外の判定がされた場合、提出の得点は0点となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。
+同じ得点を複数の参加者が得た場合、その得点を獲得した提出の早い方が上位となる。</p>
+<p>環状線の長さの求め方のヒント
+<details>
+<font color="red">
+疑似コードを更新しました。
+</font>
+環状線の長さは例えば以下のようにして計算できる。
+タイルの状態が入った二次元配列を <code>tiles</code> とする。
+方向を左上右下の順に0,1,2,3と番号付けると、座標の変化は配列 <code>di = [0, -1, 0, 1]</code> と <code>dj = [-1, 0, 1, 0]</code> で表される。
+状態 <code>t</code> 番のタイルに <code>d</code> の方向から侵入した際に次に向かうタイルの方向を <code>to[t][d]</code>、ただしそのような方向から侵入不可能な場合は<code>-1</code>とすると、以下のような二次元配列となる。</p>
+<pre>to = [
+    [1, 0, -1, -1],
+    [3, -1, -1, 0],
+    [-1, -1, 3, 2],
+    [-1, 2, 1, -1],
+    [1, 0, 3, 2],
+    [3, 2, 1, 0],
+    [2, -1, 0, -1],
+    [-1, 3, -1, 1],
+];
+</pre>
+
+<p>位置 <code>(i, j)</code> のタイルに <code>d</code> の方向のタイルから侵入したとき、これらの組を以下のように更新出来る。</p>
+<pre>d2 = to[tiles[i][j]][d]; // 次のタイルの方向
+if (d2 == -1) return 0; // 線路が途切れている
+i += di[d2];
+j += dj[d2];
+if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0; // 線路が途切れている
+d = (d2 + 2) % 4; // 今居たタイルの方向
+</pre>
+
+<p>あとはこの処理を最初の位置と向き(同じタイルを二度通る可能性があることに注意)に戻ってくるまで繰り返せば、繰り返し回数が環状線の長さとなる。</p>
+<pre>// (si, sj) のタイルに sd 方向のタイルから侵入した状態からスタートして環状線の長さを求める
+i = si;
+j = sj;
+d = sd;
+loop {
+    d2 = to[tiles[i][j]][d];
+    if (d2 == -1) return 0;
+    i += di[d2];
+    j += dj[d2];
+    if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0;
+    d = (d2 + 2) % 4;
+    length += 1;
+    if (i == si &amp;&amp; j == sj &amp;&amp; d == sd) return length;
+}
+</pre>
+
+</details>
+
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>t_{0,0}</var> <var>\cdots</var> <var>t_{0,29}</var>
+<var>\vdots</var>
+<var>t_{29,0}</var> <var>\cdots</var> <var>t_{29,29}</var>
+</pre>
+
+<p>各 <var>t_{i,0}\cdots t_{i,29}</var> は長さ <var>30</var> の文字列である。
+上から <var>i</var> <var>(0\leq i\leq 29)</var> 番目、左から <var>j</var> <var>(0\leq j\leq 29)</var> 番目のタイルを <var>(i, j)</var> と表す。
+<var>t_{i,j}</var> はタイル <var>(i,j)</var> の状態を表す <var>0</var> 以上 <var>7</var> 以下の数字である。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>タイル <var>(i,j)</var> を反時計回りに90度回転させる回数を <var>r_{i,j}</var> (<var>0\leq r_{i,j}\leq 3</var>) としたとき、<var>30i+j</var> 文字目が <var>r_{i,j}</var> となるような長さ <var>900</var> の文字列を1行に出力せよ。</p>
+<p>解を複数回出力しても良い。複数出力された場合は一番最後のもののみが採点に用いられる。ビジュアライザでは複数出力された解の比較が可能である。</p>
+<p><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=ja&show=example">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で表す。</p>
+<p>各 <var>t_{i,j}</var> はそれぞれ独立に以下のように生成される。</p>
+<ul>
+<li>25% の確率で <var>t_{i,j}=\mathrm{rand}(0, 3)</var> と生成する。</li>
+<li>50% の確率で <var>t_{i,j}=\mathrm{rand}(4, 5)</var> と生成する。</li>
+<li>25% の確率で <var>t_{i,j}=\mathrm{rand}(6, 7)</var> と生成する。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><strong>コンテスト終了までビジュアライズ結果の共有は禁止されています。ご注意下さい。</strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">436204751575440756541724746755
+347475575404531645424640344414
+556644445442451553264555436757
+761235545455474254546631467555
+356447405421445153457656535564
+014274425356522445253477726464
+311765446655556346633757446600
+471744514426443445162555525455
+616053450444473274742055767455
+254124557527462423444450075637
+046546764557475436717475255501
+752005462554554414031525515356
+452524742177476245065554577605
+664465643742341605007655253777
+444571276444165545442447340356
+435050335454565235025507452540
+467560030465475447567644441426
+735730577745561712541450443547
+472675153755474445700540444544
+507472724556677621365747544757
+535177720776402476665547676174
+636275455643650141456764547131
+164624553536572554544165746536
+521574724335644274433544442556
+576732703453654464555315065544
+656244747015464523316444145414
+555646775254464367454454067475
+665624154657072514445150474444
+570004746554540445465051654541
+635504417414262014475547424275
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>Takahashi, who loves loop lines, is playing with a toy train.
+As shown in the figure below, this toy consists of square tiles containing railroad lines.
+By rotating the tiles, he can connect lines and play with toy trains running on the lines.
+Because Takahashi has two toy trains, please create two large loop lines as much as possible.</p>
+<table>
+<tr align="center">
+<td>
+<svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" x="60" y="0"/>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,15,45)" x="0" y="30"/>
+<use href="#rail2" stroke="silver" x="30" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,45)" x="30" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,75,45)" x="60" y="30"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,15,75)" x="0" y="60"/>
+<use href="#rail2" stroke="silver" x="30" y="60"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg>
+</td>
+<td>
+<svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,15)" x="30" y="0"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(270,75,15)" x="60" y="0"/>
+</g>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,15,45)" x="0" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,45)" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="60" y="30"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(90,15,75)" x="0" y="60"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="60"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg>
+</td>
+</tr>
+<tr align="center">
+<td>
+Initial State.
+</td>
+<td>
+After rotating the top-right tile and the middle-right tile.
+</td>
+</tr>
+</table>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given tiles containing railroad lines arranged in a 30 x 30 square.
+There are 8 types of tiles by distinguishing rotations which are numbered as follows.</p>
+<p><svg height="70" id="vis" viewBox="-5 -5 250 70" width="250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="70" width="250" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="120" x2="120" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="150" x2="150" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="180" x2="180" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="210" x2="210" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="240" x2="240" y1="0" y2="60"/>
+<text font-size="22" text-anchor="middle" x="15" y="55">
+0
+</text>
+<text font-size="22" text-anchor="middle" x="45" y="55">
+1
+</text>
+<text font-size="22" text-anchor="middle" x="75" y="55">
+2
+</text>
+<text font-size="22" text-anchor="middle" x="105" y="55">
+3
+</text>
+<text font-size="22" text-anchor="middle" x="135" y="55">
+4
+</text>
+<text font-size="22" text-anchor="middle" x="165" y="55">
+5
+</text>
+<text font-size="22" text-anchor="middle" x="195" y="55">
+6
+</text>
+<text font-size="22" text-anchor="middle" x="225" y="55">
+7
+</text>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail2" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,75,15)" x="60" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,105,15)" x="90" y="0"/>
+<use href="#rail2" stroke="silver" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,165,15)" x="150" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,165,15)" x="150" y="0"/>
+<use href="#rail1" stroke="silver" transform="rotate(90,195,15)" x="180" y="0"/>
+<use href="#rail1" stroke="silver" x="210" y="0"/>
+</svg></p>
+<p>Tiles 0 to 3 contain one curved line, tiles 4 and 5 contain two curved lines, and tiles 6 and 7 contain one straight line.
+Each tile can be rotated every 90 degrees.
+By rotating a tile 90 degrees counterclockwise, the tile will become as follows.</p>
+<p><svg height="70" id="vis" viewBox="-5 -5 250 70" width="250" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="70" width="250" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="240" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="120" x2="120" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="150" x2="150" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="180" x2="180" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="210" x2="210" y1="0" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="240" x2="240" y1="0" y2="60"/>
+<text font-size="22" text-anchor="middle" x="15" y="55">
+1
+</text>
+<text font-size="22" text-anchor="middle" x="45" y="55">
+2
+</text>
+<text font-size="22" text-anchor="middle" x="75" y="55">
+3
+</text>
+<text font-size="22" text-anchor="middle" x="105" y="55">
+0
+</text>
+<text font-size="22" text-anchor="middle" x="135" y="55">
+5
+</text>
+<text font-size="22" text-anchor="middle" x="165" y="55">
+4
+</text>
+<text font-size="22" text-anchor="middle" x="195" y="55">
+7
+</text>
+<text font-size="22" text-anchor="middle" x="225" y="55">
+6
+</text>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,15)" x="0" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,15)" x="30" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,75,15)" x="60" y="0"/>
+<use href="#rail2" stroke="silver" x="90" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(270,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(90,135,15)" x="120" y="0"/>
+<use href="#rail2" stroke="silver" x="150" y="0"/>
+<use href="#rail2" stroke="silver" transform="rotate(180,165,15)" x="150" y="0"/>
+<use href="#rail1" stroke="silver" x="180" y="0"/>
+<use href="#rail1" stroke="silver" transform="rotate(90,225,15)" x="210" y="0"/>
+</svg></p>
+<p>Since there are no branches on the lines, each line is part of a path or cycle.
+A set of lines forming a cycle is called a "loop line," and its length is defined as the number of times to move from a tile to its adjacent tile in a round trip along the loop line.
+For example, the loop line below consists of 7 tiles, but its length is 8 because it passes through the center tile twice.</p>
+<p><svg height="100" id="vis" viewBox="-5 -5 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="100" width="100" x="-5" y="-5"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="0" y2="0"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="0" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="30" y2="30"/>
+<line stroke="lightgray" stroke-width="1" x1="30" x2="30" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="60" y2="60"/>
+<line stroke="lightgray" stroke-width="1" x1="60" x2="60" y1="0" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="0" x2="90" y1="90" y2="90"/>
+<line stroke="lightgray" stroke-width="1" x1="90" x2="90" y1="0" y2="90"/>
+<defs>
+<g id="rail1" stroke-width="2">
+<line x1="12" x2="12" y1="0" y2="30"/>
+<line x1="18" x2="18" y1="0" y2="30"/>
+<line x1="12" x2="18" y1="3" y2="3"/>
+<line x1="12" x2="18" y1="9" y2="9"/>
+<line x1="12" x2="18" y1="15" y2="15"/>
+<line x1="12" x2="18" y1="21" y2="21"/>
+<line x1="12" x2="18" y1="27" y2="27"/>
+</g>
+<g fill="none" id="rail2" stroke-width="2">
+<path d="M12,0 A12,12 0 0,1 0,12"/>
+<path d="M18,0 A18,18 0 0,1 0,18"/>
+<line x1="12" x2="18" y1="2" y2="3"/>
+<line x1="11" x2="16" y1="5" y2="8"/>
+<line x1="8" x2="13" y1="8" y2="13"/>
+<line x1="5" x2="8" y1="11" y2="16"/>
+<line x1="2" x2="3" y1="12" y2="18"/>
+</g>
+</defs>
+<use href="#rail1" stroke="silver" x="0" y="0"/>
+<use href="#rail2" stroke="silver" x="30" y="0"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,15)" x="30" y="0"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(270,75,15)" x="60" y="0"/>
+</g>
+<use href="#rail2" stroke="silver" x="0" y="30"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,15,45)" x="0" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(180,45,45)" x="30" y="30"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="60" y="30"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(270,15,75)" x="0" y="60"/>
+<g>
+<use href="#rail2" stroke="brown" transform="rotate(90,15,75)" x="0" y="60"/>
+</g>
+<g>
+<use href="#rail2" stroke="brown" x="30" y="60"/>
+</g>
+<use href="#rail2" stroke="silver" transform="rotate(180,45,75)" x="30" y="60"/>
+<use href="#rail2" stroke="silver" x="60" y="60"/>
+</svg></p>
+<p>Your task is to determine the number of times to rotate each tile.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>L_1</var> be the length of the longest loop line obtained by rotating the tiles according to the output, and <var>L_2</var> be the length of the second longest one (<var>L_1=L_2</var> if there is more than one longest one).
+Then, you will get a score of <var>L_1\times L_2</var>.
+If the number of loop lines is less than or equal to <var>1</var>, the score for that test case is <var>0</var>.</p>
+<p>There are 100 test cases, and the score of a submission is the total score for each test case. If you get a result other than <span class='label label-success' data-toggle='tooltip' data-placement='top' title="Accepted">AC</span> for one or more test cases, the score of the submission will be zero. The highest score obtained during the contest time will determine the final ranking, and there will be no system test after the contest. If more than one participant gets the same score, the ranking will be determined by the submission time of the submission that received that score.</p>
+<p>Hints on how to compute the length of a loop line.
+<details>
+<font color="red">
+Pseudo code has been updated.
+</font>
+You can compute the length of a loop line, for example, as follows.
+Let <code>tiles</code> be a two-dimensional array containing the tile states.
+By numbering the directions 0, 1, 2, 3 in order of left, up, right, and down, the change in coordinates is represented by the arrays <code>di = [0, -1, 0, 1]</code> and <code>dj = [-1, 0, 1, 0]</code>.
+When a train enters a tile of state <code>t</code> from its adjacent tile in direction <code>d</code>, let <code>to[t][d]</code> be the direction to the next tile, or <code>-1</code> if the train cannot enter from such a direction, then we obtain the following two-dimensional array.</p>
+<pre>to = [
+    [1, 0, -1, -1],
+    [3, -1, -1, 0],
+    [-1, -1, 3, 2],
+    [-1, 2, 1, -1],
+    [1, 0, 3, 2],
+    [3, 2, 1, 0],
+    [2, -1, 0, -1],
+    [-1, 3, -1, 1],
+];
+</pre>
+
+<p>When a train enters tile at position <code>(i, j)</code> from its adjacent tile in direction <code>d</code>, you can update these variables as follows.</p>
+<pre>d2 = to[tiles[i][j]][d]; // Direction to the next tile
+if (d2 == -1) return 0; // The line is broken.
+i += di[d2];
+j += dj[d2];
+if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0; // The line is broken.
+d = (d2 + 2) % 4; // Direction to the previous tile.
+</pre>
+
+<p>After repeating this process until the train returns to its initial position and direction (note that it may pass through the same tile twice), the number of iterations is the length of the loop line.</p>
+<pre>// Suppose that a train enters a tile (si, sj) from direction sd.
+i = si;
+j = sj;
+d = sd;
+length = 0;
+loop {
+    d2 = to[tiles[i][j]][d];
+    if (d2 == -1) return 0;
+    i += di[d2];
+    j += dj[d2];
+    if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0;
+    d = (d2 + 2) % 4;
+    length += 1;
+    if (i == si &amp;&amp; j == sj &amp;&amp; d == sd) return length;
+}
+</pre>
+
+</details>
+
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>t_{0,0}</var> <var>\cdots</var> <var>t_{0,29}</var>
+<var>\vdots</var>
+<var>t_{29,0}</var> <var>\cdots</var> <var>t_{29,29}</var>
+</pre>
+
+<p>Each <var>t_{i,0}\cdots t_{i,29}</var> is a string of <var>30</var> characters.
+Let <var>(i,j)</var> denote the <var>i</var>-th <var>(0\leq i\leq 29)</var> tile from the top and <var>j</var>-th <var>(0\leq j\leq 29)</var> tile from the left.
+Then, <var>t_{i,j}</var> is an integer between <var>0</var> and <var>7</var> representing the state of the tile <var>(i, j)</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let <var>r_{i,j}</var> (<var>0\leq r_{i,j}\leq 3</var>) be the number of times the tile <var>(i,j)</var> is rotated 90 degrees counterclockwise.
+Output a string of length <var>900</var> such that the <var>30i+j</var>-th character is <var>r_{i,j}</var> in one line to Standard Output.</p>
+<p><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=en&show=example">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<p>Each <var>t_{i,j}</var> is independently generated as follows.</p>
+<ul>
+<li>With probability 25%, <var>t_{i,j}=\mathrm{rand}(0, 3)</var>.</li>
+<li>With probability 50%, <var>t_{i,j}=\mathrm{rand}(4, 5)</var>.</li>
+<li>With probability 25%, <var>t_{i,j}=\mathrm{rand}(6, 7)</var>.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=en">Web version</a>: This is more powerful than the local version and can display animations.</li>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><strong>Sharing visualization results is not allowed until the end of the contest. </strong></font></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">436204751575440756541724746755
+347475575404531645424640344414
+556644445442451553264555436757
+761235545455474254546631467555
+356447405421445153457656535564
+014274425356522445253477726464
+311765446655556346633757446600
+471744514426443445162555525455
+616053450444473274742055767455
+254124557527462423444450075637
+046546764557475436717475255501
+752005462554554414031525515356
+452524742177476245065554577605
+664465643742341605007655253777
+444571276444165545442447340356
+435050335454565235025507452540
+467560030465475447567644441426
+735730577745561712541450443547
+472675153755474445700540444544
+507472724556677621365747544757
+535177720776402476665547676174
+636275455643650141456764547131
+164624553536572554544165746536
+521574724335644274433544442556
+576732703453654464555315065544
+656244747015464523316444145414
+555646775254464367454454067475
+665624154657072514445150474444
+570004746554540445465051654541
+635504417414262014475547424275
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc010/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc010_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc010/tasks/ahc010_a?lang=ja" data-a2a-title="A - Loop Lines">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc010/rules">ルール</a></li>
+					<li><a href="/contests/ahc010/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

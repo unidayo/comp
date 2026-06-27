@@ -1,0 +1,195 @@
+{
+  "contest_id": "ahc014",
+  "contest_url": "https://atcoder.jp/contests/ahc014",
+  "standings_url": "https://atcoder.jp/contests/ahc014/standings",
+  "selection": "First 10 rows of official standings; SubmissionID recorded in each task result",
+  "tasks": [
+    {
+      "task_id": "ahc014_a",
+      "title": "A",
+      "url": "https://atcoder.jp/contests/ahc014/tasks/ahc014_a"
+    }
+  ],
+  "top10": [
+    {
+      "position": 1,
+      "rank": 1,
+      "user": "bowwowforeach",
+      "total_score": 312239999800,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35264600,
+          "score": 7825765600,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/01_bowwowforeach_35264600.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35264600",
+          "sha256": "57850d4f2d8ff1fc38f5346fb141094665209c3168e7a1ab3a0da05e1b74a965"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "rank": 2,
+      "user": "ynasu",
+      "total_score": 312143323100,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35267369,
+          "score": 7677408500,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/02_ynasu_35267369.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35267369",
+          "sha256": "7cbf47f4f122d76bc9066ed4ffee7cbfb730cd09abdcd0a965eefc63c5f0fa20"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "rank": 3,
+      "user": "terry_u16",
+      "total_score": 310204460000,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35262154,
+          "score": 7656525300,
+          "available": true,
+          "language": "Rust (1.42.0)",
+          "file": "submissions/03_terry_u16_35262154.rs",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35262154",
+          "sha256": "f6f1c8c1e3d3c20d9c45adec542bf23df845c17238d24460c00d62faaeea6716"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "rank": 4,
+      "user": "kozima",
+      "total_score": 297188025100,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35259260,
+          "score": 7282636400,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/04_kozima_35259260.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35259260",
+          "sha256": "551f34fcebbf5d41d16562e19bb1a1b6be91df0309f27cc9cfeeb8c20ba9607f"
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "rank": 5,
+      "user": "Rafbill",
+      "total_score": 294722968300,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35090324,
+          "score": 7337960800,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/05_Rafbill_35090324.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35090324",
+          "sha256": "60676617b9c1d7228a2623f9f6d7dbaaf44b827ab43921f641c34e5303143250"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "rank": 6,
+      "user": "Aquarius",
+      "total_score": 292379285800,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35268618,
+          "score": 7447153000,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/06_Aquarius_35268618.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35268618",
+          "sha256": "26a6d358ba0a64e91cd8ea5c0f9c1ff1a0235dcd7a1bfd642a1b6f3fea64f3bb"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "rank": 7,
+      "user": "tomerun",
+      "total_score": 288108067300,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35263621,
+          "score": 7150233300,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/07_tomerun_35263621.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35263621",
+          "sha256": "467f29aada567ee86dd1c2906a2398594596aeae14a3e94339db4107f6b55823"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "rank": 8,
+      "user": "EmK",
+      "total_score": 282015062300,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35263146,
+          "score": 7126489900,
+          "available": true,
+          "language": "C++ (Clang 10.0.0)",
+          "file": "submissions/08_EmK_35263146.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35263146",
+          "sha256": "13a81c6d3293b0e5988a575e25b3382b8102321af6b25f0c4ce2d3f9f0dc4f9c"
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "rank": 9,
+      "user": "penguin46",
+      "total_score": 279326336100,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35261239,
+          "score": 7056452200,
+          "available": true,
+          "language": "Rust (1.42.0)",
+          "file": "submissions/09_penguin46_35261239.rs",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35261239",
+          "sha256": "2abb4e454774a5ccf6f63df3a1731d890556a73d24c56b254e4a921b77fe2789"
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "rank": 10,
+      "user": "eijirou",
+      "total_score": 275768357800,
+      "submissions": [
+        {
+          "task_id": "ahc014_a",
+          "submission_id": 35262631,
+          "score": 6779833700,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/10_eijirou_35262631.cpp",
+          "url": "https://atcoder.jp/contests/ahc014/submissions/35262631",
+          "sha256": "84671be4ca64de0d87f03430fc525a87b4f7c3453daa24caa9bfb784b1550f5f"
+        }
+      ]
+    }
+  ]
+}

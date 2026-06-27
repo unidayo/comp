@@ -1,0 +1,265 @@
+pub fn solve() {
+    let now = std::time::Instant::now();
+    let mut sa = SimuratedAnnealing::new()
+        .minimize()
+        .set_time_limit(1.95)
+        .set_start_temp(2e1)
+        .set_end_temp(1e-9);
+    crate::prepare!();
+    sc!(n, h: [u32; n], c: [u32; n], a: [[u32; n]; n]);
+    let weapon_ord: Vec<Vec<usize>> = (0..n)
+        .map(|weapon| {
+            let mut ord: Vec<usize> = (0..n).collect();
+            ord.sort_by_key(|&treasure| Reverse(a[weapon][treasure]));
+            ord.truncate(18);
+            ord
+        })
+        .collect();
+    let treasure_ord: Vec<Vec<usize>> = (0..n)
+        .map(|treasure| {
+            let mut ord: Vec<usize> = (0..n).collect();
+            ord.sort_by_key(|&weapon| Reverse(a[weapon][treasure]));
+            ord.truncate(6);
+            ord
+        })
+        .collect();
+    let input = Input::new(n, h, c, a);
+    let mut state = State::new(&input);
+    let mut rng = Xorshift::default();
+    let mut cnt = 0;
+    let mut cnt_attackable = 0;
+    while !sa.is_end() {
+        cnt += 1;
+        let current_score = state.score;
+        let (weapon, weapon_index, treasure) = if rng.gen_bool(0.3) {
+            let weapon = rng.random(0..input.n);
+            let weapon_index = rng.random(0..input.c[weapon] as usize);
+            let old_treasure = state.target[weapon][weapon_index];
+            let treasure = if old_treasure != !0 && rng.gen_bool(0.1) {
+                !0
+            } else {
+                weapon_ord[weapon][rng.random(0..weapon_ord[weapon].len())]
+            };
+            (weapon, weapon_index, treasure)
+        } else {
+            let treasure = rng.random(0..input.n);
+            let weapon = treasure_ord[treasure][rng.random(0..treasure_ord[treasure].len())];
+            let weapon_index = rng.random(0..input.c[weapon] as usize);
+            (weapon, weapon_index, treasure)
+        };
+        let old_treasure = state.target[weapon][weapon_index];
+        if old_treasure == treasure {
+            continue;
+        }
+        if !state.attackable(weapon, treasure, &input) {
+            continue;
+        }
+        cnt_attackable += 1;
+        state.change_target(weapon, weapon_index, treasure, &input);
+        if sa.is_accepted(current_score as _, state.score as _) {
+            state.fit_attacked(weapon, treasure, &input);
+        } else {
+            state.change_target(weapon, weapon_index, old_treasure, &input);
+        }
+    }
+    state.fit(&input);
+    pp!(@ittup state.output(&input));
+    let hsum: u32 = input.h.iter().sum();
+    eprintln!("score = {:?}", hsum - state.score);
+    eprintln!("t = {:?}", state.score);
+    eprintln!("elapsed = {:?}", now.elapsed());
+    eprintln!("cnt = {:?}", cnt);
+    eprintln!("cnt_attackable = {:?}", cnt_attackable);
+}
+struct State {
+    target: Vec<[usize; 6]>,
+    attacked_sum: Vec<u32>,
+    attacked: Vec<Vec<usize>>,
+    /// max(0, h[i] - attacked[i]) + #(target < !0)
+    score: u32,
+    visited: Vec<bool>,
+    stack: Vec<usize>,
+}
+impl State {
+    fn new(input: &Input) -> Self {
+        Self {
+            target: vec![[!0; 6]; input.n],
+            attacked_sum: vec![0; input.n],
+            attacked: vec![vec![]; input.n],
+            score: input.h.iter().sum(),
+            visited: vec![false; input.n],
+            stack: Vec::with_capacity(input.n),
+        }
+    }
+    fn attackable(&mut self, weapon: usize, treasure: usize, input: &Input) -> bool {
+        if weapon == treasure {
+            return false;
+        }
+        if treasure == !0 {
+            return true;
+        }
+        self.visited.fill(false);
+        self.visited[treasure] = true;
+        self.stack.clear();
+        self.stack.push(treasure);
+        while let Some(current) = self.stack.pop() {
+            for i in 0..input.c[current] as usize {
+                let next = self.target[current][i];
+                if next != !0 {
+                    if next == weapon {
+                        return false;
+                    }
+                    if !self.visited[next] {
+                        self.visited[next] = true;
+                        self.stack.push(next);
+                    }
+                }
+            }
+        }
+        true
+    }
+    fn change_target(
+        &mut self,
+        weapon: usize,
+        weapon_index: usize,
+        treasure: usize,
+        input: &Input,
+    ) {
+        if self.target[weapon][weapon_index] != !0 {
+            let old_treasure = self.target[weapon][weapon_index];
+            self.score -= input.h[old_treasure].saturating_sub(self.attacked_sum[old_treasure]);
+            self.attacked_sum[old_treasure] -= input.a[weapon][old_treasure];
+            self.attacked[old_treasure].retain(|&w| w != weapon * 6 + weapon_index);
+            self.score += input.h[old_treasure].saturating_sub(self.attacked_sum[old_treasure]);
+            self.score -= 1;
+        }
+        self.target[weapon][weapon_index] = treasure;
+        if self.target[weapon][weapon_index] != !0 {
+            self.score -= input.h[treasure].saturating_sub(self.attacked_sum[treasure]);
+            self.attacked_sum[treasure] += input.a[weapon][treasure];
+            self.attacked[treasure].push(weapon * 6 + weapon_index);
+            self.score += input.h[treasure].saturating_sub(self.attacked_sum[treasure]);
+            self.score += 1;
+        }
+    }
+    fn fit_attacked(&mut self, weapon: usize, treasure: usize, input: &Input) {
+        if treasure == !0 {
+            return;
+        }
+        if self.attacked_sum[treasure] <= input.h[treasure] {
+            return;
+        }
+        self.attacked[treasure].sort_unstable_by_key(|&i| input.a[i / 6][treasure]);
+        let mut to_remove = vec![];
+        let mut removed_sum = 0;
+        for i in 0..self.attacked[treasure].len() {
+            let w = self.attacked[treasure][i] / 6;
+            if w == weapon {
+                continue;
+            }
+            if self.attacked_sum[treasure] - removed_sum >= input.h[treasure] + input.a[w][treasure]
+            {
+                let wi = self.attacked[treasure][i] % 6;
+                removed_sum += input.a[w][treasure];
+                to_remove.push((w, wi));
+            }
+        }
+        for (w, wi) in to_remove {
+            self.change_target(w, wi, !0, input);
+        }
+    }
+    fn fit(&mut self, input: &Input) {
+        let mut attacked_hp = vec![0; input.n];
+        for weapon in 0..input.n {
+            for i in 0..input.c[weapon] as usize {
+                let treasure = self.target[weapon][i];
+                if treasure != !0 {
+                    attacked_hp[treasure] += input.a[weapon][treasure];
+                }
+            }
+        }
+        let mut ord: Vec<_> = (0..input.n)
+            .map(|weapon| (0..input.n).map(move |treasure| (weapon, treasure)))
+            .flatten()
+            .collect();
+        ord.sort_by_key(|&(weapon, treasure)| Reverse(input.a[weapon][treasure]));
+        for (weapon, treasure) in ord {
+            if !self.attackable(weapon, treasure, input) {
+                continue;
+            }
+            for weapon_index in 0..input.c[weapon] as usize {
+                if self.target[weapon][weapon_index] == !0
+                    && attacked_hp[treasure] < input.h[treasure]
+                {
+                    self.change_target(weapon, weapon_index, treasure, input);
+                    attacked_hp[treasure] += input.a[weapon][treasure];
+                    break;
+                }
+            }
+        }
+    }
+    fn output(&self, input: &Input) -> Vec<(isize, usize)> {
+        let mut out = vec![];
+        let mut attacked_count = vec![0; input.n];
+        for weapon in 0..input.n {
+            for i in 0..input.c[weapon] as usize {
+                let treasure = self.target[weapon][i];
+                if treasure != !0 {
+                    attacked_count[treasure] += 1;
+                }
+            }
+        }
+        let mut stack = vec![];
+        for weapon in 0..input.n {
+            if attacked_count[weapon] == 0 {
+                stack.push(weapon);
+            }
+        }
+        let mut hp = input.h.clone();
+        while let Some(weapon) = stack.pop() {
+            while hp[weapon] > 0 {
+                out.push((-1, weapon));
+                hp[weapon] -= 1;
+            }
+            for i in 0..input.c[weapon] as usize {
+                let treasure = self.target[weapon][i];
+                if treasure != !0 {
+                    if hp[treasure] > 0 {
+                        hp[treasure] = hp[treasure].saturating_sub(input.a[weapon][treasure]);
+                        out.push((weapon as isize, treasure));
+                    }
+                    attacked_count[treasure] -= 1;
+                    if attacked_count[treasure] == 0 {
+                        stack.push(treasure);
+                    }
+                }
+            }
+        }
+        out
+    }
+}
+pub struct Input {
+    pub n: usize,
+    pub h: Vec<u32>,
+    pub c: Vec<u32>,
+    pub a: Vec<Vec<u32>>,
+}
+impl Input {
+    fn new(n: usize, h: Vec<u32>, c: Vec<u32>, a: Vec<Vec<u32>>) -> Self {
+        Self { n, h, c, a }
+    }
+}
+crate::main!();
+#[allow(unused_imports)]use std::{cmp::{Ordering,Reverse},collections::{BTreeMap,BTreeSet,BinaryHeap,HashMap,HashSet,VecDeque}};
+mod main_macros{#[doc=" Prepare useful macros."]#[doc=" - `prepare!();`: default (all input scanner (`sc!`, `sv!`) + buf print (`pp!`, `dg!`))"]#[doc=" - `prepare!(?);`: interactive (line scanner (`scln!`) + buf print (`pp!`, `dg!`))"]#[macro_export]#[allow(clippy::crate_in_macro_def)]macro_rules!prepare{(@output($dol:tt))=>{#[allow(unused_imports)]use std::io::Write as _;let __out=std::io::stdout();#[allow(unused_mut,unused_variables)]let mut __out=std::io::BufWriter::new(__out.lock());#[allow(unused_macros)]#[doc=" [`iter_print!`] for buffered stdout."]macro_rules!pp{($dol($dol t:tt)*)=>{$dol crate::iter_print!(__out,$dol($dol t)*)}}#[cfg(debug_assertions)]#[allow(unused_macros)]#[doc=" [`iter_print!`] for buffered stderr. Do nothing in release mode."]macro_rules!dg{($dol($dol t:tt)*)=>{{#[allow(unused_imports)]use std::io::Write as _;let __err=std::io::stderr();#[allow(unused_mut,unused_variables)]let mut __err=std::io::BufWriter::new(__err.lock());$dol crate::iter_print!(__err,$dol($dol t)*);let _=__err.flush();}}}#[cfg(not(debug_assertions))]#[allow(unused_macros)]#[doc=" [`iter_print!`] for buffered stderr. Do nothing in release mode."]macro_rules!dg{($dol($dol t:tt)*)=>{}}};(@normal($dol:tt))=>{let __in_buf=read_stdin_all_unchecked();#[allow(unused_mut,unused_variables)]let mut __scanner=Scanner::new(&__in_buf);#[allow(unused_macros)]macro_rules!sc{($dol($dol t:tt)*)=>{$dol crate::scan!(__scanner,$dol($dol t)*)}}#[allow(unused_macros)]macro_rules!sv{($dol($dol t:tt)*)=>{$dol crate::scan_value!(__scanner,$dol($dol t)*)}}};(@interactive($dol:tt))=>{#[allow(unused_macros)]#[doc=" Scan a line, and previous line will be truncated in the next call."]macro_rules!scln{($dol($dol t:tt)*)=>{let __in_buf=read_stdin_line();#[allow(unused_mut,unused_variables)]let mut __scanner=Scanner::new(&__in_buf);$dol crate::scan!(__scanner,$dol($dol t)*)}}#[allow(unused_macros)]#[doc=" Scan a line, and previous line will be truncated in the next call."]macro_rules!svln{($dol($dol t:tt)*)=>{{let __in_buf=read_stdin_line();#[allow(unused_mut,unused_variables)]let mut __scanner=Scanner::new(&__in_buf);$dol crate::scan_value!(__scanner,$dol($dol t)*)}}}};()=>{$crate::prepare!(@output($));$crate::prepare!(@normal($))};(?)=>{$crate::prepare!(@output($));$crate::prepare!(@interactive($))};}#[macro_export]macro_rules!main{()=>{fn main(){solve();}};(avx2)=>{fn main(){#[target_feature(enable="avx2")]unsafe fn solve_avx2(){solve();}unsafe{solve_avx2()}}};(large_stack)=>{fn main(){const STACK_SIZE:usize=512*1024*1024;::std::thread::Builder::new().stack_size(STACK_SIZE).spawn(solve).unwrap().join().unwrap();}};}}
+pub use self::iter_print::IterPrint;
+mod iter_print{use std::{fmt::Display,io::{Error,Write}};pub trait IterPrint{fn iter_print<W,S>(self,writer:&mut W,sep:S,is_head:bool)->Result<(),Error>where W:Write,S:Display;}macro_rules!impl_iter_print_tuple{(@impl,)=>{impl IterPrint for(){fn iter_print<W,S>(self,_writer:&mut W,_sep:S,_is_head:bool)->Result<(),Error>where W:Write,S:Display{Ok(())}}};(@impl$($A:ident$a:ident)?,$($B:ident$b:ident)*)=>{impl<$($A,)?$($B),*>IterPrint for($($A,)?$($B),*)where$($A:Display,)?$($B:Display),*{fn iter_print<W,S>(self,writer:&mut W,sep:S,is_head:bool)->Result<(),Error>where W:Write,S:Display{let($($a,)?$($b,)*)=self;$(if is_head{::std::write!(writer,"{}",$a)?;}else{::std::write!(writer,"{}{}",sep,$a)?;})?$(::std::write!(writer,"{}{}",sep,$b)?;)*Ok(())}}};(@inc,,$C:ident$c:ident$($D:ident$d:ident)*)=>{impl_iter_print_tuple!(@impl,);impl_iter_print_tuple!(@inc$C$c,,$($D$d)*);};(@inc$A:ident$a:ident,$($B:ident$b:ident)*,$C:ident$c:ident$($D:ident$d:ident)*)=>{impl_iter_print_tuple!(@impl$A$a,$($B$b)*);impl_iter_print_tuple!(@inc$A$a,$($B$b)*$C$c,$($D$d)*);};(@inc$A:ident$a:ident,$($B:ident$b:ident)*,)=>{impl_iter_print_tuple!(@impl$A$a,$($B$b)*);};($($t:tt)*)=>{impl_iter_print_tuple!(@inc,,$($t)*);};}impl_iter_print_tuple!(A a B b C c D d E e F f G g H h I i J j K k);#[doc=" Print expressions with a separator."]#[doc=" - `iter_print!(writer, args...)`"]#[doc=" - `@sep $expr`: set separator (default: `' '`)"]#[doc=" - `@ns`: alias for `@sep \"\"`"]#[doc=" - `@lf`: alias for `@sep '\\n'`"]#[doc=" - `@sp`: alias for `@sep ' '`"]#[doc=" - `@fmt ($lit, $($expr),*)`: print `format!($lit, $($expr),*)`"]#[doc=" - `@flush`: flush writer (auto insert `!`)"]#[doc=" - `@it $expr`: print iterator"]#[doc=" - `@it1 $expr`: print iterator as 1-indexed"]#[doc=" - `@cw ($char $expr)`: print iterator as `(elem as u8 + $char as u8) as char`"]#[doc=" - `@bw ($byte $expr)`: print iterator as `(elem as u8 + $byte) as char`"]#[doc=" - `@it2d $expr`: print 2d-iterator"]#[doc=" - `@tup $expr`: print tuple (need to import [`IterPrint`])"]#[doc=" - `@ittup $expr`: print iterative tuple (need to import [`IterPrint`])"]#[doc=" - `$expr`: print expr"]#[doc=" - `{ args... }`: scoped"]#[doc=" - `;`: print `'\\n'`"]#[doc=" - `!`: not print `'\\n'` at the end"]#[macro_export]macro_rules!iter_print{(@@fmt$writer:expr,$sep:expr,$is_head:expr,($lit:literal$(,$e:expr)*$(,)?))=>{if!$is_head{::std::write!($writer,"{}",$sep).expect("io error");}::std::write!($writer,$lit,$($e),*).expect("io error");};(@@item$writer:expr,$sep:expr,$is_head:expr,$e:expr)=>{$crate::iter_print!(@@fmt$writer,$sep,$is_head,("{}",$e));};(@@line_feed$writer:expr$(,)?)=>{::std::writeln!($writer).expect("io error");};(@@it$writer:expr,$sep:expr,$is_head:expr,$iter:expr)=>{{let mut iter=$iter.into_iter();if let Some(item)=iter.next(){$crate::iter_print!(@@item$writer,$sep,$is_head,item);}for item in iter{$crate::iter_print!(@@item$writer,$sep,false,item);}}};(@@it1$writer:expr,$sep:expr,$is_head:expr,$iter:expr)=>{{let mut iter=$iter.into_iter();if let Some(item)=iter.next(){$crate::iter_print!(@@item$writer,$sep,$is_head,item+1);}for item in iter{$crate::iter_print!(@@item$writer,$sep,false,item+1);}}};(@@cw$writer:expr,$sep:expr,$is_head:expr,($ch:literal$iter:expr))=>{{let mut iter=$iter.into_iter();let b=$ch as u8;if let Some(item)=iter.next(){$crate::iter_print!(@@item$writer,$sep,$is_head,(item as u8+b)as char);}for item in iter{$crate::iter_print!(@@item$writer,$sep,false,(item as u8+b)as char);}}};(@@bw$writer:expr,$sep:expr,$is_head:expr,($b:literal$iter:expr))=>{{let mut iter=$iter.into_iter();let b:u8=$b;if let Some(item)=iter.next(){$crate::iter_print!(@@item$writer,$sep,$is_head,(item as u8+b)as char);}for item in iter{$crate::iter_print!(@@item$writer,$sep,false,(item as u8+b)as char);}}};(@@it2d$writer:expr,$sep:expr,$is_head:expr,$iter:expr)=>{let mut iter=$iter.into_iter();if let Some(item)=iter.next(){$crate::iter_print!(@@it$writer,$sep,$is_head,item);}for item in iter{$crate::iter_print!(@@line_feed$writer);$crate::iter_print!(@@it$writer,$sep,true,item);}};(@@tup$writer:expr,$sep:expr,$is_head:expr,$tuple:expr)=>{IterPrint::iter_print($tuple,&mut$writer,$sep,$is_head).expect("io error");};(@@ittup$writer:expr,$sep:expr,$is_head:expr,$iter:expr)=>{let mut iter=$iter.into_iter();if let Some(item)=iter.next(){$crate::iter_print!(@@tup$writer,$sep,$is_head,item);}for item in iter{$crate::iter_print!(@@line_feed$writer);$crate::iter_print!(@@tup$writer,$sep,true,item);}};(@@assert_tag item)=>{};(@@assert_tag it)=>{};(@@assert_tag it1)=>{};(@@assert_tag it2d)=>{};(@@assert_tag tup)=>{};(@@assert_tag ittup)=>{};(@@assert_tag$tag:ident)=>{::std::compile_error!(::std::concat!("invalid tag in `iter_print!`: `",std::stringify!($tag),"`"));};(@@inner$writer:expr,$sep:expr,$is_head:expr,@sep$e:expr,$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,$e,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@ns$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,"",$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@lf$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,'\n',$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@sp$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,' ',$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@flush$($t:tt)*)=>{$writer.flush().expect("io error");$crate::iter_print!(@@inner$writer,$sep,$is_head,!$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@fmt$arg:tt$($t:tt)*)=>{$crate::iter_print!(@@fmt$writer,$sep,$is_head,$arg);$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@cw$arg:tt$($t:tt)*)=>{$crate::iter_print!(@@cw$writer,$sep,$is_head,$arg);$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@bw$arg:tt$($t:tt)*)=>{$crate::iter_print!(@@bw$writer,$sep,$is_head,$arg);$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@$tag:ident$e:expr,$($t:tt)*)=>{$crate::iter_print!(@@assert_tag$tag);$crate::iter_print!(@@$tag$writer,$sep,$is_head,$e);$crate::iter_print!(@@inner$writer,$sep,false,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@$tag:ident$e:expr;$($t:tt)*)=>{$crate::iter_print!(@@assert_tag$tag);$crate::iter_print!(@@$tag$writer,$sep,$is_head,$e);$crate::iter_print!(@@line_feed$writer);$crate::iter_print!(@@inner$writer,$sep,true,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@$tag:ident$e:expr)=>{$crate::iter_print!(@@assert_tag$tag);$crate::iter_print!(@@$tag$writer,$sep,$is_head,$e);$crate::iter_print!(@@inner$writer,$sep,false,);};(@@inner$writer:expr,$sep:expr,$is_head:expr,@$tag:ident$($t:tt)*)=>{::std::compile_error!(::std::concat!("invalid expr in `iter_print!`: `",std::stringify!($($t)*),"`"));};(@@inner$writer:expr,$sep:expr,$is_head:expr,,$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,;$($t:tt)*)=>{$crate::iter_print!(@@line_feed$writer);$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,!$(,)?)=>{};(@@inner$writer:expr,$sep:expr,$is_head:expr,!$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,)=>{$crate::iter_print!(@@line_feed$writer);};(@@inner$writer:expr,$sep:expr,$is_head:expr,{$($t:tt)*}$($rest:tt)*)=>{$crate::iter_print!(@@inner$writer,$sep,$is_head,$($t)*,!);$crate::iter_print!(@@inner$writer,$sep,$is_head,$($rest)*);};(@@inner$writer:expr,$sep:expr,$is_head:expr,$($t:tt)*)=>{$crate::iter_print!(@@inner$writer,$sep,$is_head,@item$($t)*);};($writer:expr,$($t:tt)*)=>{{$crate::iter_print!(@@inner$writer,' ',true,$($t)*);}};}}
+mod array{#[macro_export]macro_rules!array{[@inner$data:ident=[$init:expr;$len:expr]]=>{{use::std::mem::{ManuallyDrop,MaybeUninit};let mut$data:[MaybeUninit<_>;$len]=unsafe{MaybeUninit::uninit().assume_init()};$init;#[repr(C)]union __Transmuter<const N:usize,T:Clone>{src:ManuallyDrop<[MaybeUninit<T>;N]>,dst:ManuallyDrop<[T;N]>,}ManuallyDrop::into_inner(unsafe{__Transmuter{src:ManuallyDrop::new($data)}.dst})}};[||$e:expr;$len:expr]=>{$crate::array![@inner data=[data.iter_mut().for_each(|item|*item=MaybeUninit::new($e));$len]]};[|$i:pat_param|$e:expr;$len:expr]=>{$crate::array![@inner data=[data.iter_mut().enumerate().for_each(|($i,item)|*item=MaybeUninit::new($e));$len]]};[$e:expr;$len:expr]=>{{let e=$e;$crate::array![||Clone::clone(&e);$len]}};}}
+pub use self::scanner::*;
+mod scanner{use std::{iter::{FromIterator,from_fn,repeat_with},marker::PhantomData};pub fn read_stdin_all()->String{use std::io::Read as _;let mut s=String::new();std::io::stdin().read_to_string(&mut s).expect("io error");s}pub fn read_stdin_all_unchecked()->String{use std::io::Read as _;let mut buf=Vec::new();std::io::stdin().read_to_end(&mut buf).expect("io error");unsafe{String::from_utf8_unchecked(buf)}}pub fn read_all(mut reader:impl std::io::Read)->String{let mut s=String::new();reader.read_to_string(&mut s).expect("io error");s}pub fn read_all_unchecked(mut reader:impl std::io::Read)->String{let mut buf=Vec::new();reader.read_to_end(&mut buf).expect("io error");unsafe{String::from_utf8_unchecked(buf)}}pub fn read_stdin_line()->String{let mut s=String::new();std::io::stdin().read_line(&mut s).expect("io error");s}pub trait IterScan:Sized{type Output;fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>;}pub trait MarkedIterScan:Sized{type Output;fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>;}#[derive(Clone,Debug)]pub struct Scanner<'a>{iter:std::str::SplitAsciiWhitespace<'a>}impl<'a>Scanner<'a>{#[inline]pub fn new(s:&'a str)->Self{let iter=s.split_ascii_whitespace();Self{iter}}#[inline]pub fn scan<T>(&mut self)-><T as IterScan>::Output where T:IterScan{<T as IterScan>::scan(&mut self.iter).expect("scan error")}#[inline]pub fn mscan<T>(&mut self,marker:T)-><T as MarkedIterScan>::Output where T:MarkedIterScan{marker.mscan(&mut self.iter).expect("scan error")}#[inline]pub fn scan_vec<T>(&mut self,size:usize)->Vec<<T as IterScan>::Output>where T:IterScan{(0..size).map(|_|<T as IterScan>::scan(&mut self.iter).expect("scan error")).collect()}#[inline]pub fn iter<'b,T>(&'b mut self)->ScannerIter<'a,'b,T>where T:IterScan{ScannerIter{inner:self,_marker:std::marker::PhantomData}}}macro_rules!impl_iter_scan{($($t:ty)*)=>{$(impl IterScan for$t{type Output=Self;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self>{iter.next()?.parse::<$t>().ok()}})*};}impl_iter_scan!(char u8 u16 u32 u64 usize i8 i16 i32 i64 isize f32 f64 u128 i128 String);macro_rules!impl_iter_scan_tuple{(@impl$($T:ident)*)=>{impl<$($T:IterScan),*>IterScan for($($T,)*){type Output=($(<$T as IterScan>::Output,)*);#[inline]fn scan<'a,It:Iterator<Item=&'a str>>(_iter:&mut It)->Option<Self::Output>{Some(($(<$T as IterScan>::scan(_iter)?,)*))}}};(@inner$($T:ident)*,)=>{impl_iter_scan_tuple!(@impl$($T)*);};(@inner$($T:ident)*,$U:ident$($Rest:ident)*)=>{impl_iter_scan_tuple!(@impl$($T)*);impl_iter_scan_tuple!(@inner$($T)*$U,$($Rest)*);};($($T:ident)*)=>{impl_iter_scan_tuple!(@inner,$($T)*);};}impl_iter_scan_tuple!(A B C D E F G H I J K);pub struct ScannerIter<'a,'b,T>{inner:&'b mut Scanner<'a>,_marker:std::marker::PhantomData<fn()->T>}impl<T>Iterator for ScannerIter<'_,'_,T>where T:IterScan{type Item=<T as IterScan>::Output;#[inline]fn next(&mut self)->Option<Self::Item>{<T as IterScan>::scan(&mut self.inner.iter)}}#[doc=" scan a value with Scanner"]#[doc=""]#[doc=" - `scan_value!(scanner, ELEMENT)`"]#[doc=""]#[doc=" ELEMENT :="]#[doc=" - `$ty`: IterScan"]#[doc=" - `@$expr`: MarkedIterScan"]#[doc=" - `[ELEMENT; $expr]`: vector"]#[doc=" - `[ELEMENT; const $expr]`: array"]#[doc=" - `[ELEMENT]`: iterator"]#[doc=" - `($(ELEMENT)*,)`: tuple"]#[macro_export]macro_rules!scan_value{(@repeat$scanner:expr,[$($t:tt)*]$($len:expr)?)=>{::std::iter::repeat_with(||$crate::scan_value!(@inner$scanner,[]$($t)*))$(.take($len).collect::<Vec<_>>())?};(@array$scanner:expr,[$($t:tt)*]$len:expr)=>{$crate::array![||$crate::scan_value!(@inner$scanner,[]$($t)*);$len]};(@tuple$scanner:expr,[$([$($args:tt)*])*])=>{($($($args)*,)*)};(@$tag:ident$scanner:expr,[[$($args:tt)*]])=>{$($args)*};(@$tag:ident$scanner:expr,[$($args:tt)*]@$e:expr)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$scanner.mscan($e)]])};(@$tag:ident$scanner:expr,[$($args:tt)*]@$e:expr,$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$scanner.mscan($e)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*]($($tuple:tt)*)$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@tuple$scanner,[]$($tuple)*)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][@$e:expr;const$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@array$scanner,[@$e]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][@$e:expr;$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@repeat$scanner,[@$e]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][[$($tt:tt)*];const$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@array$scanner,[[$($tt)*]]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][[$($tt:tt)*];$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@repeat$scanner,[[$($tt)*]]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][($($tt:tt)*);const$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@array$scanner,[($($tt)*)]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][($($tt:tt)*);$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@repeat$scanner,[($($tt)*)]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][$ty:ty;const$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@array$scanner,[$ty]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][$ty:ty;$len:expr]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@repeat$scanner,[$ty]$len)]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*][$($tt:tt)*]$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$crate::scan_value!(@repeat$scanner,[$($tt)*])]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*]$ty:ty)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$scanner.scan::<$ty>()]])};(@$tag:ident$scanner:expr,[$($args:tt)*]$ty:ty,$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*[$scanner.scan::<$ty>()]]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*],$($t:tt)*)=>{$crate::scan_value!(@$tag$scanner,[$($args)*]$($t)*)};(@$tag:ident$scanner:expr,[$($args:tt)*])=>{::std::compile_error!(::std::stringify!($($args)*))};(src=$src:expr,$($t:tt)*)=>{{let mut __scanner=Scanner::new($src);$crate::scan_value!(@inner __scanner,[]$($t)*)}};($scanner:expr,$($t:tt)*)=>{$crate::scan_value!(@inner$scanner,[]$($t)*)}}#[doc=" scan and bind values with Scanner"]#[doc=""]#[doc=" - `scan!(scanner, $($pat $(: ELEMENT)?),*)`"]#[macro_export]macro_rules!scan{(@assert$p:pat)=>{};(@assert$($p:tt)*)=>{::std::compile_error!(::std::concat!("expected pattern, found `",::std::stringify!($($p)*),"`"));};(@pat$scanner:expr,[][])=>{};(@pat$scanner:expr,[][],$($t:tt)*)=>{$crate::scan!(@pat$scanner,[][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]$x:ident$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*$x][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]::$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*::][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]&$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*&][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]($($x:tt)*)$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*($($x)*)][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][][$($x:tt)*]$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*[$($x)*]][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]{$($x:tt)*}$($t:tt)*)=>{$crate::scan!(@pat$scanner,[$($p)*{$($x)*}][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]:$($t:tt)*)=>{$crate::scan!(@ty$scanner,[$($p)*][]$($t)*)};(@pat$scanner:expr,[$($p:tt)*][]$($t:tt)*)=>{$crate::scan!(@let$scanner,[$($p)*][usize]$($t)*)};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*]@$e:expr)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*@$e])};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*]@$e:expr,$($t:tt)*)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*@$e],$($t)*)};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*]($($x:tt)*)$($t:tt)*)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*($($x)*)]$($t)*)};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*][$($x:tt)*]$($t:tt)*)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*[$($x)*]]$($t)*)};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*]$ty:ty)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*$ty])};(@ty$scanner:expr,[$($p:tt)*][$($tt:tt)*]$ty:ty,$($t:tt)*)=>{$crate::scan!(@let$scanner,[$($p)*][$($tt)*$ty],$($t)*)};(@let$scanner:expr,[$($p:tt)*][$($tt:tt)*]$($t:tt)*)=>{$crate::scan!{@assert$($p)*}let$($p)* =$crate::scan_value!($scanner,$($tt)*);$crate::scan!(@pat$scanner,[][]$($t)*)};(src=$src:expr,$($t:tt)*)=>{let mut __scanner=Scanner::new($src);$crate::scan!(@pat __scanner,[][]$($t)*)};($scanner:expr,$($t:tt)*)=>{$crate::scan!(@pat$scanner,[][]$($t)*)}}#[derive(Debug,Copy,Clone)]pub enum Usize1{}impl IterScan for Usize1{type Output=usize;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>{<usize as IterScan>::scan(iter)?.checked_sub(1)}}#[derive(Debug,Copy,Clone)]pub struct CharWithBase(pub char);impl MarkedIterScan for CharWithBase{type Output=usize;#[inline]fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{Some((<char as IterScan>::scan(iter)?as u8-self.0 as u8)as usize)}}#[derive(Debug,Copy,Clone)]pub enum Chars{}impl IterScan for Chars{type Output=Vec<char>;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>{Some(iter.next()?.chars().collect())}}#[derive(Debug,Copy,Clone)]pub struct CharsWithBase(pub char);impl MarkedIterScan for CharsWithBase{type Output=Vec<usize>;#[inline]fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{Some(iter.next()?.chars().map(|c|(c as u8-self.0 as u8)as usize).collect())}}#[derive(Debug,Copy,Clone)]pub enum Byte1{}impl IterScan for Byte1{type Output=u8;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>{let bytes=iter.next()?.as_bytes();assert_eq!(bytes.len(),1);Some(bytes[0])}}#[derive(Debug,Copy,Clone)]pub struct ByteWithBase(pub u8);impl MarkedIterScan for ByteWithBase{type Output=usize;#[inline]fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{Some((<char as IterScan>::scan(iter)?as u8-self.0)as usize)}}#[derive(Debug,Copy,Clone)]pub enum Bytes{}impl IterScan for Bytes{type Output=Vec<u8>;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>{Some(iter.next()?.bytes().collect())}}#[derive(Debug,Copy,Clone)]pub struct BytesWithBase(pub u8);impl MarkedIterScan for BytesWithBase{type Output=Vec<usize>;#[inline]fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{Some(iter.next()?.bytes().map(|c|(c-self.0)as usize).collect())}}#[derive(Debug,Copy,Clone)]pub struct Collect<T,B=Vec<<T as IterScan>::Output>>where T:IterScan,B:FromIterator<<T as IterScan>::Output>{size:usize,_marker:PhantomData<fn()->(T,B)>}impl<T,B>Collect<T,B>where T:IterScan,B:FromIterator<<T as IterScan>::Output>{pub fn new(size:usize)->Self{Self{size,_marker:PhantomData}}}impl<T,B>MarkedIterScan for Collect<T,B>where T:IterScan,B:FromIterator<<T as IterScan>::Output>{type Output=B;#[inline]fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{repeat_with(| |<T as IterScan>::scan(iter)).take(self.size).collect()}}#[derive(Debug,Copy,Clone)]pub struct SizedCollect<T,B=Vec<<T as IterScan>::Output>>where T:IterScan,B:FromIterator<<T as IterScan>::Output>{_marker:PhantomData<fn()->(T,B)>}impl<T,B>IterScan for SizedCollect<T,B>where T:IterScan,B:FromIterator<<T as IterScan>::Output>{type Output=B;#[inline]fn scan<'a,I:Iterator<Item=&'a str>>(iter:&mut I)->Option<Self::Output>{let size=usize::scan(iter)?;repeat_with(| |<T as IterScan>::scan(iter)).take(size).collect()}}#[derive(Debug,Copy,Clone)]pub struct Splitted<T,P>where T:IterScan{pat:P,_marker:PhantomData<fn()->T>}impl<T,P>Splitted<T,P>where T:IterScan{pub fn new(pat:P)->Self{Self{pat,_marker:PhantomData}}}impl<T>MarkedIterScan for Splitted<T,char>where T:IterScan{type Output=Vec<<T as IterScan>::Output>;fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{let mut iter=iter.next()?.split(self.pat);Some(from_fn(| |<T as IterScan>::scan(&mut iter)).collect())}}impl<T>MarkedIterScan for Splitted<T,&str>where T:IterScan{type Output=Vec<<T as IterScan>::Output>;fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{let mut iter=iter.next()?.split(self.pat);Some(from_fn(| |<T as IterScan>::scan(&mut iter)).collect())}}impl<T,F>MarkedIterScan for F where F:Fn(&str)->Option<T>{type Output=T;fn mscan<'a,I:Iterator<Item=&'a str>>(self,iter:&mut I)->Option<Self::Output>{self(iter.next()?)}}}
+pub use self::xorshift::Xorshift;
+mod xorshift{use std::{collections::hash_map::RandomState,hash::{BuildHasher,Hasher},iter::repeat_with};#[derive(Clone,Debug)]pub struct Xorshift{y:u64}impl Xorshift{pub fn new_with_seed(seed:u64)->Self{Xorshift{y:seed}}pub fn new()->Self{Xorshift::new_with_seed(RandomState::new().build_hasher().finish())}pub fn rand64(&mut self)->u64{self.y^=self.y<<5;self.y^=self.y>>17;self.y^=self.y<<11;self.y}pub fn rand(&mut self,k:u64)->u64{self.rand64()%k}pub fn rands(&mut self,k:u64,n:usize)->Vec<u64>{repeat_with(| |self.rand(k)).take(n).collect()}pub fn randf(&mut self)->f64{const UPPER_MASK:u64=0x3FF0_0000_0000_0000;const LOWER_MASK:u64=0x000F_FFFF_FFFF_FFFF;let x=self.rand64();let tmp=UPPER_MASK|(x&LOWER_MASK);let result:f64=f64::from_bits(tmp);f64::from_bits(f64::to_bits(result-1.0)^(x>>63))}pub fn gen_bool(&mut self,p:f64)->bool{self.randf()<p}pub fn shuffle<T>(&mut self,slice:&mut[T]){let mut n=slice.len();while n>1{let i=self.rand(n as _)as usize;n-=1;slice.swap(i,n);}}}impl Default for Xorshift{fn default()->Self{Xorshift::new_with_seed(0x2b99_2ddf_a232_49d6)}}}
+pub use self::simurated_annealing::SimuratedAnnealing;
+mod simurated_annealing{use super::Xorshift;#[derive(Debug)]pub struct SimuratedAnnealing{pub iter_count:usize,pub now:std::time::Instant,pub time:f64,pub temperture:f64,pub log_table:Vec<f64>,pub rand:Xorshift,pub is_maximize:bool,pub start_temp:f64,pub end_temp:f64,pub time_limit:f64,pub update_interval:usize}impl Default for SimuratedAnnealing{fn default()->Self{let now=std::time::Instant::now();let log_table=(0..Self::LOG_TABLE_SIZE).map(|i|((i*2+1)as f64/(Self::LOG_TABLE_SIZE*2)as f64).ln()).collect();Self{iter_count:0,now,time:0.,temperture:3e3,log_table,rand:Xorshift::new_with_seed(Self::SEED),is_maximize:true,start_temp:3e3,end_temp:1e-8,time_limit:1.99,update_interval:0xff}}}impl SimuratedAnnealing{pub const LOG_TABLE_SIZE:usize=0x10000;pub const SEED:u64=0xbeef_cafe;pub fn new()->Self{Default::default()}pub fn minimize(mut self)->Self{self.is_maximize=false;self}pub fn set_start_temp(mut self,start_temp:f64)->Self{assert_eq!(self.iter_count,0);self.start_temp=start_temp;self.temperture=start_temp;self}pub fn set_end_temp(mut self,end_temp:f64)->Self{self.end_temp=end_temp;self}pub fn set_time_limit(mut self,time_limit:f64)->Self{self.time_limit=time_limit;self}pub fn set_update_interval(mut self,update_interval:usize)->Self{assert!(update_interval>0);self.update_interval=update_interval;self}pub fn is_accepted(&mut self,current_score:f64,next_score:f64)->bool{let diff=if self.is_maximize{next_score-current_score}else{current_score-next_score};diff>=0.||diff>self.log_table[self.rand.rand(Self::LOG_TABLE_SIZE as u64)as usize]*self.temperture}pub fn is_end(&mut self)->bool{self.iter_count+=1;if self.iter_count%self.update_interval==0{self.time=self.now.elapsed().as_secs_f64();let temp_ratio=(self.end_temp-self.start_temp)/self.time_limit;self.temperture=self.start_temp+temp_ratio*self.time;self.time>=self.time_limit}else{false}}}}
+pub use self::random_generator::{NotEmptySegment,RandIter,RandRange,RandomSpec};
+mod random_generator{use super::Xorshift;use std::{marker::PhantomData,mem::swap,ops::{Bound,Range,RangeFrom,RangeFull,RangeInclusive,RangeTo,RangeToInclusive}};#[doc=" Trait for spec of generating random value."]pub trait RandomSpec<T>:Sized{#[doc=" Return a random value."]fn rand(&self,rng:&mut Xorshift)->T;#[doc=" Return an iterator that generates random values."]fn rand_iter(self,rng:&mut Xorshift)->RandIter<'_,T,Self>{RandIter{spec:self,rng,_marker:PhantomData}}}impl Xorshift{pub fn random<T,R>(&mut self,spec:R)->T where R:RandomSpec<T>{spec.rand(self)}pub fn random_iter<T,R>(&mut self,spec:R)->RandIter<'_,T,R>where R:RandomSpec<T>{spec.rand_iter(self)}}#[derive(Debug)]pub struct RandIter<'r,T,R>where R:RandomSpec<T>{spec:R,rng:&'r mut Xorshift,_marker:PhantomData<fn()->T>}impl<T,R>Iterator for RandIter<'_,T,R>where R:RandomSpec<T>{type Item=T;fn next(&mut self)->Option<Self::Item>{Some(self.spec.rand(self.rng))}}macro_rules!impl_random_spec_range_full{($($t:ty)*)=>{$(impl RandomSpec<$t>for RangeFull{fn rand(&self,rng:&mut Xorshift)->$t{rng.rand64()as _}})*};}impl_random_spec_range_full!(u8 u16 u32 u64 usize i8 i16 i32 i64 isize);impl RandomSpec<u128>for RangeFull{fn rand(&self,rng:&mut Xorshift)->u128{((rng.rand64()as u128)<<64)|rng.rand64()as u128}}impl RandomSpec<i128>for RangeFull{fn rand(&self,rng:&mut Xorshift)->i128{rng.random::<u128,_>(..)as i128}}macro_rules!impl_random_spec_ranges{($($u:ident$i:ident)*)=>{$(impl RandomSpec<$u>for Range<$u>{fn rand(&self,rng:&mut Xorshift)->$u{assert!(self.start<self.end);let len=self.end-self.start;(self.start+rng.random::<$u,_>(..)%len)}}impl RandomSpec<$i>for Range<$i>{fn rand(&self,rng:&mut Xorshift)->$i{assert!(self.start<self.end);let len=self.end.abs_diff(self.start);self.start.wrapping_add_unsigned(rng.random::<$u,_>(..)%len)}}impl RandomSpec<$u>for RangeFrom<$u>{fn rand(&self,rng:&mut Xorshift)->$u{let len=($u::MAX-self.start).wrapping_add(1);let x=rng.random::<$u,_>(..);self.start+if len!=0{x%len}else{x}}}impl RandomSpec<$i>for RangeFrom<$i>{fn rand(&self,rng:&mut Xorshift)->$i{let len=($i::MAX.abs_diff(self.start)).wrapping_add(1);let x=rng.random::<$u,_>(..);self.start.wrapping_add_unsigned(if len!=0{x%len}else{x})}}impl RandomSpec<$u>for RangeInclusive<$u>{fn rand(&self,rng:&mut Xorshift)->$u{assert!(self.start()<=self.end());let len=(self.end()-self.start()).wrapping_add(1);let x=rng.random::<$u,_>(..);self.start()+if len!=0{x%len}else{x}}}impl RandomSpec<$i>for RangeInclusive<$i>{fn rand(&self,rng:&mut Xorshift)->$i{assert!(self.start()<=self.end());let len=(self.end().abs_diff(*self.start())).wrapping_add(1);let x=rng.random::<$u,_>(..);self.start().wrapping_add_unsigned(if len!=0{x%len}else{x})}}impl RandomSpec<$u>for RangeTo<$u>{fn rand(&self,rng:&mut Xorshift)->$u{let len=self.end;rng.random::<$u,_>(..)%len}}impl RandomSpec<$i>for RangeTo<$i>{fn rand(&self,rng:&mut Xorshift)->$i{let len=self.end.abs_diff($i::MIN);$i::MIN.wrapping_add_unsigned(rng.random::<$u,_>(..)%len)}}impl RandomSpec<$u>for RangeToInclusive<$u>{fn rand(&self,rng:&mut Xorshift)->$u{let len=(self.end).wrapping_add(1);let x=rng.random::<$u,_>(..);if len!=0{x%len}else{x}}}impl RandomSpec<$i>for RangeToInclusive<$i>{fn rand(&self,rng:&mut Xorshift)->$i{let len=(self.end.abs_diff($i::MIN)).wrapping_add(1);let x=rng.random::<$u,_>(..);$i::MIN.wrapping_add_unsigned(if len!=0{x%len}else{x})}})*};}impl_random_spec_ranges!(u8 i8 u16 i16 u32 i32 u64 i64 u128 i128 usize isize);macro_rules!impl_random_spec_tuple{($($T:ident)*,$($R:ident)*,$($v:ident)*)=>{impl<$($T),*,$($R),*>RandomSpec<($($T,)*)>for($($R,)*)where$($R:RandomSpec<$T>),*{fn rand(&self,rng:&mut Xorshift)->($($T,)*){let($($v,)*)=self;($(($v).rand(rng),)*)}}};}impl_random_spec_tuple!(A,RA,a);impl_random_spec_tuple!(A B,RA RB,a b);impl_random_spec_tuple!(A B C,RA RB RC,a b c);impl_random_spec_tuple!(A B C D,RA RB RC RD,a b c d);impl_random_spec_tuple!(A B C D E,RA RB RC RD RE,a b c d e);impl_random_spec_tuple!(A B C D E F,RA RB RC RD RE RF,a b c d e f);impl_random_spec_tuple!(A B C D E F G,RA RB RC RD RE RF RG,a b c d e f g);impl_random_spec_tuple!(A B C D E F G H,RA RB RC RD RE RF RG RH,a b c d e f g h);impl_random_spec_tuple!(A B C D E F G H I,RA RB RC RD RE RF RG RH RI,a b c d e f g h i);impl_random_spec_tuple!(A B C D E F G H I J,RA RB RC RD RE RF RG RH RI RJ,a b c d e f g h i j);macro_rules!impl_random_spec_primitive{($($t:ty)*)=>{$(impl RandomSpec<$t>for$t{fn rand(&self,_rng:&mut Xorshift)->$t{*self}})*};}impl_random_spec_primitive!(()u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize bool char);impl<T,R>RandomSpec<T>for&R where R:RandomSpec<T>{fn rand(&self,rng:&mut Xorshift)->T{<R as RandomSpec<T>>::rand(self,rng)}}impl<T,R>RandomSpec<T>for&mut R where R:RandomSpec<T>{fn rand(&self,rng:&mut Xorshift)->T{<R as RandomSpec<T>>::rand(self,rng)}}#[derive(Debug,Clone,Copy,PartialEq,Eq,PartialOrd,Ord,Hash)]#[doc=" Left-close Right-open No Empty Segment"]pub struct NotEmptySegment<T>(pub T);impl<T>RandomSpec<(usize,usize)>for NotEmptySegment<T>where T:RandomSpec<usize>{fn rand(&self,rng:&mut Xorshift)->(usize,usize){let n=rng.random(&self.0)as u64;let k=randint_uniform(rng,n);let l=randint_uniform(rng,n-k)as usize;(l,l+k as usize+1)}}#[derive(Debug,Clone,Copy,PartialEq,Eq,PartialOrd,Ord,Hash)]pub struct RandRange<Q,T>{data:Q,_marker:PhantomData<fn()->T>}impl<Q,T>RandRange<Q,T>{pub fn new(data:Q)->Self{Self{data,_marker:PhantomData}}}impl<Q,T>RandomSpec<(Bound<T>,Bound<T>)>for RandRange<Q,T>where Q:RandomSpec<T>,T:Ord{fn rand(&self,rng:&mut Xorshift)->(Bound<T>,Bound<T>){let mut l=rng.random(&self.data);let mut r=rng.random(&self.data);if l>r{swap(&mut l,&mut r);}(match rng.rand(3){0=>Bound::Excluded(l),1=>Bound::Included(l),_=>Bound::Unbounded,},match rng.rand(3){0=>Bound::Excluded(r),1=>Bound::Included(r),_=>Bound::Unbounded,})}}fn randint_uniform(rng:&mut Xorshift,k:u64)->u64{let mut v=rng.rand64();if k>0{v%=k;}v}#[macro_export]#[doc=" Return a random value using [`RandomSpec`]."]macro_rules!rand_value{(@repeat$rng:expr,[$($t:tt)*]$($len:expr)?)=>{::std::iter::repeat_with(||$crate::rand_value!(@inner$rng,[]$($t)*))$(.take($len).collect::<Vec<_>>())?};(@array$rng:expr,[$($t:tt)*]$len:expr)=>{$crate::array![||$crate::rand_value!(@inner$rng,[]$($t)*);$len]};(@tuple$rng:expr,[$([$($args:tt)*])*])=>{($($($args)*,)*)};(@$tag:ident$rng:expr,[[$($args:tt)*]])=>{$($args)*};(@$tag:ident$rng:expr,[$($args:tt)*]($($tuple:tt)*)$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@tuple$rng,[]$($tuple)*)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][[$($tt:tt)*];const$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@array$rng,[[$($tt)*]]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][[$($tt:tt)*];$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@repeat$rng,[[$($tt)*]]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][($($tt:tt)*);const$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@array$rng,[($($tt)*)]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][($($tt:tt)*);$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@repeat$rng,[($($tt)*)]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][$ty:expr;const$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@array$rng,[$ty]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][$ty:expr;$len:expr]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@repeat$rng,[$ty]$len)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*][$($tt:tt)*]$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[$crate::rand_value!(@repeat$rng,[$($tt)*])]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*]$ty:expr)=>{$crate::rand_value!(@$tag$rng,[$($args)*[($rng).random($ty)]])};(@$tag:ident$rng:expr,[$($args:tt)*]$ty:expr,$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*[($rng).random($ty)]]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*],$($t:tt)*)=>{$crate::rand_value!(@$tag$rng,[$($args)*]$($t)*)};(@$tag:ident$rng:expr,[$($args:tt)*])=>{::std::compile_error!(::std::stringify!($($args)*))};(seed=$src:expr,$($t:tt)*)=>{{let mut __rng=Xorshift::new_with_seed($src);$crate::rand_value!(@inner __rng,[]$($t)*)}};($rng:expr,$($t:tt)*)=>{$crate::rand_value!(@inner$rng,[]$($t)*)}}#[macro_export]#[doc=" Declare random values using [`RandomSpec`]."]macro_rules!rand{(@assert$p:pat)=>{};(@assert$($p:tt)*)=>{::std::compile_error!(::std::concat!("expected pattern, found `",::std::stringify!($($p)*),"`"));};(@pat$rng:expr,[][])=>{};(@pat$rng:expr,[][],$($t:tt)*)=>{$crate::rand!(@pat$rng,[][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]$x:ident$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*$x][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]::$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*::][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]&$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*&][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]($($x:tt)*)$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*($($x)*)][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][][$($x:tt)*]$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*[$($x)*]][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]{$($x:tt)*}$($t:tt)*)=>{$crate::rand!(@pat$rng,[$($p)*{$($x)*}][]$($t)*)};(@pat$rng:expr,[$($p:tt)*][]:$($t:tt)*)=>{$crate::rand!(@ty$rng,[$($p)*][]$($t)*)};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*]($($x:tt)*)$($t:tt)*)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*($($x)*)]$($t)*)};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*][$($x:tt)*]$($t:tt)*)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*[$($x)*]]$($t)*)};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*]$e:expr)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*$e])};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*]$e:expr,$($t:tt)*)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*$e],$($t)*)};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*]$e:tt)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*$e])};(@ty$rng:expr,[$($p:tt)*][$($tt:tt)*]$e:tt,$($t:tt)*)=>{$crate::rand!(@let$rng,[$($p)*][$($tt)*$e],$($t)*)};(@let$rng:expr,[$($p:tt)*][$($tt:tt)*]$($t:tt)*)=>{$crate::rand!{@assert$($p)*}let$($p)* =$crate::rand_value!($rng,$($tt)*);$crate::rand!(@pat$rng,[][]$($t)*)};($rng:expr)=>{};($rng:expr,$($t:tt)*)=>{$crate::rand!(@pat$rng,[][]$($t)*)};}}

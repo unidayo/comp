@@ -1,0 +1,1053 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Balancing by Balance</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Balancing by Balance" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc025/tasks/ahc025_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Balancing by Balance" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc025";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2023-10-14T12:00:00+09:00");
+			var endTime = moment("2023-10-22T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 025が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Heuristic Contest 025は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc025">AtCoder Heuristic Contest 025</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc025/tasks/ahc025_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc025/tasks/ahc025_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc025%2Ftasks%2Fahc025_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20231014T1200&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-10-14 12:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20231022T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-10-22 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc025"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc025/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc025/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc025/submit?taskScreenName=ahc025_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc025/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc025/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc025/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc025/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc025/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc025/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc025/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Balancing by Balance
+			<a class="btn btn-default btn-sm" href="/contests/ahc025/tasks/ahc025_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>AtCoder社は<a href="https://suzuri.jp/AtCoder">AtCoderグッズの通販</a>をしている。
+高橋社長は売れ残ったグッズをまとめて福袋として販売することにした。
+各袋の重さは出来るだけ均等になることが好ましいが、困ったことに、AtCoder社のオフィスには重さを数値で計ることの出来るはかりがなかった。
+代わりに天秤を見つけたので、天秤を使って重さの比較をすることで、出来るだけ均等に分割して欲しい。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N</var> 個のアイテムがある。
+各アイテム <var>i</var> の重さ <var>w_i</var> は未知であり、
+2つのアイテム集合の重さの総和を比較することの出来る天秤を用いて、以下の操作を繰り返し行う。</p>
+<p>天秤の左右の皿にアイテムを好きなだけ乗せる。乗せたアイテムの重さの総和が左と右どちらが大きいか、もしくは等しいかが判明する。</p>
+<p>この操作を <var>Q</var> 回繰り返すことにより、出来るだけ重さの総和の等しい <var>D</var> 個の集合にアイテムを分割せよ。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>出力した分割における各集合の重さの総和を <var>t_0,t_1,\cdots,t_{D-1}</var>、<var>t</var> の平均を <var>\bar{t}=\frac{1}{D}\sum_{i=0}^{D-1}t_i</var> とすると、その分散は
+<var>V=\frac{1}{D}\sum_{i=0}^{D-1} (t_i-\bar{t})^2</var> により求まる。
+このとき、<var>1+\mathrm{round}\left(100\times \sqrt{V}\right)</var>
+の絶対スコアが得られる。
+絶対スコアは小さければ小さいほど良い。</p>
+<p>各テストケース毎に、絶対スコアの小さい順での順位に応じた<font color="red"><strong>順位スコア</strong></font>が得られ、その和が提出の得点となる。
+順位スコアは以下のように計算され、高ければ高いほど良い。</p>
+<p>コンテストの提出者数を <var>n_{submit}</var>、自身より小さい絶対スコアを獲得した参加者の人数を <var>n_{lose}</var>、自身と等しい絶対スコアを獲得した他の参加者の人数を <var>n_{tie}</var> とする。この時、このテストケースにおける順位は <var>r=n_{lose}+0.5 n_{tie}</var> と定まり、順位スコアは <var>\mathrm{round}(10^9\times (1-\frac{r}{n_{submit}}))</var> となる。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、不正な出力や制限時間超過をした場合、そのテストケースの順位スコアのみ0点となる。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 100個</li>
+<li>システムテスト: 5000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc025/seeds.txt">seeds.txt</a> (sha256=8a39261299bef0387172c0e0c4523c49b0cb993efd4f702ec7cf5124cf5b4c55) を公開</li>
+</ul>
+<h4>相対評価システムについて</h4>
+<p>暫定テスト、システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出のみが順位表に反映される。</p>
+<p>順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する順位スコアの和が表示されている。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入出力</h3><p>まずはじめに、標準入力からアイテム数 <var>N</var>、分割数 <var>D</var>、クエリ回数 <var>Q</var> が以下の形式で与えられる。</p>
+<pre><var>N</var> <var>D</var> <var>Q</var>
+</pre>
+
+<p>各値はそれぞれ以下の制約を満たす。</p>
+<ul>
+<li><var>30\leq N\leq 100</var></li>
+<li><var>2\leq D\leq N/4</var></li>
+<li><var>2N\leq Q\leq 32N</var></li>
+</ul>
+<p>上記の情報を読み込んだら、以下のクエリを <var>Q</var> 回繰り返す。</p>
+<p><var>q</var> (<var>0\leq q\leq Q-1</var>) 回目のクエリではまず、天秤の左側に乗せるアイテム集合 <var>L</var> と右側に乗せるアイテム集合 <var>R</var> を選択する。
+それぞれ空集合であってはならず、また共通部分 <var>L\cap R</var> は空でなければならない。
+<var>L</var> と <var>R</var> のどちらにも含まれないアイテムがあっても良い。
+<var>n_L=|L|</var>、<var>n_R=|R|</var>、<var>L=\{l_0,\cdots,l_{n_L-1}\}</var>、<var>R=\{r_0,\cdots,r_{n_R-1}\}</var> (<var>0\leq l_i,r_i\leq N-1</var>) としたとき、以下の形式で一行で標準出力に出力せよ。</p>
+<pre><var>n_L</var> <var>n_R</var> <var>l_0</var> <var>\cdots</var> <var>l_{n_L-1}</var> <var>r_0</var> <var>\cdots</var> <var>r_{n_R-1}</var>
+</pre>
+
+<p><font color="red"><strong>出力の後には改行をし、更に標準出力を flush しなければならない。</strong></font>
+そうしない場合、<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性がある。</p>
+<p>出力を行うと、天秤がどちら側に傾いたかの情報が標準入力から一行で与えられる。
+与えられる文字列は以下の3通りのいずれかである。</p>
+<ul>
+<li><code>&lt;</code> : <var>L</var> の重さの総和は <var>R</var> の重さの総和より小さい。</li>
+<li><code>&gt;</code> : <var>L</var> の重さの総和は <var>R</var> の重さの総和より大きい。</li>
+<li><code>=</code> : <var>L</var> の重さの総和は <var>R</var> の重さの総和と等しい。</li>
+</ul>
+<p>クエリは必ず <var>Q</var> 回行う必要がある。
+<var>Q</var> 回のクエリ処理が完了後、出来るだけ重さの総和の等しい <var>D</var> 個の集合にアイテムを分割せよ。
+<var>i</var> (<var>0\leq i\leq N-1</var>) 番目のアイテムを <var>d_i</var> (<var>0\leq d_i\leq D-1</var>) 番目の集合に含めるとした時、以下の形式で一行で標準出力に出力せよ。</p>
+<pre><var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+</pre>
+
+<h4>例</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th><var>q</var></th>
+<th>Output</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>事前情報</td>
+<td></td>
+<td><pre>31 2 128</pre></td>
+</tr>
+<tr>
+<td>0</td>
+<td><pre>2 1 6 22 11</pre></td>
+<td><pre>></pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>2 2 11 22 0 1</pre></td>
+<td><pre><</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>127</td>
+<td><pre>1 1 14 24</pre></td>
+<td><pre><</pre></td>
+</tr>
+<tr>
+<td>分割</td>
+<td><pre>0 0 0 0 0 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 0 0 0 1 0</pre></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand\_int}(L,U)</var>、
+<var>L</var> 以上 <var>U</var> 未満の実数値を一様ランダムに生成する関数を <var>\mathrm{rand\_double}(L,U)</var> で表す。</p>
+<p>アイテム数 <var>N</var> は <var>\mathrm{rand\_int}(30,100)</var> により生成される。
+分割数 <var>D</var> は <var>\mathrm{rand\_int}(2,\mathrm{floor}(N/4))</var> により生成される。
+クエリ回数 <var>Q</var> は <var>\mathrm{round}(N\times 2^{\mathrm{rand\_double(1,5)}})</var> により生成される。</p>
+<p>各アイテム <var>i</var> についてそれぞれ独立に、<var>\lambda=10^{-5}</var> の<a href="https://ja.wikipedia.org/wiki/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83">指数分布</a>から値 <var>w'_i</var> を生成し、アイテム <var>i</var> の重みを <var>w_i=\max(1, \mathrm{round}(w'_i))</var> と設定する。ただし、生成した値 <var>w'_i</var> が <var>\frac{10^5 N}{D}</var> を越えた場合は、再度その値を生成し直す。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ローカルテスタ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><b>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</b></font></p>
+<h4>ツールで用いられる入出力ファイルの仕様</h4>
+<p>ローカルテスタに与える入力ファイルは以下の形式を用いている。</p>
+<pre><var>N</var> <var>D</var> <var>Q</var>
+<var>w_0</var> <var>\cdots</var> <var>w_{N-1}</var>
+</pre>
+
+<p>最後の <var>w_0</var> <var>\cdots</var> <var>w_{N-1}</var> は各アイテムの重さであり、解答プログラムには与えられない。</p>
+<p>ローカルテスタは解答プログラムの出力をそのまま出力ファイルに書き出す。
+解答プログラムは、<code>#</code> から始まるコメント行を出力に含めても良い。 Web版ビジュアライザを使用すると、コメント行を対応するタイミングで表示出来るため、デバッグや考察等に役立てることが出来る。 ジャッジプログラムはコメント行を全て無視するため、コメント行を出力するプログラムをそのまま提出可能である。
+また、<code>#c</code> から始まるコメント行は特別扱いされ、以下の形式で出力することにより、その時点での暫定的な解をビジュアライザに通知することが出来る。</p>
+<pre>#c <var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>AtCoder offers online shopping for official goods.
+CEO Takahashi decided to sell the unsold goods together as a grab bag.
+The weight of each bag should be as even as possible, but unfortunately, there was no scale in AtCoder's office to measure weight numerically.
+As an alternative, he found a balance.
+By using the balance to compare the weights, please divide the goods as evenly as possible.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> items.
+The weight <var>w_i</var> of each item <var>i</var> is unknown.
+Using a balance that can compare the sum of the weights of two item sets, you repeat the following operations.</p>
+<p>Place as many items as you like on the left and right plates of the balance. Then you can see which side has the greater weight or they have equal weights.</p>
+<p>After repeating this operation <var>Q</var> times, divide the items into <var>D</var> sets of equal total weight as much as possible.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>t_0,t_1,\cdots,t_{D-1}</var> be the total weight of items in each set in the output division. Let the mean of <var>t</var> be <var>\bar{t}=\frac{1}{D}\sum_{i=0}^{D-1}t_i</var>. The variance is <var>V=\frac{1}{D}\sum_{i=0}^{D-1} (t_i-\bar{t})^2</var>.
+Then you will obtain an absolute score of <var>1+\mathrm{round}\left(100\times \sqrt{V}\right)</var>.
+The lower the absolute score, the better.</p>
+<p>For each test case, you will obtain a <font color="red"><strong>rank score</strong></font> according to your rank determined by lower absolute score. The score of the submission is the total rank score for each test case. The rank score is calculated as follows, and the higher the rank score, the better.</p>
+<p>Let <var>n_{submit}</var> be the number of contestants with submissions, <var>n_{lose}</var> be the number of contestants who received an absolute score lower than yours, and <var>n_{tie}</var> be the number of other contestants who received an absolute score equal to yours. Then your rank in this test case is determined as <var>r=n_{lose}+0.5 n_{tie}</var>, and your rank score is <var>\mathrm{round}(10^9\times (1-\frac{r}{n_{submit}}))</var>.</p>
+<p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the rank score for those test cases will be zero.
+The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 100</li>
+<li>System test: 5000. We will publish <a href="https://img.atcoder.jp/ahc025/seeds.txt">seeds.txt</a> (sha256=8a39261299bef0387172c0e0c4523c49b0cb993efd4f702ec7cf5124cf5b4c55) after the contest is over.</li>
+</ul>
+<h4>About relative evaluation system</h4>
+<p>In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.</p>
+<p>The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input and Output</h3><p>First, the number of items <var>N</var>, the number of divisions <var>D</var>, and the number of queries <var>Q</var> are given from Standard Input in the following format.</p>
+<pre><var>N</var> <var>D</var> <var>Q</var>
+</pre>
+
+<p>Each value satisfies the following constraints.</p>
+<ul>
+<li><var>30\leq N\leq 100</var></li>
+<li><var>2\leq D\leq N/4</var></li>
+<li><var>2N\leq Q\leq 32N</var></li>
+</ul>
+<p>After reading the above information, repeat the following query <var>Q</var> times.</p>
+<p>In the <var>q</var>-th query (<var>0\leq q\leq Q-1</var>), you select the set of items <var>L</var> to be placed on the left side of the balance and the set of items <var>R</var> to be placed on the right side of the balance.
+Each set must not be empty, and the common part <var>L\cap R</var> must be empty.
+There may be items that are not contained in either <var>L</var> or <var>R</var>.
+Let <var>n_L=|L|</var>, <var>n_R=|R|</var>, <var>L=\{l_0,\cdots,l_{n_L-1}\}</var>, and <var>R=\{r_0,\cdots,r_{n_R-1}\}</var> (<var>0\leq l_i,r_i\leq N-1</var>).
+Then output to Standard Output on a single line in the following format.</p>
+<pre><var>n_L</var> <var>n_R</var> <var>l_0</var> <var>\cdots</var> <var>l_{n_L-1}</var> <var>r_0</var> <var>\cdots</var> <var>r_{n_R-1}</var>
+</pre>
+
+<p><font color="red"><strong>The output must be followed by a new line, and you have to flush Standard Output.</strong></font>
+Otherwise, the submission might be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span>.</p>
+<p>After output, the information on which side the balance is tilted is given in a single line from the standard input.
+The given string is one of the following three cases.</p>
+<ul>
+<li><code>&lt;</code> : The total weight of <var>L</var> is less than the total weight of <var>R</var>.</li>
+<li><code>&gt;</code> : The total weight of <var>L</var> is greater than the total weight of <var>R</var>.</li>
+<li><code>=</code> : The total weight of <var>L</var> is equal to the total weight of <var>R</var>.</li>
+</ul>
+<p>The query must be performed exactly <var>Q</var> times.
+After <var>Q</var> queries, divide the items into <var>D</var> sets of equal total weight as much as possible.
+Let <var>i</var>-th (<var>0\leq i\leq N-1</var>) item be included in <var>d_i</var>-th (<var>0\leq d_i\leq D-1</var>) set.
+Then output to Standard Output on a single line in the following format.</p>
+<pre><var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+</pre>
+
+<h4>Example</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th><var>q</var></th>
+<th>Output</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prior information</td>
+<td></td>
+<td><pre>31 2 128</pre></td>
+</tr>
+<tr>
+<td>0</td>
+<td><pre>2 1 6 22 11</pre></td>
+<td><pre>></pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>2 2 11 22 0 1</pre></td>
+<td><pre><</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>127</td>
+<td><pre>1 1 14 24</pre></td>
+<td><pre><</pre></td>
+</tr>
+<tr>
+<td>Division</td>
+<td><pre>0 0 0 0 0 0 1 1 1 0 1 1 1 0 0 0 1 1 0 0 0 0 0 1 1 1 0 0 0 1 0</pre></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{rand\_int}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive.
+Let <var>\mathrm{rand\_double}(L,U)</var> be a function that generates a uniform random real number at least <var>L</var> and less than <var>U</var>.</p>
+<p>The number of items <var>N</var> is generated by <var>\mathrm{rand\_int}(30,100)</var>.
+The number of divisions <var>D</var> is generated by <var>\mathrm{rand\_int}(2,\mathrm{floor}(N/4))</var>.
+The number of queries <var>Q</var> is generated by <var>\mathrm{round}(N\times 2^{\mathrm{rand\_double(1,5)}})</var>.</p>
+<p>For each item <var>i</var>, we independently generate a value <var>w'_i</var> from the <a href="https://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a> with <var>\lambda=10^{-5}</var>, and we set the weight of item <var>i</var> by <var>w_i=\max(1, \mathrm{round}(w'_i))</var>. If the generated value <var>w'_i</var> exceeds <var>\frac{10^5 N}{D}</var>, we regenerate it.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator, local tester and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.html?lang=en">Web version</a>: This is more powerful than the local version providing animations.</li>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc025/tNvZmDfV_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><b>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</b></font></p>
+<h4>Specification of input/output files used by the tools</h4>
+<p>Input files given to the local tester have the following format.</p>
+<pre><var>N</var> <var>D</var> <var>Q</var>
+<var>w_0</var> <var>\cdots</var> <var>w_{N-1}</var>
+</pre>
+
+<p>The last <var>w_0</var> <var>\cdots</var> <var>w_{N-1}</var> is the weight of each item and is not given to the solution program.</p>
+<p>The local tester writes outputs from your program directly to the output file.
+Your program may output comment lines starting with <code>#</code>. The web version of the visualizer displays the comment lines with the corresponding query, which may be useful for debugging and analysis. Since the judge program ignores all comment lines, you can submit a program that outputs comment lines as is.
+In addition, comment lines starting with <code>#c</code> are treated specially and you can provide the visualizer with a tentative division by outputting in the following format.</p>
+<pre>#c <var>d_0</var> <var>\cdots</var> <var>d_{N-1}</var>
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc025/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc025_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc025/tasks/ahc025_a?lang=ja" data-a2a-title="A - Balancing by Balance">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc025/rules">ルール</a></li>
+					<li><a href="/contests/ahc025/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

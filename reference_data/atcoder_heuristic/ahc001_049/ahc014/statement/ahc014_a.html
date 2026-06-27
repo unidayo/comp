@@ -1,0 +1,1127 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - RectJoin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - RectJoin" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc014/tasks/ahc014_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - RectJoin" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc014";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2022-09-17T15:00:00+09:00");
+			var endTime = moment("2022-10-01T19:00:00+09:00");
+		</script>
+		<style></style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>estie プログラミングコンテスト2022（AtCoder Heuristic Contest 014）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>estie プログラミングコンテスト2022（AtCoder Heuristic Contest 014）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc014">estie プログラミングコンテスト2022（AtCoder Heuristic Contest 014）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc014/tasks/ahc014_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc014/tasks/ahc014_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc014%2Ftasks%2Fahc014_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20220917T1500&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-09-17 15:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20221001T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2022-10-01 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc014"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc014/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc014/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc014/submit?taskScreenName=ahc014_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc014/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc014/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc014/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc014/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc014/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc014/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc014/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - RectJoin
+			<a class="btn btn-default btn-sm" href="/contests/ahc014/tasks/ahc014_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 5 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>問題文</h3><p>RectJoin は正方形の方眼紙と鉛筆を使って遊ぶ以下のような一人プレイゲームである。</p>
+<p><img alt="example" src="https://img.atcoder.jp/ahc014/a3c240f5b1.gif" /> </p>
+<p>方眼紙の左下隅の格子点の座標を <var>(0, 0)</var> とし、右方向に <var>x</var> 軸、上方向に <var>y</var> 軸を取る。
+方眼紙の右上隅の格子点の座標は <var>(N-1, N-1)</var> である。
+初期状態で <var>M</var> 個の格子点に印が付けられており、以下の操作を可能な限り好きなだけ繰り返すことで方眼紙に印と長方形を描いていく。</p>
+<p><var>i</var> 回目の操作では、まだ印の付けられていない格子点 <var>p_{i,1}</var> と、既に印の付けられている3つの格子点 <var>p_{i,2}, p_{i,3}, p_{i,4}</var> であって、以下の3つの条件を全て満たすものを選ぶ。</p>
+<ol>
+<li><var>p_{i,1} p_{i,2} p_{i,3} p_{i,4}</var> をこの順番に結ぶと軸に平行、もしくは45度傾いた長方形となる。</li>
+<li>この長方形の外周上には <var>p_{i,2}, p_{i,3}, p_{i,4}</var> 以外に印の付いた格子点は存在しない。</li>
+<li>この長方形の外周は、既に方眼紙に描かれている長方形の外周と正の長さの共通部分を持たない(いくつかの点で交わることは許される)。</li>
+</ol>
+<p>選んだ4点に対して、<var>p_{i,1}</var> に新たに印を付け、長方形 <var>p_{i,1} p_{i,2} p_{i,3} p_{i,4}</var> の外周を方眼紙に描く。</p>
+<p>方眼紙の中心の座標を <var>(c,c)=((N-1)/2,(N-1)/2)</var> とする。
+各格子点の重みを中心からの距離を用いて <var>w(x,y)=(x-c)^2 + (y-c)^2 + 1</var> と定義し、全ての格子点の重みの総和を <var>S=\sum_{x=0}^{N-1}\sum_{y=0}^{N-1} w(x,y)</var> とする。
+最終的に印のついている座標の集合(最初から印が付いているものを含む)を <var>Q</var> としたとき、</p>
+<p>\[\mathrm{round}\left(10^6 \cdot\frac{N^2}{M}\cdot\frac{\sum_{(x, y)\in Q} w(x, y)}{S}\right)\]</p>
+<p>の得点が得られる。
+出来るだけ高得点が得られるようにゲームをプレイするプログラムを作成せよ。</p>
+<h4>ルールの補足</h4>
+<ul>
+<li><var>p_{i,1}</var> は方眼紙の内部、すなわち、<var>x</var> 座標と <var>y</var> 座標がともに <var>0</var> 以上 <var>N-1</var> 以下の範囲から選択しなければならない。</li>
+<li><var>p_{i,1}</var> として選択した格子点は印が付くため、<var>j(&gt;i)</var> 回目の操作で <var>p_{j,1}</var> として再度選択することは出来ないが、<var>p_{j,k} (k=2,3,4)</var> として再度選択することは出来る。</li>
+<li><var>p_{i,k} (k=2,3,4)</var> も同様に、<var>j(&gt;i)</var> 回目の操作で <var>p_{j,k'} (k'=2,3,4)</var> として繰り返し何度も選択出来る。</li>
+<li>条件2にあるように、選んだ長方形の外周に他の印があってはならないが、逆に、既に描かれている長方形の外周上の点を <var>p_{i,1}</var> として選択して印を付けることは可能である。</li>
+</ul>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 50個</li>
+<li>システムテスト: 2000個、コンテスト終了後に<a href="https://img.atcoder.jp/ahc014/seeds.txt">seeds.txt</a> (sha256=907b41fcba240515612a21798a10b0df7dda744b1268b74b3bbd41b93a73095e) を公開</li>
+<li>システムテストは <var>N=31,33,35,\cdots,61</var> の入力をそれぞれ125個ずつ含む。</li>
+<li>seed=0 の入力は手動で作成されたものであり、暫定テスト、システムテストには含まれない。</li>
+</ul>
+<p>各テストケースの得点の合計が提出の得点となる。
+暫定テストでは、一つ以上のテストケースで不正な出力や制限時間超過をした場合、提出全体の判定が<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="不正解">WA</span>や<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる。
+最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+システムテストでは、不正な出力や制限時間超過をした場合、そのテストケースのみ0点となる。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3><p>入力は以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var>
+<var>x_1</var> <var>y_1</var>
+<var>\vdots</var>
+<var>x_M</var> <var>y_M</var>
+</pre>
+
+<ul>
+<li><var>N</var> は方眼紙の縦横の格子点の数を表す、31 以上 61 以下の奇数である。</li>
+<li><var>M</var> は初期状態で印の付いている格子点の個数を表す、<var>N</var> 以上 <var>\lfloor N^2/12 \rfloor</var> 以下の整数である。</li>
+<li><var>(x_1, y_1), \cdots, (x_M, y_M)</var> は 初期状態に置ける <var>M</var> 個の印の付いた格子点の座標を表し、<var>\lfloor N/4\rfloor\leq x_i,y_i\leq\lfloor 3N/4\rfloor</var> を満たす。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力</h3><p>全部で <var>K</var> 回の操作を行い、<var>i</var> 回目の操作で選択した4点を <var>(x_{i,1}, y_{i,1}), (x_{i,2}, y_{i,2}), (x_{i,3}, y_{i,3}), (x_{i,4}, y_{i,4})</var> としたとき、以下の形式で標準出力に出力せよ。</p>
+<pre><var>K</var>
+<var>x_{1,1}</var> <var>y_{1,1}</var> <var>x_{1,2}</var> <var>y_{1,2}</var> <var>x_{1,3}</var> <var>y_{1,3}</var> <var>x_{1,4}</var> <var>y_{1,4}</var>
+<var>\vdots</var>
+<var>x_{K,1}</var> <var>y_{K,1}</var> <var>x_{K,2}</var> <var>y_{K,2}</var> <var>x_{K,3}</var> <var>y_{K,3}</var> <var>x_{K,4}</var> <var>y_{K,4}</var>
+</pre>
+
+<p>4点の順番は時計回りでも反時計回りでも良いが、<var>(x_{i,1}, y_{i,1})</var> が新たに印を付ける点でなければならない。</p>
+<p><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=ja&seed=0&output=20%0D%0A9+15+12+12+15+15+12+18%0D%0A15+20+12+17+15+14+18+17%0D%0A23+22+19+22+19+12+23+12%0D%0A23+14+22+15+21+14+22+13%0D%0A10+14+10+13+12+13+12+14%0D%0A11+11+12+11+12+12+11+12%0D%0A18+20+15+20+15+19+18+19%0D%0A19+16+22+19+21+20+18+17%0D%0A12+19+12+18+15+18+15+19%0D%0A15+22+12+19+15+16+18+19%0D%0A14+22+15+22+15+24+14+24%0D%0A15+8+18+11+15+14+12+11%0D%0A10+15+9+15+9+14+10+14%0D%0A11+18+12+19+10+21+9+20%0D%0A22+23+20+21+21+20+23+22%0D%0A21+15+18+15+18+14+21+14%0D%0A15+26+13+24+15+22+17+24%0D%0A20+20+16+24+14+22+18+18%0D%0A21+17+18+20+15+17+18+14%0D%0A11+14+10+13+11+12+12+13%0D%0A">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p>seed=0 の入力は手動で作成されたものであり、暫定テスト、システムテストには含まれない。
+<var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{rand}(L,U)</var> で表す。</p>
+<h4><var>N, M</var> の生成</h4>
+<p><var>N=\mathrm{rand}(15, 30)\times 2 + 1</var>、<var>M=\mathrm{rand}(N, \lfloor N^2/12 \rfloor)</var> により生成される。</p>
+<h4><var>(x_i, y_i)</var> の生成</h4>
+<p><var>\lfloor N/4\rfloor\leq x,y\leq\lfloor 3N/4\rfloor</var> を満たす格子点 <var>(x,y)</var> の中からランダムに <var>M</var> 個が選択される。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示と手動プレイが可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p><font color="red">
+コンテスト期間中に、seed=0 に対するビジュアライザの出力画像(PNG)のみ twitter で共有が可能です。動画形式での共有は禁止されているのでご注意下さい。
+</font>
+必ず指定されたハッシュタグを用い、公開アカウントを使用して下さい。共有出来るのはseed=0に対するビジュアライズ結果と点数のみで、GIF動画や出力文字列、他のシードでの点数の共有や、解法・考察に関する言及は禁止です。</p>
+<p><a href="https://twitter.com/search?q=%23AHC014%20%23visualizer&src=typed_query&f=live">共有された画像の一覧</a></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>入力例 1</h3><pre style="max-height:200px;overflow-y:scroll">33 58
+13 24
+14 24
+15 24
+16 24
+17 24
+12 23
+18 23
+11 22
+19 22
+10 21
+20 21
+9 20
+21 20
+8 19
+15 19
+18 19
+22 19
+8 18
+12 18
+15 18
+18 18
+22 18
+8 17
+12 17
+15 17
+18 17
+22 17
+8 16
+12 16
+15 16
+18 16
+22 16
+8 15
+12 15
+15 15
+18 15
+22 15
+9 14
+12 14
+15 14
+18 14
+21 14
+10 13
+12 13
+15 13
+18 13
+20 13
+22 13
+11 12
+12 12
+15 12
+18 12
+19 12
+23 12
+12 11
+15 11
+18 11
+24 11
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3><pre style="max-height:200px;overflow-y:scroll">20
+9 15 12 12 15 15 12 18
+15 20 12 17 15 14 18 17
+23 22 19 22 19 12 23 12
+23 14 22 15 21 14 22 13
+10 14 10 13 12 13 12 14
+11 11 12 11 12 12 11 12
+18 20 15 20 15 19 18 19
+19 16 22 19 21 20 18 17
+12 19 12 18 15 18 15 19
+15 22 12 19 15 16 18 19
+14 22 15 22 15 24 14 24
+15 8 18 11 15 14 12 11
+10 15 9 15 9 14 10 14
+11 18 12 19 10 21 9 20
+22 23 20 21 21 20 23 22
+21 15 18 15 18 14 21 14
+15 26 13 24 15 22 17 24
+20 20 16 24 14 22 18 18
+21 17 18 20 15 17 18 14
+11 14 10 13 11 12 12 13
+</pre></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>RectJoin is the following single-player game played with square grid paper and pencil.</p>
+<p><img alt="example" src="https://img.atcoder.jp/ahc014/a3c240f5b1.gif" /> </p>
+<p>Let <var>(0, 0)</var> be the coordinates of the lower left corner of the grid paper, with the <var>x</var>-axis to the right and the <var>y</var>-axis to the top.
+The coordinates of the upper right corner of the grid paper are <var>(N-1, N-1)</var>.
+Initially, <var>M</var> dots are placed on grid points, and you can repeat the following operations as many times as possible to place dots and draw rectangles on the grid paper.</p>
+<p>In the <var>i</var>-th operation, choose a grid point <var>p_{i,1}</var> not containing a dot and three grid points <var>p_{i,2}, p_{i,3}, p_{i,4}</var> containing dots, which satisfy all of the following three conditions.</p>
+<ol>
+<li>Connecting <var>p_{i,1} p_{i,2} p_{i,3} p_{i,4}</var> in this order forms a rectangle that is parallel to the axis or inclined at 45 degrees.</li>
+<li>There are no dots other than <var>p_{i,2}, p_{i,3}, p_{i,4}</var> on the perimeter of this rectangle.</li>
+<li>The perimeter of this rectangle does not share a common segment of positive length with the perimeter of an already drawn rectangle (intersecting at some points is allowed).</li>
+</ol>
+<p>For the chosen four points, place a new dot on <var>p_{i,1}</var> and draw the perimeter of the rectangle <var>p_{i,1} p_{i,2} p_{i,3} p_{i,4}</var> on the grid paper.</p>
+<p>Let <var>(c,c)=((N-1)/2,(N-1)/2)</var> be the coordinates of the center of the graph paper.
+We define the weight of each grid point as <var>w(x,y)=(x-c)^2 + (y-c)^2 + 1</var> using the distance from the center.
+Let <var>S=\sum_{x=0}^{N-1}\sum_{y=0}^{N-1} w(x,y)</var> be the sum of the weights of all grid points.
+Let <var>Q</var> be the set of coordinates with dots in the final state (including the initially placed dots).
+Then you will get the following score.</p>
+<p>\[\mathrm{round}\left(10^6 \cdot\frac{N^2}{M}\cdot\frac{\sum_{(x, y)\in Q} w(x, y)}{S}\right)\]</p>
+<p>Create a program to play the game to get as high a score as possible.</p>
+<h4>Additional explanation of the rules</h4>
+<ul>
+<li>You must choose <var>p_{i,1}</var> from the interior of the grid paper, i.e., from coordinates satisfying <var>0\leq x,y\leq N-1</var>.</li>
+<li>Since a dot is placed on the grid point chosen as <var>p_{i,1}</var>, it cannot be chosen again as <var>p_{j,1}</var> in <var>j(&gt;i)</var>-th operation, but it can be chosen again as <var>p_{j,k} (k=2,3,4)</var>.</li>
+<li>Similarly, <var>p_{i,k} (k=2,3,4)</var> can be repeatedly chosen as <var>p_{j,k'} (k'=2,3,4)</var> in <var>j(&gt;i)</var>-th operation.</li>
+<li>As stated in condition 2, there must be no other dots on the perimeter of the chosen rectangle, but conversely, you can choose a point on the perimeter of an already drawn rectangle as <var>p_{i,1}</var> and place a dot on it.</li>
+</ul>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 50</li>
+<li>System test: 2000. We will publish <a href="https://img.atcoder.jp/ahc014/seeds.txt">seeds.txt</a> (sha256=907b41fcba240515612a21798a10b0df7dda744b1268b74b3bbd41b93a73095e) after the contest is over.</li>
+<li>System test contains 125 inputs for each of <var>N=31,33,35,\cdots,61</var>.</li>
+<li>The input of seed=0 is manually created and is not included in the provisional or system test.</li>
+</ul>
+<p>The score of a submission is the total scores for each test case.
+In the provisional test, if your submission produces illegal output or exceeds the time limit for some test cases, the submission itself will be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Wrong Answer">WA</span> or <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> , and the score of the submission will be zero.
+The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In the system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero.
+The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<hr />
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>x_1</var> <var>y_1</var>
+<var>\vdots</var>
+<var>x_M</var> <var>y_M</var>
+</pre>
+
+<ul>
+<li><var>N</var> is an odd number between 31 and 61, representing the number of vertical and horizontal grid points on the grid paper.</li>
+<li><var>M</var> denotes the number of initially placed dots, satisfying <var>N\leq M\leq \lfloor N^2/12 \rfloor</var>.</li>
+<li><var>(x_1, y_1), \cdots, (x_M, y_M)</var> denote the coordinates of the <var>M</var> dots, each of which satisfies <var>\lfloor N/4\rfloor\leq x_i,y_i\leq\lfloor 3N/4\rfloor</var>.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Output</h3><p>Let <var>K</var> be the total number of operations and <var>(x_{i,1}, y_{i,1}), (x_{i,2}, y_{i,2}), (x_{i,3}, y_{i,3}), (x_{i,4}, y_{i,4})</var> be the four points chosen in the <var>i</var>-th operation.
+Then, output to Standard Output in the following format.</p>
+<pre><var>K</var>
+<var>x_{1,1}</var> <var>y_{1,1}</var> <var>x_{1,2}</var> <var>y_{1,2}</var> <var>x_{1,3}</var> <var>y_{1,3}</var> <var>x_{1,4}</var> <var>y_{1,4}</var>
+<var>\vdots</var>
+<var>x_{K,1}</var> <var>y_{K,1}</var> <var>x_{K,2}</var> <var>y_{K,2}</var> <var>x_{K,3}</var> <var>y_{K,3}</var> <var>x_{K,4}</var> <var>y_{K,4}</var>
+</pre>
+
+<p>The order of the four points can be clockwise or counterclockwise, but <var>(x_{i,1}, y_{i,1})</var> must be the point where the new dot is placed.</p>
+<p><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=en&seed=0&output=20%0D%0A9+15+12+12+15+15+12+18%0D%0A15+20+12+17+15+14+18+17%0D%0A23+22+19+22+19+12+23+12%0D%0A23+14+22+15+21+14+22+13%0D%0A10+14+10+13+12+13+12+14%0D%0A11+11+12+11+12+12+11+12%0D%0A18+20+15+20+15+19+18+19%0D%0A19+16+22+19+21+20+18+17%0D%0A12+19+12+18+15+18+15+19%0D%0A15+22+12+19+15+16+18+19%0D%0A14+22+15+22+15+24+14+24%0D%0A15+8+18+11+15+14+12+11%0D%0A10+15+9+15+9+14+10+14%0D%0A11+18+12+19+10+21+9+20%0D%0A22+23+20+21+21+20+23+22%0D%0A21+15+18+15+18+14+21+14%0D%0A15+26+13+24+15+22+17+24%0D%0A20+20+16+24+14+22+18+18%0D%0A21+17+18+20+15+17+18+14%0D%0A11+14+10+13+11+12+12+13%0D%0A">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>The input of seed=0 is manually created and is not included in the provisional or system test.
+Let <var>\mathrm{rand}(L,U)</var> be a function that generates a uniform random integer between <var>L</var> and <var>U</var>, inclusive.</p>
+<h4>Generation of <var>N</var> and <var>M</var></h4>
+<p><var>N=\mathrm{rand}(15, 30)\times 2 + 1</var>,
+<var>M=\mathrm{rand}(N, \lfloor N^2/12 \rfloor)</var>.</p>
+<h4>Generation of <var>(x_i, y_i)</var></h4>
+<p><var>M</var> grid points <var>(x,y)</var> satisfying <var>\lfloor N/4\rfloor\leq x,y\leq\lfloor 3N/4\rfloor</var> are chosen at random.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.html?lang=en">Web version</a>: This is more powerful than the local version and can display animations and manual play.</li>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc014/a3c240f5b1_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p><font color="red">
+You are allowed to share output images (PNG) of the provided visualizer for seed=0 on twitter during the contest.
+Note that sharing in animation format is prohibited.
+</font>
+You have to use the specified hashtag and public account.
+You can only share visualization results and scores for seed=0.
+Do not share GIFs, output itself, scores for other seeds or mention solutions or discussions.</p>
+<p><a href="https://twitter.com/search?q=%23AHC014%20%23visualizer&src=typed_query&f=live">List of shared images</a></p>
+</section>
+</div>
+</div>
+
+<hr />
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre style="max-height:200px;overflow-y:scroll">33 58
+13 24
+14 24
+15 24
+16 24
+17 24
+12 23
+18 23
+11 22
+19 22
+10 21
+20 21
+9 20
+21 20
+8 19
+15 19
+18 19
+22 19
+8 18
+12 18
+15 18
+18 18
+22 18
+8 17
+12 17
+15 17
+18 17
+22 17
+8 16
+12 16
+15 16
+18 16
+22 16
+8 15
+12 15
+15 15
+18 15
+22 15
+9 14
+12 14
+15 14
+18 14
+21 14
+10 13
+12 13
+15 13
+18 13
+20 13
+22 13
+11 12
+12 12
+15 12
+18 12
+19 12
+23 12
+12 11
+15 11
+18 11
+24 11
+</pre>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre style="max-height:200px;overflow-y:scroll">20
+9 15 12 12 15 15 12 18
+15 20 12 17 15 14 18 17
+23 22 19 22 19 12 23 12
+23 14 22 15 21 14 22 13
+10 14 10 13 12 13 12 14
+11 11 12 11 12 12 11 12
+18 20 15 20 15 19 18 19
+19 16 22 19 21 20 18 17
+12 19 12 18 15 18 15 19
+15 22 12 19 15 16 18 19
+14 22 15 22 15 24 14 24
+15 8 18 11 15 14 12 11
+10 15 9 15 9 14 10 14
+11 18 12 19 10 21 9 20
+22 23 20 21 21 20 23 22
+21 15 18 15 18 14 21 14
+15 26 13 24 15 22 17 24
+20 20 16 24 14 22 18 18
+21 17 18 20 15 17 18 14
+11 14 10 13 11 12 12 13
+</pre></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc014/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc014_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc014/tasks/ahc014_a?lang=ja" data-a2a-title="A - RectJoin">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc014/rules">ルール</a></li>
+					<li><a href="/contests/ahc014/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

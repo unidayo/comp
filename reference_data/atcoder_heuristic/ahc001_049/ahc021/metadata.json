@@ -1,0 +1,195 @@
+{
+  "contest_id": "ahc021",
+  "contest_url": "https://atcoder.jp/contests/ahc021",
+  "standings_url": "https://atcoder.jp/contests/ahc021/standings",
+  "selection": "First 10 rows of official standings; SubmissionID recorded in each task result",
+  "tasks": [
+    {
+      "task_id": "ahc021_a",
+      "title": "A",
+      "url": "https://atcoder.jp/contests/ahc021/tasks/ahc021_a"
+    }
+  ],
+  "top10": [
+    {
+      "position": 1,
+      "rank": 1,
+      "user": "mtsd",
+      "total_score": 1358942000,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42957866,
+          "score": 1358942000,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/01_mtsd_42957866.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42957866",
+          "sha256": "a74d96d3283b6f539198643e9caef32199845ea456c1e6cbd73fcb622251250a"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "rank": 2,
+      "user": "Rafbill",
+      "total_score": 1358024000,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958119,
+          "score": 1358024000,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/02_Rafbill_42958119.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958119",
+          "sha256": "9be3faa0d3c8e21130b9ca188a0ea9760a929909ec77c51bed6bb6c8f845ec29"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "rank": 3,
+      "user": "saharan",
+      "total_score": 1357732000,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958726,
+          "score": 1357732000,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/03_saharan_42958726.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958726",
+          "sha256": "2e9ce542a13cdfd66b33bbef71b28abfe9dc507f352cb0a2f2269677cb066657"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "rank": 4,
+      "user": "hitonanode",
+      "total_score": 1357495500,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958122,
+          "score": 1357495500,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/04_hitonanode_42958122.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958122",
+          "sha256": "e6a13adc68dd78418c6217340b68272a8df9be3ce88ea4d85c88cafa3e1199f5"
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "rank": 5,
+      "user": "kaz_mighty",
+      "total_score": 1357214000,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42957432,
+          "score": 1357214000,
+          "available": true,
+          "language": "PyPy3 (7.3.0)",
+          "file": "submissions/05_kaz_mighty_42957432.py",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42957432",
+          "sha256": "673718451d99232fd37325e905b6728d991955628a9df5fef9aee8f4be3b42fe"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "rank": 6,
+      "user": "risujiroh",
+      "total_score": 1356827500,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958627,
+          "score": 1356827500,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/06_risujiroh_42958627.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958627",
+          "sha256": "e7f952080d29cc5c754e97cc0043c702dbd99a314a63042c737d0f22031e6e1c"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "rank": 7,
+      "user": "tokoharu",
+      "total_score": 1356802500,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42957533,
+          "score": 1356802500,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/07_tokoharu_42957533.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42957533",
+          "sha256": "4e31376b0a0347d28a19da48ff577990dafd18854d8dfa97b8608335c1e04f65"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "rank": 8,
+      "user": "KoD",
+      "total_score": 1356319000,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958275,
+          "score": 1356319000,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/08_KoD_42958275.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958275",
+          "sha256": "661a66eecb314335da9b2b2ec5cf3f9428d4e51419225b830983c802545e4ec9"
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "rank": 9,
+      "user": "Shun_PI",
+      "total_score": 1355858500,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958595,
+          "score": 1355858500,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/09_Shun_PI_42958595.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958595",
+          "sha256": "c0190b73dd70715b6f8fb0ae8e6a4dcab8a19d13c7cd34bf61c35fe5f85bee27"
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "rank": 10,
+      "user": "Haa",
+      "total_score": 1355542500,
+      "submissions": [
+        {
+          "task_id": "ahc021_a",
+          "submission_id": 42958203,
+          "score": 1355542500,
+          "available": true,
+          "language": "C++ (GCC 9.2.1)",
+          "file": "submissions/10_Haa_42958203.cpp",
+          "url": "https://atcoder.jp/contests/ahc021/submissions/42958203",
+          "sha256": "5328d7ac31e1b3b01eb9d4df6f7198a48b2681b2ec76c39f2815ef05fca3648a"
+        }
+      ]
+    }
+  ]
+}

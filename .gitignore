@@ -28,6 +28,9 @@ ac-library
 acc-config
 /unordered_dense/
 
+# Contest working directories
+/heuristic_contests/
+
 # Root-level scratch files and profiler/runtime outputs
 /input.txt
 /a.out

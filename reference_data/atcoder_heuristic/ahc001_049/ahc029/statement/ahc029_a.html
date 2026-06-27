@@ -1,0 +1,1884 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Business Simulation Game</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Business Simulation Game" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc029/tasks/ahc029_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Business Simulation Game" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc029";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2023-12-22T12:00:00+09:00");
+			var endTime = moment("2023-12-26T21:00:00+09:00");
+		</script>
+		<style>#contest-statement section ul li {
+    margin-top: -1ex;
+    margin-bottom: 1.5ex;
+}
+
+#contest-statement section li > ul {
+    margin-top: 1.5ex;
+}
+
+table.centering {
+    table-layout: fixed;
+}
+
+table.centering th, table.centering td {
+    text-align: center;
+}
+
+span.lang h4 {
+    margin-top: 2ex;
+}</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2024冬（AtCoder Heuristic Contest 029）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>RECRUIT 日本橋ハーフマラソン 2024冬（AtCoder Heuristic Contest 029）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc029">RECRUIT 日本橋ハーフマラソン 2024冬（AtCoder Heuristic Contest 029）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc029/tasks/ahc029_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc029/tasks/ahc029_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc029%2Ftasks%2Fahc029_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20231222T1200&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-12-22 12:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20231226T2100&p1=248' target='blank'><time class='fixtime fixtime-full'>2023-12-26 21:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc029"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc029/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc029/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc029/submit?taskScreenName=ahc029_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc029/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc029/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc029/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc029/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc029/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc029/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc029/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Business Simulation Game
+			<a class="btn btn-default btn-sm" href="/contests/ahc029/tasks/ahc029_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<div id="task-statement">
+    <span class="lang">
+        <span class="lang-ja">
+            <div class="part">
+                <section>
+                    <h3>問題文</h3>
+                    <p>
+                        あなたは会社を経営するゲームをプレイしている。
+                        会社が進めている複数の<b>プロジェクト</b>に対して、毎ターンごとに手札から<b>方針カード</b>を一つ選び消費し、そのカードに従ってプロジェクトを進め、手札の方針カードを補充する、ということを繰り返すターン制のゲームである。
+                        全 <var>T</var> ターンが終了した時点で<b>所持金</b>を最大化することがこのゲームの目的である。
+                    </p>
+                    <p>
+                        プロジェクトには<b>残務量</b>と<b>価値</b>という整数値のペアが定まっている。残務量が <var>0</var> 以下になるとプロジェクトは完了し、価値が所持金に追加される。
+                    </p>
+                    <p>
+                        あなたはプロジェクトの進め方の方針が書かれた「方針カード」というカードを手札として <var>N</var> 枚持っている。ターンごとに手札の中から1枚の方針カードを選び、その内容にしたがってプロジェクトを進める。
+                        方針カードには以下の 5 種類がある。
+                        <ul>
+                        <li><b>通常労働カード</b>: このカードには<b>労働力</b>という正整数が定まっている。このカードを選ぶと、現在管理しているプロジェクトのうち一つを指定し、そのプロジェクトの残務量を労働力分だけ減らす。</li>
+                        <li><b>全力労働カード</b>: このカードには<b>労働力</b>という正整数が定まっている。このカードを選ぶと、現在管理している全てのプロジェクトについてそれぞれの残務量を労働力分だけ減らす。</li>
+                        <li><b>キャンセルカード</b>: このカードを選ぶと、現在管理しているプロジェクトのうち一つを指定し、そのプロジェクトの実行を取りやめる。</li>
+                        <li><b>業務転換カード</b>: このカードを選ぶと、現在管理しているプロジェクト全てを取りやめる。</li>
+                        <li><b>増資カード</b>: このカードを選ぶと、今後出現するプロジェクトの残務量と価値 及び 今後出現する方針カードの労働力とコスト(後述)が <var>2</var> 倍になる。すでに出現しているプロジェクトと手札にある方針カードの数値は変更されない。<font color="red"><strong>このカードはテストケース内で <var>20</var> 回までしか使用できない。</strong></font></li>
+                        </ul>
+                    </p>
+                    <h4>ゲームの進め方</h4>
+                    <p>
+                        ゲーム開始時点で、会社が管理している <var>M</var> 個のプロジェクトの情報と、あなたが持っている <var>N</var> 枚の方針カードの情報が与えられる。また、開始時点の所持金は <var>0</var> である。
+                        各ターンは次の流れで進んでいく。
+                        <ol>
+
+                        <li>手札から方針カードを1枚選択し実行する。選択したカードは手札から消える。</li>
+                        <ul>
+                            <li>プロジェクトが完了した場合、プロジェクトの価値の分だけ所持金が増加し、そのプロジェクトは消える。</li>
+                            <li>プロジェクトの実行を取りやめた場合、そのプロジェクトは消える。</li>
+                        </ul>
+                        
+                        <li>存在するプロジェクトの数が <var>M</var> 個を下回った場合、 プロジェクトの数が <var>M</var> 個になるように新たなプロジェクトが与えられる。</li>
+                        <li> <var>K</var> 枚の方針カードおよびそれらのコストが提示される。あなたはその中から 1 枚を選び手札に加える。この際に選んだカードのコストの分だけ所持金が減る。</li>
+                        <ul>
+                          <li>コストの分だけ所持金が減ることで所持金が負になるような方針カードを選択することはできない。後述するが、<var>K</var> 枚のカード中にコスト <var>0</var> のカードが存在するため、必ずカードを選択できることが保証されている。</li>
+                        </ul>
+                        </ol>
+                        以上の手順から分かる通り、ターン開始時には必ず手札に <var>N</var> 枚の方針カードがあり、会社は <var>M</var> 個のプロジェクトを管理している。
+                    </p>
+                    <p>
+                        このゲームを上手にプレイして、<var>T</var> ターン後の時点の所持金をできるだけ多くしてほしい。
+                    </p>
+                </section>
+            </div>
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>順位付け</h3>
+                    <p>
+                        相対評価システムを採用します。<br/>
+                        各テストケース毎に、 <var> T </var> ターン後の時点での所持金の値を絶対スコアとして <var>\mathrm{round} \lparen 10^9 \times \frac{自身の絶対スコア}{全参加者中の最大絶対スコア} \rparen </var>の <font color="red"><strong>相対評価スコア</strong></font> が得られ、その和が提出の得点となります。
+                    </p>
+                    <p>
+                        最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定されます。暫定テスト・システムテストのどちらにおいても、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースに関する相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最大絶対スコア」の計算対象から除外されます。<br/>
+                    </p>
+                    <p>
+                        また、システムテストは <font color="red"><strong><span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意してください。
+                    </p>
+                    <h4>テストケース数</h4>
+                    <ul>
+                        <li>
+                            暫定テスト: 50個
+                        </li>
+                        <li>
+                            システムテスト: 3000個
+                            <ul>
+                                <li>コンテスト終了後に <a href="https://img.atcoder.jp/ahc029/seeds.txt">seeds.txt</a> (sha256=<code>aa53f4b2ae15494c08f8304459afd7523eb10b704394ad1c6a0a92fa052bbe14</code>) を公開します。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>相対評価システムについて</h4>
+                    <p>
+                        暫定テスト・システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span>以外の結果を得た一番最後の提出のみが順位表に反映されます。<br/>
+                        相対評価スコアの計算に用いられる各テストケース毎の「全参加者中の最大絶対スコア」の算出には、各参加者の順位表に反映されている提出のみが用いられます。<br/>
+                        順位表に表示されるスコアは相対評価スコアであり、新規提出があるたびに相対評価スコアが再計算されます。 一方、提出一覧から確認できる各提出のスコアは、各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されません。 最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要となります。<br/>
+                        不正な出力や制限時間超過をした場合、提出一覧から確認できるスコアは0となりますが、順位表には正解したテストケースに対する相対評価スコアの和が表示されます。<br/>
+                    </p>
+                    <h4>実行時間について</h4>
+                    <p>
+                        実行時間には多少のブレが生じます。
+                        また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+                        そのため、実行時間制限ギリギリの提出がシステムテストで <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性があります。
+                        プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。
+                    </p>
+                </section>
+            </div>
+            <hr>
+
+            <div class="io-style">
+                <div class="part">
+                    <section>
+                        <h3>入出力</h3>
+                        <p><b>※この問題はインタラクティブ形式である。以下の内容を読み、ジャッジプログラムとのやり取りを行うこと。</b></p>
+                        <p>最初に問題のパラメタと初期状態が以下の形式で標準入力から与えられる。</p>
+<pre>\(
+N ~ M ~ K ~ T \\
+t_0 ~ w_0 \\
+\vdots \\
+t_{N-1} ~ w_{N-1} \\
+h_0 ~ v_0 \\
+\vdots \\
+h_{M-1} ~ v_{M-1} \)
+</pre>
+                        <ul>
+                            <li>1行目には4つの整数 <var>N,M,K,T</var> がスペース区切りで与えられる。</li>
+                            <ul>
+                                <li><var>N</var> は手札に持つ方針カードの枚数で、 <var>2 \le N \le 7</var> を満たす。</li>
+                                <li><var>M</var> は会社が管理するプロジェクトの数で、 <var>2 \le M \le 8</var> を満たす。</li>
+                                <li><var>K</var> は手札に補充する方針カードの提示枚数で、 <var>2 \le K \le 5</var> を満たす。</li>
+                                <li><var>T</var> はゲームのターン数で、 <var>T = 1000</var> を満たす。</li>
+                            </ul>
+                            <li>続く <var>N</var> 行には開始時点の手札の方針カードの情報が与えられる。</li>
+                            <ul>
+                                <li>各行には 2 つの整数 <var>t_i</var>, <var>w_i</var> がスペース区切りで含まれており、<var>i</var> 番目の方針カードの種類と労働力を表す。</li>
+                                <ul>
+                                    <li> <var>t_i = 0</var> のとき そのカードが労働力 <var>w_i</var> の通常労働カードであることを表す。 </li>
+                                    <li> <var>t_i = 1</var> のとき そのカードが労働力 <var>w_i</var> の全力労働カードであることを表す。 </li>
+                                    <li> <var>t_i = 2</var> のとき そのカードがキャンセルカードであることを表す。 </li>
+                                    <li> <var>t_i = 3</var> のとき そのカードが業務転換カードであることを表す。 </li>
+                                    <li> <var>t_i = 4</var> のとき そのカードが増資カードであることを表す。 </li>
+                                </ul>
+                                <li><var>t_i, w_i (0 \leq i \lt N)</var> の値の範囲は「入力生成方法」セクションを参照すること。</li>
+                            </ul>
+                            <li>続く <var>M</var> 行には開始時点のプロジェクトの情報が与えられる。</li>
+                            <ul>
+                                <li>各行には 2 つの整数 <var>h_i</var>, <var>v_i</var> がスペース区切りで含まれており、<var>i</var> 番目のプロジェクトの残務量と価値を表す。</li>
+                                <li><var>h_i, v_i (0 \leq i \lt M)</var> の値の範囲は「入力生成方法」セクションを参照すること。</li>
+                            </ul>
+                        </ul>
+                        <p>上記の入力を受け取った後は <var>T</var> ターンに渡りゲームを進めていく。ターンごとに以下の形式でやりとりを行うこと。</p>
+                        <p>
+                            まず手札から使用する方針カードを1枚選び、そのカードの情報を以下の形式で標準出力へ出力せよ。
+                        </p>
+                        
+<pre>\(
+c ~ m\)
+</pre>
+                        <ul>
+                            <li> 1 行に 2 つの整数 <var>c,m</var> を出力せよ。</li>
+                            <ul>
+                            <li><var>c</var> は手札のうち何番目の方針カードを使用するかを表す。</li>
+                            <li><var>m</var> はカードの効果を適用するプロジェクトの番号を表す。</li>
+                            <li><var> 0 \leq c \lt N, 0 \leq m \lt M</var> を満たす必要がある。</li>
+                            <li>選んだカードが全力労働カード, 業務転換カード, 増資カードのいずれかの場合は <var> m = 0 </var> を満たす必要がある。</li>
+                            </ul>
+                            <li>テストケース内で増資カードは 20 回までしか使用できない。</li>
+                            <li>制約を満たさない出力をした場合、 <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span> となる。</li>
+                            <li>出力の後には改行をし、標準出力をflushする必要がある。そうしなかった場合、 <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性がある。<br/></li>
+                        </ul>
+                        <p>
+                            続いて、カード使用後のプロジェクトの状況の情報を標準入力から受け取る。
+                        </p>
+<pre>\(          
+h_0 ~ v_0 \\
+\vdots \\
+h_{M-1} ~ v_{M-1} \)
+</pre>
+                        <ul>
+                            <li>入力は <var>M</var> 行で、各行には直前の方針カードを使用した直後のプロジェクトの情報が、最初の入力と同じ形式で与えられる。</li>
+                            <li>完了したり取りやめたりしたプロジェクトがあった場合は、そのプロジェクトと同じ位置に新たに生成されたプロジェクトの情報が与えられる。</li>
+                        </ul>
+                        <p>
+                            続いて、現在の所持金の情報を標準入力から受け取る。
+                        </p>
+<pre>\(
+money\)
+</pre>
+                        <ul>
+                            <li>1 つの整数 <var>money</var> が与えられる。これは現時点での所持金を表す。</li>
+                        </ul>
+                        <p>
+                            続いて、手札に補充する方針カードの候補の情報を標準入力から受け取る。
+                        </p>
+<pre>\(
+t_0 ~ w_0 ~ p_0 \\
+\vdots \\
+t_{K-1} ~ w_{K-1} ~ p_{K-1} \)
+</pre>
+                        <ul>
+                            <li>入力は <var>K</var> 行で、各行には3つの整数が空白区切りで含まれている。</li>
+                            <li><var> t_i, w_i </var> は <var> i </var> 番目の方針カード候補の情報を最初の入力と同じ形式で表したものである。</li>
+                            <li><var> p_i </var>は<var> i </var> 番目の方針カードのコストを表している。</li>
+                            <li><b><var>t_0, w_0, p_0</var> は <var>t_0 = 0, w_0 = 2^L, p_0 = 0</var> を満たす。</b>ただし <var>L</var> はその時点で増資カードを使用した回数( <var>0 \leq L \leq 20</var> )を表す整数とする。</li>
+                            <li><var>t_i, w_i, p_i (1 \leq i \lt K)</var> の値の範囲は「入力生成方法」セクションを参照すること。</li>
+                        </ul>
+                        <p>
+                            最後に、<var>K</var> 枚の方針カード候補のうち何番目のカードを手札に加えるかの情報を標準出力へ出力せよ。
+                        </p>
+<pre>\(
+r\)
+</pre>
+                            <ul>
+                                <li> 1 行に整数 <var>r</var> を出力せよ。</li>
+                                <ul>
+                                <li>方針カード候補から <var>r</var> 番目の方針カードを選ぶ。</li>
+                                <li><var>r</var> は <var>0 \le r \lt K</var> を満たす必要がある。</li>
+                                <li>所持金が負になるカードを選択することはできない。</li>
+                                </ul>
+                                <li>ここで選んだカードはこのターンの最初に使用したカードと同じ位置、つまり手札の <var>c</var> 番目に補充される。</li>
+                                <li>制約を満たさない出力をした場合、 <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span> となる。</li>
+                                <li>出力の後には改行をし、標準出力をflushする必要がある。そうしなかった場合、 <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="実行時間制限超過">TLE</span> となる可能性がある。<br/></li>
+                            </ul>
+                            <p>
+                                以上で1ターンが終了する。
+                            </p>
+                        
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>入力生成方法</h3>
+                        
+                            <ul>
+                            <li><var>l \leq r</var> を満たす整数 <var>l, r</var> に対して、<var>l</var> 以上 <var>r</var> 以下の整数を一様ランダムに生成する関数を <var>\mathrm{rand}(l, r)</var> とする。</li>
+                            <li><var>l \leq r</var> を満たす実数 <var>l, r</var> に対して、<var>l</var> 以上 <var>r</var> 以下の実数を一様ランダムに生成する関数を <var>\mathrm{rand\_double}(l, r)</var> とする。</li>
+                            <li>平均 <var>μ</var>、標準偏差 <var>σ</var> の正規分布から値を生成する関数を <var>\mathrm{gauss}(μ, σ)</var>とする。</li>
+                            <li><var>l \leq r</var> を満たす実数 <var>l, r</var> 及び 実数 <var>x</var> に対して、<var> \mathrm{max}(l, \mathrm{min}(r, x)) </var> を求める関数を <var>\mathrm{clamp}(x, l, r)</var> とする。</li>
+                            </ul>
+                        
+                        <h4><var>N, M, K</var>の生成</h4>
+                        <ul>
+                            <li><var>N = \mathrm{rand}(2, 7)</var> で生成する。</li>
+                            <li><var>M = \mathrm{rand}(2, 8)</var> で生成する。</li>
+                            <li><var>K = \mathrm{rand}(2, 5)</var> で生成する。</li>
+                        </ul>
+                        <h4>プロジェクトの生成</h4>
+                        <ul>
+                            <li><var>L</var> をその時点で増資カードを使用した回数( <var>0 \leq L \leq 20</var> )を表す整数とする。</li>
+                            <li><var>b = \mathrm{rand\_double}(2.0, 8.0)</var> とする。</li>
+                            <li>残務量 <var>h</var> を <var>h = \mathrm{round}(2 ^ b) * 2^L</var> で生成する。</li>
+                            <li>価値 <var>v</var> を <var>v = \mathrm{round}(2 ^ {\mathrm{clamp}(\mathrm{gauss}(b, 0.5), 0.0, 10.0)}) * 2^L</var> で生成する。</li>
+                        </ul>
+                        <h4>方針カードの生成</h4>
+                        <ul>
+                            <li>テストケースごとに、カードの種類の生成確率をコントロールする隠しパラメータ <var>x_0, x_1, x_2, x_3, x_4</var> を以下のように定める。</li>
+                            <ul><li><var>x_0=\mathrm{rand}(1,20), x_1=\mathrm{rand}(1,10), x_2=\mathrm{rand}(1,10), x_3=\mathrm{rand}(1,5), x_4=\mathrm{rand}(1,3)</var> とする。</li></ul>
+                            <li>カードの種類 <var>t</var> は、 <var>t = i (0 \leq i \leq 4)</var> となる確率が <var>x_i</var> に比例するように生成する。</li>
+                            <li><var>L</var> をその時点で増資カードを使用した回数( <var>0 \leq L \leq 20</var> )を表す整数とする。</li>
+                            <li><var>t=0</var> または <var>t = 1</var> の場合は、労働力 <var>w</var> を <var>w=\mathrm{rand}(1, 50)* 2^L</var> で生成する。<var>t</var> が<var> 0,1 </var>以外の場合は <var>w=0</var> とする。</li>
+
+                            <li>カードのコスト <var>p</var> は以下のように決める。</li>
+                            <ul>
+                                <li><var>t = 0</var> の場合 <var>w' = w/2^L</var> とし <var>p = \mathrm{clamp}(\mathrm{round}(\mathrm{gauss}(w', w'/3)), 1, 10000) * 2^L</var> で生成する。</li>
+                                <li><var>t = 1</var> の場合 <var>w' = w/2^L</var> とし <var>p = \mathrm{clamp}(\mathrm{round}(\mathrm{gauss}(w'*M, w'*M/3)), 1, 10000) * 2^L</var> で生成する。</li>
+                                <li><var>t = 2</var> の場合 <var>p = \mathrm{rand}(0, 10) * 2^L</var> で生成する。</li>
+                                <li><var>t = 3</var> の場合 <var>p = \mathrm{rand}(0, 10) * 2^L</var> で生成する。</li>
+                                <li><var>t = 4</var> の場合 <var>p = \mathrm{rand}(200, 1000) * 2^L</var> で生成する。</li>
+                            </ul>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>ツール</h3>
+                        <ul>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06.html">Web版ビジュアライザ・入力ジェネレータ</a>: アニメーション表示が可能です。</li>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06.zip">ローカル版テスタ・ビジュアライザ・入力ジェネレータ</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。
+                                <ul><li><a href="https://img.atcoder.jp/ahc029/45e6da0b06_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li></ul>
+                            </li>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06_sample.zip">サンプルコード（C++, Python）</a>: サンプルの解答です。次の処理を実装しています。
+                                <ul>
+                                    <li>方針カードを使用する際は、常に 0 番目のカードを使用する。そのカードが通常労働カードまたはキャンセルカードの場合、 0 番目のプロジェクトを対象とする。</li>
+                                    <li>候補となる方針カードからどれを手札に加えるかの選択では、常に 0 番目の方針カードを選択する。
+                                        <ul>
+                                            <li>0 番目の方針カードのコストは <var> 0 </var> であることが保証されているため、現在の所持金に関わらずこの選択は常に可能である。</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            <font color="red"><strong>コンテスト期間中に、ビジュアライズ結果の共有や、解法・考察に関する言及は禁止されています。ご注意下さい。</strong></font>
+                        </p>
+                        <h4>ツールで用いられる入出力ファイルの仕様</h4>
+                        <p>ローカルテスタに与える入力ファイルは以下の形式を用いています。</p>
+<pre>\(
+N ~ M ~ K ~ T \\
+h_{init,0} ~ v_{init,0} \\
+\vdots \\
+h_{init,M-1} ~ v_{init,M-1} \\
+h_{0} ~ v_{0} \\
+\vdots \\
+h_{T*M-1} ~ v_{T*M-1} \\
+t_{init,0} ~ w_{init,0} \\
+\vdots \\
+t_{init,N-1} ~ w_{init,N-1} \\
+t_{0,0} ~ w_{0,0} ~ p_{0,0} \\
+\vdots \\
+t_{0,K-1} ~ w_{0,K-1} ~ p_{0,K-1} \\
+t_{1,0} ~ w_{1,0} ~ p_{1,0} \\
+\vdots \\
+t_{T-1,K-1} ~ w_{T-1,K-1} ~ p_{T-1,K-1} \)
+</pre>
+                        <ul>
+                            <li><var> h_{init,i}, v_{init,i} </var> は、はじめに与えられるプロジェクトのうち <var> i </var> 番目のものの残務量と価値を表します。</li>
+                            <li><var> h_{i}, v_{i} </var> は、新たに発生するプロジェクトの残務量と価値を表し、先頭から順に使用されます。新しいプロジェクトを生成する際は、それまでに増資カードを使用した回数を <var> L </var> として <var> 2^L </var> 倍された値が使われます。</li>
+                            <li><var> t_{init,i}, w_{init,i} </var> は、はじめに与えられる方針カードのうち <var> i </var> 番目のものの種類と労働力を表します。</li>
+                            <li><var> t_{i,j}, w_{i,j}, p_{i,j} </var> は、 <var> i </var> ターン目で候補として与えられる <var> j </var> 番目の方針カードの種類、労働力、コストを表します。方針カードを生成する際は、それまでに増資カードを使用した回数を <var> L </var> として <var> 2^L </var> 倍された値が使われます。</li>
+                        </ul>
+                        <p>ローカルテスタは解答プログラムの出力をそのまま出力ファイルに書き出します。<br>
+                        解答プログラムは、<code>#</code> から始まるコメント行を出力に含めてもかまいません。
+                        Web版ビジュアライザを使用すると、コメント行を対応するタイミングで表示できるため、デバッグや考察等に役立てることができます。
+                        ジャッジプログラムはコメント行を全て無視するため、コメント行を出力するプログラムをそのまま提出可能です。</p>
+                    </section>
+                </div>
+            </div>
+
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>入出力例</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                                <th>説明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+<pre>
+3 2 4 3
+0 29
+3 0
+4 0
+38 113
+17 46
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    入力の制約を満たさない、説明用の入力である点に注意せよ。<br/>
+                                    初期状態の手札の <var>3</var> 枚の方針カードの情報と、<var>2</var> つのプロジェクトの情報を受け取る。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 1
+</pre>
+                                </td>
+                                <td>
+                                    ここから最初のターンが始まる。<br/>
+                                    手札の <var>0</var> 番目にあった通常労働カードを <var>1</var> 番目のプロジェクトに適用する。<br/>
+                                    このプロジェクトの残務量は <var>17-29=-12</var> と負になるため、プロジェクトは完了する。<br/>
+                                    プロジェクトが完了したため所持金は <var>46</var> に増加する。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+38 113
+51 82
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    現在のプロジェクトの情報を受け取る。<br/>
+                                    直前の行動で <var>1</var> 番目のプロジェクトが完了したため、<var>1</var> 番目の位置には新しいプロジェクトが出現している。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+46
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    現在の所持金の情報を受け取る。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 1 0
+3 0 8
+1 18 22
+4 0 685
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <var>4</var> 枚の方針カードとコストが提示される。なお、<var>3</var> 番目のカードはコストが所持金を上回るため選択することはできない。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+2
+</pre>
+                                </td>
+                                <td>
+                                    <var>2</var> 番目の全力労働カードを選択した。このカードは手札の <var>0</var> 番目の位置に置かれる。現時点での手札は以下のようになっている。<br/>
+<pre>
+1 18
+3 0
+4 0
+</pre>
+                                    所持金は <var> 46-22=24 </var> に減少する。<br/>
+                                    以上でターンは終了となる。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 0
+</pre>
+                                </td>
+                                <td>
+                                    ここから次のターンが始まる。<br/>
+                                    手札の <var>1</var> 番目にあった業務転換カードを使用する。<br/>
+                                    全てのプロジェクトは取りやめられ、所持金は変化しない。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+49 84
+140 127
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    現在のプロジェクトの情報を受け取る。<br/>
+                                    実行を取りやめたプロジェクトに代わり、新たなプロジェクトの情報が与えられる。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+24
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    現在の所持金の情報を受け取る。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 1 0
+2 0 2
+0 25 44
+1 43 130
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <var>4</var> 枚の方針カードとコストが提示される。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td>
+                                    <var>1</var> 番目のキャンセルカードを選択した。このカードは手札の <var>1</var> 番目の位置に置かれる。現時点での手札は以下のようになっている。<br/>
+<pre>
+1 18
+2 0
+4 0
+</pre>
+                                    所持金は <var> 24-2=22 </var> に減少する。<br/>
+                                    以上でターンは終了となる。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+2 0
+</pre>
+                                </td>
+                                <td>
+                                    ここから最後のターンが始まる。<br/>
+                                    手札の <var>2</var> 番目にあった増資カードを使用する。<br/>
+                                    すでに出現している方針カードやプロジェクトには影響はなく、所持金は増加しない。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+49 84
+140 127
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    現在のプロジェクトの情報を受け取る。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+22
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    現在の所持金の情報を受け取る。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 2 0
+3 0 32
+2 0 18
+1 84 212
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <var>4</var> 枚の方針カードとコストが提示される。<br/>
+                                    増資カードを使ったため、提示された方針カードの労働力やコストの生成に用いるパラメータが変わっている。<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+0
+</pre>
+                                </td>
+                                <td>
+                                    <var>0</var> 番目の通常労働カードを選択した。このカードは手札の <var>2</var> 番目の位置に置かれる。現時点での手札は以下のようになっている。<br/>
+<pre>
+1 18
+2 0
+0 2
+</pre>
+                                    所持金は <var> 22-0=22 </var> となる。<br/>
+                                    以上でターンは終了となる。<br/>
+                                    全ターン終了時の所持金 <var>22</var> が本テストケースのスコアとなる。<br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </span>
+
+
+
+        <span class="lang-en">
+            <div class="part">
+                <section>
+                    <h3>Problem Statement</h3>
+                    <p>
+                        You are playing a business management game where the company is working on multiple <b>projects</b>.
+                        In this game, you choose and consume a <b>policy card</b> from your hand each turn to advance the projects, and then refill your hand with a policy card.
+                        The objective of this game is to maximize your <b>money</b> at the end of <var>T</var> turns.
+                    </p>
+                    <p>
+                        Each project is described by a pair of integer values: <b>remaining work</b> and <b>value</b>. When the remaining work becomes <var>0</var> or less, the project is completed, and the value is added to your money.
+                    </p>
+                    <p>
+                        You have <var>N</var> policy cards in your hand, each containing a strategy for managing projects. Each turn, you select one policy card from your hand and manage the project according to its contents.
+                        There are five types of policy cards:
+                        <ul>
+                        <li><b>Regular Work card</b>: This card is associated with a positive integer representing <b>labor power</b>. When you choose this card, you specify one of the projects you are currently managing, and reduce the remaining work of that project by the amount of labor power.</li>
+                        <li><b>Hard Work card</b>: This card is associated with a positive integer representing <b>labor power</b>. When you choose this card, the remaining work of each of the projects you are currently managing is reduced by the amount of labor power.</li>
+                        <li><b>Cancel card</b>: When you choose this card, you specify one of the projects you are currently managing and abort it.</li>
+                        <li><b>Restructuring card</b>: When you choose this card, you abort all the projects you are currently managing.</li>
+                        <li><b>Investment card</b>: Choosing this card doubles the remaining work and value of future projects, as well as the labor power and cost(described below) of future policy cards. The projects that have already appeared and the policy cards in your hand will not be affected.
+                        <font color="red"><strong>This card can only be used up to <var>20</var> times within a single test case.</strong></font></li>
+                        </ul>
+                    </p>
+                    <h4>How the game is played</h4>
+                    <p>
+                        At the start of the game, you are given information about the <var>M</var> projects the company is managing and the <var>N</var> policy cards you have. Your initial money is <var>0</var>.
+                        Each turn progresses as follows:
+                        <ol>
+
+                        <li>Choose and execute one policy card from your hand. The selected card is removed from your hand.</li>
+                        <ul>
+                            <li>If a project is completed, your money increases by the value of the project, and the project disappears.</li>
+                            <li>If a project is aborted, the project disappears.</li>
+                        </ul>
+                        
+                        <li>If the number of existing projects falls below <var>M</var>, new projects are provided to make the total number of projects equal to <var>M</var>.</li>
+                        <li>You are presented with <var>K</var> policy cards and their respective costs. You choose one card from them to add to your hand. When you do so, your money decreases by the cost of the chosen card.</li>
+                        <ul>
+                          <li>You cannot choose a policy card that would result in your money becoming negative due to the cost. However, it is guaranteed that you can always choose a card from the set of <var>K</var> cards, as there exists a card with a cost of <var>0</var> among them, as will be explained later.</li>
+                        </ul>
+                        </ol>
+                        As can be inferred from the above steps, at the beginning of each turn, you will always have <var>N</var> policy cards in your hand, and the company will be managing <var>M</var> projects.
+                    </p>
+                    <p>
+                        Play the game skillfully and maximize your money at the end of <var>T</var> turns.
+                    </p>
+                </section>
+            </div>
+            <hr/>
+            <div class="part">
+                <section>
+                    <h3>Scoring</h3>
+                    <p>For each test case, the absolute score is obtained as the value of the money at the end of <var>T</var> turns, and we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{YOUR}}{\mathrm{MAX}})</var>, where YOUR is your absolute score and MAX is the maximum absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.</p>
+                    <p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+                    In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MAX calculation for those test cases.</p>
+                    <p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+                    Be careful not to make a mistake in the final submission.</p>
+                    <h4>Number of test cases</h4>
+                    <ul>
+                        <li>
+                            Provisional test: 50
+                        </li>
+                        <li>
+                            System test: 3000
+                            <ul>
+                                <li>We will publish <a href="https://img.atcoder.jp/ahc029/seeds.txt">seeds.txt</a> (sha256=<code>aa53f4b2ae15494c08f8304459afd7523eb10b704394ad1c6a0a92fa052bbe14</code>) after the contest is over.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>About Relative Evaluation System</h4>
+                    <p>
+                        In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+                        Only the last submissions are used to calculate the MAX for each test case when calculating the relative scores.
+                    </p>
+                    <p>
+                        The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+                        On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+                        In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+                        If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.
+                    </p>
+                    <h4>About execution time</h4>
+                    <p>
+                        Execution time may vary slightly from run to run.
+                        In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+                        For these reasons, submissions that are very close to the time limit may result in <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span> in the system test.
+                        Please measure the execution time in your program to terminate the process, or make sure to have enough time margin for the execution.
+                    </p>
+                </section>
+            </div>
+            <hr>
+
+            <div class="io-style">
+                <div class="part">
+                    <section>
+                        <h3>Input and Output</h3>
+                        <p>
+                            <b>This problem is interactive. Read the following explanation, and communicate with the judge program accordingly.</b>
+                        </p>
+                        <p>At first, problem parameters and the initial state will be provided from Standard Input in the following format.</p>
+<pre>\(
+N ~ M ~ K ~ T \\
+t_0 ~ w_0 \\
+\vdots \\
+t_{N-1} ~ w_{N-1} \\
+h_0 ~ v_0 \\
+\vdots \\
+h_{M-1} ~ v_{M-1} \)
+</pre>
+                        <ul>
+                            <li>On the first line, there are four integers <var>N,M,K,T</var> separated by spaces.</li>
+                            <ul>
+                                <li><var>N</var> represents the number of policy cards in your hand and satisfies <var>2 \le N \le 7</var>.</li>
+                                <li><var>M</var> represents the number of projects managed by the company and satisfies <var>2 \le M \le 8</var>.</li>
+                                <li><var>K</var> represents the number of policy card candidates presented for refilling the hand and satisfies <var>2 \le K \le 5</var>.</li>
+                                <li><var>T</var> represents the number of turns and satisfies <var>T = 1000</var>.</li>
+                            </ul>
+                            <li>The following <var>N</var> lines provide information about the policy cards in the starting hand.</li>
+                            <ul>
+                                <li>Each line contains space-separated two integers <var>t_i</var> and <var>w_i</var>, representing the type and labor power of the <var>i</var>-th policy card.</li>
+                                <ul>
+                                    <li>When <var>t_i = 0</var>, it indicates that the card is a Regular Work card with labor power <var>w_i</var>.</li>
+                                    <li>When <var>t_i = 1</var>, it indicates that the card is a Hard Work card with labor power <var>w_i</var>.</li>
+                                    <li>When <var>t_i = 2</var>, it indicates that the card is a Cancel card.</li>
+                                    <li>When <var>t_i = 3</var>, it indicates that the card is a Restructuring card.</li>
+                                    <li>When <var>t_i = 4</var>, it indicates that the card is an Investment card.</li>
+                                </ul>
+                                <li>The ranges of values for <var>t_i, w_i (0 \leq i \lt N)</var> are described in the "Input Generation" section.</li>
+                            </ul>
+                            <li>The following <var>M</var> lines provide information about the projects at the start of the game.</li>
+                            <ul>
+                                <li>Each line contains space-separated two integers <var>h_i</var> and <var>v_i</var>, representing the remaining work and value of the <var>i</var>-th project.</li>
+                                <li>The ranges of values for <var>h_i, v_i (0 \leq i \lt M)</var> are described in the "Input Generation" section.</li>
+                            </ul>
+                        </ul>
+                        <p>After receiving the above input, the game will progress over <var>T</var> turns. Communicate with the judge program in the following format each turn.</p>
+                        <p>
+                            First, choose one policy card to use from your hand, and output the information of that card to the Standard Output in the following format.
+                        </p>
+                        
+<pre>\(
+c ~ m\)
+</pre>
+                        <ul>
+                            <li>On a single line, output two integers <var>c,m</var> separated by a space.</li>
+                            <ul>
+                            <li><var>c</var> represents the position of the policy card to be used from the hand.</li>
+                            <li><var>m</var> represents the position of the project on which to apply the effect of the card.</li>
+                            <li><var> 0 \leq c \lt N, 0 \leq m \lt M</var> must be satisfied.</li>
+                            <li>If the chosen card is a Hard Work card, Restructuring card, or Investment card, <var>m</var> must be <var>0</var>.</li>
+                            </ul>
+                            <li>Investment card can only be used up to <var>20</var> times within a single test case.</li>
+                            <li>If the output does not satisfy the constraints, the result will be <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>.</li>
+                            <li>The output must be followed by a new line, and you have to flush Standard Output. Otherwise, the submission might be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span><br/></li>
+                        </ul>
+                        <p>
+                            Next, receive the information about the status of the projects after using the card from the Standard Input.
+                        </p>
+<pre>\(          
+h_0 ~ v_0 \\
+\vdots \\
+h_{M-1} ~ v_{M-1} \)
+</pre>
+                        <ul>
+                            <li>The input consists of <var>M</var> lines, with each line providing the information about the projects immediately after using the previous policy card, in the same format as the initial input.</li>
+                            <li>If there are completed or aborted projects, the information about the newly generated projects will be provided at the same position as those projects.</li>
+                        </ul>
+                        <p>
+                            Next, receive the information about the current money from the Standard Input.
+                        </p>
+<pre>\(
+money\)
+</pre>
+                        <ul>
+                            <li>A single integer <var>money</var> is provided, representing the current money at this point.</li>
+                        </ul>
+                        <p>
+                            Next, receive the information about the candidate policy cards to refill the hand from the Standard Input.
+                        </p>
+<pre>\(
+t_0 ~ w_0 ~ p_0 \\
+\vdots \\
+t_{K-1} ~ w_{K-1} ~ p_{K-1} \)
+</pre>
+                        <ul>
+                            <li>The input consists of <var>K</var> lines, each containing three integers separated by spaces</li>
+                            <li><var>t_i, w_i</var> represent the information of the <var>i</var>-th candidate policy card in the same format as the initial input.</li>
+                            <li><var>p_i</var> represents the cost of the <var>i</var>-th policy card.</li>
+                            <li><b><var>t_0, w_0, p_0</var> satisfy <var>t_0 = 0, w_0 = 2^L, p_0 = 0</var>.</b> Here, let <var>L</var> ( <var>0 \leq L \leq 20</var> ) be an integer representing the number of times the Investment card has been used at this point.</li>
+                            <li>The ranges of values for <var>t_i, w_i, p_i (1 \leq i \lt K)</var> are described in the "Input Generation" section.</li>
+                        </ul>
+                        <p>
+                            Finally, output to the standard output the information about which of the <var>K</var> candidate policy cards to add to the hand.
+                        </p>
+<pre>\(
+r\)
+</pre>
+                        <ul>
+                            <li>On a single line, output an integer <var>r</var>.</li>
+                            <ul>
+                            <li>This indicates selecting the <var>r</var>-th policy card from the candidate policy cards.</li>
+                            <li><var>0 \le r \lt K</var> must be satisfied.</li>
+                            <li>You cannot choose a card that would result in a negative money.</li>
+                            </ul>
+                            <li>The card chosen here will refill the hand in the same position as the card used at the beginning of this turn, which is the <var>c</var>-th position in the hand.</li>
+                            <li>If the output does not satisfy the constraints, the result will be <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wrong Answer">WA</span>.</li>
+                            <li>The output must be followed by a new line, and you have to flush Standard Output. Otherwise, the submission might be judged as <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Time Limit Exceeded">TLE</span><br/></li>
+                        </ul>
+                        <p>
+                            This concludes one turn.
+                        </p>
+                    </section>
+                </div>
+
+
+                <div class="part">
+                    <section>
+                        <h3>Input Generation</h3>
+                        
+                            <ul>
+                            <li>For integers <var>l</var> and <var>r</var> satisfying <var>l \leq r</var>, let <var>\mathrm{rand}(l, r)</var> be a function that generates a uniformly random integer between <var>l</var> and <var>r</var>, inclusive.</li>
+                            <li>For real numbers <var>l</var> and <var>r</var> satisfying <var>l \leq r</var>, let <var>\mathrm{rand\_double}(l, r)</var> be a function that generates a uniformly random real number between <var>l</var> and <var>r</var>, inclusive.</li>
+                            <li>Let <var>\mathrm{gauss}(μ, σ)</var> be a function that generates values from a normal distribution with mean <var>μ</var> and standard deviation <var>σ</var>.</li>
+                            <li>For real numbers <var>l</var> and <var>r</var> satisfying <var>l \leq r</var>, and a real number <var>x</var>, let <var>\mathrm{clamp}(x, l, r)</var> be a function that calculates <var> \mathrm{max}(l, \mathrm{min}(r, x)) </var>.</li>
+                            </ul>
+                        
+                        <h4>Generation of <var>N, M, K</var></h4>
+                        <ul>
+                            <li><var>N = \mathrm{rand}(2, 7)</var></li>
+                            <li><var>M = \mathrm{rand}(2, 8)</var></li>
+                            <li><var>K = \mathrm{rand}(2, 5)</var></li>
+                        </ul>
+                        <h4>Generation of projects</h4>
+                        <ul>
+                            <li>Let <var>L</var> ( <var>0 \leq L \leq 20</var> ) be an integer representing the number of times the Investment card has been used at this point.</li>
+                            <li>Generate a parameter <var>b = \mathrm{rand\_double}(2.0, 8.0)</var>.</li>
+                            <li>Remaining work <var>h</var> is generated as <var>h = \mathrm{round}(2 ^ b) * 2^L</var>.</li>
+                            <li>Value <var>v</var> is generated as <var>v = \mathrm{round}(2 ^ {\mathrm{clamp}(\mathrm{gauss}(b, 0.5), 0.0, 10.0)}) * 2^L</var>.</li>
+                        </ul>
+                        <h4>Generation of policy cards</h4>
+                        <ul>
+                            <li>For each test case, the hidden parameters <var>x_0, x_1, x_2, x_3, x_4</var> are defined to control the generation probabilities of the card types as follows:</li>
+                            <ul><li><var>x_0=\mathrm{rand}(1,20), x_1=\mathrm{rand}(1,10), x_2=\mathrm{rand}(1,10), x_3=\mathrm{rand}(1,5), x_4=\mathrm{rand}(1,3)</var></li></ul>
+                            <li>The probability of the card type <var>t</var> being <var>i</var> is proportional to <var>x_i</var> <var>(0 \leq i \leq 4)</var>.</li>
+                            <li>Let <var>L</var> ( <var>0 \leq L \leq 20</var> ) be an integer representing the number of times the Investment card has been used at this point.</li>
+                            <li>If <var>t=0</var> or <var>t = 1</var>, labor power <var>w</var> is generated as <var>w=\mathrm{rand}(1, 50)* 2^L</var>. For <var>t</var> other than <var>0,1</var>, <var>w</var> is set to <var>0</var>.</li>
+
+                            <li>The cost <var>p</var> of the policy card is determined as follows:</li>
+                            <ul>
+                                <li>When <var>t = 0</var>, let <var>w' = w/2^L</var> and <var>p</var> is generated as <var>p = \mathrm{clamp}(\mathrm{round}(\mathrm{gauss}(w', w'/3)), 1, 10000) * 2^L</var> .</li>
+                                <li>When <var>t = 1</var>, let <var>w' = w/2^L</var> and <var>p</var> is generated as <var>p = \mathrm{clamp}(\mathrm{round}(\mathrm{gauss}(w'*M, w'*M/3)), 1, 10000) * 2^L</var> .</li>
+                                <li>When <var>t = 2</var>, <var>p</var> is generated as <var>p = \mathrm{rand}(0, 10) * 2^L</var> .</li>
+                                <li>When <var>t = 3</var>, <var>p</var> is generated as <var>p = \mathrm{rand}(0, 10) * 2^L</var> .</li>
+                                <li>When <var>t = 4</var>, <var>p</var> is generated as <var>p = \mathrm{rand}(200, 1000) * 2^L</var> .</li>
+                            </ul>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="part">
+                    <section>
+                        <h3>Tools (Input generator, local tester and visualizer)</h3>
+                        <ul>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06.html?lang=en">Web version</a>: For displaying animated visualizations.</li>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org">Rust language</a>.
+                                <ul><li><a href="https://img.atcoder.jp/ahc029/45e6da0b06_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li></ul>
+                            </li>
+                            <li><a href="https://img.atcoder.jp/ahc029/45e6da0b06_sample.zip">Sample code (C++, Python)</a>: Sample answers. Implemented as follows:
+                                <ul>
+                                    <li>When using a policy card, always use the <var>0</var>-th card. If the card is a Regular Work card or a Cancel card, it targets the <var>0</var>-th project.</li>
+                                    <li>When selecting which policy card to add to the hand from the candidate policy cards, always choose the <var>0</var>-th policy card.
+                                        <ul>
+                                            <li>The cost of the <var>0</var>-th candidate policy card is guaranteed to be <var>0</var>, making this choice always possible regardless of the current money.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            <font color="red"><strong>Please be aware that sharing visualization results or discussing solutions/ideas during the contest is prohibited.</strong></font>
+                        </p>
+
+                        <h4>Specification of input/output files used by the tools</h4>
+                        <p>Input files given to the local tester have the following format.</p>
+<pre>\(
+N ~ M ~ K ~ T \\
+h_{init,0} ~ v_{init,0} \\
+\vdots \\
+h_{init,M-1} ~ v_{init,M-1} \\
+h_{0} ~ v_{0} \\
+\vdots \\
+h_{T*M-1} ~ v_{T*M-1} \\
+t_{init,0} ~ w_{init,0} \\
+\vdots \\
+t_{init,N-1} ~ w_{init,N-1} \\
+t_{0,0} ~ w_{0,0} ~ p_{0,0} \\
+\vdots \\
+t_{0,K-1} ~ w_{0,K-1} ~ p_{0,K-1} \\
+t_{1,0} ~ w_{1,0} ~ p_{1,0} \\
+\vdots \\
+t_{T-1,K-1} ~ w_{T-1,K-1} ~ p_{T-1,K-1} \)
+</pre>
+                        <ul>
+                            <li><var> h_{init,i}, v_{init,i} </var> represent the remaining work and value of the <var>i</var>-th project given at the beginning.</li>
+                            <li><var> h_{i}, v_{i} </var> represent the remaining work and value of the newly generated projects, and they are used sequentially from the beginning. When generating new projects, these values are multiplied by <var>2^L</var>, where <var>L</var> is the number of times the Investment card has been used.</li>
+                            <li><var> t_{init,i}, w_{init,i} </var> represent the type and labor power of the <var>i</var>-th policy card given at the beginning</li>
+                            <li><var> t_{i,j}, w_{i,j}, p_{i,j} </var> represent the type, labor power, and cost of the <var>j</var>-th candidate policy card given in the <var>i</var>-th turn. When generating new policy card, these values are multiplied by <var>2^L</var>, where <var>L</var> is the number of times the Investment card has been used.</li>
+                        </ul>
+                        <p>
+                            The local tester writes outputs from your program directly to the output file.
+                            Your program may output comment lines starting with <code>#</code>. The web version of the visualizer displays the comment lines with the corresponding turn, which may be useful for debugging and analysis.
+                            Since the judge program ignores all comment lines, you can submit a program that outputs comment lines as is.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <hr>
+            <div class="part">
+                <section>
+                    <h3>I/O Examples</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                                <th>Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+<pre>
+3 2 4 3
+0 29
+3 0
+4 0
+38 113
+17 46
+</pre>
+                                </td>
+                                <td></td>
+                                <td>
+                                    Please note that this input is for explanation purposes, and thus doesn't meet all of the constraints for input.<br/>
+                                    Information about the three policy cards in the initial hand and the information about two initial projects are provided.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+0 1
+</pre>
+                                </td>
+                                <td>
+                                    The first turn begins from here.<br/>
+                                    Applying the Regular Work card that was in position <var>0</var> of the hand to the project in position <var>1</var>.<br/>
+                                    The remaining work of this project becomes <var>-12</var> <var>(17-29=-12)</var>, resulting in the project being completed.<br/>
+                                    As the project is completed, the money increases to <var>46</var>.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+38 113
+51 82
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Receive the information about the current projects.<br/>
+                                    As a result of the last action, the project in position <var>1</var> has been completed, and a new project has appeared at that position.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+46
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    Receive the information about the current money.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 1 0
+3 0 8
+1 18 22
+4 0 685
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Four candidate policy cards and their costs are presented. The cost of the card at position <var>3</var> exceeds the money, so it cannot be selected.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+2
+</pre>
+                                </td>
+                                <td>
+                                    Chose the Hard Work card at position <var>2</var>. This card will be placed in position <var>0</var> of the hand. The current hand are as follows:<br/>
+<pre>
+1 18
+3 0
+4 0
+</pre>
+                                    Your money decreased to <var>24</var> <var>(46-22=24)</var>.<br/>
+                                    This concludes the turn.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+1 0
+</pre>
+                                </td>
+                                <td>
+                                    The next turn begins from here.<br/>
+                                    Using the Restructuring card that was in position <var>1</var> of the hand.<br/>
+                                    All projects are aborted, and the money remains unchanged.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+49 84
+140 127
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Receive the information about the current projects.<br/>
+                                    In place of the aborted projects, information about the new projects is provided.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+24
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    Receive the information about the current money.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 1 0
+2 0 2
+0 25 44
+1 43 130
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Four candidate policy cards and their costs are presented.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+1
+</pre>
+                                </td>
+                                <td>
+                                    Chose the Cancel card at position <var>1</var>. This card will be placed in position <var>1</var> of the hand. The current hand are as follows:<br/>
+<pre>
+1 18
+2 0
+4 0
+</pre>
+                                    Your money decreased to <var>22</var> <var>(24-2=22)</var>.<br/>
+                                    This concludes the turn.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+<pre>
+2 0
+</pre>
+                                </td>
+                                <td>
+                                    The last turn begins from here.<br/>
+                                    Using the Investment card that was in position <var>2</var> of the hand.<br/>
+                                    There is no impact on the already existing policy cards and projects, and the possession money does not increase.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+49 84
+140 127
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Receive the information about the current projects.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+22
+</pre>
+                                </td>
+                                <td> </td>
+                                <td>
+                                    Receive the information about the current money.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+<pre>
+0 2 0
+3 0 32
+2 0 18
+1 84 212
+</pre>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Four candidate policy cards and their costs are presented.<br/>
+                                    Due to the use of the Investment card, the parameters used for generating the labor power and cost of the presented policy cards have changed.<br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+<pre>
+0
+</pre>
+                                </td>
+                                <td>
+                                    Chose the Normal Work card at position <var>0</var>. This card will be placed in position <var>2</var> of the hand. The current hand are as follows:<br/>
+<pre>
+1 18
+2 0
+0 2
+</pre>
+                                    Your current money is <var>22</var>.<br/>
+                                    This concludes the turn.<br/>
+                                    The money at the end of all turns, which is <var>22</var>, will be the score for this test case.<br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </span>
+    </span>
+</div>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc029/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc029_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc029/tasks/ahc029_a?lang=ja" data-a2a-title="A - Business Simulation Game">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc029/rules">ルール</a></li>
+					<li><a href="/contests/ahc029/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

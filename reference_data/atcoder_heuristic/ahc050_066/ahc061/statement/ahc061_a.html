@@ -1,0 +1,1634 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A - Multi-Player Territory Game</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ja">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_in',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="A - Multi-Player Territory Game" />
+	<meta property="og:description" content="プログラミング初級者から上級者まで楽しめる、競技プログラミングコンテストサイト「AtCoder」。オンラインで毎週開催プログラミングコンテストを開催しています。競技プログラミングを用いて、客観的に自分のスキルを計ることのできるサービスです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/ahc061/tasks/ahc061_a?lang=ja" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="A - Multi-Player Territory Game" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f7f525c/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "ja";
+		var userScreenName = "unidayo";
+		var csrfToken = "1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac="
+	</script>
+	<script src="//img.atcoder.jp/public/f7f525c/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f7f525c/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "ahc061";
+			var remainingText = "残り時間";
+			var countDownText = "開始まであと";
+			var startTime = moment("2026-02-13T19:00:00+09:00");
+			var endTime = moment("2026-02-23T19:00:00+09:00");
+		</script>
+		<style>#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: right bottom;
+background-clip: border-box;
+}
+@media (min-width: 768px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 680px auto;
+}
+}
+@media (min-width: 992px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 890px auto;
+}
+}
+@media (min-width: 1200px) {
+#contest-statement {
+background-image: url(https://img.atcoder.jp/ahc007/background800.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center bottom;
+background-clip: border-box;
+background-size: 1090px auto;
+}
+}
+
+.optional_color { animation: opt_color_anime 2s linear infinite; }
+.k1 { animation: f1 2s linear infinite; }
+.k2 { animation: f2 2s linear infinite; }
+.k3 { animation: f3 2s linear infinite; }
+.k4 { animation: f4 2s linear infinite; }
+.k5 { animation: f5 2s linear infinite; }
+.k6 { animation: f6 2s linear infinite; }
+.k7 { animation: f7 2s linear infinite; }
+.k8 { animation: f8 2s linear infinite; }
+.k9 { animation: f9 2s linear infinite; }
+.k10 { animation: f10 2s linear infinite; }
+.k11 { animation: f11 2s linear infinite; }
+.k12 { animation: f12 2s linear infinite; }
+.k13 { animation: f13 2s linear infinite; }
+.k14 { animation: f14 2s linear infinite; }
+.k15 { animation: f15 2s linear infinite; }
+.k16 { animation: f16 2s linear infinite; }
+.k17 { animation: f17 2s linear infinite; }
+@keyframes opt_color_anime { 0%, 30%, 100% { color: red; } 10% { color: green; } 20% { color: blue; } }
+@keyframes f1 { 0%, 4% { opacity: 1; } 2% { opacity: 0; } }
+@keyframes f2 { 2%, 6% { opacity: 1; } 4% { opacity: 0; } }
+@keyframes f3 { 4%, 8% { opacity: 1; } 6% { opacity: 0; } }
+@keyframes f4 { 6%, 10% { opacity: 1; } 8% { opacity: 0; } }
+@keyframes f5 { 8%, 12% { opacity: 1; } 10% { opacity: 0; } }
+@keyframes f6 { 10%, 14% { opacity: 1; } 12% { opacity: 0; } }
+@keyframes f7 { 12%, 16% { opacity: 1; } 14% { opacity: 0; } }
+@keyframes f8 { 14%, 18% { opacity: 1; } 16% { opacity: 0; } }
+@keyframes f9 { 16%, 20% { opacity: 1; } 18% { opacity: 0; } }
+@keyframes f10 { 18%, 22% { opacity: 1; } 20% { opacity: 0; } }
+@keyframes f11 { 20%, 24% { opacity: 1; } 22% { opacity: 0; } }
+@keyframes f12 { 22%, 26% { opacity: 1; } 24% { opacity: 0; } }
+@keyframes f13 { 24%, 28% { opacity: 1; } 26% { opacity: 0; } }
+@keyframes f14 { 26%, 30% { opacity: 1; } 28% { opacity: 0; } }
+@keyframes f15 { 28%, 32% { opacity: 1; } 30% { opacity: 0; } }
+@keyframes f16 { 30%, 34% { opacity: 1; } 32% { opacity: 0; } }
+@keyframes f17 { 32%, 36% { opacity: 1; } 34% { opacity: 0; } }
+
+:root {
+  --user-red: #FF0000;
+  --user-orange: #FF8000;
+  --user-yellow: #C0C000;
+  --user-blue: #0000FF;
+  --user-cyan: #00C0C0;
+  --user-green: #008000;
+  --user-brown: #804000;
+  --user-gray: #808080;
+  --user-unrated: #000000;
+  --user-admin: #C000C0;
+}
+.charts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-container {
+  width: 50%;
+  border: 2px solid black;
+  padding: 0px;
+  margin: 0 auto;
+}
+.chart-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.bar-label {
+  width: 100px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.bar {
+  display: inline-block;
+  height: 20px;
+  font-size: 16px;
+  text-align: left;
+  padding-right: 5px;
+  color: black;
+  font-weight: bold;
+}
+.bar-a0 {
+  width: 7%;
+  background: linear-gradient(to right, var(--user-red), var(--user-orange), var(--user-yellow), var(--user-blue), var(--user-cyan), var(--user-green));
+}
+.bar-a1 {
+  width: 7%;
+  background-color: var(--user-red);
+}
+.bar-a2 {
+  width: 21%;
+  background-color: var(--user-orange);
+}
+.bar-a3 {
+  width: 77%;
+  background-color: var(--user-yellow);
+}
+.bar-a4 {
+  width: 42%;
+  background-color: var(--user-blue);
+}
+.bar-a5 {
+  width: 14%;
+  background-color: var(--user-cyan);
+}
+.bar-a6 {
+  width: 7%;
+  background-color: var(--user-green);
+}
+.bar-h1 {
+  width: 28%;
+  background-color: var(--user-red);
+}
+.bar-h2 {
+  width: 21%;
+  background-color: var(--user-orange);
+}
+.bar-h3 {
+  width: 70%;
+  background-color: var(--user-yellow);
+}
+.bar-h4 {
+  width: 35%;
+  background-color: var(--user-blue);
+}
+.bar-h6 {
+  width: 14%;
+  background-color: var(--user-green);
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  background-color: #ffffff
+}
+.table-striped>tbody>th {
+  background-color: #ffffff
+}
+.table-jobs {
+  width: 80%;
+  border: 2px solid black;
+  table-layout: fixed
+}
+.table-jobs tr:first-child th,
+.table-jobs tr:first-child td {
+  border-bottom: 1px solid black;
+}
+.table-jobs th:first-child,
+.table-jobs td:first-child {
+  border-right: 1px solid black;
+}</style>
+	
+	
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2.min.css" rel="stylesheet" />
+		<link href="//img.atcoder.jp/public/f7f525c/css/cdn/select2-bootstrap.min.css" rel="stylesheet" />
+		<script src="//img.atcoder.jp/public/f7f525c/js/lib/select2.min.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ace.js"></script>
+		<script src="//img.atcoder.jp/public/f7f525c/js/ace/ext-language_tools.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f7f525c/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f7f525c/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f7f525c/js/cdn/auto-render.min.js"></script>
+		<script>$(function(){$('var').each(function(){var html=$(this).html().replace(/<sub>/g,'_{').replace(/<\/sub>/g,'}');$(this).html('\\('+html+'\\)');});});</script>
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f7f525c/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト開始</h4>
+			</div>
+			<div class="modal-body">
+				<p>THIRD プログラミングコンテスト 2026 （AtCoder Heuristic Contest 061）が開始されました。</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">コンテスト終了</h4>
+			</div>
+			<div class="modal-body">
+				<p>THIRD プログラミングコンテスト 2026 （AtCoder Heuristic Contest 061）は終了しました。</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/ahc061">THIRD プログラミングコンテスト 2026 （AtCoder Heuristic Contest 061）</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/ahc061/tasks/ahc061_a?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/ahc061/tasks/ahc061_a?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> unidayo (Guest) <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/users/unidayo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> マイプロフィール</a></li>
+								<li class="divider"></li>
+								<li><a href="/settings"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 基本設定</a></li>
+								<li><a href="/settings/icon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> アイコン設定</a></li>
+								<li><a href="/settings/password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> パスワードの変更</a></li>
+								<li><a href="/settings/fav"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り管理</a></li>
+								
+								
+								
+								<li class="divider"></li>
+								<li><a href="javascript:void(form_logout.submit())"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト</a></li>
+							</ul>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fahc061%2Ftasks%2Fahc061_a%3Flang%3Dja">
+		<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				コンテスト時間:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260213T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-02-13 19:00:00+0900</time></a> ~ <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20260223T1900&p1=248' target='blank'><time class='fixtime fixtime-full'>2026-02-23 19:00:00+0900</time></a> 
+				
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">AtCoderホームへ戻る</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/ahc061"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> トップ</a></li>
+		
+			<li class="active"><a href="/contests/ahc061/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 問題</a></li>
+		
+
+		
+			<li><a href="/contests/ahc061/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 質問 <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+			<li><a href="/contests/ahc061/submit?taskScreenName=ahc061_a"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 提出</a></li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 提出結果<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/ahc061/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> すべての提出</a></li>
+					
+						<li><a href="/contests/ahc061/submissions/me"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自分の提出</a></li>
+						
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					
+						
+							<li><a href="/contests/ahc061/standings/exhibition"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表(エキシビジョン)</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc061/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc061/standings/extended"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> 延長戦順位表</a></li>
+						
+					
+						
+							<li><a href="/contests/ahc061/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> バーチャル順位表</a></li>
+						
+					
+				</ul>
+			</li>
+		
+
+		
+			<li><a href="/contests/ahc061/custom_test"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> コードテスト</a></li>
+		
+
+		
+			<li><a href="/contests/ahc061/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 解説</a></li>
+		
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="h2">
+			A - Multi-Player Territory Game
+			<a class="btn btn-default btn-sm" href="/contests/ahc061/tasks/ahc061_a/editorial">解説</a>
+		</span>
+		<span id="task-lang-btn" class="pull-right"><span data-lang="ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'></span> / <span data-lang="en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'></span></span>
+		<script>
+			$(function() {
+				var ts = $('#task-statement span.lang');
+				if (ts.children('span').size() <= 1) {
+					$('#task-lang-btn').hide();
+					ts.children('span').show();
+					return;
+				}
+
+				var REMEMBER_LB = 5;
+				var LS_KEY = 'task_lang';
+				var taskLang = getLS(LS_KEY) || '';
+				function isTaskLangSet(taskLang) { return taskLang === 'ja' || taskLang === 'en';}
+				if (isTaskLangSet(taskLang)) {
+					const params = new URLSearchParams(window.location.search);
+					if (params.get('lang')) {
+						setLS(LS_KEY, REMEMBER_LB);
+						taskLang = LANG;
+					}
+				} else {
+					taskLang = LANG;
+				}
+				ts.children('span.lang-' + taskLang).show();
+
+				$('#task-lang-btn span').click(function() {
+					var l = $(this).data('lang');
+					ts.children('span').hide();
+					ts.children('span.lang-' + l).show();
+
+					taskLang = getLS(LS_KEY) || '';
+					let changeTimes = 0;
+					if (isTaskLangSet(taskLang)) {
+						changeTimes = REMEMBER_LB;
+					} else {
+						changeTimes = parseInt(taskLang, 10);
+						if (isNaN(changeTimes)) changeTimes = 0;
+						changeTimes++;
+					}
+					if (changeTimes < REMEMBER_LB) setLS(LS_KEY, changeTimes);
+					else setLS(LS_KEY, l);
+				});
+			});
+		</script>
+		<hr/>
+		<p>
+			実行時間制限: 2 sec / メモリ制限: 1024 MiB
+			
+			
+		</p>
+
+		<div id="task-statement">
+			
+
+
+	
+	
+
+			<span class="lang">
+<span class="lang-ja">
+
+<div class="part">
+<section>
+<h3>ストーリー</h3><p>高橋くんは複数人で対戦する陣取りゲームで遊ぶことにした。
+AI を相手に土地の支配を争い、できるだけ大差をつけて勝利することを目指せ。</p>
+<figure style="display: inline-block;">
+  <img src="https://img.atcoder.jp/ahc061/N52XwIfp.gif">
+  <figcaption style="text-align: center;">
+    3人での陣取りゲームの様子
+  </figcaption>
+</figure>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p><var>N\times N</var> のマス目で表される土地がある。一番左上のマスの座標を <var>(0,0)</var> とし、そこから下方向に <var>i</var> マス、右方向に <var>j</var> マス移動した先のマスの座標を <var>(i,j)</var> とする。</p>
+<p>この土地上で、<var>M</var> 人のプレイヤーが陣取りゲームを行う。
+プレイヤーは <var>0</var> から <var>M-1</var> までの <var>M</var> 人であり、高橋くん（プレイヤー <var>0</var>）以外の <var>M-1</var> 人は AI が操作する。</p>
+<p>各プレイヤー <var>p</var> は初期状態で <var>1</var> マスの<strong>初期領土</strong> <var>(sx_p,sy_p)</var> を所有し、そのマスの上に<strong>駒</strong>を置く。</p>
+<p>各マス <var>(i,j)</var> は<strong>価値</strong> <var>V_{i,j}</var> と<strong>レベル</strong> <var>L_{i,j}</var> を持つ。
+価値はゲームの進行によらず不変であり、レベルはゲームの進行に応じて変化する値である。
+初期状態において、各プレイヤーの初期領土のレベルは <var>1</var> であり、誰の領土でもないマスのレベルは <var>0</var> である。</p>
+<p><var>T</var> ターンのゲームを行う。各ターンは以下の手順で進行する。</p>
+<ul>
+<li><strong>移動先の決定：</strong> 全てのプレイヤーは<strong>同時に</strong>駒の移動先を決定する。移動先は以下の条件を満たす必要がある。<ul>
+<li>プレイヤーの駒の現在位置から、上下左右に隣接する自分の領土を経由して到達できるマスの集合を<strong>到達可能領土</strong>とする。このとき、移動先は到達可能領土に含まれるか、到達可能領土のいずれかのマスに隣接していなければならない。</li>
+<li>移動先に他のプレイヤーの駒が存在してはならない。</li>
+</ul>
+</li>
+<li><strong>競合解決：</strong> 全ての駒を同時に移動した後、<var>2</var> つ以上の駒が存在する各マスについて以下の処理を行う。<ul>
+<li>そのマスの所有者の駒が含まれる場合、その駒のみを盤面に残し、残りの駒を全て回収する。</li>
+<li>そのマスが誰の領土でもない場合、またはそのマスの所有者の駒が含まれない場合は、そのマスに存在する全ての駒を回収する。</li>
+</ul>
+</li>
+<li><strong>領土の更新：</strong> 回収されなかった各プレイヤーの駒について、移動先マスの条件に応じて以下の処理を適用する。<ul>
+<li><strong>占領：</strong> 誰の領土でもないマスの場合、自分の領土とし、レベルを <var>1</var> にする。</li>
+<li><strong>強化：</strong> 自分の領土の場合、レベルを <var>1</var> 増加させる。ただし、レベルの上限は入力で与えられる定数 <var>U</var> であり、既に <var>U</var> の場合は変化しない。</li>
+<li><strong>攻撃：</strong> 他のプレイヤーの領土の場合、レベルを <var>1</var> 減少させる。これによってレベルが <var>0</var> になった場合、そのマスを自分の領土とし、レベルを <var>1</var> にする。レベルが <var>0</var> にならなかった場合、攻撃したプレイヤーの駒を回収する。</li>
+</ul>
+</li>
+<li><strong>駒の復帰：</strong> このターンに回収した駒は、このターンの開始時点（移動前）のマスに戻す。</li>
+</ul>
+<p>なお、プレイヤーの駒は常に自分の領土上に存在し、駒が存在するマスは他のプレイヤーの攻撃対象にならないため、プレイヤーの領土が <var>0</var> マスになることはない。</p>
+<p><var>T</var> ターン終了後、各プレイヤー <var>p</var> の（到達可能でない領土を含む）全ての領土 <var>(i,j)</var> に対する <var>V_{i,j} \times L_{i,j}</var> の総和をプレイヤー <var>p</var> のスコア <var>S_p</var> とする。</p>
+<p>高橋くんは、<strong>スコアの最も高い AI プレイヤーに対する自分のスコアの比率をなるべく大きくしたい</strong>と考えている。
+すなわち、高橋くん（プレイヤー <var>0</var>）のスコアを <var>S_0</var>、スコアの最も高い AI プレイヤーのスコアを <var>S_A</var> としたとき、<var>S_0 / S_A</var> がなるべく大きくなるように、プレイヤー <var>0</var> の各ターンの行動を決定せよ。</p>
+<h4>AIの行動決定方法</h4>
+<p>AI プレイヤー <var>p</var> <var>(1\leq p\leq M-1)</var> は内部パラメータ <var>wa_p</var>, <var>wb_p</var>, <var>wc_p</var>, <var>wd_p</var>, <var>\varepsilon_p</var> を持ち、以下のアルゴリズムで移動先を決定する。</p>
+<p>各マス <var>(i,j)</var> のプレイヤー <var>p</var> にとっての評価値 <var>A_{p,i,j}</var> を次のように定義する。</p>
+<ul>
+<li>誰の領土でもない場合: <var>A_{p,i,j}=V_{i,j}\times wa_p</var></li>
+<li>自分の領土でレベルが <var>U</var> 未満の場合: <var>A_{p,i,j}=V_{i,j}\times wb_p</var></li>
+<li>自分の領土でレベルが <var>U</var> の場合: <var>A_{p,i,j}=0</var></li>
+<li>他のプレイヤーの領土でレベルが <var>1</var> の場合: <var>A_{p,i,j}=V_{i,j}\times wc_p</var></li>
+<li>他のプレイヤーの領土でレベルが <var>2</var> 以上の場合: <var>A_{p,i,j}=V_{i,j}\times wd_p</var></li>
+</ul>
+<p>プレイヤー <var>p</var> の移動可能な全てのマスの集合を <var>B_p</var> とする。以下のようにしてプレイヤー <var>p</var> の移動先を決定する。</p>
+<ul>
+<li>確率 <var>\varepsilon_p</var> で<strong>ランダム行動</strong>を行う。<ul>
+<li><var>B_p</var> の中から一様ランダムに <var>1</var> つ選ぶ。</li>
+</ul>
+</li>
+<li>確率 <var>1-\varepsilon_p</var> で<strong>貪欲行動</strong>を行う。<ul>
+<li><var>B_p</var> の中で評価値 <var>A_{p,i,j}</var> が最大のマスを選ぶ。そのようなマスが複数存在する場合は、その中から一様ランダムに <var>1</var> つ選ぶ。</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>得点</h3><p>高橋くん（プレイヤー <var>0</var>）のスコアを <var>S_0</var>、AI プレイヤーのうちスコアが最も高いもののスコアを <var>S_A=\max_{1 \leq p \leq M-1} S_p</var> とする。
+このとき、テストケースの絶対スコアを
+\[
+\mathrm{round}\left(10^5 \times \log_2\left(1+\frac{S_0}{S_A}\right)\right)
+\]
+とする。
+絶対スコアは高ければ高いほど良い。</p>
+<p>各テストケース毎に、<var>\mathrm{round}\left(10^9 \times \frac{\text{自身の絶対スコア}}{\text{全参加者中の最大絶対スコア}}\right)</var> の<font color="red"><strong>相対評価スコア</strong></font>が得られ、その和が提出の得点となる。</p>
+<p>最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、不正な出力や制限時間超過をした場合、そのテストケースの相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最大絶対スコア」の計算から除外される。
+システムテストは<font color="red"><strong> <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出</strong></font>に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。</p>
+<h4>テストケース数</h4>
+<ul>
+<li>暫定テスト: 100個</li>
+<li>システムテスト: 3000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc061/seeds.txt">seeds.txt</a> (sha256=24432b101519407fc0e5c2f92f3b939089115b79fd2e71ab3ee737ebc53e0601) を公開</li>
+</ul>
+<h4>相対評価システムについて</h4>
+<p>暫定テスト、システムテストともに、<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="コンパイルエラー">CE</span> 以外の結果を得た一番最後の提出のみが順位表に反映される。相対評価スコアの計算に用いられる各テストケース毎の全参加者中の最大絶対スコアの算出においても、順位表に反映されている最終提出のみが用いられる。</p>
+<p>順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の絶対スコアをそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する相対スコアの和が表示されている。</p>
+<h4>実行時間について</h4>
+<p>実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入出力</h3><p>はじめに、盤面のサイズ <var>N</var>、プレイヤー数 <var>M</var>、ターン数 <var>T</var>、レベル上限 <var>U</var>、各マス <var>(i,j)</var> の価値 <var>V_{i,j}</var>、各プレイヤー <var>p</var> の初期領土 <var>(sx_p,sy_p)</var> が以下の形式で標準入力から与えられる。</p>
+<pre><var>N</var> <var>M</var> <var>T</var> <var>U</var>
+<var>V_{0,0}</var> <var>\cdots</var> <var>V_{0,N-1}</var>
+<var>\vdots</var>
+<var>V_{N-1,0}</var> <var>\cdots</var> <var>V_{N-1,N-1}</var>
+<var>sx_0</var> <var>sy_0</var>
+<var>\vdots</var>
+<var>sx_{M-1}</var> <var>sy_{M-1}</var>
+</pre>
+<p>各値はそれぞれ以下の制約を満たす。</p>
+<ul>
+<li><var>N = 10</var></li>
+<li><var>2\leq M\leq 8</var></li>
+<li><var>T = 100</var></li>
+<li><var>1\leq U\leq 5</var></li>
+<li><var>1\leq V_{i,j}</var></li>
+<li><var>\displaystyle\sum_{i,j}V_{i,j}=1000\times N^2</var></li>
+<li><var>0\leq sx_p,sy_p\leq N-1</var></li>
+<li>各プレイヤー <var>p</var> の初期領土 <var>(sx_p,sy_p)</var> は互いに相異なる。</li>
+</ul>
+<p>上記の情報を読み込んだ後、各ターン <var>t</var> <var>(1\leq t\leq T)</var> について以下の入出力を繰り返す。</p>
+<p>各ターンでは、プレイヤー <var>0</var> の駒の移動先 <var>(tx_0,ty_0)</var> を以下の形式で標準出力に一行で出力せよ。駒の移動先は、問題文に記載された条件を満たす必要がある。</p>
+<pre><var>tx_0</var> <var>ty_0</var>
+</pre>
+<p><font color="red"><strong>出力の後には改行をし、更に標準出力を flush しなければならない。</strong></font>
+そうしない場合、<span class='label label-warning' data-toggle='tooltip' data-placement='top' title="実行時間制限超過">TLE</span>となる可能性がある。</p>
+<p>その後、ターン <var>t</var> 終了時点の盤面情報として、各プレイヤー <var>p</var> が駒の移動先として選んだマス <var>(tx_p,ty_p)</var>、ターン終了時における各プレイヤー <var>p</var> の駒の位置 <var>(ex_p,ey_p)</var>、ターン終了時における各マス <var>(i,j)</var> の所有者 <var>O_{i,j}</var> およびレベル <var>L_{i,j}</var> が以下の形式で標準入力から与えられる。</p>
+<pre><var>tx_0</var> <var>ty_0</var>
+<var>\vdots</var>
+<var>tx_{M-1}</var> <var>ty_{M-1}</var>
+<var>ex_0</var> <var>ey_0</var>
+<var>\vdots</var>
+<var>ex_{M-1}</var> <var>ey_{M-1}</var>
+<var>O_{0,0}</var> <var>\cdots</var> <var>O_{0,N-1}</var>
+<var>\vdots</var>
+<var>O_{N-1,0}</var> <var>\cdots</var> <var>O_{N-1,N-1}</var>
+<var>L_{0,0}</var> <var>\cdots</var> <var>L_{0,N-1}</var>
+<var>\vdots</var>
+<var>L_{N-1,0}</var> <var>\cdots</var> <var>L_{N-1,N-1}</var>
+</pre>
+<p>各値はそれぞれ以下の制約を満たす。</p>
+<ul>
+<li><var>0\leq tx_p,ty_p\leq N-1</var></li>
+<li><var>0\leq ex_p,ey_p\leq N-1</var></li>
+<li><var>-1\leq O_{i,j}\leq M-1</var><ul>
+<li><var>O_{i,j}=-1</var> の場合、そのマスは誰の領土でもないことを表す。</li>
+</ul>
+</li>
+<li><var>0\leq L_{i,j}\leq U</var></li>
+</ul>
+<h4>例</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>ターン</th>
+<th>Output</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初期入力</td>
+<td></td>
+<td><pre>10 3 100 2
+990 1001 985 ...
+...
+3 4
+7 2
+5 8</pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>3 5</pre></td>
+<td><pre>3 5
+7 3
+5 7
+3 5
+7 3
+5 7
+-1 -1 -1 ...
+...
+0 0 0 ...
+...</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>100</td>
+<td><pre>4 6</pre></td>
+<td><pre>4 6
+6 1
+4 9
+4 6
+6 1
+4 9
+0 0 -1 ...
+...
+2 1 0 ...
+...</pre></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://img.atcoder.jp/ahc061/N52XwIfp.html?lang=ja&seed=0&output=sample">例を見る</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力生成方法</h3><p><var>L</var> 以上 <var>U</var> 以下の整数値を一様ランダムに生成する関数を <var>\mathrm{randint}(L,U)</var>、
+<var>L</var> 以上 <var>U</var> 未満の実数値を一様ランダムに生成する関数を <var>\mathrm{randdouble}(L,U)</var> で表す。</p>
+<ul>
+<li>プレイヤー数 <var>M</var> は <var>\mathrm{randint}(2,8)</var> により生成される。</li>
+<li>レベル上限 <var>U</var> は <var>\mathrm{randint}(1,5)</var> により生成される。</li>
+<li>各プレイヤーの初期位置 <var>(sx_p,sy_p)</var> は互いに重複しないように一様ランダムに生成される。</li>
+</ul>
+<h4><var>V</var> の生成</h4>
+<p><var>V_{i,j}</var> は以下の手順で生成される。</p>
+<ul>
+<li><var>a=\mathrm{randdouble}(0.0,3.0)</var> とする。</li>
+<li>各マス <var>(i,j)</var> について、<var>V_{i,j}=(\mathrm{randdouble}(0.5,1.0))^a</var> で初期化する。</li>
+<li><var>K=\mathrm{randint}(0,2)</var> とし、以下の手順を <var>K</var> 回繰り返す。<ul>
+<li><var>x=\mathrm{randint}(0,N-1)</var>、<var>y=\mathrm{randint}(0,N-1)</var>、<var>b=\mathrm{randdouble}(1.0,4.0)</var>、<var>m=\mathrm{randint}(0,4)</var>、<var>R=\mathrm{randdouble}(1.0,5.0)</var> とする。</li>
+<li><var>m</var> の値に応じて各マス <var>(i,j)</var> に以下の加算を行う。<ul>
+<li><var>m=0</var> : <var>V_{i,j}=V_{i,j}+b\times\exp\left(-\frac{(i-x)^2+(j-y)^2}{2R^2}\right)</var></li>
+<li><var>m=1</var> : <var>V_{i,j}=V_{i,j}+\frac{b}{1+\sqrt{(i-x)^2+(j-y)^2}/R}</var></li>
+<li><var>m=2</var> : <var>(i-x)^2+(j-y)^2\leq R^2</var> を満たすマスに対し <var>V_{i,j}=V_{i,j}+b/4</var></li>
+<li><var>m=3</var> : <var>V_{i,j}=V_{i,j}+\frac{b}{1+(|i-x|+|j-y|)/R}</var></li>
+<li><var>m=4</var> : <var>|i-x|+|j-y|\leq R</var> を満たすマスに対し <var>V_{i,j}=V_{i,j}+b/4</var></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>全ての <var>V_{i,j}</var> の総和を <var>S</var> とし、<var>V_{i,j}=\left\lceil \frac{V_{i,j}\times 1000\times N^2}{S}\right\rceil</var> とする。</li>
+<li><var>\displaystyle\sum_{i,j}V_{i,j}&gt;1000\times N^2</var> の間、<var>V_{i,j}\geq 2</var> を満たすマスの中から一様ランダムに 1 つ選んで <var>V_{i,j}</var> を <var>1</var> 減少させることを繰り返す。</li>
+</ul>
+<h4>AI内部パラメータの生成</h4>
+<p>各 AI プレイヤー <var>p</var> <var>(1\leq p\leq M-1)</var> について、</p>
+<ul>
+<li><var>wa_p,wb_p,wc_p,wd_p</var> はそれぞれ独立に <var>\mathrm{randdouble}(0.3,1.0)</var> により生成される。</li>
+<li><var>\varepsilon_p</var> は <var>\mathrm{randdouble}(0.1,0.5)</var> により生成される。</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>ツール(入力ジェネレータ・ビジュアライザ)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示と手動プレイが可能です。</li>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。<ul>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。</li>
+</ul>
+</li>
+</ul>
+<p><font color="red"><b>コンテスト期間中に、seed=0 に対するビジュアライザの出力画像(PNG)のみ X で共有が可能です。動画形式での共有は禁止されているのでご注意下さい。 </b></font>必ず指定されたハッシュタグを用い、公開アカウントを使用して下さい。共有出来るのはseed=0に対するビジュアライズ結果と点数のみで、GIF動画や出力文字列、他のシードでの点数の共有や、解法・考察に関する言及は禁止です。</p>
+<p><a href="https://x.com/search?q=%23AHC061%20%23visualizer&src=typed_query&f=live">共有された画像の一覧</a></p>
+<h4>ツールで用いられる入力ファイルの仕様</h4>
+<p>ローカルテスタに与える入力ファイルは解答プログラムに与えられる初期入力の末尾に以下の形式の情報が追加されている。これらの情報はジャッジ内部でのみ使用され、解答プログラムには与えられない。</p>
+<p>初期入力に続いて <var>M-1</var> 行に、各AIプレイヤー <var>p</var> <var>(1\leq p\leq M-1)</var> の内部パラメータが以下の形式で与えられる。</p>
+<pre><var>wa_p</var> <var>wb_p</var> <var>wc_p</var> <var>wd_p</var> <var>\varepsilon_p</var>
+</pre>
+<p>続いて <var>T\times(M-1)</var> 行に、各ターン <var>t</var> <var>(1\leq t\leq T)</var> および各 AI プレイヤー <var>p</var> <var>(1\leq p\leq M-1)</var> の行動決定に使用される互いに独立な <var>0</var> 以上 <var>1</var> 未満の一様乱数 <var>r_{1,t,p}</var> と <var>r_{2,t,p}</var> が以下の形式で与えられる。
+ここで、<var>r_{1,t,p}</var> はランダム行動か貪欲行動かの決定に、<var>r_{2,t,p}</var> は移動先の選択に使用される。</p>
+<pre><var>r_{1,t,p}</var> <var>r_{2,t,p}</var>
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>サンプルプログラム</h3><details>
+<summary>詳細</summary>
+Python による解答例を示す。このプログラムでは、各ターンにおいてプレイヤー <var>0</var> の移動可能なマスの集合をBFSで計算し、その中から一様ランダムに移動先を選択している。
+<pre class="prettyprint linenums">
+from collections import deque
+import random
+
+random.seed(0)
+
+DX = [-1, 1, 0, 0]
+DY = [0, 0, -1, 1]
+
+def read_initial_input():
+    N, M, T, U = map(int, input().split())
+    V = [list(map(int, input().split())) for _ in range(N)]
+    sx, sy = [0] * M, [0] * M
+    for p in range(M):
+        sx[p], sy[p] = map(int, input().split())
+
+    owner = [[-1] * N for _ in range(N)]
+    level = [[0] * N for _ in range(N)]
+    px, py = list(sx), list(sy)
+    for p in range(M):
+        owner[sx[p]][sy[p]] = p
+        level[sx[p]][sy[p]] = 1
+
+    return N, M, T, U, V, owner, level, px, py
+
+def get_candidates(N, M, owner, px, py):
+    reachable = {(px[0], py[0])}
+    queue = deque([(px[0], py[0])])
+    while queue:
+        x, y = queue.popleft()
+        for d in range(4):
+            nx, ny = x + DX[d], y + DY[d]
+            if 0 &lt;= nx &lt; N and 0 &lt;= ny &lt; N and (nx, ny) not in reachable and owner[nx][ny] == 0:
+                reachable.add((nx, ny))
+                queue.append((nx, ny))
+
+    candidates = set(reachable)
+    for x, y in reachable:
+        for d in range(4):
+            nx, ny = x + DX[d], y + DY[d]
+            if 0 &lt;= nx &lt; N and 0 &lt;= ny &lt; N:
+                candidates.add((nx, ny))
+
+    for p in range(1, M):
+        candidates.discard((px[p], py[p]))
+
+    return candidates
+
+def read_turn_result(N, M, owner, level, px, py):
+    for _ in range(M):
+        tx, ty = map(int, input().split())
+    for p in range(M):
+        px[p], py[p] = map(int, input().split())
+    for i in range(N):
+        row = list(map(int, input().split()))
+        for j in range(N):
+            owner[i][j] = row[j]
+    for i in range(N):
+        row = list(map(int, input().split()))
+        for j in range(N):
+            level[i][j] = row[j]
+
+def main():
+    N, M, T, U, V, owner, level, px, py = read_initial_input()
+
+    for _ in range(T):
+        candidates = get_candidates(N, M, owner, px, py)
+        tx, ty = random.choice(list(candidates))
+        print(tx, ty, flush=True)
+        read_turn_result(N, M, owner, level, px, py)
+
+if __name__ == '__main__':
+    main()
+</pre></details></section>
+</div>
+</span>
+<span class="lang-en">
+
+<div class="part">
+<section>
+<h3>Story</h3><p>Takahashi has decided to play a territory-capturing game in which multiple players compete against each other.
+Compete against AI opponents for control of the land, and aim to win by as large a margin as possible.</p>
+<figure style="display: inline-block;">
+  <img src="https://img.atcoder.jp/ahc061/N52XwIfp.gif">
+  <figcaption style="text-align: center;">
+    The territory-capturing game with three players
+  </figcaption>
+</figure>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a land represented by an <var>N\times N</var> grid.
+Let <var>(0, 0)</var> be the coordinates of the top-left cell, and <var>(i, j)</var> be the coordinates of the cell located <var>i</var> cells down and <var>j</var> cells to the right from there.</p>
+<p>On this land, <var>M</var> players play a territory-capturing game.
+The players are numbered from <var>0</var> to <var>M-1</var>.
+The other <var>M-1</var> players besides Takahashi (player <var>0</var>) are controlled by AI.</p>
+<p>Each player <var>p</var> initially owns one cell <var>(sx_p,sy_p)</var> as their <strong>initial territory</strong>, and places a <strong>piece</strong> on that cell.</p>
+<p>Each cell <var>(i,j)</var> has a <strong>value</strong> <var>V_{i,j}</var> and a <strong>level</strong> <var>L_{i,j}</var>.
+The value does not change throughout the game, while the level changes as the game progresses.
+In the initial state, the level of each player’s initial territory is <var>1</var>, and the level of cells that belong to no player is <var>0</var>.</p>
+<p>The game consists of <var>T</var> turns. Each turn proceeds according to the following steps.</p>
+<ul>
+<li><strong>Decision of Move Destination:</strong> All players simultaneously decide the destination of their piece. The destination must satisfy the following conditions.<ul>
+<li>Define the <strong>reachable territory</strong> as the set of cells that can be reached from the current position of the player’s piece by traversing adjacent (up, down, left, right) cells that belong to the player. The destination must either be included in the reachable territory or be adjacent to at least one cell in the reachable territory.</li>
+<li>The destination must not contain another player’s piece.</li>
+</ul>
+</li>
+<li><strong>Conflict Resolution:</strong> After all pieces have been moved simultaneously, the following process is applied to each cell that contains two or more pieces.<ul>
+<li>If the cell contains the piece of the owner of that cell, only that piece remains on the board and all other pieces on that cell are removed.</li>
+<li>If the cell belongs to no player, or if it does not contain the piece of the owner of that cell, then all pieces on that cell are removed.</li>
+</ul>
+</li>
+<li><strong>Territory Update:</strong> For each player’s piece that was not removed, apply the following process according to the condition of the destination cell.<ul>
+<li><strong>Occupation:</strong> If the cell belongs to no player, it becomes the player’s territory and its level becomes <var>1</var>.</li>
+<li><strong>Reinforcement:</strong> If the cell is already the player’s territory, increase its level by <var>1</var>. However, the maximum level is the constant <var>U</var> given in the input; if the level is already <var>U</var>, it does not change.</li>
+<li><strong>Attack:</strong> If the cell belongs to another player, decrease its level by <var>1</var>. If the level becomes <var>0</var> as a result, the cell becomes the attacking player’s territory and its level becomes <var>1</var>. If the level does not become <var>0</var>, the attacking player’s piece is removed.</li>
+</ul>
+</li>
+<li><strong>Piece Restoration:</strong> All pieces removed during this turn are returned to the cells where they were located at the beginning of this turn (before movement).</li>
+</ul>
+<p>Note that a player’s piece always exists on their own territory, and a cell containing a piece is not subject to attack by other players. Therefore, a player’s territory never becomes empty.</p>
+<p>After <var>T</var> turns, the score <var>S_p</var> of each player <var>p</var> is defined as the sum of <var>V_{i,j} \times L_{i,j}</var> over all cells <var>(i,j)</var> that belong to player <var>p</var> (including territories that are not reachable).</p>
+<p>Takahashi aims to <strong>maximize the ratio of his score to that of the highest-scoring AI player</strong>.
+That is, let <var>S_0</var> be the score of Takahashi (player <var>0</var>), and let <var>S_A</var> be the score of the highest-scoring AI player.
+Your task is to choose the actions of player <var>0</var> in each turn so as to maximize <var>S_0 / S_A</var>.</p>
+<h4>AI Action Policy</h4>
+<p>Each AI player <var>p</var> <var>(1\leq p\leq M-1)</var> has internal parameters <var>wa_p</var>, <var>wb_p</var>, <var>wc_p</var>, <var>wd_p</var>, and <var>\varepsilon_p</var>, and determines its move destination according to the following algorithm.</p>
+<p>For each cell <var>(i,j)</var>, define the evaluation value <var>A_{p,i,j}</var> for player <var>p</var> as follows.</p>
+<ul>
+<li>If the cell belongs to no player: <var>A_{p,i,j}=V_{i,j}\times wa_p</var></li>
+<li>If the cell belongs to player <var>p</var> and its level is less than <var>U</var>: <var>A_{p,i,j}=V_{i,j}\times wb_p</var></li>
+<li>If the cell belongs to player <var>p</var> and its level is <var>U</var>: <var>A_{p,i,j}=0</var></li>
+<li>If the cell belongs to another player and its level is <var>1</var>: <var>A_{p,i,j}=V_{i,j}\times wc_p</var></li>
+<li>If the cell belongs to another player and its level is at least <var>2</var>: <var>A_{p,i,j}=V_{i,j}\times wd_p</var></li>
+</ul>
+<p>Let <var>B_p</var> be the set of all cells to which player <var>p</var> can move. The move destination of player <var>p</var> is determined as follows.</p>
+<ul>
+<li>With probability <var>\varepsilon_p</var>, perform a <strong>random action</strong>.<ul>
+<li>Choose one cell uniformly at random from <var>B_p</var>.</li>
+</ul>
+</li>
+<li>With probability <var>1-\varepsilon_p</var>, perform a <strong>greedy action</strong>.<ul>
+<li>Choose a cell in <var>B_p</var> that maximizes <var>A_{p,i,j}</var>. If multiple such cells exist, choose one uniformly at random from among them.</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Scoring</h3><p>Let <var>S_0</var> be the score of Takahashi (player <var>0</var>), and let <var>S_A=\max_{1 \leq p \leq M-1} S_p</var> be the highest score among the AI players.
+The absolute score for a test case is defined as
+\[
+\mathrm{round}\left(10^5 \times \log_2\left(1+\frac{S_0}{S_A}\right)\right).
+\]
+The higher the absolute score, the better.</p>
+<p>For each test case, we compute the <font color="red"><strong>relative score</strong></font> <var>\mathrm{round}(10^9\times \frac{\mathrm{YOUR}}{\mathrm{MAX}})</var>, where YOUR is your absolute score and MAX is the highest absolute score among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.</p>
+<p>The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MAX calculation for those test cases.</p>
+<p>The system test will be performed only for <font color="red"><strong>the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span> </strong></font>.
+Be careful not to make a mistake in the final submission.</p>
+<h4>Number of test cases</h4>
+<ul>
+<li>Provisional test: 100</li>
+<li>System test: 3000. We will publish <a href="https://img.atcoder.jp/ahc061/seeds.txt">seeds.txt</a> (sha256=24432b101519407fc0e5c2f92f3b939089115b79fd2e71ab3ee737ebc53e0601) after the contest is over.</li>
+</ul>
+<h4>About relative evaluation system</h4>
+<p>In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than <span class="label label-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compilation Error">CE</span>.
+Only the last submissions are used to calculate the MAX for each test case when calculating the relative scores.</p>
+<p>The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the absolute score for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.</p>
+<h4>About execution time</h4>
+<p>Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span> in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input and Output</h3><p>First, the board size <var>N</var>, the number of players <var>M</var>, the number of turns <var>T</var>, the level cap <var>U</var>, the value <var>V_{i,j}</var> of each cell <var>(i,j)</var>, and the initial territory <var>(sx_p,sy_p)</var> of each player <var>p</var> are given from Standard Input in the following format.</p>
+<pre><var>N</var> <var>M</var> <var>T</var> <var>U</var>
+<var>V_{0,0}</var> <var>\cdots</var> <var>V_{0,N-1}</var>
+<var>\vdots</var>
+<var>V_{N-1,0}</var> <var>\cdots</var> <var>V_{N-1,N-1}</var>
+<var>sx_0</var> <var>sy_0</var>
+<var>\vdots</var>
+<var>sx_{M-1}</var> <var>sy_{M-1}</var>
+</pre>
+<p>Each value satisfies the following constraints.</p>
+<ul>
+<li><var>N = 10</var></li>
+<li><var>2\leq M\leq 8</var></li>
+<li><var>T = 100</var></li>
+<li><var>1\leq U\leq 5</var></li>
+<li><var>1\leq V_{i,j}</var></li>
+<li><var>\displaystyle\sum_{i,j}V_{i,j}=1000\times N^2</var></li>
+<li><var>0\leq sx_p,sy_p\leq N-1</var></li>
+<li>The initial territories <var>(sx_p,sy_p)</var> of all players <var>p</var> are pairwise distinct.</li>
+</ul>
+<p>After reading the above information, repeat the following input/output for each turn <var>t</var> <var>(1\leq t\leq T)</var>.</p>
+<p>In each turn, output the destination <var>(tx_0,ty_0)</var> of player <var>0</var>'s piece in one line to Standard Output in the following format. The destination must satisfy the conditions described in the problem statement.</p>
+<pre><var>tx_0</var> <var>ty_0</var>
+</pre>
+<p><font color="red"><strong>The output must be followed by a new line, and you have to flush Standard Output.</strong></font>
+Otherwise, the submission might be judged as <span class='label label-warning' data-toggle='tooltip' data-placement='top' title="Time Limit Exceeded">TLE</span>.</p>
+<p>Then, as the board information at the end of turn <var>t</var>, the cell <var>(tx_p,ty_p)</var> chosen by each player <var>p</var> as the move destination, the position <var>(ex_p,ey_p)</var> of each player <var>p</var>'s piece at the end of the turn, and the owner <var>O_{i,j}</var> and level <var>L_{i,j}</var> of each cell <var>(i,j)</var> at the end of the turn are given from Standard Input in the following format.</p>
+<pre><var>tx_0</var> <var>ty_0</var>
+<var>\vdots</var>
+<var>tx_{M-1}</var> <var>ty_{M-1}</var>
+<var>ex_0</var> <var>ey_0</var>
+<var>\vdots</var>
+<var>ex_{M-1}</var> <var>ey_{M-1}</var>
+<var>O_{0,0}</var> <var>\cdots</var> <var>O_{0,N-1}</var>
+<var>\vdots</var>
+<var>O_{N-1,0}</var> <var>\cdots</var> <var>O_{N-1,N-1}</var>
+<var>L_{0,0}</var> <var>\cdots</var> <var>L_{0,N-1}</var>
+<var>\vdots</var>
+<var>L_{N-1,0}</var> <var>\cdots</var> <var>L_{N-1,N-1}</var>
+</pre>
+<p>Each value satisfies the following constraints.</p>
+<ul>
+<li><var>0\leq tx_p,ty_p\leq N-1</var></li>
+<li><var>0\leq ex_p,ey_p\leq N-1</var></li>
+<li><var>-1\leq O_{i,j}\leq M-1</var><ul>
+<li>If <var>O_{i,j}=-1</var>, the cell belongs to no player.</li>
+</ul>
+</li>
+<li><var>0\leq L_{i,j}\leq U</var></li>
+</ul>
+<h4>Example</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Turn</th>
+<th>Output</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Input</td>
+<td></td>
+<td><pre>10 3 100 2
+990 1001 985 ...
+...
+3 4
+7 2
+5 8</pre></td>
+</tr>
+<tr>
+<td>1</td>
+<td><pre>3 5</pre></td>
+<td><pre>3 5
+7 3
+5 7
+3 5
+7 3
+5 7
+-1 -1 -1 ...
+...
+0 0 0 ...
+...</pre></td>
+</tr>
+<tr>
+<td><var>\vdots</var></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>100</td>
+<td><pre>4 6</pre></td>
+<td><pre>4 6
+6 1
+4 9
+4 6
+6 1
+4 9
+0 0 -1 ...
+...
+2 1 0 ...
+...</pre></td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://img.atcoder.jp/ahc061/N52XwIfp.html?lang=en&seed=0&output=sample">Show example</a></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input Generation</h3><p>Let <var>\mathrm{randint}(L,U)</var> denote a function that generates an integer value uniformly at random between <var>L</var> and <var>U</var> (inclusive).
+Let <var>\mathrm{randdouble}(L,U)</var> denote a function that generates a real value uniformly at random in the range <var>[L,U)</var>.</p>
+<ul>
+<li>The number of players <var>M</var> is generated by <var>\mathrm{randint}(2,8)</var>.</li>
+<li>The level cap <var>U</var> is generated by <var>\mathrm{randint}(1,5)</var>.</li>
+<li>The initial positions <var>(sx_p,sy_p)</var> of the players are generated uniformly at random so that no two positions overlap.</li>
+</ul>
+<h4>Generation of <var>V</var></h4>
+<p><var>V_{i,j}</var> is generated by the following procedure.</p>
+<ul>
+<li>Let <var>a=\mathrm{randdouble}(0.0,3.0)</var>.</li>
+<li>For each cell <var>(i,j)</var>, initialize <var>V_{i,j}=(\mathrm{randdouble}(0.5,1.0))^a</var>.</li>
+<li>Let <var>K=\mathrm{randint}(0,2)</var>, and repeat the following procedure <var>K</var> times.<ul>
+<li>Let <var>x=\mathrm{randint}(0,N-1)</var>, <var>y=\mathrm{randint}(0,N-1)</var>, <var>b=\mathrm{randdouble}(1.0,4.0)</var>, <var>m=\mathrm{randint}(0,4)</var>, and <var>R=\mathrm{randdouble}(1.0,5.0)</var>.</li>
+<li>Depending on the value of <var>m</var>, add the following to each cell <var>(i,j)</var>.<ul>
+<li><var>m=0</var> : <var>V_{i,j}=V_{i,j}+b\times\exp\left(-\frac{(i-x)^2+(j-y)^2}{2R^2}\right)</var></li>
+<li><var>m=1</var> : <var>V_{i,j}=V_{i,j}+\frac{b}{1+\sqrt{(i-x)^2+(j-y)^2}/R}</var></li>
+<li><var>m=2</var> : For cells satisfying <var>(i-x)^2+(j-y)^2\leq R^2</var>, set <var>V_{i,j}=V_{i,j}+b/4</var></li>
+<li><var>m=3</var> : <var>V_{i,j}=V_{i,j}+\frac{b}{1+(|i-x|+|j-y|)/R}</var></li>
+<li><var>m=4</var> : For cells satisfying <var>|i-x|+|j-y|\leq R</var>, set <var>V_{i,j}=V_{i,j}+b/4</var></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Let <var>S</var> be the sum of all <var>V_{i,j}</var>, and set <var>V_{i,j}=\left\lceil \frac{V_{i,j}\times 1000\times N^2}{S}\right\rceil</var>.</li>
+<li>While <var>\displaystyle\sum_{i,j}V_{i,j}&gt;1000\times N^2</var>, repeatedly choose one cell uniformly at random among those with <var>V_{i,j}\geq 2</var> and decrease <var>V_{i,j}</var> by <var>1</var>.</li>
+</ul>
+<h4>Generation of AI Internal Parameters</h4>
+<p>For each AI player <var>p</var> <var>(1\leq p\leq M-1)</var>,</p>
+<ul>
+<li><var>wa_p,wb_p,wc_p,wd_p</var> are generated independently by <var>\mathrm{randdouble}(0.3,1.0)</var>.</li>
+<li><var>\varepsilon_p</var> is generated by <var>\mathrm{randdouble}(0.1,0.5)</var>.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Tools (Input generator and visualizer)</h3><ul>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp.html?lang=en">Web version</a>: This is more powerful than the local version providing animations and manual play.</li>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.<ul>
+<li><a href="https://img.atcoder.jp/ahc061/N52XwIfp_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.</li>
+</ul>
+</li>
+</ul>
+<p><font color="red">
+You are allowed to share output images (PNG) of the provided visualizer for seed=0 on X during the contest.
+</font>
+You have to use the specified hashtag and public account. You can only share visualization results and scores for seed=0. Do not share videos, output itself, scores for other seeds or mention solutions or discussions.</p>
+<h4>Input File Format Used by the Tool</h4>
+<p>The input file given to the local tester has additional information appended to the end of the initial input that is given to the solution program, in the following format. This information is used only inside the judge and is not given to the solution program.</p>
+<p>Following the initial input, the internal parameters of each AI player <var>p</var> <var>(1\leq p\leq M-1)</var> are given in <var>M-1</var> lines in the following format.</p>
+<pre><var>wa_p</var> <var>wb_p</var> <var>wc_p</var> <var>wd_p</var> <var>\varepsilon_p</var>
+</pre>
+<p>Then, in <var>T\times(M-1)</var> lines, two independent uniform random numbers <var>r_{1,t,p}</var> and <var>r_{2,t,p}</var> in the range <var>[0,1)</var>, which are used for action selection of each AI player <var>p</var> <var>(1\leq p\leq M-1)</var> in each turn <var>t</var> <var>(1\leq t\leq T)</var>, are given in the following format.
+Here, <var>r_{1,t,p}</var> is used to decide whether to take a random action or a greedy action, and <var>r_{2,t,p}</var> is used to choose the move destination.</p>
+<pre><var>r_{1,t,p}</var> <var>r_{2,t,p}</var>
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Solution</h3><details>
+<summary>Details</summary>
+A sample solution in Python is shown below.
+In this program, at each turn, the set of cells to which player <var>0</var> can move is computed using BFS, and one destination is chosen uniformly at random from among them.
+<pre class="prettyprint linenums">
+from collections import deque
+import random
+
+random.seed(0)
+
+DX = [-1, 1, 0, 0]
+DY = [0, 0, -1, 1]
+
+def read_initial_input():
+    N, M, T, U = map(int, input().split())
+    V = [list(map(int, input().split())) for _ in range(N)]
+    sx, sy = [0] * M, [0] * M
+    for p in range(M):
+        sx[p], sy[p] = map(int, input().split())
+
+    owner = [[-1] * N for _ in range(N)]
+    level = [[0] * N for _ in range(N)]
+    px, py = list(sx), list(sy)
+    for p in range(M):
+        owner[sx[p]][sy[p]] = p
+        level[sx[p]][sy[p]] = 1
+
+    return N, M, T, U, V, owner, level, px, py
+
+def get_candidates(N, M, owner, px, py):
+    reachable = {(px[0], py[0])}
+    queue = deque([(px[0], py[0])])
+    while queue:
+        x, y = queue.popleft()
+        for d in range(4):
+            nx, ny = x + DX[d], y + DY[d]
+            if 0 &lt;= nx &lt; N and 0 &lt;= ny &lt; N and (nx, ny) not in reachable and owner[nx][ny] == 0:
+                reachable.add((nx, ny))
+                queue.append((nx, ny))
+
+    candidates = set(reachable)
+    for x, y in reachable:
+        for d in range(4):
+            nx, ny = x + DX[d], y + DY[d]
+            if 0 &lt;= nx &lt; N and 0 &lt;= ny &lt; N:
+                candidates.add((nx, ny))
+
+    for p in range(1, M):
+        candidates.discard((px[p], py[p]))
+
+    return candidates
+
+def read_turn_result(N, M, owner, level, px, py):
+    for _ in range(M):
+        tx, ty = map(int, input().split())
+    for p in range(M):
+        px[p], py[p] = map(int, input().split())
+    for i in range(N):
+        row = list(map(int, input().split()))
+        for j in range(N):
+            owner[i][j] = row[j]
+    for i in range(N):
+        row = list(map(int, input().split()))
+        for j in range(N):
+            level[i][j] = row[j]
+
+def main():
+    N, M, T, U, V, owner, level, px, py = read_initial_input()
+
+    for _ in range(T):
+        candidates = get_candidates(N, M, owner, px, py)
+        tx, ty = random.choice(list(candidates))
+        print(tx, ty, flush=True)
+        read_turn_result(N, M, owner, level, px, py)
+
+if __name__ == '__main__':
+    main()
+</pre></details></section>
+</div>
+</span>
+</span>
+
+		</div>
+
+		
+
+		
+		<hr/>
+		<form class="form-horizontal form-code-submit" action="/contests/ahc061/submit" method="POST">
+			<input type="hidden" name="data.TaskScreenName" value="ahc061_a" />
+			
+			<div class="form-group ">
+				<label class="control-label col-sm-3 col-md-2" for="select-lang">言語</label>
+				<div id="select-lang" class="col-sm-5" data-name="data.LanguageId">
+					<select class="form-control current" data-placeholder="-" name="data.LanguageId" required>
+						<option></option>
+						
+							<option value="6001" data-ace-mode="text">&gt;&lt;&gt; (fishr 0.1.0)</option>
+						
+							<option value="6002" data-ace-mode="ada">Ada 2022 (GNAT 15.2.0)</option>
+						
+							<option value="6003" data-ace-mode="text">APL (GNU APL 1.9)</option>
+						
+							<option value="6004" data-ace-mode="mips">Assembly MIPS O32 ABI (GNU assembler 2.42)</option>
+						
+							<option value="6005" data-ace-mode="assembly_x86">Assembly x64 (NASM 2.16.03)</option>
+						
+							<option value="6006" data-ace-mode="text">AWK (GNU awk 5.2.1)</option>
+						
+							<option value="6007" data-ace-mode="text">A言語 (interpreter af48a2a)</option>
+						
+							<option value="6008" data-ace-mode="sh">Bash (bash 5.3)</option>
+						
+							<option value="6009" data-ace-mode="basic">BASIC (FreeBASIC 1.10.1)</option>
+						
+							<option value="6010" data-ace-mode="text">bc (GNU bc 1.08.2)</option>
+						
+							<option value="6011" data-ace-mode="text">Befunge93 (TBC 1.0)</option>
+						
+							<option value="6012" data-ace-mode="text">Brainfuck (Tritium 1.2.73)</option>
+						
+							<option value="6013" data-ace-mode="c_cpp">C23 (Clang 21.1.0)</option>
+						
+							<option value="6014" data-ace-mode="c_cpp">C23 (GCC 14.2.0)</option>
+						
+							<option value="6015" data-ace-mode="csharp">C# 13.0 (.NET 9.0.8)</option>
+						
+							<option value="6016" data-ace-mode="csharp">C# 13.0 (.NET Native AOT 9.0.8)</option>
+						
+							<option value="6017" data-ace-mode="c_cpp">C&#43;&#43;23 (GCC 15.2.0)</option>
+						
+							<option value="6018" data-ace-mode="text">C3 (c3c 0.7.5)</option>
+						
+							<option value="6019" data-ace-mode="text">Carp(Carp 0.5.5)</option>
+						
+							<option value="6020" data-ace-mode="c_cpp">cLay (cLay 20250308-1 (GCC 15.2.0))</option>
+						
+							<option value="6021" data-ace-mode="clojure">Clojure (babashka 1.12.208)</option>
+						
+							<option value="6022" data-ace-mode="clojure">Clojure (clojure 1.12.2)</option>
+						
+							<option value="6023" data-ace-mode="clojure">Clojure (Clojure AOT 1.12.2)</option>
+						
+							<option value="6025" data-ace-mode="clojure">Clojure (ClojureScript 1.12.42 (Clojure 1.12.2 Node.js 22.19.0))</option>
+						
+							<option value="6026" data-ace-mode="cobol">COBOL (Free) (GnuCOBOL 3.2)</option>
+						
+							<option value="6027" data-ace-mode="lisp">Common Lisp (SBCL 2.5.8)</option>
+						
+							<option value="6028" data-ace-mode="crystal">Crystal (Crystal 1.17.0)</option>
+						
+							<option value="6029" data-ace-mode="text">Cyber (Cyber v0.3)</option>
+						
+							<option value="6030" data-ace-mode="d">D (DMD 2.111.0)</option>
+						
+							<option value="6031" data-ace-mode="d">D (GDC 15.2)</option>
+						
+							<option value="6032" data-ace-mode="d">D (LDC 1.41.0)</option>
+						
+							<option value="6033" data-ace-mode="dart">Dart (Dart 3.9.2)</option>
+						
+							<option value="6034" data-ace-mode="text">dc 1.5.2 (GNU bc 1.08.2)</option>
+						
+							<option value="6035" data-ace-mode="prolog">ECLiPSe (ECLiPSe 7.1_13)</option>
+						
+							<option value="6036" data-ace-mode="eiffel">Eiffel (Gobo Eiffel 22.01)</option>
+						
+							<option value="6037" data-ace-mode="eiffel">Eiffel (Liberty Eiffel 07829e3)</option>
+						
+							<option value="6038" data-ace-mode="elixir">Elixir (Elixir 1.18.4 (OTP 28.0.2))</option>
+						
+							<option value="6039" data-ace-mode="lisp">Emacs Lisp(Native Compile)(GNU Emacs 29.4)</option>
+						
+							<option value="6040" data-ace-mode="text">Emojicode 1.0 beta 2 (emojicodec 1.0 beta 2)</option>
+						
+							<option value="6041" data-ace-mode="erlang">Erlang (Erlang 28.0.2)</option>
+						
+							<option value="6042" data-ace-mode="fsharp">F# 9.0 (.NET 9.0.8)</option>
+						
+							<option value="6043" data-ace-mode="text">Factor (Factor 0.100)</option>
+						
+							<option value="6044" data-ace-mode="sh">Fish (fish 4.0.2)</option>
+						
+							<option value="6045" data-ace-mode="forth">Forth (gforth 0.7.3)</option>
+						
+							<option value="6046" data-ace-mode="fortran">Fortran2018 (Flang 20.1.7)</option>
+						
+							<option value="6047" data-ace-mode="fortran">Fortran2023 (GCC 14.2.0)</option>
+						
+							<option value="6048" data-ace-mode="fortran">FORTRAN77 (GCC 14.2.0)</option>
+						
+							<option value="6049" data-ace-mode="text">Gleam (Gleam 1.12.0 (OTP 28.0.2))</option>
+						
+							<option value="6050" data-ace-mode="golang">Go 1.18 (gccgo 15.2.0)</option>
+						
+							<option value="6051" data-ace-mode="golang">Go (go 1.25.1)</option>
+						
+							<option value="6052" data-ace-mode="haskell">Haskell (GHC 9.8.4)</option>
+						
+							<option value="6053" data-ace-mode="haxe">Haxe/JVM 4.3.7 (hxjava 4.2.0)</option>
+						
+							<option value="6054" data-ace-mode="c_cpp">C&#43;&#43; IOI-Style(GNU&#43;&#43;20) (GCC 14.2.0)</option>
+						
+							<option value="6055" data-ace-mode="lisp">ISLisp (Easy-ISLisp 5.43)</option>
+						
+							<option value="6056" data-ace-mode="java">Java24 (OpenJDK 24.0.2)</option>
+						
+							<option value="6057" data-ace-mode="javascript">JavaScript (Bun 1.2.21)</option>
+						
+							<option value="6058" data-ace-mode="javascript">JavaScript (Deno 2.4.5)</option>
+						
+							<option value="6059" data-ace-mode="javascript">JavaScript (Node.js 22.19.0)</option>
+						
+							<option value="6060" data-ace-mode="text">Jule (jule 0.1.6)</option>
+						
+							<option value="6061" data-ace-mode="text">Koka (koka v3.2.2)</option>
+						
+							<option value="6062" data-ace-mode="kotlin">Kotlin (Kotlin/JVM 2.2.10)</option>
+						
+							<option value="6063" data-ace-mode="text">Kuin (kuincl v.2021.8.17)</option>
+						
+							<option value="6064" data-ace-mode="text">Lazy K (irori v1.0.0)</option>
+						
+							<option value="6065" data-ace-mode="text">Lean (lean v4.22.0)</option>
+						
+							<option value="6066" data-ace-mode="text">LLVM IR (Clang 21.1.0)</option>
+						
+							<option value="6067" data-ace-mode="lua">Lua (Lua 5.4.7)</option>
+						
+							<option value="6068" data-ace-mode="lua">Lua (LuaJIT 2.1.1703358377)</option>
+						
+							<option value="6069" data-ace-mode="text">Mercury (Mercury 22.01.8)</option>
+						
+							<option value="6071" data-ace-mode="nim">Nim (Nim 1.6.20)</option>
+						
+							<option value="6072" data-ace-mode="nim">Nim (Nim 2.2.4)</option>
+						
+							<option value="6073" data-ace-mode="ocaml">OCaml (ocamlopt 5.3.0)</option>
+						
+							<option value="6074" data-ace-mode="text">Octave (GNU Octave 10.2.0)</option>
+						
+							<option value="6075" data-ace-mode="pascal">Pascal (fpc 3.2.2)</option>
+						
+							<option value="6076" data-ace-mode="perl">Perl (perl 5.38.2)</option>
+						
+							<option value="6077" data-ace-mode="php">PHP (PHP 8.4.12)</option>
+						
+							<option value="6078" data-ace-mode="text">Piet (your-diary/piet_programming_language 3.0.0) (PPM image)</option>
+						
+							<option value="6079" data-ace-mode="text">Pony (ponyc 0.59.0)</option>
+						
+							<option value="6080" data-ace-mode="powershell">PowerShell (PowerShell 7.5.2)</option>
+						
+							<option value="6081" data-ace-mode="prolog">Prolog (SWI-Prolog 9.2.9)</option>
+						
+							<option value="6082" data-ace-mode="python">Python (CPython 3.13.7)</option>
+						
+							<option value="6083" data-ace-mode="python">Python (PyPy 3.11-v7.3.20)</option>
+						
+							<option value="6084" data-ace-mode="r">R (GNU R 4.5.0)</option>
+						
+							<option value="6085" data-ace-mode="text">ReasonML (reson 3.16.0)</option>
+						
+							<option value="6086" data-ace-mode="ruby">Ruby 3.3 (truffleruby 25.0.0)</option>
+						
+							<option value="6087" data-ace-mode="ruby">Ruby 3.4 (ruby 3.4.5)</option>
+						
+							<option value="6088" data-ace-mode="rust">Rust (rustc 1.89.0)</option>
+						
+							<option value="6089" data-ace-mode="python">SageMath (SageMath 10.7)</option>
+						
+							<option value="6090" data-ace-mode="scala">Scala (Dotty 3.7.2)</option>
+						
+							<option value="6091" data-ace-mode="scala">Scala 3.7.2 (Scala Native 0.5.8)</option>
+						
+							<option value="6092" data-ace-mode="scheme">Scheme (ChezScheme 10.2.0)</option>
+						
+							<option value="6093" data-ace-mode="scheme">Scheme (Gauche 0.9.15)</option>
+						
+							<option value="6094" data-ace-mode="text">Seed7 (Seed7 3.5.0)</option>
+						
+							<option value="6095" data-ace-mode="swift">Swift 6.2</option>
+						
+							<option value="6096" data-ace-mode="tcl">Tcl (tclsh 9.0.1)</option>
+						
+							<option value="6097" data-ace-mode="text">Terra (Terra 1.2.0)</option>
+						
+							<option value="6098" data-ace-mode="tex">TeX (tex 3.141592653)</option>
+						
+							<option value="6099" data-ace-mode="text">Text (cat 9.4)</option>
+						
+							<option value="6100" data-ace-mode="typescript">TypeScript 5.8 (Deno 2.4.5)</option>
+						
+							<option value="6101" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Bun 1.2.21))</option>
+						
+							<option value="6102" data-ace-mode="typescript">TypeScript 5.9 (tsc 5.9.2 (Node.js 22.19.0))</option>
+						
+							<option value="6103" data-ace-mode="text">Uiua (uiua 0.16.2)</option>
+						
+							<option value="6104" data-ace-mode="text">Unison (Unison 0.5.47)</option>
+						
+							<option value="6105" data-ace-mode="text">V (0.4.10)</option>
+						
+							<option value="6106" data-ace-mode="vala">Vala (valac 0.56.18)</option>
+						
+							<option value="6107" data-ace-mode="verilog">Verilog 2012 (Icarus Verilog 12.0)</option>
+						
+							<option value="6108" data-ace-mode="text">Veryl (veryl 0.16.4)</option>
+						
+							<option value="6109" data-ace-mode="text">WebAssembly (wabt 1.0.34 &#43; iwasm 2.4.1)</option>
+						
+							<option value="6110" data-ace-mode="text">Whitespace (whitespacers 1.3.0)</option>
+						
+							<option value="6111" data-ace-mode="zig">Zig (Zig 0.15.1)</option>
+						
+							<option value="6112" data-ace-mode="text">なでしこ (cnako3 3.7.8 (Node.js 22.19.0))</option>
+						
+							<option value="6113" data-ace-mode="text">プロデル (mono版プロデル 2.0.1353)</option>
+						
+							<option value="6114" data-ace-mode="julia">Julia (Julia 1.11.6)</option>
+						
+							<option value="6115" data-ace-mode="python">Python (Codon 0.19.3)</option>
+						
+							<option value="6116" data-ace-mode="c_cpp">C&#43;&#43;23 (Clang 21.1.0)</option>
+						
+							<option value="6117" data-ace-mode="text">Fix (1.1.0-alpha.12)</option>
+						
+							<option value="6118" data-ace-mode="sql">SQL (DuckDB 1.3.2)</option>
+						
+					</select>
+					<span class="error"></span>
+				</div>
+			</div>
+			<script>var currentLang = getLS('defaultLang');</script>
+			
+			
+<div class="form-group">
+	<div class="col-sm-3 col-md-2 editor-label">
+		<label class="control-label" for="sourceCode">ソースコード</label>
+		<div class="editor-buttons">
+			<button id="btn-open-file" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> &nbsp; ファイルを開く
+			</button>
+			<button id="btn-customize" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> &nbsp; カスタマイズ
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-toggle-editor" data-toggle="button" autocomplete="off">
+				エディタ切り替え
+			</button>
+			<button type="button" class="btn btn-default btn-sm btn-auto-height" data-toggle="button" autocomplete="off">
+				高さ自動調節
+			</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-10" id="sourceCode">
+		<div id="editor"></div>
+		<textarea id="plain-textarea" class="form-control" style="display:none;" name="sourceCode"></textarea>
+		<p>
+			<span class="gray">※ 512 KiB まで</span><br>
+		</p>
+	</div>
+	<input id="input-open-file" type="file" style="display:none;">
+</div>
+
+
+			<input type="hidden" name="csrf_token" value="1eYPB/rdFNRLyk/xhQxSYUpdwfj5tlFfTguumWq7sac=" />
+			<div class="form-group">
+				<label class="control-label col-sm-3 col-md-2"></label>
+				<div class="col-sm-5">
+					
+					<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="cf-challenge" data-sitekey="0x4AAAAAAA6HJUmmLP7mLxx0" data-theme="light"></div>
+
+					
+					<button type="submit" class="btn btn-primary" id="submit">提出</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/ahc061/tasks/ahc061_a?lang=ja" data-a2a-title="A - Multi-Player Territory Game">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_hatena"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/ahc061/rules">ルール</a></li>
+					<li><a href="/contests/ahc061/glossary">用語集</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">利用規約</a></li>
+				<li><a href="/privacy">プライバシーポリシー</a></li>
+				<li><a href="/personal">個人情報保護方針</a></li>
+				<li><a href="/company">企業情報</a></li>
+				<li><a href="/faq">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+				<li><a href="/documents/request">資料請求</a></li>
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> ページトップ</div>
+
+</body>
+</html>
+
+

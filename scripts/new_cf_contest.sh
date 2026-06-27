@@ -3,6 +3,7 @@
 CONTESTS_DIR="/home/wsl2ubuntu/comp/contests"
 TEMPLATE="/home/wsl2ubuntu/comp/acc-config/cpp/main.cpp"
 OJ="/home/wsl2ubuntu/comp/.venv/bin/oj"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 if [ $# -lt 2 ]; then
     echo "Usage: $0 <contest_id> <num_problems>" >&2
@@ -67,4 +68,4 @@ for pid in "${PIDS[@]}"; do
 done
 
 echo "Done. Opening $FIRST_FILE ..."
-code "$FIRST_FILE"
+"$SCRIPT_DIR/open_at_main.sh" "$FIRST_FILE"

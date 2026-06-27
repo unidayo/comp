@@ -5,6 +5,7 @@ set -eu
 ROOT="/home/wsl2ubuntu/comp"
 PROBLEMS_DIR="$ROOT/problems"
 TEMPLATE="$ROOT/acc-config/cpp/main.cpp"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 NAME="$(date +%Y%m%d_%H%M%S)"
 TARGET_DIR="$PROBLEMS_DIR/$NAME"
@@ -21,6 +22,4 @@ touch "$TEST_DIR/sample-1.in" "$TEST_DIR/sample-1.out"
 
 echo "Created: $CPP_FILE"
 
-if command -v code >/dev/null 2>&1; then
-  code "$CPP_FILE" || true
-fi
+"$SCRIPT_DIR/open_at_main.sh" "$CPP_FILE"
