@@ -2,7 +2,36 @@
 // #pragma GCC optimize("O3")
 
 // clang-format off
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <array>
+#include <bit>
+#include <bitset>
+#include <cassert>
+#include <charconv>
+#include <cmath>
+#include <concepts>
+#include <cstdint>
+#include <deque>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <limits>
+#include <map>
+#include <numbers>
+#include <numeric>
+#include <optional>
+#include <queue>
+#include <random>
+#include <ranges>
+#include <set>
+#include <string>
+#include <tuple>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #ifdef ATCODER
@@ -210,6 +239,7 @@ T divfloor(T x, T y) {
 }
 // x % m を常に非負で返す
 template <class T1, class T2>
+[[nodiscard]]
 T1 smod(T1 x, T2 m) {
     return x < 0 ? (x % m + m) % m : x % m;
 }
@@ -387,6 +417,46 @@ void zfill(string &s, size_t width) { s = string(width > s.size() ? width - s.si
 [[maybe_unused]] constexpr int dc8[] = {1, 1, 0, -1, -1, -1, 0, 1};
 // グリッド(h行w列)の範囲内かチェック
 bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <= col && col < w; }
+
+// 2次元コンテナを時計回りに90度回転したものを返す。
+// vector<string>, vector<vector<T>> など、Grid[row][col] でアクセスできる矩形を想定。
+template <class Grid>
+Grid rotate90_clockwise(const Grid &a) {
+    if (a.empty() || a[0].empty()) return Grid{};
+    using Row = ranges::range_value_t<Grid>;
+    using Cell = ranges::range_value_t<Row>;
+    const int h = int(a.size());
+    const int w = int(a[0].size());
+    Grid b(w, Row(h, Cell{}));
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            b[j][h - 1 - i] = a[i][j];
+        }
+    }
+    return b;
+}
+
+// 2次元コンテナを反時計回りに90度回転したものを返す。
+template <class Grid>
+Grid rotate90_counterclockwise(const Grid &a) {
+    if (a.empty() || a[0].empty()) return Grid{};
+    using Row = ranges::range_value_t<Grid>;
+    using Cell = ranges::range_value_t<Row>;
+    const int h = int(a.size());
+    const int w = int(a[0].size());
+    Grid b(w, Row(h, Cell{}));
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            b[w - 1 - j][i] = a[i][j];
+        }
+    }
+    return b;
+}
+
+template <class Grid>
+Grid rotate90(const Grid &a) {
+    return rotate90_clockwise(a);
+}
 /* bit */
 // xの立っているビット数
 int popcnt(ull x) { return popcount(x); }
@@ -530,75 +600,60 @@ int main() {
     input(N, X);
     vector<ll> A(N);
     input(A);
-
-    Combination comb;
-    mint ans = 0;
-
-    auto T = make_vec<mint>(3 * N + 1, 3 * N + 1, mint(0));
-    rep(i, N + 1) {
-        rep(j, N + 1) {
-            if (N - i - j > 0) {
-                T[i][j] = comb.factorial(i + j) / comb.P(N, i + j) / (mint)(N - i - j);
-            }
+    ll Mf = N / 2, Ms = N - Mf;
+    vector<ll> B1, B2;
+    rep(i, N) {
+        if (i < Mf) {
+            B1.emplace_back(A[i]);
+        } else {
+            B2.emplace_back(A[i]);
         }
     }
 
-    auto solve = [&](vector<ll> B1, vector<ll> B2) {
-        int Mf = ssize(B1), Ms = ssize(B2);
-        vector<ll> fi(1 << Mf);
-        vector<vector<ll>> se(Ms + 1);
+    vector<ll> S(1 << Mf);
+    rep(bit, 1, 1 << Mf) { S[bit] = S[bit ^ (1LL << lsb(bit))] + B1[lsb(bit)]; }
 
-        mint S1 = 0, S2 = 0;
-        rep(i, Mf) { S1 += B1[i]; }
-        rep(i, Ms) { S2 += B2[i]; }
-
-        rep(bit, 1 << Mf) {
-            ll s = 0;
-            rep(i, Mf) {
-                if (bit >> i & 1) {
-                    s += B1[i];
-                }
+    vector<vector<ll>> T(Ms + 1);
+    rep(bit, 1 << Ms) {
+        ll s = 0;
+        rep(i, Ms) {
+            if (bit >> i & 1) {
+                s += B2[i];
             }
-            fi[bit] = s;
         }
-        rep(bit, 1 << Ms) {
-            ll s = 0;
-            rep(i, Ms) {
-                if (bit >> i & 1) {
-                    s += B2[i];
-                }
-            }
-            se[popcnt(bit)].emplace_back(s);
+        T[popcnt(bit)].emplace_back(s);
+    }
+
+    rep(i, Ms + 1) { ranges::sort(T[i]); }
+
+    vector<vector<mint>> Ts(Ms + 1);
+    rep(i, Ms + 1) {
+        vector<mint> C = {0};
+        for (auto x : T[i]) {
+            C.emplace_back(C.back() + x);
         }
+        Ts[i] = C;
+    }
 
-        rep(i, Ms + 1) { ranges::sort(se[i]); }
+    Combination comb;
 
-        vector<vector<mint>> Sse(Ms + 1);
+    auto P = make_vec<mint>(N + 5, mint(0));
+    rep(i, N) { P[i] = comb.C(N, i).inv() * mint(N - i).inv(); }
+
+    mint sum1 = S.back();
+    mint sum2 = 0;
+    rep(i, Ms) { sum2 += B2[i]; }
+
+    mint ans = 0;
+
+    rep(bit, 1 << Mf) {
+        ll r = X - S[bit];
+        ll b = popcnt(bit);
         rep(i, Ms + 1) {
-            vector<mint> C = {0};
-            for (auto sy : se[i]) {
-                C.emplace_back(C.back() + sy);
-            }
-            Sse[i] = C;
+            if (i+b==N) continue;
+            ll x = lower_count(T[i], r);
+            ans += P[i+b] * (x * (sum1 - S[bit]) + (x * sum2 - Ts[i][x]));
         }
-
-        rep(bit, 1 << Mf) {
-            ll sx = fi[bit];
-            ll low = X - sx;
-            rep(j, Ms + 1) {
-                ll p = lower_count(se[j], low);
-                if (N - popcnt(bit) - j > 0) {
-                    ans += T[popcnt(bit)][j] * (p * (S1 - sx) + (p * S2 - Sse[j][p]));
-                }
-            }
-        }
-    };
-
-    int M1 = N / 2;
-    vector<ll> B1, B2;
-    rep(i, M1) { B1.emplace_back(A[i]); }
-    rep(i, M1, N) { B2.emplace_back(A[i]); }
-    solve(B1, B2);
-
+    }
     print(ans);
 }

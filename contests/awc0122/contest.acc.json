@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0122",
+    "title": "AtCoder Weekday Contest 0122 Beta",
+    "url": "https://atcoder.jp/contests/awc0122"
+  },
+  "tasks": [
+    {
+      "id": "awc0122_a",
+      "label": "A",
+      "title": "Spread of Rumors",
+      "url": "https://atcoder.jp/contests/awc0122/tasks/awc0122_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0122_a.cpp"
+      }
+    },
+    {
+      "id": "awc0122_b",
+      "label": "B",
+      "title": "Playlist Optimization",
+      "url": "https://atcoder.jp/contests/awc0122/tasks/awc0122_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0122_b.cpp"
+      }
+    },
+    {
+      "id": "awc0122_c",
+      "label": "C",
+      "title": "Spread of Rumors",
+      "url": "https://atcoder.jp/contests/awc0122/tasks/awc0122_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0122_c.cpp"
+      }
+    },
+    {
+      "id": "awc0122_d",
+      "label": "D",
+      "title": "Optimal Path on a Triangular Board",
+      "url": "https://atcoder.jp/contests/awc0122/tasks/awc0122_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0122_d.cpp"
+      }
+    },
+    {
+      "id": "awc0122_e",
+      "label": "E",
+      "title": "Number of Distinct Outputs of a Signal Converter",
+      "url": "https://atcoder.jp/contests/awc0122/tasks/awc0122_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0122_e.cpp"
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@
 | `algorithm/permutation/` | 転倒数、順列の辞書順 |
 | `algorithm/optimization/` | slope trick |
 | `algorithm/assignment/` | Hungarian |
-| `combinatorics/` | 二項係数、階乗、Lucas theorem |
+| `combinatorics/` | 二項係数、階乗、Lucas theorem、写像12相 |
 | `datastructure/segtree/` | segtree、lazy segtree、永続 segtree、beats |
 | `datastructure/treap/` | Treap、Implicit Treap |
 | `datastructure/range_query/` | Wavelet Matrix、Dynamic Wavelet Matrix、Cartesian Tree |

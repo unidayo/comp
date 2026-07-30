@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 /*ミラーラビン素数判定法 O(logn)で素数判定を行う*/
 bool miller_rabin(ull n) {
     if (n <= 1) return false;

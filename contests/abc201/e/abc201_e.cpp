@@ -2,7 +2,36 @@
 // #pragma GCC optimize("O3")
 
 // clang-format off
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <array>
+#include <bit>
+#include <bitset>
+#include <cassert>
+#include <charconv>
+#include <cmath>
+#include <concepts>
+#include <cstdint>
+#include <deque>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <limits>
+#include <map>
+#include <numbers>
+#include <numeric>
+#include <optional>
+#include <queue>
+#include <random>
+#include <ranges>
+#include <set>
+#include <string>
+#include <tuple>
+#include <type_traits>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #ifdef ATCODER
@@ -210,6 +239,7 @@ T divfloor(T x, T y) {
 }
 // x % m を常に非負で返す
 template <class T1, class T2>
+[[nodiscard]]
 T1 smod(T1 x, T2 m) {
     return x < 0 ? (x % m + m) % m : x % m;
 }
@@ -387,6 +417,46 @@ void zfill(string &s, size_t width) { s = string(width > s.size() ? width - s.si
 [[maybe_unused]] constexpr int dc8[] = {1, 1, 0, -1, -1, -1, 0, 1};
 // グリッド(h行w列)の範囲内かチェック
 bool grid_check(ll row, ll col, ll h, ll w) { return 0 <= row && row < h && 0 <= col && col < w; }
+
+// 2次元コンテナを時計回りに90度回転したものを返す。
+// vector<string>, vector<vector<T>> など、Grid[row][col] でアクセスできる矩形を想定。
+template <class Grid>
+Grid rotate90_clockwise(const Grid &a) {
+    if (a.empty() || a[0].empty()) return Grid{};
+    using Row = ranges::range_value_t<Grid>;
+    using Cell = ranges::range_value_t<Row>;
+    const int h = int(a.size());
+    const int w = int(a[0].size());
+    Grid b(w, Row(h, Cell{}));
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            b[j][h - 1 - i] = a[i][j];
+        }
+    }
+    return b;
+}
+
+// 2次元コンテナを反時計回りに90度回転したものを返す。
+template <class Grid>
+Grid rotate90_counterclockwise(const Grid &a) {
+    if (a.empty() || a[0].empty()) return Grid{};
+    using Row = ranges::range_value_t<Grid>;
+    using Cell = ranges::range_value_t<Row>;
+    const int h = int(a.size());
+    const int w = int(a[0].size());
+    Grid b(w, Row(h, Cell{}));
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            b[w - 1 - j][i] = a[i][j];
+        }
+    }
+    return b;
+}
+
+template <class Grid>
+Grid rotate90(const Grid &a) {
+    return rotate90_clockwise(a);
+}
 /* bit */
 // xの立っているビット数
 int popcnt(ull x) { return popcount(x); }
@@ -468,50 +538,40 @@ struct Xoshiro256 {
 // clang-format on
 using mint = modint1000000007;
 int main() {
-    int N;
+    ll N;
     input(N);
-    vector<vector<pair<int, ll>>> G(N);
-    rep(i, N - 1) {
-        ll u, v, w;
-        input(u, v, w);
-        u--, v--;
-        G[u].emplace_back(v, w);
-        G[v].emplace_back(u, w);
+    vector<vector<pair<int,ll>>> G(N);
+    rep(i,N-1){
+        ll u,v,w;
+        input(u,v,w);
+        u--,v--;
+        G[u].emplace_back(v,w);
+        G[v].emplace_back(u,w);
     }
 
     mint ans = 0;
-    vector<ll> dp0(N), dp1(N);
-    auto dfs = [&](this auto self, ll x, int u, int p) -> mint {
-        mint res = 0;
-        for (auto [v, w] : G[u]) {
-            if (v == p) continue;
-            res += self(x, v, u);
-            if (w >> x & 1) {
-                swap(dp0[v], dp1[v]);
+
+    rep(i,60){
+        vector<ll> A(N,-1);
+        A[0] = 0;
+        queue<int> que;
+        que.emplace(0);
+        while(!que.empty()){
+            auto u = que.front();
+            que.pop();
+            for(auto [v,w]:G[u]){
+                if (A[v] != -1) continue;
+                if (w >> i & 1){
+                    A[v] = A[u] ^ 1;
+                } else {
+                    A[v] = A[u];
+                }
+                que.emplace(v);
             }
         }
-
-        ll s0 = 0;
-        ll s1 = 0;
-        for (auto [v, w] : G[u]) {
-            if (v == p) continue;
-            res += dp0[v] * s1;
-            res += dp1[v] * s0;
-            s0 += dp0[v];
-            s1 += dp1[v];
-        }
-
-        res += s1;
-        dp0[u]++;
-        dp0[u] += s0;
-        dp1[u] += s1;
-        return res;
-    };
-
-    rep(i, 60) {
-        dp0 = vector<ll>(N,0);
-        dp1 = vector<ll>(N,0);
-        ans += mint(1LL << i) * dfs(i, 0, -1);
+        ll c0 = ranges::count(A,0);
+        ll c1 = N - c0;
+        ans += mint(c0 * c1) * (1LL << i);
     }
     print(ans);
 }

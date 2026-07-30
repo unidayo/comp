@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/convolution.cpp
 using mint = modint998244353;
 
 /*
@@ -7,8 +9,10 @@ using mint = modint998244353;
  *  計算量: O(n log n)
  */
 vector<mint> fps_inv(const vector<mint>& f, int n) {
+    assert(n >= 0);
     assert(!f.empty());
     assert(f[0].val() != 0);
+    if (n == 0) return {};
 
     vector<mint> g(1);
     g[0] = f[0].inv();

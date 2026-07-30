@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-13 01:05:36 JST
 // 添字で管理する Implicit Treap に lazy_segtree 風の遅延更新を載せたもの。
 //
 // 使い方:
@@ -25,6 +26,7 @@
 //   - `op` は非可換でもよい。反転後の区間積も正しい順序で返す。
 //   - `apply` と `reverse` が同時に使われるため、作用 f は要素ごとに独立に作用し、
 //     反転と可換であることを前提にしている。
+//   - vectorからの構築は O(N)。
 //   - 各操作の計算量は期待 O(log N)。`to_vector` は O(N)。
 
 template <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S, long long),
@@ -41,8 +43,10 @@ class ImplicitLazyTreap {
     };
     using Tree = Node *;
 
+    struct FreeNode { FreeNode *next; };
     static constexpr int CHUNK_SIZE = 1 << 20;
     inline static vector<Node *> chunks;
+    inline static FreeNode *free_head = nullptr;
     inline static int chunk_pos = CHUNK_SIZE;
 
     Tree root = nullptr;
@@ -57,13 +61,25 @@ class ImplicitLazyTreap {
     }
 
     Node *new_node(const S &value) {
-        if (chunk_pos == CHUNK_SIZE) {
-            chunks.push_back(new Node[CHUNK_SIZE]);
-            chunk_pos = 0;
+        Node *p;
+        if (free_head) [[unlikely]] {
+            FreeNode *slot = free_head;
+            free_head = free_head->next;
+            p = reinterpret_cast<Node *>(slot);
+        } else {
+            if (chunk_pos == CHUNK_SIZE) {
+                chunks.push_back(static_cast<Node *>(::operator new(sizeof(Node) * CHUNK_SIZE)));
+                chunk_pos = 0;
+            }
+            p = &chunks.back()[chunk_pos++];
         }
-        Node *p = &chunks.back()[chunk_pos++];
-        *p = {value, value, value, id(), nullptr, nullptr, rng(), 1, false, false};
+        ::new (static_cast<void *>(p)) Node{value, value, value, id(), nullptr, nullptr, rng(), 1, false, false};
         return p;
+    }
+
+    static void release_node(Node *p) {
+        p->~Node();
+        free_head = ::new (static_cast<void *>(p)) FreeNode{free_head};
     }
 
     int count(Tree t) const { return t ? t->cnt : 0; }
@@ -140,6 +156,25 @@ class ImplicitLazyTreap {
         return {update(t), b};
     }
 
+    pair<Tree, S> erase_node(Tree t, int k) {
+        push(t);
+        int left_count = count(t->l);
+        if (k == left_count) {
+            Tree result_tree = merge(t->l, t->r);
+            S result = std::move(t->value);
+            release_node(t);
+            return {result_tree, std::move(result)};
+        }
+        if (k < left_count) {
+            auto [child, result] = erase_node(t->l, k);
+            t->l = child;
+            return {update(t), std::move(result)};
+        }
+        auto [child, result] = erase_node(t->r, k - left_count - 1);
+        t->r = child;
+        return {update(t), std::move(result)};
+    }
+
     S get(Tree t, int k) {
         while (true) {
             push(t);
@@ -153,6 +188,15 @@ class ImplicitLazyTreap {
                 t = t->r;
             }
         }
+    }
+
+    void set_node(Tree t, int k, const S &value) {
+        push(t);
+        int left_count = count(t->l);
+        if (k < left_count) set_node(t->l, k, value);
+        else if (k == left_count) t->value = value;
+        else set_node(t->r, k - left_count - 1, value);
+        update(t);
     }
 
     void reset_single_node(Tree t, const S &value) {
@@ -173,11 +217,46 @@ class ImplicitLazyTreap {
         update(t);
     }
 
+    void rebuild(Tree t) {
+        if (!t) return;
+        rebuild(t->l);
+        rebuild(t->r);
+        update(t);
+    }
+
+    Tree build_from_vector(const vector<S> &v) {
+        vector<Tree> stack;
+        stack.reserve(v.size());
+        for (const S &value : v) {
+            Tree node = new_node(value);
+            Tree last = nullptr;
+            while (!stack.empty() && stack.back()->priority < node->priority) {
+                last = stack.back();
+                stack.pop_back();
+            }
+            node->l = last;
+            if (!stack.empty()) stack.back()->r = node;
+            stack.push_back(node);
+        }
+        Tree result = stack.empty() ? nullptr : stack.front();
+        rebuild(result);
+        return result;
+    }
+
    public:
     ImplicitLazyTreap() = default;
-    explicit ImplicitLazyTreap(const vector<S> &v) {
-        for (const S &x : v) push_back(x);
+    ImplicitLazyTreap(const ImplicitLazyTreap &) = delete;
+    ImplicitLazyTreap &operator=(const ImplicitLazyTreap &) = delete;
+    ImplicitLazyTreap(ImplicitLazyTreap &&other) noexcept
+        : root(std::exchange(other.root, nullptr)), rng_state(other.rng_state) {}
+    ImplicitLazyTreap &operator=(ImplicitLazyTreap &&other) noexcept {
+        if (this != &other) {
+            root = std::exchange(other.root, nullptr);
+            rng_state = other.rng_state;
+        }
+        return *this;
     }
+    explicit ImplicitLazyTreap(const vector<S> &v) { root = build_from_vector(v); }
 
     int size() const { return count(root); }
     bool empty() const { return size() == 0; }
@@ -190,10 +269,7 @@ class ImplicitLazyTreap {
 
     void set(int k, const S &value) {
         assert(0 <= k && k < size());
-        auto [a, b] = split(root, k);
-        auto [c, d] = split(b, 1);
-        reset_single_node(c, value);
-        root = merge(a, merge(c, d));
+        set_node(root, k, value);
     }
 
     void insert(int k, const S &value) {
@@ -207,11 +283,9 @@ class ImplicitLazyTreap {
 
     S erase(int k) {
         assert(0 <= k && k < size());
-        auto [a, b] = split(root, k);
-        auto [c, d] = split(b, 1);
-        S res = c->value;
-        root = merge(a, d);
-        return res;
+        auto [new_root, result] = erase_node(root, k);
+        root = new_root;
+        return result;
     }
 
     void erase(int l, int r) {

@@ -1,7 +1,8 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/algebra/linear_algebra/matrix.cpp
 /*
 使い方:
 
-    // 先に mylib/algebra/linear_algebra/matrix.cpp を貼る。
     Matrix<mint> A(n, m);
     vector<mint> b(n);
 

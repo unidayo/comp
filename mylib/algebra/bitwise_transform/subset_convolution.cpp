@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/algebra/bitwise_transform/zeta_mobius_transform.cpp
 // Subset Convolution。
 //
 // 使い方:
@@ -8,7 +10,6 @@
 //   - a.size() == b.size() かつ 2 冪。
 //   - T は +=, -=, *= ができる型。
 //   - 計算量 O(K^2 2^K), K = log2(a.size())。
-//   - 先に zeta_mobius_transform.cpp を貼る。
 
 template <class T>
 vector<T> subset_convolution(const vector<T> &a, const vector<T> &b) {

@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-13 00:25:22 JST
 // ACL風の永続遅延セグメント木
 //
 // 使い方:
@@ -59,21 +60,28 @@ struct PersistentLazySegTree {
         roots.push_back(_n == 0 ? nil : build(0, _n, v));
     }
 
+    PersistentLazySegTree(const PersistentLazySegTree &) = delete;
+    PersistentLazySegTree &operator=(const PersistentLazySegTree &) = delete;
+    PersistentLazySegTree(PersistentLazySegTree &&) = delete;
+    PersistentLazySegTree &operator=(PersistentLazySegTree &&) = delete;
+
     ~PersistentLazySegTree() {
-        for (int i = 0; i < pid; i++) pool[i].~node();
+        if constexpr (!is_trivially_destructible_v<node>) {
+            for (int i = 0; i < pid; i++) pool[i].~node();
+        }
         ::operator delete(pool);
     }
 
    private:
     node *new_node(const S &data, const F &lazy, bool has_lazy, node *l, node *r) {
-        assert(pid < NODES);
+        if (pid >= NODES) throw std::length_error("PersistentLazySegTree node pool exhausted");
         node *ptr = &pool[pid++];
         ::new (static_cast<void *>(ptr)) node(data, lazy, has_lazy, l, r);
         return ptr;
     }
 
     node *clone_node(node *n) {
-        assert(pid < NODES);
+        if (pid >= NODES) throw std::length_error("PersistentLazySegTree node pool exhausted");
         node *ptr = &pool[pid++];
         ::new (static_cast<void *>(ptr)) node(*n);
         return ptr;
@@ -184,6 +192,10 @@ struct PersistentLazySegTree {
         S cur = has_f ? mapping(f, n->data) : n->data;
         if (l + 1 == r) return cur;
         int m = (l + r) >> 1;
+        if (!has_f && !n->has_lazy) {
+            if (p < m) return get_impl(n->l, p, l, m, f, false);
+            return get_impl(n->r, p, m, r, f, false);
+        }
         F next_f = f;
         bool next_has_f = has_f;
         if (n->has_lazy) {
@@ -203,6 +215,9 @@ struct PersistentLazySegTree {
         S cur = has_f ? mapping(f, n->data) : n->data;
         if (a <= l && r <= b) return cur;
         int m = (l + r) >> 1;
+        if (!has_f && !n->has_lazy) {
+            return op(prod_impl(n->l, a, b, l, m, f, false), prod_impl(n->r, a, b, m, r, f, false));
+        }
         F next_f = f;
         bool next_has_f = has_f;
         if (n->has_lazy) {

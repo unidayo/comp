@@ -1,15 +1,16 @@
+// 最終更新: 2026-07-18 14:52:57 JST
 // GCD 畳み込み・LCM 畳み込み。
 //
 // 使い方:
-//   vector<long long> a(n + 1), b(n + 1);  // a[0], b[0] は未使用
+//   vector<long long> a(n), b(n);  // a[0] が a_1、b[0] が b_1
 //   auto c = gcd_convolution(a, b);
-//   // c[g] = sum_{gcd(i, j) = g} a[i] * b[j]
+//   // c[g - 1] = sum_{gcd(i, j) = g} a[i - 1] * b[j - 1]
 //
 //   auto d = lcm_convolution(a, b);
-//   // d[l] = sum_{lcm(i, j) = l} a[i] * b[j] ただし l <= n
+//   // d[l - 1] = sum_{lcm(i, j) = l} a[i - 1] * b[j - 1] ただし l <= n
 //
 // 注意:
-//   - 1-indexed。0 番目は使わず、返り値の 0 番目も未使用。
+//   - 入出力は通常の0-indexed vector。添字 k は整数 k + 1 に対応する。
 //   - a.size() == b.size()。
 //   - T は +=, -=, *= ができる型。
 //   - 計算量 O(N log N), N = a.size() - 1。
@@ -92,12 +93,15 @@ template <class T>
 vector<T> gcd_convolution(vector<T> a, vector<T> b) {
     assert(a.size() == b.size());
     assert(!a.empty());
-    int n = (int)a.size() - 1;
+    int n = (int)a.size();
+    a.insert(a.begin(), T{});
+    b.insert(b.begin(), T{});
     multiple_zeta_transform(a);
     multiple_zeta_transform(b);
     vector<T> c(n + 1);
     for (int i = 1; i <= n; i++) c[i] = a[i] * b[i];
     multiple_mobius_transform(c);
+    c.erase(c.begin());
     return c;
 }
 
@@ -105,11 +109,14 @@ template <class T>
 vector<T> lcm_convolution(vector<T> a, vector<T> b) {
     assert(a.size() == b.size());
     assert(!a.empty());
-    int n = (int)a.size() - 1;
+    int n = (int)a.size();
+    a.insert(a.begin(), T{});
+    b.insert(b.begin(), T{});
     divisor_zeta_transform(a);
     divisor_zeta_transform(b);
     vector<T> c(n + 1);
     for (int i = 1; i <= n; i++) c[i] = a[i] * b[i];
     divisor_mobius_transform(c);
+    c.erase(c.begin());
     return c;
 }

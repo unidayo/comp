@@ -21,6 +21,7 @@
     "C_Cpp.default.cppStandard": "c++23",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
+    "extensions.ignoreRecommendations": true,
     "editor.formatOnPaste": true,
     "C_Cpp.default.includePath": [
         "/usr/lib/ac-library/**",
@@ -73,5 +74,95 @@
     "cmake.configureArgs": [],
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "taskDock.groups": [
+        {
+            "id": "be9cb70f-af92-4488-aed6-11eb199c5691",
+            "name": "unused",
+            "tasks": [
+                "Codeforces: expand ACL",
+                "C++: test sample release",
+                "C++: test sample debug",
+                "C++: execute input.txt",
+                "C++: execute",
+                "C++: build debug",
+                "C++: build release"
+            ],
+            "children": []
+        },
+        {
+            "id": "0f728654-fa87-454a-a689-11f408b92499",
+            "name": "build",
+            "tasks": [
+                "C++: build fast",
+                "C++: build debug link"
+            ],
+            "children": []
+        },
+        {
+            "id": "de97759a-8b80-498b-a489-98b30923c17a",
+            "name": "configure",
+            "tasks": [
+                "C++: configure debug",
+                "C++: configure release"
+            ],
+            "children": []
+        },
+        {
+            "id": "5430f1ca-135b-430d-90be-4a45c7f3e0ea",
+            "name": "AtCoder",
+            "tasks": [
+                "Contest: new AtCoder contest",
+                "Contest: new AtCoder problem",
+                "Submit: AtCoder"
+            ],
+            "children": []
+        },
+        {
+            "id": "dba868d9-a7c3-47d8-b153-8d53e5105f13",
+            "name": "Codeforces",
+            "tasks": [
+                "Contest: new Codeforces contest",
+                "Contest: new Codeforces problem"
+            ],
+            "children": []
+        },
+        {
+            "id": "0d2f0425-be86-404f-b8a1-bfabc1910eab",
+            "name": "C++",
+            "tasks": [
+                "C++: execute fast",
+                "C++: execute fast input.txt",
+                "C++: test sample fast"
+            ],
+            "children": []
+        },
+        {
+            "id": "7afe75dc-3560-4358-871f-59c1a751551a",
+            "name": "Python",
+            "tasks": [
+                "Python: execute",
+                "Python: execute input.txt",
+                "Python: test sample"
+            ],
+            "children": []
+        },
+        {
+            "id": "2cb6b21b-fb45-4a32-96a3-66dcfb059bd9",
+            "name": "etc",
+            "tasks": [
+                "Archive: contests"
+            ],
+            "children": []
+        },
+        {
+            "id": "d86acabc-30c2-4d02-a424-42dc0dcea0b0",
+            "name": "Problem",
+            "tasks": [
+                "Problem: new Python standalone",
+                "Problem: new C++ standalone"
+            ],
+            "children": []
+        }
+    ]
 }

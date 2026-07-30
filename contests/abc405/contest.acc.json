@@ -1,0 +1,56 @@
+{
+  "contest": {
+    "id": "abc405",
+    "title": "AtCoder Beginner Contest 405",
+    "url": "https://atcoder.jp/contests/abc405"
+  },
+  "tasks": [
+    {
+      "id": "abc405_a",
+      "label": "A",
+      "title": "Is it rated?",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_a"
+    },
+    {
+      "id": "abc405_b",
+      "label": "B",
+      "title": "Not All",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_b"
+    },
+    {
+      "id": "abc405_c",
+      "label": "C",
+      "title": "Sum of Product",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_c"
+    },
+    {
+      "id": "abc405_d",
+      "label": "D",
+      "title": "Escape Route",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_d"
+    },
+    {
+      "id": "abc405_e",
+      "label": "E",
+      "title": "Fruit Lineup",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_e"
+    },
+    {
+      "id": "abc405_f",
+      "label": "F",
+      "title": "Chord Crossing",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc405_f.cpp"
+      }
+    },
+    {
+      "id": "abc405_g",
+      "label": "G",
+      "title": "Range Shuffle Query",
+      "url": "https://atcoder.jp/contests/abc405/tasks/abc405_g"
+    }
+  ]
+}

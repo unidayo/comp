@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 // 木の直径（パスの本数）とパス上の頂点を求める
 pair<int, vector<int>> calc_diameter(const vector<vector<int>> &G, int start = 0) {
     const int N = G.size();

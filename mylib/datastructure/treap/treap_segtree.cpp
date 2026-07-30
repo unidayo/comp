@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-13 01:11:27 JST
 // 値でソートされた Treap に Segment Tree のような区間積を持たせたもの。
 //
 // 使い方:
@@ -20,6 +21,8 @@
 //   - `prod(l, r)` は Segment Tree と同じ半開区間 [l, r)。
 //   - `prod_largest(l, r)` も大きい順での半開区間 [l, r)。
 //   - `op` は非可換でもよい。`prod` は小さい順、`prod_largest` は大きい順に集約する。
+//   - vectorからの構築はソートを含む O(N log N)。
+//   - その他の操作は期待 O(log N)。all_prod は O(1)。
 
 template <class S, S (*op)(S, S), S (*e)(), class Compare = less<S>>
 class TreapSegtree {
@@ -32,8 +35,10 @@ class TreapSegtree {
     };
     using Tree = Node *;
 
+    struct FreeNode { FreeNode *next; };
     static constexpr int CHUNK_SIZE = 1 << 20;
     inline static vector<Node *> chunks;
+    inline static FreeNode *free_head = nullptr;
     inline static int chunk_pos = CHUNK_SIZE;
     Tree root = nullptr;
     Compare comp = Compare();
@@ -48,13 +53,25 @@ class TreapSegtree {
     }
 
     Node *new_node(const S &key) {
-        if (chunk_pos == CHUNK_SIZE) {
-            chunks.push_back(new Node[CHUNK_SIZE]);
-            chunk_pos = 0;
+        Node *p;
+        if (free_head) [[unlikely]] {
+            FreeNode *slot = free_head;
+            free_head = free_head->next;
+            p = reinterpret_cast<Node *>(slot);
+        } else {
+            if (chunk_pos == CHUNK_SIZE) {
+                chunks.push_back(static_cast<Node *>(::operator new(sizeof(Node) * CHUNK_SIZE)));
+                chunk_pos = 0;
+            }
+            p = &chunks.back()[chunk_pos++];
         }
-        Node *p = &chunks.back()[chunk_pos++];
-        *p = {key, key, key, nullptr, nullptr, rng(), 1};
+        ::new (static_cast<void *>(p)) Node{key, key, key, nullptr, nullptr, rng(), 1};
         return p;
+    }
+
+    static void release_node(Node *p) {
+        p->~Node();
+        free_head = ::new (static_cast<void *>(p)) FreeNode{free_head};
     }
 
     bool eq(const S &a, const S &b) const { return !comp(a, b) && !comp(b, a); }
@@ -111,7 +128,9 @@ class TreapSegtree {
         if (!t) return nullptr;
         if (eq(key, t->key)) {
             erased = true;
-            return merge(t->l, t->r);
+            Tree res = merge(t->l, t->r);
+            release_node(t);
+            return res;
         }
         if (comp(key, t->key)) t->l = erase(t->l, key, erased);
         else t->r = erase(t->r, key, erased);
@@ -127,10 +146,15 @@ class TreapSegtree {
     }
 
     S kth(Tree t, int k) const {
-        int lc = count(t->l);
-        if (k < lc) return kth(t->l, k);
-        if (k == lc) return t->key;
-        return kth(t->r, k - lc - 1);
+        while (true) {
+            int left_count = count(t->l);
+            if (k < left_count) t = t->l;
+            else if (k == left_count) return t->key;
+            else {
+                k -= left_count + 1;
+                t = t->r;
+            }
+        }
     }
 
     S prod(Tree t, int l, int r, int offset, bool rev) const {
@@ -174,11 +198,48 @@ class TreapSegtree {
         return res;
     }
 
+    void rebuild(Tree t) {
+        if (!t) return;
+        rebuild(t->l);
+        rebuild(t->r);
+        update(t);
+    }
+
+    Tree build_from_vector(vector<S> values) {
+        sort(values.begin(), values.end(), comp);
+        vector<Tree> stack;
+        stack.reserve(values.size());
+        for (const S &key : values) {
+            Tree node = new_node(key);
+            Tree last = nullptr;
+            while (!stack.empty() && stack.back()->priority < node->priority) {
+                last = stack.back();
+                stack.pop_back();
+            }
+            node->l = last;
+            if (!stack.empty()) stack.back()->r = node;
+            stack.push_back(node);
+        }
+        Tree result = stack.empty() ? nullptr : stack.front();
+        rebuild(result);
+        return result;
+    }
+
    public:
     TreapSegtree() = default;
-    explicit TreapSegtree(const vector<S> &v) {
-        for (const S &x : v) insert(x);
+    TreapSegtree(const TreapSegtree &) = delete;
+    TreapSegtree &operator=(const TreapSegtree &) = delete;
+    TreapSegtree(TreapSegtree &&other) noexcept
+        : root(std::exchange(other.root, nullptr)), comp(std::move(other.comp)), rng_state(other.rng_state) {}
+    TreapSegtree &operator=(TreapSegtree &&other) noexcept {
+        if (this != &other) {
+            root = std::exchange(other.root, nullptr);
+            comp = std::move(other.comp);
+            rng_state = other.rng_state;
+        }
+        return *this;
     }
+    explicit TreapSegtree(const vector<S> &v) { root = build_from_vector(v); }
 
     int size() const { return count(root); }
     bool empty() const { return size() == 0; }

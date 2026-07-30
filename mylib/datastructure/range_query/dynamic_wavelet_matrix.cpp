@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 23:50:26 JST
 // Dynamic Wavelet Matrix。
 //
 // 使い方:
@@ -29,8 +30,8 @@
 //   - デフォルトの LOG では signed の負の値にも対応し、大小順も正しく扱う。
 //     内部では符号ビットを反転して unsigned として並べる。
 //   - signed 型で LOG を小さく指定する場合は、値が非負で 2^LOG 未満に収まる用途を想定。
-//   - 各階層を implicit treap の動的 bitvector で持つ。
-//   - 構築 O(N log A log N)、各操作 O(log A log N)。
+//   - 各階層を bit-packed block implicit treap の動的 bitvector で持つ。
+//   - 構築 O(N log A) 程度、各操作 O(log A (log N + B))。B=256。
 
 template <class T, int LOG = numeric_limits<make_unsigned_t<T>>::digits>
 class DynamicWaveletMatrix {
@@ -45,12 +46,16 @@ class DynamicWaveletMatrix {
             Node *l, *r;
             unsigned priority;
             int cnt, sum;
-            bool bit;
+            int len, ones;
+            std::array<unsigned long long, 4> bits;
         };
         using Tree = Node *;
 
-        static constexpr int CHUNK_SIZE = 1 << 20;
+        static constexpr int BLOCK_BITS = 256;
+        static constexpr int WORDS = BLOCK_BITS / 64;
+        static constexpr int CHUNK_SIZE = 1 << 14;
         inline static vector<Node *> chunks;
+        inline static vector<Node *> free_nodes;
         inline static int chunk_pos = CHUNK_SIZE;
 
         Tree root = nullptr;
@@ -64,14 +69,115 @@ class DynamicWaveletMatrix {
             return rng_state = x;
         }
 
-        Node *new_node(bool bit) {
-            if (chunk_pos == CHUNK_SIZE) {
-                chunks.push_back(new Node[CHUNK_SIZE]);
-                chunk_pos = 0;
+        static int popcount64(unsigned long long x) { return __builtin_popcountll(x); }
+
+        static bool get_block_bit(const Node *p, int k) {
+            return (p->bits[k >> 6] >> (k & 63)) & 1ULL;
+        }
+
+        static void set_block_bit(Node *p, int k, bool bit) {
+            unsigned long long mask = 1ULL << (k & 63);
+            if (bit) p->bits[k >> 6] |= mask;
+            else p->bits[k >> 6] &= ~mask;
+        }
+
+        static int block_rank1(const Node *p, int k) {
+            int full = k >> 6;
+            int rem = k & 63;
+            int res = 0;
+            for (int i = 0; i < full; i++) res += popcount64(p->bits[i]);
+            if (rem) res += popcount64(p->bits[full] & ((1ULL << rem) - 1));
+            return res;
+        }
+
+        static void recompute_block(Node *p) {
+            p->ones = 0;
+            for (int i = 0; i < WORDS; i++) p->ones += popcount64(p->bits[i]);
+        }
+
+        static void insert_block_bit(Node *p, int k, bool bit) {
+            assert(0 <= k && k <= p->len && p->len < BLOCK_BITS);
+            int first_word = k >> 6;
+            int last_word = p->len >> 6;
+            for (int word = last_word; word > first_word; --word) {
+                p->bits[word] = (p->bits[word] << 1) | (p->bits[word - 1] >> 63);
             }
-            Node *p = &chunks.back()[chunk_pos++];
-            *p = {nullptr, nullptr, rng(), 1, bit ? 1 : 0, bit};
+            int offset = k & 63;
+            unsigned long long low_mask = offset == 0 ? 0 : (1ULL << offset) - 1;
+            unsigned long long old = p->bits[first_word];
+            p->bits[first_word] = (old & low_mask) | ((old & ~low_mask) << 1);
+            set_block_bit(p, k, bit);
+            p->len++;
+            if (bit) p->ones++;
+        }
+
+        static bool erase_block_bit(Node *p, int k) {
+            assert(0 <= k && k < p->len);
+            bool res = get_block_bit(p, k);
+            int first_word = k >> 6;
+            int last_word = (p->len - 1) >> 6;
+            int offset = k & 63;
+            unsigned long long low_mask = offset == 0 ? 0 : (1ULL << offset) - 1;
+            unsigned long long old = p->bits[first_word];
+            unsigned long long shifted = (old >> 1);
+            if (first_word < last_word) shifted |= p->bits[first_word + 1] << 63;
+            p->bits[first_word] = (old & low_mask) | (shifted & ~low_mask);
+            for (int word = first_word + 1; word <= last_word; ++word) {
+                p->bits[word] >>= 1;
+                if (word < last_word) p->bits[word] |= p->bits[word + 1] << 63;
+            }
+            p->len--;
+            set_block_bit(p, p->len, false);
+            if (res) p->ones--;
+            return res;
+        }
+
+        Node *new_node() {
+            Node *p;
+            if (!free_nodes.empty()) {
+                p = free_nodes.back();
+                free_nodes.pop_back();
+            } else {
+                if (chunk_pos == CHUNK_SIZE) {
+                    chunks.push_back(static_cast<Node *>(::operator new(sizeof(Node) * CHUNK_SIZE)));
+                    chunk_pos = 0;
+                }
+                p = &chunks.back()[chunk_pos++];
+            }
+            ::new (static_cast<void *>(p)) Node{nullptr, nullptr, rng(), 0, 0, 0, 0, {}};
             return p;
+        }
+
+        static void release_node(Node *p) {
+            p->~Node();
+            free_nodes.push_back(p);
+        }
+
+        static void release_tree(Tree t) {
+            if (!t) return;
+            release_tree(t->l);
+            release_tree(t->r);
+            release_node(t);
+        }
+
+        Node *new_block_from(const vector<bool> &v, int l, int r) {
+            Node *p = new_node();
+            p->len = r - l;
+            for (int i = l; i < r; i++) {
+                if (v[i]) set_block_bit(p, i - l, true);
+            }
+            recompute_block(p);
+            return update(p);
+        }
+
+        Node *new_single(bool bit) {
+            Node *p = new_node();
+            p->len = 1;
+            if (bit) {
+                p->bits[0] = 1;
+                p->ones = 1;
+            }
+            return update(p);
         }
 
         int count(Tree t) const { return t ? t->cnt : 0; }
@@ -79,8 +185,8 @@ class DynamicWaveletMatrix {
 
         Tree update(Tree t) {
             if (!t) return nullptr;
-            t->cnt = count(t->l) + 1 + count(t->r);
-            t->sum = sum(t->l) + (t->bit ? 1 : 0) + sum(t->r);
+            t->cnt = count(t->l) + t->len + count(t->r);
+            t->sum = sum(t->l) + t->ones + sum(t->r);
             return t;
         }
 
@@ -95,21 +201,92 @@ class DynamicWaveletMatrix {
             return update(r);
         }
 
-        pair<Tree, Tree> split(Tree t, int k) {
-            if (!t) return {nullptr, nullptr};
+        Tree rotate_right(Tree t) {
+            Tree s = t->l;
+            t->l = s->r;
+            s->r = update(t);
+            return update(s);
+        }
+
+        Tree rotate_left(Tree t) {
+            Tree s = t->r;
+            t->r = s->l;
+            s->l = update(t);
+            return update(s);
+        }
+
+        Tree insert_rec(Tree t, int k, bool bit) {
+            if (!t) return new_single(bit);
             int lc = count(t->l);
-            if (k <= lc) {
-                auto [a, b] = split(t->l, k);
-                t->l = b;
-                return {a, update(t)};
+            if (k < lc) {
+                t->l = insert_rec(t->l, k, bit);
+                t = update(t);
+                if (t->l && t->l->priority > t->priority) t = rotate_right(t);
+                return t;
             }
-            auto [a, b] = split(t->r, k - lc - 1);
-            t->r = a;
-            return {update(t), b};
+            if (k > lc + t->len) {
+                t->r = insert_rec(t->r, k - lc - t->len, bit);
+                t = update(t);
+                if (t->r && t->r->priority > t->priority) t = rotate_left(t);
+                return t;
+            }
+            if (t->len < BLOCK_BITS) {
+                insert_block_bit(t, k - lc, bit);
+                return update(t);
+            }
+            vector<bool> v(t->len + 1);
+            int pos = k - lc;
+            for (int i = 0; i < pos; i++) v[i] = get_block_bit(t, i);
+            v[pos] = bit;
+            for (int i = pos; i < t->len; i++) v[i + 1] = get_block_bit(t, i);
+            int mid = (int)v.size() >> 1;
+            Tree l = t->l;
+            Tree r = t->r;
+            Tree a = new_block_from(v, 0, mid);
+            Tree b = new_block_from(v, mid, (int)v.size());
+            t->l = t->r = nullptr;
+            release_node(t);
+            Tree m = merge(a, b);
+            return merge(merge(l, m), r);
+        }
+
+        pair<Tree, bool> erase_rec(Tree t, int k) {
+            int lc = count(t->l);
+            if (k < lc) {
+                auto [nl, res] = erase_rec(t->l, k);
+                t->l = nl;
+                return {update(t), res};
+            }
+            if (k >= lc + t->len) {
+                auto [nr, res] = erase_rec(t->r, k - lc - t->len);
+                t->r = nr;
+                return {update(t), res};
+            }
+            bool res = erase_block_bit(t, k - lc);
+            if (t->len == 0) {
+                Tree merged = merge(t->l, t->r);
+                t->l = t->r = nullptr;
+                release_node(t);
+                return {merged, res};
+            }
+            return {update(t), res};
         }
 
       public:
         DynamicBitVector() = default;
+        DynamicBitVector(const DynamicBitVector &) = delete;
+        DynamicBitVector &operator=(const DynamicBitVector &) = delete;
+        DynamicBitVector(DynamicBitVector &&other) noexcept
+            : root(std::exchange(other.root, nullptr)), rng_state(other.rng_state) {}
+        DynamicBitVector &operator=(DynamicBitVector &&other) noexcept {
+            if (this != &other) {
+                release_tree(root);
+                root = std::exchange(other.root, nullptr);
+                rng_state = other.rng_state;
+            }
+            return *this;
+        }
+        ~DynamicBitVector() { release_tree(root); }
 
         int size() const { return count(root); }
         int count1() const { return sum(root); }
@@ -117,15 +294,24 @@ class DynamicWaveletMatrix {
 
         bool get(int k) const {
             assert(0 <= k && k < size());
+            return get_and_rank1(k).first;
+        }
+
+        // k番目のbitと [0, k) の1の個数を1回のtree探索で返す。
+        pair<bool, int> get_and_rank1(int k) const {
+            assert(0 <= k && k < size());
+            int rank = 0;
             Tree t = root;
             while (true) {
                 int lc = count(t->l);
                 if (k < lc) {
                     t = t->l;
-                } else if (k == lc) {
-                    return t->bit;
+                } else if (k < lc + t->len) {
+                    rank += sum(t->l) + block_rank1(t, k - lc);
+                    return {get_block_bit(t, k - lc), rank};
                 } else {
-                    k -= lc + 1;
+                    rank += sum(t->l) + t->ones;
+                    k -= lc + t->len;
                     t = t->r;
                 }
             }
@@ -139,10 +325,14 @@ class DynamicWaveletMatrix {
                 int lc = count(t->l);
                 if (k <= lc) {
                     t = t->l;
+                } else if (k <= lc + t->len) {
+                    res += sum(t->l);
+                    res += block_rank1(t, k - lc);
+                    break;
                 } else {
                     res += sum(t->l);
-                    if (t->bit) res++;
-                    k -= lc + 1;
+                    res += t->ones;
+                    k -= lc + t->len;
                     t = t->r;
                 }
             }
@@ -156,17 +346,23 @@ class DynamicWaveletMatrix {
 
         void insert(int k, bool bit) {
             assert(0 <= k && k <= size());
-            auto [a, b] = split(root, k);
-            root = merge(merge(a, new_node(bit)), b);
+            root = insert_rec(root, k, bit);
         }
 
         optional<bool> erase(int k) {
             if (k < 0 || k >= size()) return nullopt;
-            auto [a, b] = split(root, k);
-            auto [c, d] = split(b, 1);
-            bool res = c->bit;
-            root = merge(a, d);
+            auto [nr, res] = erase_rec(root, k);
+            root = nr;
             return res;
+        }
+
+        void build(const vector<bool> &v) {
+            release_tree(root);
+            root = nullptr;
+            for (int l = 0; l < (int)v.size(); l += BLOCK_BITS) {
+                int r = min<int>(l + BLOCK_BITS, v.size());
+                root = merge(root, new_block_from(v, l, r));
+            }
         }
     };
 
@@ -220,8 +416,26 @@ class DynamicWaveletMatrix {
     explicit DynamicWaveletMatrix(const vector<T> &v) { build(v); }
 
     void build(const vector<T> &v) {
-        *this = DynamicWaveletMatrix();
-        for (const T &x : v) insert(size(), x);
+        n = (int)v.size();
+        vector<U> cur(n), nxt(n);
+        for (int i = 0; i < n; i++) cur[i] = encode(v[i]);
+        for (int level = 0; level < LOG; level++) {
+            int b = LOG - 1 - level;
+            vector<bool> bits(n);
+            int zero_count = 0;
+            for (int i = 0; i < n; i++) {
+                bits[i] = bit_at(cur[i], b);
+                if (!bits[i]) zero_count++;
+            }
+            matrix[level].build(bits);
+            zeros[level] = zero_count;
+            int zi = 0, oi = zero_count;
+            for (int i = 0; i < n; i++) {
+                if (bits[i]) nxt[oi++] = cur[i];
+                else nxt[zi++] = cur[i];
+            }
+            cur.swap(nxt);
+        }
     }
 
     int size() const { return n; }
@@ -232,12 +446,12 @@ class DynamicWaveletMatrix {
         U x = 0;
         for (int level = 0; level < LOG; level++) {
             int b = LOG - 1 - level;
-            bool bit = matrix[level].get(k);
+            auto [bit, rank1] = matrix[level].get_and_rank1(k);
             if (bit) {
                 x |= U(1) << b;
-                k = zeros[level] + matrix[level].rank1(k);
+                k = zeros[level] + rank1;
             } else {
-                k = matrix[level].rank0(k);
+                k -= rank1;
             }
         }
         return decode(x);
@@ -267,13 +481,13 @@ class DynamicWaveletMatrix {
         U x = 0;
         for (int level = 0; level < LOG; level++) {
             int b = LOG - 1 - level;
-            bool bit = matrix[level].get(k);
+            auto [bit, rank1] = matrix[level].get_and_rank1(k);
             int next_k;
             if (bit) {
                 x |= U(1) << b;
-                next_k = zeros[level] + matrix[level].rank1(k);
+                next_k = zeros[level] + rank1;
             } else {
-                next_k = matrix[level].rank0(k);
+                next_k = k - rank1;
                 zeros[level]--;
             }
             matrix[level].erase(k);
@@ -377,26 +591,49 @@ class DynamicWaveletMatrix {
 //
 // 実装:
 //   各値ごとに出現位置の set を持つ。
+//   prev_pos[i] = i より左にある同じ値の直前位置、なければ -1。
+//   prev_wm には prev_pos[i] + 1 を載せる。
+//   count(l, r) は [l, r) のうち prev_pos[i] < l である i の個数。
 //
 // 計算量:
-//   set O(log N)
-//   insert/erase O(N log N) 位置をずらすため重い
-//   count O(M log N) M は異なる値の種類数
+//   set O(log A (log N + B) + log N (log N + B))
+//   insert/erase O(N(log A (log N + B) + log N (log N + B))) 補助構造を再構築するため重い
+//   count O(log N (log N + B))
 //
 // 注意:
 //   - 挿入削除が多い巨大ケース向けではない。
-//   - 値の種類数が小さい、または count distinct が補助的な用途向け。
-template <class T>
+//   - set と count が多い用途向け。
+template <class T, int LOG = numeric_limits<make_unsigned_t<T>>::digits, int POS_LOG = numeric_limits<unsigned int>::digits>
 class DynamicRangeCountDistinct {
    private:
-    DynamicWaveletMatrix<T> wm;
-    map<T, std::set<int>> positions;
+    DynamicWaveletMatrix<T, LOG> wm;
+    DynamicWaveletMatrix<int, POS_LOG> prev_wm;
+    unordered_map<T, std::set<int>> positions;
 
-    void rebuild_positions() {
+    void rebuild_auxiliary() {
         positions.clear();
+        positions.reserve(wm.size() * 2 + 1);
+        vector<int> prev_key(wm.size(), 0);
+        unordered_map<T, int> last;
+        last.reserve(wm.size() * 2 + 1);
         for (int i = 0; i < wm.size(); i++) {
-            positions[wm.access(i)].insert(i);
+            T x = wm.access(i);
+            auto it = last.find(x);
+            if (it != last.end()) prev_key[i] = it->second + 1;
+            last[x] = i;
+            positions[x].insert(i);
         }
+        prev_wm.build(prev_key);
+    }
+
+    static int prev_it(const std::set<int> &s, std::set<int>::const_iterator it) {
+        if (it == s.begin()) return -1;
+        return *std::prev(it);
+    }
+
+    static int next_it(const std::set<int> &s, std::set<int>::const_iterator it) {
+        ++it;
+        return it == s.end() ? -1 : *it;
     }
 
    public:
@@ -405,7 +642,7 @@ class DynamicRangeCountDistinct {
 
     void build(const vector<T> &v) {
         wm.build(v);
-        rebuild_positions();
+        rebuild_auxiliary();
     }
 
     int size() const { return wm.size(); }
@@ -416,24 +653,44 @@ class DynamicRangeCountDistinct {
     void set(int k, const T &x) {
         assert(0 <= k && k < size());
         T old = wm.access(k);
-        auto it = positions.find(old);
-        assert(it != positions.end());
-        it->second.erase(k);
-        if (it->second.empty()) positions.erase(it);
-        wm.set(k, x);
+        if (old == x) return;
+
+        auto old_map_it = positions.find(old);
+        assert(old_map_it != positions.end());
+        auto old_it = old_map_it->second.find(k);
+        assert(old_it != old_map_it->second.end());
+        int old_prev = prev_it(old_map_it->second, old_it);
+        int old_next = next_it(old_map_it->second, old_it);
+
+        int new_prev = -1;
+        int new_next = -1;
+        auto new_map_it = positions.find(x);
+        if (new_map_it != positions.end()) {
+            auto lb = new_map_it->second.lower_bound(k);
+            new_next = lb == new_map_it->second.end() ? -1 : *lb;
+            new_prev = lb == new_map_it->second.begin() ? -1 : *std::prev(lb);
+        }
+
+        old_map_it->second.erase(old_it);
+        if (old_map_it->second.empty()) positions.erase(old_map_it);
         positions[x].insert(k);
+
+        wm.set(k, x);
+        prev_wm.set(k, new_prev + 1);
+        if (old_next != -1) prev_wm.set(old_next, old_prev + 1);
+        if (new_next != -1) prev_wm.set(new_next, k + 1);
     }
 
     void insert(int k, const T &x) {
         assert(0 <= k && k <= size());
         wm.insert(k, x);
-        rebuild_positions();
+        rebuild_auxiliary();
     }
 
     optional<T> erase(int k) {
         if (k < 0 || k >= size()) return nullopt;
         optional<T> res = wm.erase(k);
-        rebuild_positions();
+        rebuild_auxiliary();
         return res;
     }
 
@@ -448,12 +705,7 @@ class DynamicRangeCountDistinct {
 
     int count(int l, int r) const {
         assert(0 <= l && l <= r && r <= size());
-        int res = 0;
-        for (const auto &[value, pos] : positions) {
-            auto it = pos.lower_bound(l);
-            if (it != pos.end() && *it < r) res++;
-        }
-        return res;
+        return prev_wm.range_freq(l, r, l + 1);
     }
 
     vector<T> to_vector() const { return wm.to_vector(); }

@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/modint.cpp
 using mint = modint998244353;
 
 class Combination {

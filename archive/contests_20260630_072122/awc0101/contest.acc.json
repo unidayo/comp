@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0101",
+    "title": "AtCoder Weekday Contest 0101 Beta",
+    "url": "https://atcoder.jp/contests/awc0101"
+  },
+  "tasks": [
+    {
+      "id": "awc0101_a",
+      "label": "A",
+      "title": "City with Power Shortage",
+      "url": "https://atcoder.jp/contests/awc0101/tasks/awc0101_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0101_a.cpp"
+      }
+    },
+    {
+      "id": "awc0101_b",
+      "label": "B",
+      "title": "A Single Strike of Dominoes",
+      "url": "https://atcoder.jp/contests/awc0101/tasks/awc0101_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0101_b.cpp"
+      }
+    },
+    {
+      "id": "awc0101_c",
+      "label": "C",
+      "title": "Chain of Infection",
+      "url": "https://atcoder.jp/contests/awc0101/tasks/awc0101_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0101_c.cpp"
+      }
+    },
+    {
+      "id": "awc0101_d",
+      "label": "D",
+      "title": "Tiling Plan",
+      "url": "https://atcoder.jp/contests/awc0101/tasks/awc0101_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0101_d.cpp"
+      }
+    },
+    {
+      "id": "awc0101_e",
+      "label": "E",
+      "title": "Choosing Flowerbed Intervals",
+      "url": "https://atcoder.jp/contests/awc0101/tasks/awc0101_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0101_e.cpp"
+      }
+    }
+  ]
+}

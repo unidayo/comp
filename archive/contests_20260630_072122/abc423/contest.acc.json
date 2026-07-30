@@ -1,0 +1,56 @@
+{
+  "contest": {
+    "id": "abc423",
+    "title": "AtCoder Beginner Contest 423",
+    "url": "https://atcoder.jp/contests/abc423"
+  },
+  "tasks": [
+    {
+      "id": "abc423_a",
+      "label": "A",
+      "title": "Scary Fee",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_a"
+    },
+    {
+      "id": "abc423_b",
+      "label": "B",
+      "title": "Locked Rooms",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_b"
+    },
+    {
+      "id": "abc423_c",
+      "label": "C",
+      "title": "Lock All Doors ",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_c"
+    },
+    {
+      "id": "abc423_d",
+      "label": "D",
+      "title": "Long Waiting",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_d"
+    },
+    {
+      "id": "abc423_e",
+      "label": "E",
+      "title": "Sum of Subarrays",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_e"
+    },
+    {
+      "id": "abc423_f",
+      "label": "F",
+      "title": "Loud Cicada",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc423_f.cpp"
+      }
+    },
+    {
+      "id": "abc423_g",
+      "label": "G",
+      "title": "Small Multiple 2",
+      "url": "https://atcoder.jp/contests/abc423/tasks/abc423_g"
+    }
+  ]
+}

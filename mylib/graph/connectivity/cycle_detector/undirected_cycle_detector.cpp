@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/dsu.cpp
 /**
  * UndirectedCycleDetector
  *
@@ -9,7 +11,6 @@
  *   - find_all_cycle_vertices(): 何らかのサイクルに含まれる全頂点を返す
  *
  * 計算量: O(V + E)
- * 依存: AtCoder Library (atcoder/dsu)
  *
  * 使用例:
  *   UndirectedCycleDetector g(5);
@@ -145,6 +146,11 @@ struct UndirectedCycleDetector {
         for (int i = 0; i < n; i++) {
             if (uf.size(i) >= 2) {
                 result.insert(i);
+            }
+        }
+        for (int u = 0; u < n; ++u) {
+            for (auto [v, eid] : adj[u]) {
+                if (u == v) result.insert(u);
             }
         }
         return result;

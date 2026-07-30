@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/convolution.cpp
 /* Bostan–Mori 法
  与えられた生成関数
  F(x) = P(x) / Q(x)
@@ -24,10 +26,23 @@ Tp BostanMori(vector<Tp> &P, vector<Tp> &Q, ll N) {
         for (int i = 0; i < ps; ++i) {
             P[i] = PQm[i * 2 + (N & 1)];
         }
-        auto QQm = convolution(Q, Qm);
-        int qs2 = ssize(Q);
-        for (int i = 0; i < qs2; ++i) {
-            Q[i] = QQm[2 * i];
+        if (qs < 256) {
+            auto product = convolution(Q, Qm);
+            for (int i = 0; i < qs; ++i) Q[i] = product[2 * i];
+        } else {
+            // Q(x)Q(-x) = E(x^2)^2 - x^2 O(x^2)^2。
+            // 半分の長さの畳み込み2回に分け、大次数のNTTを軽くする。
+            vector<Tp> even((qs + 1) / 2), odd(qs / 2);
+            for (int i = 0; i < qs; ++i) {
+                if (i & 1) odd[i / 2] = Q[i];
+                else even[i / 2] = Q[i];
+            }
+            auto even_squared = convolution(even, even);
+            auto odd_squared = convolution(odd, odd);
+            for (int i = 0; i < qs; ++i) {
+                Q[i] = i < ssize(even_squared) ? even_squared[i] : Tp(0);
+                if (i != 0 && i - 1 < ssize(odd_squared)) Q[i] -= odd_squared[i - 1];
+            }
         }
         N >>= 1;
     }

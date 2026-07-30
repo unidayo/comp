@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0110",
+    "title": "AtCoder Weekday Contest 0110 Beta",
+    "url": "https://atcoder.jp/contests/awc0110"
+  },
+  "tasks": [
+    {
+      "id": "awc0110_a",
+      "label": "A",
+      "title": "Point Card Balance Management",
+      "url": "https://atcoder.jp/contests/awc0110/tasks/awc0110_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0110_a.cpp"
+      }
+    },
+    {
+      "id": "awc0110_b",
+      "label": "B",
+      "title": "Flower Bed Maintenance",
+      "url": "https://atcoder.jp/contests/awc0110/tasks/awc0110_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0110_b.cpp"
+      }
+    },
+    {
+      "id": "awc0110_c",
+      "label": "C",
+      "title": "Knapsack and Treasures",
+      "url": "https://atcoder.jp/contests/awc0110/tasks/awc0110_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0110_c.cpp"
+      }
+    },
+    {
+      "id": "awc0110_d",
+      "label": "D",
+      "title": "Package Delivery from Warehouse",
+      "url": "https://atcoder.jp/contests/awc0110/tasks/awc0110_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0110_d.cpp"
+      }
+    },
+    {
+      "id": "awc0110_e",
+      "label": "E",
+      "title": "Abbreviation Assignment",
+      "url": "https://atcoder.jp/contests/awc0110/tasks/awc0110_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0110_e.cpp"
+      }
+    }
+  ]
+}

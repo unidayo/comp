@@ -258,6 +258,10 @@ python3 scripts/render_acc_templates.py
 
 自作ライブラリ集です。カテゴリごとに `.cpp` ファイルを置いています。
 
+`mylib/` 配下のライブラリ実装ファイルには、先頭行に `// 最終更新: YYYY-MM-DD HH:MM:SS JST` 形式で最終更新日時を記載する。新規作成時だけでなく、既存ライブラリのコード、コメント、説明を変更した場合も、作業完了時の日本時間へ更新する。複数のライブラリを一括更新した場合は、同一の作業時刻を記載してよい。
+
+別のライブラリを事前に貼り付ける必要がある場合は、最終更新行の直下に `// 依存: mylib/path/to/library.cpp` と記載する。複数ある場合はカンマ区切りで、先に貼る順に列挙する。依存がない場合は記載しない。
+
 主なカテゴリ:
 
 ```text
@@ -410,3 +414,16 @@ pch.dir/
 - `mylib/acl/` は Codeforces など提出用の補助として使う。ローカルでは `/usr/lib/ac-library/` と `ATCODER` 定義がある。
 - `ankerl::unordered_dense` は `~/.local/include/ankerl/` の共通ヘッダを使う。`comp/` 配下に外部ソースツリーを増やさない。
 - 日本語やスペースを含むディレクトリ名があるため、シェルではパスを必ずクォートする。
+
+## Use of Generative AI
+I am currently participating in an AtCoder Heuristic Contest, and I will use this generative AI to assist in developing my solution.
+
+When using this generative AI, the "AtCoder Heuristic Contest Generative AI Usage Rules - Version 20250616" apply.
+
+https://info.atcoder.jp/entry/ahc-llm-rules-en
+
+Most importantly, after running the solution program, you must not modify or improve the solution, its approach, or its code based on the execution results unless the user gives a new explicit instruction to do so.
+
+You may run the solution program and report its execution results, logs, scores, or other observations. After reporting them, you must stop and wait for a new instruction from the user before making any improvement based on those results.
+
+Here, "solution program" refers to any program created or being created for the purpose of solving this contest problem, regardless of whether it was created by the user or by generative AI, and regardless of whether it is still in progress or already complete.

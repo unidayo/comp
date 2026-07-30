@@ -1,0 +1,44 @@
+{
+  "contest": {
+    "id": "awc0103",
+    "title": "AtCoder Weekday Contest 0103 Beta",
+    "url": "https://atcoder.jp/contests/awc0103"
+  },
+  "tasks": [
+    {
+      "id": "awc0103_a",
+      "label": "A",
+      "title": "Meeting Place",
+      "url": "https://atcoder.jp/contests/awc0103/tasks/awc0103_a"
+    },
+    {
+      "id": "awc0103_b",
+      "label": "B",
+      "title": "Balanced Team",
+      "url": "https://atcoder.jp/contests/awc0103/tasks/awc0103_b"
+    },
+    {
+      "id": "awc0103_c",
+      "label": "C",
+      "title": "Exhibition Layout",
+      "url": "https://atcoder.jp/contests/awc0103/tasks/awc0103_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0103_c.cpp"
+      }
+    },
+    {
+      "id": "awc0103_d",
+      "label": "D",
+      "title": "Choosing Souvenirs",
+      "url": "https://atcoder.jp/contests/awc0103/tasks/awc0103_d"
+    },
+    {
+      "id": "awc0103_e",
+      "label": "E",
+      "title": "Maximum Area Pasture",
+      "url": "https://atcoder.jp/contests/awc0103/tasks/awc0103_e"
+    }
+  ]
+}

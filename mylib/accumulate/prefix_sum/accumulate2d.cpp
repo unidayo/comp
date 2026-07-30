@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 template <class T>
 struct accumulate2d {
     /*0-based 2次元累積和*/

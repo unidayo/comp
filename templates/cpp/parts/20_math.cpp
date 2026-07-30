@@ -23,6 +23,7 @@ T divfloor(T x, T y) {
 }
 // x % m を常に非負で返す
 template <class T1, class T2>
+[[nodiscard]]
 T1 smod(T1 x, T2 m) {
     return x < 0 ? (x % m + m) % m : x % m;
 }

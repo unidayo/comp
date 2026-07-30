@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/scc.cpp
 /**
  * DirectedCycleDetector
  *
@@ -10,7 +12,6 @@
  *   - find_all_cycle_vertices(): 何らかのサイクルに含まれる全頂点を vector<bool> で返す
  *
  * 計算量: O(V + E)
- * 依存: AtCoder Library (atcoder/scc)
  *
  * 使用例:
  *   DirectedCycleDetector g(4);

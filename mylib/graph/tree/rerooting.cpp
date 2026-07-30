@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 /**
  * @brief 全方位木DP（ReRooting / Rerooting DP）
  *
@@ -86,12 +87,14 @@ struct ReRooting {
         vector<Monoid> right(G[v].size() + 1, IDENTITY);
         for (int i = 0; i < ssize(G[v]); ++i) {
             left[i + 1] = MERGE(left[i], dp[v][i]);
-            right[i + 1] = MERGE(right[i], dp[v][ssize(G[v]) - i - 1]);
+        }
+        for (int i = ssize(G[v]) - 1; i >= 0; --i) {
+            right[i] = MERGE(dp[v][i], right[i + 1]);
         }
         for (int i = 0; i < ssize(G[v]); ++i) {
             int v2 = G[v][i];
             if (v2 == p) continue;
-            Monoid pval2 = MERGE(left[i], right[ssize(G[v]) - i - 1]);
+            Monoid pval2 = MERGE(left[i], right[i + 1]);
             rerec(v2, v, ADDNODE(v, pval2));
         }
     }

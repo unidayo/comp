@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 #pragma once
 
 #include <algorithm>
@@ -55,4 +56,3 @@ struct Timer {
         return std::clamp(elapsed_ms() / limit_ms, 0.0, 1.0);
     }
 };
-

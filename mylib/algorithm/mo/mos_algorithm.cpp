@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,6 +39,7 @@ struct Mo {
     template <class AddL, class AddR, class RemoveL, class RemoveR, class Output>
     void run(AddL add_l, AddR add_r, RemoveL rem_l, RemoveR rem_r, Output out) {
         int q = qs.size();
+        if (q == 0) return;
         int block = max(1, int(n / sqrt(q)));
 
         order.resize(q);

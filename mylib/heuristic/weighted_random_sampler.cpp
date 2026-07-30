@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/heuristic/fast_random.cpp
 #pragma once
 
 #include <algorithm>
@@ -170,4 +172,3 @@ private:
         return idx;
     }
 };
-

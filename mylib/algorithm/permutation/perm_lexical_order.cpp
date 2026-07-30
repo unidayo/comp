@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/acl/fenwicktree.cpp
 // P の辞書順順位（1-indexed）を返す
 // mod == 0 のときは mod なし
 ll perm_lexical_order(const vector<ll>& P, ll mod = 0) {

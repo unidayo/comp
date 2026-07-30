@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 struct Manacher {
     vector<int> odd;
     vector<int> even;

@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 // 反時計回りに偏角ソート（0° から開始、反時計回り）
 // 注意: 原点 (0,0) は使用前に除外すること
 bool cmp(pair<ll, ll> lhs, pair<ll, ll> rhs) {
@@ -7,5 +8,5 @@ bool cmp(pair<ll, ll> lhs, pair<ll, ll> rhs) {
     int bh = (rhs.second > 0 || (rhs.second == 0 && rhs.first > 0));
     if (ah != bh) return ah > bh;  // 上半平面を先に
     // 外積が正 → lhs が rhs より反時計回りで手前
-    return lhs.first * rhs.second - lhs.second * rhs.first > 0;
+    return (__int128)lhs.first * rhs.second - (__int128)lhs.second * rhs.first > 0;
 }

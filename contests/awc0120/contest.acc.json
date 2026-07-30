@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0120",
+    "title": "AtCoder Weekday Contest 0120 Beta",
+    "url": "https://atcoder.jp/contests/awc0120"
+  },
+  "tasks": [
+    {
+      "id": "awc0120_a",
+      "label": "A",
+      "title": "Test Grading",
+      "url": "https://atcoder.jp/contests/awc0120/tasks/awc0120_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0120_a.cpp"
+      }
+    },
+    {
+      "id": "awc0120_b",
+      "label": "B",
+      "title": "Walking Intervals That Include a Favorite Place",
+      "url": "https://atcoder.jp/contests/awc0120/tasks/awc0120_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0120_b.cpp"
+      }
+    },
+    {
+      "id": "awc0120_c",
+      "label": "C",
+      "title": "Flow Control of Waterways",
+      "url": "https://atcoder.jp/contests/awc0120/tasks/awc0120_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0120_c.cpp"
+      }
+    },
+    {
+      "id": "awc0120_d",
+      "label": "D",
+      "title": "Mountain Hiking",
+      "url": "https://atcoder.jp/contests/awc0120/tasks/awc0120_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0120_d.cpp"
+      }
+    },
+    {
+      "id": "awc0120_e",
+      "label": "E",
+      "title": "Pattern Search in DNA Sequences",
+      "url": "https://atcoder.jp/contests/awc0120/tasks/awc0120_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0120_e.cpp"
+      }
+    }
+  ]
+}

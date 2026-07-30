@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-13 00:25:22 JST
 // ACL風の永続セグメント木
 //
 // 使い方:
@@ -56,23 +57,37 @@ struct PersistentSegmentTree {
         roots.push_back(_n == 0 ? nil : build(0, _n, v));
     }
 
+    PersistentSegmentTree(const PersistentSegmentTree &) = delete;
+    PersistentSegmentTree &operator=(const PersistentSegmentTree &) = delete;
+    PersistentSegmentTree(PersistentSegmentTree &&) = delete;
+    PersistentSegmentTree &operator=(PersistentSegmentTree &&) = delete;
+
     ~PersistentSegmentTree() {
-        for (int i = 0; i < pid; i++) pool[i].~node();
+        if constexpr (!is_trivially_destructible_v<node>) {
+            for (int i = 0; i < pid; i++) pool[i].~node();
+        }
         ::operator delete(pool);
     }
 
    private:
-    node *new_node(const S &data) {
+    node *new_node_unchecked(const S &data, node *l, node *r) {
         node *ptr = &pool[pid++];
-        ::new (static_cast<void *>(ptr)) node(data);
-        ptr->l = ptr->r = nil;
+        ::new (static_cast<void *>(ptr)) node(data, l, r);
         return ptr;
     }
 
+    node *new_node(const S &data) {
+        if (pid >= NODES) throw std::length_error("PersistentSegmentTree node pool exhausted");
+        return new_node_unchecked(data, nil, nil);
+    }
+
     node *merge(node *l, node *r) {
-        node *ptr = &pool[pid++];
-        ::new (static_cast<void *>(ptr)) node(op(l->data, r->data), l, r);
-        return ptr;
+        if (pid >= NODES) throw std::length_error("PersistentSegmentTree node pool exhausted");
+        return new_node_unchecked(op(l->data, r->data), l, r);
+    }
+
+    node *merge_unchecked(node *l, node *r) {
+        return new_node_unchecked(op(l->data, r->data), l, r);
     }
 
     node *build(int l, int r, const vector<S> &v) {
@@ -82,18 +97,24 @@ struct PersistentSegmentTree {
     }
 
     node *set_impl(int p, const S &x, node *n, int l, int r) {
-        if (l + 1 == r) return new_node(x);
+        if (l + 1 == r) return new_node_unchecked(x, nil, nil);
         int m = (l + r) >> 1;
-        if (p < m) return merge(set_impl(p, x, n->l, l, m), n->r);
-        return merge(n->l, set_impl(p, x, n->r, m, r));
+        if (p < m) return merge_unchecked(set_impl(p, x, n->l, l, m), n->r);
+        return merge_unchecked(n->l, set_impl(p, x, n->r, m, r));
     }
 
     S get_impl(int p, node *n, int l, int r) const {
-        if (n == nil) return e();
-        if (l + 1 == r) return n->data;
-        int m = (l + r) >> 1;
-        if (p < m) return get_impl(p, n->l, l, m);
-        return get_impl(p, n->r, m, r);
+        while (n != nil && l + 1 != r) {
+            int m = (l + r) >> 1;
+            if (p < m) {
+                n = n->l;
+                r = m;
+            } else {
+                n = n->r;
+                l = m;
+            }
+        }
+        return n == nil ? e() : n->data;
     }
 
     S prod_impl(int a, int b, node *n, int l, int r) const {
@@ -121,6 +142,8 @@ struct PersistentSegmentTree {
 
     int set(node *n, int p, const S &x) {
         assert(0 <= p && p < _n);
+        int required = bit_width((unsigned)(_n - 1)) + 1;
+        if (pid > NODES - required) throw std::length_error("PersistentSegmentTree node pool exhausted");
         return append_root(set_impl(p, x, n, 0, _n));
     }
 

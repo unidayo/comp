@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 template <ranges::random_access_range Range>
     requires equality_comparable<ranges::range_value_t<Range>>
 vector<size_t> kmp(const Range &s, const Range &t) {

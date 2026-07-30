@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 auto bellman_ford(const vector<vector<pair<int, ll>>> &G, int start, bool detect_negative_cycle = false) {
     int N = ssize(G);
     vector<ll> dist(N, INF64);

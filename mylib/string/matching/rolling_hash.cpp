@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 struct RollingHash {
     const static ll M = (1LL << 61) - 1;
     static vll base;
@@ -8,9 +9,7 @@ struct RollingHash {
     int N;
     // 文字列 s のローリングハッシュを構築する
     RollingHash(string s) {
-        if (base == 0) {
-            set_base();
-        }
+        ensure_base();
         S = s;
         N = ssize(S);
         if (ssize(basepow) < N + 1) {
@@ -24,6 +23,7 @@ struct RollingHash {
 
     // 文字列 t のハッシュ値を返す（RollingHash オブジェクトなしで使える）
     static vll get_hash(string t) {
+        ensure_base();
         vll ret = 0;
         int n = ssize(t);
         for (int i = 0; i < n; ++i) {
@@ -35,7 +35,11 @@ struct RollingHash {
     }
     // a + b のハッシュを返す
     // 引数 : a, b, b の長さ
-    static vll unite(vll a, vll b, ll bsize) { return (a * basepow[bsize] + b) % M; }
+    static vll unite(vll a, vll b, ll bsize) {
+        assert(0 <= bsize && bsize <= INT_MAX);
+        ensure_pow((int)bsize);
+        return (a * basepow[bsize] + b) % M;
+    }
 
     // 文字列の長さを返す
     int size() const { return N; }
@@ -117,7 +121,7 @@ struct RollingHash {
 
    private:
     // ランダムなハッシュの基数を設定する（初回構築時に一度だけ呼ばれる）
-    void set_base() {
+    static void set_base() {
         std::random_device seed_gen;
         std::uint32_t seed = seed_gen();
         std::mt19937 engine(seed);
@@ -125,18 +129,28 @@ struct RollingHash {
         base = dist(engine);
     }
 
-    // basepow / basepowinv を現在の N に合わせて拡張する
-    void extend_pow() {
-        int preN = ssize(basepow);
-        basepow.resize(2 * N + 1);
-        basepowinv.resize(2 * N + 1);
-        for (int i = preN; i <= 2 * N; ++i) {
+    static void ensure_base() {
+        if (base == 0) set_base();
+    }
+
+    static void ensure_pow(int n) {
+        ensure_base();
+        if ((int)basepow.size() > n) return;
+        int old_size = (int)basepow.size();
+        basepow.resize(n + 1);
+        basepowinv.resize(n + 1);
+        for (int i = old_size; i <= n; ++i) {
             basepow[i] = basepow[i - 1] * base % M;
         }
-        basepowinv[2 * N] = pow_mod64(basepow[2 * N], M - 2, M);
-        for (int i = 2 * N; i > preN; --i) {
+        basepowinv[n] = pow_mod64(basepow[n], M - 2, M);
+        for (int i = n; i >= old_size; --i) {
             basepowinv[i - 1] = basepowinv[i] * base % M;
         }
+    }
+
+    // basepow / basepowinv を現在の N に合わせて拡張する
+    void extend_pow() {
+        ensure_pow(2 * N);
     }
 };
 vll RollingHash::base = 0;

@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 const int bs_size = 300;
 int gaussJordan(vector<bitset<bs_size>> &A) {
     int N = ssize(A);

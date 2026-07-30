@@ -1,0 +1,56 @@
+{
+  "contest": {
+    "id": "abc427",
+    "title": "Panasonic Programming Contest 2025（AtCoder Beginner Contest 427）",
+    "url": "https://atcoder.jp/contests/abc427"
+  },
+  "tasks": [
+    {
+      "id": "abc427_a",
+      "label": "A",
+      "title": "ABC -> AC",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_a"
+    },
+    {
+      "id": "abc427_b",
+      "label": "B",
+      "title": "Sum of Digits Sequence",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_b"
+    },
+    {
+      "id": "abc427_c",
+      "label": "C",
+      "title": "Bipartize",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_c"
+    },
+    {
+      "id": "abc427_d",
+      "label": "D",
+      "title": "The Simple Game",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_d"
+    },
+    {
+      "id": "abc427_e",
+      "label": "E",
+      "title": "Wind Cleaning",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_e"
+    },
+    {
+      "id": "abc427_f",
+      "label": "F",
+      "title": "Not Adjacent",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "abc427_f.cpp"
+      }
+    },
+    {
+      "id": "abc427_g",
+      "label": "G",
+      "title": "Takahashi's Expectation 2",
+      "url": "https://atcoder.jp/contests/abc427/tasks/abc427_g"
+    }
+  ]
+}

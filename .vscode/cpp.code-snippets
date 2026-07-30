@@ -10,4 +10,13 @@
 		],
 		"description": ""
 	},
+	"lambda": {
+		"prefix": "lambda",
+		"body": [
+			"auto ${1:func} = [&](${2:auto x}) -> ${3:void} {",
+			"    ${0}",
+			"};"
+		],
+		"description": "C++ lambda expression"
+	},
 }

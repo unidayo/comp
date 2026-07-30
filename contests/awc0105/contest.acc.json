@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0105",
+    "title": "AtCoder Weekday Contest 0105 Beta",
+    "url": "https://atcoder.jp/contests/awc0105"
+  },
+  "tasks": [
+    {
+      "id": "awc0105_a",
+      "label": "A",
+      "title": "Revolving Sushi Counter",
+      "url": "https://atcoder.jp/contests/awc0105/tasks/awc0105_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0105_a.cpp"
+      }
+    },
+    {
+      "id": "awc0105_b",
+      "label": "B",
+      "title": "Distribution of Sweets",
+      "url": "https://atcoder.jp/contests/awc0105/tasks/awc0105_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0105_b.cpp"
+      }
+    },
+    {
+      "id": "awc0105_c",
+      "label": "C",
+      "title": "Cipher Conversion and Correction",
+      "url": "https://atcoder.jp/contests/awc0105/tasks/awc0105_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0105_c.cpp"
+      }
+    },
+    {
+      "id": "awc0105_d",
+      "label": "D",
+      "title": "Uniform Temperature",
+      "url": "https://atcoder.jp/contests/awc0105/tasks/awc0105_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0105_d.cpp"
+      }
+    },
+    {
+      "id": "awc0105_e",
+      "label": "E",
+      "title": "Meeting Point",
+      "url": "https://atcoder.jp/contests/awc0105/tasks/awc0105_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0105_e.cpp"
+      }
+    }
+  ]
+}

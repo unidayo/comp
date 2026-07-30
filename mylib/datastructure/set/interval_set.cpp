@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 //
 // IntervalSet
 //
@@ -22,7 +23,7 @@
 //   erase(2, 8) をすると
 //     -> {[1, 2), [8, 11)} に分割される
 //
-//   update(2, 8, x) をすると
+//   assign(2, 8, x) をすると
 //     -> [2, 8) を値 x の 1 区間として上書きする
 //
 // `VAL` を使う用途:
@@ -36,7 +37,7 @@
 // などを add/del で同期できる。
 //
 // 重要:
-//   `update / insert / erase` に渡す `add` と `del` は
+//   `assign / insert / erase` に渡す `add` と `del` は
 //   「互いに逆操作」である必要がある。
 //
 // なぜか:
@@ -61,46 +62,54 @@
 // - 塗りつぶし / 削除 / mex 管理
 // - 「区間をまとめて持って、必要な境界だけ更新する」問題
 //
-// verified
-//   第六回 アルゴリズム実技検定 M - 等しい数 (for update)
+// 検証済み
+//   第六回 アルゴリズム実技検定 M - 等しい数（assign の検証）
 //     https://atcoder.jp/contests/past202104-open/tasks/past202104_m
 //
-//   RUPC 2018 G - Elevator (for insert, same)
+//   RUPC 2018 G - Elevator（insert、same の検証）
 //     https://onlinejudge.u-aizu.ac.jp/problems/2880
 //
-//   AtCoder ABC 255 Ex - Range Harvest Query (for update)
+//   AtCoder ABC 255 Ex - Range Harvest Query（assign の検証）
 //     https://atcoder.jp/contests/abc255/tasks/abc255_h
 //
-//   yukicoder No.674 n連勤 (for insert)
+//   yukicoder No.674 n連勤（insert の検証）
 //     https://yukicoder.me/problems/no/674
 //
-//   AtCoder ABC 330 E - Mex and Update (for insert, erase, mex)
+//   AtCoder ABC 330 E - Mex and Update（insert、erase、mex の検証）
 //     https://atcoder.jp/contests/abc330/tasks/abc330_e
 //
-//   第五回 アルゴリズム実技検定 N - 旅行会社 (for insert, erase, lower_bound)
+//   第五回 アルゴリズム実技検定 N - 旅行会社（insert、erase、lower_bound の検証）
 //     https://atcoder.jp/contests/past202012-open/tasks/past202012_n
 //
-//   Code Festival 2015 予選 B D - マスと駒と色塗り (for insert, lower_bound)
+//   Code Festival 2015 予選 B D - マスと駒と色塗り（insert、lower_bound の検証）
 //     https://atcoder.jp/contests/code-festival-2015-qualb/tasks/codefestival_2015_qualB_d
 //
-//   CPSCO 2019 Session 1 E - Exclusive OR Queries (for insert with del, lower_bound)
+//   CPSCO 2019 Session 1 E - Exclusive OR Queries（del 付き insert、lower_bound の検証）
 //     https://atcoder.jp/contests/cpsco2019-s1/tasks/cpsco2019_s1_e
 //
-//   yukicoder No.3017 交互浴 (for update)
+//   yukicoder No.3017 交互浴（assign の検証）
 //     https://yukicoder.me/problems/no/3017
 //
 //   AtCoder ABC 256 Ex - I like Query Problem
 //     https://atcoder.jp/contests/abc256/tasks/abc256_h
 //
-//   KUPC 2018 I - League of Kyoto (for insert, erase with add, del)(maybe, the strongest data set for erase)
+//   KUPC 2018 I - League of Kyoto（add、del 付き insert、erase の検証。erase の強いテストと思われる）
 //     https://atcoder.jp/contests/kupc2018/tasks/kupc2018_i
 //
 
 #include <bits/stdc++.h>
 using namespace std;
 
-// Interval Set
-// T: type of range, VAL: data type
+// 区間集合
+// T: 座標の型、VAL: 区間に持たせる値の型
+//
+// 常に次の不変条件を保つ。
+// - 各 Node は空でない半開区間 [l, r) を表す。
+// - 区間同士は交わらない。
+// - 隣接して値も等しい区間は存在しない（1 区間に併合される）。
+//
+// 値が不要な単なる区間集合として使う場合は IntervalSet<T> とし、
+// insert / erase / contains / mex を使えばよい。
 template <class T, class VAL = long long>
 struct IntervalSet {
     struct Node {
@@ -116,11 +125,22 @@ struct IntervalSet {
         friend ostream &operator<<(ostream &s, const Node &e) { return s << "([" << e.l << ", " << e.r << "): " << e.val << ")"; }
     };
 
-    // internal values
+    using iterator = typename set<Node>::iterator;
+    using const_iterator = typename set<Node>::const_iterator;
+
+    // 区間外で value_at を呼んだときに返す値。
     const VAL identity;
     set<Node> S;
 
-    // constructor
+  private:
+    // 左端が x の Node のうち最初のものを探すための検索キー。
+    // r = 0 とすると、負の座標を扱う場合に同じ左端の Node を
+    // 飛び越すことがあるため lowest() を使う。
+    Node lower_key(const T &x) const { return Node(x, numeric_limits<T>::lowest(), identity); }
+
+  public:
+
+    // コンストラクタ。配列から構築すると、同じ値が連続する部分をまとめる。
     IntervalSet(const VAL &identity = VAL()) : identity(identity) {}
     IntervalSet(const vector<VAL> &v, const VAL &identity = VAL()) : identity(identity) {
         vector<Node> vec;
@@ -133,14 +153,20 @@ struct IntervalSet {
         S = set<Node>(vec.begin(), vec.end());
     }
 
-    // get the basic iterators
-    constexpr typename set<Node>::iterator begin() { return S.begin(); }
-    constexpr typename set<Node>::iterator end() { return S.end(); }
+    // std::set と同様に左端の昇順で走査する。
+    iterator begin() { return S.begin(); }
+    iterator end() { return S.end(); }
+    const_iterator begin() const { return S.begin(); }
+    const_iterator end() const { return S.end(); }
+    const_iterator cbegin() const { return S.cbegin(); }
+    const_iterator cend() const { return S.cend(); }
+    bool empty() const { return S.empty(); }
+    size_t size() const { return S.size(); }  // 点の個数ではなく、保持中の区間数
+    void clear() { S.clear(); }
 
-    // get the iterator of interval which contains p
-    // not exist -> S.end()
-    constexpr typename set<Node>::iterator get(const T &p) {
-        auto it = S.upper_bound(Node(p, numeric_limits<T>::max(), 0));
+    // 点 p を含む区間を返す。存在しなければ end() を返す。
+    const_iterator get(const T &p) const {
+        auto it = S.upper_bound(Node(p, numeric_limits<T>::max(), identity));
         if (it == S.begin()) return S.end();
         it = prev(it);
         if (it->l <= p && p < it->r)
@@ -149,22 +175,25 @@ struct IntervalSet {
             return S.end();
     }
 
-    // get the leftist iterator of interval which contains value >= p
-    constexpr typename set<Node>::iterator lower_bound(const T &p) {
+    // 点 p を含む区間、なければ p より右にある最初の区間を返す。
+    const_iterator lower_bound(const T &p) const {
         auto it = get(p);
         if (it != S.end()) return it;
-        return S.upper_bound(Node(p, numeric_limits<T>::max(), 0));
+        return S.upper_bound(Node(p, numeric_limits<T>::max(), identity));
     }
 
-    // exist the interval which contains p: true, [l, r): true
-    constexpr bool covered(const T &p) {
+    // 点 p がいずれかの区間に含まれるかを返す。
+    constexpr bool contains(const T &p) const {
         auto it = get(p);
         if (it != S.end())
             return true;
         else
             return false;
     }
-    constexpr bool covered(const T &l, const T &r) {
+
+    // 半開区間 [l, r) 全体が1本の区間に含まれるかを返す。
+    // 空区間は常に true とする。
+    constexpr bool contains(const T &l, const T &r) const {
         assert(l <= r);
         if (l == r) return true;
         auto it = get(l);
@@ -174,41 +203,39 @@ struct IntervalSet {
             return false;
     }
 
-    // is p, q in same interval?
-    constexpr bool same(const T &p, const T &q) {
-        if (!covered(p) || !covered(q)) return false;
+    // 2点 p, q が同じ区間に含まれるかを返す。
+    constexpr bool same(const T &p, const T &q) const {
+        if (!contains(p) || !contains(q)) return false;
         return get(p) == get(q);
     }
 
-    // get the value of interval which contains p
-    // not exist -> identity
-    constexpr VAL get_val(const T &p) {
+    // 点 p を含む区間の値を返す。区間外なら identity を返す。
+    constexpr VAL value_at(const T &p) const {
         auto it = get(p);
         if (it != S.end())
             return it->val;
         else
             return identity;
     }
-    VAL operator[](const T &p) const { return get_val(p); }
+    VAL operator[](const T &p) const { return value_at(p); }
 
-    // get mex (>= p)
-    constexpr T get_mex(const T &p = 0) {
-        auto it = S.upper_bound(Node(p, numeric_limits<T>::max(), 0));
-        if (it == S.begin()) return p;
-        it = prev(it);
-        if (it->l <= p && p < it->r)
-            return it->r;
-        else
-            return p;
+    // p 以上で、どの区間にも含まれない最小の座標を返す。
+    constexpr T mex(const T &p = 0) const {
+        auto it = get(p);
+        if (it == S.end()) return p;
+        T res = it->r;
+        for (++it; it != S.end() && it->l == res; ++it) res = it->r;
+        return res;
     }
 
-    // update [l, r) with value val / insert [l, r)
-    // del: reflect effects of interval-delete
-    // add: reflect effects of interval-add
-    // add and del should be reversed operation each other
+    // 半開区間 [l, r) を値 val で上書きする。
+    // del は区間削除、add は区間追加の影響を外部集計へ反映する。
+    // add と del は互いに逆の操作でなければならない。
     template <class ADDFUNC, class DELFUNC>
-    void update(T l, T r, const VAL &val, const ADDFUNC &add, const DELFUNC &del) {
-        auto it = S.lower_bound(Node(l, 0, val));
+    void assign(T l, T r, const VAL &val, const ADDFUNC &add, const DELFUNC &del) {
+        assert(l <= r);
+        if (l == r) return;
+        auto it = S.lower_bound(lower_key(l));
         while (it != S.end() && it->l <= r) {
             if (it->l == r) {
                 if (it->val == val) {
@@ -267,25 +294,25 @@ struct IntervalSet {
         it = S.emplace_hint(it, l, r, val);
         add(it->l, it->r, it->val);
     }
-    void update(const T &l, const T &r, const VAL &val) {
-        update(l, r, val, [](T, T, VAL) {}, [](T, T, VAL) {});
+    void assign(const T &l, const T &r, const VAL &val) {
+        assign(l, r, val, [](T, T, VAL) {}, [](T, T, VAL) {});
     }
     template <class ADDFUNC, class DELFUNC>
     void insert(T l, T r, const ADDFUNC &add, const DELFUNC &del) {
-        update(l, r, VAL(), add, del);
+        assign(l, r, identity, add, del);
     }
     void insert(const T &l, const T &r) {
-        update(l, r, VAL(), [](T, T, VAL) {}, [](T, T, VAL) {});
+        assign(l, r, identity, [](T, T, VAL) {}, [](T, T, VAL) {});
     }
 
-    // erase [l, r)
-    // del: reflect effects of interval-delete
-    // add: reflect effects of interval-add
-    // add and del should be reversed operation each other
+    // 半開区間 [l, r) を削除する。
+    // del は区間削除、add は残った区間の再追加を外部集計へ反映する。
+    // add と del は互いに逆の操作でなければならない。
     template <class ADDFUNC, class DELFUNC>
     void erase(T l, T r, const ADDFUNC &add, const DELFUNC &del) {
-        auto it = S.lower_bound(Node(l, 0, VAL()));
-        // COUT(*it);
+        assert(l <= r);
+        if (l == r) return;
+        auto it = S.lower_bound(lower_key(l));
         while (it != S.end() && it->l <= r) {
             if (it->l == r) break;
             if (it->r <= r) {
@@ -308,12 +335,10 @@ struct IntervalSet {
                     it = prev(it);
                 }
                 Node node = *it;
-                // COUT(*it);
                 del(it->l, it->r, it->val);
                 it = S.erase(it);
                 it = S.emplace_hint(it, node.l, l, node.val);
                 add(it->l, it->r, it->val);
-                // COUT(*it);
             }
         }
     }
@@ -321,7 +346,7 @@ struct IntervalSet {
         erase(l, r, [](T, T, VAL) {}, [](T, T, VAL) {});
     }
 
-    // debug
+    // デバッグ出力
     friend ostream &operator<<(ostream &s, const IntervalSet &ins) {
         for (auto e : ins.S) {
             s << "([" << e.l << ", " << e.r << "): " << e.val << ") ";
@@ -330,9 +355,8 @@ struct IntervalSet {
     }
 };
 
-/*/////////////////////////////*/
-// Solver
-/*/////////////////////////////*/
+#if 0
+// 検証用プログラム。再利用するライブラリ本体には含めない。
 
 // 第六回 アルゴリズム実技検定 M - 等しい数
 void PAST_6_M() {
@@ -367,7 +391,7 @@ void PAST_6_M() {
         long long val;
         cin >> l >> r >> val;
         l--;
-        ins.update(l, r, val, add, del);
+        ins.assign(l, r, val, add, del);
         cout << res << '\n';
     }
 }
@@ -407,10 +431,10 @@ void RUPC_2018_G() {
 // modint
 template <int MOD>
 struct Fp {
-    // inner value
+    // 内部の値
     long long val;
 
-    // constructor
+    // コンストラクタ
     constexpr Fp() : val(0) {}
     constexpr Fp(long long v) : val(v % MOD) {
         if (val < 0) val += MOD;
@@ -418,7 +442,7 @@ struct Fp {
     constexpr long long get() const { return val; }
     constexpr int get_mod() const { return MOD; }
 
-    // arithmetic operators
+    // 算術演算子
     constexpr Fp operator+() const { return Fp(*this); }
     constexpr Fp operator-() const { return Fp(0) - Fp(*this); }
     constexpr Fp operator+(const Fp &r) const { return Fp(*this) += r; }
@@ -464,7 +488,7 @@ struct Fp {
         return res / div;
     }
 
-    // other operators
+    // その他の演算子
     constexpr bool operator==(const Fp &r) const { return this->val == r.val; }
     constexpr bool operator!=(const Fp &r) const { return this->val != r.val; }
     constexpr Fp &operator++() {
@@ -508,11 +532,11 @@ void ABC_255_Ex() {
     auto add = [&](long long l, long long r, long long val) -> void { res -= mint(D - val) * (l + r - 1) * (r - l) / 2; };
     auto del = [&](long long l, long long r, long long val) -> void { res += mint(D - val) * (l + r - 1) * (r - l) / 2; };
     IntervalSet<long long, long long> ins;
-    ins.update(0, INF, 0);
+    ins.assign(0, INF, 0);
     while (Q--) {
         cin >> D >> L >> R;
         res = 0;
-        ins.update(L, R + 1, D, add, del);
+        ins.assign(L, R + 1, D, add, del);
         cout << res << '\n';
     }
 }
@@ -553,7 +577,7 @@ void ABC_330_E() {
         A[i] = x;
         mp[A[i]]++;
         ins.insert(A[i], A[i] + 1);
-        cout << ins.get_mex() << '\n';
+        cout << ins.mex() << '\n';
     }
 }
 
@@ -603,7 +627,7 @@ void PAST_5_N() {
     for (auto val : res) cout << val << '\n';
 }
 
-// Code Festival 2015 予選 B D - マスと駒と色塗り (for insert, lower_bound)
+// Code Festival 2015 予選 B D - マスと駒と色塗り（insert、lower_bound の検証）
 void code_festival_2015_B_D() {
     long long N, S, C;
     cin >> N;
@@ -650,16 +674,16 @@ void cpsco_2019_session_1_E() {
         for (long long k = l; k < r; k++) res ^= k, num++;
     };
     IntervalSet<long long, long long> ins;
-    for (auto val : se) ins.update(val, val + 1, 1);
+    for (auto val : se) ins.assign(val, val + 1, 1);
     while (Q--) {
         cin >> L >> R >> X;
         R++;
         res = 0, num = 0;
         ins.erase(L, R, add, del);
         cout << res << '\n';
-        int exist = ins.covered(X);
+        int exist = ins.contains(X);
         if ((num + exist) % 2 == 1)
-            ins.update(X, X + 1, 1);
+            ins.assign(X, X + 1, 1);
         else
             ins.erase(X, X + 1);
     }
@@ -677,9 +701,9 @@ void yukicoder_3017() {
     for (int iter = 0; iter < N; iter++) {
         cin >> H;
         if (iter % 2 == 0)
-            ins.update(0, H, 1, add, del);
+            ins.assign(0, H, 1, add, del);
         else
-            ins.update(0, H, 0, add, del);
+            ins.assign(0, H, 0, add, del);
         cout << res << '\n';
     }
 }
@@ -718,14 +742,14 @@ void ABC_256_Ex() {
                 if (after == 0)
                     ins.erase(v, r);
                 else
-                    ins.update(v, r, after);
+                    ins.assign(v, r, after);
                 seg.apply(v, r, after);
                 v = r;
             }
         } else if (type == 2) {
             scanf("%d %d %d", &L, &R, &y);
             L--;
-            ins.update(L, R, y);
+            ins.assign(L, R, y);
             seg.apply(L, R, y);
         } else {
             scanf("%d %d", &L, &R);
@@ -739,12 +763,12 @@ void ABC_256_Ex() {
 // KUPC 2018 I - League of Kyoto
 template <class Monoid, class Action>
 struct LazySegmentTree {
-    // various function types
+    // 各種関数の型
     using FuncMonoid = function<Monoid(Monoid, Monoid)>;
     using FuncAction = function<Monoid(Action, Monoid)>;
     using FuncComposition = function<Action(Action, Action)>;
 
-    // core member
+    // 基本設定
     int N;
     FuncMonoid OP;
     FuncAction ACT;
@@ -752,12 +776,12 @@ struct LazySegmentTree {
     Monoid IDENTITY_MONOID;
     Action IDENTITY_ACTION;
 
-    // inner data
+    // 内部データ
     int log, offset;
     vector<Monoid> dat;
     vector<Action> lazy;
 
-    // constructor
+    // コンストラクタ
     LazySegmentTree() {}
     LazySegmentTree(int n, const FuncMonoid op, const FuncAction act, const FuncComposition comp, const Monoid &identity_monoid,
                     const Action &identity_action) {
@@ -787,7 +811,7 @@ struct LazySegmentTree {
     }
     int size() const { return N; }
 
-    // basic functions for lazy segment tree
+    // 遅延セグメント木の基本操作
     void pull_dat(int k) { dat[k] = OP(dat[k * 2], dat[k * 2 + 1]); }
     void apply_lazy(int k, const Action &f) {
         dat[k] = ACT(f, dat[k]);
@@ -805,7 +829,7 @@ struct LazySegmentTree {
         for (int h = log; h >= 1; --h) push_lazy(k >> h);
     }
 
-    // setter and getter, update A[i], i is 0-indexed, O(log N)
+    // 0-indexed の A[i] を設定・取得する。計算量は O(log N)。
     void set(int i, const Monoid &v) {
         assert(0 <= i && i < N);
         int k = i + offset;
@@ -821,7 +845,7 @@ struct LazySegmentTree {
     }
     Monoid operator[](int i) { return get(i); }
 
-    // apply f for index i
+    // 添字 i の要素に作用 f を適用する。
     void apply(int i, const Action &f) {
         assert(0 <= i && i < N);
         int k = i + offset;
@@ -829,7 +853,7 @@ struct LazySegmentTree {
         dat[k] = ACT(f, dat[k]);
         pull_dat_deep(k);
     }
-    // apply f for interval [l, r)
+    // 半開区間 [l, r) に作用 f を適用する。
     void apply(int l, int r, const Action &f) {
         assert(0 <= l && l <= r && r <= N);
         if (l == r) return;
@@ -850,7 +874,7 @@ struct LazySegmentTree {
         }
     }
 
-    // get prod of interval [l, r)
+    // 半開区間 [l, r) の総積を返す。
     Monoid prod(int l, int r) {
         assert(0 <= l && l <= r && r <= N);
         if (l == r) return IDENTITY_MONOID;
@@ -868,8 +892,8 @@ struct LazySegmentTree {
     }
     Monoid all_prod() { return dat[1]; }
 
-    // get max r that f(get(l, r)) = True (0-indexed), O(log N)
-    // f(IDENTITY) need to be True
+    // f(get(l, r)) が true となる最大の r を返す。0-indexed、O(log N)。
+    // f(IDENTITY) は true でなければならない。
     int max_right(const function<bool(Monoid)> f, int l = 0) {
         if (l == N) return N;
         l += offset;
@@ -894,8 +918,8 @@ struct LazySegmentTree {
         return N;
     }
 
-    // get min l that f(get(l, r)) = True (0-indexed), O(log N)
-    // f(IDENTITY) need to be True
+    // f(get(l, r)) が true となる最小の l を返す。0-indexed、O(log N)。
+    // f(IDENTITY) は true でなければならない。
     int min_left(const function<bool(Monoid)> f, int r = -1) {
         if (r == 0) return 0;
         if (r == -1) r = N;
@@ -921,7 +945,7 @@ struct LazySegmentTree {
         return 0;
     }
 
-    // debug stream
+    // デバッグ出力
     friend ostream &operator<<(ostream &s, LazySegmentTree seg) {
         for (int i = 0; i < (int)seg.size(); ++i) {
             s << seg[i];
@@ -930,7 +954,7 @@ struct LazySegmentTree {
         return s;
     }
 
-    // dump
+    // 内部状態の表示
     void dump() {
         for (int i = 0; i <= log; ++i) {
             for (int j = (1 << i); j < (1 << (i + 1)); ++j) {
@@ -1008,3 +1032,4 @@ int main() {
     ABC_256_Ex();
     // KUPC_2018_I();
 }
+#endif

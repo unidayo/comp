@@ -1,0 +1,56 @@
+{
+  "contest": {
+    "id": "abc426",
+    "title": "AtCoder Beginner Contest 426",
+    "url": "https://atcoder.jp/contests/abc426"
+  },
+  "tasks": [
+    {
+      "id": "abc426_a",
+      "label": "A",
+      "title": "OS Versions",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_a"
+    },
+    {
+      "id": "abc426_b",
+      "label": "B",
+      "title": "The Odd One Out",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_b"
+    },
+    {
+      "id": "abc426_c",
+      "label": "C",
+      "title": "Upgrade Required",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_c"
+    },
+    {
+      "id": "abc426_d",
+      "label": "D",
+      "title": "Pop and Insert",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_d"
+    },
+    {
+      "id": "abc426_e",
+      "label": "E",
+      "title": "Closest Moment",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "abc426_e.cpp"
+      }
+    },
+    {
+      "id": "abc426_f",
+      "label": "F",
+      "title": "Clearance",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_f"
+    },
+    {
+      "id": "abc426_g",
+      "label": "G",
+      "title": "Range Knapsack Query",
+      "url": "https://atcoder.jp/contests/abc426/tasks/abc426_g"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 class SegmentTree {
     using ll = long long;
     const ll inf = (ll)4e18;

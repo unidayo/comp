@@ -1,0 +1,44 @@
+{
+  "contest": {
+    "id": "arc191",
+    "title": "AtCoder Regular Contest 191 (Div. 2)",
+    "url": "https://atcoder.jp/contests/arc191"
+  },
+  "tasks": [
+    {
+      "id": "arc191_a",
+      "label": "A",
+      "title": "Replace Digits",
+      "url": "https://atcoder.jp/contests/arc191/tasks/arc191_a"
+    },
+    {
+      "id": "arc191_b",
+      "label": "B",
+      "title": "XOR = MOD",
+      "url": "https://atcoder.jp/contests/arc191/tasks/arc191_b"
+    },
+    {
+      "id": "arc191_c",
+      "label": "C",
+      "title": "A^n - 1",
+      "url": "https://atcoder.jp/contests/arc191/tasks/arc191_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "arc191_c.cpp"
+      }
+    },
+    {
+      "id": "arc191_d",
+      "label": "D",
+      "title": "Moving Pieces on Graph",
+      "url": "https://atcoder.jp/contests/arc191/tasks/arc191_d"
+    },
+    {
+      "id": "arc191_e",
+      "label": "E",
+      "title": "Unfair Game",
+      "url": "https://atcoder.jp/contests/arc191/tasks/arc191_e"
+    }
+  ]
+}

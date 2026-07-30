@@ -1,3 +1,5 @@
+// 最終更新: 2026-07-28 19:00:12 JST
+// 依存: mylib/heuristic/fast_random.cpp, mylib/heuristic/timer.cpp
 #pragma once
 
 #include <algorithm>
@@ -117,4 +119,3 @@ struct SimulatedAnnealing {
         return cfg.objective == Objective::Maximize ? lhs > rhs : lhs < rhs;
     }
 };
-

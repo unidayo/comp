@@ -2,19 +2,30 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "cmake-configure-debug",
+			"label": "C++: configure debug",
 			"type": "shell",
 			"command": "cmake -S . -B build-debug -G Ninja -DCMAKE_BUILD_TYPE=Debug",
+			"detail": "Configure build-debug without changing the active source filter.",
 		},
 		{
-			"label": "cmake-configure-release",
+			"label": "C++: configure release",
 			"type": "shell",
 			"command": "cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=Release",
+			"detail": "Configure build-release without changing the active source filter.",
 		},
 		{
-			"label": "build",
+			"label": "C++: build debug",
 			"type": "shell",
-			"command": "cmake --build build-release/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j",
+			"command": "cmake -S . -B build-debug -G Ninja -DCMAKE_BUILD_TYPE=Debug -DENABLE_SANITIZERS=ON -DCOMP_ACTIVE_SOURCE='${file}' && cmake --build build-debug/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j",
+			"detail": "Build the active C++ file with -O0, sanitizers, and _GLIBCXX_DEBUG.",
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "C++: build fast",
+			"type": "shell",
+			"command": "\"${workspaceFolder}/scripts/build_fast_cpp.sh\" \"${file}\"",
+			"detail": "Build the active C++ file directly with a reusable PCH, _GLIBCXX_DEBUG, ASan, and UBSan.",
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -22,9 +33,17 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "build-debug-O0",
+			"label": "C++: build release",
 			"type": "shell",
-			"command": "cmake --build build-debug/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j && ln -sf $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} build-debug/${fileBasenameNoExtension}",
+			"command": "cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_SANITIZERS=ON -DCOMP_ACTIVE_SOURCE='${file}' && cmake --build build-release/ --target $(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension} -j",
+			"detail": "Build the active C++ file with -O2 and sanitizers.",
+			"problemMatcher": []
+		},
+		{
+			"label": "C++: build debug link",
+			"type": "shell",
+			"command": "\"${workspaceFolder}/scripts/build_debug_cpp.sh\" \"${file}\"",
+			"detail": "Build the active C++ file directly for lldb/gdb and create build-debug/<filename> symlink.",
 			"presentation": {
 				"reveal": "silent",
 				"focus": false,
@@ -34,7 +53,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "new contest",
+			"label": "Contest: new AtCoder contest",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -48,7 +67,7 @@
 			},
 		},
 		{
-			"label": "new cf contest",
+			"label": "Contest: new Codeforces contest",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -63,7 +82,7 @@
 			},
 		},
 		{
-			"label": "new cf problem",
+			"label": "Contest: new Codeforces problem",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -79,7 +98,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "new problem",
+			"label": "Contest: new AtCoder problem",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -94,7 +113,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "new standalone problem",
+			"label": "Problem: new C++ standalone",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -108,7 +127,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "new standalone Python problem",
+			"label": "Problem: new Python standalone",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -122,7 +141,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "archive contests",
+			"label": "Archive: contests",
 			"type": "shell",
 			"command": "bash",
 			"args": [
@@ -136,7 +155,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "execute Python",
+			"label": "Python: execute",
 			"type": "shell",
 			"command": "${workspaceFolder}/.venv-pypy/bin/python",
 			"args": [
@@ -150,7 +169,7 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "execute Python with input.txt",
+			"label": "Python: execute input.txt",
 			"type": "shell",
 			"command": "\"${workspaceFolder}/.venv-pypy/bin/python\" \"${file}\" < \"${workspaceFolder}/input.txt\"",
 			"presentation": {
@@ -161,9 +180,10 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "test Python sample",
+			"label": "Python: test sample",
 			"type": "shell",
 			"command": "cd \"${fileDirname}\" && \"${workspaceFolder}/.venv/bin/oj\" t -c '\"${workspaceFolder}/.venv-pypy/bin/python\" \"${file}\"'",
+			"group": "test",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
@@ -172,46 +192,91 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "execute",
+			"label": "C++: execute",
 			"type": "shell",
-			"command": "ASAN_OPTIONS=detect_leaks=0 build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
+			"command": "ASAN_OPTIONS=detect_leaks=0 build-debug/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
 				"panel": "shared",
 			},
 			"dependsOn": [
-				"build"
+				"C++: build debug"
 			],
 		},
 		{
-			"label": "execute with input.txt",
+			"label": "C++: execute fast",
 			"type": "shell",
-			"command": "ASAN_OPTIONS=detect_leaks=0 build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
+			"command": "bin=\"$(\"${workspaceFolder}/scripts/build_fast_cpp.sh\" \"${file}\")\" && ASAN_OPTIONS=detect_leaks=0 \"$bin\"",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "C++: execute input.txt",
+			"type": "shell",
+			"command": "ASAN_OPTIONS=detect_leaks=0 build-debug/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}<${workspaceFolder}/input.txt",
 			"presentation": {
 				"reveal": "always",
 				"focus": true,
 				"panel": "shared",
 			},
 			"dependsOn": [
-				"build"
+				"C++: build debug"
 			],
 		},
 		{
-			"label": "test sample",
+			"label": "C++: execute fast input.txt",
+			"type": "shell",
+			"command": "bin=\"$(\"${workspaceFolder}/scripts/build_fast_cpp.sh\" \"${file}\")\" && ASAN_OPTIONS=detect_leaks=0 \"$bin\" < \"${workspaceFolder}/input.txt\"",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "C++: test sample debug",
+			"type": "shell",
+			"command": "cd ${fileDirname} && ASAN_OPTIONS=detect_leaks=0 /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build-debug/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
+			"group": "test",
+			"detail": "Run oj sample tests with the -O0 sanitizer build.",
+			"dependsOn": [
+				"C++: build debug"
+			],
+		},
+		{
+			"label": "C++: test sample fast",
+			"type": "shell",
+			"command": "cd \"${fileDirname}\" && bin=\"$(\"${workspaceFolder}/scripts/build_fast_cpp.sh\" \"${file}\")\" && ASAN_OPTIONS=detect_leaks=0 \"${workspaceFolder}/.venv/bin/oj\" t -c \"$bin\"",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"detail": "Run oj sample tests with the checked fast build.",
+			"problemMatcher": []
+		},
+		{
+			"label": "C++: test sample release",
 			"type": "shell",
 			"command": "cd ${fileDirname} && ASAN_OPTIONS=detect_leaks=0 /home/wsl2ubuntu/comp/.venv/bin/oj t -c ${workspaceFolder}/build-release/$(basename $(dirname '${fileDirname}'))_$(basename '${fileDirname}')_${fileBasenameNoExtension}",
+			"group": "test",
+			"detail": "Run oj sample tests with the -O2 sanitizer build.",
 			"dependsOn": [
-				"build"
+				"C++: build release"
 			],
 		},
 		{
-			"label": "submit",
+			"label": "Submit: AtCoder",
 			"type": "shell",
 			"command": "cd ${fileDirname} && acc submit -s -- -w 0",
 		},
 		{
-			"label": "expand for codeforces",
+			"label": "Codeforces: expand ACL",
 			"type": "shell",
 			"command": "python3 /usr/lib/ac-library/expander.py --lib /usr/lib/ac-library ${file} && sed -i '/#include <ankerl\\/unordered_dense.h>/d' ${fileDirname}/combined.cpp && sed -i '1s/^/#define ATCODER\\n/' ${fileDirname}/combined.cpp && echo 'Generated: ${fileDirname}/combined.cpp'",
 			"presentation": {

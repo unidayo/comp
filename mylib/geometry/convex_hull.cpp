@@ -1,15 +1,20 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 auto convex_hull(vector<pair<ll, ll>> &XY) {
-    const int N = ssize(XY);
     ranges::sort(XY, [](auto p, auto q) {
         if (p.first != q.first) {
             return p.first < q.first;
         }
         return p.second < q.second;
     });
+    XY.erase(unique(XY.begin(), XY.end()), XY.end());
+    const int N = ssize(XY);
+    if (N <= 1) return XY;
+
     vector<pair<ll, ll>> qs;
 
     auto cross = [](pair<ll, ll> a, pair<ll, ll> b, pair<ll, ll> c) {
-        return (b.first - a.first) * (c.second - a.second) - (b.second - a.second) * (c.first - a.first);
+        return ((__int128)b.first - a.first) * ((__int128)c.second - a.second) -
+               ((__int128)b.second - a.second) * ((__int128)c.first - a.first);
     };
     int k = 0;
     for (auto p : XY) {

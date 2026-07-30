@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 // Point Set Range Frequency。
 //
 // Yosupo: point_set_range_frequency 向け。

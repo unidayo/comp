@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 // Lucas の定理により C(n, r) mod p を求める。
 // p は素数である必要がある。
 // 構築: O(p) time / O(p) memory, C: O(log_p(n)) time

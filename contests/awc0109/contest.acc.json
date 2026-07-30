@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "awc0109",
+    "title": "AtCoder Weekday Contest 0109 Beta",
+    "url": "https://atcoder.jp/contests/awc0109"
+  },
+  "tasks": [
+    {
+      "id": "awc0109_a",
+      "label": "A",
+      "title": "Organizing the Bookshelf",
+      "url": "https://atcoder.jp/contests/awc0109/tasks/awc0109_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "awc0109_a.cpp"
+      }
+    },
+    {
+      "id": "awc0109_b",
+      "label": "B",
+      "title": "Organizing Strings",
+      "url": "https://atcoder.jp/contests/awc0109/tasks/awc0109_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "awc0109_b.cpp"
+      }
+    },
+    {
+      "id": "awc0109_c",
+      "label": "C",
+      "title": "Membership Registration at the Premium Shop",
+      "url": "https://atcoder.jp/contests/awc0109/tasks/awc0109_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "awc0109_c.cpp"
+      }
+    },
+    {
+      "id": "awc0109_d",
+      "label": "D",
+      "title": "Selection of Gems",
+      "url": "https://atcoder.jp/contests/awc0109/tasks/awc0109_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "awc0109_d.cpp"
+      }
+    },
+    {
+      "id": "awc0109_e",
+      "label": "E",
+      "title": "Stress Meter",
+      "url": "https://atcoder.jp/contests/awc0109/tasks/awc0109_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "awc0109_e.cpp"
+      }
+    }
+  ]
+}

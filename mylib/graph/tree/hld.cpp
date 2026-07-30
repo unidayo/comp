@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 /**
  * @brief Heavy-Light Decomposition（HL分解）
  *
@@ -52,6 +53,15 @@ struct HLD {
     }
 
     void build(int root = 0) {
+        if (n == 0) return;
+        fill(parent.begin(), parent.end(), -1);
+        fill(depth.begin(), depth.end(), 0);
+        fill(sz.begin(), sz.end(), 1);
+        fill(heavy.begin(), heavy.end(), -1);
+        fill(head.begin(), head.end(), 0);
+        fill(pos.begin(), pos.end(), 0);
+        cur_pos = 0;
+
         // 部分木サイズと heavy child を求める（BFS 順で逆順に処理）
         vector<int> order;
         order.reserve(n);
@@ -110,8 +120,11 @@ struct HLD {
                 v = parent[head[v]];
             }
         }
-        if (depth[u] > depth[v]) swap(u, v);
-        segs_u.emplace_back(pos[u] + (vertex ? 0 : 1), pos[v] + 1, false);
+        if (depth[u] >= depth[v]) {
+            segs_u.emplace_back(pos[v] + (vertex ? 0 : 1), pos[u] + 1, true);
+        } else {
+            segs_v.emplace_back(pos[u] + (vertex ? 0 : 1), pos[v] + 1, false);
+        }
         // u 側は u→LCA 順に並んでいる。v 側は逆順に積んでいるので reverse して連結
         reverse(segs_v.begin(), segs_v.end());
         for (auto& s : segs_v) segs_u.push_back(s);

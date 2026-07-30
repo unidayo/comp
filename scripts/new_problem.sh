@@ -2,6 +2,7 @@
 set -euo pipefail
 
 CONTESTS_DIR="/home/wsl2ubuntu/comp/contests"
+ARCHIVE_DIR="/home/wsl2ubuntu/comp/archive"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 if [ $# -eq 0 ]; then
@@ -11,6 +12,53 @@ fi
 
 CONTEST_ID="$1"
 
+ensure_contest_acc_json() {
+  if [ -f "contest.acc.json" ]; then
+    return
+  fi
+
+  echo "警告: $CONTESTS_DIR/$CONTEST_ID/contest.acc.json がありません。アーカイブから復旧を試みます。" >&2
+
+  mapfile -t CANDIDATES < <(
+    find "$ARCHIVE_DIR" -type f -path "*/$CONTEST_ID/contest.acc.json" -printf '%T@ %p\n' 2>/dev/null \
+      | sort -nr \
+      | sed 's/^[^ ]* //'
+  )
+
+  if [ "${#CANDIDATES[@]}" -eq 0 ]; then
+    echo "エラー: contest.acc.json を復旧できませんでした。" >&2
+    echo "       $CONTESTS_DIR/$CONTEST_ID を退避してから再実行するか、contest.acc.json を手動で戻してください。" >&2
+    exit 1
+  fi
+
+  cp "${CANDIDATES[0]}" "contest.acc.json"
+  echo "Recovered: contest.acc.json <- ${CANDIDATES[0]}" >&2
+
+  python3 - "$CONTEST_ID" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+contest_id = sys.argv[1]
+path = Path("contest.acc.json")
+data = json.loads(path.read_text())
+
+actual_id = data.get("contest", {}).get("id")
+if actual_id != contest_id:
+    raise SystemExit(f"contest.acc.json の contest.id が一致しません: {actual_id!r} != {contest_id!r}")
+
+for task in data.get("tasks", []):
+    directory = task.get("directory")
+    if not isinstance(directory, dict):
+        continue
+    dir_path = directory.get("path")
+    if not isinstance(dir_path, str) or not Path(dir_path).is_dir():
+        task.pop("directory", None)
+
+path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+PY
+}
+
 cd "$CONTESTS_DIR" || exit 1
 
 if [ ! -d "$CONTEST_ID" ]; then
@@ -19,6 +67,7 @@ if [ ! -d "$CONTEST_ID" ]; then
 fi
 
 cd "$CONTEST_ID"
+ensure_contest_acc_json
 
 TMP_PREFIX="__new_problem_tmp_$$_$(date +%Y%m%d%H%M%S)"
 acc add -c inquire -f -t "${TMP_PREFIX}_{tasklabel}" < /dev/tty

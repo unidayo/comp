@@ -1,7 +1,17 @@
+// 最終更新: 2026-07-12 14:27:44 JST
 template <class S, S (*op)(S, S), S (*e)()>
 class dynamic_segtree {
    public:
-    dynamic_segtree(size_t n) : n(n), root(nullptr) {}
+    explicit dynamic_segtree(size_t size) : n(size), root(nullptr) {}
+    dynamic_segtree(const dynamic_segtree &) = delete;
+    dynamic_segtree &operator=(const dynamic_segtree &) = delete;
+    dynamic_segtree(dynamic_segtree &&) = delete;
+    dynamic_segtree &operator=(dynamic_segtree &&) = delete;
+
+    ~dynamic_segtree() {
+        destroy_tree(root, false);
+        for (node *block : blocks) allocator.deallocate(block, block_size);
+    }
 
     void set(size_t p, S x) {
         assert(p < n);
@@ -53,24 +63,59 @@ class dynamic_segtree {
 
    private:
     struct node;
-    using node_ptr = std::unique_ptr<node>;
 
     struct node {
         size_t index;
         S value, product;
-        node_ptr left, right;
+        node *left, *right;
 
-        node(size_t index, S value) : index(index), value(value), product(value), left(nullptr), right(nullptr) {}
+        node(size_t position, S initial_value)
+            : index(position), value(initial_value), product(initial_value), left(nullptr), right(nullptr) {}
 
         void update() { product = op(op(left ? left->product : e(), value), right ? right->product : e()); }
     };
 
     const size_t n;
-    node_ptr root;
+    node *root;
 
-    void set(node_ptr &t, size_t a, size_t b, size_t p, S x) const {
+    // ノードをまとめて確保し、new/delete をノードごとに呼ぶコストを避ける。
+    // reset で不要になったノードは free_nodes に戻して再利用する。
+    static constexpr size_t block_size = 256;
+    std::allocator<node> allocator;
+    std::vector<node *> blocks;
+    std::vector<node *> free_nodes;
+    node *next_node = nullptr;
+    size_t nodes_left = 0;
+
+    node *make_node(size_t index, const S &value) {
+        node *p;
+        if (!free_nodes.empty()) {
+            p = free_nodes.back();
+            free_nodes.pop_back();
+        } else {
+            if (nodes_left == 0) {
+                next_node = allocator.allocate(block_size);
+                blocks.push_back(next_node);
+                nodes_left = block_size;
+            }
+            p = next_node++;
+            --nodes_left;
+        }
+        std::construct_at(p, index, value);
+        return p;
+    }
+
+    void destroy_tree(node *p, bool recycle = true) {
+        if (!p) return;
+        destroy_tree(p->left, recycle);
+        destroy_tree(p->right, recycle);
+        std::destroy_at(p);
+        if (recycle) free_nodes.push_back(p);
+    }
+
+    void set(node *&t, size_t a, size_t b, size_t p, S x) {
         if (!t) {
-            t = std::make_unique<node>(p, x);
+            t = make_node(p, x);
             return;
         }
         if (t->index == p) {
@@ -89,7 +134,7 @@ class dynamic_segtree {
         t->update();
     }
 
-    S get(const node_ptr &t, size_t a, size_t b, size_t p) const {
+    S get(const node *t, size_t a, size_t b, size_t p) const {
         if (!t) return e();
         if (t->index == p) return t->value;
         size_t c = (a + b) >> 1;
@@ -99,7 +144,7 @@ class dynamic_segtree {
             return get(t->right, c, b, p);
     }
 
-    S prod(const node_ptr &t, size_t a, size_t b, size_t l, size_t r) const {
+    S prod(const node *t, size_t a, size_t b, size_t l, size_t r) const {
         if (!t || b <= l || r <= a) return e();
         if (l <= a && b <= r) return t->product;
         size_t c = (a + b) >> 1;
@@ -108,20 +153,22 @@ class dynamic_segtree {
         return op(result, prod(t->right, c, b, l, r));
     }
 
-    void reset(node_ptr &t, size_t a, size_t b, size_t l, size_t r) const {
+    void reset(node *&t, size_t a, size_t b, size_t l, size_t r) {
         if (!t || b <= l || r <= a) return;
         if (l <= a && b <= r) {
-            t.reset();
+            destroy_tree(t);
+            t = nullptr;
             return;
         }
         size_t c = (a + b) >> 1;
         reset(t->left, a, c, l, r);
         reset(t->right, c, b, l, r);
+        if (l <= t->index && t->index < r) t->value = e();
         t->update();
     }
 
     template <class F>
-    size_t max_right(const node_ptr &t, size_t a, size_t b, size_t l, const F &f, S &product) const {
+    size_t max_right(const node *t, size_t a, size_t b, size_t l, const F &f, S &product) const {
         if (!t || b <= l) return n;
         if (f(op(product, t->product))) {
             product = op(product, t->product);
@@ -138,7 +185,7 @@ class dynamic_segtree {
     }
 
     template <class F>
-    size_t min_left(const node_ptr &t, size_t a, size_t b, size_t r, const F &f, S &product) const {
+    size_t min_left(const node *t, size_t a, size_t b, size_t r, const F &f, S &product) const {
         if (!t || r <= a) return 0;
         if (f(op(t->product, product))) {
             product = op(t->product, product);

@@ -1,3 +1,4 @@
+// 最終更新: 2026-07-13 00:21:35 JST
 // Wavelet Matrix。
 //
 // 使い方:
@@ -25,6 +26,12 @@
 //   - signed 型で LOG を小さく指定する場合は、値が非負で 2^LOG 未満に収まる用途を想定。
 //   - 構築 O(N log A)、`access` は O(1)、それ以外のクエリは O(log A)。
 
+#if defined(__has_include)
+#if __has_include(<immintrin.h>)
+#include <immintrin.h>
+#endif
+#endif
+
 template <class T, int LOG = numeric_limits<make_unsigned_t<T>>::digits>
 class WaveletMatrix {
     static_assert(is_integral_v<T>, "WaveletMatrix<T>: T must be an integral type");
@@ -46,19 +53,39 @@ class WaveletMatrix {
         void build() {
             sum.assign(bit.size() + 1, 0);
             for (int i = 0; i < (int)bit.size(); i++) {
-                sum[i + 1] = sum[i] + __builtin_popcountll(bit[i]);
+                sum[i + 1] = sum[i] + popcount64(bit[i]);
             }
             zeros = n - sum.back();
         }
         bool get(int k) const { return (bit[k >> 6] >> (k & 63)) & 1ULL; }
+        static int popcount64(unsigned long long x) {
+#if defined(__POPCNT__)
+            return (int)_mm_popcnt_u64(x);
+#else
+            return __builtin_popcountll(x);
+#endif
+        }
         int rank1(int k) const {
             int block = k >> 6;
             int offset = k & 63;
             int res = sum[block];
-            if (offset) res += __builtin_popcountll(bit[block] & ((1ULL << offset) - 1));
+            if (offset) res += popcount64(bit[block] & ((1ULL << offset) - 1));
             return res;
         }
         int rank0(int k) const { return k - rank1(k); }
+        pair<int, int> rank1_pair(int l, int r) const {
+            int lb = l >> 6, lo = l & 63;
+            int rb = r >> 6, ro = r & 63;
+            int left = sum[lb];
+            int right = sum[rb];
+            if (lo) left += popcount64(bit[lb] & ((1ULL << lo) - 1));
+            if (ro) right += popcount64(bit[rb] & ((1ULL << ro) - 1));
+            return {left, right};
+        }
+        pair<int, int> rank0_pair(int l, int r) const {
+            auto [l1, r1] = rank1_pair(l, r);
+            return {l - l1, r - r1};
+        }
     };
 
     int n = 0;
@@ -88,12 +115,11 @@ class WaveletMatrix {
 
     static bool bit_at(U x, int b) { return (x >> b) & U(1); }
 
-    int range_freq_less_encoded(int l, int r, U upper) const {
+    int range_freq_less_encoded_from(int level, int l, int r, U upper) const {
         int res = 0;
-        for (int level = 0; level < LOG; level++) {
+        for (; level < LOG; level++) {
             int b = LOG - 1 - level;
-            int l0 = matrix[level].rank0(l);
-            int r0 = matrix[level].rank0(r);
+            auto [l0, r0] = matrix[level].rank0_pair(l, r);
             if (bit_at(upper, b)) {
                 res += r0 - l0;
                 l = matrix[level].zeros + l - l0;
@@ -104,6 +130,36 @@ class WaveletMatrix {
             }
         }
         return res;
+    }
+
+    int range_freq_less_encoded(int l, int r, U upper) const {
+        return range_freq_less_encoded_from(0, l, r, upper);
+    }
+
+    int range_freq_encoded(int l, int r, U lower, U upper) const {
+        U different = lower ^ upper;
+        int different_bit = bit_width(different) - 1;
+        int different_level = LOG - 1 - different_bit;
+
+        for (int level = 0; level < different_level; ++level) {
+            int b = LOG - 1 - level;
+            auto [l0, r0] = matrix[level].rank0_pair(l, r);
+            if (bit_at(lower, b)) {
+                l = matrix[level].zeros + l - l0;
+                r = matrix[level].zeros + r - r0;
+            } else {
+                l = l0;
+                r = r0;
+            }
+        }
+
+        auto [l0, r0] = matrix[different_level].rank0_pair(l, r);
+        int zeros = r0 - l0;
+        int lower_count = range_freq_less_encoded_from(different_level + 1, l0, r0, lower);
+        int upper_l = matrix[different_level].zeros + l - l0;
+        int upper_r = matrix[different_level].zeros + r - r0;
+        int upper_count = range_freq_less_encoded_from(different_level + 1, upper_l, upper_r, upper);
+        return zeros + upper_count - lower_count;
     }
 
    public:
@@ -154,8 +210,7 @@ class WaveletMatrix {
         U y = encode(x);
         for (int level = 0; level < LOG; level++) {
             int b = LOG - 1 - level;
-            int l0 = matrix[level].rank0(l);
-            int r0 = matrix[level].rank0(r);
+            auto [l0, r0] = matrix[level].rank0_pair(l, r);
             if (bit_at(y, b)) {
                 l = matrix[level].zeros + l - l0;
                 r = matrix[level].zeros + r - r0;
@@ -173,8 +228,7 @@ class WaveletMatrix {
         U x = 0;
         for (int level = 0; level < LOG; level++) {
             int b = LOG - 1 - level;
-            int l0 = matrix[level].rank0(l);
-            int r0 = matrix[level].rank0(r);
+            auto [l0, r0] = matrix[level].rank0_pair(l, r);
             int zero_count = r0 - l0;
             if (k < zero_count) {
                 l = l0;
@@ -203,7 +257,7 @@ class WaveletMatrix {
     int range_freq(int l, int r, T lower, T upper) const {
         assert(0 <= l && l <= r && r <= n);
         if (!(lower < upper)) return 0;
-        return range_freq(l, r, upper) - range_freq(l, r, lower);
+        return range_freq_encoded(l, r, encode(lower), encode(upper));
     }
 
     optional<T> prev_value(int l, int r, T upper) const {
@@ -241,7 +295,8 @@ class RangeCountDistinct {
         wm.build(v);
 
         vector<int> nxt(n);
-        map<T, int> last;
+        unordered_map<T, int> last;
+        last.reserve(n * 2 + 1);
         for (int i = n - 1; i >= 0; i--) {
             auto it = last.find(v[i]);
             nxt[i] = (it == last.end() ? n : it->second);
