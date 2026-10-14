@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 22:02:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/number_theory/pollards_rho_factorization.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/mobius.cpp
 // 数論的メビウス関数 μ(n) を計算する。
 // μ(1) = 1。n が平方因子を持てば 0、異なる k 個の素数の積なら (-1)^k。
 

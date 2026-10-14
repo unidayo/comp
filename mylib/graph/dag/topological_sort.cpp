@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-30 12:26:58 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/graph/dag/topological_sort.cpp
 // Kahn 法によるトポロジカルソート。計算量 O(V + E)、追加メモリ O(V)。
 // DAG なら全頂点を返し、閉路があれば閉路の影響を受けない頂点だけを返す。
 vector<int> topological_sort(const vector<vector<int>>& graph) {

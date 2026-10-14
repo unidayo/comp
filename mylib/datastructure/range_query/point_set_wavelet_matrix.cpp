@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 00:04:49 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/range_query/point_set_wavelet_matrix.cpp
 // 長さが変わらない配列向けの、一点更新と区間頻度検索を扱うデータ構造。
 //
 // DynamicWaveletMatrix から insert / erase を外し、位置の平方分割で実装している。

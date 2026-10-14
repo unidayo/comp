@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 01:11:27 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/treap/treap.cpp
 // 値の昇順で管理するTreap。重複要素を保持できる。
 // insert / erase / find / lower_bound / upper_bound / kth は期待 O(log N)。
 // size / empty は O(1)。

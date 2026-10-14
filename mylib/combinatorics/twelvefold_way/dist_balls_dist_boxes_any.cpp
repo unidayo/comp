@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/combinatorics/twelvefold_way/dist_balls_dist_boxes_any.cpp
 // 写像12相 1.
 // 区別あり玉 n 個 -> 区別あり箱 k 個、制約なし。
 // 答え: k^n

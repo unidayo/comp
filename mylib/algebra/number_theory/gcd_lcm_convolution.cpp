@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-18 14:52:57 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/gcd_lcm_convolution.cpp
 // GCD 畳み込み・LCM 畳み込み。
 //
 // 使い方:

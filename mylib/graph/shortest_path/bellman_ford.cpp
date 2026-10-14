@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/graph/shortest_path/bellman_ford.cpp
 auto bellman_ford(const vector<vector<pair<int, ll>>> &G, int start, bool detect_negative_cycle = false) {
     int N = ssize(G);
     vector<ll> dist(N, INF64);
@@ -21,7 +22,7 @@ auto bellman_ford(const vector<vector<pair<int, ll>>> &G, int start, bool detect
                 if (dist[u] == INF64) continue;
                 for (auto [v, d] : G[u]) {
                     if (dist[u] + d < dist[v]) {
-                        dist[v] = -INF64;  // 頂点vは負閉路に属する
+                        dist[v] = -INF64;  // 頂点vの最短距離は負閉路の影響で負の無限大になる
                         pred[v] = u;
                     }
                 }

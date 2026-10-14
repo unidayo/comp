@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:27:39 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/combinatorics/comb_mod_dp.cpp
 // Pascalの三角形を使って 0 <= n <= max_n の二項係数を前計算する。
 //
 // 法なし:

@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 02:02:16 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/acl/twosat.cpp
 // ACL: twosat
 // 公式ACLのinclude guardを保持しているため、他の展開済みACL部品と重複して貼ってもよい。
 // clang-format off

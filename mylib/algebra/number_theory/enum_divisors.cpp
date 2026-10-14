@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/enum_divisors.cpp
 // 正の整数 n の約数を昇順で列挙する。
 //
 // まず n を素因数分解し、各素因数の指数から約数を展開する。

@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-28 22:23:00 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/quotient_enumeration.cpp
 // 1 <= i <= n に対する floor(n / i) の異なる値と、その値を取る区間を列挙する。
 // 異なる商は高々 2*sqrt(n) 個なので、計算量・返却配列はともに O(sqrt(n))。
 

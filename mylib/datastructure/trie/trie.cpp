@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/trie/trie.cpp
 // Trie - 固定された連続文字集合上の文字列を扱う（多重集合）
 // 計算量: 各操作 O(|s|)、空間計算量 O(挿入された文字列の長さの総和 * SIGMA)
 template <int SIGMA = 26, char FIRST = 'a'>

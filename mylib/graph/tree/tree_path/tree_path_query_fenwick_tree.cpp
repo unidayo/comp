@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 19:00:12 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/acl/fenwicktree.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/graph/tree/tree_path/tree_path_query_fenwick_tree.cpp
 /*
 重み付き木に対するLCAと距離クエリ（辺重み更新対応版）
 

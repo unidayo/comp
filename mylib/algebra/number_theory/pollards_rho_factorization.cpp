@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:22:19 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/pollards_rho_factorization.cpp
 // Brent型Pollard's Rho法による unsigned 64-bit整数の素因数分解。
 // 返す素因数は重複を含む昇順。
 class PollardsRho {

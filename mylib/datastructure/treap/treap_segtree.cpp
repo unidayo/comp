@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 01:11:27 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/treap/treap_segtree.cpp
 // 値でソートされた Treap に Segment Tree のような区間積を持たせたもの。
 //
 // 使い方:

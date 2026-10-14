@@ -1,38 +1,49 @@
-// 最終更新: 2026-07-12 14:27:44 JST
-/*区間長はSに持たせない
-mappingの引数にSの区間長lenをもたせる
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/segtree/dynamic_lazysegtree.cpp
+/* 区間長はSに持たせず mapping に渡す。
 S mapping(F f, S x, ll len) { return x + f * len; }
+composition(f, g) は g の後に f を適用する合成。
+get/prod はノードを生成しない。詳細は dynamic_lazysegtree.md を参照。
 */
 
 template <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S, ll), F (*composition)(F, F), F (*id)()>
 struct lazy_segtree_sparse {
+    using index_type = uint32_t;
+    static constexpr index_type lazy_bit = index_type(1) << 31;
+    static constexpr index_type index_mask = lazy_bit - 1;
+
     struct Node {
-        Node *l = nullptr, *r = nullptr;
+        // 左の子の番号と遅延フラグを共有する。0 は未生成の子。
+        index_type l = 0, r = 0;
         S val;
         F lazy;
-        bool has_lazy;
-        ll len;  // このノードが表す区間の長さ
-        Node(ll len_, const S &v = e()) : val(v), lazy(id()), has_lazy(false), len(len_) {}
+        explicit Node(const S &v) : val(v), lazy(id()) {}
+        index_type left() const { return l & index_mask; }
+        bool has_lazy() const { return (l & lazy_bit) != 0; }
+        void set_left(index_type child) { l = (l & lazy_bit) | child; }
     };
 
     ll n;
-    Node *root;
-    function<S(ll)> range_e;  // range_e(len) = 長さlenの区間の初期値
+    index_type root = 0;
+    function<S(ll)> range_e;  // 長さlenの区間の初期値（区間の位置には依存しない）
 
-    // デフォルト: 全要素 e()
-    lazy_segtree_sparse(ll _n) : n(_n), root(nullptr), range_e([](ll) { return e(); }), default_initial(true) {}
-    // 小さいN用: vectorから初期化
-    lazy_segtree_sparse(const vector<S> &v) : n((ll)v.size()), root(nullptr), range_e([](ll) { return e(); }), default_initial(true) {
+    // デフォルト: 各区間の初期値は e()。
+    lazy_segtree_sparse(ll _n)
+        : n(_n), range_e([](ll) { return e(); }), default_initial(true) {
+        check_size();
+    }
+    // 小さいN用: vectorから初期化。
+    lazy_segtree_sparse(const vector<S> &v)
+        : lazy_segtree_sparse((ll)v.size()) {
         for (ll i = 0; i < n; i++) {
             if (!(v[i] == e())) set(i, v[i]);
         }
     }
-    // 大きいN用: 全要素を同じ初期値で埋める
-    // range_e_fn(len) は長さlenの区間の初期値を返す関数
-    // 例: 全要素をvで初期化し op が加算なら range_e_fn = [v](ll len){ return v * len; }
+    // range_e_fn(0)=e(), range_e_fn(a+b)=op(range_e_fn(a),range_e_fn(b)) が必要。
+    // 例: 全要素をvで初期化し op が加算なら [v](ll len){ return v * len; }。
     lazy_segtree_sparse(ll _n, function<S(ll)> range_e_fn)
-        : n(_n), root(nullptr), range_e(range_e_fn), default_initial(false) {
-        root = make_node(n, range_e_fn(n));
+        : n(_n), range_e(std::move(range_e_fn)), default_initial(false) {
+        check_size();
     }
 
     lazy_segtree_sparse(const lazy_segtree_sparse &) = delete;
@@ -41,143 +52,151 @@ struct lazy_segtree_sparse {
     lazy_segtree_sparse &operator=(lazy_segtree_sparse &&) = delete;
 
     ~lazy_segtree_sparse() {
-        destroy(root);
+        // 木をたどらず、実際に構築したノードだけを破棄する。
+        for (size_t i = 0; i < used_nodes; ++i)
+            std::destroy_at(blocks[i / block_size] + i % block_size);
         for (Node *block : blocks) allocator.deallocate(block, block_size);
     }
 
     void set(ll idx, S x) {
         check_idx(idx);
-        set_rec(root, 0, n, idx, x);
+        root = set_rec(root, 0, n, idx, x);
     }
-    S get(ll idx) {
+    S get(ll idx) const {
         check_idx(idx);
-        return get_rec(root, 0, n, idx);
+        return prod_rec(root, 0, n, idx, idx + 1, id(), false);
     }
     void apply(ll l, ll r, F f) {
         check_range(l, r);
-        apply_rec(root, 0, n, l, r, f);
+        if (l == r) return;
+        root = apply_rec(root, 0, n, l, r, f);
     }
-    S prod(ll l, ll r) {
+    S prod(ll l, ll r) const {
         check_range(l, r);
-        return prod_rec(root, 0, n, l, r);
+        if (l == r) return e();
+        return prod_rec(root, 0, n, l, r, id(), false);
     }
+    size_t node_count() const { return used_nodes; }
 
    private:
-    // 個別の new/delete は動的セグメント木では支配的なコストになりやすい。
-    // 連続領域からまとめて払い出し、ポインタの安定性も保つ。
+    // vector<Node> の容量倍増・再確保を避け、固定長ブロックを追加する。
+    // Node 自体のアドレスは固定なので、再帰中も参照が無効にならない。
     static constexpr size_t block_size = 256;
     bool default_initial;
     std::allocator<Node> allocator;
     vector<Node *> blocks;
-    Node *next_node = nullptr;
-    size_t nodes_left = 0;
+    size_t used_nodes = 0;
 
-    Node *make_node(ll len, const S &value) {
-        if (nodes_left == 0) {
-            next_node = allocator.allocate(block_size);
-            blocks.push_back(next_node);
-            nodes_left = block_size;
+    Node &node(index_type p) { return blocks[(p - 1) / block_size][(p - 1) % block_size]; }
+    const Node &node(index_type p) const { return blocks[(p - 1) / block_size][(p - 1) % block_size]; }
+
+    index_type make_node(ll len) {
+        if (used_nodes == index_mask) throw std::length_error("lazy_segtree_sparse node limit");
+        if (used_nodes % block_size == 0 && used_nodes / block_size == blocks.size()) {
+            Node *block = allocator.allocate(block_size);
+            try {
+                blocks.push_back(block);
+            } catch (...) {
+                allocator.deallocate(block, block_size);
+                throw;
+            }
         }
-        Node *p = next_node++;
-        --nodes_left;
-        std::construct_at(p, len, value);
-        return p;
+        std::construct_at(blocks[used_nodes / block_size] + used_nodes % block_size, initial_value(len));
+        return static_cast<index_type>(++used_nodes);
     }
 
-    // 通常は全要素 e() なので、std::function の間接呼び出しを避ける。
     S initial_value(ll len) const { return default_initial ? e() : range_e(len); }
 
-    void check_idx(ll i) {
+    void check_size() const {
+        if (n < 0) throw std::invalid_argument("lazy_segtree_sparse negative size");
+    }
+    void check_idx(ll i) const {
         if (i < 0 || i >= n) throw std::out_of_range("lazy_segtree_sparse index");
     }
-    void check_range(ll l, ll r) {
+    void check_range(ll l, ll r) const {
         if (l < 0 || r > n || l > r) throw std::out_of_range("lazy_segtree_sparse range");
     }
 
-    void destroy(Node *p) {
-        if (!p) return;
-        destroy(p->l);
-        destroy(p->r);
-        std::destroy_at(p);
+    void apply_node(index_type p, F f, ll len) {
+        Node &v = node(p);
+        v.val = mapping(f, v.val, len);
+        // 葉には伝播先がないので、遅延タグを保持する必要はない。
+        if (len == 1) return;
+        v.lazy = v.has_lazy() ? composition(f, v.lazy) : f;
+        v.l |= lazy_bit;
     }
 
-    void apply_node(Node *p, F f) {
-        p->val = mapping(f, p->val, p->len);
-        if (p->has_lazy)
-            p->lazy = composition(f, p->lazy);
-        else {
-            p->lazy = f;
-            p->has_lazy = true;
-        }
+    void push(index_type p, ll len) {
+        Node &v = node(p);
+        if (!v.has_lazy()) return;
+        ll L = len / 2, R = len - L;
+        if (!v.left()) v.set_left(make_node(L));
+        if (!v.r) v.r = make_node(R);
+        apply_node(v.left(), v.lazy, L);
+        apply_node(v.r, v.lazy, R);
+        v.lazy = id();
+        v.l &= index_mask;
     }
 
-    void push(Node *p) {
-        if (!p || !p->has_lazy) return;
-        ll L = p->len / 2;
-        ll R = p->len - L;
-        if (!p->l) p->l = make_node(L, initial_value(L));
-        if (!p->r) p->r = make_node(R, initial_value(R));
-        apply_node(p->l, p->lazy);
-        apply_node(p->r, p->lazy);
-        p->lazy = id();
-        p->has_lazy = false;
+    void pull(index_type p, ll len) {
+        Node &v = node(p);
+        ll L = len / 2;
+        S lv = v.left() ? node(v.left()).val : initial_value(L);
+        S rv = v.r ? node(v.r).val : initial_value(len - L);
+        v.val = op(lv, rv);
     }
 
-    void pull(Node *p) {
-        ll L = p->len / 2;
-        S lv = p->l ? p->l->val : initial_value(L);
-        S rv = p->r ? p->r->val : initial_value(p->len - L);
-        p->val = op(lv, rv);
-    }
-
-    S get_rec(Node *p, ll nl, ll nr, ll idx) {
-        if (!p) return initial_value(1);
-        if (nr - nl == 1) return p->val;
-        push(p);
-        ll mid = (nl + nr) >> 1;
-        if (idx < mid)
-            return get_rec(p->l, nl, mid, idx);
-        else
-            return get_rec(p->r, mid, nr, idx);
-    }
-
-    void set_rec(Node *&p, ll nl, ll nr, ll idx, S x) {
-        if (!p) p = make_node(nr - nl, initial_value(nr - nl));
+    index_type set_rec(index_type p, ll nl, ll nr, ll idx, S x) {
+        if (!p) p = make_node(nr - nl);
+        Node &v = node(p);
         if (nr - nl == 1) {
-            p->val = x;
-            p->lazy = id();
-            p->has_lazy = false;
-            return;
+            v.val = x;
+            return p;
         }
-        push(p);
-        ll mid = (nl + nr) >> 1;
+        push(p, nr - nl);
+        ll mid = nl + (nr - nl) / 2;
         if (idx < mid)
-            set_rec(p->l, nl, mid, idx, x);
+            v.set_left(set_rec(v.left(), nl, mid, idx, x));
         else
-            set_rec(p->r, mid, nr, idx, x);
-        pull(p);
+            v.r = set_rec(v.r, mid, nr, idx, x);
+        pull(p, nr - nl);
+        return p;
     }
 
-    void apply_rec(Node *&p, ll nl, ll nr, ll l, ll r, F f) {
-        if (r <= nl || nr <= l) return;
-        if (!p) p = make_node(nr - nl, initial_value(nr - nl));
+    index_type apply_rec(index_type p, ll nl, ll nr, ll l, ll r, F f) {
+        if (r <= nl || nr <= l) return p;
+        if (!p) p = make_node(nr - nl);
         if (l <= nl && nr <= r) {
-            apply_node(p, f);
-            return;
+            apply_node(p, f, nr - nl);
+            return p;
         }
-        push(p);
-        ll mid = (nl + nr) >> 1;
-        apply_rec(p->l, nl, mid, l, r, f);
-        apply_rec(p->r, mid, nr, l, r, f);
-        pull(p);
+        push(p, nr - nl);
+        Node &v = node(p);
+        ll mid = nl + (nr - nl) / 2;
+        v.set_left(apply_rec(v.left(), nl, mid, l, r, f));
+        v.r = apply_rec(v.r, mid, nr, l, r, f);
+        pull(p, nr - nl);
+        return p;
     }
 
-    S prod_rec(Node *p, ll nl, ll nr, ll l, ll r) {
+    // carry は祖先の未伝播タグ。祖先の更新はこのノードのタグより新しい。
+    // 子を生成せず、取得結果にだけ carry を適用する。
+    S prod_rec(index_type p, ll nl, ll nr, ll l, ll r, F carry, bool has_carry) const {
         if (r <= nl || nr <= l) return e();
-        if (!p) return initial_value(min(r, nr) - max(l, nl));
-        if (l <= nl && nr <= r) return p->val;
-        push(p);
-        ll mid = (nl + nr) >> 1;
-        return op(prod_rec(p->l, nl, mid, l, r), prod_rec(p->r, mid, nr, l, r));
+        if (!p) {
+            ll len = min(r, nr) - max(l, nl);
+            S value = initial_value(len);
+            return has_carry ? mapping(carry, value, len) : value;
+        }
+        const Node &v = node(p);
+        if (l <= nl && nr <= r)
+            return has_carry ? mapping(carry, v.val, nr - nl) : v.val;
+        if (v.has_lazy()) {
+            carry = has_carry ? composition(carry, v.lazy) : v.lazy;
+            has_carry = true;
+        }
+        ll mid = nl + (nr - nl) / 2;
+        return op(prod_rec(v.left(), nl, mid, l, r, carry, has_carry),
+                  prod_rec(v.r, mid, nr, l, r, carry, has_carry));
     }
 };

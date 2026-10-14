@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:18:35 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/multiple_factorization.cpp
 // 上限 limit 以下の整数を何度も素因数分解するための最小素因数表。
 // 構築は線形篩で O(limit)、1回の分解は素因数の個数を k として O(k)。
 struct factorization {

@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/range_query/point_set_range_frequency.cpp
 // Point Set Range Frequency。
 //
 // Yosupo: point_set_range_frequency 向け。

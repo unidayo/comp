@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:57:34 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/enum_primes.cpp
 // n 以下の素数を昇順で列挙する。
 //
 // 小さい n では奇数だけを保持するエラトステネスの篩を使う。

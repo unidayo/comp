@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 19:00:12 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/linear_algebra/matrix.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/linear_algebra/linear_equation.cpp
 /*
 使い方:
 

@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/combinatorics/twelvefold_way/same_balls_dist_boxes_ge_one.cpp
 // 写像12相 6.
 // 区別なし玉 n 個 -> 区別あり箱 k 個、各箱少なくとも1個。
 // 答え: C(n-1, k-1)

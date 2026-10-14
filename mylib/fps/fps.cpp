@@ -1,8 +1,9 @@
-// 最終更新: 2026-07-28 19:00:12 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/acl/convolution.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/fps/fps.cpp
 using mint = modint998244353;
 
-// 形式的冪級数ライブラリ (mod 998244353)
+// 形式的冪級数ライブラリ。上の mint を ACL の static_modint に差し替えて使える。
 // ACL の convolution を使用
 
 struct FPS : vector<mint> {
@@ -211,24 +212,109 @@ struct FPS : vector<mint> {
         return res;
     }
 
-    // exp f(x) mod x^n (Newton法)
-    // f[0] = 0 が必要
+    // exp f(x) mod x^n。f[0] = 0 が必要。
+    // 密な場合は exp とその逆元を同時に更新する高速 Newton 法 O(n log n)、
+    // 疎な場合は g' = f'g の係数比較を使う O(n * 非零項数)。
     FPS exp(int n) const {
         assert(n >= 0);
         assert(empty() || (*this)[0] == mint(0));
-        FPS res = {mint(1)};
-        while ((int)res.size() < n) {
-            int next_size = min(2 * (int)res.size(), n);
-            FPS f = pre(next_size);
-            FPS g = res.log(next_size);
-            for (int i = 0; i < next_size; i++) {
-                g[i] = (i < (int)f.size() ? f[i] : mint(0)) - g[i];
-            }
-            g[0] += mint(1);
-            res = (res * g).pre(next_size);
+        if (n == 0) return FPS();
+
+        // f' の非零項を作る。少数なら NTT より係数漸化式の方が速い。
+        vector<pair<int, mint>> derivative_terms;
+        const int input_size = min(n, int(size()));
+        for (int i = 1; i < input_size; ++i) {
+            if ((*this)[i] != mint(0)) derivative_terms.emplace_back(i, (*this)[i] * mint(i));
         }
-        res.resize(n);
-        return res;
+        if (n <= 64 || derivative_terms.size() <= 16) {
+            FPS res(n);
+            res[0] = mint(1);
+            const auto& inverse = inverse_table(n - 1);
+            for (int i = 1; i < n; ++i) {
+                for (const auto& [degree, coefficient] : derivative_terms) {
+                    if (degree > i) break;
+                    res[i] += coefficient * res[i - degree];
+                }
+                res[i] *= inverse[i];
+            }
+            return res;
+        }
+
+        // NTT 可能な最大長は、mint::mod() - 1 を割り切る最大の 2 冪。
+        // 例: 998244353 なら 2^23、754974721 なら 2^24。
+        const int max_ntt_log = std::countr_zero(static_cast<unsigned>(mint::mod() - 1));
+        const size_t max_ntt_size = size_t(1) << max_ntt_log;
+        assert(size_t(n) <= max_ntt_size);
+
+        // ACL の inverse NTT は正規化を行わないため、ここでサイズの逆元を掛ける。
+        auto ntt = [](FPS& f) { atcoder::internal::butterfly(f); };
+        auto inverse_ntt = [](FPS& f) {
+            atcoder::internal::butterfly_inv(f);
+            const mint inverse_size = mint(f.size()).inv();
+            for (mint& x : f) x *= inverse_size;
+        };
+
+        // result = exp(*this), inverse_result = 1/result。
+        // transform_inverse は inverse_result を NTT したものとして保持する。
+        FPS result{mint(1), (*this)[1]};
+        FPS inverse_result{mint(1)};
+        FPS previous_transform;
+        FPS transform_inverse{mint(1), mint(1)};
+
+        for (int m = 2; m < n; m <<= 1) {
+            FPS transform_result = result;
+            transform_result.resize(2 * m);
+            ntt(transform_result);
+
+            // 1/result mod x^m を、前半の既知係数と前段のNTT結果から更新する。
+            previous_transform = transform_inverse;
+            FPS work(m);
+            for (int i = 0; i < m; ++i) work[i] = transform_result[i] * previous_transform[i];
+            inverse_ntt(work);
+            fill(work.begin(), work.begin() + m / 2, mint(0));
+            ntt(work);
+            for (int i = 0; i < m; ++i) work[i] *= -previous_transform[i];
+            inverse_ntt(work);
+            inverse_result.insert(inverse_result.end(), work.begin() + m / 2, work.end());
+
+            transform_inverse = inverse_result;
+            transform_inverse.resize(2 * m);
+            ntt(transform_inverse);
+
+            // 誤差 (*this)' * result - result' を 1/result 倍して積分し、
+            // exp の Newton 補正項を得る。transform_result を3回再利用する。
+            FPS error(m);
+            for (int i = 0; i + 1 < m && i + 1 < (int)size(); ++i) {
+                error[i] = (*this)[i + 1] * mint(i + 1);
+            }
+            ntt(error);
+            for (int i = 0; i < m; ++i) error[i] *= transform_result[i];
+            inverse_ntt(error);
+            for (int i = 0; i + 1 < m; ++i) error[i] -= result[i + 1] * mint(i + 1);
+
+            error.resize(2 * m);
+            for (int i = 0; i + 1 < m; ++i) {
+                error[m + i] = error[i];
+                error[i] = mint(0);
+            }
+            ntt(error);
+            for (int i = 0; i < 2 * m; ++i) error[i] *= transform_inverse[i];
+            inverse_ntt(error);
+
+            error.pop_back();
+            const auto& inverse = inverse_table(2 * m - 1);
+            error.insert(error.begin(), mint(0));
+            for (int i = 1; i < 2 * m; ++i) error[i] *= inverse[i];
+            for (int i = m; i < min(2 * m, int(size())); ++i) error[i] += (*this)[i];
+            fill(error.begin(), error.begin() + m, mint(0));
+
+            ntt(error);
+            for (int i = 0; i < 2 * m; ++i) error[i] *= transform_result[i];
+            inverse_ntt(error);
+            result.insert(result.end(), error.begin() + m, error.end());
+        }
+        result.resize(n);
+        return result;
     }
 
     // f(x) の形式的平方根 mod x^n。存在しなければ nullopt。

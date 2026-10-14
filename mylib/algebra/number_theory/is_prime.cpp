@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:14:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/is_prime.cpp
 // signed 64-bit整数 n が素数かを返す。
 // 小さい値は30-wheel試し割り、大きい値は決定的Miller-Rabinで判定する。
 bool is_prime(ll n) {

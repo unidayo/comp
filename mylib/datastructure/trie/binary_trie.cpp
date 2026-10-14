@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 01:23:42 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/trie/binary_trie.cpp
 // Binary Trie (XOR Trie) - [0, 2^B) の整数を扱う（多重集合）
 //
 // 使い方:

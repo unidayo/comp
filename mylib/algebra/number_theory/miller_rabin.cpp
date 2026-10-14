@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/miller_rabin.cpp
 /*ミラーラビン素数判定法 O(logn)で素数判定を行う*/
 bool miller_rabin(ull n) {
     if (n <= 1) return false;

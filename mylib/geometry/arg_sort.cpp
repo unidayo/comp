@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/geometry/arg_sort.cpp
 // 反時計回りに偏角ソート（0° から開始、反時計回り）
 // 注意: 原点 (0,0) は使用前に除外すること
 bool cmp(pair<ll, ll> lhs, pair<ll, ll> rhs) {

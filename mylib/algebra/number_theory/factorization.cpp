@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:10:05 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/factorization.cpp
 // 正の整数 n を素因数へ分解し、重複を含めて昇順で返す。
 //
 // 2、3、5を先に取り除き、それ以降は30-wheelにより

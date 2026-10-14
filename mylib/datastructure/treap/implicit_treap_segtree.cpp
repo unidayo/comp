@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 01:05:36 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/treap/implicit_treap_segtree.cpp
 // 区間積を持つ Implicit Treap。
 //
 // 使い方:

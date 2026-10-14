@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 22:20:09 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/number_theory/pollards_rho_factorization.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/multiplicative_order.cpp
 // mod における a の乗法位数を返す。gcd(a, mod) != 1 なら -1 を返す。
 // すなわち、a^k ≡ 1 (mod mod) を満たす最小の正整数 k を求める。
 //

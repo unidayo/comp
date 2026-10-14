@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-30 12:08:55 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/string/automaton/suffix_automaton.cpp
 // ALPHABET_SIZE: 文字種類数、MIN_CHAR: 使用する文字の最小値
 // 例: 英小文字なら既定値、英大文字なら SuffixAutomaton<26, 'A'>、
 //     任意の 1 byte 文字列なら SuffixAutomaton<256, 0> を使う。

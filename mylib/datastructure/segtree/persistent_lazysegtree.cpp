@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 00:25:22 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/segtree/persistent_lazysegtree.cpp
 // ACL風の永続遅延セグメント木
 //
 // 使い方:

@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/graph/tree/tree_path/tree_path_query_sparse_table.cpp
 /*
 重み付き木に対するLCAと距離クエリ（静的版）
 

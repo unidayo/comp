@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 00:54:24 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/set/fast_set.cpp
 // [0, n) のint型の整数集合を64分木で管理する。
 // nに比例するbit列を確保するため、実際の上限は利用可能メモリに依存する。
 //

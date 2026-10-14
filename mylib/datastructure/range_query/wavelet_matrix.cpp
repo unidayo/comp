@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 00:21:35 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/range_query/wavelet_matrix.cpp
 // Wavelet Matrix。
 //
 // 使い方:

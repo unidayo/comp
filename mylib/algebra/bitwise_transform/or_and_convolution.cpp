@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 19:00:12 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/bitwise_transform/zeta_mobius_transform.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/bitwise_transform/or_and_convolution.cpp
 // OR 畳み込み・AND 畳み込み。
 //
 // 使い方:

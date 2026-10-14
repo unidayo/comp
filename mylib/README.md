@@ -2,6 +2,20 @@
 
 競技プログラミング用の貼り付けライブラリ置き場。
 
+## 公開とコンテストでの参照
+
+公開先: [unidayo/comp の mylib](https://github.com/unidayo/comp/tree/main/mylib)
+
+各実装の冒頭に参照URLを記載しています。新規作成・更新時は実装と関連ドキュメントを GitHub に commit / push し、コンテストで使う版を開始前に公開してください。ローカルの更新日時や commit の作成だけでは公開済みとはいえません。
+
+コンテストでコピーする際は、開始前に公開済みのコミットを選び、GitHub のファイル画面で `y` キーを押して固定URLに切り替えます。コピー先の提出コードにも、その版のURLをコメントとして添えてください。`main` のURLは後から内容が変わるため、提出時はコミットSHAを含む固定URLを使います。依存ライブラリも、それぞれの参照URLを残してください。
+
+```cpp
+// 参照URL: https://github.com/unidayo/comp/blob/<公開済みコミットSHA>/mylib/heuristic/timer.cpp
+```
+
+URLを付けただけで未公開のコードを使用できるわけではありません。他者のコードについても、元の出典・ライセンス表記を保持してください。
+
 ## Categories
 
 | Directory | Contents |
@@ -23,11 +37,13 @@
 | `datastructure/set/` | set 系データ構造 |
 | `datastructure/trie/` | Trie 系 |
 | `datastructure/fenwick/` | Fenwick Tree 系 |
+| `datastructure/union_find/` | Union-Find、重み付き Union-Find |
 | `fps/` | formal power series、Bostan-Mori |
 | `geometry/` | 幾何 |
 | `graph/shortest_path/` | 最短路 |
 | `graph/tree/` | 木 DP、HLD、Euler Tour、木パスクエリ |
 | `graph/connectivity/` | LowLink、閉路検出 |
+| `graph/coloring/` | 彩色数 |
 | `graph/dag/` | トポロジカルソート |
 | `heuristic/` | AHC 用の乱数、タイマー、探索補助 |
 | `math/` | 数値計算寄りの小物 |

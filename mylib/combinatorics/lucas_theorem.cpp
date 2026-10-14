@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 14:27:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/combinatorics/lucas_theorem.cpp
 // Lucas の定理により C(n, r) mod p を求める。
 // p は素数である必要がある。
 // 構築: O(p) time / O(p) memory, C: O(log_p(n)) time

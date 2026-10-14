@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 01:05:36 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/datastructure/treap/implicit_lazy_treap.cpp
 // 添字で管理する Implicit Treap に lazy_segtree 風の遅延更新を載せたもの。
 //
 // 使い方:

@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 19:00:12 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/number_theory/pollards_rho_factorization.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/primitive_root.cpp
 // mod を法とする最小の正の原始根を返す。存在しない場合は -1 を返す。
 // 原始根が存在するのは mod = 2, 4, p^k, 2*p^k（p は奇素数）の場合に限る。
 //

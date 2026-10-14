@@ -1,5 +1,6 @@
-// 最終更新: 2026-07-28 22:02:44 JST
+// 最終更新: 2026-10-14 18:14:44 JST
 // 依存: mylib/algebra/number_theory/pollards_rho_factorization.cpp
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/algebra/number_theory/euler_phi.cpp
 // オイラーのトーシェント関数 φ(n) を計算する。
 // φ(n) は 1 以上 n 以下で n と互いに素な整数の個数。特に φ(1) = 1。
 

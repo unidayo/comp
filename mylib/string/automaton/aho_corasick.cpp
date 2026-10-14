@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-25 02:14:56 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/string/automaton/aho_corasick.cpp
 // Aho-Corasick: 複数のパターンをテキストからまとめて検出する。
 //
 // 使い方:

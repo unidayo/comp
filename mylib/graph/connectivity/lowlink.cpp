@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-13 03:15:42 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/graph/connectivity/lowlink.cpp
 // LowLink: 関節点・橋を求める
 // - add_edge(u, v) で無向辺を追加（辺番号 = 追加順）
 // - build() で構築

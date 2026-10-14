@@ -1,4 +1,5 @@
-// 最終更新: 2026-07-12 15:31:02 JST
+// 最終更新: 2026-10-14 18:14:44 JST
+// 参照URL: https://github.com/unidayo/comp/blob/main/mylib/combinatorics/combinations.cpp
 // 二項係数 C(n, r) を1件だけ O(min(r, n-r)) で計算する。
 
 // 法を使わずに C(n, r) を返す。
